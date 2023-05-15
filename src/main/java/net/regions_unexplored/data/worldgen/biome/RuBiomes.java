@@ -5,6 +5,7 @@ import net.minecraft.world.level.biome.Biome;
 import net.regions_unexplored.registry.BiomeRegistry;
 
 public class RuBiomes {
+    //TODO:Complete Class
     public static ResourceKey<Biome> ALPHA_GROVE = BiomeRegistry.createKey("alpha_grove");
     public static ResourceKey<Biome> ARID_MOUNTAINS = BiomeRegistry.createKey("arid_mountains");
     public static ResourceKey<Biome> AUTUMNAL_MAPLE_FOREST = BiomeRegistry.createKey("autumnal_maple_forest");

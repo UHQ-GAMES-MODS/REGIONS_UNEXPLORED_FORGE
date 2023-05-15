@@ -10,6 +10,7 @@ import java.util.Set;
 import java.util.stream.Stream;
 
 public record RuBlockSetType(String name, SoundType soundType, SoundEvent doorClose, SoundEvent doorOpen, SoundEvent trapdoorClose, SoundEvent trapdoorOpen, SoundEvent pressurePlateClickOff, SoundEvent pressurePlateClickOn, SoundEvent buttonClickOff, SoundEvent buttonClickOn) {
+    //TODO:Complete Class
     private static final Set<BlockSetType> VALUES = new ObjectArraySet<>();
     public static final BlockSetType BAOBAB = register(new BlockSetType(RegionsUnexploredMod.MOD_ID + ":baobab"));
     public static final BlockSetType BLACKWOOD = register(new BlockSetType(RegionsUnexploredMod.MOD_ID + ":blackwood"));
@@ -27,9 +28,9 @@ public record RuBlockSetType(String name, SoundType soundType, SoundEvent doorCl
     public static final BlockSetType REDWOOD = register(new BlockSetType(RegionsUnexploredMod.MOD_ID + ":redwood"));
     public static final BlockSetType WILLOW = register(new BlockSetType(RegionsUnexploredMod.MOD_ID + ":willow"));
     
-    private static BlockSetType register(BlockSetType p_273033_) {
-        VALUES.add(p_273033_);
-        return p_273033_;
+    private static BlockSetType register(BlockSetType type) {
+        VALUES.add(type);
+        return type;
     }
 
     public static Stream<BlockSetType> values() {

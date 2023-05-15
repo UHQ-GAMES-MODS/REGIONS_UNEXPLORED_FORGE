@@ -8,6 +8,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.regions_unexplored.RegionsUnexploredMod;
 
 public class ItemRegistry {
+    //TODO:Complete Class
 
     public static <T extends Block> RegistryObject<Item> registerDefaultBlockItem(String name, RegistryObject<T> block) {
         return RegionsUnexploredMod.ITEM_REGISTRY.register(name, () -> new BlockItem(block.get(), new Item.Properties()));

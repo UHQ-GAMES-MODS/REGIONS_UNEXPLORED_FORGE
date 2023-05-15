@@ -4,7 +4,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.entity.SignBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.regions_unexplored.registry.BlockEntityRegistry;
 
 public class RuSignBlockEntity extends SignBlockEntity {
     public RuSignBlockEntity(BlockPos pos, BlockState state) {
@@ -13,6 +12,6 @@ public class RuSignBlockEntity extends SignBlockEntity {
 
     @Override
     public BlockEntityType<?> getType(){
-        return BlockEntityRegistry.SIGN_BLOCK_ENTITIES.get();
+        return RuBlockEntities.SIGN_BLOCK_ENTITIES.get();
     }
 }

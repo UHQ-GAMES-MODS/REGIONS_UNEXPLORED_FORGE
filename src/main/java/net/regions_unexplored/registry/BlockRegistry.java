@@ -16,6 +16,7 @@ import net.regions_unexplored.RegionsUnexploredMod;
 import java.util.function.Supplier;
 
 public class BlockRegistry {
+    //TODO:Add Block Classes
     //Register default blocks and items
     public static <T extends Block> RegistryObject<T> registerDefaultBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = RegionsUnexploredMod.BLOCK_REGISTRY.register(name, block);
