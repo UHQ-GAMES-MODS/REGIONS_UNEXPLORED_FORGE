@@ -11,6 +11,9 @@ import net.regions_unexplored.RegionsUnexploredMod;
 import net.regions_unexplored.data.block.RuBlockSetType;
 import net.regions_unexplored.data.block.RuWoodTypes;
 import net.regions_unexplored.registry.BlockRegistry;
+import net.regions_unexplored.world.level.block.*;
+import net.regions_unexplored.world.level.block.grass.*;
+import net.regions_unexplored.world.level.block.grower.*;
 
 public class RuBlocks {
     //TODO:Complete Class
@@ -878,33 +881,33 @@ public class RuBlocks {
         SAGUARO_CACTUS = BlockRegistry.registerDefaultBlock("saguaro_cactus", () -> new SaguaroCactusBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_LIGHT_GREEN).sound(SoundType.WOOL).strength(2f)));
 
         /*-----------------LEAVES-----------------*/
-        ALPHA_LEAVES = BlockRegistry.registerDefaultBlock("alpha_leaves", () -> leaves(MaterialColor.COLOR_LIGHT_GREEN));
-        APPLE_OAK_LEAVES = BlockRegistry.registerDefaultBlock("apple_oak_leaves", () -> appleLeaves(MaterialColor.PLANT));
-        BAMBOO_LEAVES = BlockRegistry.registerDefaultBlock("bamboo_leaves", () -> leaves(MaterialColor.PLANT));
-        BAOBAB_LEAVES = BlockRegistry.registerDefaultBlock("baobab_leaves", () -> leaves(MaterialColor.PLANT));
-        BLACKWOOD_LEAVES = BlockRegistry.registerDefaultBlock("blackwood_leaves", () -> leaves(MaterialColor.TERRACOTTA_GREEN));
-        CHERRY_LEAVES = BlockRegistry.registerDefaultBlock("cherry_leaves", () -> leaves(MaterialColor.PLANT));
-        CYPRESS_LEAVES = BlockRegistry.registerDefaultBlock("cypress_leaves", () -> leaves(MaterialColor.PLANT));
-        DEAD_LEAVES = BlockRegistry.registerDefaultBlock("dead_leaves", () -> leaves(MaterialColor.TERRACOTTA_GRAY));
-        DEAD_PINE_LEAVES = BlockRegistry.registerDefaultBlock("dead_pine_leaves", () -> leaves(MaterialColor.TERRACOTTA_GRAY));
-        EUCALYPTUS_LEAVES = BlockRegistry.registerDefaultBlock("eucalyptus_leaves", () -> leaves(MaterialColor.PLANT));
-        FLOWERING_LEAVES = BlockRegistry.registerDefaultBlock("flowering_leaves", () -> leaves(MaterialColor.PLANT));
-        GOLDEN_LARCH_LEAVES = BlockRegistry.registerDefaultBlock("golden_larch_leaves", () -> leaves(MaterialColor.COLOR_YELLOW));
-        JOSHUA_LEAVES = BlockRegistry.registerDefaultBlock("joshua_leaves", () -> joshuaLeaves(MaterialColor.PLANT));
-        LARCH_LEAVES = BlockRegistry.registerDefaultBlock("larch_leaves", () -> leaves(MaterialColor.PLANT));
-        MAPLE_LEAVES = BlockRegistry.registerDefaultBlock("maple_leaves", () -> leaves(MaterialColor.PLANT));
-        MAUVE_LEAVES = BlockRegistry.registerDefaultBlock("mauve_leaves", () -> mauveLeaves(MaterialColor.COLOR_PURPLE));
-        ORANGE_MAPLE_LEAVES = BlockRegistry.registerDefaultBlock("orange_maple_leaves", () -> leaves(MaterialColor.COLOR_ORANGE));
-        PALM_LEAVES = BlockRegistry.registerDefaultBlock("palm_leaves", () -> leaves(MaterialColor.PLANT));
-        PINE_LEAVES = BlockRegistry.registerDefaultBlock("pine_leaves", () -> leaves(MaterialColor.PLANT));
-        PINK_CHERRY_LEAVES = BlockRegistry.registerDefaultBlock("pink_cherry_leaves", () -> cherryLeaves(MaterialColor.COLOR_PINK));
-        REDWOOD_LEAVES = BlockRegistry.registerDefaultBlock("redwood_leaves", () -> leaves(MaterialColor.PLANT));
-        RED_CHERRY_LEAVES = BlockRegistry.registerDefaultBlock("red_cherry_leaves", () -> cherryLeaves(MaterialColor.COLOR_RED));
-        RED_MAPLE_LEAVES = BlockRegistry.registerDefaultBlock("red_maple_leaves", () -> leaves(MaterialColor.COLOR_RED));
-        BRIMWOOD_LEAVES = BlockRegistry.registerDefaultBlock("brimwood_leaves", () -> brimLeaves(MaterialColor.COLOR_BROWN));
-        SILVER_BIRCH_LEAVES = BlockRegistry.registerDefaultBlock("silver_birch_leaves", () -> leaves(MaterialColor.COLOR_YELLOW));
-        WHITE_CHERRY_LEAVES = BlockRegistry.registerDefaultBlock("white_cherry_leaves", () -> cherryLeaves(MaterialColor.TERRACOTTA_WHITE));
-        WILLOW_LEAVES = BlockRegistry.registerDefaultBlock("willow_leaves", () -> leaves(MaterialColor.PLANT));
+        ALPHA_LEAVES = BlockRegistry.registerDefaultBlock("alpha_leaves", () -> BlockRegistry.leaves(MaterialColor.COLOR_LIGHT_GREEN));
+        APPLE_OAK_LEAVES = BlockRegistry.registerDefaultBlock("apple_oak_leaves", () -> BlockRegistry.appleLeaves(MaterialColor.PLANT));
+        BAMBOO_LEAVES = BlockRegistry.registerDefaultBlock("bamboo_leaves", () -> BlockRegistry.leaves(MaterialColor.PLANT));
+        BAOBAB_LEAVES = BlockRegistry.registerDefaultBlock("baobab_leaves", () -> BlockRegistry.leaves(MaterialColor.PLANT));
+        BLACKWOOD_LEAVES = BlockRegistry.registerDefaultBlock("blackwood_leaves", () -> BlockRegistry.leaves(MaterialColor.TERRACOTTA_GREEN));
+        CHERRY_LEAVES = BlockRegistry.registerDefaultBlock("cherry_leaves", () -> BlockRegistry.leaves(MaterialColor.PLANT));
+        CYPRESS_LEAVES = BlockRegistry.registerDefaultBlock("cypress_leaves", () -> BlockRegistry.leaves(MaterialColor.PLANT));
+        DEAD_LEAVES = BlockRegistry.registerDefaultBlock("dead_leaves", () -> BlockRegistry.leaves(MaterialColor.TERRACOTTA_GRAY));
+        DEAD_PINE_LEAVES = BlockRegistry.registerDefaultBlock("dead_pine_leaves", () -> BlockRegistry.leaves(MaterialColor.TERRACOTTA_GRAY));
+        EUCALYPTUS_LEAVES = BlockRegistry.registerDefaultBlock("eucalyptus_leaves", () -> BlockRegistry.leaves(MaterialColor.PLANT));
+        FLOWERING_LEAVES = BlockRegistry.registerDefaultBlock("flowering_leaves", () -> BlockRegistry.leaves(MaterialColor.PLANT));
+        GOLDEN_LARCH_LEAVES = BlockRegistry.registerDefaultBlock("golden_larch_leaves", () -> BlockRegistry.leaves(MaterialColor.COLOR_YELLOW));
+        JOSHUA_LEAVES = BlockRegistry.registerDefaultBlock("joshua_leaves", () -> BlockRegistry.joshuaLeaves(MaterialColor.PLANT));
+        LARCH_LEAVES = BlockRegistry.registerDefaultBlock("larch_leaves", () -> BlockRegistry.leaves(MaterialColor.PLANT));
+        MAPLE_LEAVES = BlockRegistry.registerDefaultBlock("maple_leaves", () -> BlockRegistry.leaves(MaterialColor.PLANT));
+        MAUVE_LEAVES = BlockRegistry.registerDefaultBlock("mauve_leaves", () -> BlockRegistry.mauveLeaves(MaterialColor.COLOR_PURPLE));
+        ORANGE_MAPLE_LEAVES = BlockRegistry.registerDefaultBlock("orange_maple_leaves", () -> BlockRegistry.leaves(MaterialColor.COLOR_ORANGE));
+        PALM_LEAVES = BlockRegistry.registerDefaultBlock("palm_leaves", () -> BlockRegistry.leaves(MaterialColor.PLANT));
+        PINE_LEAVES = BlockRegistry.registerDefaultBlock("pine_leaves", () -> BlockRegistry.leaves(MaterialColor.PLANT));
+        PINK_CHERRY_LEAVES = BlockRegistry.registerDefaultBlock("pink_cherry_leaves", () -> BlockRegistry.cherryLeaves(MaterialColor.COLOR_PINK));
+        REDWOOD_LEAVES = BlockRegistry.registerDefaultBlock("redwood_leaves", () -> BlockRegistry.leaves(MaterialColor.PLANT));
+        RED_CHERRY_LEAVES = BlockRegistry.registerDefaultBlock("red_cherry_leaves", () -> BlockRegistry.cherryLeaves(MaterialColor.COLOR_RED));
+        RED_MAPLE_LEAVES = BlockRegistry.registerDefaultBlock("red_maple_leaves", () -> BlockRegistry.leaves(MaterialColor.COLOR_RED));
+        BRIMWOOD_LEAVES = BlockRegistry.registerDefaultBlock("brimwood_leaves", () -> BlockRegistry.brimLeaves(MaterialColor.COLOR_BROWN));
+        SILVER_BIRCH_LEAVES = BlockRegistry.registerDefaultBlock("silver_birch_leaves", () -> BlockRegistry.leaves(MaterialColor.COLOR_YELLOW));
+        WHITE_CHERRY_LEAVES = BlockRegistry.registerDefaultBlock("white_cherry_leaves", () -> BlockRegistry.cherryLeaves(MaterialColor.TERRACOTTA_WHITE));
+        WILLOW_LEAVES = BlockRegistry.registerDefaultBlock("willow_leaves", () -> BlockRegistry.leaves(MaterialColor.PLANT));
 
         /*-----------------BRANCHES-----------------*/
         ACACIA_BRANCH = BlockRegistry.registerDefaultBlock("acacia_branch", () -> new BranchBlock(BlockBehaviour.Properties.of(Material.WOOD).noOcclusion().sound(SoundType.MANGROVE_ROOTS).strength(1.0F, 1.5F).dynamicShape()));
@@ -973,7 +976,7 @@ public class RuBlocks {
         //SMOULDERING_WOODLAND_BLOCKS
         ASHEN_DIRT = BlockRegistry.registerDefaultBlock("ashen_dirt", () -> new AshenDirtBlock(BlockBehaviour.Properties.of(Material.DIRT, MaterialColor.COLOR_GRAY).strength(0.5F).sound(SoundType.GRAVEL).randomTicks().lightLevel((bs) -> AshenDirtBlock.isSmouldering(bs) ? 7 : 0)));
         ASHEN_SHRUB = BlockRegistry.registerDefaultBlock("ashen_shrub", () -> new AshenShrubBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.ROOTED_DIRT).offsetType(BlockBehaviour.OffsetType.XZ).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true)));
-        ASHEN_LEAVES = BlockRegistry.registerDefaultBlock("ashen_leaves", () -> leaves(MaterialColor.COLOR_LIGHT_GRAY));
+        ASHEN_LEAVES = BlockRegistry.registerDefaultBlock("ashen_leaves", () -> BlockRegistry.leaves(MaterialColor.COLOR_LIGHT_GRAY));
         ASHEN_GRASS = BlockRegistry.registerDefaultBlock("ashen_grass", () -> new AshenTallGrassBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XYZ).hasPostProcess((bs, br, bp) -> AshenTallGrassBlock.isSmouldering(bs) ? true : false).emissiveRendering((bs, br, bp) -> AshenTallGrassBlock.isSmouldering(bs) ? true : false).lightLevel((bs) -> AshenTallGrassBlock.isSmouldering(bs) ? 5 : 0)));
 
         /*-----------------OTHER_BLOCKS-----------------*/

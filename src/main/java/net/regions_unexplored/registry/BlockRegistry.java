@@ -12,6 +12,10 @@ import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.registries.RegistryObject;
 import net.regions_unexplored.RegionsUnexploredMod;
+import net.regions_unexplored.world.level.block.AppleLeavesBlock;
+import net.regions_unexplored.world.level.block.JoshuaLeavesBlock;
+import net.regions_unexplored.world.level.block.MauveLeavesBlock;
+import net.regions_unexplored.world.level.block.RuBrimLeavesBlock;
 
 import java.util.function.Supplier;
 
@@ -69,8 +73,8 @@ public class BlockRegistry {
     public static LeavesBlock appleLeaves(MaterialColor colour) {
         return new AppleLeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES, colour).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(BlockRegistry::ocelotOrParrot).isSuffocating(BlockRegistry::never).isViewBlocking(BlockRegistry::never));
     }
-    public static RuSculkLeavesBlock sculkLeaves(MaterialColor colour) {
-        return new RuSculkLeavesBlock(colour);
+    public static RuBrimLeavesBlock brimLeaves(MaterialColor colour) {
+        return new RuBrimLeavesBlock(colour);
     }
 
 
