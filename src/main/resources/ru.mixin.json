@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "net.regions_unexplored.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "minVersion": "0.8",
+  "refmap": "ru.refmap.json",
+  "mixins": [
+    "TrunkPlacerDirtMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
