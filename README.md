@@ -1,5 +1,5 @@
 # Regions Unexplored
-The regions unexplored forge repo!
+The regions unexplored forge repository!
 
 ## Contributors:
 - UHQ-Games (Owner of RU)
