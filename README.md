@@ -23,4 +23,4 @@ We have a LTS and latest policy and all other versions will be unsupported and/o
 - 1.19.3
 
 
-this mod is made with love <3 and care for people who love explorations. 
+this mod is made with love <3 and care for people who love explorations.
