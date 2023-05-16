@@ -14,7 +14,6 @@ import net.regions_unexplored.client.particle.RegionsUnexploredParticleTypes;
 public class ParticleRegistry {
     @SubscribeEvent
     public static void registerParticles(RegisterParticleProvidersEvent event) {
-        //TODO:Complete Class
         Minecraft.getInstance().particleEngine.register((SimpleParticleType) RegionsUnexploredParticleTypes.MAUVE.get(), MauveParticle::provider);
         Minecraft.getInstance().particleEngine.register((SimpleParticleType) RegionsUnexploredParticleTypes.MYCOTOXIC_SPORE.get(), MycotoxicSporeParticle::provider);
     }

@@ -36,7 +36,7 @@ public class BiomeRegistry {
         register(context, RuBiomes.ORCHARD, ForestBiomes.orchard(featuresGetter, carversGetter));
         register(context, RuBiomes.SILVER_BIRCH_FOREST, ForestBiomes.silverBirchForest(featuresGetter, carversGetter));
         register(context, RuBiomes.TEMPERATE_GROVE, ForestBiomes.temperateGrove(featuresGetter, carversGetter));
-        register(context, RuBiomes.WILLOW_FOREST, ForestBiomes.mixedForest(featuresGetter, carversGetter));
+        register(context, RuBiomes.WILLOW_FOREST, ForestBiomes.willowForest(featuresGetter, carversGetter));
         //TAIGA
         register(context, RuBiomes.BLACKWOOD_FOREST, TaigaBiomes.blackwoodForest(featuresGetter, carversGetter));
         register(context, RuBiomes.BOREAL_FOREST, TaigaBiomes.borealForest(featuresGetter, carversGetter));

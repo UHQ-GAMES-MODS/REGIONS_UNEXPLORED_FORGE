@@ -1,4 +1,4 @@
-package net.regions_unexplored.data.worldgen.placement;
+package net.regions_unexplored.data.worldgen.placement.biome;
 
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
@@ -11,7 +11,7 @@ import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 
 import java.util.List;
 
-public class NetherPlacements {
+public class RuNetherBiomePlacements {
     //TODO:Build Class
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> featureGetter = context.lookup(Registries.CONFIGURED_FEATURE);
