@@ -14,6 +14,7 @@ import net.regions_unexplored.data.worldgen.biome.RuBiomes;
 import net.regions_unexplored.data.worldgen.biome.builder.*;
 
 public class BiomeRegistry {
+
     public static void addBiomes() {
         registerVillagerTypes();
     }
