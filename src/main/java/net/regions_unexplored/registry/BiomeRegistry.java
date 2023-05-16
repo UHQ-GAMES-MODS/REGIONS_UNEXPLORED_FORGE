@@ -22,7 +22,6 @@ public class BiomeRegistry {
     public static void bootstrap(BootstapContext<Biome> context) {
         HolderGetter<ConfiguredWorldCarver<?>> carversGetter = context.lookup(Registries.CONFIGURED_CARVER);
         HolderGetter<PlacedFeature> featuresGetter = context.lookup(Registries.PLACED_FEATURE);
-
         //TODO:Add biome builder classes
 
         //FOREST
@@ -38,15 +37,17 @@ public class BiomeRegistry {
         register(context, RuBiomes.TEMPERATE_GROVE, ForestBiomes.temperateGrove(featuresGetter, carversGetter));
         register(context, RuBiomes.WILLOW_FOREST, ForestBiomes.willowForest(featuresGetter, carversGetter));
         //TAIGA
-        register(context, RuBiomes.BLACKWOOD_FOREST, TaigaBiomes.blackwoodForest(featuresGetter, carversGetter));
-        register(context, RuBiomes.BOREAL_FOREST, TaigaBiomes.borealForest(featuresGetter, carversGetter));
-        register(context, RuBiomes.GOLDEN_BOREAL_FOREST, TaigaBiomes.goldenBorealForest(featuresGetter, carversGetter));
-        register(context, RuBiomes.PINE_FOREST, TaigaBiomes.pineForest(featuresGetter, carversGetter));
-        register(context, RuBiomes.REDWOODS, TaigaBiomes.redwoodForest(featuresGetter, carversGetter));
+        //TODO:rename to taigas
+        register(context, RuBiomes.BLACKWOOD_FOREST, TaigaBiomes.blackwoodTaiga(featuresGetter, carversGetter));
+        register(context, RuBiomes.BOREAL_FOREST, TaigaBiomes.borealTaiga(featuresGetter, carversGetter));
+        register(context, RuBiomes.GOLDEN_BOREAL_FOREST, TaigaBiomes.goldenBorealTaiga(featuresGetter, carversGetter));
+        register(context, RuBiomes.PINE_FOREST, TaigaBiomes.pineTaiga(featuresGetter, carversGetter));
+        register(context, RuBiomes.REDWOODS, TaigaBiomes.redwoods(featuresGetter, carversGetter));
         register(context, RuBiomes.SPARSE_REDWOODS, TaigaBiomes.sparseRedwoods(featuresGetter, carversGetter));
         //PLAINS
+        //TODO:rename FLOWER_FIELD(s)
         register(context, RuBiomes.BARLEY_FIELDS, PlainsBiomes.barleyFields(featuresGetter, carversGetter));
-        register(context, RuBiomes.FLOWER_FIELD, PlainsBiomes.flowerField(featuresGetter, carversGetter));
+        register(context, RuBiomes.FLOWER_FIELD, PlainsBiomes.flowerFields(featuresGetter, carversGetter));
         register(context, RuBiomes.GRASSLAND, PlainsBiomes.grassland(featuresGetter, carversGetter));
         register(context, RuBiomes.LUPINE_PLAINS, PlainsBiomes.lupinePlains(featuresGetter, carversGetter));
         register(context, RuBiomes.MEADOW, PlainsBiomes.meadow(featuresGetter, carversGetter));
@@ -60,7 +61,7 @@ public class BiomeRegistry {
         register(context, RuBiomes.FEN, WetBiomes.fen(featuresGetter, carversGetter));
         register(context, RuBiomes.FLOODED_PLAINS, WetBiomes.floodedPlains(featuresGetter, carversGetter));
         register(context, RuBiomes.FUNGAL_FEN, WetBiomes.fungalFen(featuresGetter, carversGetter));
-        register(context, RuBiomes.GIANT_BAYOU, WetBiomes.giantBayou(featuresGetter, carversGetter));
+        register(context, RuBiomes.GIANT_BAYOU, WetBiomes.oldGrowthBayou(featuresGetter, carversGetter));
         register(context, RuBiomes.OLD_GROWTH_RAINFOREST, WetBiomes.oldGrowthRainforest(featuresGetter, carversGetter));
         register(context, RuBiomes.RAINFOREST, WetBiomes.rainforest(featuresGetter, carversGetter));
         //ARID

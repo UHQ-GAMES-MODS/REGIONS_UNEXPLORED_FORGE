@@ -118,12 +118,12 @@ public class ForestBiomes {
     public static Biome bambooForest(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
         //TODO:Complete Biome
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
-                .skyColor(-6110795)
-                .fogColor(-5124939)
+                .skyColor(10666421)
+                .fogColor(11652277)
                 .waterColor(NORMAL_WATER_COLOR)
                 .waterFogColor(NORMAL_WATER_FOG_COLOR)
-                .foliageColorOverride(-5636253)
-                .grassColorOverride(-4923788)
+                .foliageColorOverride(11140963)
+                .grassColorOverride(11853428)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 
@@ -247,10 +247,10 @@ public class ForestBiomes {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(1.0F))
                 .fogColor(OVERWORLD_FOG_COLOR)
-                .waterColor(-11230855)
+                .waterColor(5546361)
                 .waterFogColor(NORMAL_WATER_FOG_COLOR)
-                .foliageColorOverride(-12810288)
-                .grassColorOverride(-9259116)
+                .foliageColorOverride(3966928)
+                .grassColorOverride(7518100)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 
@@ -281,8 +281,8 @@ public class ForestBiomes {
                 .fogColor(OVERWORLD_FOG_COLOR)
                 .waterColor(NORMAL_WATER_COLOR)
                 .waterFogColor(NORMAL_WATER_FOG_COLOR)
-                .foliageColorOverride(-6108056)
-                .grassColorOverride(-5059481)
+                .foliageColorOverride(10669160)
+                .grassColorOverride(11717735)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 
@@ -378,8 +378,8 @@ public class ForestBiomes {
                 .fogColor(OVERWORLD_FOG_COLOR)
                 .waterColor(NORMAL_WATER_COLOR)
                 .waterFogColor(NORMAL_WATER_FOG_COLOR)
-                .foliageColorOverride(-8999072)
-                .grassColorOverride(-8739993)
+                .foliageColorOverride(7778144)
+                .grassColorOverride(8037223)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 
