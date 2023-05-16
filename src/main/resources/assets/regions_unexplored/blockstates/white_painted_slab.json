@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "regions_unexplored:block/white_painted_slab"
+    },
+    "type=top": {
+      "model": "regions_unexplored:block/white_painted_slab_top"
+    },
+    "type=double": {
+      "model": "regions_unexplored:block/white_painted_slab_full"
+    }
+  }
+}

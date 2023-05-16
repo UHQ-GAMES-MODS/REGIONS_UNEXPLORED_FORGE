@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "": [
+      {
+      "model": "regions_unexplored:block/glistering_ivy_plant_1"
+      },
+      {
+        "model": "regions_unexplored:block/glistering_ivy_plant_1"
+      },
+      {
+        "model": "regions_unexplored:block/glistering_ivy_plant_2"
+      }
+    ]
+  }
+}

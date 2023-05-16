@@ -1,0 +1,7 @@
+{
+  "parent": "regions_unexplored:block/rock_pile",
+  "textures": {
+    "0": "block/blackstone",
+    "particle": "block/blackstone"
+  }
+}

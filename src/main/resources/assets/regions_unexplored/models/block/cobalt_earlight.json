@@ -1,0 +1,8 @@
+{
+  "parent": "regions_unexplored:block/one_layer_tall_sapling",
+  "textures": {
+    "cross": "regions_unexplored:block/cobalt_earlight",
+    "particle": "regions_unexplored:block/cobalt_earlight"
+  },
+  "render_type": "cutout"
+}

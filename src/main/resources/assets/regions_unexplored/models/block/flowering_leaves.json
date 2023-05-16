@@ -1,0 +1,9 @@
+{
+  "parent": "regions_unexplored:block/two_layer_leaves",
+  "textures": {
+    "0": "regions_unexplored:block/flowering_leaves",
+    "1": "regions_unexplored:block/flowering_leaves_flower",
+    "particle": "regions_unexplored:block/flowering_leaves"
+  },
+  "render_type": "cutout"
+}

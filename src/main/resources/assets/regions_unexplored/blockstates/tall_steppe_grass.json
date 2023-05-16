@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "regions_unexplored:block/tall_steppe_grass"
+    },
+    "half=lower": {
+      "model": "regions_unexplored:block/tall_steppe_grass_bottom"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "regions_unexplored:block/tall_blue_bioshroom_bottom",
+    "particle": "regions_unexplored:block/tall_blue_bioshroom_bottom"
+  },
+  "render_type": "cutout"
+}

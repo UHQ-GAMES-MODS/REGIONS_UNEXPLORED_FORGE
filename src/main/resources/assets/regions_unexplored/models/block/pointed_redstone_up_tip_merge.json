@@ -1,0 +1,7 @@
+{
+  "parent": "regions_unexplored:block/pointed_redstone",
+  "textures": {
+    "cross": "regions_unexplored:block/pointed_redstone_up_tip_merge"
+  },
+  "render_type": "cutout"
+}

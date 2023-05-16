@@ -1,0 +1,7 @@
+{
+  "parent": "block/flower_pot_cross",
+  "textures": {
+    "plant": "regions_unexplored:block/blue_bioshroom"
+  },
+  "render_type": "cutout"
+}

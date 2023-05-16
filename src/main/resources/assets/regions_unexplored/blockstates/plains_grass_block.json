@@ -1,0 +1,24 @@
+{
+  "variants": {
+    "snowy=false": [
+      {
+        "model": "regions_unexplored:block/plains_grass_block"
+      },
+      {
+        "model": "regions_unexplored:block/plains_grass_block",
+        "y": 90
+      },
+      {
+        "model": "regions_unexplored:block/plains_grass_block",
+        "y": 180
+      },
+      {
+        "model": "regions_unexplored:block/plains_grass_block",
+        "y": 270
+      }
+    ],
+    "snowy=true": {
+      "model": "regions_unexplored:block/plains_grass_block_snow"
+    }
+  }
+}

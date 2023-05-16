@@ -1,0 +1,9 @@
+{
+  "parent": "regions_unexplored:block/branch",
+  "textures": {
+    "log": "regions_unexplored:block/dead_log",
+    "branch": "regions_unexplored:block/dead_branch",
+    "particle": "regions_unexplored:block/dead_log"
+  },
+  "render_type": "cutout"
+}

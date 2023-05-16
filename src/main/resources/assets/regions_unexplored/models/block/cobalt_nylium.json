@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "regions_unexplored:block/cobalt_nylium",
+    "bottom": "minecraft:block/blackstone",
+    "side": "regions_unexplored:block/cobalt_nylium_side",
+    "particle": "regions_unexplored:block/cobalt_nylium"
+  }
+}

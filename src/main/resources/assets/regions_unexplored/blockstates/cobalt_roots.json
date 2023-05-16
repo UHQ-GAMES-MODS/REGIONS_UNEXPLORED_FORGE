@@ -1,0 +1,11 @@
+{
+  "variants": {
+  "": [
+    {
+      "model": "regions_unexplored:block/cobalt_roots_1"
+    },
+    {
+      "model": "regions_unexplored:block/cobalt_roots_2"
+    }
+  ]}
+}

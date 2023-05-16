@@ -1,0 +1,6 @@
+{
+  "parent": "regions_unexplored:block/empty_block",
+  "textures": {
+    "particle": "regions_unexplored:block/red_maple_leaves"
+  }
+}

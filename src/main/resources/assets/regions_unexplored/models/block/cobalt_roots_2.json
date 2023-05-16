@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "regions_unexplored:block/cobalt_roots_2"
+  },
+  "render_type": "cutout"
+}

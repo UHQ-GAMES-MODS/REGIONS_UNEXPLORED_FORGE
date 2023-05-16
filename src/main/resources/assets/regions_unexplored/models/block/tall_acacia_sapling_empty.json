@@ -1,0 +1,6 @@
+{
+  "parent": "regions_unexplored:block/empty_block",
+  "textures": {
+    "particle": "minecraft:block/acacia_leaves"
+  }
+}

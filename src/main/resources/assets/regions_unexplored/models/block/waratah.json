@@ -1,0 +1,8 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "regions_unexplored:block/waratah",
+    "particle": "regions_unexplored:block/waratah"
+  },
+  "render_type": "cutout"
+}

@@ -1,0 +1,10 @@
+{
+  "parent": "regions_unexplored:block/log_with_overlay",
+  "textures": {
+    "0": "regions_unexplored:block/eucalyptus_log",
+    "1": "regions_unexplored:block/eucalyptus_log_overlay_1",
+    "3": "regions_unexplored:block/eucalyptus_log_top",
+    "particle": "regions_unexplored:block/eucalyptus_log"
+  },
+  "render_type": "translucent"
+}

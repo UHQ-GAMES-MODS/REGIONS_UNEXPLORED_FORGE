@@ -1,0 +1,117 @@
+{
+  "variants": {
+    "facing=east": [
+      {
+        "model": "regions_unexplored:block/brown_wall_mushroom_4",
+        "y": 90
+      },
+      {
+        "model": "regions_unexplored:block/brown_wall_mushroom_4",
+        "y": 90
+      },
+      {
+        "model": "regions_unexplored:block/brown_wall_mushroom_5",
+        "y": 90
+      },
+      {
+        "model": "regions_unexplored:block/brown_wall_mushroom_5",
+        "y": 90
+      },
+      {
+        "model": "regions_unexplored:block/brown_wall_mushroom",
+        "y": 90
+      },
+      {
+        "model": "regions_unexplored:block/brown_wall_mushroom_2",
+        "y": 90
+      },
+      {
+        "model": "regions_unexplored:block/brown_wall_mushroom_3",
+        "y": 90
+      }
+    ],
+    "facing=north": [
+      {
+        "model": "regions_unexplored:block/brown_wall_mushroom_4"
+      },
+      {
+        "model": "regions_unexplored:block/brown_wall_mushroom_4"
+      },
+      {
+        "model": "regions_unexplored:block/brown_wall_mushroom_5"
+      },
+      {
+        "model": "regions_unexplored:block/brown_wall_mushroom_5"
+      },
+      {
+        "model": "regions_unexplored:block/brown_wall_mushroom"
+      },
+      {
+        "model": "regions_unexplored:block/brown_wall_mushroom_2"
+      },
+      {
+        "model": "regions_unexplored:block/brown_wall_mushroom_3"
+      }
+    ],
+    "facing=south": [
+      {
+        "model": "regions_unexplored:block/brown_wall_mushroom_4",
+        "y": 180
+      },
+      {
+        "model": "regions_unexplored:block/brown_wall_mushroom_4",
+        "y": 180
+      },
+      {
+        "model": "regions_unexplored:block/brown_wall_mushroom_5",
+        "y": 180
+      },
+      {
+        "model": "regions_unexplored:block/brown_wall_mushroom_5",
+        "y": 180
+      },
+      {
+        "model": "regions_unexplored:block/brown_wall_mushroom",
+        "y": 180
+      },
+      {
+        "model": "regions_unexplored:block/brown_wall_mushroom_2",
+        "y": 180
+      },
+      {
+        "model": "regions_unexplored:block/brown_wall_mushroom_3",
+        "y": 180
+      }
+    ],
+    "facing=west": [
+      {
+        "model": "regions_unexplored:block/brown_wall_mushroom_4",
+        "y": 270
+      },
+      {
+        "model": "regions_unexplored:block/brown_wall_mushroom_4",
+        "y": 270
+      },
+      {
+        "model": "regions_unexplored:block/brown_wall_mushroom_5",
+        "y": 270
+      },
+      {
+        "model": "regions_unexplored:block/brown_wall_mushroom_5",
+        "y": 270
+      },
+      {
+        "model": "regions_unexplored:block/brown_wall_mushroom",
+        "y": 270
+      },
+      {
+        "model": "regions_unexplored:block/brown_wall_mushroom_2",
+        "y": 270
+      },
+      {
+        "model": "regions_unexplored:block/brown_wall_mushroom_3",
+        "y": 270
+      }
+    ]
+  }
+}

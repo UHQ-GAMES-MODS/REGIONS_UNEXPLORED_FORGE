@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "regions_unexplored:block/mangrove_branch",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "regions_unexplored:block/mangrove_branch"
+    },
+    "facing=south": {
+      "model": "regions_unexplored:block/mangrove_branch",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "regions_unexplored:block/mangrove_branch",
+      "y": 270
+    }
+  }
+}

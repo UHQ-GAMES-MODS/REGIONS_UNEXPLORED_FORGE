@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "regions_unexplored:block/ash",
+    "up": "regions_unexplored:block/ash",
+    "north": "regions_unexplored:block/ash",
+    "east": "regions_unexplored:block/ash",
+    "south": "regions_unexplored:block/ash",
+    "west": "regions_unexplored:block/ash",
+    "particle": "regions_unexplored:block/ash"
+  }
+}

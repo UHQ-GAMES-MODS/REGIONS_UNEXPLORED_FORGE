@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "regions_unexplored:block/blue_bioshroom_block_glowing",
+    "particle": "regions_unexplored:block/blue_bioshroom_block_glowing"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "transition_block=true": {
+      "model": "regions_unexplored:block/brimwood_log_transition"
+    },
+    "transition_block=false": {
+      "model": "regions_unexplored:block/brimwood_log_magma"
+    }
+  }
+}

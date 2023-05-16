@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "regions_unexplored:block/forest_dirt",
+    "up": "regions_unexplored:block/forest_dirt",
+    "north": "regions_unexplored:block/forest_dirt",
+    "east": "regions_unexplored:block/forest_dirt",
+    "south": "regions_unexplored:block/forest_dirt",
+    "west": "regions_unexplored:block/forest_dirt",
+    "particle": "regions_unexplored:block/forest_dirt"
+  }
+}

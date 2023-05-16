@@ -1,0 +1,8 @@
+{
+  "parent": "regions_unexplored:block/tall_hyacinth_bloom_base",
+  "textures": {
+    "stock": "regions_unexplored:block/hyacinth_stock_tall_middle",
+    "particle": "regions_unexplored:block/hyacinth_petal"
+  },
+  "render_type": "cutout"
+}

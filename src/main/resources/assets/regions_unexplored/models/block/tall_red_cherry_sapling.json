@@ -1,0 +1,8 @@
+{
+  "parent": "regions_unexplored:block/one_layer_tall_sapling",
+  "textures": {
+    "cross": "regions_unexplored:block/tall_red_cherry_sapling",
+    "particle": "regions_unexplored:block/red_cherry_leaves"
+  },
+  "render_type": "cutout"
+}

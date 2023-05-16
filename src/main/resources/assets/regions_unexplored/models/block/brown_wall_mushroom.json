@@ -1,0 +1,8 @@
+{
+  "parent": "regions_unexplored:block/wall_mushroom",
+  "textures": {
+    "cross": "regions_unexplored:block/brown_wall_mushroom",
+    "particle": "regions_unexplored:block/brown_wall_mushroom"
+  },
+  "render_type": "cutout"
+}

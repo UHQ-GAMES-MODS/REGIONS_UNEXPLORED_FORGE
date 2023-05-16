@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "regions_unexplored:block/saguaro_cactus_corner"
+    },
+    "facing=east": {
+      "model": "regions_unexplored:block/saguaro_cactus_corner",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "regions_unexplored:block/saguaro_cactus_corner",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "regions_unexplored:block/saguaro_cactus_corner",
+      "y": 270
+    }
+  }
+}

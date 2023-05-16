@@ -1,0 +1,8 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "regions_unexplored:block/barley_bottom",
+    "particle": "regions_unexplored:block/barley_bottom"
+  },
+  "render_type": "cutout"
+}

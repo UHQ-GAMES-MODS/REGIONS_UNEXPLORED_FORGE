@@ -1,0 +1,9 @@
+{
+    "parent": "regions_unexplored:block/hanging_prismarite_tip_base",
+    "textures": {
+		"4": "regions_unexplored:block/hanging_prismarite_tip",
+		"5": "regions_unexplored:block/hanging_prismarite_tip_shine",
+		"particle": "regions_unexplored:block/hanging_prismarite_frustum"
+	},
+    "render_type": "translucent"
+}

@@ -1,0 +1,10 @@
+{
+  "parent": "regions_unexplored:block/bamboo_log_withleaf",
+  "textures": {
+    "all": "regions_unexplored:block/bamboo_log_leaves",
+    "particle": "regions_unexplored:block/bamboo_log_leaves",
+    "0": "regions_unexplored:block/bamboo_log",
+    "1": "regions_unexplored:block/bamboo_log_leaves"
+  },
+  "render_type": "cutout"
+}

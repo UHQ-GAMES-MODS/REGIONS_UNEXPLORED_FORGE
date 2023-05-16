@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "regions_unexplored:block/glistering_nylium"
+      },
+      {
+        "model": "regions_unexplored:block/glistering_nylium",
+        "y": 90
+      },
+      {
+        "model": "regions_unexplored:block/glistering_nylium",
+        "y": 180
+      },
+      {
+        "model": "regions_unexplored:block/glistering_nylium",
+        "y": 270
+      }
+    ]
+  }
+}

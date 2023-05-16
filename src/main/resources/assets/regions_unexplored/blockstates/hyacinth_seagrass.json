@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "regions_unexplored:block/hyacinth_seagrass"
+      },
+      {
+        "model": "regions_unexplored:block/hyacinth_seagrass_2"
+      }
+    ]
+  }
+}

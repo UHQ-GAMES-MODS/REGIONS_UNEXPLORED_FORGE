@@ -1,0 +1,9 @@
+{
+    "parent": "regions_unexplored:block/hanging_prismarite_frustum_base",
+	"textures": {
+		"0": "regions_unexplored:block/hanging_prismarite_frustum",
+		"1": "regions_unexplored:block/hanging_prismarite_frustum_shine",
+		"particle": "regions_unexplored:block/hanging_prismarite_frustum"
+	},
+    "render_type": "translucent"
+}

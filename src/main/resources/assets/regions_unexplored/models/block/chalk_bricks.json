@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "regions_unexplored:block/chalk_bricks",
+    "particle": "regions_unexplored:block/chalk_bricks"
+  }
+}

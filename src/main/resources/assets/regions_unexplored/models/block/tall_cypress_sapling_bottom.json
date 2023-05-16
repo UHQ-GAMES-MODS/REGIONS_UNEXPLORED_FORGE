@@ -1,0 +1,9 @@
+{
+  "parent": "regions_unexplored:block/two_layer_tall_sapling_bottom",
+  "textures": {
+    "leaves": "regions_unexplored:block/tall_cypress_sapling_leaves_bottom",
+    "log": "regions_unexplored:block/tall_cypress_sapling_log_bottom",
+    "particle": "regions_unexplored:block/cypress_leaves"
+  },
+  "render_type": "cutout"
+}

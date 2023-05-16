@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "regions_unexplored:block/hyacinth_stone",
+    "up": "regions_unexplored:block/hyacinth_stone",
+    "north": "regions_unexplored:block/hyacinth_stone",
+    "east": "regions_unexplored:block/hyacinth_stone",
+    "south": "regions_unexplored:block/hyacinth_stone",
+    "west": "regions_unexplored:block/hyacinth_stone",
+    "particle": "regions_unexplored:block/hyacinth_stone"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/flower_pot_cross",
+  "textures": {
+    "plant": "regions_unexplored:block/orange_maple_sapling"
+  },
+  "render_type": "cutout"
+}

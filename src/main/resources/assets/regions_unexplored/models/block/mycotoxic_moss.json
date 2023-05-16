@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "minecraft:block/netherrack",
+    "up": "regions_unexplored:block/mycotoxic_moss",
+    "north": "regions_unexplored:block/mycotoxic_moss_side",
+    "east": "regions_unexplored:block/mycotoxic_moss_side",
+    "south": "regions_unexplored:block/mycotoxic_moss_side",
+    "west": "regions_unexplored:block/mycotoxic_moss_side",
+    "particle": "regions_unexplored:block/mycotoxic_moss"
+  }
+}

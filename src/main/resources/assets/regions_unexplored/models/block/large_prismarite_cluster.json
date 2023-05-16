@@ -1,0 +1,9 @@
+{
+    "parent": "regions_unexplored:block/large_prismarite_cluster_base",
+    "textures": {
+        "2": "regions_unexplored:block/large_prismarite_cluster_top",
+        "3": "regions_unexplored:block/large_prismarite_cluster_top_shine",
+        "particle": "regions_unexplored:block/large_prismarite_cluster_top"
+    },
+    "render_type": "translucent"
+}

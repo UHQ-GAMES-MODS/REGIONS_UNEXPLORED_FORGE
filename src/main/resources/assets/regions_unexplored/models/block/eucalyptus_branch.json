@@ -1,0 +1,9 @@
+{
+  "parent": "regions_unexplored:block/branch",
+  "textures": {
+    "cross": "regions_unexplored:block/eucalyptus_branch",
+    "cross2": "regions_unexplored:block/eucalyptus_branch_2",
+    "particle": "regions_unexplored:block/eucalyptus_branch"
+  },
+  "render_type": "cutout"
+}

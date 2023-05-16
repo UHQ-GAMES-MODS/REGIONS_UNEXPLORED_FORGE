@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "regions_unexplored:block/palm_planks",
+    "top": "regions_unexplored:block/palm_planks",
+    "side": "regions_unexplored:block/palm_planks"
+  }
+}

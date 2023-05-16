@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "regions_unexplored:block/redwood_log_top",
+    "up": "regions_unexplored:block/redwood_log_top",
+    "north": "regions_unexplored:block/redwood_log_3",
+    "east": "regions_unexplored:block/redwood_log_3",
+    "south": "regions_unexplored:block/redwood_log_3",
+    "west": "regions_unexplored:block/redwood_log_3",
+    "particle": "regions_unexplored:block/redwood_log_top"
+  }
+}

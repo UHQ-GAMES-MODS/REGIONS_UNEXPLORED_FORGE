@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "regions_unexplored:block/plains_coarse_dirt",
+    "up": "regions_unexplored:block/plains_coarse_dirt",
+    "north": "regions_unexplored:block/plains_coarse_dirt",
+    "east": "regions_unexplored:block/plains_coarse_dirt",
+    "south": "regions_unexplored:block/plains_coarse_dirt",
+    "west": "regions_unexplored:block/plains_coarse_dirt",
+    "particle": "regions_unexplored:block/plains_coarse_dirt"
+  }
+}

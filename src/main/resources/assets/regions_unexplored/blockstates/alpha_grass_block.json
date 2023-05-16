@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "snowy=false": {
+      "model": "regions_unexplored:block/alpha_grass_block"
+    },
+    "snowy=true": {
+      "model": "regions_unexplored:block/alpha_grass_snow"
+    }
+  }
+}

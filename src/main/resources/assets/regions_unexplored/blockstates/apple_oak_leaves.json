@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "regions_unexplored:block/apple_oak_leaves_stage0"
+    },
+    "age=1": {
+      "model": "regions_unexplored:block/apple_oak_leaves_stage0"
+    },
+    "age=2": {
+      "model": "regions_unexplored:block/apple_oak_leaves_stage1"
+    },
+    "age=3": {
+      "model": "regions_unexplored:block/apple_oak_leaves_stage1"
+    },
+    "age=4": {
+      "model": "regions_unexplored:block/apple_oak_leaves_stage2"
+    }
+  }
+}

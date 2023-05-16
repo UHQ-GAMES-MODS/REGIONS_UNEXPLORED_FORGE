@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_side",
+  "textures": {
+    "texture": "regions_unexplored:block/cypress_planks",
+    "particle": "regions_unexplored:block/cypress_planks"
+  }
+}

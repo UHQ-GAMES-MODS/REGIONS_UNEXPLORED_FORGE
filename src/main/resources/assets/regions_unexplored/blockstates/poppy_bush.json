@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "regions_unexplored:block/poppy_bush_1"
+      },
+      {
+        "model": "regions_unexplored:block/poppy_bush_2"
+      }
+    ]
+  }
+}

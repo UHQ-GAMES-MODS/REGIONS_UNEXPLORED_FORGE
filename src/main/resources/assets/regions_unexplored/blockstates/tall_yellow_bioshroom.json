@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "regions_unexplored:block/tall_yellow_bioshroom"
+    },
+    "half=lower": {
+      "model": "regions_unexplored:block/tall_yellow_bioshroom_bottom"
+    }
+  }
+}

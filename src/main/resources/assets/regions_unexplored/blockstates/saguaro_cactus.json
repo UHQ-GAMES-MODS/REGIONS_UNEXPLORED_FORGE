@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "cactus_shape=east_west": {
+      "model": "regions_unexplored:block/saguaro_cactus",
+      "x": 90,
+      "y": 90
+    },
+    "cactus_shape=up_down": {
+      "model": "regions_unexplored:block/saguaro_cactus"
+    },
+    "cactus_shape=north_south": {
+      "model": "regions_unexplored:block/saguaro_cactus",
+      "x": 90
+    },
+    "cactus_shape=south_up": {
+      "model": "regions_unexplored:block/saguaro_cactus_corner"
+    },
+    "cactus_shape=west_up": {
+      "model": "regions_unexplored:block/saguaro_cactus_corner",
+      "y": 90
+    },
+    "cactus_shape=north_up": {
+      "model": "regions_unexplored:block/saguaro_cactus_corner",
+      "y": 180
+    },
+    "cactus_shape=east_up": {
+      "model": "regions_unexplored:block/saguaro_cactus_corner",
+      "y": 270
+    }
+  }
+}

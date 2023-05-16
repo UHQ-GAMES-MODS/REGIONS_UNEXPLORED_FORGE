@@ -1,0 +1,9 @@
+{
+  "parent": "regions_unexplored:block/hanging_earlight_plant_base",
+  "textures": {
+    "1": "regions_unexplored:block/hanging_earlight_fuzz",
+    "particle": "regions_unexplored:block/hanging_earlight_plant",
+    "cross": "regions_unexplored:block/hanging_earlight_plant"
+  },
+  "render_type": "cutout"
+}

@@ -1,0 +1,38 @@
+{
+  "variants": {
+    "smouldering=true": [
+      {
+        "model": "regions_unexplored:block/ashen_dirt_smouldering"
+      },
+      {
+        "model": "regions_unexplored:block/ashen_dirt_smouldering",
+        "y": 90
+      },
+      {
+        "model": "regions_unexplored:block/ashen_dirt_smouldering",
+        "y": 180
+      },
+      {
+        "model": "regions_unexplored:block/ashen_dirt_smouldering",
+        "y": 270
+      }
+    ],
+    "smouldering=false": [
+      {
+        "model": "regions_unexplored:block/ashen_dirt"
+      },
+      {
+        "model": "regions_unexplored:block/ashen_dirt",
+        "y": 90
+      },
+      {
+        "model": "regions_unexplored:block/ashen_dirt",
+        "y": 180
+      },
+      {
+        "model": "regions_unexplored:block/ashen_dirt",
+        "y": 270
+      }
+    ]
+  }
+}

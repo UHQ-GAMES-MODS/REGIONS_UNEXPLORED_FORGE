@@ -1,0 +1,7 @@
+{
+  "parent": "block/flower_pot_cross",
+  "textures": {
+    "plant": "regions_unexplored:block/trillium_white"
+  },
+  "render_type": "cutout"
+}

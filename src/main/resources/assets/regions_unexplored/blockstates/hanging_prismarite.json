@@ -1,0 +1,18 @@
+{
+  "variants": {
+    "hanging_prismarite_shape=column": [
+      {
+        "model": "regions_unexplored:block/hanging_prismarite_column_1"
+      },
+      {
+        "model": "regions_unexplored:block/hanging_prismarite_column_2"
+      }
+    ],
+    "hanging_prismarite_shape=frustum": {
+      "model": "regions_unexplored:block/hanging_prismarite_frustum"
+    },
+    "hanging_prismarite_shape=tip": {
+      "model": "regions_unexplored:block/hanging_prismarite_tip"
+    }
+  }
+}

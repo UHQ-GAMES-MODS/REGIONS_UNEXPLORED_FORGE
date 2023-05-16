@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "regions_unexplored:block/ashen_grass"
+  },
+  "render_type": "cutout"
+}

@@ -1,0 +1,10 @@
+{
+  "parent": "regions_unexplored:block/nether_fern",
+  "textures": {
+    "all": "regions_unexplored:block/glistering_fern_leaf",
+    "particle": "regions_unexplored:block/glistering_fern_leaf",
+    "1": "regions_unexplored:block/glistering_fern_leaf",
+    "2": "regions_unexplored:block/glistering_fern_seed"
+  },
+  "render_type": "cutout"
+}

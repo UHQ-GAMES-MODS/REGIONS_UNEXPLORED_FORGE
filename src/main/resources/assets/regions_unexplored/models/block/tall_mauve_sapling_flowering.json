@@ -1,0 +1,8 @@
+{
+  "parent": "regions_unexplored:block/one_layer_tall_sapling",
+  "textures": {
+    "cross": "regions_unexplored:block/tall_mauve_sapling_flowering",
+    "particle": "regions_unexplored:block/mauve_leaves"
+  },
+  "render_type": "cutout"
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/tinted_cross",
+  "textures": {
+    "cross": "regions_unexplored:block/small_desert_shrub"
+  },
+  "render_type": "cutout"
+}

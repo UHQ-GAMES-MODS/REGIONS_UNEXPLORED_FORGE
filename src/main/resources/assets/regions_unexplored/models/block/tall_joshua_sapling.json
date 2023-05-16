@@ -1,0 +1,9 @@
+{
+  "parent": "regions_unexplored:block/two_layer_tall_sapling",
+  "textures": {
+    "leaves": "regions_unexplored:block/tall_joshua_sapling_leaves",
+    "log": "regions_unexplored:block/tall_joshua_sapling_log",
+    "particle": "regions_unexplored:item/joshua_leaves"
+  },
+  "render_type": "cutout"
+}

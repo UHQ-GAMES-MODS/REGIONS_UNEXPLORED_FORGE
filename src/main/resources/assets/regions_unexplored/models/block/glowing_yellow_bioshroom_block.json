@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "regions_unexplored:block/yellow_bioshroom_block_glowing_bottom",
+    "up": "regions_unexplored:block/yellow_bioshroom_block_top",
+    "north": "regions_unexplored:block/yellow_bioshroom_block_glowing",
+    "east": "regions_unexplored:block/yellow_bioshroom_block_glowing",
+    "south": "regions_unexplored:block/yellow_bioshroom_block_glowing",
+    "west": "regions_unexplored:block/yellow_bioshroom_block_glowing",
+    "particle": "regions_unexplored:block/yellow_bioshroom_block_glowing"
+  }
+}

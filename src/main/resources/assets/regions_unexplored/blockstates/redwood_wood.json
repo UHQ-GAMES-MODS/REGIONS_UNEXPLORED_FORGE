@@ -1,0 +1,70 @@
+{
+  "variants": {
+    "axis=x": [
+      {
+        "model": "regions_unexplored:block/redwood_wood",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "regions_unexplored:block/redwood_wood_1",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "regions_unexplored:block/redwood_wood_2",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "regions_unexplored:block/redwood_wood_3",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "regions_unexplored:block/redwood_wood_4",
+        "x": 90,
+        "y": 90
+      }
+    ],
+    "axis=y": [
+      {
+        "model": "regions_unexplored:block/redwood_wood"
+      },
+      {
+        "model": "regions_unexplored:block/redwood_wood_1"
+      },
+      {
+        "model": "regions_unexplored:block/redwood_wood_2"
+      },
+      {
+        "model": "regions_unexplored:block/redwood_wood_3"
+      },
+      {
+        "model": "regions_unexplored:block/redwood_wood_4"
+      }
+    ],
+    "axis=z": [
+      {
+        "model": "regions_unexplored:block/redwood_wood",
+        "x": 90
+      },
+      {
+        "model": "regions_unexplored:block/redwood_wood_1",
+        "x": 90
+      },
+      {
+        "model": "regions_unexplored:block/redwood_wood_2",
+        "x": 90
+      },
+      {
+        "model": "regions_unexplored:block/redwood_wood_3",
+        "x": 90
+      },
+      {
+        "model": "regions_unexplored:block/redwood_wood_4",
+        "x": 90
+      }
+    ]
+  }
+}

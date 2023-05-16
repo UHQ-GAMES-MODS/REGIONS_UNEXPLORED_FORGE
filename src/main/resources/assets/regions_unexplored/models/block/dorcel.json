@@ -1,0 +1,8 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "regions_unexplored:block/dorcel",
+    "particle": "regions_unexplored:block/dorcel"
+  },
+  "render_type": "cutout"
+}

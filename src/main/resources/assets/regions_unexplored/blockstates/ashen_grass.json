@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "smouldering=true": {
+      "model": "regions_unexplored:block/ashen_grass_smouldering"
+    },
+    "smouldering=false": {
+      "model": "regions_unexplored:block/ashen_grass"
+    }
+  }
+}

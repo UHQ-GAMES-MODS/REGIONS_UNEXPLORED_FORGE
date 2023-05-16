@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_post",
+  "textures": {
+    "texture": "regions_unexplored:block/eucalyptus_planks",
+    "particle": "regions_unexplored:block/eucalyptus_planks"
+  }
+}

@@ -1,0 +1,50 @@
+{
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "regions_unexplored:block/joshua_beard",
+		"cross": "regions_unexplored:block/joshua_beard"
+	},
+	"elements": [
+		{
+			"from": [-1, 8.18923, 14.47867],
+			"to": [17, 16.18923, 14.47867],
+			"shade": false,
+			"rotation": {"angle": 22.5, "axis": "x", "origin": [8, 12.18923, 14.47867]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 8], "texture": "#cross"},
+				"south": {"uv": [0, 0, 16, 8], "texture": "#cross"}
+			}
+		},
+		{
+			"from": [-1, 0.57403, 14.38582],
+			"to": [17, 8.57403, 14.38582],
+			"shade": false,
+			"rotation": {"angle": 22.5, "axis": "x", "origin": [8, 4.57403, 14.38582]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 8], "texture": "#cross"},
+				"south": {"uv": [0, 0, 16, 8], "texture": "#cross"}
+			}
+		},
+		{
+			"from": [-1, -3.11985, 14.11392],
+			"to": [17, 4.88015, 14.11392],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "x", "origin": [8, 0.88015, 14.11392]},
+			"faces": {
+				"north": {"uv": [0, 8, 16, 16], "texture": "#cross"},
+				"south": {"uv": [0, 8, 16, 16], "texture": "#cross"}
+			}
+		},
+		{
+			"from": [-1, 3.95122, 14.11392],
+			"to": [17, 11.95122, 14.11392],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "x", "origin": [8, 7.95122, 14.11392]},
+			"faces": {
+				"north": {"uv": [0, 8, 16, 16], "texture": "#cross"},
+				"south": {"uv": [0, 8, 16, 16], "texture": "#cross"}
+			}
+		}
+	]
+}

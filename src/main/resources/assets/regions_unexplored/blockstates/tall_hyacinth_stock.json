@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "tall_hyacinth_stock_shape=middle": {
+      "model": "regions_unexplored:block/tall_hyacinth_stock_middle"
+    },
+    "tall_hyacinth_stock_shape=frustum": {
+      "model": "regions_unexplored:block/tall_hyacinth_stock_frustum"
+    },
+    "tall_hyacinth_stock_shape=tip": {
+      "model": "regions_unexplored:block/tall_hyacinth_stock_tip"
+    },
+    "tall_hyacinth_stock_shape=base": {
+      "model": "regions_unexplored:block/tall_hyacinth_stock_base"
+    },
+    "tall_hyacinth_stock_shape=base_frustum": {
+      "model": "regions_unexplored:block/tall_hyacinth_stock_base_frustum"
+    },
+    "tall_hyacinth_stock_shape=base_tip": {
+      "model": "regions_unexplored:block/tall_hyacinth_stock_base_tip"
+    }
+  }
+}

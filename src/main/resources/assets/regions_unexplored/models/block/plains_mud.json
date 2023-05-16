@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "regions_unexplored:block/plains_mud",
+    "up": "regions_unexplored:block/plains_mud",
+    "north": "regions_unexplored:block/plains_mud",
+    "east": "regions_unexplored:block/plains_mud",
+    "south": "regions_unexplored:block/plains_mud",
+    "west": "regions_unexplored:block/plains_mud",
+    "particle": "regions_unexplored:block/plains_mud"
+  }
+}

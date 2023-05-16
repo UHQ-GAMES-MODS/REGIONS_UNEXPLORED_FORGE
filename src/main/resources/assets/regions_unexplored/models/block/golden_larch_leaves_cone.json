@@ -1,0 +1,7 @@
+{
+  "parent": "block/leaves",
+  "textures": {
+    "all": "regions_unexplored:block/golden_larch_leaves_cone",
+    "particle": "regions_unexplored:block/golden_larch_leaves_cone"
+  }
+}

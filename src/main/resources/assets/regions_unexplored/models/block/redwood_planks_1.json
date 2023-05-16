@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "regions_unexplored:block/redwood_planks_1",
+    "particle": "regions_unexplored:block/redwood_planks"
+  }
+}

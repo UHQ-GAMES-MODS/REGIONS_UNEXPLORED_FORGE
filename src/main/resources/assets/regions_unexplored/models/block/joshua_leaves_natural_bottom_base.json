@@ -1,0 +1,85 @@
+{
+	"ambientocclusion": false,
+	"elements": [
+		{
+			"from": [-8, -8, 8],
+			"to": [24, 16, 8],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 0, 8], "rescale": true},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#cross", "tintindex": 0},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#cross", "tintindex": 0}
+			}
+		},
+		{
+			"from": [-8, -8, 8],
+			"to": [24, 16, 8],
+			"shade": false,
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, 0, 8], "rescale": true},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#cross", "tintindex": 0},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#cross", "tintindex": 0}
+			}
+		},
+		{
+			"from": [-8, -8, 8],
+			"to": [24, 16, 8],
+			"shade": false,
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8], "rescale": true},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#cross", "tintindex": 0},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#cross", "tintindex": 0}
+			}
+		},
+		{
+			"from": [0, -3, 15],
+			"to": [16, 5, 15],
+			"shade": false,
+			"rotation": {"angle": 0, "axis": "x", "origin": [8, 1, 15]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 8], "rotation": 180, "texture": "#beard"},
+				"south": {"uv": [0, 0, 16, 8], "rotation": 180, "texture": "#beard"}
+			}
+		},
+		{
+			"from": [0, -3, 1],
+			"to": [16, 5, 1],
+			"shade": false,
+			"rotation": {"angle": 0, "axis": "x", "origin": [8, 1, 1]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 8], "rotation": 180, "texture": "#beard"},
+				"south": {"uv": [0, 0, 16, 8], "rotation": 180, "texture": "#beard"}
+			}
+		},
+		{
+			"from": [1, -3, 0],
+			"to": [1, 5, 16],
+			"shade": false,
+			"rotation": {"angle": 0, "axis": "y", "origin": [1, 1, 8]},
+			"faces": {
+				"east": {"uv": [0, 0, 16, 8], "rotation": 180, "texture": "#beard"},
+				"west": {"uv": [0, 0, 16, 8], "rotation": 180, "texture": "#beard"}
+			}
+		},
+		{
+			"from": [15, -3, 0],
+			"to": [15, 5, 16],
+			"shade": false,
+			"rotation": {"angle": 0, "axis": "y", "origin": [15, 1, 8]},
+			"faces": {
+				"east": {"uv": [0, 0, 16, 8], "rotation": 180, "texture": "#beard"},
+				"west": {"uv": [0, 0, 16, 8], "rotation": 180, "texture": "#beard"}
+			}
+		},
+		{
+			"from": [8, -8, -8],
+			"to": [8, 16, 24],
+			"shade": false,
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8], "rescale": true},
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#cross", "tintindex": 0},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#cross", "tintindex": 0}
+			}
+		}
+	]
+}

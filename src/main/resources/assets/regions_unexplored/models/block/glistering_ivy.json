@@ -1,0 +1,9 @@
+{
+	"parent": "regions_unexplored:block/glister_ivy_head_base",
+	"textures": {
+		"1": "regions_unexplored:block/glister_bulb_head",
+		"particle": "regions_unexplored:block/glister_ivy_plant_1",
+		"cross": "regions_unexplored:block/glister_ivy_plant_1"
+	},
+	"render_type": "cutout"
+}

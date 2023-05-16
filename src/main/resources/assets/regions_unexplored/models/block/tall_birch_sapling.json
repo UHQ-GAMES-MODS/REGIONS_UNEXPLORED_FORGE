@@ -1,0 +1,9 @@
+{
+  "parent": "regions_unexplored:block/two_layer_tall_sapling",
+  "textures": {
+    "leaves": "regions_unexplored:block/tall_birch_sapling_leaves",
+    "log": "regions_unexplored:block/tall_birch_sapling_log",
+    "particle": "minecraft:block/birch_leaves"
+  },
+  "render_type": "cutout"
+}

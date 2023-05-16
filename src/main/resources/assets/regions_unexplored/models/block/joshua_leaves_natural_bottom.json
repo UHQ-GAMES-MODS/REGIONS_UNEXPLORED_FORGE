@@ -1,0 +1,9 @@
+{
+  "parent": "regions_unexplored:block/joshua_leaves_natural_bottom_base",
+  "textures": {
+    "particle": "regions_unexplored:block/joshua_leaves_bottom",
+    "cross": "regions_unexplored:block/joshua_leaves_bottom",
+    "beard": "regions_unexplored:block/joshua_beard"
+  },
+  "render_type": "cutout"
+}

@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "moisture=0": {
+      "model": "regions_unexplored:block/plains_farmland"
+    },
+    "moisture=1": {
+      "model": "regions_unexplored:block/plains_farmland"
+    },
+    "moisture=2": {
+      "model": "regions_unexplored:block/plains_farmland"
+    },
+    "moisture=3": {
+      "model": "regions_unexplored:block/plains_farmland"
+    },
+    "moisture=4": {
+      "model": "regions_unexplored:block/plains_farmland"
+    },
+    "moisture=5": {
+      "model": "regions_unexplored:block/plains_farmland"
+    },
+    "moisture=6": {
+      "model": "regions_unexplored:block/plains_farmland"
+    },
+    "moisture=7": {
+      "model": "regions_unexplored:block/plains_farmland_moist"
+    }
+  }
+}

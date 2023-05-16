@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "regions_unexplored:item/eucalyptus_log_top",
+    "up": "regions_unexplored:item/eucalyptus_log_top",
+    "north": "regions_unexplored:item/eucalyptus_log",
+    "east": "regions_unexplored:item/eucalyptus_log",
+    "south": "regions_unexplored:item/eucalyptus_log",
+    "west": "regions_unexplored:item/eucalyptus_log",
+    "particle": "regions_unexplored:item/eucalyptus_log_top"
+  }
+}

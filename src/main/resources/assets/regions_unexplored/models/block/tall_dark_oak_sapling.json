@@ -1,0 +1,9 @@
+{
+  "parent": "regions_unexplored:block/two_layer_tall_sapling",
+  "textures": {
+    "leaves": "regions_unexplored:block/tall_dark_oak_sapling_leaves",
+    "log": "regions_unexplored:block/tall_dark_oak_sapling_log",
+    "particle": "minecraft:block/dark_oak_leaves"
+  },
+  "render_type": "cutout"
+}

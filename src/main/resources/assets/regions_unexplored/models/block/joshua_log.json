@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "regions_unexplored:block/joshua_log_top",
+    "up": "regions_unexplored:block/joshua_log_top",
+    "north": "regions_unexplored:block/joshua_log",
+    "east": "regions_unexplored:block/joshua_log",
+    "south": "regions_unexplored:block/joshua_log",
+    "west": "regions_unexplored:block/joshua_log",
+    "particle": "regions_unexplored:block/joshua_log_top"
+  }
+}

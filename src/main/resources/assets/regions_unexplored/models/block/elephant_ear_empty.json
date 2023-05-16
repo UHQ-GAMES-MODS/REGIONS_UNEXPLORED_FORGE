@@ -1,0 +1,7 @@
+{
+  "parent": "regions_unexplored:block/empty_block",
+  "textures": {
+    "particle": "regions_unexplored:block/elephant_ear_leaf"
+  },
+  "render_type": "cutout"
+}

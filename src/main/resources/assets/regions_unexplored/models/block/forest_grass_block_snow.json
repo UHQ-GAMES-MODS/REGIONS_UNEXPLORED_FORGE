@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "regions_unexplored:block/ru_grass_block_top",
+    "bottom": "regions_unexplored:block/forest_dirt",
+    "side": "regions_unexplored:block/forest_grass_block_snow",
+    "particle": "regions_unexplored:block/forest_dirt"
+  },
+  "render_type": "cutout_mipped"
+}

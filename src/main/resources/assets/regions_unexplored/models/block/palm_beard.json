@@ -1,0 +1,8 @@
+{
+  "parent": "regions_unexplored:block/beard_block",
+  "textures": {
+    "particle": "regions_unexplored:block/palm_beard",
+    "cross": "regions_unexplored:block/palm_beard"
+  },
+  "render_type": "cutout"
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "block/template_orientable_trapdoor_top",
+  "textures": {
+    "texture": "regions_unexplored:block/eucalyptus_trapdoor",
+    "particle": "regions_unexplored:block/eucalyptus_trapdoor"
+  },
+  "render_type": "cutout"
+}

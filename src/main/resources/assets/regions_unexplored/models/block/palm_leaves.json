@@ -1,0 +1,12 @@
+{
+  "parent": "regions_unexplored:block/leaves_all",
+  "textures": {
+    "north": "regions_unexplored:block/palm_leaves_side",
+    "south": "regions_unexplored:block/palm_leaves_side",
+    "east": "regions_unexplored:block/palm_leaves_side",
+    "west": "regions_unexplored:block/palm_leaves_side",
+    "up": "regions_unexplored:block/palm_leaves_top",
+    "down": "regions_unexplored:block/palm_leaves_top",
+    "particle": "regions_unexplored:block/palm_leaves_side"
+  }
+}

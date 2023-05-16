@@ -1,0 +1,8 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "regions_unexplored:block/hyssop",
+    "particle": "regions_unexplored:block/hyssop"
+  },
+  "render_type": "cutout"
+}

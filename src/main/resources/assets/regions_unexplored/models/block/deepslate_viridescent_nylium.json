@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "minecraft:block/deepslate",
+    "up": "regions_unexplored:block/viridescent_nylium",
+    "north": "regions_unexplored:block/deepslate_viridescent_nylium_side",
+    "east": "regions_unexplored:block/deepslate_viridescent_nylium_side",
+    "south": "regions_unexplored:block/deepslate_viridescent_nylium_side",
+    "west": "regions_unexplored:block/deepslate_viridescent_nylium_side",
+    "particle": "regions_unexplored:block/viridescent_nylium"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "regions_unexplored:block/bamboo_log_noleaf",
+  "textures": {
+    "all": "regions_unexplored:block/stripped_bamboo_log",
+    "particle": "regions_unexplored:block/stripped_bamboo_log",
+    "0": "regions_unexplored:block/stripped_bamboo_log"
+  },
+  "render_type": "cutout"
+}

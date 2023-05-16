@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "regions_unexplored:block/mossy_stone",
+    "up": "regions_unexplored:block/mossy_stone",
+    "north": "regions_unexplored:block/mossy_stone",
+    "east": "regions_unexplored:block/mossy_stone",
+    "south": "regions_unexplored:block/mossy_stone",
+    "west": "regions_unexplored:block/mossy_stone",
+    "particle": "regions_unexplored:block/mossy_stone"
+  }
+}

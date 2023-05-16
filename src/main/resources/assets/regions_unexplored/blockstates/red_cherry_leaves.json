@@ -1,0 +1,33 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "regions_unexplored:block/red_cherry_leaves"
+      },
+      {
+        "model": "regions_unexplored:block/red_cherry_leaves_1"
+      },
+      {
+        "model": "regions_unexplored:block/red_cherry_leaves_1"
+      },
+      {
+        "model": "regions_unexplored:block/red_cherry_leaves_2"
+      },
+      {
+        "model": "regions_unexplored:block/red_cherry_leaves_2"
+      },
+      {
+        "model": "regions_unexplored:block/red_cherry_leaves_2"
+      },
+      {
+        "model": "regions_unexplored:block/red_cherry_leaves_2"
+      },
+      {
+        "model": "regions_unexplored:block/red_cherry_leaves_2"
+      },
+      {
+        "model": "regions_unexplored:block/red_cherry_leaves_2"
+      }
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "regions_unexplored:block/cactus_flower",
+    "particle": "regions_unexplored:block/cactus_flower"
+  },
+  "render_type": "cutout"
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "regions_unexplored:block/tassel_bottom",
+    "particle": "regions_unexplored:block/tassel_bottom"
+  },
+  "render_type": "cutout"
+}

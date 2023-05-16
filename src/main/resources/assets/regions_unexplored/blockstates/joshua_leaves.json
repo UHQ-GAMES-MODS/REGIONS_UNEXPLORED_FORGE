@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "regions_unexplored:block/joshua_leaves_top"
+    },
+    "half=lower,natural=false": {
+      "model": "regions_unexplored:block/joshua_leaves_bottom"
+    },
+    "half=lower,natural=true": {
+      "model": "regions_unexplored:block/joshua_leaves_natural_bottom"
+    }
+  }
+}

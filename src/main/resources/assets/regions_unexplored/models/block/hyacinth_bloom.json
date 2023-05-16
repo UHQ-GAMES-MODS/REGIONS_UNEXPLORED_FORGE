@@ -1,0 +1,10 @@
+{
+  "parent": "regions_unexplored:block/hyacinth_bloom_base",
+  "textures": {
+    "stock": "regions_unexplored:block/hyacinth_stock",
+    "particle": "regions_unexplored:block/hyacinth_petal",
+    "flower": "regions_unexplored:block/hyacinth_petal",
+    "base": "regions_unexplored:block/hyacinth_base"
+  },
+  "render_type": "cutout"
+}

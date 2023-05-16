@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "regions_unexplored:block/redwood_planks"
+      },
+      {
+        "model": "regions_unexplored:block/redwood_planks_1"
+      }
+    ]
+  }
+}

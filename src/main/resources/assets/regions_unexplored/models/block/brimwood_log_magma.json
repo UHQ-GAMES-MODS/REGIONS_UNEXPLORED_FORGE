@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "regions_unexplored:block/brimwood_log_top",
+    "up": "regions_unexplored:block/brimwood_log_top",
+    "north": "regions_unexplored:block/brimwood_log_magma",
+    "east": "regions_unexplored:block/brimwood_log_magma",
+    "south": "regions_unexplored:block/brimwood_log_magma",
+    "west": "regions_unexplored:block/brimwood_log_magma",
+    "particle": "regions_unexplored:block/brimwood_log_top"
+  }
+}

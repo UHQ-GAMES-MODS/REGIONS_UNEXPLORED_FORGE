@@ -1,0 +1,8 @@
+{
+  "parent": "block/template_orientable_trapdoor_bottom",
+  "textures": {
+    "texture": "regions_unexplored:block/cypress_trapdoor",
+    "particle": "regions_unexplored:block/cypress_trapdoor"
+  },
+  "render_type": "cutout"
+}

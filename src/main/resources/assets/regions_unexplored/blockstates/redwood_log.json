@@ -1,0 +1,70 @@
+{
+  "variants": {
+    "axis=x": [
+      {
+        "model": "regions_unexplored:block/redwood_log",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "regions_unexplored:block/redwood_log_1",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "regions_unexplored:block/redwood_log_2",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "regions_unexplored:block/redwood_log_3",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "regions_unexplored:block/redwood_log_4",
+        "x": 90,
+        "y": 90
+      }
+    ],
+    "axis=y": [
+      {
+        "model": "regions_unexplored:block/redwood_log"
+      },
+      {
+        "model": "regions_unexplored:block/redwood_log_1"
+      },
+      {
+        "model": "regions_unexplored:block/redwood_log_2"
+      },
+      {
+        "model": "regions_unexplored:block/redwood_log_3"
+      },
+      {
+        "model": "regions_unexplored:block/redwood_log_4"
+      }
+    ],
+    "axis=z": [
+      {
+        "model": "regions_unexplored:block/redwood_log",
+        "x": 90
+      },
+      {
+        "model": "regions_unexplored:block/redwood_log_1",
+        "x": 90
+      },
+      {
+        "model": "regions_unexplored:block/redwood_log_2",
+        "x": 90
+      },
+      {
+        "model": "regions_unexplored:block/redwood_log_3",
+        "x": 90
+      },
+      {
+        "model": "regions_unexplored:block/redwood_log_4",
+        "x": 90
+      }
+    ]
+  }
+}

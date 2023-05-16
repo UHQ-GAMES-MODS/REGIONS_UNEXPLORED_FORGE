@@ -1,0 +1,9 @@
+{
+  "parent": "regions_unexplored:block/branch",
+  "textures": {
+    "log": "block/birch_log",
+    "branch": "regions_unexplored:block/birch_branch",
+    "particle": "block/birch_log"
+  },
+  "render_type": "cutout"
+}

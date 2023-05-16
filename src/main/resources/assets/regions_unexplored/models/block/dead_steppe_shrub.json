@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/tinted_cross",
+  "textures": {
+    "cross": "regions_unexplored:block/dead_steppe_shrub"
+  },
+  "render_type": "cutout"
+}

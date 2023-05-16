@@ -1,0 +1,26 @@
+{
+  "variants": {
+  "": [
+    {
+      "model": "regions_unexplored:block/brimsprout_2"
+    },
+    {
+      "model": "regions_unexplored:block/brimsprout_1"
+    },
+    {
+      "model": "regions_unexplored:block/brimsprout_2"
+    },
+    {
+      "model": "regions_unexplored:block/brimsprout_4"
+    },
+    {
+      "model": "regions_unexplored:block/brimsprout_3"
+    },
+    {
+      "model": "regions_unexplored:block/brimsprout_2"
+    },
+    {
+      "model": "regions_unexplored:block/brimsprout_1"
+    }
+  ]}
+}

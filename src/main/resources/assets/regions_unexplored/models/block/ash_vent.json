@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "minecraft:block/basalt_top",
+    "up": "regions_unexplored:block/ash_vent_top",
+    "north": "regions_unexplored:block/ash_vent",
+    "east": "regions_unexplored:block/ash_vent",
+    "south": "regions_unexplored:block/ash_vent",
+    "west": "regions_unexplored:block/ash_vent",
+    "particle": "regions_unexplored:block/ash"
+  }
+}

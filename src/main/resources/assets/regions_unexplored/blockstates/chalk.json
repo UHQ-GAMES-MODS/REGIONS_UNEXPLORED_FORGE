@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "regions_unexplored:block/chalk"
+      },
+      {
+        "model": "regions_unexplored:block/chalk_mirrored"
+      },
+      {
+        "model": "regions_unexplored:block/chalk",
+        "y": 180
+      },
+      {
+        "model": "regions_unexplored:block/chalk_mirrored",
+        "y": 180
+      }
+    ]
+  }
+}

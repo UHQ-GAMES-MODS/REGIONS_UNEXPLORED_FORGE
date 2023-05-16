@@ -1,0 +1,6 @@
+{
+  "parent": "block/button_pressed",
+  "textures": {
+    "texture": "regions_unexplored:block/joshua_planks"
+  }
+}

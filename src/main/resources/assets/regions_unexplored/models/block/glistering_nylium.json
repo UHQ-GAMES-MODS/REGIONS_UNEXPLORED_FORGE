@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "regions_unexplored:block/glistering_nylium",
+    "bottom": "minecraft:block/netherrack",
+    "side": "regions_unexplored:block/glistering_nylium_side",
+    "particle": "regions_unexplored:block/glistering_nylium"
+  }
+}

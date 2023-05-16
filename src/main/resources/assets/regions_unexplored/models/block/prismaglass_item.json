@@ -1,0 +1,8 @@
+{
+  "parent": "regions_unexplored:block/cube_item",
+  "textures": {
+    "down": "regions_unexplored:item/prismaglass",
+    "particle": "regions_unexplored:item/prismaglass"
+  },
+  "render_type": "translucent"
+}

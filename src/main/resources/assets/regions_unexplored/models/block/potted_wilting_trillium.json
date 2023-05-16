@@ -1,0 +1,7 @@
+{
+  "parent": "block/flower_pot_cross",
+  "textures": {
+    "plant": "regions_unexplored:block/wilting_trillium"
+  },
+  "render_type": "cutout"
+}

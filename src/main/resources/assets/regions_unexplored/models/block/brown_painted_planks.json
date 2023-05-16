@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "regions_unexplored:block/brown_painted_planks",
+    "particle": "regions_unexplored:block/brown_painted_planks"
+  }
+}

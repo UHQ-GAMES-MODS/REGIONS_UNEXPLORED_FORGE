@@ -1,0 +1,78 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "regions_unexplored:block/marrowstone"
+      },
+      {
+        "model": "regions_unexplored:block/marrowstone",
+        "x": 90
+      },
+      {
+        "model": "regions_unexplored:block/marrowstone",
+        "x": 180
+      },
+      {
+        "model": "regions_unexplored:block/marrowstone",
+        "x": 270
+      },
+      {
+        "model": "regions_unexplored:block/marrowstone",
+        "y": 90
+      },
+      {
+        "model": "regions_unexplored:block/marrowstone",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "regions_unexplored:block/marrowstone",
+        "x": 180,
+        "y": 90
+      },
+      {
+        "model": "regions_unexplored:block/marrowstone",
+        "x": 270,
+        "y": 90
+      },
+      {
+        "model": "regions_unexplored:block/marrowstone",
+        "y": 180
+      },
+      {
+        "model": "regions_unexplored:block/marrowstone",
+        "x": 90,
+        "y": 180
+      },
+      {
+        "model": "regions_unexplored:block/marrowstone",
+        "x": 180,
+        "y": 180
+      },
+      {
+        "model": "regions_unexplored:block/marrowstone",
+        "x": 270,
+        "y": 180
+      },
+      {
+        "model": "regions_unexplored:block/marrowstone",
+        "y": 270
+      },
+      {
+        "model": "regions_unexplored:block/marrowstone",
+        "x": 90,
+        "y": 270
+      },
+      {
+        "model": "regions_unexplored:block/marrowstone",
+        "x": 180,
+        "y": 270
+      },
+      {
+        "model": "regions_unexplored:block/marrowstone",
+        "x": 270,
+        "y": 270
+      }
+    ]
+  }
+}

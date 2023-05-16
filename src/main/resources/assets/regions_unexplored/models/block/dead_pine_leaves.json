@@ -1,0 +1,7 @@
+{
+  "parent": "block/leaves",
+  "textures": {
+    "all": "regions_unexplored:block/dead_pine_leaves",
+    "particle": "regions_unexplored:block/dead_pine_leaves"
+  }
+}

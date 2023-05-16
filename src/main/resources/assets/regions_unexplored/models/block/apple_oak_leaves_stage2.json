@@ -1,0 +1,7 @@
+{
+    "parent": "regions_unexplored:block/apple_oak_leaves_stage2_base",
+    "textures": {
+        "1": "regions_unexplored:block/apple_oak_leaves_stage_2",
+        "particle": "block/oak_leaves"
+    }
+}

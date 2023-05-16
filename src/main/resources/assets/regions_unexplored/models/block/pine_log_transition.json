@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "regions_unexplored:block/stripped_pine_log_top",
+    "up": "regions_unexplored:block/pine_log_top",
+    "north": "regions_unexplored:block/pine_log_transition",
+    "east": "regions_unexplored:block/pine_log_transition",
+    "south": "regions_unexplored:block/pine_log_transition",
+    "west": "regions_unexplored:block/pine_log_transition",
+    "particle": "regions_unexplored:block/pine_log_top"
+  }
+}

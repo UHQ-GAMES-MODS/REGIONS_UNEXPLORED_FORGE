@@ -1,0 +1,9 @@
+{
+  "parent": "regions_unexplored:block/two_layer_tall_sapling",
+  "textures": {
+    "leaves": "regions_unexplored:block/tall_jungle_sapling_leaves_top",
+    "log": "regions_unexplored:block/tall_jungle_sapling_log_top",
+    "particle": "minecraft:block/jungle_leaves"
+  },
+  "render_type": "cutout"
+}

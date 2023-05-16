@@ -1,0 +1,8 @@
+{
+  "parent": "regions_unexplored:block/one_layer_tall_sapling",
+  "textures": {
+    "cross": "regions_unexplored:block/tall_dead_pine_sapling",
+    "particle": "regions_unexplored:block/dead_pine_leaves"
+  },
+  "render_type": "cutout"
+}

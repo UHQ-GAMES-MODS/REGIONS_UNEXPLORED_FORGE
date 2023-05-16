@@ -1,0 +1,8 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "regions_unexplored:block/hyacinth_seagrass_2",
+    "particle": "regions_unexplored:block/hyacinth_seagrass_2"
+  },
+  "render_type": "cutout"
+}

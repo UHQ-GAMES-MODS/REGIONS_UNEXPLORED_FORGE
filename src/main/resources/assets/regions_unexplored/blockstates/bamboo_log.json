@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "axis=x,leaves=false": {
+      "model": "regions_unexplored:block/bamboo_log",
+      "x": 90,
+      "y": 90
+    },
+    "axis=x,leaves=true": {
+      "model": "regions_unexplored:block/bamboo_log_leaves",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,leaves=false": {
+      "model": "regions_unexplored:block/bamboo_log"
+    },
+    "axis=y,leaves=true": {
+      "model": "regions_unexplored:block/bamboo_log_leaves"
+    },
+    "axis=z,leaves=false": {
+      "model": "regions_unexplored:block/bamboo_log",
+      "x": 90
+    },
+    "axis=z,leaves=true": {
+      "model": "regions_unexplored:block/bamboo_log_leaves",
+      "x": 90
+    }
+  }
+}

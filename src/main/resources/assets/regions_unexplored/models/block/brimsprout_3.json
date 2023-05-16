@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "regions_unexplored:block/brimsprout_3"
+  },
+  "render_type": "cutout"
+}

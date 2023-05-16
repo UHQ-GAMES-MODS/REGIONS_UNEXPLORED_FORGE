@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_inventory",
+  "textures": {
+    "texture": "regions_unexplored:block/redwood_planks",
+    "particle": "regions_unexplored:block/redwood_planks"
+  }
+}
