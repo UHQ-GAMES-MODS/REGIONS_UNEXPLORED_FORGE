@@ -46,44 +46,6 @@ public class ForestBiomes {
         return biomeBuilder;
     }
 
-    public static Biome alphaGrove(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
-        //TODO:Complete SurfaceBuilder
-        BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
-                .skyColor(calculateSkyColor(0.7F))
-                .fogColor(OVERWORLD_FOG_COLOR)
-                .waterColor(1857757)
-                .waterFogColor(4485074)
-                .foliageColorOverride(6028091)
-                .grassColorOverride(8901207)
-                .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
-
-        //add features
-        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(featureGetter, carverGetter);
-        BiomeDefaultFeatures.addDefaultCarversAndLakes(biomeBuilder);
-        BiomeDefaultFeatures.addDefaultCrystalFormations(biomeBuilder);
-        BiomeDefaultFeatures.addDefaultMonsterRoom(biomeBuilder);
-        BiomeDefaultFeatures.addSurfaceFreezing(biomeBuilder);
-        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
-
-        //add RU features
-        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.ALPHA_TREE);
-        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.ALPHA_DANDELION);
-        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.ALPHA_ROSE);
-
-        //add mob spawns
-        MobSpawnSettings.Builder spawnBuilder = baseForestSpawning();
-
-        return (new Biome.BiomeBuilder())
-                .hasPrecipitation(true)
-                .temperature(0.0f)
-                .downfall(0.6f)
-                .specialEffects(effectBuilder.build())
-                .mobSpawnSettings(spawnBuilder.build())
-                .generationSettings(biomeBuilder.build())
-                .build();
-    }
-
     public static Biome autumnalMapleForest(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
         //TODO:Complete Biome
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())

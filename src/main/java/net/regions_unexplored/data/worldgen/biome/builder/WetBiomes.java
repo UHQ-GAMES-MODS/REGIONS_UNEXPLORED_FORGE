@@ -40,9 +40,9 @@ public class WetBiomes {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
         BiomeDefaultFeatures.farmAnimals(spawnBuilder);
         spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.CHICKEN, 10, 4, 4));
-        BiomeDefaultFeatures.commonSpawns(spawnBuilder);
         spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.PARROT, 40, 1, 2));
         spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.OCELOT, 2, 1, 1));
+        BiomeDefaultFeatures.commonSpawns(spawnBuilder);
         return spawnBuilder;
     }
 
@@ -190,6 +190,7 @@ public class WetBiomes {
 
         //add mob spawns
         MobSpawnSettings.Builder spawnBuilder = baseSwampSpawning();
+        spawnBuilder.addSpawn(MobCategory.AXOLOTLS, new MobSpawnSettings.SpawnerData(EntityType.AXOLOTL, 5, 2, 6));
 
         return (new Biome.BiomeBuilder())
                 .hasPrecipitation(true)
@@ -223,6 +224,7 @@ public class WetBiomes {
         //add mob spawns
         MobSpawnSettings.Builder spawnBuilder = baseSwampSpawning();
         spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.MOOSHROOM, 8, 4, 8));
+        spawnBuilder.addSpawn(MobCategory.AXOLOTLS, new MobSpawnSettings.SpawnerData(EntityType.AXOLOTL, 4, 2, 4));
 
         return (new Biome.BiomeBuilder())
                 .hasPrecipitation(true)
