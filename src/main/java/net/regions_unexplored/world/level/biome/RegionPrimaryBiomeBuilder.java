@@ -5,8 +5,6 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.biome.Climate;
-import net.regions_unexplored.world.level.region.DefaultRegionBiomes;
-import net.regions_unexplored.world.level.region.VanillaFallbackBiome;
 
 import java.util.function.Consumer;
 
@@ -52,15 +50,15 @@ public class RegionPrimaryBiomeBuilder {
     private final Climate.Parameter midInlandContinentalness = Climate.Parameter.span(0.03F, 0.3F);
     private final Climate.Parameter farInlandContinentalness = Climate.Parameter.span(0.3F, 1.0F);
 
-    private final ResourceKey<Biome>[][] MIDDLE_BIOMES = DefaultRegionBiomes.getPrimaryMiddleBiome();
-    private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = DefaultRegionBiomes.getPrimaryMiddleBiomeVariant();
-    private final ResourceKey<Biome>[][] PLATEAU_BIOMES = DefaultRegionBiomes.getPrimaryPlateauBiome();
-    private final ResourceKey<Biome>[][] PLATEAU_BIOMES_VARIANT = DefaultRegionBiomes.getPrimaryPlateauBiomeVariant();
-    private final ResourceKey<Biome>[][] SHATTERED_BIOMES = DefaultRegionBiomes.getPrimaryShatteredBiome();
-    private final ResourceKey<Biome>[][] RIVER_BIOMES = DefaultRegionBiomes.getPrimaryRiverBiome();
-    private final ResourceKey<Biome>[][] RIVER_BIOMES_VARIANT = DefaultRegionBiomes.getPrimaryRiverBiomeVariant();
-    private final ResourceKey<Biome>[][] SWAMP_BIOMES = DefaultRegionBiomes.getPrimarySwampBiome();
-    private final ResourceKey<Biome>[][] OCEANS = DefaultRegionBiomes.getPrimaryOceanBiome();
+    private final ResourceKey<Biome>[][] MIDDLE_BIOMES = DefaultBiomes.getPrimaryMiddleBiome();
+    private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = DefaultBiomes.getPrimaryMiddleBiomeVariant();
+    private final ResourceKey<Biome>[][] PLATEAU_BIOMES = DefaultBiomes.getPrimaryPlateauBiome();
+    private final ResourceKey<Biome>[][] PLATEAU_BIOMES_VARIANT = DefaultBiomes.getPrimaryPlateauBiomeVariant();
+    private final ResourceKey<Biome>[][] SHATTERED_BIOMES = DefaultBiomes.getPrimaryShatteredBiome();
+    private final ResourceKey<Biome>[][] RIVER_BIOMES = DefaultBiomes.getPrimaryRiverBiome();
+    private final ResourceKey<Biome>[][] RIVER_BIOMES_VARIANT = DefaultBiomes.getPrimaryRiverBiomeVariant();
+    private final ResourceKey<Biome>[][] SWAMP_BIOMES = DefaultBiomes.getPrimarySwampBiome();
+    private final ResourceKey<Biome>[][] OCEANS = DefaultBiomes.getPrimaryOceanBiome();
 
     protected void addBiomes(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder) {
             this.addOffCoastBiomes(builder);
@@ -69,16 +67,16 @@ public class RegionPrimaryBiomeBuilder {
     }
 
     private void addOffCoastBiomes(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder) {
-        this.addSurfaceBiome(builder, this.temperatures[0], this.FULL_RANGE, this.mushroomFieldsContinentalness, this.FULL_RANGE, this.FULL_RANGE, 0.0F, DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryIslandBiome(0)) ? DefaultRegionBiomes.getPrimaryIslandBiome(0) :Biomes.MUSHROOM_FIELDS);
-        this.addSurfaceBiome(builder, this.temperatures[1], this.FULL_RANGE, this.mushroomFieldsContinentalness, this.FULL_RANGE, this.FULL_RANGE, 0.0F, DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryIslandBiome(1)) ? DefaultRegionBiomes.getPrimaryIslandBiome(1) :Biomes.MUSHROOM_FIELDS);
-        this.addSurfaceBiome(builder, this.temperatures[2], this.FULL_RANGE, this.mushroomFieldsContinentalness, this.FULL_RANGE, this.FULL_RANGE, 0.0F, DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryIslandBiome(2)) ? DefaultRegionBiomes.getPrimaryIslandBiome(2) :Biomes.MUSHROOM_FIELDS);
-        this.addSurfaceBiome(builder, this.temperatures[3], this.FULL_RANGE, this.mushroomFieldsContinentalness, this.FULL_RANGE, this.FULL_RANGE, 0.0F, DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryIslandBiome(3)) ? DefaultRegionBiomes.getPrimaryIslandBiome(3) :Biomes.MUSHROOM_FIELDS);
-        this.addSurfaceBiome(builder, this.temperatures[4], this.FULL_RANGE, this.mushroomFieldsContinentalness, this.FULL_RANGE, this.FULL_RANGE, 0.0F, DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryIslandBiome(4)) ? DefaultRegionBiomes.getPrimaryIslandBiome(4) :Biomes.MUSHROOM_FIELDS);
+        this.addSurfaceBiome(builder, this.temperatures[0], this.FULL_RANGE, this.mushroomFieldsContinentalness, this.FULL_RANGE, this.FULL_RANGE, 0.0F, DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryIslandBiome(0)) ? DefaultBiomes.getPrimaryIslandBiome(0) :Biomes.MUSHROOM_FIELDS);
+        this.addSurfaceBiome(builder, this.temperatures[1], this.FULL_RANGE, this.mushroomFieldsContinentalness, this.FULL_RANGE, this.FULL_RANGE, 0.0F, DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryIslandBiome(1)) ? DefaultBiomes.getPrimaryIslandBiome(1) :Biomes.MUSHROOM_FIELDS);
+        this.addSurfaceBiome(builder, this.temperatures[2], this.FULL_RANGE, this.mushroomFieldsContinentalness, this.FULL_RANGE, this.FULL_RANGE, 0.0F, DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryIslandBiome(2)) ? DefaultBiomes.getPrimaryIslandBiome(2) :Biomes.MUSHROOM_FIELDS);
+        this.addSurfaceBiome(builder, this.temperatures[3], this.FULL_RANGE, this.mushroomFieldsContinentalness, this.FULL_RANGE, this.FULL_RANGE, 0.0F, DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryIslandBiome(3)) ? DefaultBiomes.getPrimaryIslandBiome(3) :Biomes.MUSHROOM_FIELDS);
+        this.addSurfaceBiome(builder, this.temperatures[4], this.FULL_RANGE, this.mushroomFieldsContinentalness, this.FULL_RANGE, this.FULL_RANGE, 0.0F, DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryIslandBiome(4)) ? DefaultBiomes.getPrimaryIslandBiome(4) :Biomes.MUSHROOM_FIELDS);
 
         for(int i = 0; i < this.temperatures.length; ++i) {
             Climate.Parameter climate$parameter = this.temperatures[i];
-            this.addSurfaceBiome(builder, climate$parameter, this.FULL_RANGE, this.deepOceanContinentalness, this.FULL_RANGE, this.FULL_RANGE, 0.0F, DefaultRegionBiomes.isBiomeEnabled(this.OCEANS[0][i]) ? this.OCEANS[0][i] : VanillaFallbackBiome.VANILLA_OCEANS[0][i]);
-            this.addSurfaceBiome(builder, climate$parameter, this.FULL_RANGE, this.oceanContinentalness, this.FULL_RANGE, this.FULL_RANGE, 0.0F, DefaultRegionBiomes.isBiomeEnabled(this.OCEANS[1][i]) ? this.OCEANS[1][i] : VanillaFallbackBiome.VANILLA_OCEANS[0][i]);
+            this.addSurfaceBiome(builder, climate$parameter, this.FULL_RANGE, this.deepOceanContinentalness, this.FULL_RANGE, this.FULL_RANGE, 0.0F, DefaultBiomes.isBiomeEnabled(this.OCEANS[0][i]) ? this.OCEANS[0][i] : VanillaFallbackBiome.VANILLA_OCEANS[0][i]);
+            this.addSurfaceBiome(builder, climate$parameter, this.FULL_RANGE, this.oceanContinentalness, this.FULL_RANGE, this.FULL_RANGE, 0.0F, DefaultBiomes.isBiomeEnabled(this.OCEANS[1][i]) ? this.OCEANS[1][i] : VanillaFallbackBiome.VANILLA_OCEANS[0][i]);
         }
 
     }
@@ -159,8 +157,8 @@ public class RegionPrimaryBiomeBuilder {
     }
 
     private void addMidSlice(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder, Climate.Parameter weirdness) {
-        ResourceKey<Biome> stoneBeachCold = DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryStoneShoreBiome(true)) ? DefaultRegionBiomes.getPrimaryStoneShoreBiome(true) : Biomes.STONY_SHORE;
-        ResourceKey<Biome> stoneBeachHot = DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryStoneShoreBiome(false)) ? DefaultRegionBiomes.getPrimaryStoneShoreBiome(false) : Biomes.STONY_SHORE;
+        ResourceKey<Biome> stoneBeachCold = DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryStoneShoreBiome(true)) ? DefaultBiomes.getPrimaryStoneShoreBiome(true) : Biomes.STONY_SHORE;
+        ResourceKey<Biome> stoneBeachHot = DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryStoneShoreBiome(false)) ? DefaultBiomes.getPrimaryStoneShoreBiome(false) : Biomes.STONY_SHORE;
         this.addSurfaceBiome(builder, Climate.Parameter.span(this.temperatures[0], this.temperatures[2]), this.FULL_RANGE, this.coastContinentalness, Climate.Parameter.span(this.erosions[0], this.erosions[2]), weirdness, 0.0F, stoneBeachCold);
         this.addSurfaceBiome(builder, Climate.Parameter.span(this.temperatures[3], this.temperatures[4]), this.FULL_RANGE, this.coastContinentalness, Climate.Parameter.span(this.erosions[0], this.erosions[2]), weirdness, 0.0F, stoneBeachHot);
 
@@ -208,8 +206,8 @@ public class RegionPrimaryBiomeBuilder {
     }
 
     private void addLowSlice(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder, Climate.Parameter weirdness) {
-        ResourceKey<Biome> stoneBeachCold = DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryStoneShoreBiome(true)) ? DefaultRegionBiomes.getPrimaryStoneShoreBiome(true) : Biomes.STONY_SHORE;
-        ResourceKey<Biome> stoneBeachHot = DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryStoneShoreBiome(false)) ? DefaultRegionBiomes.getPrimaryStoneShoreBiome(false) : Biomes.STONY_SHORE;
+        ResourceKey<Biome> stoneBeachCold = DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryStoneShoreBiome(true)) ? DefaultBiomes.getPrimaryStoneShoreBiome(true) : Biomes.STONY_SHORE;
+        ResourceKey<Biome> stoneBeachHot = DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryStoneShoreBiome(false)) ? DefaultBiomes.getPrimaryStoneShoreBiome(false) : Biomes.STONY_SHORE;
         this.addSurfaceBiome(builder, Climate.Parameter.span(this.temperatures[0], this.temperatures[2]), this.FULL_RANGE, this.coastContinentalness, Climate.Parameter.span(this.erosions[0], this.erosions[2]), weirdness, 0.0F, stoneBeachCold);
         this.addSurfaceBiome(builder, Climate.Parameter.span(this.temperatures[3], this.temperatures[4]), this.FULL_RANGE, this.coastContinentalness, Climate.Parameter.span(this.erosions[0], this.erosions[2]), weirdness, 0.0F, stoneBeachHot);
         for(int i = 0; i < this.temperatures.length; ++i) {
@@ -240,8 +238,8 @@ public class RegionPrimaryBiomeBuilder {
     }
 
     private void addValleys(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder, Climate.Parameter weirdness) {
-        ResourceKey<Biome> stoneBeachCold = DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryStoneShoreBiome(true)) ? DefaultRegionBiomes.getPrimaryStoneShoreBiome(true) : Biomes.STONY_SHORE;
-        ResourceKey<Biome> stoneBeachHot = DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryStoneShoreBiome(false)) ? DefaultRegionBiomes.getPrimaryStoneShoreBiome(false) : Biomes.STONY_SHORE;
+        ResourceKey<Biome> stoneBeachCold = DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryStoneShoreBiome(true)) ? DefaultBiomes.getPrimaryStoneShoreBiome(true) : Biomes.STONY_SHORE;
+        ResourceKey<Biome> stoneBeachHot = DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryStoneShoreBiome(false)) ? DefaultBiomes.getPrimaryStoneShoreBiome(false) : Biomes.STONY_SHORE;
         for(int i = 0; i < this.temperatures.length; ++i) {
             Climate.Parameter temperature = this.temperatures[i];
 
@@ -264,25 +262,25 @@ public class RegionPrimaryBiomeBuilder {
     }
 
     private void addUndergroundBiomes(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder) {
-        this.addUndergroundBiome(builder, this.FULL_RANGE, this.FULL_RANGE, Climate.Parameter.span(-1.0F, -0.79F), this.FULL_RANGE, Climate.Parameter.span(-1.0F, 0.0F), 0.0F, DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryCaveBiome(2)) ? DefaultRegionBiomes.getPrimaryCaveBiome(2) : Biomes.LUSH_CAVES);
-        this.addUndergroundBiome(builder, this.FULL_RANGE, this.FULL_RANGE, Climate.Parameter.span(-1.0F, -0.79F), this.FULL_RANGE, Climate.Parameter.span(0.0F, 1.0F), 0.0F, DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryCaveBiome(7)) ? DefaultRegionBiomes.getPrimaryCaveBiome(7) : Biomes.DRIPSTONE_CAVES);
+        this.addUndergroundBiome(builder, this.FULL_RANGE, this.FULL_RANGE, Climate.Parameter.span(-1.0F, -0.79F), this.FULL_RANGE, Climate.Parameter.span(-1.0F, 0.0F), 0.0F, DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryCaveBiome(2)) ? DefaultBiomes.getPrimaryCaveBiome(2) : Biomes.LUSH_CAVES);
+        this.addUndergroundBiome(builder, this.FULL_RANGE, this.FULL_RANGE, Climate.Parameter.span(-1.0F, -0.79F), this.FULL_RANGE, Climate.Parameter.span(0.0F, 1.0F), 0.0F, DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryCaveBiome(7)) ? DefaultBiomes.getPrimaryCaveBiome(7) : Biomes.DRIPSTONE_CAVES);
 
-        this.addUndergroundBiome(builder, this.FULL_RANGE, this.FULL_RANGE, Climate.Parameter.span(0.775F, 1.0F), this.FULL_RANGE, Climate.Parameter.span(-1.0F, 0.0F), 0.0F, DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryCaveBiome(6)) ? DefaultRegionBiomes.getPrimaryCaveBiome(6) : Biomes.DRIPSTONE_CAVES);
-        this.addUndergroundBiome(builder, this.FULL_RANGE, this.FULL_RANGE, Climate.Parameter.span(0.775F, 1.0F), this.FULL_RANGE, Climate.Parameter.span(0.0F, 1.0F), 0.0F, DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryCaveBiome(7)) ? DefaultRegionBiomes.getPrimaryCaveBiome(7) : Biomes.DRIPSTONE_CAVES);
+        this.addUndergroundBiome(builder, this.FULL_RANGE, this.FULL_RANGE, Climate.Parameter.span(0.775F, 1.0F), this.FULL_RANGE, Climate.Parameter.span(-1.0F, 0.0F), 0.0F, DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryCaveBiome(6)) ? DefaultBiomes.getPrimaryCaveBiome(6) : Biomes.DRIPSTONE_CAVES);
+        this.addUndergroundBiome(builder, this.FULL_RANGE, this.FULL_RANGE, Climate.Parameter.span(0.775F, 1.0F), this.FULL_RANGE, Climate.Parameter.span(0.0F, 1.0F), 0.0F, DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryCaveBiome(7)) ? DefaultBiomes.getPrimaryCaveBiome(7) : Biomes.DRIPSTONE_CAVES);
 
-        this.addUndergroundBiome(builder, this.FULL_RANGE, Climate.Parameter.span(-1.0F, -0.69F), this.FULL_RANGE, this.FULL_RANGE, Climate.Parameter.span(-1.0F, 0.0F), 0.0F, DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryCaveBiome(1)) ? DefaultRegionBiomes.getPrimaryCaveBiome(1) : Biomes.LUSH_CAVES);
-        this.addUndergroundBiome(builder, this.FULL_RANGE, Climate.Parameter.span(-1.0F, -0.69F), this.FULL_RANGE, this.FULL_RANGE, Climate.Parameter.span(0.0F, 1.0F), 0.0F, DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryCaveBiome(5)) ? DefaultRegionBiomes.getPrimaryCaveBiome(5) :  Biomes.LUSH_CAVES);
+        this.addUndergroundBiome(builder, this.FULL_RANGE, Climate.Parameter.span(-1.0F, -0.69F), this.FULL_RANGE, this.FULL_RANGE, Climate.Parameter.span(-1.0F, 0.0F), 0.0F, DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryCaveBiome(1)) ? DefaultBiomes.getPrimaryCaveBiome(1) : Biomes.LUSH_CAVES);
+        this.addUndergroundBiome(builder, this.FULL_RANGE, Climate.Parameter.span(-1.0F, -0.69F), this.FULL_RANGE, this.FULL_RANGE, Climate.Parameter.span(0.0F, 1.0F), 0.0F, DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryCaveBiome(5)) ? DefaultBiomes.getPrimaryCaveBiome(5) :  Biomes.LUSH_CAVES);
 
-        this.addUndergroundBiome(builder, this.FULL_RANGE, Climate.Parameter.span(0.65F, 1.0F), this.FULL_RANGE, this.FULL_RANGE, Climate.Parameter.span(-1.0F, 0.0F), 0.0F, DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryCaveBiome(4)) ? DefaultRegionBiomes.getPrimaryCaveBiome(4) : Biomes.LUSH_CAVES);
-        this.addUndergroundBiome(builder, this.FULL_RANGE, Climate.Parameter.span(0.65F, 1.0F), this.FULL_RANGE, this.FULL_RANGE, Climate.Parameter.span(0.0F, 1.0F), 0.0F, DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryCaveBiome(5)) ? DefaultRegionBiomes.getPrimaryCaveBiome(5) : Biomes.LUSH_CAVES);
+        this.addUndergroundBiome(builder, this.FULL_RANGE, Climate.Parameter.span(0.65F, 1.0F), this.FULL_RANGE, this.FULL_RANGE, Climate.Parameter.span(-1.0F, 0.0F), 0.0F, DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryCaveBiome(4)) ? DefaultBiomes.getPrimaryCaveBiome(4) : Biomes.LUSH_CAVES);
+        this.addUndergroundBiome(builder, this.FULL_RANGE, Climate.Parameter.span(0.65F, 1.0F), this.FULL_RANGE, this.FULL_RANGE, Climate.Parameter.span(0.0F, 1.0F), 0.0F, DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryCaveBiome(5)) ? DefaultBiomes.getPrimaryCaveBiome(5) : Biomes.LUSH_CAVES);
 
-        this.addBottomBiome(builder, this.FULL_RANGE, this.FULL_RANGE, this.FULL_RANGE, Climate.Parameter.span(this.erosions[0], this.erosions[1]), this.FULL_RANGE, 0.0F, DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryCaveBiome(3)) ? DefaultRegionBiomes.getPrimaryCaveBiome(3) : Biomes.DEEP_DARK);
-        this.addBottomBiome(builder, this.FULL_RANGE, this.FULL_RANGE, this.FULL_RANGE, Climate.Parameter.span(this.erosions[2], this.erosions[3]), this.FULL_RANGE, 0.0F, DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryCaveBiome(8)) ? DefaultRegionBiomes.getPrimaryCaveBiome(8) : Biomes.DEEP_DARK);
+        this.addBottomBiome(builder, this.FULL_RANGE, this.FULL_RANGE, this.FULL_RANGE, Climate.Parameter.span(this.erosions[0], this.erosions[1]), this.FULL_RANGE, 0.0F, DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryCaveBiome(3)) ? DefaultBiomes.getPrimaryCaveBiome(3) : Biomes.DEEP_DARK);
+        this.addBottomBiome(builder, this.FULL_RANGE, this.FULL_RANGE, this.FULL_RANGE, Climate.Parameter.span(this.erosions[2], this.erosions[3]), this.FULL_RANGE, 0.0F, DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryCaveBiome(8)) ? DefaultBiomes.getPrimaryCaveBiome(8) : Biomes.DEEP_DARK);
     }
 
     private ResourceKey<Biome> pickMiddleBiome(int temperature, int humidity, Climate.Parameter weirdness) {
         if (weirdness.max() < 0L) {
-            if(DefaultRegionBiomes.isBiomeEnabled(this.MIDDLE_BIOMES[temperature][humidity])){
+            if(DefaultBiomes.isBiomeEnabled(this.MIDDLE_BIOMES[temperature][humidity])){
                 return this.MIDDLE_BIOMES[temperature][humidity];
             }
             else{
@@ -290,7 +288,7 @@ public class RegionPrimaryBiomeBuilder {
             }
         } else {
             if(this.MIDDLE_BIOMES_VARIANT[temperature][humidity]==null){
-                if(DefaultRegionBiomes.isBiomeEnabled(this.MIDDLE_BIOMES[temperature][humidity])){
+                if(DefaultBiomes.isBiomeEnabled(this.MIDDLE_BIOMES[temperature][humidity])){
                     return this.MIDDLE_BIOMES[temperature][humidity];
                 }
                 else{
@@ -298,7 +296,7 @@ public class RegionPrimaryBiomeBuilder {
                 }
             }
             else{
-                if(DefaultRegionBiomes.isBiomeEnabled(this.MIDDLE_BIOMES_VARIANT[temperature][humidity])){
+                if(DefaultBiomes.isBiomeEnabled(this.MIDDLE_BIOMES_VARIANT[temperature][humidity])){
                     return this.MIDDLE_BIOMES_VARIANT[temperature][humidity];
                 }
                 else{
@@ -313,7 +311,7 @@ public class RegionPrimaryBiomeBuilder {
     }
 
     private ResourceKey<Biome> maybePickToweringCliffsBiome(int temperature, int humidity, Climate.Parameter weirdness, ResourceKey<Biome> fallbackBiome) {
-        ResourceKey<Biome> resourceKey = DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryShatteredCliffBiome()) ? DefaultRegionBiomes.getPrimaryShatteredCliffBiome() : Biomes.WINDSWEPT_SAVANNA;
+        ResourceKey<Biome> resourceKey = DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryShatteredCliffBiome()) ? DefaultBiomes.getPrimaryShatteredCliffBiome() : Biomes.WINDSWEPT_SAVANNA;
         return temperature > 1 && humidity < 4 && weirdness.max() >= 0L ? resourceKey : fallbackBiome;
     }
 
@@ -324,25 +322,25 @@ public class RegionPrimaryBiomeBuilder {
 
     private ResourceKey<Biome> pickBeachBiome(int temperature) {
         if (temperature == 0) {
-                return DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryBeachBiome(temperature)) ? DefaultRegionBiomes.getPrimaryBeachBiome(temperature) : Biomes.SNOWY_BEACH;
+                return DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryBeachBiome(temperature)) ? DefaultBiomes.getPrimaryBeachBiome(temperature) : Biomes.SNOWY_BEACH;
         }
         else if (temperature == 1) {
-                return DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryBeachBiome(temperature)) ? DefaultRegionBiomes.getPrimaryBeachBiome(temperature) : Biomes.BEACH;
+                return DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryBeachBiome(temperature)) ? DefaultBiomes.getPrimaryBeachBiome(temperature) : Biomes.BEACH;
         }
         else if (temperature == 2) {
-                return DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryBeachBiome(temperature)) ? DefaultRegionBiomes.getPrimaryBeachBiome(temperature) : Biomes.BEACH;
+                return DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryBeachBiome(temperature)) ? DefaultBiomes.getPrimaryBeachBiome(temperature) : Biomes.BEACH;
         }
         else if (temperature == 3) {
-                return DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryBeachBiome(temperature)) ? DefaultRegionBiomes.getPrimaryBeachBiome(temperature) : Biomes.BEACH;
+                return DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryBeachBiome(temperature)) ? DefaultBiomes.getPrimaryBeachBiome(temperature) : Biomes.BEACH;
         }
         else{
-                return DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryBeachBiome(temperature)) ? DefaultRegionBiomes.getPrimaryBeachBiome(temperature) : Biomes.BEACH;
+                return DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryBeachBiome(temperature)) ? DefaultBiomes.getPrimaryBeachBiome(temperature) : Biomes.BEACH;
         }
     }
 
     private ResourceKey<Biome> pickPlateauBiome(int temperature, int humidity, Climate.Parameter weirdness) {
         if (weirdness.max() < 0L) {
-            if(DefaultRegionBiomes.isBiomeEnabled(this.PLATEAU_BIOMES[temperature][humidity])){
+            if(DefaultBiomes.isBiomeEnabled(this.PLATEAU_BIOMES[temperature][humidity])){
                 return this.PLATEAU_BIOMES[temperature][humidity];
             }
             else{
@@ -350,7 +348,7 @@ public class RegionPrimaryBiomeBuilder {
             }
         } else {
             if(this.PLATEAU_BIOMES_VARIANT[temperature][humidity]==null){
-                if(DefaultRegionBiomes.isBiomeEnabled(this.PLATEAU_BIOMES[temperature][humidity])){
+                if(DefaultBiomes.isBiomeEnabled(this.PLATEAU_BIOMES[temperature][humidity])){
                     return this.PLATEAU_BIOMES[temperature][humidity];
                 }
                 else{
@@ -358,7 +356,7 @@ public class RegionPrimaryBiomeBuilder {
                 }
             }
             else{
-                if(DefaultRegionBiomes.isBiomeEnabled(this.PLATEAU_BIOMES_VARIANT[temperature][humidity])){
+                if(DefaultBiomes.isBiomeEnabled(this.PLATEAU_BIOMES_VARIANT[temperature][humidity])){
                     return this.PLATEAU_BIOMES_VARIANT[temperature][humidity];
                 }
                 else{
@@ -371,42 +369,42 @@ public class RegionPrimaryBiomeBuilder {
     private ResourceKey<Biome> pickPeakBiome(int temperature, int humidity, Climate.Parameter weirdness) {
         if (temperature == 0) {
             if(weirdness.max() < 0L) {
-                return DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryPeakBiome(temperature)) ? DefaultRegionBiomes.getPrimaryPeakBiome(temperature) : Biomes.JAGGED_PEAKS;
+                return DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryPeakBiome(temperature)) ? DefaultBiomes.getPrimaryPeakBiome(temperature) : Biomes.JAGGED_PEAKS;
             }
             else{
-                return DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryPeakBiomeVariant(temperature)) ? DefaultRegionBiomes.getPrimaryPeakBiomeVariant(temperature) : Biomes.FROZEN_PEAKS;
+                return DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryPeakBiomeVariant(temperature)) ? DefaultBiomes.getPrimaryPeakBiomeVariant(temperature) : Biomes.FROZEN_PEAKS;
             }
         }
         else if (temperature == 1) {
             if(weirdness.max() < 0L) {
-                return DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryPeakBiome(temperature)) ? DefaultRegionBiomes.getPrimaryPeakBiome(temperature) : Biomes.JAGGED_PEAKS;
+                return DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryPeakBiome(temperature)) ? DefaultBiomes.getPrimaryPeakBiome(temperature) : Biomes.JAGGED_PEAKS;
             }
             else{
-                return DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryPeakBiomeVariant(temperature)) ? DefaultRegionBiomes.getPrimaryPeakBiomeVariant(temperature) : Biomes.FROZEN_PEAKS;
+                return DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryPeakBiomeVariant(temperature)) ? DefaultBiomes.getPrimaryPeakBiomeVariant(temperature) : Biomes.FROZEN_PEAKS;
             }
         }
         else if (temperature == 2) {
             if(weirdness.max() < 0L) {
-                return DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryPeakBiome(temperature)) ? DefaultRegionBiomes.getPrimaryPeakBiome(temperature) : Biomes.JAGGED_PEAKS;
+                return DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryPeakBiome(temperature)) ? DefaultBiomes.getPrimaryPeakBiome(temperature) : Biomes.JAGGED_PEAKS;
             }
             else{
-                return DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryPeakBiomeVariant(temperature)) ? DefaultRegionBiomes.getPrimaryPeakBiomeVariant(temperature) : Biomes.FROZEN_PEAKS;
+                return DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryPeakBiomeVariant(temperature)) ? DefaultBiomes.getPrimaryPeakBiomeVariant(temperature) : Biomes.FROZEN_PEAKS;
             }
         }
         else if (temperature == 3) {
             if(weirdness.max() < 0L) {
-                return DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryPeakBiome(temperature)) ? DefaultRegionBiomes.getPrimaryPeakBiome(temperature) : Biomes.STONY_PEAKS;
+                return DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryPeakBiome(temperature)) ? DefaultBiomes.getPrimaryPeakBiome(temperature) : Biomes.STONY_PEAKS;
             }
             else{
-                return DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryPeakBiomeVariant(temperature)) ? DefaultRegionBiomes.getPrimaryPeakBiomeVariant(temperature) : Biomes.STONY_PEAKS;
+                return DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryPeakBiomeVariant(temperature)) ? DefaultBiomes.getPrimaryPeakBiomeVariant(temperature) : Biomes.STONY_PEAKS;
             }
         }
         else{
             if(weirdness.max() < 0L) {
-                return DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryPeakBiome(temperature)) ? DefaultRegionBiomes.getPrimaryPeakBiome(temperature) : Biomes.BADLANDS;
+                return DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryPeakBiome(temperature)) ? DefaultBiomes.getPrimaryPeakBiome(temperature) : Biomes.BADLANDS;
             }
             else{
-                return DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimaryPeakBiomeVariant(temperature)) ? DefaultRegionBiomes.getPrimaryPeakBiomeVariant(temperature) : Biomes.WOODED_BADLANDS;
+                return DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimaryPeakBiomeVariant(temperature)) ? DefaultBiomes.getPrimaryPeakBiomeVariant(temperature) : Biomes.WOODED_BADLANDS;
             }
         }
     }
@@ -414,54 +412,54 @@ public class RegionPrimaryBiomeBuilder {
     private ResourceKey<Biome> pickSlopeBiome(int temperature, int humidity, Climate.Parameter weirdness) {
         if (temperature == 0) {
             if(weirdness.max() < 0L) {
-                return DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimarySlopeBiome(temperature)) ? DefaultRegionBiomes.getPrimarySlopeBiome(temperature) : Biomes.SNOWY_SLOPES;
+                return DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimarySlopeBiome(temperature)) ? DefaultBiomes.getPrimarySlopeBiome(temperature) : Biomes.SNOWY_SLOPES;
             }
             else{
-                return DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimarySlopeBiomeVariant(temperature)) ? DefaultRegionBiomes.getPrimarySlopeBiomeVariant(temperature) : Biomes.GROVE;
+                return DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimarySlopeBiomeVariant(temperature)) ? DefaultBiomes.getPrimarySlopeBiomeVariant(temperature) : Biomes.GROVE;
             }
         }
         else if (temperature == 1) {
             if(weirdness.max() < 0L) {
-                return DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimarySlopeBiome(temperature)) ? DefaultRegionBiomes.getPrimarySlopeBiome(temperature) : Biomes.GROVE;
+                return DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimarySlopeBiome(temperature)) ? DefaultBiomes.getPrimarySlopeBiome(temperature) : Biomes.GROVE;
             }
             else{
-                return DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimarySlopeBiomeVariant(temperature)) ? DefaultRegionBiomes.getPrimarySlopeBiomeVariant(temperature) : Biomes.SNOWY_SLOPES;
+                return DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimarySlopeBiomeVariant(temperature)) ? DefaultBiomes.getPrimarySlopeBiomeVariant(temperature) : Biomes.SNOWY_SLOPES;
             }
         }
         else if (temperature == 2) {
             if(weirdness.max() < 0L) {
-                return DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimarySlopeBiome(temperature)) ? DefaultRegionBiomes.getPrimarySlopeBiome(temperature) : Biomes.GROVE;
+                return DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimarySlopeBiome(temperature)) ? DefaultBiomes.getPrimarySlopeBiome(temperature) : Biomes.GROVE;
             }
             else{
-                return DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimarySlopeBiomeVariant(temperature)) ? DefaultRegionBiomes.getPrimarySlopeBiomeVariant(temperature) : Biomes.SNOWY_SLOPES;
+                return DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimarySlopeBiomeVariant(temperature)) ? DefaultBiomes.getPrimarySlopeBiomeVariant(temperature) : Biomes.SNOWY_SLOPES;
             }
         }
         else if (temperature == 3) {
             if(weirdness.max() < 0L) {
-                return DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimarySlopeBiome(temperature)) ? DefaultRegionBiomes.getPrimarySlopeBiome(temperature) : Biomes.STONY_PEAKS;
+                return DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimarySlopeBiome(temperature)) ? DefaultBiomes.getPrimarySlopeBiome(temperature) : Biomes.STONY_PEAKS;
             }
             else{
-                return DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimarySlopeBiomeVariant(temperature)) ? DefaultRegionBiomes.getPrimarySlopeBiomeVariant(temperature) : Biomes.STONY_PEAKS;
+                return DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimarySlopeBiomeVariant(temperature)) ? DefaultBiomes.getPrimarySlopeBiomeVariant(temperature) : Biomes.STONY_PEAKS;
             }
         }
         else{
             if(weirdness.max() < 0L) {
-                return DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimarySlopeBiome(temperature)) ? DefaultRegionBiomes.getPrimarySlopeBiome(temperature) : Biomes.SAVANNA;
+                return DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimarySlopeBiome(temperature)) ? DefaultBiomes.getPrimarySlopeBiome(temperature) : Biomes.SAVANNA;
             }
             else{
-                return DefaultRegionBiomes.isBiomeEnabled(DefaultRegionBiomes.getPrimarySlopeBiomeVariant(temperature)) ? DefaultRegionBiomes.getPrimarySlopeBiomeVariant(temperature) : Biomes.SAVANNA;
+                return DefaultBiomes.isBiomeEnabled(DefaultBiomes.getPrimarySlopeBiomeVariant(temperature)) ? DefaultBiomes.getPrimarySlopeBiomeVariant(temperature) : Biomes.SAVANNA;
             }
         }
     }
 
     private ResourceKey<Biome> pickShatteredBiome(int temperature, int humidity, Climate.Parameter weirdness) {
-        ResourceKey<Biome> resourceKey = DefaultRegionBiomes.isBiomeEnabled(this.SHATTERED_BIOMES[temperature][humidity]) ? this.SHATTERED_BIOMES[temperature][humidity] : VanillaFallbackBiome.VANILLA_SHATTERED_BIOMES[temperature][humidity];
+        ResourceKey<Biome> resourceKey = DefaultBiomes.isBiomeEnabled(this.SHATTERED_BIOMES[temperature][humidity]) ? this.SHATTERED_BIOMES[temperature][humidity] : VanillaFallbackBiome.VANILLA_SHATTERED_BIOMES[temperature][humidity];
         return resourceKey == null ? this.pickMiddleBiome(temperature, humidity, weirdness) : resourceKey;
     }
 
     private ResourceKey<Biome> pickRiverBiome(int temperature, int humidity, Climate.Parameter weirdness) {
         if (weirdness.max() < 0L) {
-            if(DefaultRegionBiomes.isBiomeEnabled(this.RIVER_BIOMES[temperature][humidity])){
+            if(DefaultBiomes.isBiomeEnabled(this.RIVER_BIOMES[temperature][humidity])){
                 return this.RIVER_BIOMES[temperature][humidity];
             }
             else{
@@ -469,7 +467,7 @@ public class RegionPrimaryBiomeBuilder {
             }
         } else {
             if(this.RIVER_BIOMES_VARIANT[temperature][humidity]==null){
-                if(DefaultRegionBiomes.isBiomeEnabled(this.RIVER_BIOMES[temperature][humidity])){
+                if(DefaultBiomes.isBiomeEnabled(this.RIVER_BIOMES[temperature][humidity])){
                     return this.RIVER_BIOMES[temperature][humidity];
                 }
                 else{
@@ -477,7 +475,7 @@ public class RegionPrimaryBiomeBuilder {
                 }
             }
             else{
-                if(DefaultRegionBiomes.isBiomeEnabled(this.RIVER_BIOMES_VARIANT[temperature][humidity])){
+                if(DefaultBiomes.isBiomeEnabled(this.RIVER_BIOMES_VARIANT[temperature][humidity])){
                     return this.RIVER_BIOMES_VARIANT[temperature][humidity];
                 }
                 else{
@@ -488,7 +486,7 @@ public class RegionPrimaryBiomeBuilder {
     }
 
     private ResourceKey<Biome> pickSwampBiome(int temperature, int humidity) {
-        if(DefaultRegionBiomes.isBiomeEnabled(this.SWAMP_BIOMES[temperature][humidity])){
+        if(DefaultBiomes.isBiomeEnabled(this.SWAMP_BIOMES[temperature][humidity])){
             return this.SWAMP_BIOMES[temperature][humidity];
         }
         else{

@@ -3,10 +3,8 @@ package net.regions_unexplored.entity.custom;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
-import net.minecraft.network.protocol.Packet;
-import net.minecraft.network.protocol.game.ClientGamePacketListener;
-import net.minecraft.network.protocol.game.ClientboundAddEntityPacket;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.entity.vehicle.ChestBoat;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -15,44 +13,58 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.regions_unexplored.entity.RuEntities;
 import net.regions_unexplored.item.RuItems;
+import org.jetbrains.annotations.NotNull;
 
 public class RuChestBoat extends ChestBoat {
-    //TODO:Complete Class
     public RuChestBoat(EntityType<? extends RuChestBoat> type, Level level) {
         super(type, level);
         this.blocksBuilding = true;
     }
 
     public RuChestBoat(Level level, double x, double y, double z) {
-        this((EntityType<RuChestBoat>) RuEntities.CHEST_BOAT.get(), level);
-        this.setPos(x, y, z); this.xo = x; this.yo = y; this.zo = z;
+        this((EntityType<? extends RuChestBoat>) RuEntities.CHEST_BOAT.get(), level);
+        this.setPos(x, y, z);
+        this.xo = x;
+        this.yo = y;
+        this.zo = z;
     }
 
     @Override
-    public Item getDropItem()
-    {
-        return switch (RuBoat.ModelType.byId(this.entityData.get(DATA_ID_TYPE))) {
-            case BAOBAB -> RuItems.BAOBAB_CHEST_BOAT.get();
-            case BLACKWOOD -> RuItems.BLACKWOOD_CHEST_BOAT.get();
-            case CHERRY -> RuItems.CHERRY_CHEST_BOAT.get();
-            case CYPRESS -> RuItems.CYPRESS_CHEST_BOAT.get();
-            case DEAD -> RuItems.DEAD_CHEST_BOAT.get();
-            case EUCALYPTUS -> RuItems.EUCALYPTUS_CHEST_BOAT.get();
-            case JOSHUA -> RuItems.JOSHUA_CHEST_BOAT.get();
-            case LARCH -> RuItems.LARCH_CHEST_BOAT.get();
-            case MAPLE -> RuItems.MAPLE_CHEST_BOAT.get();
-            case MAUVE -> RuItems.MAUVE_CHEST_BOAT.get();
-            case PALM -> RuItems.PALM_CHEST_BOAT.get();
-            case PINE -> RuItems.PINE_CHEST_BOAT.get();
-            case REDWOOD -> RuItems.REDWOOD_CHEST_BOAT.get();
-            case BRIMWOOD -> RuItems.BRIMWOOD_CHEST_BOAT.get();
-            case WILLOW -> RuItems.WILLOW_CHEST_BOAT.get();
+    public @NotNull Item getDropItem() {
+        Item item;
+        switch (RuBoat.ModelType.byId(this.entityData.get(DATA_ID_TYPE))) {
+            case BLACKWOOD:
+                item = RuItems.BLACKWOOD_CHEST_BOAT.get();
+            case CHERRY:
+                item = RuItems.CHERRY_CHEST_BOAT.get();
+            case CYPRESS:
+                item = RuItems.CYPRESS_CHEST_BOAT.get();
+            case DEAD:
+                item = RuItems.DEAD_CHEST_BOAT.get();
+            case EUCALYPTUS:
+                item = RuItems.EUCALYPTUS_CHEST_BOAT.get();
+            case JOSHUA:
+                item = RuItems.JOSHUA_CHEST_BOAT.get();
+            case LARCH:
+                item = RuItems.LARCH_CHEST_BOAT.get();
+            case MAPLE:
+                item = RuItems.MAPLE_CHEST_BOAT.get();
+            case MAUVE:
+                item = RuItems.MAUVE_CHEST_BOAT.get();
+            case PALM:
+                item = RuItems.PALM_CHEST_BOAT.get();
+            case PINE:
+                item = RuItems.PINE_CHEST_BOAT.get();
+            case REDWOOD:
+                item = RuItems.REDWOOD_CHEST_BOAT.get();
+            case BRIMWOOD:
+                item = RuItems.BRIMWOOD_CHEST_BOAT.get();
+            case WILLOW:
+                item = RuItems.WILLOW_CHEST_BOAT.get();
+            default:
+                item = RuItems.BAOBAB_CHEST_BOAT.get();
         };
-    }
-
-    @Override
-    public Packet<ClientGamePacketListener> getAddEntityPacket() {
-        return new ClientboundAddEntityPacket(this);
+        return item;
     }
 
     @Override
@@ -68,12 +80,12 @@ public class RuChestBoat extends ChestBoat {
     }
 
     @Override
-    protected void checkFallDamage(double distance, boolean bool, BlockState state, BlockPos pos) {
+    protected void checkFallDamage(double distance, boolean onLand, BlockState state, BlockPos pos) {
         this.lastYd = this.getDeltaMovement().y;
         if (!this.isPassenger()) {
-            if (bool) {
+            if (onLand) {
                 if (this.fallDistance > 3.0F) {
-                    if (this.status != Status.ON_LAND) {
+                    if (this.status != Boat.Status.ON_LAND) {
                         this.resetFallDistance();
                         return;
                     }
@@ -94,7 +106,8 @@ public class RuChestBoat extends ChestBoat {
                 }
 
                 this.resetFallDistance();
-            } else if (!this.canBoatInFluid(this.level.getFluidState(this.blockPosition().below())) && distance < 0.0D) {
+            }
+            else if (!this.canBoatInFluid(this.level.getFluidState(this.blockPosition().below())) && distance < 0.0D) {
                 this.fallDistance -= (float)distance;
             }
 

@@ -7,9 +7,6 @@ import net.minecraft.world.damagesource.DamageType;
 import net.regions_unexplored.RegionsUnexploredMod;
 
 public class DamageTypeRegistry {
-    public static ResourceKey<DamageType> QUICKSAND = createKey("quicksand");
-    public static ResourceKey<DamageType> DORCEL = createKey("dorcel");
-
     public static ResourceKey<DamageType> createKey(String key) {
         return ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(RegionsUnexploredMod.MOD_ID, key));
     }

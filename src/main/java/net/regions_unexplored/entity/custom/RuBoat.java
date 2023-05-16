@@ -3,9 +3,6 @@ package net.regions_unexplored.entity.custom;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
-import net.minecraft.network.protocol.Packet;
-import net.minecraft.network.protocol.game.ClientGamePacketListener;
-import net.minecraft.network.protocol.game.ClientboundAddEntityPacket;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.item.Item;
@@ -17,45 +14,60 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.entity.RuEntities;
 import net.regions_unexplored.item.RuItems;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
 
 public class RuBoat extends Boat {
-    //TODO:Complete Class
     public RuBoat(EntityType<? extends RuBoat> type, Level level) {
         super(type, level);
         this.blocksBuilding = true;
     }
 
     public RuBoat(Level level, double x, double y, double z) {
-        this((EntityType<RuBoat>) RuEntities.BOAT.get(), level);
-        this.setPos(x, y, z); this.xo = x; this.yo = y; this.zo = z;
+        this((EntityType<? extends RuBoat>) RuEntities.BOAT.get(), level);
+        this.setPos(x, y, z);
+        this.xo = x;
+        this.yo = y;
+        this.zo = z;
     }
 
     @Override
-    public Item getDropItem() {
-        return switch (ModelType.byId(this.entityData.get(DATA_ID_TYPE))) {
-            case BAOBAB -> RuItems.BAOBAB_BOAT.get();
-            case BLACKWOOD -> RuItems.BLACKWOOD_BOAT.get();
-            case CHERRY -> RuItems.CHERRY_BOAT.get();
-            case CYPRESS -> RuItems.CYPRESS_BOAT.get();
-            case DEAD -> RuItems.DEAD_BOAT.get();
-            case EUCALYPTUS -> RuItems.EUCALYPTUS_BOAT.get();
-            case JOSHUA -> RuItems.JOSHUA_BOAT.get();
-            case LARCH -> RuItems.LARCH_BOAT.get();
-            case MAPLE -> RuItems.MAPLE_BOAT.get();
-            case MAUVE -> RuItems.MAUVE_BOAT.get();
-            case PALM -> RuItems.PALM_BOAT.get();
-            case PINE -> RuItems.PINE_BOAT.get();
-            case REDWOOD -> RuItems.REDWOOD_BOAT.get();
-            case BRIMWOOD -> RuItems.BRIMWOOD_BOAT.get();
-            case WILLOW -> RuItems.WILLOW_BOAT.get();
+    public @NotNull Item getDropItem() {
+        Item item;
+        switch (ModelType.byId(this.entityData.get(DATA_ID_TYPE))) {
+            case BLACKWOOD:
+                item = RuItems.BLACKWOOD_BOAT.get();
+            case CHERRY:
+                item = RuItems.CHERRY_BOAT.get();
+            case CYPRESS:
+                item = RuItems.CYPRESS_BOAT.get();
+            case DEAD:
+                item = RuItems.DEAD_BOAT.get();
+            case EUCALYPTUS:
+                item = RuItems.EUCALYPTUS_BOAT.get();
+            case JOSHUA:
+                item = RuItems.JOSHUA_BOAT.get();
+            case LARCH:
+                item = RuItems.LARCH_BOAT.get();
+            case MAPLE:
+                item = RuItems.MAPLE_BOAT.get();
+            case MAUVE:
+                item = RuItems.MAUVE_BOAT.get();
+            case PALM:
+                item = RuItems.PALM_BOAT.get();
+            case PINE:
+                item = RuItems.PINE_BOAT.get();
+            case REDWOOD:
+                item = RuItems.REDWOOD_BOAT.get();
+            case BRIMWOOD:
+                item = RuItems.BRIMWOOD_BOAT.get();
+            case WILLOW:
+                item = RuItems.WILLOW_BOAT.get();
+            default:
+                item = RuItems.BAOBAB_BOAT.get();
         };
-    }
-
-    @Override
-    public Packet<ClientGamePacketListener> getAddEntityPacket() {
-        return new ClientboundAddEntityPacket(this);
+        return item;
     }
 
     @Override
@@ -71,12 +83,12 @@ public class RuBoat extends Boat {
     }
 
     @Override
-    protected void checkFallDamage(double distance, boolean bool, BlockState state, BlockPos pos) {
+    protected void checkFallDamage(double distance, boolean onLand, BlockState state, BlockPos pos) {
         this.lastYd = this.getDeltaMovement().y;
         if (!this.isPassenger()) {
-            if (bool) {
+            if (onLand) {
                 if (this.fallDistance > 3.0F) {
-                    if (this.status != Status.ON_LAND) {
+                    if (this.status != Boat.Status.ON_LAND) {
                         this.resetFallDistance();
                         return;
                     }
@@ -97,7 +109,8 @@ public class RuBoat extends Boat {
                 }
 
                 this.resetFallDistance();
-            } else if (!this.canBoatInFluid(this.level.getFluidState(this.blockPosition().below())) && distance < 0.0D) {
+            }
+            else if (!this.canBoatInFluid(this.level.getFluidState(this.blockPosition().below())) && distance < 0.0D) {
                 this.fallDistance -= (float)distance;
             }
 
@@ -115,13 +128,13 @@ public class RuBoat extends Boat {
     @Deprecated
     @Override
     public void setVariant(Type type) {
-
+        this.entityData.set(DATA_ID_TYPE, type.ordinal());
     }
 
     @Deprecated
     @Override
     public Type getVariant() {
-        return Type.OAK;
+        return Boat.Type.byId(this.entityData.get(DATA_ID_TYPE));
     }
 
     public enum ModelType {
@@ -162,13 +175,19 @@ public class RuBoat extends Boat {
         }
 
         public static ModelType byId(int id) {
-            ModelType[] model = values();
-            return model[id < 0 || id >= model.length ? 0 : id];
+            ModelType[] modelType = values();
+            if (id < 0 || id >= modelType.length) {
+                return modelType[0];
+            }
+            else{
+                return modelType[id];
+            }
         }
 
         public static ModelType byName(String name) {
-            ModelType[] model = values();
-            return Arrays.stream(model).filter(t -> t.getName().equals(name)).findFirst().orElse(model[0]);
+            ModelType[] modelType = values();
+            return Arrays.stream(modelType).filter(t ->
+                    t.getName().equals(name)).findFirst().orElse(modelType[0]);
         }
     }
 }

@@ -11,9 +11,37 @@ import net.regions_unexplored.RegionsUnexploredMod;
 import net.regions_unexplored.data.block.RuBlockSetType;
 import net.regions_unexplored.data.block.RuWoodTypes;
 import net.regions_unexplored.registry.BlockRegistry;
-import net.regions_unexplored.world.level.block.*;
-import net.regions_unexplored.world.level.block.grass.*;
+import net.regions_unexplored.world.level.block.alpha.AlphaGrassBlock;
+import net.regions_unexplored.world.level.block.cave.*;
+import net.regions_unexplored.world.level.block.forest_dirt.ForestDirtPathBlock;
+import net.regions_unexplored.world.level.block.forest_dirt.ForestFarmBlock;
+import net.regions_unexplored.world.level.block.forest_dirt.ForestGrassBlock;
 import net.regions_unexplored.world.level.block.grower.*;
+import net.regions_unexplored.world.level.block.log.BambooLogBlock;
+import net.regions_unexplored.world.level.block.log.MagmaLogBlock;
+import net.regions_unexplored.world.level.block.log.StrippedBambooLogBlock;
+import net.regions_unexplored.world.level.block.nether.RuNyliumBlock;
+import net.regions_unexplored.world.level.block.other.*;
+import net.regions_unexplored.world.level.block.other_dirt.*;
+import net.regions_unexplored.world.level.block.plains_dirt.PlainsDirtPathBlock;
+import net.regions_unexplored.world.level.block.plains_dirt.PlainsFarmBlock;
+import net.regions_unexplored.world.level.block.plains_dirt.PlainsGrassBlock;
+import net.regions_unexplored.world.level.block.plant.aquatic.TallHyacinthStockBlock;
+import net.regions_unexplored.world.level.block.plant.other.SaguaroCactusBlock;
+import net.regions_unexplored.world.level.block.plant.grass.PrismossSproutBlock;
+import net.regions_unexplored.world.level.block.plant.nether.*;
+import net.regions_unexplored.world.level.block.plant.other.DuckweedBlock;
+import net.regions_unexplored.world.level.block.plant.other.BranchBlock;
+import net.regions_unexplored.world.level.block.plant.flower.CaveFlowerBlock;
+import net.regions_unexplored.world.level.block.plant.flower.RuFlowerBlock;
+import net.regions_unexplored.world.level.block.plant.grass.*;
+import net.regions_unexplored.world.level.block.plant.other.*;
+import net.regions_unexplored.world.level.block.plant.sapling.BrimSaplingBlock;
+import net.regions_unexplored.world.level.block.plant.sapling.CactusSaplingBlock;
+import net.regions_unexplored.world.level.block.plant.sapling.RuSaplingBlock;
+import net.regions_unexplored.world.level.block.plant.tall.*;
+import net.regions_unexplored.world.level.block.sign.RuStandingSignBlock;
+import net.regions_unexplored.world.level.block.sign.RuWallSignBlock;
 
 public class RuBlocks {
     //TODO:Complete Class
@@ -692,17 +720,17 @@ public class RuBlocks {
         /*-----------------PLANTS-----------------*/
         //GRASS_BLOCKS
         DEAD_STEPPE_SHRUB = BlockRegistry.registerDefaultBlock("dead_steppe_shrub", () -> new DeadShrubBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.WOOD).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ)));
-        FROZEN_GRASS = BlockRegistry.registerDefaultBlock("frozen_grass", () -> new SnowyTallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
-        MEDIUM_GRASS = BlockRegistry.registerDefaultBlock("medium_grass", () -> new RuTallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
-        SANDY_GRASS = BlockRegistry.registerDefaultBlock("sandy_grass", () -> new SandyTallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
-        SEEDED_GRASS = BlockRegistry.registerDefaultBlock("seeded_grass", () -> new RuTallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+        FROZEN_GRASS = BlockRegistry.registerDefaultBlock("frozen_grass", () -> new RuSnowyPlantBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+        MEDIUM_GRASS = BlockRegistry.registerDefaultBlock("medium_grass", () -> new RuPlantBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+        SANDY_GRASS = BlockRegistry.registerDefaultBlock("sandy_grass", () -> new RuSandyPlantBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+        SEEDED_GRASS = BlockRegistry.registerDefaultBlock("seeded_grass", () -> new RuPlantBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
         SMALL_DESERT_SHRUB = BlockRegistry.registerDefaultBlock("small_desert_shrub", () -> new DeadShrubBlock(BlockBehaviour.Properties.copy(Blocks.DEAD_BUSH)));
-        STEPPE_GRASS = BlockRegistry.registerDefaultBlock("steppe_grass", () -> new RuTallGrassBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ)));
-        STEPPE_SHRUB = BlockRegistry.registerDefaultBlock("steppe_shrub", () -> new RuTallGrassBlock(BlockBehaviour.Properties.copy(STEPPE_GRASS.get())));
-        STONE_BUD = BlockRegistry.registerDefaultBlock("stone_bud", () -> new StoneBudBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+        STEPPE_GRASS = BlockRegistry.registerDefaultBlock("steppe_grass", () -> new RuPlantBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ)));
+        STEPPE_SHRUB = BlockRegistry.registerDefaultBlock("steppe_shrub", () -> new RuPlantBlock(BlockBehaviour.Properties.copy(STEPPE_GRASS.get())));
+        STONE_BUD = BlockRegistry.registerDefaultBlock("stone_bud", () -> new RuStonePlantBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
         //TALL_GRASS_BLOCKS
         ELEPHANT_EAR = BlockRegistry.registerDefaultBlock("elephant_ear", () -> new ElephantEarBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
-        SANDY_TALL_GRASS = BlockRegistry.registerDefaultBlock("sandy_tall_grass", () -> new SandyDoublePlantBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
+        SANDY_TALL_GRASS = BlockRegistry.registerDefaultBlock("sandy_tall_grass", () -> new RuSandyDoublePlantBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
         SEEDED_TALL_GRASS = BlockRegistry.registerDefaultBlock("seeded_tall_grass", () -> new RuDoublePlantBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
         STEPPE_TALL_GRASS = BlockRegistry.registerDefaultBlock("steppe_tall_grass", () -> new RuDoublePlantBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
         WINDSWEPT_TALL_GRASS = BlockRegistry.registerDefaultBlock("windswept_tall_grass", () -> new RuDoublePlantBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
@@ -977,7 +1005,7 @@ public class RuBlocks {
         ASHEN_DIRT = BlockRegistry.registerDefaultBlock("ashen_dirt", () -> new AshenDirtBlock(BlockBehaviour.Properties.of(Material.DIRT, MaterialColor.COLOR_GRAY).strength(0.5F).sound(SoundType.GRAVEL).randomTicks().lightLevel((bs) -> AshenDirtBlock.isSmouldering(bs) ? 7 : 0)));
         ASHEN_SHRUB = BlockRegistry.registerDefaultBlock("ashen_shrub", () -> new AshenShrubBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.ROOTED_DIRT).offsetType(BlockBehaviour.OffsetType.XZ).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true)));
         ASHEN_LEAVES = BlockRegistry.registerDefaultBlock("ashen_leaves", () -> BlockRegistry.leaves(MaterialColor.COLOR_LIGHT_GRAY));
-        ASHEN_GRASS = BlockRegistry.registerDefaultBlock("ashen_grass", () -> new AshenTallGrassBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XYZ).hasPostProcess((bs, br, bp) -> AshenTallGrassBlock.isSmouldering(bs) ? true : false).emissiveRendering((bs, br, bp) -> AshenTallGrassBlock.isSmouldering(bs) ? true : false).lightLevel((bs) -> AshenTallGrassBlock.isSmouldering(bs) ? 5 : 0)));
+        ASHEN_GRASS = BlockRegistry.registerDefaultBlock("ashen_grass", () -> new AshenGrassBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XYZ).hasPostProcess((bs, br, bp) -> AshenGrassBlock.isSmouldering(bs) ? true : false).emissiveRendering((bs, br, bp) -> AshenGrassBlock.isSmouldering(bs) ? true : false).lightLevel((bs) -> AshenGrassBlock.isSmouldering(bs) ? 5 : 0)));
 
         /*-----------------OTHER_BLOCKS-----------------*/
         ASH = BlockRegistry.registerDefaultBlock("ash", () -> new AshBlock(BlockBehaviour.Properties.of(Material.DIRT, MaterialColor.COLOR_GRAY).strength(0.5F).sound(SoundType.GRAVEL).randomTicks()));
@@ -1301,23 +1329,23 @@ public class RuBlocks {
         BRIMSPROUT_NYLIUM = BlockRegistry.registerDefaultBlock("brimsprout_nylium", () -> new RuNyliumBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_RED).requiresCorrectToolForDrops().strength(0.4F).sound(SoundType.SCULK_SENSOR)));
         BRIMSPROUT = BlockRegistry.registerDefaultBlock("brimsprout", () -> new BrimPlantBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.SCULK).offsetType(BlockBehaviour.OffsetType.XYZ)));
         //COBALT_BLOCKS
-        COBALT_EARLIGHT = BlockRegistry.registerDefaultBlock("cobalt_earlight", () -> new NetherLargePlantBlock(BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 13)));
+        COBALT_EARLIGHT = BlockRegistry.registerDefaultBlock("cobalt_earlight", () -> new RuNetherDoublePlantBlock(BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 13)));
         COBALT_NYLIUM = BlockRegistry.registerDefaultBlock("cobalt_nylium", () -> new RuNyliumBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_BLUE).requiresCorrectToolForDrops().strength(0.4F).sound(SoundType.NYLIUM)));
         COBALT_OBSIDIAN = BlockRegistry.registerDefaultBlock("cobalt_obsidian", () -> new CobaltObsidianBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_BLACK).requiresCorrectToolForDrops().strength(50.0F, 1200.0F)));
-        COBALT_ROOTS = BlockRegistry.registerDefaultBlock("cobalt_roots", () -> new NetherGrassBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(BlockBehaviour.OffsetType.XZ)));
+        COBALT_ROOTS = BlockRegistry.registerDefaultBlock("cobalt_roots", () -> new RuNetherPlantBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(BlockBehaviour.OffsetType.XZ)));
         HANGING_EARLIGHT = BlockRegistry.registerDefaultBlock("hanging_earlight", () -> new HangingEarlightBlock(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.COLOR_BLUE).randomTicks().noCollission().instabreak().sound(SoundType.WEEPING_VINES).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 14)));
         HANGING_EARLIGHT_PLANT = RegionsUnexploredMod.BLOCK_REGISTRY.register("hanging_earlight_plant", () -> new HangingEarlightPlantBlock(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.COLOR_BLUE).noCollission().instabreak().sound(SoundType.WEEPING_VINES)));
         //GLISTERING_BLOCKS
         GLISTERING_IVY = BlockRegistry.registerDefaultBlock("glistering_ivy", () -> new GlisteringIvyBlock(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.COLOR_LIGHT_BLUE).randomTicks().noCollission().instabreak().sound(SoundType.WEEPING_VINES).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 15)));
         GLISTERING_IVY_PLANT = RegionsUnexploredMod.BLOCK_REGISTRY.register("glistering_ivy_plant", () -> new GlisteringIvyPlantBlock(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.COLOR_LIGHT_BLUE).noCollission().instabreak().sound(SoundType.WEEPING_VINES)));
         GLISTERING_NYLIUM = BlockRegistry.registerDefaultBlock("glistering_nylium", () -> new RuNyliumBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_PINK).requiresCorrectToolForDrops().strength(0.4F).sound(SoundType.NYLIUM)));
-        GLISTERING_SPROUT = BlockRegistry.registerDefaultBlock("glistering_sprout", () -> new NetherGrassBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.TWISTING_VINES).offsetType(BlockBehaviour.OffsetType.XZ)));
+        GLISTERING_SPROUT = BlockRegistry.registerDefaultBlock("glistering_sprout", () -> new RuNetherPlantBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.TWISTING_VINES).offsetType(BlockBehaviour.OffsetType.XZ)));
         GLISTERING_WART = BlockRegistry.registerDefaultBlock("glistering_wart", () -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_PINK).requiresCorrectToolForDrops().strength(0.4F).sound(SoundType.NYLIUM)));
-        GLISTER_BULB = BlockRegistry.registerDefaultBlock("glister_bulb", () -> new NetherDoubleGrassBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.NETHER_WART).offsetType(BlockBehaviour.OffsetType.XZ).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 13)));
-        GLISTER_SPIRE = BlockRegistry.registerDefaultBlock("glister_spire", () -> new NetherDoubleGrassBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(BlockBehaviour.OffsetType.XZ).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 5)));
+        GLISTER_BULB = BlockRegistry.registerDefaultBlock("glister_bulb", () -> new RuNetherDoublePlantBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.NETHER_WART).offsetType(BlockBehaviour.OffsetType.XZ).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 13)));
+        GLISTER_SPIRE = BlockRegistry.registerDefaultBlock("glister_spire", () -> new RuNetherDoublePlantBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(BlockBehaviour.OffsetType.XZ).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 5)));
         //MYCOTOXIC_BLOCKS
-        MYCOTOXIC_DAISY = BlockRegistry.registerDefaultBlock("mycotoxic_daisy", () -> new NetherDoubleGrassBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(BlockBehaviour.OffsetType.XYZ).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 4)));
-        MYCOTOXIC_GRASS = BlockRegistry.registerDefaultBlock("mycotoxic_grass", () -> new NetherGrassBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(BlockBehaviour.OffsetType.XYZ)));
+        MYCOTOXIC_DAISY = BlockRegistry.registerDefaultBlock("mycotoxic_daisy", () -> new RuNetherDoublePlantBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(BlockBehaviour.OffsetType.XYZ).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 4)));
+        MYCOTOXIC_GRASS = BlockRegistry.registerDefaultBlock("mycotoxic_grass", () -> new RuNetherPlantBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(BlockBehaviour.OffsetType.XYZ)));
         MYCOTOXIC_NYLIUM = BlockRegistry.registerDefaultBlock("mycotoxic_moss", () -> new RuNyliumBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_YELLOW).requiresCorrectToolForDrops().strength(0.4F).sound(SoundType.NYLIUM)));
     }
 }

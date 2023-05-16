@@ -12,7 +12,10 @@ public class RuEntities {
     public static RegistryObject<EntityType<?>> CHEST_BOAT;
 
     public static void addEntities() {
-        BOAT = RegionsUnexploredMod.ENTITY_REGISTRY.register("boat", () -> EntityType.Builder.<RuBoat>of(RuBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10).build(RegionsUnexploredMod.MOD_ID + ":boat"));
-        CHEST_BOAT = RegionsUnexploredMod.ENTITY_REGISTRY.register("chest_boat", () -> EntityType.Builder.<RuChestBoat>of(RuChestBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10).build(RegionsUnexploredMod.MOD_ID + ":chest_boat"));
+        BOAT = RegionsUnexploredMod.ENTITY_REGISTRY.register("boat", () -> EntityType.Builder.<RuBoat>of(
+                RuBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10).build(RegionsUnexploredMod.MOD_ID + ":boat"));
+
+        CHEST_BOAT = RegionsUnexploredMod.ENTITY_REGISTRY.register("chest_boat", () -> EntityType.Builder.<RuChestBoat>of(
+                RuChestBoat::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10).build(RegionsUnexploredMod.MOD_ID + ":chest_boat"));
     }
 }
