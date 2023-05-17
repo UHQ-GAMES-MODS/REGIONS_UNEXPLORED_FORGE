@@ -330,7 +330,7 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         add(RuBlocks.POLISHED_CHALK_SLAB.get(), (block) -> createSlabItemTable(block));
         dropSelf(RuBlocks.POLISHED_CHALK_STAIRS.get());
         //MOSSY_STONES
-        dropSelf(RuBlocks.MOSSY_STONE.get());
+        add(RuBlocks.MOSSY_STONE.get(), (block) -> createSingleItemTableWithSilkTouch(block, Blocks.MOSSY_COBBLESTONE));
 
         /*-----------------OCEAN_BLOCKS-----------------*/
         //HYACINTH_BLOCKS
