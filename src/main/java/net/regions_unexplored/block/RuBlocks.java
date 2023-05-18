@@ -1057,9 +1057,9 @@ public class RuBlocks {
         //BRIMWOOD_BLOCKS
         BRIMWOOD_LOG = BlockRegistry.registerDefaultBlock("brimwood_log", () -> BlockRegistry.log(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_BROWN, SoundType.NETHER_WOOD));
         BRIMWOOD_LOG_MAGMA = BlockRegistry.registerDefaultBlock("brimwood_log_magma", () -> new MagmaLogBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_BROWN).strength(2.0F).sound(SoundType.NETHER_WOOD).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 12)));
-        STRIPPED_BRIMWOOD_LOG = BlockRegistry.registerDefaultBlock("stripped_cherry_log", () -> BlockRegistry.log(MaterialColor.TERRACOTTA_PINK, MaterialColor.TERRACOTTA_PINK, SoundType.NETHER_WOOD));
-        BRIMWOOD_WOOD = BlockRegistry.registerDefaultBlock("cherry_wood", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.STONE).strength(2.0F).sound(SoundType.NETHER_WOOD)));
-        STRIPPED_BRIMWOOD_WOOD = BlockRegistry.registerDefaultBlock("stripped_cherry_wood", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_PINK).strength(2.0F).sound(SoundType.NETHER_WOOD)));
+        STRIPPED_BRIMWOOD_LOG = BlockRegistry.registerDefaultBlock("stripped_brimwood_log", () -> BlockRegistry.log(MaterialColor.TERRACOTTA_PINK, MaterialColor.TERRACOTTA_PINK, SoundType.NETHER_WOOD));
+        BRIMWOOD_WOOD = BlockRegistry.registerDefaultBlock("brimwood_wood", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.STONE).strength(2.0F).sound(SoundType.NETHER_WOOD)));
+        STRIPPED_BRIMWOOD_WOOD = BlockRegistry.registerDefaultBlock("stripped_brimwood_wood", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_PINK).strength(2.0F).sound(SoundType.NETHER_WOOD)));
         BRIMWOOD_PLANKS = BlockRegistry.registerDefaultBlock("brimwood_planks", () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_ORANGE).strength(2.0F, 3.0F).sound(SoundType.NETHER_WOOD)));
         BRIMWOOD_STAIRS = BlockRegistry.registerDefaultBlock("brimwood_stairs", () -> BlockRegistry.woodStairs(MaterialColor.COLOR_ORANGE, SoundType.NETHER_WOOD));
         BRIMWOOD_SLAB = BlockRegistry.registerDefaultBlock("brimwood_slab", () -> BlockRegistry.woodSlab(MaterialColor.COLOR_ORANGE, SoundType.NETHER_WOOD));

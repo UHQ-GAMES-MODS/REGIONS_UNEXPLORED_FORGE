@@ -30,6 +30,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import net.regions_unexplored.block.RuBlocks;
 import org.slf4j.Logger;
 
 @Mod(RegionsUnexploredMod.MOD_ID)
@@ -57,7 +58,6 @@ public class RegionsUnexploredMod {
 
         bus.addListener(this::clientSetup);
         bus.addListener(this::commonSetup);
-        bus.addListener(this::serverSetup);
 
         //add registries to IEventBus
         BIOME_REGISTRY.register(bus);
@@ -70,8 +70,7 @@ public class RegionsUnexploredMod {
         ENTITY_REGISTRY.register(bus);
         PARTICLE_REGISTRY.register(bus);
 
-        MinecraftForge.EVENT_BUS.register(this);
-
+        RuBlocks.addBlocks();
     }
 
     //set up client side features
@@ -80,8 +79,5 @@ public class RegionsUnexploredMod {
 
     //set up non-client side features
     private void commonSetup(final FMLCommonSetupEvent event) {
-    }
-
-    public void serverSetup(ServerStartingEvent event) {
     }
 }

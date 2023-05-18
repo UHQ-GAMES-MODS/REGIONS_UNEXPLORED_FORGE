@@ -7,8 +7,7 @@ import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.regions_unexplored.RegionsUnexploredMod;
-import net.regions_unexplored.datagen.provider.RuLootTableProvider;
-import net.regions_unexplored.datagen.provider.RuRecipeProvider;
+import net.regions_unexplored.datagen.provider.*;
 
 @Mod.EventBusSubscriber( modid = RegionsUnexploredMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DataGeneration {
@@ -18,8 +17,9 @@ public class DataGeneration {
         PackOutput packOutput = generator.getPackOutput();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
+        generator.addProvider(event.includeServer(), new RuBiomeTagProvider(packOutput, event.getLookupProvider()));
+        generator.addProvider(event.includeServer(), new RuBlockTagProvider(packOutput, event.getLookupProvider(), RegionsUnexploredMod.MOD_ID, event.getExistingFileHelper()));
         generator.addProvider(true, RuLootTableProvider.create(packOutput));
         generator.addProvider(true, new RuRecipeProvider(packOutput));
-
     }
 }

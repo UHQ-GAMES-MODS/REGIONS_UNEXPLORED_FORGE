@@ -14,8 +14,9 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         super(output);
     }
 
+    //TODO:set up recipes
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
-        planksFromLogs(consumer, RuBlocks.BAOBAB_PLANKS.get(), RuTags.BAOBAB_LOGS_ITEM, 4);
+        planksFromLog(consumer, RuBlocks.BAOBAB_PLANKS.get(), RuTags.BAOBAB_LOGS_ITEM, 4);
     }
 }

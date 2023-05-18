@@ -51,16 +51,17 @@ public class RuNyliumBlock extends Block implements BonemealableBlock {
         BlockPos blockPos = pos.above();
         ChunkGenerator chunkgenerator = level.getChunkSource().getGenerator();
         Registry<ConfiguredFeature<?, ?>> registry = level.registryAccess().registryOrThrow(Registries.CONFIGURED_FEATURE);
+        //TODO: bonemeal features
         if (blockState.is(RuBlocks.MYCOTOXIC_NYLIUM.get())) {
-            this.place(registry, RuVegetationFeatures.MYCOTOXIC_NYLIUM_BONEMEAL, level, chunkgenerator, random, blockPos);
+           // this.place(registry, RuVegetationFeatures.MYCOTOXIC_NYLIUM_BONEMEAL, level, chunkgenerator, random, blockPos);
         }
 
         else if (blockState.is(RuBlocks.GLISTERING_NYLIUM.get())) {
-            this.place(registry, RuVegetationFeatures.GLISTERING_NYLIUM_BONEMEAL, level, chunkgenerator, random, blockPos);
+           // this.place(registry, RuVegetationFeatures.GLISTERING_NYLIUM_BONEMEAL, level, chunkgenerator, random, blockPos);
         }
 
         else if (blockState.is(RuBlocks.COBALT_NYLIUM.get())) {
-            this.place(registry, RuVegetationFeatures.GLISTERING_NYLIUM_BONEMEAL, level, chunkgenerator, random, blockPos);
+           // this.place(registry, RuVegetationFeatures.GLISTERING_NYLIUM_BONEMEAL, level, chunkgenerator, random, blockPos);
         }
 
     }

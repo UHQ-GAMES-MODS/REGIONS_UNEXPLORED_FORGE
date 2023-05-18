@@ -60,7 +60,7 @@ public class RegionSecondaryBiomeBuilder {
     private final ResourceKey<Biome>[][] SWAMP_BIOMES = DefaultBiomes.getSecondarySwampBiome();
     private final ResourceKey<Biome>[][] OCEANS = DefaultBiomes.getSecondaryOceanBiome();
 
-    protected void addBiomes(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder) {
+    public void addBiomes(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder) {
         this.addOffCoastBiomes(builder);
         this.addInlandBiomes(builder);
         this.addUndergroundBiomes(builder);

@@ -5,7 +5,7 @@ import net.minecraft.world.level.block.WallSignBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.WoodType;
-import net.regions_unexplored.block.entity.custom.RuSignBlockEntity;
+import net.regions_unexplored.block.entity.RuSignBlockEntity;
 
 public class RuWallSignBlock extends WallSignBlock {
     public RuWallSignBlock(Properties properties, WoodType type) {
