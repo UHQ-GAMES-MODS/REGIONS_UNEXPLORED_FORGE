@@ -5,7 +5,7 @@ import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraftforge.registries.RegistryObject;
 import net.regions_unexplored.RegionsUnexploredMod;
 
-public class RegionsUnexploredParticleTypes {
+public class RuParticleTypes {
     public static RegistryObject<ParticleType<?>> MAUVE;
     public static RegistryObject<ParticleType<?>> MYCOTOXIC_SPORE;
 

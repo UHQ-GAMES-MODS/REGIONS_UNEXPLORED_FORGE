@@ -46,7 +46,7 @@ public class BiomeRegistry {
         //PLAINS
         //TODO:rename FLOWER_FIELD(s)
         register(context, RuBiomes.BARLEY_FIELDS, PlainsBiomes.barleyFields(featuresGetter, carversGetter));
-        register(context, RuBiomes.FLOWER_FIELD, PlainsBiomes.flowerFields(featuresGetter, carversGetter));
+        register(context, RuBiomes.FLOWER_FIELDS, PlainsBiomes.flowerFields(featuresGetter, carversGetter));
         register(context, RuBiomes.GRASSLAND, PlainsBiomes.grassland(featuresGetter, carversGetter));
         register(context, RuBiomes.LUPINE_PLAINS, PlainsBiomes.lupinePlains(featuresGetter, carversGetter));
         register(context, RuBiomes.MEADOW, PlainsBiomes.meadow(featuresGetter, carversGetter));
@@ -139,7 +139,7 @@ public class BiomeRegistry {
         registerVillagers(RuBiomes.SPARSE_REDWOODS, VillagerType.PLAINS);
         //PLAINS
         registerVillagers(RuBiomes.BARLEY_FIELDS, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.FLOWER_FIELD, VillagerType.PLAINS);
+        registerVillagers(RuBiomes.FLOWER_FIELDS, VillagerType.PLAINS);
         registerVillagers(RuBiomes.GRASSLAND, VillagerType.PLAINS);
         registerVillagers(RuBiomes.LUPINE_PLAINS, VillagerType.PLAINS);
         registerVillagers(RuBiomes.MEADOW, VillagerType.PLAINS);

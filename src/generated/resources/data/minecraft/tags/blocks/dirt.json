@@ -11,6 +11,15 @@
     "regions_unexplored:plains_coarse_dirt",
     "regions_unexplored:plains_dirt_path",
     "regions_unexplored:plains_farmland",
-    "regions_unexplored:plains_mud"
+    "regions_unexplored:plains_mud",
+    "regions_unexplored:alpha_grass_block",
+    "regions_unexplored:ashen_dirt",
+    "regions_unexplored:chalk_grass_block",
+    "regions_unexplored:stone_grass_block",
+    "regions_unexplored:deepslate_grass_block",
+    "regions_unexplored:viridescent_nylium",
+    "regions_unexplored:deepslate_viridescent_nylium",
+    "regions_unexplored:prismoss",
+    "regions_unexplored:deepslate_prismoss"
   ]
 }

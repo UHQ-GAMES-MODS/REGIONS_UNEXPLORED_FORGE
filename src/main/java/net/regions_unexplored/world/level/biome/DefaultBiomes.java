@@ -634,7 +634,7 @@ public class DefaultBiomes {
                 /*ICY*/     {RuBiomes.ICY_DESERT, RuBiomes.FROZEN_TUNDRA, RuBiomes.FROZEN_TUNDRA, RuBiomes.COLD_BOREAL_FOREST, RuBiomes.SPIRES},
                 /*COOL*/    {RuBiomes.AUTUMNAL_MAPLE_FOREST, RuBiomes.SILVER_BIRCH_FOREST, RuBiomes.MAPLE_FOREST, RuBiomes.BOREAL_FOREST, RuBiomes.GOLDEN_BOREAL_FOREST},
                 /*NEUTRAL*/ {RuBiomes.MAUVE_HILLS, RuBiomes.MEADOW, RuBiomes.DARK_SAKURA_GROVE, RuBiomes.LUPINE_PLAINS, RuBiomes.BLACKWOOD_FOREST},
-                /*WARM*/    {RuBiomes.WILLOW_FOREST, RuBiomes.MEADOW, RuBiomes.BAMBOO_FOREST, RuBiomes.FLOWER_FIELD, RuBiomes.SPARSE_REDWOODS},
+                /*WARM*/    {RuBiomes.WILLOW_FOREST, RuBiomes.MEADOW, RuBiomes.BAMBOO_FOREST, RuBiomes.FLOWER_FIELDS, RuBiomes.SPARSE_REDWOODS},
                 /*HOT*/     {RuBiomes.DRY_BUSHLAND, RuBiomes.DRY_BUSHLAND, RuBiomes.OUTBACK, RuBiomes.OUTBACK, RuBiomes.EUCALYPTUS_FOREST}};
 
 
@@ -688,7 +688,7 @@ public class DefaultBiomes {
                 /*ICY*/     {RuBiomes.ICY_HEIGHTS, RuBiomes.ICY_HEIGHTS, RuBiomes.ICY_HEIGHTS, RuBiomes.ICY_HEIGHTS, RuBiomes.SPIRES},
                 /*COOL*/    {RuBiomes.AUTUMNAL_MAPLE_FOREST, RuBiomes.AUTUMNAL_MAPLE_FOREST, RuBiomes.MAPLE_FOREST, RuBiomes.BOREAL_FOREST, RuBiomes.GOLDEN_BOREAL_FOREST},
                 /*NEUTRAL*/ {RuBiomes.HIGHLAND_FIELDS, RuBiomes.DARK_SAKURA_GROVE, RuBiomes.DARK_SAKURA_GROVE, RuBiomes.DARK_SAKURA_GROVE, RuBiomes.BLACKWOOD_FOREST},
-                /*WARM*/    {RuBiomes.DARK_SAKURA_GROVE, RuBiomes.DARK_SAKURA_GROVE, RuBiomes.DARK_SAKURA_GROVE, RuBiomes.FLOWER_FIELD, RuBiomes.SPARSE_REDWOODS},
+                /*WARM*/    {RuBiomes.DARK_SAKURA_GROVE, RuBiomes.DARK_SAKURA_GROVE, RuBiomes.DARK_SAKURA_GROVE, RuBiomes.FLOWER_FIELDS, RuBiomes.SPARSE_REDWOODS},
                 /*HOT*/     {RuBiomes.STEPPE, RuBiomes.STEPPE, RuBiomes.STEPPE, RuBiomes.EUCALYPTUS_FOREST, RuBiomes.EUCALYPTUS_FOREST}};
 
 
@@ -1240,7 +1240,7 @@ public class DefaultBiomes {
         if(biome== RuBiomes.FLOODED_PLAINS){
             return RuCommonConfig.TOGGLE_FLOODED_PLAINS.get();
         }
-        if(biome== RuBiomes.FLOWER_FIELD){
+        if(biome== RuBiomes.FLOWER_FIELDS){
             return RuCommonConfig.TOGGLE_FLOWER_FIELD.get();
         }
         if(biome== RuBiomes.FROZEN_FOREST){

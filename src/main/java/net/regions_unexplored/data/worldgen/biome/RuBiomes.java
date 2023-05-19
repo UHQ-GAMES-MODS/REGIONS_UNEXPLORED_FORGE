@@ -25,7 +25,7 @@ public class RuBiomes {
     public static ResourceKey<Biome> EUCALYPTUS_FOREST = BiomeRegistry.createKey("eucalyptus_forest");
     public static ResourceKey<Biome> FEN = BiomeRegistry.createKey("fen");
     public static ResourceKey<Biome> FLOODED_PLAINS = BiomeRegistry.createKey("flooded_plains");
-    public static ResourceKey<Biome> FLOWER_FIELD = BiomeRegistry.createKey("flower_field");
+    public static ResourceKey<Biome> FLOWER_FIELDS = BiomeRegistry.createKey("flower_fields");
     public static ResourceKey<Biome> FROZEN_FOREST = BiomeRegistry.createKey("frozen_forest");
     public static ResourceKey<Biome> FROZEN_TUNDRA = BiomeRegistry.createKey("frozen_tundra");
     public static ResourceKey<Biome> FUNGAL_FEN = BiomeRegistry.createKey("fungal_fen");

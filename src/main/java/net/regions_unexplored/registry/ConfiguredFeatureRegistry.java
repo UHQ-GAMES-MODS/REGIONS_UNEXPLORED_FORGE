@@ -6,10 +6,16 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.regions_unexplored.RegionsUnexploredMod;
-import net.regions_unexplored.data.worldgen.features.RuVegetationFeatures;
+import net.regions_unexplored.data.worldgen.features.*;
 
 public class ConfiguredFeatureRegistry {
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
+        RuTreeFeatures.bootstrap(context);
+        RuAquaticFeatures.bootstrap(context);
+        RuCaveFeatures.bootstrap(context);
+        RuMiscOverworldFeatures.bootstrap(context);
+        RuNetherFeatures.bootstrap(context);
+        RuTreeFeatures.bootstrap(context);
         RuVegetationFeatures.bootstrap(context);
     }
 

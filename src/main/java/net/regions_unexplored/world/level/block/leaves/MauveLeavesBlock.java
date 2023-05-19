@@ -8,7 +8,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.regions_unexplored.client.particle.RegionsUnexploredParticleTypes;
+import net.regions_unexplored.client.particle.RuParticleTypes;
 
 public class MauveLeavesBlock extends LeavesBlock {
     public MauveLeavesBlock(Properties p_273704_) {
@@ -21,7 +21,7 @@ public class MauveLeavesBlock extends LeavesBlock {
             BlockPos blockpos = p_273218_.below();
             BlockState blockstate = p_272837_.getBlockState(blockpos);
             if (!blockstate.canOcclude() || !blockstate.isFaceSturdy(p_272837_, blockpos, Direction.UP)) {
-                ParticleUtils.spawnParticleBelow(p_272837_, p_273218_, p_273360_, (ParticleOptions) RegionsUnexploredParticleTypes.MAUVE.get());
+                ParticleUtils.spawnParticleBelow(p_272837_, p_273218_, p_273360_, (ParticleOptions) RuParticleTypes.MAUVE.get());
             }
         }
     }
