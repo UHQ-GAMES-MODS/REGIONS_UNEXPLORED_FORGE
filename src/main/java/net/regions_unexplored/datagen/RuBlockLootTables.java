@@ -87,9 +87,9 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         dropSelf(RuBlocks.WILTING_TRILLIUM.get());
         dropSelf(RuBlocks.YELLOW_LUPINE.get());
 
-        add(RuBlocks.RED_CHERRY_FLOWERS.get(), (block) -> createMultifaceBlockDrops(block, HAS_SHEARS));
-        add(RuBlocks.PINK_CHERRY_FLOWERS.get(), (block) -> createMultifaceBlockDrops(block, HAS_SHEARS));
-        add(RuBlocks.WHITE_CHERRY_FLOWERS.get(), (block) -> createMultifaceBlockDrops(block, HAS_SHEARS));
+        add(RuBlocks.RED_SAKURA_FLOWERS.get(), (block) -> createMultifaceBlockDrops(block, HAS_SHEARS));
+        add(RuBlocks.PINK_SAKURA_FLOWERS.get(), (block) -> createMultifaceBlockDrops(block, HAS_SHEARS));
+        add(RuBlocks.WHITE_SAKURA_FLOWERS.get(), (block) -> createMultifaceBlockDrops(block, HAS_SHEARS));
         //TALL_PLANTS
         add(RuBlocks.BARLEY.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         add(RuBlocks.CATTAIL.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
@@ -102,7 +102,7 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         dropSelf(RuBlocks.BAOBAB_SAPLING.get());
         dropSelf(RuBlocks.BLACKWOOD_SAPLING.get());
         dropSelf(RuBlocks.CACTUS_FLOWER.get());
-        dropSelf(RuBlocks.CHERRY_SAPLING.get());
+        dropSelf(RuBlocks.SAKURA_SAPLING.get());
         dropSelf(RuBlocks.CYPRESS_SAPLING.get());
         dropSelf(RuBlocks.DEAD_PINE_SAPLING.get());
         dropSelf(RuBlocks.DEAD_SAPLING.get());
@@ -116,13 +116,13 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         dropSelf(RuBlocks.ORANGE_MAPLE_SAPLING.get());
         dropSelf(RuBlocks.PALM_SAPLING.get());
         dropSelf(RuBlocks.PINE_SAPLING.get());
-        dropSelf(RuBlocks.PINK_CHERRY_SAPLING.get());
+        dropSelf(RuBlocks.PINK_SAKURA_SAPLING.get());
         dropSelf(RuBlocks.REDWOOD_SAPLING.get());
-        dropSelf(RuBlocks.RED_CHERRY_SAPLING.get());
+        dropSelf(RuBlocks.RED_SAKURA_SAPLING.get());
         dropSelf(RuBlocks.RED_MAPLE_SAPLING.get());
         dropSelf(RuBlocks.BRIMWOOD_SAPLING.get());
         dropSelf(RuBlocks.SILVER_BIRCH_SAPLING.get());
-        dropSelf(RuBlocks.WHITE_CHERRY_SAPLING.get());
+        dropSelf(RuBlocks.WHITE_SAKURA_SAPLING.get());
         dropSelf(RuBlocks.WILLOW_SAPLING.get());
         //SHRUBS
         add(RuBlocks.ASHEN_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
@@ -130,7 +130,7 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         add(RuBlocks.BAOBAB_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         add(RuBlocks.BIRCH_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         add(RuBlocks.BLACKWOOD_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
-        add(RuBlocks.CHERRY_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
+        add(RuBlocks.SAKURA_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         add(RuBlocks.CYPRESS_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         add(RuBlocks.DARK_OAK_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         add(RuBlocks.DEAD_PINE_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
@@ -148,13 +148,13 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         add(RuBlocks.ORANGE_MAPLE_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         add(RuBlocks.PALM_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         add(RuBlocks.PINE_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
-        add(RuBlocks.PINK_CHERRY_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
+        add(RuBlocks.PINK_SAKURA_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         add(RuBlocks.REDWOOD_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
-        add(RuBlocks.RED_CHERRY_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
+        add(RuBlocks.RED_SAKURA_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         add(RuBlocks.RED_MAPLE_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         add(RuBlocks.SILVER_BIRCH_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         add(RuBlocks.SPRUCE_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
-        add(RuBlocks.WHITE_CHERRY_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
+        add(RuBlocks.WHITE_SAKURA_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         add(RuBlocks.WILLOW_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         //MUSHROOMS
         dropSelf(RuBlocks.BLUE_BIOSHROOM.get());
@@ -197,7 +197,7 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         add(RuBlocks.POTTED_BAOBAB_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_BLACKWOOD_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_CACTUS_FLOWER.get(), (block) -> createPotFlowerItemTable(block));
-        add(RuBlocks.POTTED_CHERRY_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_SAKURA_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_CYPRESS_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_DEAD_PINE_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_DEAD_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
@@ -211,13 +211,13 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         add(RuBlocks.POTTED_ORANGE_MAPLE_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_PALM_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_PINE_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
-        add(RuBlocks.POTTED_PINK_CHERRY_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_PINK_SAKURA_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_REDWOOD_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
-        add(RuBlocks.POTTED_RED_CHERRY_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_RED_SAKURA_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_RED_MAPLE_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_BRIMWOOD_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_SILVER_BIRCH_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
-        add(RuBlocks.POTTED_WHITE_CHERRY_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_WHITE_SAKURA_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_WILLOW_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         //POTTED_MUSHROOMS
         add(RuBlocks.POTTED_BLUE_BIOSHROOM.get(), (block) -> createPotFlowerItemTable(block));
@@ -251,7 +251,7 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         add(RuBlocks.BAMBOO_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.BAMBOO_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.BAOBAB_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.BAOBAB_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.BLACKWOOD_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.BLACKWOOD_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
-        add(RuBlocks.CHERRY_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.CHERRY_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        add(RuBlocks.SAKURA_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.SAKURA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.CYPRESS_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.CYPRESS_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.DEAD_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.ALPHA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.DEAD_PINE_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.ALPHA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
@@ -265,13 +265,13 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         add(RuBlocks.ORANGE_MAPLE_LEAVES.get(), (block) -> createOakLeavesDrops(block, RuBlocks.ALPHA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.PALM_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.ALPHA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.PINE_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.ALPHA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
-        add(RuBlocks.PINK_CHERRY_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.ALPHA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        add(RuBlocks.PINK_SAKURA_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.ALPHA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.REDWOOD_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.ALPHA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
-        add(RuBlocks.RED_CHERRY_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.ALPHA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        add(RuBlocks.RED_SAKURA_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.ALPHA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.RED_MAPLE_LEAVES.get(), (block) -> createOakLeavesDrops(block, RuBlocks.ALPHA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.BRIMWOOD_LEAVES.get(), (block) -> createSilkTouchOrShearsDispatchTable(block, this.applyExplosionCondition(block, LootItem.lootTableItem(RuBlocks.BRIMWOOD_SAPLING.get())).when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, NORMAL_LEAVES_SAPLING_CHANCES))).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).when(HAS_NO_SHEARS_OR_SILK_TOUCH)));
         add(RuBlocks.SILVER_BIRCH_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.ALPHA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
-        add(RuBlocks.WHITE_CHERRY_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.ALPHA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        add(RuBlocks.WHITE_SAKURA_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.ALPHA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.WILLOW_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.ALPHA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
         /*-----------------BRANCHES-----------------*/
@@ -279,7 +279,7 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         add(RuBlocks.BAOBAB_BRANCH.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionCondition(block, LootItem.lootTableItem(Items.STICK))).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(4.0F)).when(HAS_SHEARS.invert())));
         add(RuBlocks.BIRCH_BRANCH.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionCondition(block, LootItem.lootTableItem(Items.STICK))).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(4.0F)).when(HAS_SHEARS.invert())));
         add(RuBlocks.BLACKWOOD_BRANCH.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionCondition(block, LootItem.lootTableItem(Items.STICK))).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(4.0F)).when(HAS_SHEARS.invert())));
-        add(RuBlocks.CHERRY_BRANCH.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionCondition(block, LootItem.lootTableItem(Items.STICK))).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(4.0F)).when(HAS_SHEARS.invert())));
+        add(RuBlocks.SAKURA_BRANCH.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionCondition(block, LootItem.lootTableItem(Items.STICK))).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(4.0F)).when(HAS_SHEARS.invert())));
         add(RuBlocks.CYPRESS_BRANCH.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionCondition(block, LootItem.lootTableItem(Items.STICK))).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(4.0F)).when(HAS_SHEARS.invert())));
         add(RuBlocks.DARK_OAK_BRANCH.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionCondition(block, LootItem.lootTableItem(Items.STICK))).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(4.0F)).when(HAS_SHEARS.invert())));
         add(RuBlocks.DEAD_BRANCH.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionCondition(block, LootItem.lootTableItem(Items.STICK))).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(4.0F)).when(HAS_SHEARS.invert())));
@@ -408,21 +408,21 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         dropSelf(RuBlocks.BRIMWOOD_SIGN.get());
         add(RuBlocks.BRIMWOOD_WALL_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.BRIMWOOD_SIGN.get()));
         //CHERRY_BLOCKS
-        dropSelf(RuBlocks.CHERRY_LOG.get());
-        dropSelf(RuBlocks.STRIPPED_CHERRY_LOG.get());
-        dropSelf(RuBlocks.CHERRY_WOOD.get());
-        dropSelf(RuBlocks.STRIPPED_CHERRY_WOOD.get());
-        dropSelf(RuBlocks.CHERRY_PLANKS.get());
-        dropSelf(RuBlocks.CHERRY_STAIRS.get());
-        add(RuBlocks.CHERRY_SLAB.get(), (block) -> createSlabItemTable(block));
-        dropSelf(RuBlocks.CHERRY_FENCE.get());
-        add(RuBlocks.CHERRY_DOOR.get(), (block) -> createDoorTable(block));
-        dropSelf(RuBlocks.CHERRY_FENCE_GATE.get());
-        dropSelf(RuBlocks.CHERRY_TRAPDOOR.get());
-        dropSelf(RuBlocks.CHERRY_PRESSURE_PLATE.get());
-        dropSelf(RuBlocks.CHERRY_BUTTON.get());
-        dropSelf(RuBlocks.CHERRY_SIGN.get());
-        add(RuBlocks.CHERRY_WALL_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.CHERRY_SIGN.get()));
+        dropSelf(RuBlocks.SAKURA_LOG.get());
+        dropSelf(RuBlocks.STRIPPED_SAKURA_LOG.get());
+        dropSelf(RuBlocks.SAKURA_WOOD.get());
+        dropSelf(RuBlocks.STRIPPED_SAKURA_WOOD.get());
+        dropSelf(RuBlocks.SAKURA_PLANKS.get());
+        dropSelf(RuBlocks.SAKURA_STAIRS.get());
+        add(RuBlocks.SAKURA_SLAB.get(), (block) -> createSlabItemTable(block));
+        dropSelf(RuBlocks.SAKURA_FENCE.get());
+        add(RuBlocks.SAKURA_DOOR.get(), (block) -> createDoorTable(block));
+        dropSelf(RuBlocks.SAKURA_FENCE_GATE.get());
+        dropSelf(RuBlocks.SAKURA_TRAPDOOR.get());
+        dropSelf(RuBlocks.SAKURA_PRESSURE_PLATE.get());
+        dropSelf(RuBlocks.SAKURA_BUTTON.get());
+        dropSelf(RuBlocks.SAKURA_SIGN.get());
+        add(RuBlocks.SAKURA_WALL_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.SAKURA_SIGN.get()));
         //CYPRESS_BLOCKS
         dropSelf(RuBlocks.CYPRESS_LOG.get());
         dropSelf(RuBlocks.STRIPPED_CYPRESS_LOG.get());

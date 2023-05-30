@@ -15,9 +15,7 @@ public class PlacedFeatureRegistry {
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         RuNetherBiomePlacements.bootstrap(context);
         RuOverworldBiomePlacements.bootstrap(context);
-        RuTreePlacements.bootstrap(context);
         RuAquaticPlacements.bootstrap(context);
-        RuTreePlacements.bootstrap(context);
         RuMiscOverworldPlacements.bootstrap(context);
         RuNetherPlacements.bootstrap(context);
         RuTreePlacements.bootstrap(context);

@@ -140,7 +140,7 @@ public class RuBoat extends Boat {
     public enum ModelType {
         BAOBAB("baobab", RuBlocks.BAOBAB_PLANKS.get()),
         BLACKWOOD("blackwood", RuBlocks.BLACKWOOD_PLANKS.get()),
-        CHERRY("cherry", RuBlocks.CHERRY_PLANKS.get()),
+        CHERRY("cherry", RuBlocks.SAKURA_PLANKS.get()),
         CYPRESS("cypress", RuBlocks.CYPRESS_PLANKS.get()),
         DEAD("dead", RuBlocks.DEAD_PLANKS.get()),
         EUCALYPTUS("eucalyptus", RuBlocks.EUCALYPTUS_PLANKS.get()),

@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "regions_unexplored:dark_sakura_grove",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:highland_fields",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:steppe",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:icy_heights",
+      "required": false
+    }
+  ]
+}

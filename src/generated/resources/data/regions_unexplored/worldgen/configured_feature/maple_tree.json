@@ -1,0 +1,36 @@
+{
+  "type": "regions_unexplored:maple_tree",
+  "config": {
+    "branch_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "regions_unexplored:maple_branch",
+        "Properties": {
+          "facing": "north"
+        }
+      }
+    },
+    "foliage_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "regions_unexplored:maple_leaves",
+        "Properties": {
+          "distance": "7",
+          "persistent": "false",
+          "waterlogged": "false"
+        }
+      }
+    },
+    "minimum_size": 6,
+    "size_variation": 4,
+    "trunk_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "regions_unexplored:maple_log",
+        "Properties": {
+          "axis": "y"
+        }
+      }
+    }
+  }
+}

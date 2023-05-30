@@ -4,6 +4,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.regions_unexplored.RegionsUnexploredMod;
 
@@ -57,13 +58,16 @@ public class RuTags {
     public static final TagKey<Item> REDWOOD_LOGS_ITEM = createItem("redwood_logs");
     public static final TagKey<Item> WILLOW_LOGS_ITEM = createItem("willow_logs");
 
+
+    public static final TagKey<Biome> FOREST = createBiome("forest");
+    public static final TagKey<Biome> TAIGA = createBiome("taiga");
+
     private RuTags() {
     }
 
     private static TagKey<Block> createBlock(String key) {
         return TagKey.create(Registries.BLOCK, new ResourceLocation(RegionsUnexploredMod.MOD_ID, key));
     }
-
     public static TagKey<Block> createBlock(ResourceLocation name) {
         return TagKey.create(Registries.BLOCK, name);
     }
@@ -71,8 +75,14 @@ public class RuTags {
     private static TagKey<Item> createItem(String key) {
         return TagKey.create(Registries.ITEM, new ResourceLocation(RegionsUnexploredMod.MOD_ID, key));
     }
-
     public static TagKey<Item> createItem(ResourceLocation name) {
         return TagKey.create(Registries.ITEM, name);
+    }
+
+    private static TagKey<Biome> createBiome(String key) {
+        return TagKey.create(Registries.BIOME, new ResourceLocation(RegionsUnexploredMod.MOD_ID, key));
+    }
+    public static TagKey<Biome> createBiome(ResourceLocation name) {
+        return TagKey.create(Registries.BIOME, name);
     }
 }

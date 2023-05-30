@@ -17,7 +17,7 @@ public class RuBlockEntities {
                         RuBlocks.BAOBAB_WALL_SIGN.get(), RuBlocks.BAOBAB_SIGN.get(),
                         RuBlocks.BLACKWOOD_WALL_SIGN.get(), RuBlocks.BLACKWOOD_SIGN.get(),
                         RuBlocks.BRIMWOOD_WALL_SIGN.get(), RuBlocks.BRIMWOOD_SIGN.get(),
-                        RuBlocks.CHERRY_WALL_SIGN.get(), RuBlocks.CHERRY_SIGN.get(),
+                        RuBlocks.SAKURA_WALL_SIGN.get(), RuBlocks.SAKURA_SIGN.get(),
                         RuBlocks.CYPRESS_WALL_SIGN.get(), RuBlocks.CYPRESS_SIGN.get(),
                         RuBlocks.DEAD_WALL_SIGN.get(), RuBlocks.DEAD_SIGN.get(),
                         RuBlocks.EUCALYPTUS_WALL_SIGN.get(), RuBlocks.EUCALYPTUS_SIGN.get(),

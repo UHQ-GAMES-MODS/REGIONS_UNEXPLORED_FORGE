@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "regions_unexplored:blackwood_forest",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:smouldering_woodland",
+      "required": false
+    }
+  ]
+}

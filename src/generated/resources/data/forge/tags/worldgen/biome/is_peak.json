@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "regions_unexplored:arid_mountains",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:mountains",
+      "required": false
+    }
+  ]
+}

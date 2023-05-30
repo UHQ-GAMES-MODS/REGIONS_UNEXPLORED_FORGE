@@ -10,13 +10,25 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.regions_unexplored.RegionsUnexploredMod;
+import net.regions_unexplored.config.RuCommonConfig;
 import net.regions_unexplored.data.worldgen.biome.RuBiomes;
 import net.regions_unexplored.data.worldgen.biome.builder.*;
+import net.regions_unexplored.world.level.region.RuRegionNether;
+import net.regions_unexplored.world.level.region.RuRegionPrimary;
+import net.regions_unexplored.world.level.region.RuRegionSecondary;
+import terrablender.api.Regions;
+import terrablender.api.SurfaceRuleManager;
 
 public class BiomeRegistry {
 
     public static void addBiomes() {
         registerVillagerTypes();
+    }
+
+    public static void setupTerrablender() {
+        Regions.register(new RuRegionPrimary(RuCommonConfig.REGION_PRIMARY_WEIGHT.get()));
+        Regions.register(new RuRegionSecondary(RuCommonConfig.REGION_SECONDARY_WEIGHT.get()));
+        Regions.register(new RuRegionNether(RuCommonConfig.REGION_NETHER_WEIGHT.get()));
     }
 
     public static void bootstrap(BootstapContext<Biome> context) {
@@ -211,9 +223,5 @@ public class BiomeRegistry {
 
     private static void registerVillagers(ResourceKey<Biome> key, VillagerType type) {
         VillagerType.BY_BIOME.put(key, type);
-    }
-    
-    public static ResourceKey<Biome> createKey(String name) {
-        return ResourceKey.create(Registries.BIOME, new ResourceLocation(RegionsUnexploredMod.MOD_ID, name));
     }
 }

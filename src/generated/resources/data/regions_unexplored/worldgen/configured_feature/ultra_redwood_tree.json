@@ -1,0 +1,36 @@
+{
+  "type": "regions_unexplored:ultra_redwood_tree",
+  "config": {
+    "branch_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "regions_unexplored:redwood_branch",
+        "Properties": {
+          "facing": "north"
+        }
+      }
+    },
+    "foliage_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "regions_unexplored:redwood_leaves",
+        "Properties": {
+          "distance": "7",
+          "persistent": "false",
+          "waterlogged": "false"
+        }
+      }
+    },
+    "minimum_size": 45,
+    "size_variation": 9,
+    "trunk_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "regions_unexplored:redwood_log",
+        "Properties": {
+          "axis": "y"
+        }
+      }
+    }
+  }
+}

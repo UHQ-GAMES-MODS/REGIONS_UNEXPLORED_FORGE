@@ -10,7 +10,6 @@ import net.regions_unexplored.data.worldgen.features.*;
 
 public class ConfiguredFeatureRegistry {
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
-        RuTreeFeatures.bootstrap(context);
         RuAquaticFeatures.bootstrap(context);
         RuCaveFeatures.bootstrap(context);
         RuMiscOverworldFeatures.bootstrap(context);

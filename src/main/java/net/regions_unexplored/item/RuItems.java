@@ -60,7 +60,7 @@ public class RuItems {
     public static void addItems(){
     BAOBAB_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("baobab_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.BAOBAB_SIGN.get(), RuBlocks.BAOBAB_WALL_SIGN.get()));
     BLACKWOOD_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("blackwood_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.BLACKWOOD_SIGN.get(), RuBlocks.BLACKWOOD_WALL_SIGN.get()));
-    CHERRY_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("cherry_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.CHERRY_SIGN.get(), RuBlocks.CHERRY_WALL_SIGN.get()));
+    CHERRY_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("cherry_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.SAKURA_SIGN.get(), RuBlocks.SAKURA_WALL_SIGN.get()));
     CYPRESS_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("cypress_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.CYPRESS_SIGN.get(), RuBlocks.CYPRESS_WALL_SIGN.get()));
     DEAD_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("dead_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.DEAD_SIGN.get(), RuBlocks.DEAD_WALL_SIGN.get()));
     EUCALYPTUS_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("eucalyptus_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.EUCALYPTUS_SIGN.get(), RuBlocks.EUCALYPTUS_WALL_SIGN.get()));

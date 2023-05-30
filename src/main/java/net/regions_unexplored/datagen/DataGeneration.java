@@ -22,8 +22,8 @@ import java.util.Set;
 public class DataGeneration {
 
     private static final RegistrySetBuilder BOOTSTRAPS = new RegistrySetBuilder()
-            .add(Registries.DAMAGE_TYPE, RuDamageTypes::bootstrap)
             .add(Registries.BIOME, BiomeRegistry::bootstrap)
+            .add(Registries.DAMAGE_TYPE, RuDamageTypes::bootstrap)
             .add(Registries.CONFIGURED_FEATURE, ConfiguredFeatureRegistry::bootstrap)
             .add(Registries.PLACED_FEATURE, PlacedFeatureRegistry::bootstrap)
             ;

@@ -12,7 +12,9 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -20,7 +22,14 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.client.particle.RuParticleTypes;
+import net.regions_unexplored.config.RuCommonConfig;
+import net.regions_unexplored.config.RuPrimaryRegionConfig;
+import net.regions_unexplored.config.RuSecondaryRegionConfig;
+import net.regions_unexplored.data.worldgen.biome.RuBiomes;
 import net.regions_unexplored.registry.BiomeRegistry;
+import net.regions_unexplored.registry.FeatureRegistry;
+import net.regions_unexplored.world.features.foliageplacers.SakuraFoliagePlacer;
+import net.regions_unexplored.world.features.foliageplacers.WillowFoliagePlacer;
 import org.slf4j.Logger;
 
 @Mod(RegionsUnexploredMod.MOD_ID)
@@ -60,9 +69,21 @@ public class RegionsUnexploredMod {
         ENTITY_REGISTRY.register(bus);
         PARTICLE_REGISTRY.register(bus);
 
-        RuBlocks.addBlocks();
+        registerConfig();
+        registerTreeDecorators();
+        registerFoliagePlacers();
+
         BiomeRegistry.addBiomes();
+        FeatureRegistry.addFeatures();
+        RuBlocks.addBlocks();
         RuParticleTypes.addParticles();
+    }
+
+    //config method
+    private void registerConfig(){
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, RuCommonConfig.SPEC, "regions_unexplored/ru-common.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, RuPrimaryRegionConfig.SPEC, "regions_unexplored/ru-primary-region.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, RuSecondaryRegionConfig.SPEC, "regions_unexplored/ru-secondary-region.toml");
     }
 
     //set up client side features
@@ -71,5 +92,14 @@ public class RegionsUnexploredMod {
 
     //set up non-client side features
     private void commonSetup(final FMLCommonSetupEvent event) {
+        BiomeRegistry.setupTerrablender();
+    }
+
+    private static void registerFoliagePlacers(){
+        ForgeRegistries.FOLIAGE_PLACER_TYPES.register("willow_foliage_placer", WillowFoliagePlacer.fpt);
+        ForgeRegistries.FOLIAGE_PLACER_TYPES.register("sakura_foliage_placer", SakuraFoliagePlacer.fpt);
+    }
+
+    private static void registerTreeDecorators(){
     }
 }
