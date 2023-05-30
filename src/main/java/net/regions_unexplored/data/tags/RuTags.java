@@ -28,7 +28,7 @@ public class RuTags {
     public static final TagKey<Block> BAOBAB_LOGS = createBlock("baobab_logs");
     public static final TagKey<Block> BLACKWOOD_LOGS = createBlock("blackwood_logs");
     public static final TagKey<Block> BRIMWOOD_LOGS = createBlock("brimwood_logs");
-    public static final TagKey<Block> CHERRY_LOGS = createBlock("cherry_logs");
+    public static final TagKey<Block> SAKURA_LOGS = createBlock("sakura_logs");
     public static final TagKey<Block> CYPRESS_LOGS = createBlock("cypress_logs");
     public static final TagKey<Block> DEAD_LOGS = createBlock("dead_logs");
     public static final TagKey<Block> EUCALYPTUS_LOGS = createBlock("eucalyptus_logs");
@@ -45,7 +45,7 @@ public class RuTags {
     public static final TagKey<Item> BAOBAB_LOGS_ITEM = createItem("baobab_logs");
     public static final TagKey<Item> BLACKWOOD_LOGS_ITEM = createItem("blackwood_logs");
     public static final TagKey<Item> BRIMWOOD_LOGS_ITEM = createItem("brimwood_logs");
-    public static final TagKey<Item> CHERRY_LOGS_ITEM = createItem("cherry_logs");
+    public static final TagKey<Item> SAKURA_LOGS_ITEM = createItem("sakura_logs");
     public static final TagKey<Item> CYPRESS_LOGS_ITEM = createItem("cypress_logs");
     public static final TagKey<Item> DEAD_LOGS_ITEM = createItem("dead_logs");
     public static final TagKey<Item> EUCALYPTUS_LOGS_ITEM = createItem("eucalyptus_logs");

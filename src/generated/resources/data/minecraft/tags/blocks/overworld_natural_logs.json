@@ -1,0 +1,20 @@
+{
+  "values": [
+    "regions_unexplored:alpha_log",
+    "regions_unexplored:bamboo_log",
+    "regions_unexplored:baobab_log",
+    "regions_unexplored:blackwood_log",
+    "regions_unexplored:cypress_log",
+    "regions_unexplored:eucalyptus_log",
+    "regions_unexplored:joshua_log",
+    "regions_unexplored:larch_log",
+    "regions_unexplored:maple_log",
+    "regions_unexplored:mauve_log",
+    "regions_unexplored:palm_log",
+    "regions_unexplored:pine_log",
+    "regions_unexplored:redwood_log",
+    "regions_unexplored:cherry_log",
+    "regions_unexplored:silver_birch_log",
+    "regions_unexplored:willow_log"
+  ]
+}
