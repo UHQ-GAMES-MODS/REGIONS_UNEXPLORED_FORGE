@@ -1,3 +1,19 @@
 {
-  "values": []
+  "values": [
+    "regions_unexplored:baobab_fence",
+    "regions_unexplored:blackwood_fence",
+    "regions_unexplored:brimwood_fence",
+    "regions_unexplored:cypress_fence",
+    "regions_unexplored:dead_fence",
+    "regions_unexplored:eucalyptus_fence",
+    "regions_unexplored:joshua_fence",
+    "regions_unexplored:larch_fence",
+    "regions_unexplored:maple_fence",
+    "regions_unexplored:mauve_fence",
+    "regions_unexplored:palm_fence",
+    "regions_unexplored:pine_fence",
+    "regions_unexplored:redwood_fence",
+    "regions_unexplored:cherry_fence",
+    "regions_unexplored:willow_fence"
+  ]
 }
