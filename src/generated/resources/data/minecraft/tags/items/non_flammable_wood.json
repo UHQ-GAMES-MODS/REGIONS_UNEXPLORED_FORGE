@@ -1,0 +1,26 @@
+{
+  "values": [
+    "regions_unexplored:brimwood_button",
+    "regions_unexplored:brimwood_door",
+    "regions_unexplored:brimwood_fence",
+    "regions_unexplored:brimwood_fence_gate",
+    "regions_unexplored:brimwood_planks",
+    "regions_unexplored:brimwood_pressure_plate",
+    "regions_unexplored:brimwood_slab",
+    "regions_unexplored:brimwood_stairs",
+    "regions_unexplored:brimwood_trapdoor",
+    "regions_unexplored:dead_button",
+    "regions_unexplored:dead_door",
+    "regions_unexplored:dead_fence",
+    "regions_unexplored:dead_fence_gate",
+    "regions_unexplored:dead_planks",
+    "regions_unexplored:dead_pressure_plate",
+    "regions_unexplored:dead_slab",
+    "regions_unexplored:dead_stairs",
+    "regions_unexplored:dead_trapdoor",
+    "regions_unexplored:brimwood_sign",
+    "regions_unexplored:dead_sign",
+    "#regions_unexplored:brimwood_logs",
+    "#regions_unexplored:dead_logs"
+  ]
+}

@@ -39,7 +39,7 @@ public class RuBoat extends Boat {
             case BLACKWOOD:
                 item = RuItems.BLACKWOOD_BOAT.get();
             case CHERRY:
-                item = RuItems.CHERRY_BOAT.get();
+                item = RuItems.SAKURA_BOAT.get();
             case CYPRESS:
                 item = RuItems.CYPRESS_BOAT.get();
             case DEAD:

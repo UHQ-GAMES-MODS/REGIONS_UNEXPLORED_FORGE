@@ -4,6 +4,11 @@ import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.tags.TagsProvider;
+import net.minecraft.data.tags.VanillaBlockTagsProvider;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -35,8 +40,11 @@ public class DataGeneration {
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
         generator.addProvider(event.includeServer(), new DatapackBuiltinEntriesProvider(packOutput, event.getLookupProvider(), BOOTSTRAPS, Set.of(RegionsUnexploredMod.MOD_ID)));
-        generator.addProvider(event.includeServer(), new RuBlockTagProvider(packOutput, event.getLookupProvider(), RegionsUnexploredMod.MOD_ID, existingFileHelper));
-        generator.addProvider(event.includeServer(), new RuBiomeTagProvider(packOutput, event.getLookupProvider(), RegionsUnexploredMod.MOD_ID, existingFileHelper));
+
+        TagsProvider<Block> blockTagsProvider = generator.addProvider(event.includeServer(), new RuBlockTagProvider(packOutput, event.getLookupProvider(), RegionsUnexploredMod.MOD_ID, existingFileHelper));
+        TagsProvider<Item> itemTagsProvider = generator.addProvider(event.includeServer(), new RuItemTagProvider(packOutput, event.getLookupProvider(), blockTagsProvider.contentsGetter(),  RegionsUnexploredMod.MOD_ID, existingFileHelper));
+        TagsProvider<Biome> biomeTagsProvider = generator.addProvider(event.includeServer(), new RuBiomeTagProvider(packOutput, event.getLookupProvider(), RegionsUnexploredMod.MOD_ID, existingFileHelper));
+
         generator.addProvider(true, RuLootTableProvider.create(packOutput));
         generator.addProvider(true, new RuRecipeProvider(packOutput));
     }

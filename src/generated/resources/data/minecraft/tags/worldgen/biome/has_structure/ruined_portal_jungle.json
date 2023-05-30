@@ -1,3 +1,12 @@
 {
-  "values": []
+  "values": [
+    {
+      "id": "regions_unexplored:bamboo_forest",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:fungal_fen",
+      "required": false
+    }
+  ]
 }

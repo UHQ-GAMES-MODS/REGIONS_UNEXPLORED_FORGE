@@ -41,6 +41,9 @@ public class RuTags {
     public static final TagKey<Block> REDWOOD_LOGS = createBlock("redwood_logs");
     public static final TagKey<Block> WILLOW_LOGS = createBlock("willow_logs");
     //items
+    public static final TagKey<Item> SHRUBS_ITEM = createItem("shrubs");
+    public static final TagKey<Item> ASH_ITEM = createItem("ash");
+    public static final TagKey<Item> BRANCHES_ITEM = createItem("branches");
     public static final TagKey<Item> BAMBOO_LOGS_ITEM = createItem("bamboo_logs");
     public static final TagKey<Item> BAOBAB_LOGS_ITEM = createItem("baobab_logs");
     public static final TagKey<Item> BLACKWOOD_LOGS_ITEM = createItem("blackwood_logs");
@@ -57,10 +60,6 @@ public class RuTags {
     public static final TagKey<Item> PINE_LOGS_ITEM = createItem("pine_logs");
     public static final TagKey<Item> REDWOOD_LOGS_ITEM = createItem("redwood_logs");
     public static final TagKey<Item> WILLOW_LOGS_ITEM = createItem("willow_logs");
-
-
-    public static final TagKey<Biome> FOREST = createBiome("forest");
-    public static final TagKey<Biome> TAIGA = createBiome("taiga");
 
     private RuTags() {
     }

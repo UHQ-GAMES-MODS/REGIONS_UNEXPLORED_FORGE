@@ -1,3 +1,24 @@
 {
-  "values": []
+  "values": [
+    {
+      "id": "regions_unexplored:shrubland",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:blackwood_forest",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:boreal_forest",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:golden_boreal_forest",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:sparse_redwoods",
+      "required": false
+    }
+  ]
 }

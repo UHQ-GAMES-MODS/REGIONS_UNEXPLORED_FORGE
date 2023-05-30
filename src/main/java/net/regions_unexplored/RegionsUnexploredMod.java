@@ -26,6 +26,7 @@ import net.regions_unexplored.config.RuCommonConfig;
 import net.regions_unexplored.config.RuPrimaryRegionConfig;
 import net.regions_unexplored.config.RuSecondaryRegionConfig;
 import net.regions_unexplored.data.worldgen.biome.RuBiomes;
+import net.regions_unexplored.item.RuItems;
 import net.regions_unexplored.registry.BiomeRegistry;
 import net.regions_unexplored.registry.FeatureRegistry;
 import net.regions_unexplored.world.features.foliageplacers.SakuraFoliagePlacer;
@@ -76,6 +77,7 @@ public class RegionsUnexploredMod {
         BiomeRegistry.addBiomes();
         FeatureRegistry.addFeatures();
         RuBlocks.addBlocks();
+        RuItems.addItems();
         RuParticleTypes.addParticles();
     }
 

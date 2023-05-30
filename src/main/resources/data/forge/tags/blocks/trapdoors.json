@@ -1,0 +1,9 @@
+{
+  "values": [
+    {
+      "id": "#forge:trapdoors/iron",
+      "required": false
+    },
+    "#forge:trapdoors/wooden"
+  ]
+}

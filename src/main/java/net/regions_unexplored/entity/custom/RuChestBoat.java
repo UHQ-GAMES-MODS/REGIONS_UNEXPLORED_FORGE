@@ -36,7 +36,7 @@ public class RuChestBoat extends ChestBoat {
             case BLACKWOOD:
                 item = RuItems.BLACKWOOD_CHEST_BOAT.get();
             case CHERRY:
-                item = RuItems.CHERRY_CHEST_BOAT.get();
+                item = RuItems.SAKURA_CHEST_BOAT.get();
             case CYPRESS:
                 item = RuItems.CYPRESS_CHEST_BOAT.get();
             case DEAD:

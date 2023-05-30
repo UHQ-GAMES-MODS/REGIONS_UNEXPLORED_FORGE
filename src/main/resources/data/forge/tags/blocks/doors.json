@@ -1,0 +1,9 @@
+{
+  "values": [
+    {
+      "id": "#forge:doors/iron",
+      "required": false
+    },
+    "#forge:doors/wooden"
+  ]
+}

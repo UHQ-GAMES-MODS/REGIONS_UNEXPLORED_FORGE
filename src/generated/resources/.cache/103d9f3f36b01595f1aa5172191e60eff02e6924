@@ -1,4 +1,4 @@
-// 1.19.4	2023-05-29T18:33:50.9025775	Registries
+// 1.19.4	2023-05-30T16:37:27.9654962	Registries
 7160b581d0e9c894f25f3d6f26a93cd78c42e0cd data/regions_unexplored/damage_type/dorcel.json
 85ad5f253c50ce3e6d36a8b035b225420d8ada6b data/regions_unexplored/damage_type/quicksand.json
 25b402ee7d6ec9e9abd9efa47cea52c19b35f9e5 data/regions_unexplored/worldgen/biome/alpha_grove.json
@@ -13,7 +13,7 @@ e32c6eb54cff615c84bbda9f67902a91e3f78d5e data/regions_unexplored/worldgen/biome/
 e9cef4c52f56d88bc188208557a661778e370389 data/regions_unexplored/worldgen/biome/blackwood_forest.json
 d652e0e9cd19e360aac1b9dfecc89f8e006b3dee data/regions_unexplored/worldgen/biome/boreal_forest.json
 fe9846277c6b6f64acc576a3e9fc64892707288b data/regions_unexplored/worldgen/biome/chalk_cliffs.json
-8c020fb83c19ebd429788c919c2f0e3d84d5701e data/regions_unexplored/worldgen/biome/cold_boreal_forest.json
+6ff2f4082eef83c65285a89b16f44984df1686b6 data/regions_unexplored/worldgen/biome/cold_boreal_forest.json
 c5438b7d28e7b7619de6efc74933933cc3df7b1b data/regions_unexplored/worldgen/biome/cold_deciduous_forest.json
 002401c4bcf176dcc31c54608960421272b69a77 data/regions_unexplored/worldgen/biome/cold_river.json
 79197b25fb5e43b16a2fe9851e67d63a2d308106 data/regions_unexplored/worldgen/biome/corrupted_holt.json

@@ -1,3 +1,8 @@
 {
-  "values": []
+  "values": [
+    {
+      "id": "regions_unexplored:glistering_meadow",
+      "required": false
+    }
+  ]
 }

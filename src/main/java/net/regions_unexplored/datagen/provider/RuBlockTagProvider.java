@@ -975,10 +975,63 @@ public class RuBlockTagProvider extends BlockTagsProvider {
 
 
         this.tag(RuTags.ASH)
+                .add(RuBlocks.ASH.getKey())
+                .add(RuBlocks.VOLCANIC_ASH.getKey())
         ;
         this.tag(RuTags.BRANCHES)
+                .add(RuBlocks.ACACIA_BRANCH.getKey())
+                .add(RuBlocks.BAOBAB_BRANCH.getKey())
+                .add(RuBlocks.BIRCH_BRANCH.getKey())
+                .add(RuBlocks.BLACKWOOD_BRANCH.getKey())
+                .add(RuBlocks.CYPRESS_BRANCH.getKey())
+                .add(RuBlocks.DARK_OAK_BRANCH.getKey())
+                .add(RuBlocks.DEAD_BRANCH.getKey())
+                .add(RuBlocks.EUCALYPTUS_BRANCH.getKey())
+                .add(RuBlocks.JOSHUA_BEARD.getKey())
+                .add(RuBlocks.JUNGLE_BRANCH.getKey())
+                .add(RuBlocks.LARCH_BRANCH.getKey())
+                .add(RuBlocks.MANGROVE_BRANCH.getKey())
+                .add(RuBlocks.MAPLE_BRANCH.getKey())
+                .add(RuBlocks.MAUVE_BRANCH.getKey())
+                .add(RuBlocks.OAK_BRANCH.getKey())
+                .add(RuBlocks.PALM_BEARD.getKey())
+                .add(RuBlocks.PINE_BRANCH.getKey())
+                .add(RuBlocks.REDWOOD_BRANCH.getKey())
+                .add(RuBlocks.SAKURA_BRANCH.getKey())
+                .add(RuBlocks.SPRUCE_BRANCH.getKey())
+                .add(RuBlocks.WILLOW_BRANCH.getKey())
         ;
         this.tag(RuTags.SHRUBS)
+                .add(RuBlocks.ACACIA_SHRUB.getKey())
+                .add(RuBlocks.BAOBAB_SHRUB.getKey())
+                .add(RuBlocks.BIRCH_SHRUB.getKey())
+                .add(RuBlocks.BLACKWOOD_SHRUB.getKey())
+                .add(RuBlocks.SAKURA_SHRUB.getKey())
+                .add(RuBlocks.RED_SAKURA_SHRUB.getKey())
+                .add(RuBlocks.PINK_SAKURA_SHRUB.getKey())
+                .add(RuBlocks.WHITE_SAKURA_SHRUB.getKey())
+                .add(RuBlocks.CYPRESS_SHRUB.getKey())
+                .add(RuBlocks.DARK_OAK_SHRUB.getKey())
+                .add(RuBlocks.DEAD_SHRUB.getKey())
+                .add(RuBlocks.DEAD_PINE_SHRUB.getKey())
+                .add(RuBlocks.EUCALYPTUS_SHRUB.getKey())
+                .add(RuBlocks.FLOWERING_SHRUB.getKey())
+                .add(RuBlocks.JOSHUA_SHRUB.getKey())
+                .add(RuBlocks.JUNGLE_SHRUB.getKey())
+                .add(RuBlocks.GOLDEN_LARCH_SHRUB.getKey())
+                .add(RuBlocks.LARCH_SHRUB.getKey())
+                .add(RuBlocks.MANGROVE_SHRUB.getKey())
+                .add(RuBlocks.MAPLE_SHRUB.getKey())
+                .add(RuBlocks.RED_MAPLE_SHRUB.getKey())
+                .add(RuBlocks.ORANGE_MAPLE_SHRUB.getKey())
+                .add(RuBlocks.MAUVE_SHRUB.getKey())
+                .add(RuBlocks.OAK_SHRUB.getKey())
+                .add(RuBlocks.PALM_SHRUB.getKey())
+                .add(RuBlocks.PINE_SHRUB.getKey())
+                .add(RuBlocks.REDWOOD_SHRUB.getKey())
+                .add(RuBlocks.SILVER_BIRCH_SHRUB.getKey())
+                .add(RuBlocks.SPRUCE_SHRUB.getKey())
+                .add(RuBlocks.WILLOW_SHRUB.getKey())
         ;
         this.tag(RuTags.BAMBOO_LOGS)
                 .add(RuBlocks.BAMBOO_LOG.getKey())
@@ -1080,7 +1133,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
     }
 
     public void addForgeTags(HolderLookup.Provider provider) {
-        //this.tag(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "barrels/wooden")));
+        //this.tag(TagKey.create(Registries.BLOCK, new ResourceLocation("forge.getKey()) "barrels/wooden")));
         //this.tag(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "chests/ender")));
         //this.tag(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "chests/trapped")));
         //this.tag(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "chests/wooden")));
@@ -1166,7 +1219,9 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.VOLCANIC_ASH.getKey())
         ;
         //this.tag(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "netherrack")));
-        //this.tag(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "obsidian")));
+        this.tag(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "obsidian")))
+                .add(RuBlocks.COBALT_OBSIDIAN.getKey())
+        ;
         //this.tag(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "ores")));
         //this.tag(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "sand")));
         //this.tag(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "sandstone")));

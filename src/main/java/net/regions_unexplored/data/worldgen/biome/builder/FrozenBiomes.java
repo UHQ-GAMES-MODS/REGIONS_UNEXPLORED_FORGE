@@ -79,8 +79,8 @@ public class FrozenBiomes {
 
         return (new Biome.BiomeBuilder())
                 .hasPrecipitation(true)
-                .temperature(0.75f)
-                .downfall(0.8f)
+                .temperature(0.0f)
+                .downfall(0.6f)
                 .specialEffects(effectBuilder.build())
                 .mobSpawnSettings(spawnBuilder.build())
                 .generationSettings(biomeBuilder.build())
