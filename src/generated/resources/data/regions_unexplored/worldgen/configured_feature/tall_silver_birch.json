@@ -28,7 +28,8 @@
       "state": {
         "Name": "regions_unexplored:silver_birch_log",
         "Properties": {
-          "axis": "y"
+          "axis": "y",
+          "is_base": "false"
         }
       }
     }

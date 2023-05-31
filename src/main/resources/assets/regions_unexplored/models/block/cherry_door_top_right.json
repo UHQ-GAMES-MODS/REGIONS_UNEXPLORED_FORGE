@@ -1,8 +1,0 @@
-{
-  "parent": "block/door_top_right",
-  "textures": {
-    "bottom": "regions_unexplored:block/cherry_door_bottom",
-    "top": "regions_unexplored:block/cherry_door_top"
-  },
-  "render_type": "cutout"
-}

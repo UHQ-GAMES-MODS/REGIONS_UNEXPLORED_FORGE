@@ -18,7 +18,7 @@
     "foliage_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "regions_unexplored:pink_cherry_leaves",
+        "Name": "regions_unexplored:pink_sakura_leaves",
         "Properties": {
           "distance": "7",
           "persistent": "false",
@@ -44,7 +44,7 @@
     "trunk_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "regions_unexplored:cherry_log",
+        "Name": "regions_unexplored:sakura_log",
         "Properties": {
           "axis": "y"
         }

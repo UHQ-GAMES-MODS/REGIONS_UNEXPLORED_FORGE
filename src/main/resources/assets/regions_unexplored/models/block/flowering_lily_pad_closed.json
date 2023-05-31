@@ -1,0 +1,10 @@
+{
+	"parent": "regions_unexplored:block/flowering_lily_pad_base",
+	"textures": {
+		"0": "regions_unexplored:block/flowering_lily_pad",
+		"1": "regions_unexplored:block/flowering_lily_pad_bottom",
+		"2": "regions_unexplored:block/flowering_lily_pad_flower_closed",
+		"particle": "regions_unexplored:block/flowering_lily_pad"
+	},
+	"render_type": "cutout"
+}

@@ -81,7 +81,7 @@ public class RuBlocks {
     public static RegistryObject<Block> SANDY_TALL_GRASS;
     public static RegistryObject<Block> SEEDED_TALL_GRASS;
     public static RegistryObject<Block> STEPPE_TALL_GRASS;
-    public static RegistryObject<Block> WINDSWEPT_TALL_GRASS;
+    public static RegistryObject<Block> WINDSWEPT_GRASS;
     //FLOWERS
     public static RegistryObject<Block> ALPHA_DANDELION;
     public static RegistryObject<Block> ALPHA_ROSE;
@@ -733,7 +733,7 @@ public class RuBlocks {
         SANDY_TALL_GRASS = BlockRegistry.registerDefaultBlock("sandy_tall_grass", () -> new RuSandyDoublePlantBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
         SEEDED_TALL_GRASS = BlockRegistry.registerDefaultBlock("seeded_tall_grass", () -> new RuDoublePlantBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
         STEPPE_TALL_GRASS = BlockRegistry.registerDefaultBlock("steppe_tall_grass", () -> new RuDoublePlantBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
-        WINDSWEPT_TALL_GRASS = BlockRegistry.registerDefaultBlock("windswept_tall_grass", () -> new RuDoublePlantBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
+        WINDSWEPT_GRASS = BlockRegistry.registerDefaultBlock("windswept_grass", () -> new RuDoublePlantBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
         //FLOWERS
         ALPHA_DANDELION = BlockRegistry.registerDefaultBlock("alpha_dandelion", () -> new RuFlowerBlock(MobEffects.JUMP, 5, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
         ALPHA_ROSE = BlockRegistry.registerDefaultBlock("alpha_rose", () -> new RuFlowerBlock(MobEffects.JUMP, 5, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
@@ -752,9 +752,9 @@ public class RuBlocks {
         WILTING_TRILLIUM = BlockRegistry.registerDefaultBlock("wilting_trillium", () -> new RuFlowerBlock(MobEffects.DIG_SLOWDOWN, 4, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
         YELLOW_LUPINE = BlockRegistry.registerDefaultBlock("yellow_lupine", () -> new RuFlowerBlock(MobEffects.SATURATION, 4, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
 
-        RED_SAKURA_FLOWERS = BlockRegistry.registerDefaultBlock("red_cherry_flowers", () -> new GlowLichenBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().strength(0.1F).sound(SoundType.GLOW_LICHEN)));
-        PINK_SAKURA_FLOWERS = BlockRegistry.registerDefaultBlock("pink_cherry_flowers", () -> new GlowLichenBlock(BlockBehaviour.Properties.copy(RED_SAKURA_FLOWERS.get())));
-        WHITE_SAKURA_FLOWERS = BlockRegistry.registerDefaultBlock("white_cherry_flowers", () -> new GlowLichenBlock(BlockBehaviour.Properties.copy(RED_SAKURA_FLOWERS.get())));
+        RED_SAKURA_FLOWERS = BlockRegistry.registerDefaultBlock("red_sakura_flowers", () -> new GlowLichenBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().strength(0.1F).sound(SoundType.GLOW_LICHEN)));
+        PINK_SAKURA_FLOWERS = BlockRegistry.registerDefaultBlock("pink_sakura_flowers", () -> new GlowLichenBlock(BlockBehaviour.Properties.copy(RED_SAKURA_FLOWERS.get())));
+        WHITE_SAKURA_FLOWERS = BlockRegistry.registerDefaultBlock("white_sakura_flowers", () -> new GlowLichenBlock(BlockBehaviour.Properties.copy(RED_SAKURA_FLOWERS.get())));
         //TALL_PLANTS
         BARLEY = BlockRegistry.registerDefaultBlock("barley", () -> new RuDoublePlantBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ)));
         CATTAIL = BlockRegistry.registerDefaultBlock("cattail", () -> new CattailBlock(BlockBehaviour.Properties.copy(BARLEY.get())));
@@ -767,7 +767,7 @@ public class RuBlocks {
         BAOBAB_SAPLING = BlockRegistry.registerDefaultBlock("baobab_sapling", () -> new RuSaplingBlock(new BaobabTreeGrower()));
         BLACKWOOD_SAPLING = BlockRegistry.registerDefaultBlock("blackwood_sapling", () -> new RuSaplingBlock(new BlackwoodTreeGrower()));
         CACTUS_FLOWER = BlockRegistry.registerDefaultBlock("cactus_flower", () -> new CactusSaplingBlock(new SaguaroCactusGrower()));
-        SAKURA_SAPLING = BlockRegistry.registerDefaultBlock("cherry_sapling", () -> new RuSaplingBlock(new SakuraTreeGrower()));
+        SAKURA_SAPLING = BlockRegistry.registerDefaultBlock("sakura_sapling", () -> new RuSaplingBlock(new SakuraTreeGrower()));
         CYPRESS_SAPLING = BlockRegistry.registerDefaultBlock("cypress_sapling", () -> new RuSaplingBlock(new CypressTreeGrower()));
         DEAD_PINE_SAPLING = BlockRegistry.registerDefaultBlock("dead_pine_sapling", () -> new RuSaplingBlock(new DeadPineTreeGrower()));
         DEAD_SAPLING = BlockRegistry.registerDefaultBlock("dead_sapling", () -> new RuSaplingBlock(new DeadTreeGrower()));
@@ -781,20 +781,20 @@ public class RuBlocks {
         ORANGE_MAPLE_SAPLING = BlockRegistry.registerDefaultBlock("orange_maple_sapling", () -> new RuSaplingBlock(new OrangeMapleTreeGrower()));
         PALM_SAPLING = BlockRegistry.registerDefaultBlock("palm_sapling", () -> new RuSaplingBlock(new PalmTreeGrower()));
         PINE_SAPLING = BlockRegistry.registerDefaultBlock("pine_sapling", () -> new RuSaplingBlock(new PineTreeGrower()));
-        PINK_SAKURA_SAPLING = BlockRegistry.registerDefaultBlock("pink_cherry_sapling", () -> new RuSaplingBlock(new PinkSakuraTreeGrower()));
+        PINK_SAKURA_SAPLING = BlockRegistry.registerDefaultBlock("pink_sakura_sapling", () -> new RuSaplingBlock(new PinkSakuraTreeGrower()));
         REDWOOD_SAPLING = BlockRegistry.registerDefaultBlock("redwood_sapling", () -> new RuSaplingBlock(new RedwoodTreeGrower()));
-        RED_SAKURA_SAPLING = BlockRegistry.registerDefaultBlock("red_cherry_sapling", () -> new RuSaplingBlock(new RedSakuraTreeGrower()));
+        RED_SAKURA_SAPLING = BlockRegistry.registerDefaultBlock("red_sakura_sapling", () -> new RuSaplingBlock(new RedSakuraTreeGrower()));
         RED_MAPLE_SAPLING = BlockRegistry.registerDefaultBlock("red_maple_sapling", () -> new RuSaplingBlock(new RedMapleTreeGrower()));
         BRIMWOOD_SAPLING = BlockRegistry.registerDefaultBlock("brimwood_sapling", () -> new BrimSaplingBlock(new BrimwoodGrower()));
         SILVER_BIRCH_SAPLING = BlockRegistry.registerDefaultBlock("silver_birch_sapling", () -> new RuSaplingBlock(new SilverBirchTreeGrower()));
-        WHITE_SAKURA_SAPLING = BlockRegistry.registerDefaultBlock("white_cherry_sapling", () -> new RuSaplingBlock(new WhiteSakuraTreeGrower()));
+        WHITE_SAKURA_SAPLING = BlockRegistry.registerDefaultBlock("white_sakura_sapling", () -> new RuSaplingBlock(new WhiteSakuraTreeGrower()));
         WILLOW_SAPLING = BlockRegistry.registerDefaultBlock("willow_sapling", () -> new RuSaplingBlock(new WillowTreeGrower()));
         //SHRUBS
         ACACIA_SHRUB = BlockRegistry.registerDefaultBlock("acacia_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.AZALEA).offsetType(BlockBehaviour.OffsetType.XZ)));
         BAOBAB_SHRUB = BlockRegistry.registerDefaultBlock("baobab_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
         BIRCH_SHRUB = BlockRegistry.registerDefaultBlock("birch_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
         BLACKWOOD_SHRUB = BlockRegistry.registerDefaultBlock("blackwood_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
-        SAKURA_SHRUB = BlockRegistry.registerDefaultBlock("cherry_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
+        SAKURA_SHRUB = BlockRegistry.registerDefaultBlock("sakura_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
         CYPRESS_SHRUB = BlockRegistry.registerDefaultBlock("cypress_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
         DARK_OAK_SHRUB = BlockRegistry.registerDefaultBlock("dark_oak_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
         DEAD_PINE_SHRUB = BlockRegistry.registerDefaultBlock("dead_pine_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
@@ -812,13 +812,13 @@ public class RuBlocks {
         ORANGE_MAPLE_SHRUB = BlockRegistry.registerDefaultBlock("orange_maple_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
         PALM_SHRUB = BlockRegistry.registerDefaultBlock("palm_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
         PINE_SHRUB = BlockRegistry.registerDefaultBlock("pine_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
-        PINK_SAKURA_SHRUB = BlockRegistry.registerDefaultBlock("pink_cherry_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
+        PINK_SAKURA_SHRUB = BlockRegistry.registerDefaultBlock("pink_sakura_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
         REDWOOD_SHRUB = BlockRegistry.registerDefaultBlock("redwood_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
-        RED_SAKURA_SHRUB = BlockRegistry.registerDefaultBlock("red_cherry_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
+        RED_SAKURA_SHRUB = BlockRegistry.registerDefaultBlock("red_sakura_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
         RED_MAPLE_SHRUB = BlockRegistry.registerDefaultBlock("red_maple_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
         SILVER_BIRCH_SHRUB = BlockRegistry.registerDefaultBlock("silver_birch_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
         SPRUCE_SHRUB = BlockRegistry.registerDefaultBlock("spruce_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
-        WHITE_SAKURA_SHRUB = BlockRegistry.registerDefaultBlock("white_cherry_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
+        WHITE_SAKURA_SHRUB = BlockRegistry.registerDefaultBlock("white_sakura_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
         WILLOW_SHRUB = BlockRegistry.registerDefaultBlock("willow_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
         //MUSHROOMS
         BLUE_BIOSHROOM = BlockRegistry.registerDefaultBlock("blue_bioshroom", () -> new BioshroomBlock(new BlueBioshroomGrower(), MobEffects.POISON, 10, BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.COLOR_LIGHT_BLUE).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 10)));
@@ -861,7 +861,7 @@ public class RuBlocks {
         POTTED_BAOBAB_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_baobab_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, BAOBAB_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         POTTED_BLACKWOOD_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_blackwood_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, BLACKWOOD_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         POTTED_CACTUS_FLOWER = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_cactus_flower", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, CACTUS_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
-        POTTED_SAKURA_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_cherry_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, SAKURA_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
+        POTTED_SAKURA_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_sakura_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, SAKURA_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         POTTED_CYPRESS_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_cypress_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, CYPRESS_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         POTTED_DEAD_PINE_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_dead_pine_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, DEAD_PINE_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         POTTED_DEAD_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_dead_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, DEAD_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
@@ -875,13 +875,13 @@ public class RuBlocks {
         POTTED_ORANGE_MAPLE_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_orange_maple_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, ORANGE_MAPLE_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         POTTED_PALM_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_palm_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, PALM_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         POTTED_PINE_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_pine_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, PINE_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
-        POTTED_PINK_SAKURA_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_pink_cherry_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, PINK_SAKURA_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
+        POTTED_PINK_SAKURA_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_pink_sakura_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, PINK_SAKURA_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         POTTED_REDWOOD_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_redwood_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, REDWOOD_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
-        POTTED_RED_SAKURA_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_red_cherry_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, RED_SAKURA_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
+        POTTED_RED_SAKURA_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_red_sakura_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, RED_SAKURA_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         POTTED_RED_MAPLE_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_red_maple_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, RED_MAPLE_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         POTTED_BRIMWOOD_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_brimwood_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, BRIMWOOD_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         POTTED_SILVER_BIRCH_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_silver_birch_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, SILVER_BIRCH_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
-        POTTED_WHITE_SAKURA_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_white_cherry_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, WHITE_SAKURA_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
+        POTTED_WHITE_SAKURA_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_white_sakura_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, WHITE_SAKURA_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         POTTED_WILLOW_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_willow_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, WILLOW_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         //POTTED_MUSHROOMS
         POTTED_BLUE_BIOSHROOM = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_blue_bioshroom", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, BLUE_BIOSHROOM, BlockBehaviour.Properties.copy(Blocks.POTTED_BROWN_MUSHROOM).lightLevel(s -> 10)));
@@ -914,7 +914,7 @@ public class RuBlocks {
         BAMBOO_LEAVES = BlockRegistry.registerDefaultBlock("bamboo_leaves", () -> BlockRegistry.leaves(MaterialColor.PLANT));
         BAOBAB_LEAVES = BlockRegistry.registerDefaultBlock("baobab_leaves", () -> BlockRegistry.leaves(MaterialColor.PLANT));
         BLACKWOOD_LEAVES = BlockRegistry.registerDefaultBlock("blackwood_leaves", () -> BlockRegistry.leaves(MaterialColor.TERRACOTTA_GREEN));
-        SAKURA_LEAVES = BlockRegistry.registerDefaultBlock("cherry_leaves", () -> BlockRegistry.leaves(MaterialColor.PLANT));
+        SAKURA_LEAVES = BlockRegistry.registerDefaultBlock("sakura_leaves", () -> BlockRegistry.leaves(MaterialColor.PLANT));
         CYPRESS_LEAVES = BlockRegistry.registerDefaultBlock("cypress_leaves", () -> BlockRegistry.leaves(MaterialColor.PLANT));
         DEAD_LEAVES = BlockRegistry.registerDefaultBlock("dead_leaves", () -> BlockRegistry.leaves(MaterialColor.TERRACOTTA_GRAY));
         DEAD_PINE_LEAVES = BlockRegistry.registerDefaultBlock("dead_pine_leaves", () -> BlockRegistry.leaves(MaterialColor.TERRACOTTA_GRAY));
@@ -928,13 +928,13 @@ public class RuBlocks {
         ORANGE_MAPLE_LEAVES = BlockRegistry.registerDefaultBlock("orange_maple_leaves", () -> BlockRegistry.leaves(MaterialColor.COLOR_ORANGE));
         PALM_LEAVES = BlockRegistry.registerDefaultBlock("palm_leaves", () -> BlockRegistry.leaves(MaterialColor.PLANT));
         PINE_LEAVES = BlockRegistry.registerDefaultBlock("pine_leaves", () -> BlockRegistry.leaves(MaterialColor.PLANT));
-        PINK_SAKURA_LEAVES = BlockRegistry.registerDefaultBlock("pink_cherry_leaves", () -> BlockRegistry.cherryLeaves(MaterialColor.COLOR_PINK));
+        PINK_SAKURA_LEAVES = BlockRegistry.registerDefaultBlock("pink_sakura_leaves", () -> BlockRegistry.cherryLeaves(MaterialColor.COLOR_PINK));
         REDWOOD_LEAVES = BlockRegistry.registerDefaultBlock("redwood_leaves", () -> BlockRegistry.leaves(MaterialColor.PLANT));
-        RED_SAKURA_LEAVES = BlockRegistry.registerDefaultBlock("red_cherry_leaves", () -> BlockRegistry.cherryLeaves(MaterialColor.COLOR_RED));
+        RED_SAKURA_LEAVES = BlockRegistry.registerDefaultBlock("red_sakura_leaves", () -> BlockRegistry.cherryLeaves(MaterialColor.COLOR_RED));
         RED_MAPLE_LEAVES = BlockRegistry.registerDefaultBlock("red_maple_leaves", () -> BlockRegistry.leaves(MaterialColor.COLOR_RED));
         BRIMWOOD_LEAVES = BlockRegistry.registerDefaultBlock("brimwood_leaves", () -> BlockRegistry.brimLeaves(MaterialColor.COLOR_BROWN));
         SILVER_BIRCH_LEAVES = BlockRegistry.registerDefaultBlock("silver_birch_leaves", () -> BlockRegistry.leaves(MaterialColor.COLOR_YELLOW));
-        WHITE_SAKURA_LEAVES = BlockRegistry.registerDefaultBlock("white_cherry_leaves", () -> BlockRegistry.cherryLeaves(MaterialColor.TERRACOTTA_WHITE));
+        WHITE_SAKURA_LEAVES = BlockRegistry.registerDefaultBlock("white_sakura_leaves", () -> BlockRegistry.cherryLeaves(MaterialColor.TERRACOTTA_WHITE));
         WILLOW_LEAVES = BlockRegistry.registerDefaultBlock("willow_leaves", () -> BlockRegistry.leaves(MaterialColor.PLANT));
 
         /*-----------------BRANCHES-----------------*/
@@ -942,7 +942,7 @@ public class RuBlocks {
         BAOBAB_BRANCH = BlockRegistry.registerDefaultBlock("baobab_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())));
         BIRCH_BRANCH = BlockRegistry.registerDefaultBlock("birch_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())));
         BLACKWOOD_BRANCH = BlockRegistry.registerDefaultBlock("blackwood_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())));
-        SAKURA_BRANCH = BlockRegistry.registerDefaultBlock("cherry_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())));
+        SAKURA_BRANCH = BlockRegistry.registerDefaultBlock("sakura_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())));
         CYPRESS_BRANCH = BlockRegistry.registerDefaultBlock("cypress_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())));
         DARK_OAK_BRANCH = BlockRegistry.registerDefaultBlock("dark_oak_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())));
         DEAD_BRANCH = BlockRegistry.registerDefaultBlock("dead_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())));
@@ -1072,21 +1072,21 @@ public class RuBlocks {
         BRIMWOOD_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("brimwood_sign", () -> new RuStandingSignBlock(BlockBehaviour.Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(SoundType.NETHER_WOOD), RuWoodTypes.BRIMWOOD));
         BRIMWOOD_WALL_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("brimwood_wall_sign", () -> new RuWallSignBlock(BlockBehaviour.Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(SoundType.NETHER_WOOD).dropsLike(BRIMWOOD_SIGN.get()), RuWoodTypes.BRIMWOOD));
         //CHERRY_BLOCKS
-        SAKURA_LOG = BlockRegistry.registerDefaultBlock("cherry_log", () -> BlockRegistry.log(MaterialColor.TERRACOTTA_PINK, MaterialColor.STONE, SoundType.CHERRY_WOOD));
-        STRIPPED_SAKURA_LOG = BlockRegistry.registerDefaultBlock("stripped_cherry_log", () -> BlockRegistry.log(MaterialColor.TERRACOTTA_PINK, MaterialColor.TERRACOTTA_PINK, SoundType.CHERRY_WOOD));
-        SAKURA_WOOD = BlockRegistry.registerDefaultBlock("cherry_wood", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.STONE).strength(2.0F).sound(SoundType.CHERRY_WOOD)));
-        STRIPPED_SAKURA_WOOD = BlockRegistry.registerDefaultBlock("stripped_cherry_wood", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_PINK).strength(2.0F).sound(SoundType.CHERRY_WOOD)));
-        SAKURA_PLANKS = BlockRegistry.registerDefaultBlock("cherry_planks", () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_PINK).strength(2.0F, 3.0F).sound(SoundType.CHERRY_WOOD)));
-        SAKURA_STAIRS = BlockRegistry.registerDefaultBlock("cherry_stairs", () -> BlockRegistry.woodStairs(MaterialColor.TERRACOTTA_PINK, SoundType.CHERRY_WOOD));
-        SAKURA_SLAB = BlockRegistry.registerDefaultBlock("cherry_slab", () -> BlockRegistry.woodSlab(MaterialColor.TERRACOTTA_PINK, SoundType.CHERRY_WOOD));
-        SAKURA_FENCE = BlockRegistry.registerDefaultBlock("cherry_fence", () -> BlockRegistry.woodFence(MaterialColor.TERRACOTTA_PINK, SoundType.CHERRY_WOOD));
-        SAKURA_DOOR = BlockRegistry.registerDefaultBlock("cherry_door", () -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_PINK).strength(3.0F).sound(SoundType.CHERRY_WOOD).noOcclusion(), RuBlockSetType.CHERRY));
-        SAKURA_FENCE_GATE = BlockRegistry.registerDefaultBlock("cherry_fence_gate", () -> BlockRegistry.woodFenceGate(MaterialColor.TERRACOTTA_PINK, RuWoodTypes.CHERRY, SoundType.CHERRY_WOOD));
-        SAKURA_TRAPDOOR = BlockRegistry.registerDefaultBlock("cherry_trapdoor", () -> new TrapDoorBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_PINK).strength(3.0F).sound(SoundType.CHERRY_WOOD).noOcclusion().isValidSpawn(BlockRegistry::never), RuBlockSetType.CHERRY));
-        SAKURA_PRESSURE_PLATE = BlockRegistry.registerDefaultBlock("cherry_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_PINK).noCollission().strength(0.5F).sound(SoundType.CHERRY_WOOD), RuBlockSetType.CHERRY));
-        SAKURA_BUTTON = BlockRegistry.registerDefaultBlock("cherry_button", () -> new ButtonBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().strength(0.5F).sound(SoundType.CHERRY_WOOD), RuBlockSetType.CHERRY, 30, true));
-        SAKURA_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("cherry_sign", () -> new RuStandingSignBlock(BlockBehaviour.Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(SoundType.CHERRY_WOOD), RuWoodTypes.CHERRY));
-        SAKURA_WALL_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("cherry_wall_sign", () -> new RuWallSignBlock(BlockBehaviour.Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(SoundType.CHERRY_WOOD).dropsLike(SAKURA_SIGN.get()), RuWoodTypes.CHERRY));
+        SAKURA_LOG = BlockRegistry.registerDefaultBlock("sakura_log", () -> BlockRegistry.log(MaterialColor.TERRACOTTA_PINK, MaterialColor.STONE, SoundType.CHERRY_WOOD));
+        STRIPPED_SAKURA_LOG = BlockRegistry.registerDefaultBlock("stripped_sakura_log", () -> BlockRegistry.log(MaterialColor.TERRACOTTA_PINK, MaterialColor.TERRACOTTA_PINK, SoundType.CHERRY_WOOD));
+        SAKURA_WOOD = BlockRegistry.registerDefaultBlock("sakura_wood", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.STONE).strength(2.0F).sound(SoundType.CHERRY_WOOD)));
+        STRIPPED_SAKURA_WOOD = BlockRegistry.registerDefaultBlock("stripped_sakura_wood", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_PINK).strength(2.0F).sound(SoundType.CHERRY_WOOD)));
+        SAKURA_PLANKS = BlockRegistry.registerDefaultBlock("sakura_planks", () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_PINK).strength(2.0F, 3.0F).sound(SoundType.CHERRY_WOOD)));
+        SAKURA_STAIRS = BlockRegistry.registerDefaultBlock("sakura_stairs", () -> BlockRegistry.woodStairs(MaterialColor.TERRACOTTA_PINK, SoundType.CHERRY_WOOD));
+        SAKURA_SLAB = BlockRegistry.registerDefaultBlock("sakura_slab", () -> BlockRegistry.woodSlab(MaterialColor.TERRACOTTA_PINK, SoundType.CHERRY_WOOD));
+        SAKURA_FENCE = BlockRegistry.registerDefaultBlock("sakura_fence", () -> BlockRegistry.woodFence(MaterialColor.TERRACOTTA_PINK, SoundType.CHERRY_WOOD));
+        SAKURA_DOOR = BlockRegistry.registerDefaultBlock("sakura_door", () -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_PINK).strength(3.0F).sound(SoundType.CHERRY_WOOD).noOcclusion(), RuBlockSetType.CHERRY));
+        SAKURA_FENCE_GATE = BlockRegistry.registerDefaultBlock("sakura_fence_gate", () -> BlockRegistry.woodFenceGate(MaterialColor.TERRACOTTA_PINK, RuWoodTypes.CHERRY, SoundType.CHERRY_WOOD));
+        SAKURA_TRAPDOOR = BlockRegistry.registerDefaultBlock("sakura_trapdoor", () -> new TrapDoorBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_PINK).strength(3.0F).sound(SoundType.CHERRY_WOOD).noOcclusion().isValidSpawn(BlockRegistry::never), RuBlockSetType.CHERRY));
+        SAKURA_PRESSURE_PLATE = BlockRegistry.registerDefaultBlock("sakura_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_PINK).noCollission().strength(0.5F).sound(SoundType.CHERRY_WOOD), RuBlockSetType.CHERRY));
+        SAKURA_BUTTON = BlockRegistry.registerDefaultBlock("sakura_button", () -> new ButtonBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().strength(0.5F).sound(SoundType.CHERRY_WOOD), RuBlockSetType.CHERRY, 30, true));
+        SAKURA_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("sakura_sign", () -> new RuStandingSignBlock(BlockBehaviour.Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(SoundType.CHERRY_WOOD), RuWoodTypes.CHERRY));
+        SAKURA_WALL_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("sakura_wall_sign", () -> new RuWallSignBlock(BlockBehaviour.Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(SoundType.CHERRY_WOOD).dropsLike(SAKURA_SIGN.get()), RuWoodTypes.CHERRY));
         //CYPRESS_BLOCKS
         CYPRESS_LOG = BlockRegistry.registerDefaultBlock("cypress_log", () -> BlockRegistry.log(MaterialColor.WOOD, MaterialColor.WOOD, SoundType.BAMBOO_WOOD));
         STRIPPED_CYPRESS_LOG = BlockRegistry.registerDefaultBlock("stripped_cypress_log", () -> BlockRegistry.log(MaterialColor.WOOD, MaterialColor.WOOD, SoundType.BAMBOO_WOOD));
@@ -1249,7 +1249,7 @@ public class RuBlocks {
         REDWOOD_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("redwood_sign", () -> new RuStandingSignBlock(BlockBehaviour.Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(SoundType.CHERRY_WOOD), RuWoodTypes.REDWOOD));
         REDWOOD_WALL_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("redwood_wall_sign", () -> new RuWallSignBlock(BlockBehaviour.Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(SoundType.CHERRY_WOOD).dropsLike(REDWOOD_SIGN.get()), RuWoodTypes.REDWOOD));
         //SILVER_BIRCH
-        SILVER_BIRCH_LOG = BlockRegistry.registerDefaultBlock("silver_birch_log", () -> BlockRegistry.log(MaterialColor.SAND, MaterialColor.QUARTZ, SoundType.BAMBOO_WOOD));
+        SILVER_BIRCH_LOG = BlockRegistry.registerDefaultBlock("silver_birch_log", () -> BlockRegistry.aspenLogBlock(MaterialColor.SAND, MaterialColor.QUARTZ, SoundType.BAMBOO_WOOD));
         SILVER_BIRCH_WOOD = BlockRegistry.registerDefaultBlock("silver_birch_wood", () -> BlockRegistry.log(MaterialColor.QUARTZ, MaterialColor.QUARTZ, SoundType.BAMBOO_WOOD));
         //WILLOW_BLOCKS
         WILLOW_LOG = BlockRegistry.registerDefaultBlock("willow_log", () -> BlockRegistry.log(MaterialColor.WOOD, MaterialColor.WOOD, SoundType.WOOD));

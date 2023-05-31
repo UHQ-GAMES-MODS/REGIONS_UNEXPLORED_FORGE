@@ -40,6 +40,7 @@ public class DataGeneration {
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
         generator.addProvider(event.includeServer(), new DatapackBuiltinEntriesProvider(packOutput, event.getLookupProvider(), BOOTSTRAPS, Set.of(RegionsUnexploredMod.MOD_ID)));
+        generator.addProvider(event.includeServer(), new RuBlockModelProvider(packOutput, RegionsUnexploredMod.MOD_ID, existingFileHelper));
 
         TagsProvider<Block> blockTagsProvider = generator.addProvider(event.includeServer(), new RuBlockTagProvider(packOutput, event.getLookupProvider(), RegionsUnexploredMod.MOD_ID, existingFileHelper));
         TagsProvider<Item> itemTagsProvider = generator.addProvider(event.includeServer(), new RuItemTagProvider(packOutput, event.getLookupProvider(), blockTagsProvider.contentsGetter(),  RegionsUnexploredMod.MOD_ID, existingFileHelper));

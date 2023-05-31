@@ -1,9 +1,9 @@
 {
   "parent": "regions_unexplored:block/branch",
   "textures": {
-    "cross": "regions_unexplored:block/redwood_branch",
-    "cross2": "regions_unexplored:block/redwood_branch_2",
-    "particle": "regions_unexplored:block/redwood_branch"
+    "log": "regions_unexplored:block/redwood_log",
+    "branch": "regions_unexplored:block/redwood_branch",
+    "particle": "regions_unexplored:block/redwood_log"
   },
   "render_type": "cutout"
 }

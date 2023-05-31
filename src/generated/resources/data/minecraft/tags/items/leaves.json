@@ -20,15 +20,15 @@
     "regions_unexplored:orange_maple_leaves",
     "regions_unexplored:palm_leaves",
     "regions_unexplored:pine_leaves",
-    "regions_unexplored:pink_cherry_leaves",
+    "regions_unexplored:pink_sakura_leaves",
     "regions_unexplored:redwood_leaves",
     "regions_unexplored:red_maple_leaves",
-    "regions_unexplored:red_cherry_leaves",
-    "regions_unexplored:cherry_leaves",
+    "regions_unexplored:red_sakura_leaves",
+    "regions_unexplored:sakura_leaves",
     "regions_unexplored:silver_birch_leaves",
     "regions_unexplored:spanish_moss",
     "minecraft:air",
-    "regions_unexplored:white_cherry_leaves",
+    "regions_unexplored:white_sakura_leaves",
     "regions_unexplored:willow_leaves"
   ]
 }

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "regions_unexplored:block/giant_lily_pad",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "regions_unexplored:block/giant_lily_pad"
+    },
+    "facing=south": {
+      "model": "regions_unexplored:block/giant_lily_pad",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "regions_unexplored:block/giant_lily_pad",
+      "y": 270
+    }
+  }
+}

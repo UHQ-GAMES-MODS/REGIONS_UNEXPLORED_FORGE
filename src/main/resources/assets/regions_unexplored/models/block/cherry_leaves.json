@@ -1,7 +1,0 @@
-{
-  "parent": "block/leaves",
-  "textures": {
-    "all": "regions_unexplored:block/cherry_leaves",
-    "particle": "regions_unexplored:block/cherry_leaves"
-  }
-}

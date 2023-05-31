@@ -68,7 +68,7 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         add(RuBlocks.SANDY_TALL_GRASS.get(), (block) -> createDoublePlantWithSeedDrops(block, RuBlocks.SANDY_GRASS.get()));
         add(RuBlocks.SEEDED_TALL_GRASS.get(), (block) -> createDoublePlantWithSeedDrops(block, RuBlocks.SEEDED_GRASS.get()));
         add(RuBlocks.STEPPE_TALL_GRASS.get(), (block) -> createDoublePlantWithSeedDrops(block, RuBlocks.STEPPE_GRASS.get()));
-        add(RuBlocks.WINDSWEPT_TALL_GRASS.get(), (block) -> createGrassDrops(block));//TODO:Complete Windswept Grass
+        add(RuBlocks.WINDSWEPT_GRASS.get(), (block) -> createGrassDrops(block));//TODO:Complete Windswept Grass
         //FLOWERS
         dropSelf(RuBlocks.ALPHA_DANDELION.get());
         dropSelf(RuBlocks.ALPHA_ROSE.get());

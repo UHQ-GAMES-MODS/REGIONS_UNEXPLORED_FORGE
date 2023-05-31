@@ -8,10 +8,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.RegistryObject;
 import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.data.tags.RuTags;
 import org.jetbrains.annotations.Nullable;
@@ -47,7 +45,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.STONE_BUD.getKey())
                 .add(RuBlocks.TASSEL.getKey())
                 .add(RuBlocks.TSUBAKI.getKey())
-                .add(RuBlocks.WINDSWEPT_TALL_GRASS.getKey())
+                .add(RuBlocks.WINDSWEPT_GRASS.getKey())
                 .add(RuBlocks.PINK_BIOSHROOM.getKey())
                 .add(RuBlocks.BLUE_BIOSHROOM.getKey())
                 .add(RuBlocks.GREEN_BIOSHROOM.getKey())
@@ -225,6 +223,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
         //this.tag(BlockTags.BIG_DRIPLEAF_PLACEABLE);
         this.tag(BlockTags.BIRCH_LOGS)
                 .add(RuBlocks.SILVER_BIRCH_LOG.getKey())
+                .add(RuBlocks.SILVER_BIRCH_WOOD.getKey())
         ;
         //this.tag(BlockTags.BUTTONS);
         //this.tag(BlockTags.CAMPFIRES);
@@ -655,7 +654,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.STONE_BUD.getKey())
                 .add(RuBlocks.TASSEL.getKey())
                 .add(RuBlocks.TSUBAKI.getKey())
-                .add(RuBlocks.WINDSWEPT_TALL_GRASS.getKey())
+                .add(RuBlocks.WINDSWEPT_GRASS.getKey())
                 .add(RuBlocks.PINK_BIOSHROOM.getKey())
                 .add(RuBlocks.BLUE_BIOSHROOM.getKey())
                 .add(RuBlocks.GREEN_BIOSHROOM.getKey())
@@ -1129,6 +1128,120 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.STRIPPED_WILLOW_LOG.getKey())
                 .add(RuBlocks.WILLOW_WOOD.getKey())
                 .add(RuBlocks.STRIPPED_WILLOW_WOOD.getKey())
+        ;
+        this.tag(RuTags.BRANCHES_CAN_SURVIVE_ON)
+                .addTag(BlockTags.OVERWORLD_NATURAL_LOGS)
+        ;
+        this.tag(RuTags.BRIM_PLANT_CAN_SURVIVE_ON)
+                .addTag(BlockTags.DIRT)
+                .addTag(BlockTags.NYLIUM)
+        ;
+        this.tag(RuTags.CATTAIL_CAN_SURVIVE_ON)
+                .addTag(BlockTags.DIRT)
+                .addTag(BlockTags.SAND)
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "clay")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "gravel")))
+        ;
+        this.tag(RuTags.SANDY_PLANT_CAN_SURVIVE_ON)
+                .addTag(BlockTags.SAND)
+                .addTag(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "sandstone")))
+        ;
+        this.tag(RuTags.SHRUB_CAN_SURVIVE_ON)
+                .addTag(BlockTags.DIRT)
+        ;
+        this.tag(RuTags.SNOW_PLANT_CAN_SURVIVE_ON)
+                .addTag(BlockTags.SNOW)
+        ;
+        this.tag(RuTags.STONE_PLANT_CAN_SURVIVE_ON)
+                .addTag(BlockTags.TERRACOTTA)
+                .addTag(BlockTags.BASE_STONE_OVERWORLD)
+                .addTag(BlockTags.BASE_STONE_NETHER)
+                .addTag(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "ores")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "calcite")))
+                .add(RuBlocks.CHALK.getKey())
+                .add(RuBlocks.CHALK_GRASS_BLOCK.getKey())
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "dripstone_block")))
+                .addTag(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "gravel")))
+                .addTag(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "stone")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "gilded_blackstone")))
+                .add(RuBlocks.MOSSY_STONE.getKey())
+                .add(RuBlocks.VIRIDESCENT_NYLIUM.getKey())
+                .add(RuBlocks.DEEPSLATE_VIRIDESCENT_NYLIUM.getKey())
+                .add(RuBlocks.DEEPSLATE_GRASS_BLOCK.getKey())
+                .add(RuBlocks.STONE_GRASS_BLOCK.getKey())
+        ;
+        this.tag(RuTags.BIOSHROOM_GROW_BLOCK)
+                .addTag(BlockTags.DIRT)
+                .addTag(BlockTags.NYLIUM)
+        ;
+        this.tag(RuTags.REPLACEABLE_BLOCKS)
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "air")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "amethyst_cluster")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "azalea")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "big_dripleaf")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "big_dripleaf_stem")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "brown_mushroom")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "bubble_column")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "cave_air")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "cave_vines")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "cave_vines_plant")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "crimson_fungus")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "dead_bush")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "fern")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "flowering_azalea")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "glow_lichen")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "kelp")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "kelp_plant")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "large_amethyst_bud")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "lilac")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "lily_pad")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "mangrove_propagule")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "mangrove_roots")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "medium_amethyst_bud")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "nether_sprouts")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "red_mushroom")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "sculk_vein")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "sea_pickle")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "seagrass")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "small_amethyst_bud")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "small_dripleaf")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "sugar_cane")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "sunflower")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "sweet_berry_bush")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "tall_seagrass")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "vine")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "void_air")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "warped_fungus")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "warped_roots")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "water")))
+                .add(RuBlocks.BARLEY.getKey())
+                .add(RuBlocks.BARREL_CACTUS.getKey())
+                .add(RuBlocks.BLUE_BIOSHROOM.getKey())
+                .add(RuBlocks.BRIMSPROUT.getKey())
+                .add(RuBlocks.CATTAIL.getKey())
+                .add(RuBlocks.DUCKWEED.getKey())
+                .add(RuBlocks.ELEPHANT_EAR.getKey())
+                .add(RuBlocks.GREEN_BIOSHROOM.getKey())
+                .add(RuBlocks.MYCOTOXIC_DAISY.getKey())
+                .add(RuBlocks.MYCOTOXIC_GRASS.getKey())
+                .add(RuBlocks.PINK_BIOSHROOM.getKey())
+                .add(RuBlocks.SMALL_DESERT_SHRUB.getKey())
+                .add(RuBlocks.SPANISH_MOSS.getKey())
+                .add(RuBlocks.SPANISH_MOSS_PLANT.getKey())
+                .add(RuBlocks.STONE_BUD.getKey())
+                .add(RuBlocks.TALL_BLUE_BIOSHROOM.getKey())
+                .add(RuBlocks.TALL_GREEN_BIOSHROOM.getKey())
+                .add(RuBlocks.TALL_PINK_BIOSHROOM.getKey())
+                .add(RuBlocks.TALL_YELLOW_BIOSHROOM.getKey())
+                .add(RuBlocks.TASSEL.getKey())
+                .add(RuBlocks.TSUBAKI.getKey())
+                .add(RuBlocks.YELLOW_BIOSHROOM.getKey())
+                .addTags(BlockTags.FLOWERS)
+                .addTags(BlockTags.LEAVES)
+                .addTags(BlockTags.REPLACEABLE_PLANTS)
+                .addTags(BlockTags.SAPLINGS)
+                .addTags(RuTags.BRANCHES)
+                .addTags(RuTags.SHRUBS)
         ;
     }
 

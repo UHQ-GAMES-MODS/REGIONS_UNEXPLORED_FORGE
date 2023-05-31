@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "regions_unexplored:block/silver_birch_log",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,is_base=true": {
+      "model": "regions_unexplored:block/silver_birch_log_base"
+    },
+    "axis=y,is_base=false": {
+      "model": "regions_unexplored:block/silver_birch_log"
+    },
+    "axis=z": {
+      "model": "regions_unexplored:block/silver_birch_log",
+      "x": 90
+    }
+  }
+}

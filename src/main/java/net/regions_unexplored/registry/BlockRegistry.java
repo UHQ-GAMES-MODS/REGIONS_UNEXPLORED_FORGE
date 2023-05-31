@@ -16,6 +16,7 @@ import net.regions_unexplored.world.level.block.leaves.AppleLeavesBlock;
 import net.regions_unexplored.world.level.block.leaves.JoshuaLeavesBlock;
 import net.regions_unexplored.world.level.block.leaves.MauveLeavesBlock;
 import net.regions_unexplored.world.level.block.leaves.BrimwoodLeavesBlock;
+import net.regions_unexplored.world.level.block.log.AspenLogBlock;
 
 import java.util.function.Supplier;
 
@@ -38,6 +39,11 @@ public class BlockRegistry {
     //Configure log block
     public static RotatedPillarBlock log(MaterialColor colour, MaterialColor colour2, SoundType sound) {
         return new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, (p_152624_) -> {
+            return p_152624_.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? colour : colour2;
+        }).strength(2.0F).sound(sound));
+    }
+    public static AspenLogBlock aspenLogBlock(MaterialColor colour, MaterialColor colour2, SoundType sound) {
+        return new AspenLogBlock(BlockBehaviour.Properties.of(Material.WOOD, (p_152624_) -> {
             return p_152624_.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? colour : colour2;
         }).strength(2.0F).sound(sound));
     }

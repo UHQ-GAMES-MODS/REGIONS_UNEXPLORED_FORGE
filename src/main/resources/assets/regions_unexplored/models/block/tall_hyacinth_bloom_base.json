@@ -1,0 +1,30 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"ambientocclusion": false,
+	"textures": {
+		"stock": "regions_unexplored:block/hyacinth_stock"
+	},
+	"elements": [
+		{
+			"from": [8, 0, 1],
+			"to": [8, 16, 15],
+			"shade": false,
+			"rotation": {"angle": -45, "axis": "y", "origin": [8.00006, 15, 7.99994], "rescale": true},
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#stock"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#stock"}
+			}
+		},
+		{
+			"from": [1, 0, 7.99988],
+			"to": [15, 16, 7.99988],
+			"shade": false,
+			"rotation": {"angle": -45, "axis": "y", "origin": [8.00006, 15, 7.99994], "rescale": true},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#stock"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#stock"}
+			}
+		}
+	]
+}

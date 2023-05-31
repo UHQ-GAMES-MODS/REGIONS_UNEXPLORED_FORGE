@@ -1,0 +1,8 @@
+{
+  "parent": "regions_unexplored:block/coneflower_2",
+  "textures": {
+    "flowerbed": "regions_unexplored:block/orange_coneflower",
+    "particle": "regions_unexplored:block/orange_coneflower"
+  },
+  "render_type": "cutout"
+}

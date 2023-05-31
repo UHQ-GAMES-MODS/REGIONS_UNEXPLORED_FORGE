@@ -21,6 +21,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.regions_unexplored.block.RuBlocks;
+import net.regions_unexplored.block.entity.RuBlockEntities;
 import net.regions_unexplored.client.particle.RuParticleTypes;
 import net.regions_unexplored.config.RuCommonConfig;
 import net.regions_unexplored.config.RuPrimaryRegionConfig;
@@ -77,6 +78,7 @@ public class RegionsUnexploredMod {
         BiomeRegistry.addBiomes();
         FeatureRegistry.addFeatures();
         RuBlocks.addBlocks();
+        RuBlockEntities.addBlockEntities();
         RuItems.addItems();
         RuParticleTypes.addParticles();
     }
