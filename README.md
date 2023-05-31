@@ -13,18 +13,19 @@ The regions unexplored forge repo!
 
 ## Current supported versions:
 
-We have a LTS and latest policy and all other versions will be unsupported and/or get critical bug fixes. 
+We have a LTS and latest policy and all other versions will be unsupported and/or get critical bug fixes.
 
 ### The LTS versions:
 
-- 1.19.2 (Till 1.20 most likely, need to see the popularity)
+- 1.19.2
 
 ### Latest
 
-- 1.19.4 
+- 1.20
 
 ### Dropped / Lifeline support
 
+- 1.19.4 (will be dropped after 0.5.0)
 - 1.19.3
 
 
