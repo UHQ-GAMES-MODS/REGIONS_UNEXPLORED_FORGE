@@ -544,6 +544,22 @@ public class RuItemTagProvider extends ItemTagsProvider {
         //this.tag(ItemTags.WOOL_CARPETS);
 
 
+        this.tag(RuTags.PRISMARITE_CRYSTALS_ITEM)
+                .add(RuBlocks.PRISMARITE_CLUSTER.get().asItem())
+                .add(RuBlocks.LARGE_PRISMARITE_CLUSTER.get().asItem())
+                .add(RuBlocks.HANGING_PRISMARITE.get().asItem())
+        ;
+        this.tag(RuTags.GRASS_ITEM)
+                .add(RuBlocks.FROZEN_GRASS.get().asItem())
+                .add(RuBlocks.MEDIUM_GRASS.get().asItem())
+                .add(RuBlocks.SANDY_GRASS.get().asItem())
+                .add(RuBlocks.SEEDED_GRASS.get().asItem())
+                .add(RuBlocks.STEPPE_GRASS.get().asItem())
+                .add(RuBlocks.STEPPE_SHRUB.get().asItem())
+                .add(RuBlocks.STONE_BUD.get().asItem())
+                .add(ResourceKey.create(Registries.ITEM, new ResourceLocation("minecraft", "grass")))
+                .add(ResourceKey.create(Registries.ITEM, new ResourceLocation("minecraft", "fern")))
+        ;
         this.tag(RuTags.ASH_ITEM)
                 .add(RuBlocks.ASH.get().asItem())
                 .add(RuBlocks.VOLCANIC_ASH.get().asItem())
@@ -816,7 +832,16 @@ public class RuItemTagProvider extends ItemTagsProvider {
         ;
         //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "gunpowder")));
         //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "ingots")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "mushrooms")));
+        this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "mushrooms")))
+                .add(RuBlocks.GREEN_BIOSHROOM.get().asItem())
+                .add(RuBlocks.BLUE_BIOSHROOM.get().asItem())
+                .add(RuBlocks.PINK_BIOSHROOM.get().asItem())
+                .add(RuBlocks.YELLOW_BIOSHROOM.get().asItem())
+                .add(RuBlocks.TALL_GREEN_BIOSHROOM.get().asItem())
+                .add(RuBlocks.TALL_BLUE_BIOSHROOM.get().asItem())
+                .add(RuBlocks.TALL_PINK_BIOSHROOM.get().asItem())
+                .add(RuBlocks.TALL_YELLOW_BIOSHROOM.get().asItem())
+        ;
         //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "netherrack")));
         //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "nuggets")));
         this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "obsidian")))

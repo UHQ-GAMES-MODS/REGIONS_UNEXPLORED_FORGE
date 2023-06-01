@@ -1174,6 +1174,22 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .addTag(BlockTags.DIRT)
                 .addTag(BlockTags.NYLIUM)
         ;
+        this.tag(RuTags.PRISMARITE_CRYSTALS)
+                .add(RuBlocks.PRISMARITE_CLUSTER.getKey())
+                .add(RuBlocks.LARGE_PRISMARITE_CLUSTER.getKey())
+                .add(RuBlocks.HANGING_PRISMARITE.getKey())
+        ;
+        this.tag(RuTags.GRASS)
+                .add(RuBlocks.FROZEN_GRASS.getKey())
+                .add(RuBlocks.MEDIUM_GRASS.getKey())
+                .add(RuBlocks.SANDY_GRASS.getKey())
+                .add(RuBlocks.SEEDED_GRASS.getKey())
+                .add(RuBlocks.STEPPE_GRASS.getKey())
+                .add(RuBlocks.STEPPE_SHRUB.getKey())
+                .add(RuBlocks.STONE_BUD.getKey())
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "grass")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "fern")))
+        ;
         this.tag(RuTags.REPLACEABLE_BLOCKS)
                 .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "air")))
                 .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "amethyst_cluster")))

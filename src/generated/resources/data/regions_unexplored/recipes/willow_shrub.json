@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "shrubs",
+  "key": {
+    "#": {
+      "item": "regions_unexplored:willow_sapling"
+    }
+  },
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "result": {
+    "item": "regions_unexplored:willow_shrub"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "seeds",
+  "ingredients": [
+    {
+      "item": "regions_unexplored:seeded_grass"
+    }
+  ],
+  "result": {
+    "item": "minecraft:wheat_seeds"
+  }
+}

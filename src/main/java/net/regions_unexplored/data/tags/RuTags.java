@@ -18,10 +18,10 @@ public class RuTags {
     public static final TagKey<Block> STONE_PLANT_CAN_SURVIVE_ON = createBlock("stone_plant_can_survive_on");
     public static final TagKey<Block> BIOSHROOM_GROW_BLOCK = createBlock("bioshroom_grow_block");
     public static final TagKey<Block> REPLACEABLE_BLOCKS = createBlock("replaceable_blocks");
+    public static final TagKey<Block> PRISMARITE_CRYSTALS = createBlock("prismarite_crystals");
+    public static final TagKey<Block> GRASS = createBlock("grass");
     public static final TagKey<Block> SHRUBS = createBlock("shrubs");
     public static final TagKey<Block> TREE_GRASS_REPLACEABLES = createBlock("tree_grass_replaceables");
-    public static final TagKey<Block> SANDS = createBlock("sands");
-    public static final TagKey<Block> FLUIDS = createBlock("fluids");
     public static final TagKey<Block> ASH = createBlock("ash");
     public static final TagKey<Block> BRANCHES = createBlock("branches");
     public static final TagKey<Block> BAMBOO_LOGS = createBlock("bamboo_logs");
@@ -41,6 +41,8 @@ public class RuTags {
     public static final TagKey<Block> REDWOOD_LOGS = createBlock("redwood_logs");
     public static final TagKey<Block> WILLOW_LOGS = createBlock("willow_logs");
     //items
+    public static final TagKey<Item> PRISMARITE_CRYSTALS_ITEM = createItem("prismarite_crystals");
+    public static final TagKey<Item> GRASS_ITEM = createItem("grass");
     public static final TagKey<Item> SHRUBS_ITEM = createItem("shrubs");
     public static final TagKey<Item> ASH_ITEM = createItem("ash");
     public static final TagKey<Item> BRANCHES_ITEM = createItem("branches");
