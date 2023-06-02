@@ -15,6 +15,7 @@ import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.regions_unexplored.RegionsUnexploredMod;
+import net.regions_unexplored.data.noise.RuNoises;
 import net.regions_unexplored.datagen.provider.*;
 import net.regions_unexplored.entity.RuDamageTypes;
 import net.regions_unexplored.registry.BiomeRegistry;
@@ -29,6 +30,7 @@ public class DataGeneration {
     private static final RegistrySetBuilder BOOTSTRAPS = new RegistrySetBuilder()
             .add(Registries.BIOME, BiomeRegistry::bootstrap)
             .add(Registries.DAMAGE_TYPE, RuDamageTypes::bootstrap)
+            .add(Registries.NOISE, RuNoises::bootstrap)
             .add(Registries.CONFIGURED_FEATURE, ConfiguredFeatureRegistry::bootstrap)
             .add(Registries.PLACED_FEATURE, PlacedFeatureRegistry::bootstrap)
             ;

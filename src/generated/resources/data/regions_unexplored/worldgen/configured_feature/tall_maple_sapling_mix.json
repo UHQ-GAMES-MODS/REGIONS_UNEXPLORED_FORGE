@@ -1,0 +1,28 @@
+{
+  "type": "regions_unexplored:shrub",
+  "config": {
+    "sapling_provider": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "data": {
+            "Name": "regions_unexplored:maple_shrub",
+            "Properties": {
+              "half": "lower"
+            }
+          },
+          "weight": 4
+        },
+        {
+          "data": {
+            "Name": "regions_unexplored:red_maple_shrub",
+            "Properties": {
+              "half": "lower"
+            }
+          },
+          "weight": 1
+        }
+      ]
+    }
+  }
+}

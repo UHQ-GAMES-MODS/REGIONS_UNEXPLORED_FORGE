@@ -192,27 +192,68 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(RuBlocks.SAGUARO_CACTUS.get()), RecipeCategory.MISC, Items.GREEN_DYE, 1.0F, 200).group("cactus").unlockedBy("has_saguaro_cactus", has(RuBlocks.SAGUARO_CACTUS.get())).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getConversionRecipeName(Items.GREEN_DYE, RuBlocks.SAGUARO_CACTUS.get())));
 
         /*-----------------BRANCHES-----------------*/
-        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.ACACIA_BRANCH.get(), "branches", 4);
-        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.BAOBAB_BRANCH.get(), "branches", 4);
-        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.BIRCH_BRANCH.get(), "branches", 4);
-        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.BLACKWOOD_BRANCH.get(), "branches", 4);
-        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.SAKURA_BRANCH.get(), "branches", 4);
-        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.CYPRESS_BRANCH.get(), "branches", 4);
-        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.DARK_OAK_BRANCH.get(), "branches", 4);
-        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.DEAD_BRANCH.get(), "branches", 4);
-        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.EUCALYPTUS_BRANCH.get(), "branches", 4);
-        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.JOSHUA_BEARD.get(), "branches", 4);
-        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.JUNGLE_BRANCH.get(), "branches", 4);
-        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.LARCH_BRANCH.get(), "branches", 4);
-        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.MANGROVE_BRANCH.get(), "branches", 4);
-        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.MAPLE_BRANCH.get(), "branches", 4);
-        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.MAUVE_BRANCH.get(), "branches", 4);
-        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.OAK_BRANCH.get(), "branches", 4);
-        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.PALM_BEARD.get(), "branches", 4);
-        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.PINE_BRANCH.get(), "branches", 4);
-        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.REDWOOD_BRANCH.get(), "branches", 4);
-        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.SPRUCE_BRANCH.get(), "branches", 4);
-        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.WILLOW_BRANCH.get(), "branches", 4);
+        branchFromLog(consumer, RuBlocks.ACACIA_BRANCH.get(), Blocks.ACACIA_LOG);
+        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.ACACIA_BRANCH.get(), "stick", 4);
+
+        branchFromLog(consumer, RuBlocks.BAOBAB_BRANCH.get(), RuBlocks.BAOBAB_LOG.get());
+        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.BAOBAB_BRANCH.get(), "stick", 4);
+
+        branchFromLog(consumer, RuBlocks.BIRCH_BRANCH.get(), Blocks.BIRCH_LOG);
+        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.BIRCH_BRANCH.get(), "stick", 4);
+
+        branchFromLog(consumer, RuBlocks.BLACKWOOD_BRANCH.get(), RuBlocks.BLACKWOOD_LOG.get());
+        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.BLACKWOOD_BRANCH.get(), "stick", 4);
+
+        branchFromLog(consumer, RuBlocks.SAKURA_BRANCH.get(), RuBlocks.SAKURA_LOG.get());
+        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.SAKURA_BRANCH.get(), "stick", 4);
+
+        branchFromLog(consumer, RuBlocks.CYPRESS_BRANCH.get(), RuBlocks.CYPRESS_LOG.get());
+        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.CYPRESS_BRANCH.get(), "stick", 4);
+
+        branchFromLog(consumer, RuBlocks.DARK_OAK_BRANCH.get(), Blocks.DARK_OAK_LOG);
+        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.DARK_OAK_BRANCH.get(), "stick", 4);
+
+        branchFromLog(consumer, RuBlocks.DEAD_BRANCH.get(), RuBlocks.DEAD_LOG.get());
+        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.DEAD_BRANCH.get(), "stick", 4);
+
+        branchFromLog(consumer, RuBlocks.EUCALYPTUS_BRANCH.get(), RuBlocks.EUCALYPTUS_LOG.get());
+        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.EUCALYPTUS_BRANCH.get(), "stick", 4);
+
+        branchFromLog(consumer, RuBlocks.JOSHUA_BEARD.get(), RuBlocks.JOSHUA_LOG.get());
+        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.JOSHUA_BEARD.get(), "stick", 4);
+
+        branchFromLog(consumer, RuBlocks.JUNGLE_BRANCH.get(), Blocks.JUNGLE_LOG);
+        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.JUNGLE_BRANCH.get(), "stick", 4);
+
+        branchFromLog(consumer, RuBlocks.LARCH_BRANCH.get(), RuBlocks.LARCH_LOG.get());
+        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.LARCH_BRANCH.get(), "stick", 4);
+
+        branchFromLog(consumer, RuBlocks.MANGROVE_BRANCH.get(), Blocks.MANGROVE_LOG);
+        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.MANGROVE_BRANCH.get(), "stick", 4);
+
+        branchFromLog(consumer, RuBlocks.MAPLE_BRANCH.get(), RuBlocks.MAPLE_LOG.get());
+        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.MAPLE_BRANCH.get(), "stick", 4);
+
+        branchFromLog(consumer, RuBlocks.MAUVE_BRANCH.get(), RuBlocks.MAUVE_LOG.get());
+        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.MAUVE_BRANCH.get(), "stick", 4);
+
+        branchFromLog(consumer, RuBlocks.OAK_BRANCH.get(), Blocks.OAK_LOG);
+        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.OAK_BRANCH.get(), "stick", 4);
+
+        branchFromLog(consumer, RuBlocks.PALM_BEARD.get(), RuBlocks.PALM_LOG.get());
+        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.PALM_BEARD.get(), "stick", 4);
+
+        branchFromLog(consumer, RuBlocks.PINE_BRANCH.get(), RuBlocks.PINE_LOG.get());
+        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.PINE_BRANCH.get(), "stick", 4);
+
+        branchFromLog(consumer, RuBlocks.REDWOOD_BRANCH.get(), RuBlocks.REDWOOD_LOG.get());
+        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.REDWOOD_BRANCH.get(), "stick", 4);
+
+        branchFromLog(consumer, RuBlocks.SPRUCE_BRANCH.get(), Blocks.SPRUCE_LOG);
+        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.SPRUCE_BRANCH.get(), "stick", 4);
+
+        branchFromLog(consumer, RuBlocks.WILLOW_BRANCH.get(), RuBlocks.WILLOW_LOG.get());
+        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.WILLOW_BRANCH.get(), "stick", 4);
 
         /*-----------------DIRT_BLOCKS-----------------*/
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.FOREST_COARSE_DIRT.get(), 4).define('D', RuBlocks.FOREST_DIRT.get()).define('G', Blocks.GRAVEL).pattern("DG").pattern("GD").group("coarse_dirt").unlockedBy("has_gravel", has(Blocks.GRAVEL)).save(consumer);
@@ -565,12 +606,15 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
 
         /*-----------------NETHER_BLOCKS-----------------*/
 
-        //TODO-BLACKSTONE_CLUSTER;
-        //TODO-MARROWSTONE;
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.BLACKSTONE_CLUSTER.get(), 2).define('#', Blocks.BLACKSTONE).pattern("##").pattern("##").group("blackstone").unlockedBy("has_blackstone", has(Blocks.BLACKSTONE)).save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.BLACKSTONE, 1).define('#', RuBlocks.BLACKSTONE_CLUSTER.get()).pattern("##").group("blackstone").unlockedBy("has_blackstone_cluster", has(RuBlocks.BLACKSTONE_CLUSTER.get())).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getConversionRecipeName(Blocks.BLACKSTONE,RuBlocks.BLACKSTONE_CLUSTER.get())));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, RuBlocks.MARROWSTONE.get(), 1).define('#', Items.BONE_MEAL).pattern("##").pattern("##").group("bone_meal").unlockedBy("has_bone_meal", has(Items.BONE_MEAL)).save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.BONE_MEAL, 4).requires(RuBlocks.MARROWSTONE.get()).group("bone_meal").unlockedBy("has_marrowstone", has(RuBlocks.MARROWSTONE.get())).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getConversionRecipeName(Items.BONE_MEAL,RuBlocks.MARROWSTONE.get())));
 
-        //TODO-COBALT_EARLIGHT
-        //TODO-HANGING_EARLIGHT
 
+    }
+    protected static void branchFromLog(Consumer<FinishedRecipe> consumer, ItemLike item, ItemLike item2) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, item, 2).define('#', item2).define('X', Items.STICK).pattern("#X").group("branches").unlockedBy("has_log", has(item2)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getConversionRecipeName(item,item2)));
     }
 
     protected static void woodFromOtherItem(Consumer<FinishedRecipe> consumer, ItemLike item, ItemLike item2) {

@@ -40,7 +40,9 @@
       "minecraft:monster_room",
       "minecraft:monster_room_deep"
     ],
-    [],
+    [
+      "regions_unexplored:redwoods_rock"
+    ],
     [],
     [
       "minecraft:ore_dirt",
@@ -79,10 +81,16 @@
     ],
     [
       "minecraft:glow_lichen",
+      "regions_unexplored:medium_grass",
       "minecraft:patch_large_fern",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
-      "minecraft:patch_berry_common"
+      "minecraft:patch_berry_common",
+      "regions_unexplored:ultra_redwood_tree",
+      "regions_unexplored:giant_redwood_tree_dense",
+      "regions_unexplored:redwood_tree",
+      "regions_unexplored:redwood_shrub",
+      "regions_unexplored:redwoods_vegetation"
     ],
     [
       "minecraft:freeze_top_layer"

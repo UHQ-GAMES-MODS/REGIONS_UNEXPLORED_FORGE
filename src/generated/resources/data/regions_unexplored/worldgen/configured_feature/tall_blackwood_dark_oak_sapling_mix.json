@@ -1,0 +1,28 @@
+{
+  "type": "regions_unexplored:shrub",
+  "config": {
+    "sapling_provider": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "data": {
+            "Name": "regions_unexplored:blackwood_shrub",
+            "Properties": {
+              "half": "lower"
+            }
+          },
+          "weight": 3
+        },
+        {
+          "data": {
+            "Name": "regions_unexplored:dark_oak_shrub",
+            "Properties": {
+              "half": "lower"
+            }
+          },
+          "weight": 1
+        }
+      ]
+    }
+  }
+}

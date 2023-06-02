@@ -1,10 +1,14 @@
 package net.regions_unexplored.registry;
 
 import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.configurations.MultifaceGrowthConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraftforge.registries.RegistryObject;
 import net.regions_unexplored.RegionsUnexploredMod;
+import net.regions_unexplored.world.level.feature.AirMultifaceGrowthFeature;
+import net.regions_unexplored.world.level.feature.ShrubFeature;
 import net.regions_unexplored.world.level.feature.configuration.RuTreeConfiguration;
+import net.regions_unexplored.world.level.feature.configuration.ShrubConfiguration;
 import net.regions_unexplored.world.level.feature.tree.*;
 import net.regions_unexplored.world.level.feature.tree.nether.BrimWillowFeature;
 import net.regions_unexplored.world.level.feature.tree.nether.TallBrimWillowFeature;
@@ -44,7 +48,8 @@ public class FeatureRegistry {
     public static RegistryObject<Feature> TALL_BRIM_WILLOW;
     //public static RegistryObject<Feature> ICE_SPIRES;
     //VEGETATION
-    //public static RegistryObject<Feature> SHRUB;
+    public static RegistryObject<Feature> AIR_MULTIFACE_GROWTH;
+    public static RegistryObject<Feature> SHRUB;
     //public static RegistryObject<Feature> WATER_CATTAIL;
     //public static RegistryObject<Feature> SMALL_BUSH;
     //NETHER
@@ -85,5 +90,9 @@ public class FeatureRegistry {
 
         BRIM_WILLOW = RegionsUnexploredMod.FEATURE_REGISTRY.register("brim_willow", () -> new BrimWillowFeature(NoneFeatureConfiguration.CODEC));
         TALL_BRIM_WILLOW = RegionsUnexploredMod.FEATURE_REGISTRY.register("tall_brim_willow", () -> new TallBrimWillowFeature(NoneFeatureConfiguration.CODEC));
+
+
+        AIR_MULTIFACE_GROWTH = RegionsUnexploredMod.FEATURE_REGISTRY.register("air_multiface_growth", () -> new AirMultifaceGrowthFeature(MultifaceGrowthConfiguration.CODEC));
+        SHRUB = RegionsUnexploredMod.FEATURE_REGISTRY.register("shrub", () -> new ShrubFeature(ShrubConfiguration.CODEC));
     }
 }

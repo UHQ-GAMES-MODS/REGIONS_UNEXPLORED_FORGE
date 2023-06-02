@@ -549,12 +549,12 @@ public class UltraRedwoodTreeFeature extends Feature<RuTreeConfiguration> {
             placeLog(level, pos.east(), randomSource, treeConfiguration, Direction.Axis.X);
             placeLog(level, pos.east().east(), randomSource, treeConfiguration, Direction.Axis.X);
             placeLog(level, pos.east().east().east(), randomSource, treeConfiguration, Direction.Axis.X);
-            placeLeavesBlob(level,pos.north().east().east().east(), randomSource, treeConfiguration);
+            placeLeavesBlob(level,pos.east().east().east(), randomSource, treeConfiguration);
 
             placeLog(level, pos.west(), randomSource, treeConfiguration, Direction.Axis.X);
             placeLog(level, pos.west().west(), randomSource, treeConfiguration, Direction.Axis.X);
             placeLog(level, pos.west().west().west(), randomSource, treeConfiguration, Direction.Axis.X);
-            placeLeavesBlob(level,pos.north().west().west().west(), randomSource, treeConfiguration);
+            placeLeavesBlob(level,pos.west().west().west(), randomSource, treeConfiguration);
         }
     }
 
@@ -637,13 +637,13 @@ public class UltraRedwoodTreeFeature extends Feature<RuTreeConfiguration> {
             placeLog(level, pos.east().east(), randomSource, treeConfiguration, Direction.Axis.X);
             placeLog(level, pos.east().east().east(), randomSource, treeConfiguration, Direction.Axis.X);
             placeLog(level, pos.east().east().east().east(), randomSource, treeConfiguration, Direction.Axis.X);
-            placeLeavesBlob(level,pos.north().east().east().east().east(), randomSource, treeConfiguration);
+            placeLeavesBlob(level,pos.east().east().east().east(), randomSource, treeConfiguration);
 
             placeLog(level, pos.west(), randomSource, treeConfiguration, Direction.Axis.X);
             placeLog(level, pos.west().west(), randomSource, treeConfiguration, Direction.Axis.X);
             placeLog(level, pos.west().west().west(), randomSource, treeConfiguration, Direction.Axis.X);
             placeLog(level, pos.west().west().west().west(), randomSource, treeConfiguration, Direction.Axis.X);
-            placeLeavesBlob(level,pos.north().west().west().west().west(), randomSource, treeConfiguration);
+            placeLeavesBlob(level,pos.west().west().west().west(), randomSource, treeConfiguration);
         }
     }
 
@@ -705,74 +705,78 @@ public class UltraRedwoodTreeFeature extends Feature<RuTreeConfiguration> {
         }
     }
     public void placeNorthBranch(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
+        level.setBlock(pos, treeConfiguration.trunkProvider.getState(randomSource, pos), 2);
         if(level.getBlockState(pos.north()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.north())){
-            level.setBlock(pos.north(), treeConfiguration.branchProvider.getState(randomSource, pos).setValue(BranchBlock.FACING, Direction.NORTH), 2);
+            level.setBlock(pos.north(), treeConfiguration.branchProvider.getState(randomSource, pos.north()).setValue(BranchBlock.FACING, Direction.NORTH), 2);
         }
         if(level.getBlockState(pos.north().above()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.north().above())){
-            level.setBlock(pos.north().above(), treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
+            level.setBlock(pos.north().above(), treeConfiguration.foliageProvider.getState(randomSource, pos.north().above()).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
         if(level.getBlockState(pos.north().north()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.north().north())){
-            level.setBlock(pos.north().north(), treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
+            level.setBlock(pos.north().north(), treeConfiguration.foliageProvider.getState(randomSource, pos.north().north()).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
         if(level.getBlockState(pos.north().east()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.north().east())){
-            level.setBlock(pos.north().east(), treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
+            level.setBlock(pos.north().east(), treeConfiguration.foliageProvider.getState(randomSource, pos.north().east()).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
         if(level.getBlockState(pos.north().west()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.north().west())){
-            level.setBlock(pos.north().west(), treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
+            level.setBlock(pos.north().west(), treeConfiguration.foliageProvider.getState(randomSource, pos.north().west()).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
 
     }
     public void placeSouthBranch(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
+        level.setBlock(pos, treeConfiguration.trunkProvider.getState(randomSource, pos), 2);
         if(level.getBlockState(pos.south()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.south())){
-            level.setBlock(pos.south(), treeConfiguration.branchProvider.getState(randomSource, pos).setValue(BranchBlock.FACING, Direction.SOUTH), 2);
+            level.setBlock(pos.south(), treeConfiguration.branchProvider.getState(randomSource, pos.south()).setValue(BranchBlock.FACING, Direction.SOUTH), 2);
         }
         if(level.getBlockState(pos.south().above()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.south().above())){
-            level.setBlock(pos.south().above(), treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
+            level.setBlock(pos.south().above(), treeConfiguration.foliageProvider.getState(randomSource, pos.south().above()).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
         if(level.getBlockState(pos.south().south()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.south().south())){
-            level.setBlock(pos.south().south(), treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
+            level.setBlock(pos.south().south(), treeConfiguration.foliageProvider.getState(randomSource, pos.south().south()).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
         if(level.getBlockState(pos.south().east()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.south().east())){
-            level.setBlock(pos.south().east(), treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
+            level.setBlock(pos.south().east(), treeConfiguration.foliageProvider.getState(randomSource, pos.south().east()).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
         if(level.getBlockState(pos.south().west()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.south().west())){
-            level.setBlock(pos.south().west(), treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
+            level.setBlock(pos.south().west(), treeConfiguration.foliageProvider.getState(randomSource, pos.south().west()).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
 
     }
     public void placeEastBranch(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
+        level.setBlock(pos, treeConfiguration.trunkProvider.getState(randomSource, pos), 2);
         if(level.getBlockState(pos.east()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.east())){
-            level.setBlock(pos.east(), treeConfiguration.branchProvider.getState(randomSource, pos).setValue(BranchBlock.FACING, Direction.EAST), 2);
+            level.setBlock(pos.east(), treeConfiguration.branchProvider.getState(randomSource, pos.east()).setValue(BranchBlock.FACING, Direction.EAST), 2);
         }
         if(level.getBlockState(pos.east().above()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.east().above())){
-            level.setBlock(pos.east().above(), treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
+            level.setBlock(pos.east().above(), treeConfiguration.foliageProvider.getState(randomSource, pos.east().above()).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
         if(level.getBlockState(pos.east().east()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.east().east())){
-            level.setBlock(pos.east().east(), treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
+            level.setBlock(pos.east().east(), treeConfiguration.foliageProvider.getState(randomSource, pos.east().east()).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
         if(level.getBlockState(pos.east().south()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.east().south())){
-            level.setBlock(pos.east().south(), treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
+            level.setBlock(pos.east().south(), treeConfiguration.foliageProvider.getState(randomSource, pos.east().south()).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
         if(level.getBlockState(pos.east().north()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.east().north())){
-            level.setBlock(pos.east().north(), treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
+            level.setBlock(pos.east().north(), treeConfiguration.foliageProvider.getState(randomSource, pos.east().north()).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
 
     }
     public void placeWestBranch(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
+        level.setBlock(pos, treeConfiguration.trunkProvider.getState(randomSource, pos), 2);
         if(level.getBlockState(pos.west()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.west())){
-            level.setBlock(pos.west(), treeConfiguration.branchProvider.getState(randomSource, pos).setValue(BranchBlock.FACING, Direction.WEST), 2);
+            level.setBlock(pos.west(), treeConfiguration.branchProvider.getState(randomSource, pos.west()).setValue(BranchBlock.FACING, Direction.WEST), 2);
         }
         if(level.getBlockState(pos.west().above()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.west().above())){
-            level.setBlock(pos.west().above(), treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
+            level.setBlock(pos.west().above(), treeConfiguration.foliageProvider.getState(randomSource, pos.west().above()).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
         if(level.getBlockState(pos.west().west()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.west().west())){
-            level.setBlock(pos.west().west(), treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
+            level.setBlock(pos.west().west(), treeConfiguration.foliageProvider.getState(randomSource, pos.west().west()).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
         if(level.getBlockState(pos.west().south()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.west().south())){
-            level.setBlock(pos.west().south(), treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
+            level.setBlock(pos.west().south(), treeConfiguration.foliageProvider.getState(randomSource, pos.west().south()).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
         if(level.getBlockState(pos.west().north()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.west().north())){
-            level.setBlock(pos.west().north(), treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
+            level.setBlock(pos.west().north(), treeConfiguration.foliageProvider.getState(randomSource, pos.west().north()).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
 
     }

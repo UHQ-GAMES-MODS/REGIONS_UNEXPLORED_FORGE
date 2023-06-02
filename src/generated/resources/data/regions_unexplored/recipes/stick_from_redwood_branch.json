@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "group": "branches",
+  "group": "stick",
   "ingredients": [
     {
       "item": "regions_unexplored:redwood_branch"
