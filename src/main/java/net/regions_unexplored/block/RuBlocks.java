@@ -44,7 +44,6 @@ import net.regions_unexplored.world.level.block.sign.RuStandingSignBlock;
 import net.regions_unexplored.world.level.block.sign.RuWallSignBlock;
 
 public class RuBlocks {
-    //TODO:Complete Class
     /*-----------------CAVE_BLOCKS-----------------*/
     //PRISMA_BLOCKS
     public static RegistryObject<Block> PRISMOSS;
@@ -1080,13 +1079,13 @@ public class RuBlocks {
         SAKURA_STAIRS = BlockRegistry.registerDefaultBlock("sakura_stairs", () -> BlockRegistry.woodStairs(MaterialColor.TERRACOTTA_PINK, SoundType.CHERRY_WOOD));
         SAKURA_SLAB = BlockRegistry.registerDefaultBlock("sakura_slab", () -> BlockRegistry.woodSlab(MaterialColor.TERRACOTTA_PINK, SoundType.CHERRY_WOOD));
         SAKURA_FENCE = BlockRegistry.registerDefaultBlock("sakura_fence", () -> BlockRegistry.woodFence(MaterialColor.TERRACOTTA_PINK, SoundType.CHERRY_WOOD));
-        SAKURA_DOOR = BlockRegistry.registerDefaultBlock("sakura_door", () -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_PINK).strength(3.0F).sound(SoundType.CHERRY_WOOD).noOcclusion(), RuBlockSetType.CHERRY));
-        SAKURA_FENCE_GATE = BlockRegistry.registerDefaultBlock("sakura_fence_gate", () -> BlockRegistry.woodFenceGate(MaterialColor.TERRACOTTA_PINK, RuWoodTypes.CHERRY, SoundType.CHERRY_WOOD));
-        SAKURA_TRAPDOOR = BlockRegistry.registerDefaultBlock("sakura_trapdoor", () -> new TrapDoorBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_PINK).strength(3.0F).sound(SoundType.CHERRY_WOOD).noOcclusion().isValidSpawn(BlockRegistry::never), RuBlockSetType.CHERRY));
-        SAKURA_PRESSURE_PLATE = BlockRegistry.registerDefaultBlock("sakura_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_PINK).noCollission().strength(0.5F).sound(SoundType.CHERRY_WOOD), RuBlockSetType.CHERRY));
-        SAKURA_BUTTON = BlockRegistry.registerDefaultBlock("sakura_button", () -> new ButtonBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().strength(0.5F).sound(SoundType.CHERRY_WOOD), RuBlockSetType.CHERRY, 30, true));
-        SAKURA_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("sakura_sign", () -> new RuStandingSignBlock(BlockBehaviour.Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(SoundType.CHERRY_WOOD), RuWoodTypes.CHERRY));
-        SAKURA_WALL_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("sakura_wall_sign", () -> new RuWallSignBlock(BlockBehaviour.Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(SoundType.CHERRY_WOOD).dropsLike(SAKURA_SIGN.get()), RuWoodTypes.CHERRY));
+        SAKURA_DOOR = BlockRegistry.registerDefaultBlock("sakura_door", () -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_PINK).strength(3.0F).sound(SoundType.CHERRY_WOOD).noOcclusion(), RuBlockSetType.SAKURA));
+        SAKURA_FENCE_GATE = BlockRegistry.registerDefaultBlock("sakura_fence_gate", () -> BlockRegistry.woodFenceGate(MaterialColor.TERRACOTTA_PINK, RuWoodTypes.SAKURA, SoundType.CHERRY_WOOD));
+        SAKURA_TRAPDOOR = BlockRegistry.registerDefaultBlock("sakura_trapdoor", () -> new TrapDoorBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_PINK).strength(3.0F).sound(SoundType.CHERRY_WOOD).noOcclusion().isValidSpawn(BlockRegistry::never), RuBlockSetType.SAKURA));
+        SAKURA_PRESSURE_PLATE = BlockRegistry.registerDefaultBlock("sakura_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_PINK).noCollission().strength(0.5F).sound(SoundType.CHERRY_WOOD), RuBlockSetType.SAKURA));
+        SAKURA_BUTTON = BlockRegistry.registerDefaultBlock("sakura_button", () -> new ButtonBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().strength(0.5F).sound(SoundType.CHERRY_WOOD), RuBlockSetType.SAKURA, 30, true));
+        SAKURA_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("sakura_sign", () -> new RuStandingSignBlock(BlockBehaviour.Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(SoundType.CHERRY_WOOD), RuWoodTypes.SAKURA));
+        SAKURA_WALL_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("sakura_wall_sign", () -> new RuWallSignBlock(BlockBehaviour.Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(SoundType.CHERRY_WOOD).dropsLike(SAKURA_SIGN.get()), RuWoodTypes.SAKURA));
         //CYPRESS_BLOCKS
         CYPRESS_LOG = BlockRegistry.registerDefaultBlock("cypress_log", () -> BlockRegistry.log(MaterialColor.WOOD, MaterialColor.WOOD, SoundType.BAMBOO_WOOD));
         STRIPPED_CYPRESS_LOG = BlockRegistry.registerDefaultBlock("stripped_cypress_log", () -> BlockRegistry.log(MaterialColor.WOOD, MaterialColor.WOOD, SoundType.BAMBOO_WOOD));

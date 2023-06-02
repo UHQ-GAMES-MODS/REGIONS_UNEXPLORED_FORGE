@@ -5,7 +5,6 @@ import net.minecraftforge.common.ForgeConfigSpec;
 import net.regions_unexplored.data.worldgen.biome.RuBiomes;
 
 public class RuPrimaryRegionConfig {
-    //TODO:Build Class
     public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
     public static final ForgeConfigSpec SPEC;
     //MIDDLE_BIOMES

@@ -4,11 +4,10 @@ import net.minecraft.world.level.block.state.properties.WoodType;
 import net.regions_unexplored.RegionsUnexploredMod;
 
 public class RuWoodTypes {
-    //TODO:Complete Class
     public static WoodType BAOBAB = WoodType.register(new WoodType(RegionsUnexploredMod.MOD_ID + ":baobab", RuBlockSetType.BAOBAB));
     public static WoodType BLACKWOOD = WoodType.register(new WoodType(RegionsUnexploredMod.MOD_ID + ":blackwood", RuBlockSetType.BLACKWOOD));
     public static WoodType BRIMWOOD = WoodType.register(new WoodType(RegionsUnexploredMod.MOD_ID + ":brimwood", RuBlockSetType.BRIMWOOD));
-    public static WoodType CHERRY = WoodType.register(new WoodType(RegionsUnexploredMod.MOD_ID + ":cherry", RuBlockSetType.CHERRY));
+    public static WoodType SAKURA = WoodType.register(new WoodType(RegionsUnexploredMod.MOD_ID + ":sakura", RuBlockSetType.SAKURA));
     public static WoodType CYPRESS = WoodType.register(new WoodType(RegionsUnexploredMod.MOD_ID + ":cypress", RuBlockSetType.CYPRESS));
     public static WoodType DEAD = WoodType.register(new WoodType(RegionsUnexploredMod.MOD_ID + ":dead", RuBlockSetType.DEAD));
     public static WoodType EUCALYPTUS = WoodType.register(new WoodType(RegionsUnexploredMod.MOD_ID + ":eucalyptus", RuBlockSetType.EUCALYPTUS));

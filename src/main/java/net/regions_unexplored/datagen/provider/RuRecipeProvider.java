@@ -1,6 +1,7 @@
 package net.regions_unexplored.datagen.provider;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
@@ -21,6 +22,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.regions_unexplored.RegionsUnexploredMod;
 import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.data.tags.RuTags;
+import net.regions_unexplored.item.RuItems;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -37,7 +39,6 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
     //TODO:set up recipes
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
-        planksFromLog(consumer, RuBlocks.BAOBAB_PLANKS.get(), RuTags.BAOBAB_LOGS_ITEM, 4);
         oneToOneConversionRecipe(consumer, Items.YELLOW_DYE, Blocks.DANDELION, "yellow_dye");
         oneToOneConversionRecipe(consumer, Items.YELLOW_DYE, Blocks.SUNFLOWER, "yellow_dye", 2);
 
@@ -221,374 +222,418 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.ASHEN_DIRT.get(), 4).define('D', RuBlocks.PLAINS_DIRT.get()).define('G', RuTags.ASH_ITEM).pattern("DG").pattern("GD").group("coarse_dirt").unlockedBy("has_ash", has(RuTags.ASH_ITEM)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getConversionRecipeName(RuBlocks.ASHEN_DIRT.get(), RuBlocks.PLAINS_DIRT.get())));
 
         /*-----------------STONE_BLOCKS-----------------*/
-        //CHALKS
-        //-----------CHALK;
+
+        slabBuilder(RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_SLAB.get(), Ingredient.of(RuBlocks.CHALK.get())).group("chalk").unlockedBy("has_chalk", has(RuBlocks.CHALK.get())).save(consumer);
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_SLAB.get(), RuBlocks.CHALK.get(), 2);
+
+        stairBuilder(RuBlocks.CHALK_STAIRS.get(), Ingredient.of(RuBlocks.CHALK.get())).group("chalk").unlockedBy("has_chalk", has(RuBlocks.CHALK.get())).save(consumer);
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_STAIRS.get(), RuBlocks.CHALK.get());
+
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_GRASS_BLOCK.get(), 1).define('#', RuBlocks.CHALK.get()).define('X', RuTags.GRASS_ITEM).pattern("X").pattern("#").group("stone_grass").unlockedBy("has_chalk", has(RuBlocks.CHALK.get())).save(consumer);
-        //-----------CHALK_BRICKS;
-        //-----------CHALK_BRICK_SLAB;
-        //-----------CHALK_BRICK_STAIRS;
-        //-----------CHALK_PILLAR;
-        //-----------CHALK_SLAB;
-        //-----------CHALK_STAIRS;
-        //-----------POLISHED_CHALK;
-        //-----------POLISHED_CHALK_SLAB;
-        //-----------POLISHED_CHALK_STAIRS;
-        //MOSSY_STONES
-        //-----------MOSSY_STONE;
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_BRICKS.get(), 1).define('#', RuBlocks.POLISHED_CHALK.get()).pattern("##").pattern("##").group("chalk").unlockedBy("has_polished_chalk", has(RuBlocks.POLISHED_CHALK.get())).save(consumer);
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_BRICKS.get(), RuBlocks.CHALK.get());
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_BRICKS.get(), RuBlocks.CHALK_GRASS_BLOCK.get());
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_BRICKS.get(), RuBlocks.POLISHED_CHALK.get());
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_BRICKS.get(), RuBlocks.CHALK_PILLAR.get());
+
+        slabBuilder(RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_BRICK_SLAB.get(), Ingredient.of(RuBlocks.CHALK_BRICKS.get())).group("chalk").unlockedBy("has_chalk_bricks", has(RuBlocks.CHALK_BRICKS.get())).save(consumer);
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_BRICK_SLAB.get(), RuBlocks.CHALK_BRICKS.get(), 2);
+
+        stairBuilder(RuBlocks.CHALK_BRICK_STAIRS.get(), Ingredient.of(RuBlocks.CHALK_BRICKS.get())).group("chalk").unlockedBy("has_chalk_bricks", has(RuBlocks.CHALK_BRICKS.get())).save(consumer);
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_BRICK_STAIRS.get(), RuBlocks.CHALK_BRICKS.get());
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_PILLAR.get(), 1).define('#', RuBlocks.CHALK.get()).pattern("#").pattern("#").group("chalk").unlockedBy("has_chalk", has(RuBlocks.CHALK.get())).save(consumer);
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_PILLAR.get(), RuBlocks.CHALK.get());
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_PILLAR.get(), RuBlocks.CHALK_GRASS_BLOCK.get());
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_PILLAR.get(), RuBlocks.POLISHED_CHALK.get());
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_PILLAR.get(), RuBlocks.CHALK_BRICKS.get());
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.POLISHED_CHALK.get(), 1).define('#', RuBlocks.CHALK.get()).pattern("##").pattern("##").group("chalk").unlockedBy("has_chalk", has(RuBlocks.CHALK.get())).save(consumer);
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.POLISHED_CHALK.get(), RuBlocks.CHALK.get());
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.POLISHED_CHALK.get(), RuBlocks.CHALK_GRASS_BLOCK.get());
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.POLISHED_CHALK.get(), RuBlocks.CHALK_BRICKS.get());
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.POLISHED_CHALK.get(), RuBlocks.CHALK_PILLAR.get());
+
+        slabBuilder(RecipeCategory.BUILDING_BLOCKS, RuBlocks.POLISHED_CHALK_SLAB.get(), Ingredient.of(RuBlocks.POLISHED_CHALK.get())).group("chalk").unlockedBy("has_polished_chalk", has(RuBlocks.POLISHED_CHALK.get())).save(consumer);
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.POLISHED_CHALK_SLAB.get(), RuBlocks.POLISHED_CHALK.get(), 2);
+
+        stairBuilder(RuBlocks.POLISHED_CHALK_STAIRS.get(), Ingredient.of(RuBlocks.POLISHED_CHALK.get())).group("chalk").unlockedBy("has_polished_chalk", has(RuBlocks.POLISHED_CHALK.get())).save(consumer);
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.POLISHED_CHALK_STAIRS.get(), RuBlocks.POLISHED_CHALK.get());
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RuBlocks.MOSSY_STONE.get(), 1).requires(Blocks.STONE).requires(Blocks.VINE).unlockedBy("has_stone", has(Blocks.STONE)).unlockedBy("has_vine", has(Blocks.VINE)).save(consumer);
 
         /*-----------------OCEAN_BLOCKS-----------------*/
-        //HYACINTH_BLOCKS
+        //TODO:ADD HYACINTH_LANTERN BEFORE RECIPES
         //-----------HYACINTH_BLOOM;
         //-----------HYACINTH_FLOWERS;
-        //-----------HYACINTH_SEAGRASS;
-        //-----------HYACINTH_STONE;
         //-----------TALL_HYACINTH_STOCK;
-        //ASHEN_BLOCKS
-        //-----------ASHEN_DIRT;
+
+        //TODO: ADD ASHEN_SAPLING BEFORE RECIPE
         //-----------ASHEN_SHRUB;
-        //-----------ASHEN_LEAVES;
-        //-----------ASHEN_GRASS;
 
         /*-----------------OTHER_BLOCKS-----------------*/
-        //-----------ASH;
-        //-----------VOLCANIC_ASH;
-        //-----------ASH_VENT;
-        //-----------QUICKSAND;
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.ASH.get(), 1).define('#', Items.GUNPOWDER).pattern("##").pattern("##").group("ash").unlockedBy("has_gunpowder", has(Items.GUNPOWDER)).save(consumer);
 
         /*-----------------WOOD_TYPES-----------------*/
         //ASHEN_BLOCKS
-        //-----------ASHEN_LOG;
-        //-----------ASHEN_WOOD;
+        woodFromLogs(consumer, RuBlocks.ASHEN_WOOD.get(), RuBlocks.ASHEN_LOG.get());
         //SILVER_BIRCH_BLOCKS
-        //-----------SILVER_BIRCH_LOG;
-        //-----------SILVER_BIRCH_WOOD;
+        woodFromLogs(consumer, RuBlocks.SILVER_BIRCH_WOOD.get(), RuBlocks.SILVER_BIRCH_LOG.get());
         //ALPHA_BLOCKS
-        //-----------ALPHA_LOG;
-        //-----------ALPHA_PLANKS;
-        //-----------ALPHA_STAIRS;
-        //-----------ALPHA_SLAB;
+        planksFromOneLog(consumer, RuBlocks.ALPHA_PLANKS.get(), RuBlocks.ALPHA_LOG.get(), 4);
+        woodenStairs(consumer, RuBlocks.ALPHA_STAIRS.get(), RuBlocks.ALPHA_PLANKS.get());
+        woodenSlab(consumer, RuBlocks.ALPHA_SLAB.get(), RuBlocks.ALPHA_PLANKS.get());
         //BAOBAB_BLOCKS
-        //-----------BAOBAB_LOG;
-        //-----------STRIPPED_BAOBAB_LOG;
-        //-----------BAOBAB_WOOD;
-        //-----------STRIPPED_BAOBAB_WOOD;
-        //-----------BAOBAB_PLANKS;
-        //-----------BAOBAB_STAIRS;
-        //-----------BAOBAB_SLAB;
-        //-----------BAOBAB_FENCE;
-        //-----------BAOBAB_DOOR;
-        //-----------BAOBAB_FENCE_GATE;
-        //-----------BAOBAB_TRAPDOOR;
-        //-----------BAOBAB_PRESSURE_PLATE;
-        //-----------BAOBAB_BUTTON;
-        //-----------BAOBAB_SIGN;
-        //-----------BAOBAB_WALL_SIGN;
+        woodFromLogs(consumer, RuBlocks.BAOBAB_WOOD.get(), RuBlocks.BAOBAB_LOG.get());
+        woodFromLogs(consumer, RuBlocks.STRIPPED_BAOBAB_WOOD.get(), RuBlocks.STRIPPED_BAOBAB_LOG.get());
+        planksFromLogs(consumer, RuBlocks.BAOBAB_PLANKS.get(), RuTags.BAOBAB_LOGS_ITEM, 4);
+        woodenStairs(consumer, RuBlocks.BAOBAB_STAIRS.get(), RuBlocks.BAOBAB_PLANKS.get());
+        woodenSlab(consumer, RuBlocks.BAOBAB_SLAB.get(), RuBlocks.BAOBAB_PLANKS.get());
+        woodenFence(consumer, RuBlocks.BAOBAB_FENCE.get(), RuBlocks.BAOBAB_PLANKS.get());
+        woodenDoor(consumer, RuBlocks.BAOBAB_DOOR.get(), RuBlocks.BAOBAB_PLANKS.get());
+        woodenFenceGate(consumer, RuBlocks.BAOBAB_FENCE_GATE.get(), RuBlocks.BAOBAB_PLANKS.get());
+        woodenTrapdoor(consumer, RuBlocks.BAOBAB_TRAPDOOR.get(), RuBlocks.BAOBAB_PLANKS.get());
+        pressurePlate(consumer, RuBlocks.BAOBAB_PRESSURE_PLATE.get(), RuBlocks.BAOBAB_PLANKS.get());
+        woodenButton(consumer, RuBlocks.BAOBAB_BUTTON.get(), RuBlocks.BAOBAB_PLANKS.get());
+        woodenSign(consumer, RuBlocks.BAOBAB_SIGN.get(), RuBlocks.BAOBAB_PLANKS.get());
+        woodenBoat(consumer, RuItems.BAOBAB_BOAT.get(), RuBlocks.BAOBAB_PLANKS.get());
+        chestBoat(consumer, RuItems.BAOBAB_CHEST_BOAT.get(), RuBlocks.BAOBAB_PLANKS.get());
         //BLACKWOOD_BLOCKS
-        //-----------BLACKWOOD_LOG;
-        //-----------STRIPPED_BLACKWOOD_LOG;
-        //-----------BLACKWOOD_WOOD;
-        //-----------STRIPPED_BLACKWOOD_WOOD;
-        //-----------BLACKWOOD_PLANKS;
-        //-----------BLACKWOOD_STAIRS;
-        //-----------BLACKWOOD_SLAB;
-        //-----------BLACKWOOD_FENCE;
-        //-----------BLACKWOOD_DOOR;
-        //-----------BLACKWOOD_FENCE_GATE;
-        //-----------BLACKWOOD_TRAPDOOR;
-        //-----------BLACKWOOD_PRESSURE_PLATE;
-        //-----------BLACKWOOD_BUTTON;
-        //-----------BLACKWOOD_SIGN;
-        //-----------BLACKWOOD_WALL_SIGN;
+        woodFromLogs(consumer, RuBlocks.BLACKWOOD_WOOD.get(), RuBlocks.BLACKWOOD_LOG.get());
+        woodFromLogs(consumer, RuBlocks.STRIPPED_BLACKWOOD_WOOD.get(), RuBlocks.STRIPPED_BLACKWOOD_LOG.get());
+        planksFromLogs(consumer, RuBlocks.BLACKWOOD_PLANKS.get(), RuTags.BLACKWOOD_LOGS_ITEM, 4);
+        woodenStairs(consumer, RuBlocks.BLACKWOOD_STAIRS.get(), RuBlocks.BLACKWOOD_PLANKS.get());
+        woodenSlab(consumer, RuBlocks.BLACKWOOD_SLAB.get(), RuBlocks.BLACKWOOD_PLANKS.get());
+        woodenFence(consumer, RuBlocks.BLACKWOOD_FENCE.get(), RuBlocks.BLACKWOOD_PLANKS.get());
+        woodenDoor(consumer, RuBlocks.BLACKWOOD_DOOR.get(), RuBlocks.BLACKWOOD_PLANKS.get());
+        woodenFenceGate(consumer, RuBlocks.BLACKWOOD_FENCE_GATE.get(), RuBlocks.BLACKWOOD_PLANKS.get());
+        woodenTrapdoor(consumer, RuBlocks.BLACKWOOD_TRAPDOOR.get(), RuBlocks.BLACKWOOD_PLANKS.get());
+        pressurePlate(consumer, RuBlocks.BLACKWOOD_PRESSURE_PLATE.get(), RuBlocks.BLACKWOOD_PLANKS.get());
+        woodenButton(consumer, RuBlocks.BLACKWOOD_BUTTON.get(), RuBlocks.BLACKWOOD_PLANKS.get());
+        woodenSign(consumer, RuBlocks.BLACKWOOD_SIGN.get(), RuBlocks.BLACKWOOD_PLANKS.get());
+        woodenBoat(consumer, RuItems.BLACKWOOD_BOAT.get(), RuBlocks.BLACKWOOD_PLANKS.get());
+        chestBoat(consumer, RuItems.BLACKWOOD_CHEST_BOAT.get(), RuBlocks.BLACKWOOD_PLANKS.get());
         //BRIMWOOD_BLOCKS
-        //-----------BRIMWOOD_LOG;
-        //-----------BRIMWOOD_LOG_MAGMA;
-        //-----------STRIPPED_BRIMWOOD_LOG;
-        //-----------BRIMWOOD_WOOD;
-        //-----------STRIPPED_BRIMWOOD_WOOD;
-        //-----------BRIMWOOD_PLANKS;
-        //-----------BRIMWOOD_STAIRS;
-        //-----------BRIMWOOD_SLAB;
-        //-----------BRIMWOOD_FENCE;
-        //-----------BRIMWOOD_DOOR;
-        //-----------BRIMWOOD_FENCE_GATE;
-        //-----------BRIMWOOD_TRAPDOOR;
-        //-----------BRIMWOOD_PRESSURE_PLATE;
-        //-----------BRIMWOOD_BUTTON;
-        //-----------BRIMWOOD_SIGN;
-        //-----------BRIMWOOD_WALL_SIGN;
+        woodFromLogs(consumer, RuBlocks.BRIMWOOD_WOOD.get(), RuBlocks.BRIMWOOD_LOG.get());
+        woodFromOtherItem(consumer, RuBlocks.BRIMWOOD_WOOD.get(), RuBlocks.BRIMWOOD_LOG_MAGMA.get());
+        woodFromLogs(consumer, RuBlocks.STRIPPED_BRIMWOOD_WOOD.get(), RuBlocks.STRIPPED_BRIMWOOD_LOG.get());
+        planksFromLogs(consumer, RuBlocks.BRIMWOOD_PLANKS.get(), RuTags.BRIMWOOD_LOGS_ITEM, 4);
+        woodenStairs(consumer, RuBlocks.BRIMWOOD_STAIRS.get(), RuBlocks.BRIMWOOD_PLANKS.get());
+        woodenSlab(consumer, RuBlocks.BRIMWOOD_SLAB.get(), RuBlocks.BRIMWOOD_PLANKS.get());
+        woodenFence(consumer, RuBlocks.BRIMWOOD_FENCE.get(), RuBlocks.BRIMWOOD_PLANKS.get());
+        woodenDoor(consumer, RuBlocks.BRIMWOOD_DOOR.get(), RuBlocks.BRIMWOOD_PLANKS.get());
+        woodenFenceGate(consumer, RuBlocks.BRIMWOOD_FENCE_GATE.get(), RuBlocks.BRIMWOOD_PLANKS.get());
+        woodenTrapdoor(consumer, RuBlocks.BRIMWOOD_TRAPDOOR.get(), RuBlocks.BRIMWOOD_PLANKS.get());
+        pressurePlate(consumer, RuBlocks.BRIMWOOD_PRESSURE_PLATE.get(), RuBlocks.BRIMWOOD_PLANKS.get());
+        woodenButton(consumer, RuBlocks.BRIMWOOD_BUTTON.get(), RuBlocks.BRIMWOOD_PLANKS.get());
+        woodenSign(consumer, RuBlocks.BRIMWOOD_SIGN.get(), RuBlocks.BRIMWOOD_PLANKS.get());
+        woodenBoat(consumer, RuItems.BRIMWOOD_BOAT.get(), RuBlocks.BRIMWOOD_PLANKS.get());
+        chestBoat(consumer, RuItems.BRIMWOOD_CHEST_BOAT.get(), RuBlocks.BRIMWOOD_PLANKS.get());
         //SAKURA_BLOCKS
-        //-----------SAKURA_LOG;
-        //-----------STRIPPED_SAKURA_LOG;
-        //-----------SAKURA_WOOD;
-        //-----------STRIPPED_SAKURA_WOOD;
-        //-----------SAKURA_PLANKS;
-        //-----------SAKURA_STAIRS;
-        //-----------SAKURA_SLAB;
-        //-----------SAKURA_FENCE;
-        //-----------SAKURA_DOOR;
-        //-----------SAKURA_FENCE_GATE;
-        //-----------SAKURA_TRAPDOOR;
-        //-----------SAKURA_PRESSURE_PLATE;
-        //-----------SAKURA_BUTTON;
-        //-----------SAKURA_SIGN;
-        //-----------SAKURA_WALL_SIGN;
+        woodFromLogs(consumer, RuBlocks.SAKURA_WOOD.get(), RuBlocks.SAKURA_LOG.get());
+        woodFromLogs(consumer, RuBlocks.STRIPPED_SAKURA_WOOD.get(), RuBlocks.STRIPPED_SAKURA_LOG.get());
+        planksFromLogs(consumer, RuBlocks.SAKURA_PLANKS.get(), RuTags.SAKURA_LOGS_ITEM, 4);
+        woodenStairs(consumer, RuBlocks.SAKURA_STAIRS.get(), RuBlocks.SAKURA_PLANKS.get());
+        woodenSlab(consumer, RuBlocks.SAKURA_SLAB.get(), RuBlocks.SAKURA_PLANKS.get());
+        woodenFence(consumer, RuBlocks.SAKURA_FENCE.get(), RuBlocks.SAKURA_PLANKS.get());
+        woodenDoor(consumer, RuBlocks.SAKURA_DOOR.get(), RuBlocks.SAKURA_PLANKS.get());
+        woodenFenceGate(consumer, RuBlocks.SAKURA_FENCE_GATE.get(), RuBlocks.SAKURA_PLANKS.get());
+        woodenTrapdoor(consumer, RuBlocks.SAKURA_TRAPDOOR.get(), RuBlocks.SAKURA_PLANKS.get());
+        pressurePlate(consumer, RuBlocks.SAKURA_PRESSURE_PLATE.get(), RuBlocks.SAKURA_PLANKS.get());
+        woodenButton(consumer, RuBlocks.SAKURA_BUTTON.get(), RuBlocks.SAKURA_PLANKS.get());
+        woodenSign(consumer, RuBlocks.SAKURA_SIGN.get(), RuBlocks.SAKURA_PLANKS.get());
+        woodenBoat(consumer, RuItems.SAKURA_BOAT.get(), RuBlocks.SAKURA_PLANKS.get());
+        chestBoat(consumer, RuItems.SAKURA_CHEST_BOAT.get(), RuBlocks.SAKURA_PLANKS.get());
         //CYPRESS_BLOCKS
-        //-----------CYPRESS_LOG;
-        //-----------STRIPPED_CYPRESS_LOG;
-        //-----------CYPRESS_WOOD;
-        //-----------STRIPPED_CYPRESS_WOOD;
-        //-----------CYPRESS_PLANKS;
-        //-----------CYPRESS_STAIRS;
-        //-----------CYPRESS_SLAB;
-        //-----------CYPRESS_FENCE;
-        //-----------CYPRESS_DOOR;
-        //-----------CYPRESS_FENCE_GATE;
-        //-----------CYPRESS_TRAPDOOR;
-        //-----------CYPRESS_PRESSURE_PLATE;
-        //-----------CYPRESS_BUTTON;
-        //-----------CYPRESS_SIGN;
-        //-----------CYPRESS_WALL_SIGN;
+        woodFromLogs(consumer, RuBlocks.CYPRESS_WOOD.get(), RuBlocks.CYPRESS_LOG.get());
+        woodFromLogs(consumer, RuBlocks.STRIPPED_CYPRESS_WOOD.get(), RuBlocks.STRIPPED_CYPRESS_LOG.get());
+        planksFromLogs(consumer, RuBlocks.CYPRESS_PLANKS.get(), RuTags.CYPRESS_LOGS_ITEM, 4);
+        woodenStairs(consumer, RuBlocks.CYPRESS_STAIRS.get(), RuBlocks.CYPRESS_PLANKS.get());
+        woodenSlab(consumer, RuBlocks.CYPRESS_SLAB.get(), RuBlocks.CYPRESS_PLANKS.get());
+        woodenFence(consumer, RuBlocks.CYPRESS_FENCE.get(), RuBlocks.CYPRESS_PLANKS.get());
+        woodenDoor(consumer, RuBlocks.CYPRESS_DOOR.get(), RuBlocks.CYPRESS_PLANKS.get());
+        woodenFenceGate(consumer, RuBlocks.CYPRESS_FENCE_GATE.get(), RuBlocks.CYPRESS_PLANKS.get());
+        woodenTrapdoor(consumer, RuBlocks.CYPRESS_TRAPDOOR.get(), RuBlocks.CYPRESS_PLANKS.get());
+        pressurePlate(consumer, RuBlocks.CYPRESS_PRESSURE_PLATE.get(), RuBlocks.CYPRESS_PLANKS.get());
+        woodenButton(consumer, RuBlocks.CYPRESS_BUTTON.get(), RuBlocks.CYPRESS_PLANKS.get());
+        woodenSign(consumer, RuBlocks.CYPRESS_SIGN.get(), RuBlocks.CYPRESS_PLANKS.get());
+        woodenBoat(consumer, RuItems.CYPRESS_BOAT.get(), RuBlocks.CYPRESS_PLANKS.get());
+        chestBoat(consumer, RuItems.CYPRESS_CHEST_BOAT.get(), RuBlocks.CYPRESS_PLANKS.get());
         //DEAD_BLOCKS
-        //-----------DEAD_LOG;
-        //-----------STRIPPED_DEAD_LOG;
-        //-----------DEAD_WOOD;
-        //-----------STRIPPED_DEAD_WOOD;
-        //-----------DEAD_PLANKS;
-        //-----------DEAD_STAIRS;
-        //-----------DEAD_SLAB;
-        //-----------DEAD_FENCE;
-        //-----------DEAD_DOOR;
-        //-----------DEAD_FENCE_GATE;
-        //-----------DEAD_TRAPDOOR;
-        //-----------DEAD_PRESSURE_PLATE;
-        //-----------DEAD_BUTTON;
-        //-----------DEAD_SIGN;
-        //-----------DEAD_WALL_SIGN;
+        woodFromLogs(consumer, RuBlocks.DEAD_WOOD.get(), RuBlocks.DEAD_LOG.get());
+        woodFromLogs(consumer, RuBlocks.STRIPPED_DEAD_WOOD.get(), RuBlocks.STRIPPED_DEAD_LOG.get());
+        planksFromLogs(consumer, RuBlocks.DEAD_PLANKS.get(), RuTags.DEAD_LOGS_ITEM, 4);
+        woodenStairs(consumer, RuBlocks.DEAD_STAIRS.get(), RuBlocks.DEAD_PLANKS.get());
+        woodenSlab(consumer, RuBlocks.DEAD_SLAB.get(), RuBlocks.DEAD_PLANKS.get());
+        woodenFence(consumer, RuBlocks.DEAD_FENCE.get(), RuBlocks.DEAD_PLANKS.get());
+        woodenDoor(consumer, RuBlocks.DEAD_DOOR.get(), RuBlocks.DEAD_PLANKS.get());
+        woodenFenceGate(consumer, RuBlocks.DEAD_FENCE_GATE.get(), RuBlocks.DEAD_PLANKS.get());
+        woodenTrapdoor(consumer, RuBlocks.DEAD_TRAPDOOR.get(), RuBlocks.DEAD_PLANKS.get());
+        pressurePlate(consumer, RuBlocks.DEAD_PRESSURE_PLATE.get(), RuBlocks.DEAD_PLANKS.get());
+        woodenButton(consumer, RuBlocks.DEAD_BUTTON.get(), RuBlocks.DEAD_PLANKS.get());
+        woodenSign(consumer, RuBlocks.DEAD_SIGN.get(), RuBlocks.DEAD_PLANKS.get());
+        woodenBoat(consumer, RuItems.DEAD_BOAT.get(), RuBlocks.DEAD_PLANKS.get());
+        chestBoat(consumer, RuItems.DEAD_CHEST_BOAT.get(), RuBlocks.DEAD_PLANKS.get());
         //EUCALYPTUS_BLOCKS
-        //-----------EUCALYPTUS_LOG;
-        //-----------STRIPPED_EUCALYPTUS_LOG;
-        //-----------EUCALYPTUS_WOOD;
-        //-----------STRIPPED_EUCALYPTUS_WOOD;
-        //-----------EUCALYPTUS_PLANKS;
-        //-----------EUCALYPTUS_STAIRS;
-        //-----------EUCALYPTUS_SLAB;
-        //-----------EUCALYPTUS_FENCE;
-        //-----------EUCALYPTUS_DOOR;
-        //-----------EUCALYPTUS_FENCE_GATE;
-        //-----------EUCALYPTUS_TRAPDOOR;
-        //-----------EUCALYPTUS_PRESSURE_PLATE;
-        //-----------EUCALYPTUS_BUTTON;
-        //-----------EUCALYPTUS_SIGN;
-        //-----------EUCALYPTUS_WALL_SIGN;
+        woodFromLogs(consumer, RuBlocks.EUCALYPTUS_WOOD.get(), RuBlocks.EUCALYPTUS_LOG.get());
+        woodFromLogs(consumer, RuBlocks.STRIPPED_EUCALYPTUS_WOOD.get(), RuBlocks.STRIPPED_EUCALYPTUS_LOG.get());
+        planksFromLogs(consumer, RuBlocks.EUCALYPTUS_PLANKS.get(), RuTags.EUCALYPTUS_LOGS_ITEM, 4);
+        woodenStairs(consumer, RuBlocks.EUCALYPTUS_STAIRS.get(), RuBlocks.EUCALYPTUS_PLANKS.get());
+        woodenSlab(consumer, RuBlocks.EUCALYPTUS_SLAB.get(), RuBlocks.EUCALYPTUS_PLANKS.get());
+        woodenFence(consumer, RuBlocks.EUCALYPTUS_FENCE.get(), RuBlocks.EUCALYPTUS_PLANKS.get());
+        woodenDoor(consumer, RuBlocks.EUCALYPTUS_DOOR.get(), RuBlocks.EUCALYPTUS_PLANKS.get());
+        woodenFenceGate(consumer, RuBlocks.EUCALYPTUS_FENCE_GATE.get(), RuBlocks.EUCALYPTUS_PLANKS.get());
+        woodenTrapdoor(consumer, RuBlocks.EUCALYPTUS_TRAPDOOR.get(), RuBlocks.EUCALYPTUS_PLANKS.get());
+        pressurePlate(consumer, RuBlocks.EUCALYPTUS_PRESSURE_PLATE.get(), RuBlocks.EUCALYPTUS_PLANKS.get());
+        woodenButton(consumer, RuBlocks.EUCALYPTUS_BUTTON.get(), RuBlocks.EUCALYPTUS_PLANKS.get());
+        woodenSign(consumer, RuBlocks.EUCALYPTUS_SIGN.get(), RuBlocks.EUCALYPTUS_PLANKS.get());
+        woodenBoat(consumer, RuItems.EUCALYPTUS_BOAT.get(), RuBlocks.EUCALYPTUS_PLANKS.get());
+        chestBoat(consumer, RuItems.EUCALYPTUS_CHEST_BOAT.get(), RuBlocks.EUCALYPTUS_PLANKS.get());
         //JOSHUA_BLOCKS
-        //-----------JOSHUA_LOG;
-        //-----------STRIPPED_JOSHUA_LOG;
-        //-----------JOSHUA_WOOD;
-        //-----------STRIPPED_JOSHUA_WOOD;
-        //-----------JOSHUA_PLANKS;
-        //-----------JOSHUA_STAIRS;
-        //-----------JOSHUA_SLAB;
-        //-----------JOSHUA_FENCE;
-        //-----------JOSHUA_DOOR;
-        //-----------JOSHUA_FENCE_GATE;
-        //-----------JOSHUA_TRAPDOOR;
-        //-----------JOSHUA_PRESSURE_PLATE;
-        //-----------JOSHUA_BUTTON;
-        //-----------JOSHUA_SIGN;
-        //-----------JOSHUA_WALL_SIGN;
+        woodFromLogs(consumer, RuBlocks.JOSHUA_WOOD.get(), RuBlocks.JOSHUA_LOG.get());
+        woodFromLogs(consumer, RuBlocks.STRIPPED_JOSHUA_WOOD.get(), RuBlocks.STRIPPED_JOSHUA_LOG.get());
+        planksFromLogs(consumer, RuBlocks.JOSHUA_PLANKS.get(), RuTags.JOSHUA_LOGS_ITEM, 4);
+        woodenStairs(consumer, RuBlocks.JOSHUA_STAIRS.get(), RuBlocks.JOSHUA_PLANKS.get());
+        woodenSlab(consumer, RuBlocks.JOSHUA_SLAB.get(), RuBlocks.JOSHUA_PLANKS.get());
+        woodenFence(consumer, RuBlocks.JOSHUA_FENCE.get(), RuBlocks.JOSHUA_PLANKS.get());
+        woodenDoor(consumer, RuBlocks.JOSHUA_DOOR.get(), RuBlocks.JOSHUA_PLANKS.get());
+        woodenFenceGate(consumer, RuBlocks.JOSHUA_FENCE_GATE.get(), RuBlocks.JOSHUA_PLANKS.get());
+        woodenTrapdoor(consumer, RuBlocks.JOSHUA_TRAPDOOR.get(), RuBlocks.JOSHUA_PLANKS.get());
+        pressurePlate(consumer, RuBlocks.JOSHUA_PRESSURE_PLATE.get(), RuBlocks.JOSHUA_PLANKS.get());
+        woodenButton(consumer, RuBlocks.JOSHUA_BUTTON.get(), RuBlocks.JOSHUA_PLANKS.get());
+        woodenSign(consumer, RuBlocks.JOSHUA_SIGN.get(), RuBlocks.JOSHUA_PLANKS.get());
+        woodenBoat(consumer, RuItems.JOSHUA_BOAT.get(), RuBlocks.JOSHUA_PLANKS.get());
+        chestBoat(consumer, RuItems.JOSHUA_CHEST_BOAT.get(), RuBlocks.JOSHUA_PLANKS.get());
         //LARCH_BLOCKS
-        //-----------LARCH_LOG;
-        //-----------STRIPPED_LARCH_LOG;
-        //-----------LARCH_WOOD;
-        //-----------STRIPPED_LARCH_WOOD;
-        //-----------LARCH_PLANKS;
-        //-----------LARCH_STAIRS;
-        //-----------LARCH_SLAB;
-        //-----------LARCH_FENCE;
-        //-----------LARCH_DOOR;
-        //-----------LARCH_FENCE_GATE;
-        //-----------LARCH_TRAPDOOR;
-        //-----------LARCH_PRESSURE_PLATE;
-        //-----------LARCH_BUTTON;
-        //-----------LARCH_SIGN;
-        //-----------LARCH_WALL_SIGN;
+        woodFromLogs(consumer, RuBlocks.LARCH_WOOD.get(), RuBlocks.LARCH_LOG.get());
+        woodFromLogs(consumer, RuBlocks.STRIPPED_LARCH_WOOD.get(), RuBlocks.STRIPPED_LARCH_LOG.get());
+        planksFromLogs(consumer, RuBlocks.LARCH_PLANKS.get(), RuTags.LARCH_LOGS_ITEM, 4);
+        woodenStairs(consumer, RuBlocks.LARCH_STAIRS.get(), RuBlocks.LARCH_PLANKS.get());
+        woodenSlab(consumer, RuBlocks.LARCH_SLAB.get(), RuBlocks.LARCH_PLANKS.get());
+        woodenFence(consumer, RuBlocks.LARCH_FENCE.get(), RuBlocks.LARCH_PLANKS.get());
+        woodenDoor(consumer, RuBlocks.LARCH_DOOR.get(), RuBlocks.LARCH_PLANKS.get());
+        woodenFenceGate(consumer, RuBlocks.LARCH_FENCE_GATE.get(), RuBlocks.LARCH_PLANKS.get());
+        woodenTrapdoor(consumer, RuBlocks.LARCH_TRAPDOOR.get(), RuBlocks.LARCH_PLANKS.get());
+        pressurePlate(consumer, RuBlocks.LARCH_PRESSURE_PLATE.get(), RuBlocks.LARCH_PLANKS.get());
+        woodenButton(consumer, RuBlocks.LARCH_BUTTON.get(), RuBlocks.LARCH_PLANKS.get());
+        woodenSign(consumer, RuBlocks.LARCH_SIGN.get(), RuBlocks.LARCH_PLANKS.get());
+        woodenBoat(consumer, RuItems.LARCH_BOAT.get(), RuBlocks.LARCH_PLANKS.get());
+        chestBoat(consumer, RuItems.LARCH_CHEST_BOAT.get(), RuBlocks.LARCH_PLANKS.get());
         //MAPLE_BLOCKS
-        //-----------MAPLE_LOG;
-        //-----------STRIPPED_MAPLE_LOG;
-        //-----------MAPLE_WOOD;
-        //-----------STRIPPED_MAPLE_WOOD;
-        //-----------MAPLE_PLANKS;
-        //-----------MAPLE_STAIRS;
-        //-----------MAPLE_SLAB;
-        //-----------MAPLE_FENCE;
-        //-----------MAPLE_DOOR;
-        //-----------MAPLE_FENCE_GATE;
-        //-----------MAPLE_TRAPDOOR;
-        //-----------MAPLE_PRESSURE_PLATE;
-        //-----------MAPLE_BUTTON;
-        //-----------MAPLE_SIGN;
-        //-----------MAPLE_WALL_SIGN;
+        woodFromLogs(consumer, RuBlocks.MAPLE_WOOD.get(), RuBlocks.MAPLE_LOG.get());
+        woodFromLogs(consumer, RuBlocks.STRIPPED_MAPLE_WOOD.get(), RuBlocks.STRIPPED_MAPLE_LOG.get());
+        planksFromLogs(consumer, RuBlocks.MAPLE_PLANKS.get(), RuTags.MAPLE_LOGS_ITEM, 4);
+        woodenStairs(consumer, RuBlocks.MAPLE_STAIRS.get(), RuBlocks.MAPLE_PLANKS.get());
+        woodenSlab(consumer, RuBlocks.MAPLE_SLAB.get(), RuBlocks.MAPLE_PLANKS.get());
+        woodenFence(consumer, RuBlocks.MAPLE_FENCE.get(), RuBlocks.MAPLE_PLANKS.get());
+        woodenDoor(consumer, RuBlocks.MAPLE_DOOR.get(), RuBlocks.MAPLE_PLANKS.get());
+        woodenFenceGate(consumer, RuBlocks.MAPLE_FENCE_GATE.get(), RuBlocks.MAPLE_PLANKS.get());
+        woodenTrapdoor(consumer, RuBlocks.MAPLE_TRAPDOOR.get(), RuBlocks.MAPLE_PLANKS.get());
+        pressurePlate(consumer, RuBlocks.MAPLE_PRESSURE_PLATE.get(), RuBlocks.MAPLE_PLANKS.get());
+        woodenButton(consumer, RuBlocks.MAPLE_BUTTON.get(), RuBlocks.MAPLE_PLANKS.get());
+        woodenSign(consumer, RuBlocks.MAPLE_SIGN.get(), RuBlocks.MAPLE_PLANKS.get());
+        woodenBoat(consumer, RuItems.MAPLE_BOAT.get(), RuBlocks.MAPLE_PLANKS.get());
+        chestBoat(consumer, RuItems.MAPLE_CHEST_BOAT.get(), RuBlocks.MAPLE_PLANKS.get());
         //MAUVE_BLOCKS
-        //-----------MAUVE_LOG;
-        //-----------STRIPPED_MAUVE_LOG;
-        //-----------MAUVE_WOOD;
-        //-----------STRIPPED_MAUVE_WOOD;
-        //-----------MAUVE_PLANKS;
-        //-----------MAUVE_STAIRS;
-        //-----------MAUVE_SLAB;
-        //-----------MAUVE_FENCE;
-        //-----------MAUVE_DOOR;
-        //-----------MAUVE_FENCE_GATE;
-        //-----------MAUVE_TRAPDOOR;
-        //-----------MAUVE_PRESSURE_PLATE;
-        //-----------MAUVE_BUTTON;
-        //-----------MAUVE_SIGN;
-        //-----------MAUVE_WALL_SIGN;
+        woodFromLogs(consumer, RuBlocks.MAUVE_WOOD.get(), RuBlocks.MAUVE_LOG.get());
+        woodFromLogs(consumer, RuBlocks.STRIPPED_MAUVE_WOOD.get(), RuBlocks.STRIPPED_MAUVE_LOG.get());
+        planksFromLogs(consumer, RuBlocks.MAUVE_PLANKS.get(), RuTags.MAUVE_LOGS_ITEM, 4);
+        woodenStairs(consumer, RuBlocks.MAUVE_STAIRS.get(), RuBlocks.MAUVE_PLANKS.get());
+        woodenSlab(consumer, RuBlocks.MAUVE_SLAB.get(), RuBlocks.MAUVE_PLANKS.get());
+        woodenFence(consumer, RuBlocks.MAUVE_FENCE.get(), RuBlocks.MAUVE_PLANKS.get());
+        woodenDoor(consumer, RuBlocks.MAUVE_DOOR.get(), RuBlocks.MAUVE_PLANKS.get());
+        woodenFenceGate(consumer, RuBlocks.MAUVE_FENCE_GATE.get(), RuBlocks.MAUVE_PLANKS.get());
+        woodenTrapdoor(consumer, RuBlocks.MAUVE_TRAPDOOR.get(), RuBlocks.MAUVE_PLANKS.get());
+        pressurePlate(consumer, RuBlocks.MAUVE_PRESSURE_PLATE.get(), RuBlocks.MAUVE_PLANKS.get());
+        woodenButton(consumer, RuBlocks.MAUVE_BUTTON.get(), RuBlocks.MAUVE_PLANKS.get());
+        woodenSign(consumer, RuBlocks.MAUVE_SIGN.get(), RuBlocks.MAUVE_PLANKS.get());
+        woodenBoat(consumer, RuItems.MAUVE_BOAT.get(), RuBlocks.MAUVE_PLANKS.get());
+        chestBoat(consumer, RuItems.MAUVE_CHEST_BOAT.get(), RuBlocks.MAUVE_PLANKS.get());
         //PALM_BLOCKS
-        //-----------PALM_LOG;
-        //-----------STRIPPED_PALM_LOG;
-        //-----------PALM_WOOD;
-        //-----------STRIPPED_PALM_WOOD;
-        //-----------PALM_PLANKS;
-        //-----------PALM_STAIRS;
-        //-----------PALM_SLAB;
-        //-----------PALM_FENCE;
-        //-----------PALM_DOOR;
-        //-----------PALM_FENCE_GATE;
-        //-----------PALM_TRAPDOOR;
-        //-----------PALM_PRESSURE_PLATE;
-        //-----------PALM_BUTTON;
-        //-----------PALM_SIGN;
-        //-----------PALM_WALL_SIGN;
+        woodFromLogs(consumer, RuBlocks.PALM_WOOD.get(), RuBlocks.PALM_LOG.get());
+        woodFromLogs(consumer, RuBlocks.STRIPPED_PALM_WOOD.get(), RuBlocks.STRIPPED_PALM_LOG.get());
+        planksFromLogs(consumer, RuBlocks.PALM_PLANKS.get(), RuTags.PALM_LOGS_ITEM, 4);
+        woodenStairs(consumer, RuBlocks.PALM_STAIRS.get(), RuBlocks.PALM_PLANKS.get());
+        woodenSlab(consumer, RuBlocks.PALM_SLAB.get(), RuBlocks.PALM_PLANKS.get());
+        woodenFence(consumer, RuBlocks.PALM_FENCE.get(), RuBlocks.PALM_PLANKS.get());
+        woodenDoor(consumer, RuBlocks.PALM_DOOR.get(), RuBlocks.PALM_PLANKS.get());
+        woodenFenceGate(consumer, RuBlocks.PALM_FENCE_GATE.get(), RuBlocks.PALM_PLANKS.get());
+        woodenTrapdoor(consumer, RuBlocks.PALM_TRAPDOOR.get(), RuBlocks.PALM_PLANKS.get());
+        pressurePlate(consumer, RuBlocks.PALM_PRESSURE_PLATE.get(), RuBlocks.PALM_PLANKS.get());
+        woodenButton(consumer, RuBlocks.PALM_BUTTON.get(), RuBlocks.PALM_PLANKS.get());
+        woodenSign(consumer, RuBlocks.PALM_SIGN.get(), RuBlocks.PALM_PLANKS.get());
+        woodenBoat(consumer, RuItems.PALM_BOAT.get(), RuBlocks.PALM_PLANKS.get());
+        chestBoat(consumer, RuItems.PALM_CHEST_BOAT.get(), RuBlocks.PALM_PLANKS.get());
         //PINE_BLOCKS
-        //-----------PINE_LOG;
-        //-----------PINE_LOG_TRANSITION;
-        //-----------STRIPPED_PINE_LOG;
-        //-----------PINE_WOOD;
-        //-----------STRIPPED_PINE_WOOD;
-        //-----------PINE_PLANKS;
-        //-----------PINE_STAIRS;
-        //-----------PINE_SLAB;
-        //-----------PINE_FENCE;
-        //-----------PINE_DOOR;
-        //-----------PINE_FENCE_GATE;
-        //-----------PINE_TRAPDOOR;
-        //-----------PINE_PRESSURE_PLATE;
-        //-----------PINE_BUTTON;
-        //-----------PINE_SIGN;
-        //-----------PINE_WALL_SIGN;
+        woodFromLogs(consumer, RuBlocks.PINE_WOOD.get(), RuBlocks.PINE_LOG.get());
+        woodFromLogs(consumer, RuBlocks.STRIPPED_PINE_WOOD.get(), RuBlocks.STRIPPED_PINE_LOG.get());
+        planksFromLogs(consumer, RuBlocks.PINE_PLANKS.get(), RuTags.PINE_LOGS_ITEM, 4);
+        woodenStairs(consumer, RuBlocks.PINE_STAIRS.get(), RuBlocks.PINE_PLANKS.get());
+        woodenSlab(consumer, RuBlocks.PINE_SLAB.get(), RuBlocks.PINE_PLANKS.get());
+        woodenFence(consumer, RuBlocks.PINE_FENCE.get(), RuBlocks.PINE_PLANKS.get());
+        woodenDoor(consumer, RuBlocks.PINE_DOOR.get(), RuBlocks.PINE_PLANKS.get());
+        woodenFenceGate(consumer, RuBlocks.PINE_FENCE_GATE.get(), RuBlocks.PINE_PLANKS.get());
+        woodenTrapdoor(consumer, RuBlocks.PINE_TRAPDOOR.get(), RuBlocks.PINE_PLANKS.get());
+        pressurePlate(consumer, RuBlocks.PINE_PRESSURE_PLATE.get(), RuBlocks.PINE_PLANKS.get());
+        woodenButton(consumer, RuBlocks.PINE_BUTTON.get(), RuBlocks.PINE_PLANKS.get());
+        woodenSign(consumer, RuBlocks.PINE_SIGN.get(), RuBlocks.PINE_PLANKS.get());
+        woodenBoat(consumer, RuItems.PINE_BOAT.get(), RuBlocks.PINE_PLANKS.get());
+        chestBoat(consumer, RuItems.PINE_CHEST_BOAT.get(), RuBlocks.PINE_PLANKS.get());
         //REDWOOD_BLOCKS
-        //-----------REDWOOD_LOG;
-        //-----------STRIPPED_REDWOOD_LOG;
-        //-----------REDWOOD_WOOD;
-        //-----------STRIPPED_REDWOOD_WOOD;
-        //-----------REDWOOD_PLANKS;
-        //-----------REDWOOD_STAIRS;
-        //-----------REDWOOD_SLAB;
-        //-----------REDWOOD_FENCE;
-        //-----------REDWOOD_DOOR;
-        //-----------REDWOOD_FENCE_GATE;
-        //-----------REDWOOD_TRAPDOOR;
-        //-----------REDWOOD_PRESSURE_PLATE;
-        //-----------REDWOOD_BUTTON;
-        //-----------REDWOOD_SIGN;
-        //-----------REDWOOD_WALL_SIGN;
+        woodFromLogs(consumer, RuBlocks.REDWOOD_WOOD.get(), RuBlocks.REDWOOD_LOG.get());
+        woodFromLogs(consumer, RuBlocks.STRIPPED_REDWOOD_WOOD.get(), RuBlocks.STRIPPED_REDWOOD_LOG.get());
+        planksFromLogs(consumer, RuBlocks.REDWOOD_PLANKS.get(), RuTags.REDWOOD_LOGS_ITEM, 4);
+        woodenStairs(consumer, RuBlocks.REDWOOD_STAIRS.get(), RuBlocks.REDWOOD_PLANKS.get());
+        woodenSlab(consumer, RuBlocks.REDWOOD_SLAB.get(), RuBlocks.REDWOOD_PLANKS.get());
+        woodenFence(consumer, RuBlocks.REDWOOD_FENCE.get(), RuBlocks.REDWOOD_PLANKS.get());
+        woodenDoor(consumer, RuBlocks.REDWOOD_DOOR.get(), RuBlocks.REDWOOD_PLANKS.get());
+        woodenFenceGate(consumer, RuBlocks.REDWOOD_FENCE_GATE.get(), RuBlocks.REDWOOD_PLANKS.get());
+        woodenTrapdoor(consumer, RuBlocks.REDWOOD_TRAPDOOR.get(), RuBlocks.REDWOOD_PLANKS.get());
+        pressurePlate(consumer, RuBlocks.REDWOOD_PRESSURE_PLATE.get(), RuBlocks.REDWOOD_PLANKS.get());
+        woodenButton(consumer, RuBlocks.REDWOOD_BUTTON.get(), RuBlocks.REDWOOD_PLANKS.get());
+        woodenSign(consumer, RuBlocks.REDWOOD_SIGN.get(), RuBlocks.REDWOOD_PLANKS.get());
+        woodenBoat(consumer, RuItems.REDWOOD_BOAT.get(), RuBlocks.REDWOOD_PLANKS.get());
+        chestBoat(consumer, RuItems.REDWOOD_CHEST_BOAT.get(), RuBlocks.REDWOOD_PLANKS.get());
         //WILLOW_BLOCKS
-        //-----------WILLOW_LOG;
-        //-----------STRIPPED_WILLOW_LOG;
-        //-----------WILLOW_WOOD;
-        //-----------STRIPPED_WILLOW_WOOD;
-        //-----------WILLOW_PLANKS;
-        //-----------WILLOW_STAIRS;
-        //-----------WILLOW_SLAB;
-        //-----------WILLOW_FENCE;
-        //-----------WILLOW_DOOR;
-        //-----------WILLOW_FENCE_GATE;
-        //-----------WILLOW_TRAPDOOR;
-        //-----------WILLOW_PRESSURE_PLATE;
-        //-----------WILLOW_BUTTON;
-        //-----------WILLOW_SIGN;
-        //-----------WILLOW_WALL_SIGN;
+        woodFromLogs(consumer, RuBlocks.WILLOW_WOOD.get(), RuBlocks.WILLOW_LOG.get());
+        woodFromLogs(consumer, RuBlocks.STRIPPED_WILLOW_WOOD.get(), RuBlocks.STRIPPED_WILLOW_LOG.get());
+        planksFromLogs(consumer, RuBlocks.WILLOW_PLANKS.get(), RuTags.WILLOW_LOGS_ITEM, 4);
+        woodenStairs(consumer, RuBlocks.WILLOW_STAIRS.get(), RuBlocks.WILLOW_PLANKS.get());
+        woodenSlab(consumer, RuBlocks.WILLOW_SLAB.get(), RuBlocks.WILLOW_PLANKS.get());
+        woodenFence(consumer, RuBlocks.WILLOW_FENCE.get(), RuBlocks.WILLOW_PLANKS.get());
+        woodenDoor(consumer, RuBlocks.WILLOW_DOOR.get(), RuBlocks.WILLOW_PLANKS.get());
+        woodenFenceGate(consumer, RuBlocks.WILLOW_FENCE_GATE.get(), RuBlocks.WILLOW_PLANKS.get());
+        woodenTrapdoor(consumer, RuBlocks.WILLOW_TRAPDOOR.get(), RuBlocks.WILLOW_PLANKS.get());
+        pressurePlate(consumer, RuBlocks.WILLOW_PRESSURE_PLATE.get(), RuBlocks.WILLOW_PLANKS.get());
+        woodenButton(consumer, RuBlocks.WILLOW_BUTTON.get(), RuBlocks.WILLOW_PLANKS.get());
+        woodenSign(consumer, RuBlocks.WILLOW_SIGN.get(), RuBlocks.WILLOW_PLANKS.get());
+        woodenBoat(consumer, RuItems.WILLOW_BOAT.get(), RuBlocks.WILLOW_PLANKS.get());
+        chestBoat(consumer, RuItems.WILLOW_CHEST_BOAT.get(), RuBlocks.WILLOW_PLANKS.get());
 
         /*-----------------PAINTED PLANKS-----------------*/
-        //PLANKS
-        //-----------RED_PAINTED_PLANKS;
-        //-----------ORANGE_PAINTED_PLANKS;
-        //-----------YELLOW_PAINTED_PLANKS;
-        //-----------LIME_PAINTED_PLANKS;
-        //-----------GREEN_PAINTED_PLANKS;
-        //-----------CYAN_PAINTED_PLANKS;
-        //-----------LIGHT_BLUE_PAINTED_PLANKS;
-        //-----------BLUE_PAINTED_PLANKS;
-        //-----------PURPLE_PAINTED_PLANKS;
-        //-----------MAGENTA_PAINTED_PLANKS;
-        //-----------PINK_PAINTED_PLANKS;
-        //-----------BROWN_PAINTED_PLANKS;
-        //-----------WHITE_PAINTED_PLANKS;
-        //-----------LIGHT_GRAY_PAINTED_PLANKS;
-        //-----------GRAY_PAINTED_PLANKS;
-        //-----------BLACK_PAINTED_PLANKS;
+        paintedPlanks(consumer, RuBlocks.RED_PAINTED_PLANKS.get(), TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dyes/red")));
+        paintedPlanks(consumer, RuBlocks.ORANGE_PAINTED_PLANKS.get(), TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dyes/orange")));
+        paintedPlanks(consumer, RuBlocks.YELLOW_PAINTED_PLANKS.get(), TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dyes/yellow")));
+        paintedPlanks(consumer, RuBlocks.LIME_PAINTED_PLANKS.get(), TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dyes/lime")));
+        paintedPlanks(consumer, RuBlocks.GREEN_PAINTED_PLANKS.get(), TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dyes/green")));
+        paintedPlanks(consumer, RuBlocks.CYAN_PAINTED_PLANKS.get(), TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dyes/green")));
+        paintedPlanks(consumer, RuBlocks.LIGHT_BLUE_PAINTED_PLANKS.get(), TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dyes/light_blue")));
+        paintedPlanks(consumer, RuBlocks.BLUE_PAINTED_PLANKS.get(), TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dyes/blue")));
+        paintedPlanks(consumer, RuBlocks.PURPLE_PAINTED_PLANKS.get(), TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dyes/purple")));
+        paintedPlanks(consumer, RuBlocks.MAGENTA_PAINTED_PLANKS.get(), TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dyes/magenta")));
+        paintedPlanks(consumer, RuBlocks.PINK_PAINTED_PLANKS.get(), TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dyes/pink")));
+        paintedPlanks(consumer, RuBlocks.BROWN_PAINTED_PLANKS.get(), TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dyes/brown")));
+        paintedPlanks(consumer, RuBlocks.WHITE_PAINTED_PLANKS.get(), TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dyes/white")));
+        paintedPlanks(consumer, RuBlocks.LIGHT_GRAY_PAINTED_PLANKS.get(), TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dyes/light_gray")));
+        paintedPlanks(consumer, RuBlocks.GRAY_PAINTED_PLANKS.get(), TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dyes/gray")));
+        paintedPlanks(consumer, RuBlocks.BLACK_PAINTED_PLANKS.get(), TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dyes/black")));
         //STAIRS
-        //-----------RED_PAINTED_STAIRS;
-        //-----------ORANGE_PAINTED_STAIRS;
-        //-----------YELLOW_PAINTED_STAIRS;
-        //-----------LIME_PAINTED_STAIRS;
-        //-----------GREEN_PAINTED_STAIRS;
-        //-----------CYAN_PAINTED_STAIRS;
-        //-----------LIGHT_BLUE_PAINTED_STAIRS;
-        //-----------BLUE_PAINTED_STAIRS;
-        //-----------PURPLE_PAINTED_STAIRS;
-        //-----------MAGENTA_PAINTED_STAIRS;
-        //-----------PINK_PAINTED_STAIRS;
-        //-----------BROWN_PAINTED_STAIRS;
-        //-----------WHITE_PAINTED_STAIRS;
-        //-----------LIGHT_GRAY_PAINTED_STAIRS;
-        //-----------GRAY_PAINTED_STAIRS;
-        //-----------BLACK_PAINTED_STAIRS;
+        paintedStairs(consumer, RuBlocks.RED_PAINTED_STAIRS.get(), RuBlocks.RED_PAINTED_PLANKS.get());
+        paintedStairs(consumer, RuBlocks.ORANGE_PAINTED_STAIRS.get(), RuBlocks.ORANGE_PAINTED_PLANKS.get());
+        paintedStairs(consumer, RuBlocks.YELLOW_PAINTED_STAIRS.get(), RuBlocks.YELLOW_PAINTED_PLANKS.get());
+        paintedStairs(consumer, RuBlocks.LIME_PAINTED_STAIRS.get(), RuBlocks.LIME_PAINTED_PLANKS.get());
+        paintedStairs(consumer, RuBlocks.GREEN_PAINTED_STAIRS.get(), RuBlocks.GREEN_PAINTED_PLANKS.get());
+        paintedStairs(consumer, RuBlocks.CYAN_PAINTED_STAIRS.get(), RuBlocks.CYAN_PAINTED_PLANKS.get());
+        paintedStairs(consumer, RuBlocks.LIGHT_BLUE_PAINTED_STAIRS.get(), RuBlocks.LIGHT_BLUE_PAINTED_PLANKS.get());
+        paintedStairs(consumer, RuBlocks.BLUE_PAINTED_STAIRS.get(), RuBlocks.BLUE_PAINTED_PLANKS.get());
+        paintedStairs(consumer, RuBlocks.PURPLE_PAINTED_STAIRS.get(), RuBlocks.PURPLE_PAINTED_PLANKS.get());
+        paintedStairs(consumer, RuBlocks.MAGENTA_PAINTED_STAIRS.get(), RuBlocks.MAGENTA_PAINTED_PLANKS.get());
+        paintedStairs(consumer, RuBlocks.PINK_PAINTED_STAIRS.get(), RuBlocks.PINK_PAINTED_PLANKS.get());
+        paintedStairs(consumer, RuBlocks.BROWN_PAINTED_STAIRS.get(), RuBlocks.BROWN_PAINTED_PLANKS.get());
+        paintedStairs(consumer, RuBlocks.WHITE_PAINTED_STAIRS.get(), RuBlocks.WHITE_PAINTED_PLANKS.get());
+        paintedStairs(consumer, RuBlocks.LIGHT_GRAY_PAINTED_STAIRS.get(), RuBlocks.LIGHT_GRAY_PAINTED_PLANKS.get());
+        paintedStairs(consumer, RuBlocks.GRAY_PAINTED_STAIRS.get(), RuBlocks.GRAY_PAINTED_PLANKS.get());
+        paintedStairs(consumer, RuBlocks.BLACK_PAINTED_STAIRS.get(), RuBlocks.BLACK_PAINTED_PLANKS.get());
         //SLABS
-        //-----------RED_PAINTED_SLAB;
-        //-----------ORANGE_PAINTED_SLAB;
-        //-----------YELLOW_PAINTED_SLAB;
-        //-----------LIME_PAINTED_SLAB;
-        //-----------GREEN_PAINTED_SLAB;
-        //-----------CYAN_PAINTED_SLAB;
-        //-----------LIGHT_BLUE_PAINTED_SLAB;
-        //-----------BLUE_PAINTED_SLAB;
-        //-----------PURPLE_PAINTED_SLAB;
-        //-----------MAGENTA_PAINTED_SLAB;
-        //-----------PINK_PAINTED_SLAB;
-        //-----------BROWN_PAINTED_SLAB;
-        //-----------WHITE_PAINTED_SLAB;
-        //-----------LIGHT_GRAY_PAINTED_SLAB;
-        //-----------GRAY_PAINTED_SLAB;
-        //-----------BLACK_PAINTED_SLAB;
+        paintedSlab(consumer, RuBlocks.RED_PAINTED_SLAB.get(), RuBlocks.RED_PAINTED_PLANKS.get());
+        paintedSlab(consumer, RuBlocks.ORANGE_PAINTED_SLAB.get(), RuBlocks.ORANGE_PAINTED_PLANKS.get());
+        paintedSlab(consumer, RuBlocks.YELLOW_PAINTED_SLAB.get(), RuBlocks.YELLOW_PAINTED_PLANKS.get());
+        paintedSlab(consumer, RuBlocks.LIME_PAINTED_SLAB.get(), RuBlocks.LIME_PAINTED_PLANKS.get());
+        paintedSlab(consumer, RuBlocks.GREEN_PAINTED_SLAB.get(), RuBlocks.GREEN_PAINTED_PLANKS.get());
+        paintedSlab(consumer, RuBlocks.CYAN_PAINTED_SLAB.get(), RuBlocks.CYAN_PAINTED_PLANKS.get());
+        paintedSlab(consumer, RuBlocks.LIGHT_BLUE_PAINTED_SLAB.get(), RuBlocks.LIGHT_BLUE_PAINTED_PLANKS.get());
+        paintedSlab(consumer, RuBlocks.BLUE_PAINTED_SLAB.get(), RuBlocks.BLUE_PAINTED_PLANKS.get());
+        paintedSlab(consumer, RuBlocks.PURPLE_PAINTED_SLAB.get(), RuBlocks.PURPLE_PAINTED_PLANKS.get());
+        paintedSlab(consumer, RuBlocks.MAGENTA_PAINTED_SLAB.get(), RuBlocks.MAGENTA_PAINTED_PLANKS.get());
+        paintedSlab(consumer, RuBlocks.PINK_PAINTED_SLAB.get(), RuBlocks.PINK_PAINTED_PLANKS.get());
+        paintedSlab(consumer, RuBlocks.BROWN_PAINTED_SLAB.get(), RuBlocks.BROWN_PAINTED_PLANKS.get());
+        paintedSlab(consumer, RuBlocks.WHITE_PAINTED_SLAB.get(), RuBlocks.WHITE_PAINTED_PLANKS.get());
+        paintedSlab(consumer, RuBlocks.LIGHT_GRAY_PAINTED_SLAB.get(), RuBlocks.LIGHT_GRAY_PAINTED_PLANKS.get());
+        paintedSlab(consumer, RuBlocks.GRAY_PAINTED_SLAB.get(), RuBlocks.GRAY_PAINTED_PLANKS.get());
+        paintedSlab(consumer, RuBlocks.BLACK_PAINTED_SLAB.get(), RuBlocks.BLACK_PAINTED_PLANKS.get());
 
         /*-----------------NETHER_BLOCKS-----------------*/
-        //NETHER_STONES
-        //-----------BLACKSTONE_CLUSTER;
-        //-----------MARROWSTONE;
-        //BRIMSPROUT_BLOCKS
-        //-----------BRIMSPROUT_NYLIUM;
-        //-----------BRIMSPROUT;
-        //COBALT_BLOCKS
-        //-----------COBALT_EARLIGHT;
-        //-----------COBALT_NYLIUM;
-        //-----------COBALT_OBSIDIAN;
-        //-----------COBALT_ROOTS;
-        //-----------HANGING_EARLIGHT;
-        //-----------HANGING_EARLIGHT_PLANT;
-        //GLISTERING_BLOCKS
-        //-----------GLISTERING_IVY;
-        //-----------GLISTERING_IVY_PLANT;
-        //-----------GLISTERING_NYLIUM;
-        //-----------GLISTERING_SPROUT;
-        //-----------GLISTERING_WART;
-        //-----------GLISTER_BULB;
-        //-----------GLISTER_SPIRE;
-        //MYCOTOXIC_BLOCKS
-        //-----------MYCOTOXIC_DAISY;
-        //-----------MYCOTOXIC_GRASS;
-        //-----------MYCOTOXIC_NYLIUM;
+
+        //TODO-BLACKSTONE_CLUSTER;
+        //TODO-MARROWSTONE;
+
+        //TODO-COBALT_EARLIGHT
+        //TODO-HANGING_EARLIGHT
+
+    }
+
+    protected static void woodFromOtherItem(Consumer<FinishedRecipe> consumer, ItemLike item, ItemLike item2) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, item, 3).define('#', item2).pattern("##").pattern("##").group("bark").unlockedBy("has_log", has(item2)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getConversionRecipeName(item,item2)));
+    }
+    
+    protected static void paintedSlab(Consumer<FinishedRecipe> consumer, ItemLike item, ItemLike item2) {
+        slabBuilder(RecipeCategory.BUILDING_BLOCKS, item, Ingredient.of(item2)).group("painted_slab").unlockedBy(getHasName(item2), has(item2)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getItemName(item)));
+    }
+
+    protected static void paintedStairs(Consumer<FinishedRecipe> consumer, ItemLike item, ItemLike item2) {
+        stairBuilder(item, Ingredient.of(item2)).group("painted_stairs").unlockedBy(getHasName(item2), has(item2)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getItemName(item)));
+    }
+
+    protected static void paintedPlanks(Consumer<FinishedRecipe> consumer, ItemLike result, TagKey<Item> dye) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, result, 8).define('X', dye).define('#', ItemTags.PLANKS).pattern("###").pattern("#X#").pattern("###").group("painted_planks").unlockedBy("has_planks", has(ItemTags.PLANKS)).save(consumer);
+    }
+
+    protected static void planksFromOneLog(Consumer<FinishedRecipe> p_259712_, ItemLike p_259052_, ItemLike p_259045_, int i) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, p_259052_, i).requires(p_259045_).group("planks").unlockedBy("has_log", has(p_259045_)).save(p_259712_);
+    }
+    protected static void woodenButton(Consumer<FinishedRecipe> consumer, ItemLike item, ItemLike item2) {
+        buttonBuilder(item, Ingredient.of(item2)).group("wooden_button").unlockedBy(getHasName(item2), has(item2)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getItemName(item)));
+    }
+
+    protected static void woodenSign(Consumer<FinishedRecipe> consumer, ItemLike item, ItemLike item2) {
+        signBuilder(item, Ingredient.of(item2)).group("wooden_sign").unlockedBy(getHasName(item2), has(item2)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getItemName(item)));
+    }
+
+    protected static void woodenDoor(Consumer<FinishedRecipe> consumer, ItemLike item, ItemLike item2) {
+        doorBuilder(item, Ingredient.of(item2)).group("wooden_door").unlockedBy(getHasName(item2), has(item2)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getItemName(item)));
+    }
+
+    protected static void woodenFenceGate(Consumer<FinishedRecipe> consumer, ItemLike item, ItemLike item2) {
+        fenceGateBuilder(item, Ingredient.of(item2)).group("wooden_fence_gate").unlockedBy(getHasName(item2), has(item2)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getItemName(item)));
+    }
+
+    protected static void woodenFence(Consumer<FinishedRecipe> consumer, ItemLike item, ItemLike item2) {
+        fenceBuilder(item, Ingredient.of(item2)).group("wooden_fence").unlockedBy(getHasName(item2), has(item2)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getItemName(item)));
+    }
+
+    protected static void woodenSlab(Consumer<FinishedRecipe> consumer, ItemLike item, ItemLike item2) {
+        slabBuilder(RecipeCategory.BUILDING_BLOCKS, item, Ingredient.of(item2)).group("wooden_slab").unlockedBy(getHasName(item2), has(item2)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getItemName(item)));
+    }
+
+    protected static void woodenStairs(Consumer<FinishedRecipe> consumer, ItemLike item, ItemLike item2) {
+        stairBuilder(item, Ingredient.of(item2)).group("wooden_stairs").unlockedBy(getHasName(item2), has(item2)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getItemName(item)));
+    }
+
+    protected static void woodenTrapdoor(Consumer<FinishedRecipe> consumer, ItemLike item, ItemLike item2) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, item, 2).define('#', item2).pattern("###").pattern("###").group("wooden_trapdoor").unlockedBy(getHasName(item2), has(item2)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getItemName(item)));
+    }
+
+    protected static void pressurePlate(Consumer<FinishedRecipe> consumer, ItemLike item, ItemLike item2) {
+        pressurePlateBuilder(RecipeCategory.REDSTONE, item, Ingredient.of(item2)).group("wooden_pressure_plate").unlockedBy(getHasName(item2), has(item2)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getItemName(item)));
+    }
+
+    protected static void stonecutterResultFromBase(Consumer<FinishedRecipe> consumer, RecipeCategory category, ItemLike item, ItemLike item2) {
+        stonecutterResultFromBase(consumer, category, item, item2, 1);
+    }
+
+    protected static void stonecutterResultFromBase(Consumer<FinishedRecipe> consumer, RecipeCategory category, ItemLike item, ItemLike item2, int i) {
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(item2), category, item, i).unlockedBy(getHasName(item2), has(item2)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getConversionRecipeName(item, item2) + "_stonecutting"));
     }
 
     protected static void oreSmelting(Consumer<FinishedRecipe> consumer, List<ItemLike> itemList, RecipeCategory category, ItemLike item, float f, int i, String s) {

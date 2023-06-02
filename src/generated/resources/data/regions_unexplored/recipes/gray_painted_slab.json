@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "painted_slab",
+  "key": {
+    "#": {
+      "item": "regions_unexplored:gray_painted_planks"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "regions_unexplored:gray_painted_slab"
+  },
+  "show_notification": true
+}
