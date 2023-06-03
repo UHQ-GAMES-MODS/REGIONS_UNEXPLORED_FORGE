@@ -1,12 +1,14 @@
 package net.regions_unexplored.item;
 
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.SignItem;
 import net.minecraftforge.registries.RegistryObject;
 import net.regions_unexplored.RegionsUnexploredMod;
 import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.entity.custom.RuBoat;
 import net.regions_unexplored.item.items.RuBoatItem;
+import net.regions_unexplored.world.food.RuFoods;
 
 public class RuItems {
     //TODO:Complete Class
@@ -56,6 +58,8 @@ public class RuItems {
     public static RegistryObject<Item> BRIMWOOD_CHEST_BOAT;
     public static RegistryObject<Item> WILLOW_BOAT;
     public static RegistryObject<Item> WILLOW_CHEST_BOAT;
+
+    public static RegistryObject<Item> SALMONBERRY;
     
     public static void addItems(){
     BAOBAB_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("baobab_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.BAOBAB_SIGN.get(), RuBlocks.BAOBAB_WALL_SIGN.get()));
@@ -104,5 +108,7 @@ public class RuItems {
     BRIMWOOD_CHEST_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("brimwood_chest_boat", () -> new RuBoatItem(true, RuBoat.ModelType.BRIMWOOD, (new Item.Properties()).stacksTo(1)));
     WILLOW_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("willow_boat", () -> new RuBoatItem(false, RuBoat.ModelType.WILLOW, (new Item.Properties()).stacksTo(1)));
     WILLOW_CHEST_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("willow_chest_boat", () -> new RuBoatItem(true, RuBoat.ModelType.WILLOW, (new Item.Properties()).stacksTo(1)));
+
+    SALMONBERRY = RegionsUnexploredMod.ITEM_REGISTRY.register("salmonberry", () -> new ItemNameBlockItem(RuBlocks.SALMONBERRY_BUSH.get(), (new Item.Properties()).food(RuFoods.SALMONBERRY)));
     }
 }

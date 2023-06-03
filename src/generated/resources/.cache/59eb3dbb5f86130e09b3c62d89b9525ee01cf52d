@@ -1,4 +1,4 @@
-// 1.19.4	2023-05-31T00:27:53.0051713	Loot Tables
+// 1.19.4	2023-06-03T12:25:04.8212877	Loot Tables
 c40c39945b81934eca6ffec8eca8cf5dc6e839bc data/regions_unexplored/loot_tables/blocks/acacia_branch.json
 99511dc6aa6a87b11a6114b9ded41bc99287bf7b data/regions_unexplored/loot_tables/blocks/acacia_shrub.json
 c4aa4fd0a2bc5d7c8f2c93b8062200beed4881cf data/regions_unexplored/loot_tables/blocks/alpha_dandelion.json
@@ -465,6 +465,7 @@ fcf706925eac6617e0a74faa5aa0b7382dd65b24 data/regions_unexplored/loot_tables/blo
 21163e28c8bcfed55e6d8021480f8a7487c69b13 data/regions_unexplored/loot_tables/blocks/sakura_stairs.json
 9e20935fb6a51ddca7846d1b44762ab2b80b68c0 data/regions_unexplored/loot_tables/blocks/sakura_trapdoor.json
 4f8c34f0d0af643023a79c4052476b6c29e73dfb data/regions_unexplored/loot_tables/blocks/sakura_wood.json
+7e8caa03b528183755d381e1b6b6c69cc63dec63 data/regions_unexplored/loot_tables/blocks/salmonberry_bush.json
 b6e9e7f76b6ab97b1546f57c6562af7e2467711a data/regions_unexplored/loot_tables/blocks/sandy_grass.json
 f750ee0e69524e9f51c7aa680869cb64dfbf654f data/regions_unexplored/loot_tables/blocks/sandy_tall_grass.json
 e8aac2636fbb69780949bba83c73ffe81079327a data/regions_unexplored/loot_tables/blocks/seeded_grass.json

@@ -16,6 +16,7 @@ import net.regions_unexplored.world.level.block.cave.*;
 import net.regions_unexplored.world.level.block.forest_dirt.ForestDirtPathBlock;
 import net.regions_unexplored.world.level.block.forest_dirt.ForestFarmBlock;
 import net.regions_unexplored.world.level.block.forest_dirt.ForestGrassBlock;
+import net.regions_unexplored.world.level.block.plant.SalmonBerryBushBlock;
 import net.regions_unexplored.world.level.block.saplinggrowers.*;
 import net.regions_unexplored.world.level.block.log.BambooLogBlock;
 import net.regions_unexplored.world.level.block.log.MagmaLogBlock;
@@ -182,6 +183,8 @@ public class RuBlocks {
     public static RegistryObject<Block> DUCKWEED;
     public static RegistryObject<Block> SPANISH_MOSS;
     public static RegistryObject<Block> SPANISH_MOSS_PLANT;
+    //FOOD_PLANT_BLOCKS
+    public static RegistryObject<Block> SALMONBERRY_BUSH;
 
     /*-----------------POTTED_PLANTS-----------------*/
     //POTTED_FLOWERS
@@ -834,6 +837,8 @@ public class RuBlocks {
         DUCKWEED = BlockRegistry.registerDuckweedBlock("duckweed", () -> new DuckweedBlock());
         SPANISH_MOSS = BlockRegistry.registerDefaultBlock("spanish_moss", () -> new SpanishMossBlock(BlockBehaviour.Properties.of(Material.PLANT).randomTicks().noCollission().instabreak().sound(SoundType.AZALEA_LEAVES)));
         SPANISH_MOSS_PLANT = RegionsUnexploredMod.BLOCK_REGISTRY.register("spanish_moss_plant", () -> new SpanishMossPlantBlock(BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(SoundType.AZALEA_LEAVES)));
+        //FOOD_PLANT_BLOCKS
+        SALMONBERRY_BUSH = RegionsUnexploredMod.BLOCK_REGISTRY.register("salmonberry_bush", () -> new SalmonBerryBushBlock(BlockBehaviour.Properties.of(Material.PLANT).randomTicks().noCollission().sound(SoundType.SWEET_BERRY_BUSH)));
 
         /*-----------------POTTED_PLANTS-----------------*/
         //POTTED_FLOWERS

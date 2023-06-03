@@ -7,7 +7,6 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.regions_unexplored.block.RuBlocks;
@@ -59,6 +58,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.DUCKWEED.getKey())
                 .add(RuBlocks.BARREL_CACTUS.getKey())
                 .add(RuBlocks.SAGUARO_CACTUS.getKey())
+                .add(RuBlocks.SALMONBERRY_BUSH.getKey())
                 .addTags(RuTags.SHRUBS)
         ;
         this.tag(BlockTags.MINEABLE_WITH_HOE)
@@ -218,7 +218,9 @@ public class RuBlockTagProvider extends BlockTagsProvider {
         ;
         //this.tag(BlockTags.BEACON_BASE_BLOCKS);
         //this.tag(BlockTags.BEDS);
-        //this.tag(BlockTags.BEE_GROWABLES);
+        this.tag(BlockTags.BEE_GROWABLES)
+                .add(RuBlocks.SALMONBERRY_BUSH.getKey())
+        ;
         //this.tag(BlockTags.BEEHIVES);
         //this.tag(BlockTags.BIG_DRIPLEAF_PLACEABLE);
         this.tag(BlockTags.BIRCH_LOGS)
@@ -304,7 +306,9 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.MYCOTOXIC_GRASS.getKey())
                 .add(RuBlocks.MYCOTOXIC_NYLIUM.getKey())
         ;
-        //this.tag(BlockTags.FALL_DAMAGE_RESETTING);
+        this.tag(BlockTags.FALL_DAMAGE_RESETTING)
+                .add(RuBlocks.SALMONBERRY_BUSH.getKey())
+        ;
         //this.tag(BlockTags.FEATURES_CANNOT_REPLACE);
         this.tag(BlockTags.FENCE_GATES)
                 .add(RuBlocks.BAOBAB_FENCE_GATE.getKey())
@@ -1252,6 +1256,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.TASSEL.getKey())
                 .add(RuBlocks.TSUBAKI.getKey())
                 .add(RuBlocks.YELLOW_BIOSHROOM.getKey())
+                .add(RuBlocks.SALMONBERRY_BUSH.getKey())
                 .addTags(BlockTags.FLOWERS)
                 .addTags(BlockTags.LEAVES)
                 .addTags(BlockTags.REPLACEABLE_PLANTS)

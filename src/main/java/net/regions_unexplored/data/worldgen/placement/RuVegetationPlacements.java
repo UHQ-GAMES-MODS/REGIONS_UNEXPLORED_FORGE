@@ -26,6 +26,9 @@ public class RuVegetationPlacements {
     public static final ResourceKey<PlacedFeature> RED_SAKURA_FLOWERS = PlacedFeatureRegistry.createKey("red_sakura_flowers");
     public static final ResourceKey<PlacedFeature> PINK_SAKURA_FLOWERS = PlacedFeatureRegistry.createKey("pink_sakura_flowers");
     public static final ResourceKey<PlacedFeature> WHITE_SAKURA_FLOWERS = PlacedFeatureRegistry.createKey("white_sakura_flowers");
+    //FOOD_PLANTS
+    public static final ResourceKey<PlacedFeature> RARE_SALMONBERRY_BUSH = PlacedFeatureRegistry.createKey("rare_salmonberry_bush");
+    public static final ResourceKey<PlacedFeature> COMMON_SALMONBERRY_BUSH = PlacedFeatureRegistry.createKey("common_salmonberry_bush");
     //SHRUBS
     public static final ResourceKey<PlacedFeature> ASHEN_SHRUB = PlacedFeatureRegistry.createKey("ashen_shrub");
     public static final ResourceKey<PlacedFeature> ACACIA_SHRUB = PlacedFeatureRegistry.createKey("acacia_shrub");
@@ -88,6 +91,8 @@ public class RuVegetationPlacements {
         final Holder<ConfiguredFeature<?, ?>> RED_SAKURA_FLOWERS = featureGetter.getOrThrow(RuVegetationFeatures.RED_SAKURA_FLOWERS);
         final Holder<ConfiguredFeature<?, ?>> PINK_SAKURA_FLOWERS = featureGetter.getOrThrow(RuVegetationFeatures.PINK_SAKURA_FLOWERS);
         final Holder<ConfiguredFeature<?, ?>> WHITE_SAKURA_FLOWERS = featureGetter.getOrThrow(RuVegetationFeatures.WHITE_SAKURA_FLOWERS);
+        //FOOD_PLANTS
+        final Holder<ConfiguredFeature<?, ?>> SALMONBERRY_BUSH = featureGetter.getOrThrow(RuVegetationFeatures.PATCH_SALMONBERRY_BUSH);
         //SHRUBS
         final Holder<ConfiguredFeature<?, ?>> ASHEN_SHRUB = featureGetter.getOrThrow(RuVegetationFeatures.ASHEN_SHRUB);
         final Holder<ConfiguredFeature<?, ?>> ACACIA_SHRUB = featureGetter.getOrThrow(RuVegetationFeatures.ACACIA_SHRUB);
@@ -146,6 +151,9 @@ public class RuVegetationPlacements {
         register(context, RuVegetationPlacements.RED_SAKURA_FLOWERS, RED_SAKURA_FLOWERS, CountPlacement.of(15), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome());
         register(context, RuVegetationPlacements.PINK_SAKURA_FLOWERS, PINK_SAKURA_FLOWERS, CountPlacement.of(15), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome());
         register(context, RuVegetationPlacements.WHITE_SAKURA_FLOWERS, WHITE_SAKURA_FLOWERS, CountPlacement.of(15), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome());
+        //FOOD_PLANTS
+        register(context, RuVegetationPlacements.RARE_SALMONBERRY_BUSH, SALMONBERRY_BUSH, RarityFilter.onAverageOnceEvery(128), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
+        register(context, RuVegetationPlacements.COMMON_SALMONBERRY_BUSH, SALMONBERRY_BUSH, RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
         //SHRUBS
         register(context, RuVegetationPlacements.ASHEN_SHRUB, ASHEN_SHRUB, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome());
         register(context, RuVegetationPlacements.ACACIA_SHRUB, ACACIA_SHRUB, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome());

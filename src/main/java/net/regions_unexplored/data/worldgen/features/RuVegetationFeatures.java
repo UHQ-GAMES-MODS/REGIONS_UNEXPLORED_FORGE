@@ -23,7 +23,10 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStatePr
 import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.registry.ConfiguredFeatureRegistry;
 import net.regions_unexplored.registry.FeatureRegistry;
+import net.regions_unexplored.world.level.block.plant.SalmonBerryBushBlock;
 import net.regions_unexplored.world.level.feature.configuration.ShrubConfiguration;
+
+import java.util.List;
 
 public class RuVegetationFeatures {
     //TODO:Build Class
@@ -38,6 +41,8 @@ public class RuVegetationFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> RED_SAKURA_FLOWERS = ConfiguredFeatureRegistry.createKey("red_sakura_flowers");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PINK_SAKURA_FLOWERS = ConfiguredFeatureRegistry.createKey("pink_sakura_flowers");
     public static final ResourceKey<ConfiguredFeature<?, ?>> WHITE_SAKURA_FLOWERS = ConfiguredFeatureRegistry.createKey("white_sakura_flowers");
+    //FOOD_PLANTS
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_SALMONBERRY_BUSH = ConfiguredFeatureRegistry.createKey("patch_salmonberry_bush");
     //SHRUBS
     public static final ResourceKey<ConfiguredFeature<?, ?>> ASHEN_SHRUB = ConfiguredFeatureRegistry.createKey("ashen_shrub");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ACACIA_SHRUB = ConfiguredFeatureRegistry.createKey("tall_acacia_sapling");
@@ -92,7 +97,6 @@ public class RuVegetationFeatures {
         //GRASS
         register(context, PATCH_MEDIUM_GRASS, Feature.RANDOM_PATCH, grassPatch(BlockStateProvider.simple(RuBlocks.MEDIUM_GRASS.get().defaultBlockState()), 32));
         register(context, PATCH_REDWOODS_VEGETATION, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.FERN.defaultBlockState(), 30).add(Blocks.GRASS.defaultBlockState(), 15).add(Blocks.LARGE_FERN.defaultBlockState(), 1)), 32));
-
         //FLOWERS
         register(context, PATCH_ALPHA_DANDELION, Feature.RANDOM_PATCH, grassPatch(BlockStateProvider.simple(RuBlocks.ALPHA_DANDELION.get().defaultBlockState()), 32));
         register(context, PATCH_ALPHA_ROSE, Feature.RANDOM_PATCH, grassPatch(BlockStateProvider.simple(RuBlocks.ALPHA_ROSE.get().defaultBlockState()), 32));
@@ -100,6 +104,8 @@ public class RuVegetationFeatures {
         register(context, RED_SAKURA_FLOWERS, FeatureRegistry.AIR_MULTIFACE_GROWTH.get(), new MultifaceGrowthConfiguration((MultifaceBlock)RuBlocks.RED_SAKURA_FLOWERS.get(), 20, true, false, false, 1.0F, HolderSet.direct(Block::builtInRegistryHolder, Blocks.GRASS_BLOCK, RuBlocks.FOREST_GRASS_BLOCK.get(), RuBlocks.PLAINS_GRASS_BLOCK.get())));
         register(context, PINK_SAKURA_FLOWERS, FeatureRegistry.AIR_MULTIFACE_GROWTH.get(), new MultifaceGrowthConfiguration((MultifaceBlock)RuBlocks.PINK_SAKURA_FLOWERS.get(), 20, true, false, false, 1.0F, HolderSet.direct(Block::builtInRegistryHolder, Blocks.GRASS_BLOCK, RuBlocks.FOREST_GRASS_BLOCK.get(), RuBlocks.PLAINS_GRASS_BLOCK.get())));
         register(context, WHITE_SAKURA_FLOWERS, FeatureRegistry.AIR_MULTIFACE_GROWTH.get(), new MultifaceGrowthConfiguration((MultifaceBlock)RuBlocks.WHITE_SAKURA_FLOWERS.get(), 20, true, false, false, 1.0F, HolderSet.direct(Block::builtInRegistryHolder, Blocks.GRASS_BLOCK, RuBlocks.FOREST_GRASS_BLOCK.get(), RuBlocks.PLAINS_GRASS_BLOCK.get())));
+        //FOOD_PLANTS
+        register(context, PATCH_SALMONBERRY_BUSH, Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(RuBlocks.SALMONBERRY_BUSH.get().defaultBlockState().setValue(SalmonBerryBushBlock.AGE, Integer.valueOf(3)))), List.of(Blocks.GRASS_BLOCK, Blocks.PODZOL, RuBlocks.FOREST_GRASS_BLOCK.get(), RuBlocks.PLAINS_GRASS_BLOCK.get())));
         //SHRUBS
         register(context, ASHEN_SHRUB, FeatureRegistry.SHRUB.get(), new ShrubConfiguration(BlockStateProvider.simple(RuBlocks.ASHEN_SHRUB.get().defaultBlockState())));
         register(context, ACACIA_SHRUB, FeatureRegistry.SHRUB.get(), new ShrubConfiguration(BlockStateProvider.simple(RuBlocks.ACACIA_SHRUB.get().defaultBlockState())));

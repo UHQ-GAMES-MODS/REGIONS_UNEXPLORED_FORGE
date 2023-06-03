@@ -85,11 +85,11 @@
       "minecraft:patch_large_fern",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
-      "minecraft:patch_berry_common",
       "regions_unexplored:giant_redwood_tree_sparse",
       "regions_unexplored:redwood_tree",
       "regions_unexplored:redwood_shrub",
-      "regions_unexplored:redwoods_vegetation"
+      "regions_unexplored:redwoods_vegetation",
+      "regions_unexplored:common_salmonberry_bush"
     ],
     [
       "minecraft:freeze_top_layer"

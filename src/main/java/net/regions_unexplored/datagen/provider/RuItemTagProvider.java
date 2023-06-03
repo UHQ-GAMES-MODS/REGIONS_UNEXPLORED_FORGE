@@ -7,7 +7,6 @@ import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -136,7 +135,9 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.RED_SAKURA_FLOWERS.get().asItem())
                 .add(RuBlocks.WHITE_SAKURA_FLOWERS.get().asItem())
         ;
-        //this.tag(ItemTags.FOX_FOOD);
+        this.tag(ItemTags.FOX_FOOD)
+                .add(RuItems.SALMONBERRY.getKey())
+        ;
         //this.tag(ItemTags.FREEZE_IMMUNE_WEARABLES);
         //this.tag(ItemTags.GOLD_ORES);
         //this.tag(ItemTags.HOES);
