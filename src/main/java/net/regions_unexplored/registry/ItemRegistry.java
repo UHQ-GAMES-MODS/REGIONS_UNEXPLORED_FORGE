@@ -17,4 +17,8 @@ public class ItemRegistry {
     public static <T extends Block> RegistryObject<Item> registerDuckweedItem(String name, RegistryObject<T> block) {
         return RegionsUnexploredMod.ITEM_REGISTRY.register(name, () -> new PlaceOnWaterBlockItem(block.get(), new Item.Properties()));
     }
+
+    public static <T extends Block> RegistryObject<Item> registerLilyItem(String name, RegistryObject<T> block) {
+        return RegionsUnexploredMod.ITEM_REGISTRY.register(name, () -> new PlaceOnWaterBlockItem(block.get(), new Item.Properties()));
+    }
 }

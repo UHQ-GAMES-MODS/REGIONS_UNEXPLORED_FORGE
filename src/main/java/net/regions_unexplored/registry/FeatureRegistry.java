@@ -6,7 +6,9 @@ import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConf
 import net.minecraftforge.registries.RegistryObject;
 import net.regions_unexplored.RegionsUnexploredMod;
 import net.regions_unexplored.world.level.feature.AirMultifaceGrowthFeature;
+import net.regions_unexplored.world.level.feature.FallenBlobTreeFeature;
 import net.regions_unexplored.world.level.feature.ShrubFeature;
+import net.regions_unexplored.world.level.feature.configuration.FallenTreeConfiguration;
 import net.regions_unexplored.world.level.feature.configuration.RuTreeConfiguration;
 import net.regions_unexplored.world.level.feature.configuration.ShrubConfiguration;
 import net.regions_unexplored.world.level.feature.tree.*;
@@ -26,6 +28,8 @@ public class FeatureRegistry {
     //public static RegistryObject<Feature> GIANT_BLUE_BIOSHROOM;
     //public static RegistryObject<Feature> GIANT_PINK_BIOSHROOM;
     //public static RegistryObject<Feature> GIANT_YELLOW_BIOSHROOM;
+
+
     //TREES
     public static RegistryObject<Feature> ASHEN_TREE;
     public static RegistryObject<Feature> ASPEN_TREE;
@@ -46,10 +50,15 @@ public class FeatureRegistry {
 
     public static RegistryObject<Feature> BRIM_WILLOW;
     public static RegistryObject<Feature> TALL_BRIM_WILLOW;
-    //public static RegistryObject<Feature> ICE_SPIRES;
     //VEGETATION
     public static RegistryObject<Feature> AIR_MULTIFACE_GROWTH;
     public static RegistryObject<Feature> SHRUB;
+    //DECORATION
+    public static RegistryObject<Feature> FALLEN_BLOB_TREE;
+
+
+
+    //public static RegistryObject<Feature> ICE_SPIRES;
     //public static RegistryObject<Feature> WATER_CATTAIL;
     //public static RegistryObject<Feature> SMALL_BUSH;
     //NETHER
@@ -71,6 +80,7 @@ public class FeatureRegistry {
     //public static RegistryObject<Feature> MEADOW_ROCKS;
 
     public static void addFeatures() {
+        //TREES
         ASHEN_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("ashen_tree", () -> new AshenTreeFeature(RuTreeConfiguration.CODEC));
         ASPEN_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("aspen_tree", () -> new AspenTreeFeature(RuTreeConfiguration.CODEC));
         BLACKWOOD_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("blackwood_tree", () -> new BlackwoodTreeFeature(RuTreeConfiguration.CODEC));
@@ -90,9 +100,10 @@ public class FeatureRegistry {
 
         BRIM_WILLOW = RegionsUnexploredMod.FEATURE_REGISTRY.register("brim_willow", () -> new BrimWillowFeature(NoneFeatureConfiguration.CODEC));
         TALL_BRIM_WILLOW = RegionsUnexploredMod.FEATURE_REGISTRY.register("tall_brim_willow", () -> new TallBrimWillowFeature(NoneFeatureConfiguration.CODEC));
-
-
-        AIR_MULTIFACE_GROWTH = RegionsUnexploredMod.FEATURE_REGISTRY.register("air_multiface_growth", () -> new AirMultifaceGrowthFeature(MultifaceGrowthConfiguration.CODEC));
+        //VEGETATION
         SHRUB = RegionsUnexploredMod.FEATURE_REGISTRY.register("shrub", () -> new ShrubFeature(ShrubConfiguration.CODEC));
+        //DECORATION
+        AIR_MULTIFACE_GROWTH = RegionsUnexploredMod.FEATURE_REGISTRY.register("air_multiface_growth", () -> new AirMultifaceGrowthFeature(MultifaceGrowthConfiguration.CODEC));
+        FALLEN_BLOB_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("fallen_blob_tree", () -> new FallenBlobTreeFeature(FallenTreeConfiguration.CODEC));
     }
 }

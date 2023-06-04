@@ -16,7 +16,10 @@ import net.regions_unexplored.world.level.block.cave.*;
 import net.regions_unexplored.world.level.block.forest_dirt.ForestDirtPathBlock;
 import net.regions_unexplored.world.level.block.forest_dirt.ForestFarmBlock;
 import net.regions_unexplored.world.level.block.forest_dirt.ForestGrassBlock;
-import net.regions_unexplored.world.level.block.plant.SalmonBerryBushBlock;
+import net.regions_unexplored.world.level.block.plant.aquatic.FloweringLilyBlock;
+import net.regions_unexplored.world.level.block.plant.aquatic.GiantLilyBlock;
+import net.regions_unexplored.world.level.block.plant.flower.GroundCoverBlock;
+import net.regions_unexplored.world.level.block.plant.food.SalmonBerryBushBlock;
 import net.regions_unexplored.world.level.block.saplinggrowers.*;
 import net.regions_unexplored.world.level.block.log.BambooLogBlock;
 import net.regions_unexplored.world.level.block.log.MagmaLogBlock;
@@ -31,7 +34,7 @@ import net.regions_unexplored.world.level.block.plant.aquatic.TallHyacinthStockB
 import net.regions_unexplored.world.level.block.plant.other.SaguaroCactusBlock;
 import net.regions_unexplored.world.level.block.plant.grass.PrismossSproutBlock;
 import net.regions_unexplored.world.level.block.plant.nether.*;
-import net.regions_unexplored.world.level.block.plant.other.DuckweedBlock;
+import net.regions_unexplored.world.level.block.plant.aquatic.DuckweedBlock;
 import net.regions_unexplored.world.level.block.plant.other.BranchBlock;
 import net.regions_unexplored.world.level.block.plant.flower.CaveFlowerBlock;
 import net.regions_unexplored.world.level.block.plant.flower.RuFlowerBlock;
@@ -99,6 +102,8 @@ public class RuBlocks {
     public static RegistryObject<Block> WHITE_TRILLIUM;
     public static RegistryObject<Block> WILTING_TRILLIUM;
     public static RegistryObject<Block> YELLOW_LUPINE;
+
+    public static RegistryObject<Block> ORANGE_CONEFLOWER;
 
     public static RegistryObject<Block> RED_SAKURA_FLOWERS;
     public static RegistryObject<Block> PINK_SAKURA_FLOWERS;
@@ -183,6 +188,8 @@ public class RuBlocks {
     public static RegistryObject<Block> DUCKWEED;
     public static RegistryObject<Block> SPANISH_MOSS;
     public static RegistryObject<Block> SPANISH_MOSS_PLANT;
+    public static RegistryObject<Block> FLOWERING_LILY_PAD;
+    public static RegistryObject<Block> GIANT_LILY_PAD;
     //FOOD_PLANT_BLOCKS
     public static RegistryObject<Block> SALMONBERRY_BUSH;
 
@@ -307,6 +314,7 @@ public class RuBlocks {
     public static RegistryObject<Block> PALM_BEARD;
     public static RegistryObject<Block> PINE_BRANCH;
     public static RegistryObject<Block> REDWOOD_BRANCH;
+    public static RegistryObject<Block> SILVER_BIRCH_BRANCH;
     public static RegistryObject<Block> SPRUCE_BRANCH;
     public static RegistryObject<Block> WILLOW_BRANCH;
 
@@ -754,6 +762,9 @@ public class RuBlocks {
         WILTING_TRILLIUM = BlockRegistry.registerDefaultBlock("wilting_trillium", () -> new RuFlowerBlock(MobEffects.DIG_SLOWDOWN, 4, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
         YELLOW_LUPINE = BlockRegistry.registerDefaultBlock("yellow_lupine", () -> new RuFlowerBlock(MobEffects.SATURATION, 4, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
 
+        //TODO:do datagen
+        ORANGE_CONEFLOWER = BlockRegistry.registerDefaultBlock("orange_coneflower", () -> new GroundCoverBlock(BlockBehaviour.Properties.of(Material.PLANT).noCollission().sound(SoundType.PINK_PETALS)));
+
         RED_SAKURA_FLOWERS = BlockRegistry.registerDefaultBlock("red_sakura_flowers", () -> new GlowLichenBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().strength(0.1F).sound(SoundType.GLOW_LICHEN)));
         PINK_SAKURA_FLOWERS = BlockRegistry.registerDefaultBlock("pink_sakura_flowers", () -> new GlowLichenBlock(BlockBehaviour.Properties.copy(RED_SAKURA_FLOWERS.get())));
         WHITE_SAKURA_FLOWERS = BlockRegistry.registerDefaultBlock("white_sakura_flowers", () -> new GlowLichenBlock(BlockBehaviour.Properties.copy(RED_SAKURA_FLOWERS.get())));
@@ -837,9 +848,13 @@ public class RuBlocks {
         DUCKWEED = BlockRegistry.registerDuckweedBlock("duckweed", () -> new DuckweedBlock());
         SPANISH_MOSS = BlockRegistry.registerDefaultBlock("spanish_moss", () -> new SpanishMossBlock(BlockBehaviour.Properties.of(Material.PLANT).randomTicks().noCollission().instabreak().sound(SoundType.AZALEA_LEAVES)));
         SPANISH_MOSS_PLANT = RegionsUnexploredMod.BLOCK_REGISTRY.register("spanish_moss_plant", () -> new SpanishMossPlantBlock(BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(SoundType.AZALEA_LEAVES)));
+
+        //TODO:do datagen
+        FLOWERING_LILY_PAD = BlockRegistry.registerLilyBlock("flowering_lily_pad", () -> new FloweringLilyBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).strength(0.2F).sound(SoundType.GLOW_LICHEN).noOcclusion()));
+        GIANT_LILY_PAD = RegionsUnexploredMod.BLOCK_REGISTRY.register("giant_lily_pad", () -> new GiantLilyBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).strength(0.2F).sound(SoundType.GLOW_LICHEN).noOcclusion()));
+
         //FOOD_PLANT_BLOCKS
         SALMONBERRY_BUSH = RegionsUnexploredMod.BLOCK_REGISTRY.register("salmonberry_bush", () -> new SalmonBerryBushBlock(BlockBehaviour.Properties.of(Material.PLANT).randomTicks().noCollission().sound(SoundType.SWEET_BERRY_BUSH)));
-
         /*-----------------POTTED_PLANTS-----------------*/
         //POTTED_FLOWERS
         POTTED_ALPHA_DANDELION = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_alpha_dandelion", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, ALPHA_DANDELION, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
@@ -961,6 +976,7 @@ public class RuBlocks {
         PALM_BEARD = BlockRegistry.registerDefaultBlock("palm_beard", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())));
         PINE_BRANCH = BlockRegistry.registerDefaultBlock("pine_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())));
         REDWOOD_BRANCH = BlockRegistry.registerDefaultBlock("redwood_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())));
+        SILVER_BIRCH_BRANCH = BlockRegistry.registerDefaultBlock("silver_birch_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())));
         SPRUCE_BRANCH = BlockRegistry.registerDefaultBlock("spruce_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())));
         WILLOW_BRANCH = BlockRegistry.registerDefaultBlock("willow_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())));
 

@@ -99,6 +99,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.WILLOW_LEAVES.getKey())
                 .add(RuBlocks.YELLOW_BIOSHROOM_BLOCK.getKey())
                 .add(RuBlocks.PRISMOSS_SPROUT.getKey())
+                .add(RuBlocks.ORANGE_CONEFLOWER.getKey())
         ;
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(RuBlocks.ASH_VENT.getKey())
@@ -383,6 +384,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
         ;
         this.tag(BlockTags.FLOWERS)
                 .add(RuBlocks.HYACINTH_FLOWERS.getKey())
+                .add(RuBlocks.ORANGE_CONEFLOWER.getKey())
                 .add(RuBlocks.PINK_SAKURA_FLOWERS.getKey())
                 .add(RuBlocks.RED_SAKURA_FLOWERS.getKey())
                 .add(RuBlocks.WHITE_SAKURA_FLOWERS.getKey())
@@ -1001,6 +1003,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.PINE_BRANCH.getKey())
                 .add(RuBlocks.REDWOOD_BRANCH.getKey())
                 .add(RuBlocks.SAKURA_BRANCH.getKey())
+                .add(RuBlocks.SILVER_BIRCH_BRANCH.getKey())
                 .add(RuBlocks.SPRUCE_BRANCH.getKey())
                 .add(RuBlocks.WILLOW_BRANCH.getKey())
         ;
@@ -1257,6 +1260,9 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.TSUBAKI.getKey())
                 .add(RuBlocks.YELLOW_BIOSHROOM.getKey())
                 .add(RuBlocks.SALMONBERRY_BUSH.getKey())
+                .add(RuBlocks.ORANGE_CONEFLOWER.getKey())
+                .add(RuBlocks.FLOWERING_LILY_PAD.getKey())
+                .add(RuBlocks.GIANT_LILY_PAD.getKey())
                 .addTags(BlockTags.FLOWERS)
                 .addTags(BlockTags.LEAVES)
                 .addTags(BlockTags.REPLACEABLE_PLANTS)

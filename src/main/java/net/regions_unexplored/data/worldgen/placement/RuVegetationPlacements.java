@@ -18,10 +18,13 @@ public class RuVegetationPlacements {
     //-----------------------KEYS-----------------------//
     //GRASS
     public static final ResourceKey<PlacedFeature> MEDIUM_GRASS = PlacedFeatureRegistry.createKey("medium_grass");
+    public static final ResourceKey<PlacedFeature> SEEDED_GRASS = PlacedFeatureRegistry.createKey("seeded_grass");
     public static final ResourceKey<PlacedFeature> REDWOODS_VEGETATION = PlacedFeatureRegistry.createKey("redwoods_vegetation");
     //FLOWERS
     public static final ResourceKey<PlacedFeature> ALPHA_DANDELION = PlacedFeatureRegistry.createKey("alpha_dandelion");
     public static final ResourceKey<PlacedFeature> ALPHA_ROSE = PlacedFeatureRegistry.createKey("alpha_rose");
+    public static final ResourceKey<PlacedFeature> ORANGE_CONEFLOWER = PlacedFeatureRegistry.createKey("orange_coneflower");
+    public static final ResourceKey<PlacedFeature> TASSEL = PlacedFeatureRegistry.createKey("tassel");
     //MULTIFACE FLOWERS
     public static final ResourceKey<PlacedFeature> RED_SAKURA_FLOWERS = PlacedFeatureRegistry.createKey("red_sakura_flowers");
     public static final ResourceKey<PlacedFeature> PINK_SAKURA_FLOWERS = PlacedFeatureRegistry.createKey("pink_sakura_flowers");
@@ -83,10 +86,13 @@ public class RuVegetationPlacements {
         //---------------------FEATURES---------------------//
         //GRASS
         final Holder<ConfiguredFeature<?, ?>> MEDIUM_GRASS = featureGetter.getOrThrow(RuVegetationFeatures.PATCH_MEDIUM_GRASS);
+        final Holder<ConfiguredFeature<?, ?>> SEEDED_GRASS = featureGetter.getOrThrow(RuVegetationFeatures.PATCH_SEEDED_GRASS);
         final Holder<ConfiguredFeature<?, ?>> REDWOODS_VEGETATION = featureGetter.getOrThrow(RuVegetationFeatures.PATCH_REDWOODS_VEGETATION);
         //FLOWERS
         final Holder<ConfiguredFeature<?, ?>> ALPHA_DANDELION = featureGetter.getOrThrow(RuVegetationFeatures.PATCH_ALPHA_DANDELION);
         final Holder<ConfiguredFeature<?, ?>> ALPHA_ROSE = featureGetter.getOrThrow(RuVegetationFeatures.PATCH_ALPHA_ROSE);
+        final Holder<ConfiguredFeature<?, ?>> ORANGE_CONEFLOWER = featureGetter.getOrThrow(RuVegetationFeatures.PATCH_ORANGE_CONEFLOWER);
+        final Holder<ConfiguredFeature<?, ?>> TASSEL = featureGetter.getOrThrow(RuVegetationFeatures.TASSEL);
         //MULTIFACE FLOWERS
         final Holder<ConfiguredFeature<?, ?>> RED_SAKURA_FLOWERS = featureGetter.getOrThrow(RuVegetationFeatures.RED_SAKURA_FLOWERS);
         final Holder<ConfiguredFeature<?, ?>> PINK_SAKURA_FLOWERS = featureGetter.getOrThrow(RuVegetationFeatures.PINK_SAKURA_FLOWERS);
@@ -143,10 +149,13 @@ public class RuVegetationPlacements {
         //--------------------PLACEMENTS--------------------//
         //GRASS
         register(context, RuVegetationPlacements.MEDIUM_GRASS, MEDIUM_GRASS, List.of(NoiseThresholdCountPlacement.of(-0.8D, 5, 7), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
+        register(context, RuVegetationPlacements.SEEDED_GRASS, SEEDED_GRASS, List.of(NoiseThresholdCountPlacement.of(-0.8D, 5, 7), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
         register(context, RuVegetationPlacements.REDWOODS_VEGETATION, REDWOODS_VEGETATION, List.of(NoiseThresholdCountPlacement.of(-0.8D, 5, 14), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
         //FLOWERS
         register(context, RuVegetationPlacements.ALPHA_DANDELION, ALPHA_DANDELION, List.of(RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
         register(context, RuVegetationPlacements.ALPHA_ROSE, ALPHA_ROSE, List.of(RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
+        register(context, RuVegetationPlacements.ORANGE_CONEFLOWER, ORANGE_CONEFLOWER, NoiseThresholdCountPlacement.of(-0.8D, 5, 10), RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(context, RuVegetationPlacements.TASSEL, TASSEL, CountPlacement.of(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome());
         //MULTIFACE FLOWERS
         register(context, RuVegetationPlacements.RED_SAKURA_FLOWERS, RED_SAKURA_FLOWERS, CountPlacement.of(15), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome());
         register(context, RuVegetationPlacements.PINK_SAKURA_FLOWERS, PINK_SAKURA_FLOWERS, CountPlacement.of(15), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome());

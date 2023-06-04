@@ -9,7 +9,7 @@ import net.regions_unexplored.data.worldgen.features.RuTreeFeatures;
 public class SilverBirchTreeGrower extends AbstractTreeGrower {
    protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource random, boolean bool) {
       if (random.nextInt(6) == 0) {
-         return RuTreeFeatures.TALL_SILVER_BIRCH;
+         return RuTreeFeatures.SILVER_BIRCH_TALL;
       } else {
          return RuTreeFeatures.SILVER_BIRCH;
       }

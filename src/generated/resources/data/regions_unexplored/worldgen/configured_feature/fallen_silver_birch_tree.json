@@ -1,15 +1,6 @@
 {
-  "type": "regions_unexplored:aspen_tree",
+  "type": "regions_unexplored:fallen_blob_tree",
   "config": {
-    "branch_provider": {
-      "type": "minecraft:simple_state_provider",
-      "state": {
-        "Name": "regions_unexplored:birch_branch",
-        "Properties": {
-          "facing": "north"
-        }
-      }
-    },
     "foliage_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
@@ -21,8 +12,19 @@
         }
       }
     },
-    "minimum_size": 5,
-    "size_variation": 5,
+    "has_leaves": false,
+    "minimum_size": 4,
+    "size_variation": 3,
+    "stump_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "regions_unexplored:silver_birch_log",
+        "Properties": {
+          "axis": "y",
+          "is_base": "true"
+        }
+      }
+    },
     "trunk_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {

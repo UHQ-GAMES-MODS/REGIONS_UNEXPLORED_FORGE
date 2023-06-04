@@ -36,6 +36,13 @@ public class BlockRegistry {
         return toReturn;
     }
 
+    //Register Lily block and item
+    public static <T extends Block> RegistryObject<T> registerLilyBlock(String name, Supplier<T> block) {
+        RegistryObject<T> toReturn = RegionsUnexploredMod.BLOCK_REGISTRY.register(name, block);
+        ItemRegistry.registerLilyItem(name, toReturn);
+        return toReturn;
+    }
+
     //Configure log block
     public static RotatedPillarBlock log(MaterialColor colour, MaterialColor colour2, SoundType sound) {
         return new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, (p_152624_) -> {

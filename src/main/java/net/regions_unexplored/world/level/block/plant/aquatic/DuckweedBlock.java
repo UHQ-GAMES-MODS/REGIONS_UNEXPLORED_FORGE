@@ -1,4 +1,4 @@
-package net.regions_unexplored.world.level.block.plant.other;
+package net.regions_unexplored.world.level.block.plant.aquatic;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;

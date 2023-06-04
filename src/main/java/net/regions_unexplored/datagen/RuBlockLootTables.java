@@ -24,7 +24,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.regions_unexplored.RegionsUnexploredMod;
 import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.item.RuItems;
-import net.regions_unexplored.world.level.block.plant.SalmonBerryBushBlock;
+import net.regions_unexplored.world.level.block.plant.food.SalmonBerryBushBlock;
 
 import java.util.Set;
 
@@ -93,6 +93,8 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         dropSelf(RuBlocks.WHITE_TRILLIUM.get());
         dropSelf(RuBlocks.WILTING_TRILLIUM.get());
         dropSelf(RuBlocks.YELLOW_LUPINE.get());
+
+        add(RuBlocks.ORANGE_CONEFLOWER.get(), (block) -> createPetalsDrops(block));
 
         add(RuBlocks.RED_SAKURA_FLOWERS.get(), (block) -> createMultifaceBlockDrops(block, HAS_SHEARS));
         add(RuBlocks.PINK_SAKURA_FLOWERS.get(), (block) -> createMultifaceBlockDrops(block, HAS_SHEARS));
@@ -178,6 +180,8 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         dropSelf(RuBlocks.DUCKWEED.get());
         add(RuBlocks.SPANISH_MOSS.get(), (block) -> createShearsOnlyDrop(block));
         add(RuBlocks.SPANISH_MOSS_PLANT.get(), (block) -> createShearsOnlyDrop(block));
+        dropSelf(RuBlocks.FLOWERING_LILY_PAD.get());
+        add(RuBlocks.GIANT_LILY_PAD.get(), (block) -> createSingleItemTable(RuBlocks.FLOWERING_LILY_PAD.get()));
         //FOOD_PLANT_BLOCKS
         add(RuBlocks.SALMONBERRY_BUSH.get(), (block) -> applyExplosionDecay(block, LootTable.lootTable().withPool(LootPool.lootPool().when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(RuBlocks.SALMONBERRY_BUSH.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(SalmonBerryBushBlock.AGE, 3))).add(LootItem.lootTableItem(RuItems.SALMONBERRY.get())).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F))).apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE))).withPool(LootPool.lootPool().when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(RuBlocks.SALMONBERRY_BUSH.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(SweetBerryBushBlock.AGE, 2))).add(LootItem.lootTableItem(RuItems.SALMONBERRY.get())).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))).apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)))));
 
@@ -303,6 +307,7 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         add(RuBlocks.PALM_BEARD.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionCondition(block, LootItem.lootTableItem(Items.STICK))).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(4.0F)).when(HAS_SHEARS.invert())));
         add(RuBlocks.PINE_BRANCH.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionCondition(block, LootItem.lootTableItem(Items.STICK))).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(4.0F)).when(HAS_SHEARS.invert())));
         add(RuBlocks.REDWOOD_BRANCH.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionCondition(block, LootItem.lootTableItem(Items.STICK))).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(4.0F)).when(HAS_SHEARS.invert())));
+        add(RuBlocks.SILVER_BIRCH_BRANCH.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionCondition(block, LootItem.lootTableItem(Items.STICK))).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(4.0F)).when(HAS_SHEARS.invert())));
         add(RuBlocks.SPRUCE_BRANCH.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionCondition(block, LootItem.lootTableItem(Items.STICK))).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(4.0F)).when(HAS_SHEARS.invert())));
         add(RuBlocks.WILLOW_BRANCH.get(), (block) -> createShearsDispatchTable(block, this.applyExplosionCondition(block, LootItem.lootTableItem(Items.STICK))).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(4.0F)).when(HAS_SHEARS.invert())));
 

@@ -1,14 +1,14 @@
 package net.regions_unexplored.item;
 
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.SignItem;
 import net.minecraftforge.registries.RegistryObject;
 import net.regions_unexplored.RegionsUnexploredMod;
+import net.regions_unexplored.api.item.Food;
+import net.regions_unexplored.api.item.FoodItemWithBlock;
 import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.entity.custom.RuBoat;
 import net.regions_unexplored.item.items.RuBoatItem;
-import net.regions_unexplored.world.food.RuFoods;
 
 public class RuItems {
     //TODO:Complete Class
@@ -109,6 +109,6 @@ public class RuItems {
     WILLOW_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("willow_boat", () -> new RuBoatItem(false, RuBoat.ModelType.WILLOW, (new Item.Properties()).stacksTo(1)));
     WILLOW_CHEST_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("willow_chest_boat", () -> new RuBoatItem(true, RuBoat.ModelType.WILLOW, (new Item.Properties()).stacksTo(1)));
 
-    SALMONBERRY = RegionsUnexploredMod.ITEM_REGISTRY.register("salmonberry", () -> new ItemNameBlockItem(RuBlocks.SALMONBERRY_BUSH.get(), (new Item.Properties()).food(RuFoods.SALMONBERRY)));
+    SALMONBERRY = RegionsUnexploredMod.ITEM_REGISTRY.register("salmonberry", () -> new FoodItemWithBlock(RuBlocks.SALMONBERRY_BUSH.get(), new Item.Properties(), new Food(3, 0.3f)));
     }
 }

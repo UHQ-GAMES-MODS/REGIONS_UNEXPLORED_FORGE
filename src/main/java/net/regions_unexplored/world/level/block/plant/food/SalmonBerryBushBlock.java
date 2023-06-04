@@ -1,4 +1,4 @@
-package net.regions_unexplored.world.level.block.plant;
+package net.regions_unexplored.world.level.block.plant.food;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -68,6 +68,17 @@ public class SalmonBerryBushBlock extends BushBlock implements BonemealableBlock
          net.minecraftforge.common.ForgeHooks.onCropsGrowPost(p_222564_, p_222565_, p_222563_);
       }
 
+   }
+
+   public void entityInside(BlockState p_57270_, Level p_57271_, BlockPos p_57272_, Entity p_57273_) {
+      if (p_57273_ instanceof LivingEntity && p_57273_.getType() != EntityType.FOX && p_57273_.getType() != EntityType.BEE) {
+         p_57273_.makeStuckInBlock(p_57270_, new Vec3((double)0.8F, 0.75D, (double)0.8F));
+         if (!p_57271_.isClientSide && p_57270_.getValue(AGE) > 0 && (p_57273_.xOld != p_57273_.getX() || p_57273_.zOld != p_57273_.getZ())) {
+            double d0 = Math.abs(p_57273_.getX() - p_57273_.xOld);
+            double d1 = Math.abs(p_57273_.getZ() - p_57273_.zOld);
+         }
+
+      }
    }
 
    public InteractionResult use(BlockState p_57275_, Level p_57276_, BlockPos p_57277_, Player p_57278_, InteractionHand p_57279_, BlockHitResult p_57280_) {

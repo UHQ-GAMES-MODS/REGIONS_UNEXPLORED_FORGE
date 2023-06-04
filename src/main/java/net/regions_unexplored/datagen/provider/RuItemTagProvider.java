@@ -131,6 +131,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
         //this.tag(ItemTags.FISHES);
         this.tag(ItemTags.FLOWERS)
                 .add(RuBlocks.HYACINTH_FLOWERS.get().asItem())
+                .add(RuBlocks.ORANGE_CONEFLOWER.get().asItem())
                 .add(RuBlocks.PINK_SAKURA_FLOWERS.get().asItem())
                 .add(RuBlocks.RED_SAKURA_FLOWERS.get().asItem())
                 .add(RuBlocks.WHITE_SAKURA_FLOWERS.get().asItem())
@@ -585,6 +586,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.PINE_BRANCH.get().asItem())
                 .add(RuBlocks.REDWOOD_BRANCH.get().asItem())
                 .add(RuBlocks.SAKURA_BRANCH.get().asItem())
+                .add(RuBlocks.SILVER_BIRCH_BRANCH.get().asItem())
                 .add(RuBlocks.SPRUCE_BRANCH.get().asItem())
                 .add(RuBlocks.WILLOW_BRANCH.get().asItem())
         ;

@@ -83,6 +83,8 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         oneToOneConversionRecipe(consumer, Items.BROWN_DYE, RuBlocks.WILTING_TRILLIUM.get(), "brown_dye");
         oneToOneConversionRecipe(consumer, Items.YELLOW_DYE, RuBlocks.YELLOW_LUPINE.get(), "yellow_dye");
 
+        oneToOneConversionRecipe(consumer, Items.ORANGE_DYE, RuBlocks.ORANGE_CONEFLOWER.get(), "orange_dye");
+
         oneToOneConversionRecipe(consumer, Items.PINK_DYE, RuBlocks.PINK_SAKURA_FLOWERS.get(), "pink_dye");
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.PINK_SAKURA_FLOWERS.get(), 6).define('#', RuBlocks.PINK_SAKURA_LEAVES.get()).pattern("###").group("multiface_flowers").unlockedBy("has_pink_sakura_leaves", has(RuBlocks.PINK_SAKURA_LEAVES.get())).save(consumer);
         oneToOneConversionRecipe(consumer, Items.RED_DYE, RuBlocks.RED_SAKURA_FLOWERS.get(), "red_dye");
@@ -248,6 +250,9 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
 
         branchFromLog(consumer, RuBlocks.REDWOOD_BRANCH.get(), RuBlocks.REDWOOD_LOG.get());
         oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.REDWOOD_BRANCH.get(), "stick", 4);
+
+        branchFromLog(consumer, RuBlocks.SILVER_BIRCH_BRANCH.get(), RuBlocks.SILVER_BIRCH_LOG.get());
+        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.SILVER_BIRCH_BRANCH.get(), "stick", 4);
 
         branchFromLog(consumer, RuBlocks.SPRUCE_BRANCH.get(), Blocks.SPRUCE_LOG);
         oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.SPRUCE_BRANCH.get(), "stick", 4);

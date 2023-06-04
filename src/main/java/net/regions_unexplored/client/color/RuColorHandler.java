@@ -30,8 +30,8 @@ public class RuColorHandler {
                 RuBlocks.STEPPE_GRASS.get(),
                 RuBlocks.STONE_BUD.get(),
                 RuBlocks.SEEDED_TALL_GRASS.get(),
-                RuBlocks.SEEDED_GRASS.get()
-                //RuBlocks.ORANGE_CONEFLOWER.get()
+                RuBlocks.SEEDED_GRASS.get(),
+                RuBlocks.ORANGE_CONEFLOWER.get()
         );
     }
     @SubscribeEvent

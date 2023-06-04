@@ -125,7 +125,7 @@ public class RuTreeFeatures {
 
     //DONE
     public static final ResourceKey<ConfiguredFeature<?, ?>> SILVER_BIRCH = ConfiguredFeatureRegistry.createKey("silver_birch");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> TALL_SILVER_BIRCH = ConfiguredFeatureRegistry.createKey("tall_silver_birch");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SILVER_BIRCH_TALL = ConfiguredFeatureRegistry.createKey("silver_birch_tall");
 
     //DONE
     public static final ResourceKey<ConfiguredFeature<?, ?>> REDWOOD_TREE = ConfiguredFeatureRegistry.createKey("redwood_tree");
@@ -216,8 +216,8 @@ public class RuTreeFeatures {
 
         register(treeBootstrap, SAGUARO_CACTUS, FeatureRegistry.SAGUARO_CACTUS.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.SAGUARO_CACTUS.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.CACTUS_FLOWER.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.REDWOOD_BRANCH.get().defaultBlockState()), 7, 2));
 
-        register(treeBootstrap, SILVER_BIRCH, FeatureRegistry.ASPEN_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.SILVER_BIRCH_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.SILVER_BIRCH_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.BIRCH_BRANCH.get().defaultBlockState()), 4, 4));
-        register(treeBootstrap, TALL_SILVER_BIRCH, FeatureRegistry.ASPEN_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.SILVER_BIRCH_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.SILVER_BIRCH_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.BIRCH_BRANCH.get().defaultBlockState()), 5, 5));
+        register(treeBootstrap, SILVER_BIRCH, FeatureRegistry.ASPEN_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.SILVER_BIRCH_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.SILVER_BIRCH_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.SILVER_BIRCH_BRANCH.get().defaultBlockState()), 4, 4));
+        register(treeBootstrap, SILVER_BIRCH_TALL, FeatureRegistry.ASPEN_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.SILVER_BIRCH_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.SILVER_BIRCH_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.SILVER_BIRCH_BRANCH.get().defaultBlockState()), 5, 5));
 
         //TODO:redesign giant and normal redwoods
         register(treeBootstrap, REDWOOD_TREE, FeatureRegistry.REDWOOD_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.REDWOOD_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.REDWOOD_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.REDWOOD_BRANCH.get()), 21, 9));

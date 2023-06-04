@@ -8,9 +8,13 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
+import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.regions_unexplored.data.worldgen.RuBiomeDefaultFeatures;
+import net.regions_unexplored.data.worldgen.placement.RuMiscOverworldPlacements;
+import net.regions_unexplored.data.worldgen.placement.RuTreePlacements;
+import net.regions_unexplored.data.worldgen.placement.RuVegetationPlacements;
 
 public class ForestBiomes {
     //TODO:Complete Class
@@ -31,13 +35,15 @@ public class ForestBiomes {
         return spawnBuilder;
     }
 
-    private static BiomeGenerationSettings.Builder baseForestGeneration(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    private static BiomeGenerationSettings.Builder baseForestGeneration(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter, boolean addDefaultFlowers) {
         BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(featureGetter, carverGetter);
         RuBiomeDefaultFeatures.globalOverworldGeneration(biomeBuilder);
-        BiomeDefaultFeatures.addForestFlowers(biomeBuilder);
+        RuBiomeDefaultFeatures.mediumGrass(biomeBuilder);
+        if(addDefaultFlowers){
+            BiomeDefaultFeatures.addForestFlowers(biomeBuilder);
+        }
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
-        //add default flowers
         BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
         return biomeBuilder;
@@ -56,7 +62,7 @@ public class ForestBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseForestGeneration(featureGetter, carverGetter);
+        BiomeGenerationSettings.Builder biomeBuilder = baseForestGeneration(featureGetter, carverGetter, true);
 
         //add RU features
 
@@ -87,7 +93,7 @@ public class ForestBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseForestGeneration(featureGetter, carverGetter);
+        BiomeGenerationSettings.Builder biomeBuilder = baseForestGeneration(featureGetter, carverGetter, true);
 
         //add RU features
 
@@ -119,7 +125,7 @@ public class ForestBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseForestGeneration(featureGetter, carverGetter);
+        BiomeGenerationSettings.Builder biomeBuilder = baseForestGeneration(featureGetter, carverGetter, true);
 
         //add RU features
 
@@ -151,7 +157,7 @@ public class ForestBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseForestGeneration(featureGetter, carverGetter);
+        BiomeGenerationSettings.Builder biomeBuilder = baseForestGeneration(featureGetter, carverGetter, true);
 
         //add RU features
 
@@ -182,7 +188,7 @@ public class ForestBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseForestGeneration(featureGetter, carverGetter);
+        BiomeGenerationSettings.Builder biomeBuilder = baseForestGeneration(featureGetter, carverGetter, true);
 
         //add RU features
 
@@ -214,7 +220,7 @@ public class ForestBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseForestGeneration(featureGetter, carverGetter);
+        BiomeGenerationSettings.Builder biomeBuilder = baseForestGeneration(featureGetter, carverGetter, true);
 
         //add RU features
 
@@ -246,7 +252,7 @@ public class ForestBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseForestGeneration(featureGetter, carverGetter);
+        BiomeGenerationSettings.Builder biomeBuilder = baseForestGeneration(featureGetter, carverGetter, true);
 
         //add RU features
 
@@ -272,15 +278,21 @@ public class ForestBiomes {
                 .fogColor(OVERWORLD_FOG_COLOR)
                 .waterColor(NORMAL_WATER_COLOR)
                 .waterFogColor(NORMAL_WATER_FOG_COLOR)
-                .foliageColorOverride(11585338)
-                .grassColorOverride(8960834)
+                .foliageColorOverride(8960834)
+                .grassColorOverride(11585338)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseForestGeneration(featureGetter, carverGetter);
+        BiomeGenerationSettings.Builder biomeBuilder = baseForestGeneration(featureGetter, carverGetter, false);
 
         //add RU features
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.SILVER_BIRCH_TALL);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.SILVER_BIRCH_DENSE);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuMiscOverworldPlacements.FALLEN_SILVER_BIRCH_TREE);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.TASSEL);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.SEEDED_GRASS);
+        RuBiomeDefaultFeatures.addOrangeCornflower(biomeBuilder);
 
 
         //add mob spawns
@@ -310,7 +322,7 @@ public class ForestBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseForestGeneration(featureGetter, carverGetter);
+        BiomeGenerationSettings.Builder biomeBuilder = baseForestGeneration(featureGetter, carverGetter, true);
 
         //add RU features
 
@@ -343,7 +355,7 @@ public class ForestBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseForestGeneration(featureGetter, carverGetter);
+        BiomeGenerationSettings.Builder biomeBuilder = baseForestGeneration(featureGetter, carverGetter, true);
 
         //add RU features
 
