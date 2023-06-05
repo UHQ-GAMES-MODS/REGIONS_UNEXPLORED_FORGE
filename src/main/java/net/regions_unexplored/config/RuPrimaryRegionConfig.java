@@ -642,8 +642,8 @@ public class RuPrimaryRegionConfig {
 
         BUILDER.push("-----------------ISLAND_BIOMES--------------------");
         ICY_ISLAND = BUILDER.define("icy_island_biome", RuBiomes.ALPHA_GROVE.location().toString());
-        COOL_ISLAND = BUILDER.define("cool_island_biome", RuBiomes.SMOULDERING_WOODLAND.location().toString());
-        NEUTRAL_ISLAND = BUILDER.define("neutral_island_biome", RuBiomes.SMOULDERING_WOODLAND.location().toString());
+        COOL_ISLAND = BUILDER.define("cool_island_biome", RuBiomes.ASHEN_WOODLAND.location().toString());
+        NEUTRAL_ISLAND = BUILDER.define("neutral_island_biome", RuBiomes.ASHEN_WOODLAND.location().toString());
         WARM_ISLAND = BUILDER.define("warm_island_biome", RuBiomes.TROPICS.location().toString());
         HOT_ISLAND = BUILDER.define("hot_island_biome", RuBiomes.TROPICS.location().toString());
         BUILDER.pop();

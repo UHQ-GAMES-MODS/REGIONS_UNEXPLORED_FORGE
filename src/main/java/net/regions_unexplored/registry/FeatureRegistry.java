@@ -8,6 +8,7 @@ import net.regions_unexplored.RegionsUnexploredMod;
 import net.regions_unexplored.world.level.feature.AirMultifaceGrowthFeature;
 import net.regions_unexplored.world.level.feature.FallenBlobTreeFeature;
 import net.regions_unexplored.world.level.feature.ShrubFeature;
+import net.regions_unexplored.world.level.feature.SmoulderingDirtFeature;
 import net.regions_unexplored.world.level.feature.configuration.FallenTreeConfiguration;
 import net.regions_unexplored.world.level.feature.configuration.RuTreeConfiguration;
 import net.regions_unexplored.world.level.feature.configuration.ShrubConfiguration;
@@ -51,11 +52,11 @@ public class FeatureRegistry {
     public static RegistryObject<Feature> BRIM_WILLOW;
     public static RegistryObject<Feature> TALL_BRIM_WILLOW;
     //VEGETATION
-    public static RegistryObject<Feature> AIR_MULTIFACE_GROWTH;
     public static RegistryObject<Feature> SHRUB;
     //DECORATION
+    public static RegistryObject<Feature> AIR_MULTIFACE_GROWTH;
     public static RegistryObject<Feature> FALLEN_BLOB_TREE;
-
+    public static RegistryObject<Feature> SMOULDERING_DIRT;
 
 
     //public static RegistryObject<Feature> ICE_SPIRES;
@@ -76,7 +77,6 @@ public class FeatureRegistry {
     //public static RegistryObject<Feature> POINTED_REDSTONE_CLUSTER;
     //OTHER
     //public static RegistryObject<Feature> ASH_VENT;
-    //public static RegistryObject<Feature> SMOULDERING_DIRT;
     //public static RegistryObject<Feature> MEADOW_ROCKS;
 
     public static void addFeatures() {
@@ -105,5 +105,6 @@ public class FeatureRegistry {
         //DECORATION
         AIR_MULTIFACE_GROWTH = RegionsUnexploredMod.FEATURE_REGISTRY.register("air_multiface_growth", () -> new AirMultifaceGrowthFeature(MultifaceGrowthConfiguration.CODEC));
         FALLEN_BLOB_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("fallen_blob_tree", () -> new FallenBlobTreeFeature(FallenTreeConfiguration.CODEC));
+        SMOULDERING_DIRT = RegionsUnexploredMod.FEATURE_REGISTRY.register("smouldering_dirt", () -> new SmoulderingDirtFeature(NoneFeatureConfiguration.CODEC));
     }
 }

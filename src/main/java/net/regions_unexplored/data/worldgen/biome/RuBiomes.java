@@ -5,7 +5,6 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
 import net.regions_unexplored.RegionsUnexploredMod;
-import net.regions_unexplored.registry.BiomeRegistry;
 
 public class RuBiomes {
     //TODO:Complete Class
@@ -19,7 +18,7 @@ public class RuBiomes {
     public static ResourceKey<Biome> BLACKWOOD_FOREST = createKey("blackwood_forest");
     public static ResourceKey<Biome> BOREAL_FOREST = createKey("boreal_forest");
     public static ResourceKey<Biome> CHALK_CLIFFS = createKey("chalk_cliffs");
-    public static ResourceKey<Biome> DARK_SAKURA_GROVE = createKey("dark_sakura_grove");
+    public static ResourceKey<Biome> SAKURA_GROVE = createKey("sakura_grove");
     public static ResourceKey<Biome> COLD_BOREAL_FOREST = createKey("cold_boreal_forest");
     public static ResourceKey<Biome> COLD_DECIDUOUS_FOREST = createKey("cold_deciduous_forest");
     public static ResourceKey<Biome> COLD_RIVER = createKey("cold_river");
@@ -61,7 +60,7 @@ public class RuBiomes {
     public static ResourceKey<Biome> SAGUARO_DESERT = createKey("saguaro_desert");
     public static ResourceKey<Biome> SHRUBLAND = createKey("shrubland");
     public static ResourceKey<Biome> SILVER_BIRCH_FOREST = createKey("silver_birch_forest");
-    public static ResourceKey<Biome> SMOULDERING_WOODLAND = createKey("smouldering_woodland");
+    public static ResourceKey<Biome> ASHEN_WOODLAND = createKey("ashen_woodland");
     public static ResourceKey<Biome> SPARSE_REDWOODS = createKey("sparse_redwoods");
     public static ResourceKey<Biome> SPIRES = createKey("spires");
     public static ResourceKey<Biome> STEPPE = createKey("steppe");

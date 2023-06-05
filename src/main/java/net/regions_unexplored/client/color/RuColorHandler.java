@@ -31,7 +31,9 @@ public class RuColorHandler {
                 RuBlocks.STONE_BUD.get(),
                 RuBlocks.SEEDED_TALL_GRASS.get(),
                 RuBlocks.SEEDED_GRASS.get(),
-                RuBlocks.ORANGE_CONEFLOWER.get()
+                RuBlocks.ORANGE_CONEFLOWER.get(),
+                RuBlocks.TASSEL.get(),
+                RuBlocks.SAKURA_PETALS.get()
         );
     }
     @SubscribeEvent

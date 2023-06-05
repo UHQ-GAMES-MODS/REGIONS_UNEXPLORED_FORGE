@@ -114,6 +114,9 @@ dependencies {
     minecraft "net.minecraftforge:forge:${project.minecraft_version}-${project.loader_version}"
     implementation fg.deobf("com.github.glitchfiend:TerraBlender-forge:${project.minecraft_version}-${project.terrablender_version}")
 
+    implementation fg.deobf("curse.maven:oculus-581495:4451142")
+    implementation fg.deobf("curse.maven:rubidium-574856:4448053")
+
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
     testAnnotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }

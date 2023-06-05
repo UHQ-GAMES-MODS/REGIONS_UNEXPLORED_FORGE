@@ -9,7 +9,7 @@
       "required": false
     },
     {
-      "id": "regions_unexplored:dark_sakura_grove",
+      "id": "regions_unexplored:sakura_grove",
       "required": false
     },
     {
@@ -213,7 +213,7 @@
       "required": false
     },
     {
-      "id": "regions_unexplored:smouldering_woodland",
+      "id": "regions_unexplored:ashen_woodland",
       "required": false
     },
     {

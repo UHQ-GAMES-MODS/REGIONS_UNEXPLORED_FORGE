@@ -25,10 +25,22 @@ public class RuTreePlacements {
     //-----------------------KEYS-----------------------//
     public static final ResourceKey<PlacedFeature> ALPHA_TREE = PlacedFeatureRegistry.createKey("alpha_tree");
 
+    public static final ResourceKey<PlacedFeature> ASHEN_TREE = PlacedFeatureRegistry.createKey("ashen_tree");
+    public static final ResourceKey<PlacedFeature> ASHEN_PINE_TREE = PlacedFeatureRegistry.createKey("ashen_pine_tree");
+
     public static final ResourceKey<PlacedFeature> ULTRA_REDWOOD_TREE = PlacedFeatureRegistry.createKey("ultra_redwood_tree");
     public static final ResourceKey<PlacedFeature> GIANT_REDWOOD_TREE_DENSE = PlacedFeatureRegistry.createKey("giant_redwood_tree_dense");
     public static final ResourceKey<PlacedFeature> GIANT_REDWOOD_TREE_SPARSE = PlacedFeatureRegistry.createKey("giant_redwood_tree_sparse");
     public static final ResourceKey<PlacedFeature> REDWOOD_TREE = PlacedFeatureRegistry.createKey("redwood_tree");
+
+    public static final ResourceKey<PlacedFeature> SAKURA_TREE = PlacedFeatureRegistry.createKey("sakura_tree");
+    public static final ResourceKey<PlacedFeature> RED_SAKURA_TREE = PlacedFeatureRegistry.createKey("red_sakura_tree");
+    public static final ResourceKey<PlacedFeature> PINK_SAKURA_TREE = PlacedFeatureRegistry.createKey("pink_sakura_tree");
+    public static final ResourceKey<PlacedFeature> WHITE_SAKURA_TREE = PlacedFeatureRegistry.createKey("white_sakura_tree");
+    public static final ResourceKey<PlacedFeature> BIG_SAKURA_TREE = PlacedFeatureRegistry.createKey("big_sakura_tree");
+    public static final ResourceKey<PlacedFeature> BIG_RED_SAKURA_TREE = PlacedFeatureRegistry.createKey("big_red_sakura_tree");
+    public static final ResourceKey<PlacedFeature> BIG_PINK_SAKURA_TREE = PlacedFeatureRegistry.createKey("big_pink_sakura_tree");
+    public static final ResourceKey<PlacedFeature> BIG_WHITE_SAKURA_TREE = PlacedFeatureRegistry.createKey("big_white_sakura_tree");
 
     public static final ResourceKey<PlacedFeature> SILVER_BIRCH_DENSE = PlacedFeatureRegistry.createKey("silver_birch_dense");
     public static final ResourceKey<PlacedFeature> SILVER_BIRCH_SPARSE = PlacedFeatureRegistry.createKey("silver_birch_sparse");
@@ -41,19 +53,44 @@ public class RuTreePlacements {
         //---------------------FEATURES---------------------//
         final Holder<ConfiguredFeature<?, ?>> ALPHA_TREE = featureGetter.getOrThrow(RuTreeFeatures.ALPHA_OAK_TREE);
 
+        final Holder<ConfiguredFeature<?, ?>> ASHEN_TREE = featureGetter.getOrThrow(RuTreeFeatures.ASHEN_TREE);
+        final Holder<ConfiguredFeature<?, ?>> ASHEN_PINE_TREE = featureGetter.getOrThrow(RuTreeFeatures.ASHEN_PINE_TREE);
+
         final Holder<ConfiguredFeature<?, ?>> ULTRA_REDWOOD_TREE = featureGetter.getOrThrow(RuTreeFeatures.ULTRA_REDWOOD_TREE);
         final Holder<ConfiguredFeature<?, ?>> GIANT_REDWOOD_TREE = featureGetter.getOrThrow(RuTreeFeatures.GIANT_REDWOOD_TREE);
         final Holder<ConfiguredFeature<?, ?>> REDWOOD_TREE = featureGetter.getOrThrow(RuTreeFeatures.REDWOOD_TREE);
+
+        final Holder<ConfiguredFeature<?, ?>> SAKURA_TREE = featureGetter.getOrThrow(RuTreeFeatures.SAKURA_TREE);
+        final Holder<ConfiguredFeature<?, ?>> RED_SAKURA_TREE = featureGetter.getOrThrow(RuTreeFeatures.RED_SAKURA_TREE);
+        final Holder<ConfiguredFeature<?, ?>> PINK_SAKURA_TREE = featureGetter.getOrThrow(RuTreeFeatures.PINK_SAKURA_TREE);
+        final Holder<ConfiguredFeature<?, ?>> WHITE_SAKURA_TREE = featureGetter.getOrThrow(RuTreeFeatures.WHITE_SAKURA_TREE);
+        final Holder<ConfiguredFeature<?, ?>> BIG_SAKURA_TREE = featureGetter.getOrThrow(RuTreeFeatures.BIG_SAKURA_TREE);
+        final Holder<ConfiguredFeature<?, ?>> RED_BIG_SAKURA_TREE = featureGetter.getOrThrow(RuTreeFeatures.BIG_RED_SAKURA_TREE);
+        final Holder<ConfiguredFeature<?, ?>> PINK_BIG_SAKURA_TREE = featureGetter.getOrThrow(RuTreeFeatures.BIG_PINK_SAKURA_TREE);
+        final Holder<ConfiguredFeature<?, ?>> WHITE_BIG_SAKURA_TREE = featureGetter.getOrThrow(RuTreeFeatures.BIG_WHITE_SAKURA_TREE);
 
         final Holder<ConfiguredFeature<?, ?>> SILVER_BIRCH = featureGetter.getOrThrow(RuTreeFeatures.SILVER_BIRCH);
         final Holder<ConfiguredFeature<?, ?>> SILVER_BIRCH_TALL = featureGetter.getOrThrow(RuTreeFeatures.SILVER_BIRCH_TALL);
         //--------------------PLACEMENTS--------------------//
         register(context, RuTreePlacements.ALPHA_TREE, ALPHA_TREE, List.of(CountPlacement.of(7), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
 
+        register(context, RuTreePlacements.ASHEN_TREE, ASHEN_TREE, List.of(CountPlacement.of(8), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING),BiomeFilter.biome()));
+        register(context, RuTreePlacements.ASHEN_PINE_TREE, ASHEN_PINE_TREE,   List.of(CountPlacement.of(10), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
+
         register(context, RuTreePlacements.ULTRA_REDWOOD_TREE, ULTRA_REDWOOD_TREE, List.of(NoiseBasedCountPlacement.of(1, 80.0D, 0.3D), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
         register(context, RuTreePlacements.GIANT_REDWOOD_TREE_DENSE, GIANT_REDWOOD_TREE, List.of(CountPlacement.of(6), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
         register(context, RuTreePlacements.GIANT_REDWOOD_TREE_SPARSE, GIANT_REDWOOD_TREE, List.of(NoiseBasedCountPlacement.of(1, 80.0D, 0.3D), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
         register(context, RuTreePlacements.REDWOOD_TREE, REDWOOD_TREE, List.of(CountPlacement.of(2), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
+
+        register(context, RuTreePlacements.SAKURA_TREE, SAKURA_TREE,   List.of(CountPlacement.of(1), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
+        register(context, RuTreePlacements.RED_SAKURA_TREE, RED_SAKURA_TREE,   List.of(CountPlacement.of(1), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
+        register(context, RuTreePlacements.PINK_SAKURA_TREE, PINK_SAKURA_TREE,   List.of(CountPlacement.of(1), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
+        register(context, RuTreePlacements.WHITE_SAKURA_TREE, WHITE_SAKURA_TREE,   List.of(CountPlacement.of(1), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
+        register(context, RuTreePlacements.BIG_SAKURA_TREE, BIG_SAKURA_TREE,   List.of(CountPlacement.of(1), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
+        register(context, RuTreePlacements.BIG_RED_SAKURA_TREE, RED_BIG_SAKURA_TREE,   List.of(CountPlacement.of(1), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
+        register(context, RuTreePlacements.BIG_PINK_SAKURA_TREE, PINK_BIG_SAKURA_TREE,   List.of(CountPlacement.of(1), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
+        register(context, RuTreePlacements.BIG_WHITE_SAKURA_TREE, WHITE_BIG_SAKURA_TREE,   List.of(CountPlacement.of(1), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
+
 
         register(context, RuTreePlacements.SILVER_BIRCH_DENSE, SILVER_BIRCH, List.of(CountPlacement.of(6), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
         register(context, RuTreePlacements.SILVER_BIRCH_SPARSE, SILVER_BIRCH, List.of(CountPlacement.of(2), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));

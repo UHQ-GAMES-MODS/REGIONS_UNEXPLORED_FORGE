@@ -1,4 +1,4 @@
-// 1.19.4	2023-06-04T02:43:41.6985199	Loot Tables
+// 1.19.4	2023-06-04T14:06:46.7504336	Loot Tables
 c40c39945b81934eca6ffec8eca8cf5dc6e839bc data/regions_unexplored/loot_tables/blocks/acacia_branch.json
 99511dc6aa6a87b11a6114b9ded41bc99287bf7b data/regions_unexplored/loot_tables/blocks/acacia_shrub.json
 c4aa4fd0a2bc5d7c8f2c93b8062200beed4881cf data/regions_unexplored/loot_tables/blocks/alpha_dandelion.json
@@ -459,6 +459,7 @@ b94ff73a8d29c8d0b4d218a6b91b0199fcc893b8 data/regions_unexplored/loot_tables/blo
 22977adce053bb42976975213dae503321c1c2b9 data/regions_unexplored/loot_tables/blocks/sakura_fence_gate.json
 88787ff8f303e483058c940334457dacbbb6cc84 data/regions_unexplored/loot_tables/blocks/sakura_leaves.json
 904a5f70e539d6b3cb6fb07cbeaaf09ea1745be5 data/regions_unexplored/loot_tables/blocks/sakura_log.json
+6fd19707d568e54389041e885a3840c822c844ff data/regions_unexplored/loot_tables/blocks/sakura_petals.json
 1db4f9244c645a525ef4ba17248ae0bce5bd5764 data/regions_unexplored/loot_tables/blocks/sakura_planks.json
 b848606c61b8cc6c70b6a322ccfd36b239572bd3 data/regions_unexplored/loot_tables/blocks/sakura_pressure_plate.json
 ac30099448296bba52496664c756ae9602ef3b92 data/regions_unexplored/loot_tables/blocks/sakura_sapling.json

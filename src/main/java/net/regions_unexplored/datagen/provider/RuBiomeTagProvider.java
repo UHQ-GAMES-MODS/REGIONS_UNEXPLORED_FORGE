@@ -7,10 +7,7 @@ import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.entity.npc.VillagerType;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.regions_unexplored.RegionsUnexploredMod;
-import net.regions_unexplored.data.tags.RuTags;
 import net.regions_unexplored.data.worldgen.biome.RuBiomes;
 import org.jetbrains.annotations.Nullable;
 
@@ -73,7 +70,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.ALPHA_GROVE.location())
                 .addOptional(RuBiomes.AUTUMNAL_MAPLE_FOREST.location())
                 .addOptional(RuBiomes.BAMBOO_FOREST.location())
-                .addOptional(RuBiomes.DARK_SAKURA_GROVE.location())
+                .addOptional(RuBiomes.SAKURA_GROVE.location())
                 .addOptional(RuBiomes.DECIDUOUS_FOREST.location())
                 .addOptional(RuBiomes.MAPLE_FOREST.location())
                 .addOptional(RuBiomes.MAUVE_HILLS.location())
@@ -113,7 +110,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
         this.tag(BiomeTags.IS_OVERWORLD)
                 .addOptional(RuBiomes.AUTUMNAL_MAPLE_FOREST.location())
                 .addOptional(RuBiomes.BAMBOO_FOREST.location())
-                .addOptional(RuBiomes.DARK_SAKURA_GROVE.location())
+                .addOptional(RuBiomes.SAKURA_GROVE.location())
                 .addOptional(RuBiomes.DECIDUOUS_FOREST.location())
                 .addOptional(RuBiomes.MAPLE_FOREST.location())
                 .addOptional(RuBiomes.MAUVE_HILLS.location())
@@ -171,7 +168,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.HYACINTH_DEEPS.location())
                 .addOptional(RuBiomes.MUDDY_RIVER.location())
                 .addOptional(RuBiomes.ROCKY_REEF.location())
-                .addOptional(RuBiomes.SMOULDERING_WOODLAND.location())
+                .addOptional(RuBiomes.ASHEN_WOODLAND.location())
                 .addOptional(RuBiomes.TROPICS.location())
                 //FROZEN
                 .addOptional(RuBiomes.COLD_BOREAL_FOREST.location())
@@ -278,7 +275,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
         this.tag(BiomeTags.STRONGHOLD_BIASED_TO)
                 .addOptional(RuBiomes.AUTUMNAL_MAPLE_FOREST.location())
                 .addOptional(RuBiomes.BAMBOO_FOREST.location())
-                .addOptional(RuBiomes.DARK_SAKURA_GROVE.location())
+                .addOptional(RuBiomes.SAKURA_GROVE.location())
                 .addOptional(RuBiomes.DECIDUOUS_FOREST.location())
                 .addOptional(RuBiomes.MAPLE_FOREST.location())
                 .addOptional(RuBiomes.MAUVE_HILLS.location())
@@ -349,17 +346,17 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
         this.tag(BiomeTags.WITHOUT_PATROL_SPAWNS)
                 .addOptional(RuBiomes.TROPICS.location())
                 .addOptional(RuBiomes.ALPHA_GROVE.location())
-                .addOptional(RuBiomes.SMOULDERING_WOODLAND.location())
+                .addOptional(RuBiomes.ASHEN_WOODLAND.location())
         ;
         this.tag(BiomeTags.WITHOUT_WANDERING_TRADER_SPAWNS)
                 .addOptional(RuBiomes.TROPICS.location())
                 .addOptional(RuBiomes.ALPHA_GROVE.location())
-                .addOptional(RuBiomes.SMOULDERING_WOODLAND.location())
+                .addOptional(RuBiomes.ASHEN_WOODLAND.location())
         ;
         this.tag(BiomeTags.WITHOUT_ZOMBIE_SIEGES)
                 .addOptional(RuBiomes.TROPICS.location())
                 .addOptional(RuBiomes.ALPHA_GROVE.location())
-                .addOptional(RuBiomes.SMOULDERING_WOODLAND.location())
+                .addOptional(RuBiomes.ASHEN_WOODLAND.location())
         ;
     }
 
@@ -401,7 +398,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.LUSH_HILLS.location())
                 .addOptional(RuBiomes.FLOWER_FIELDS.location())
                 .addOptional(RuBiomes.MAPLE_FOREST.location())
-                .addOptional(RuBiomes.DARK_SAKURA_GROVE.location())
+                .addOptional(RuBiomes.SAKURA_GROVE.location())
                 .addOptional(RuBiomes.CHALK_CLIFFS.location())
                 .addOptional(RuBiomes.GIANT_BAYOU.location())
                 .addOptional(RuBiomes.TROPICS.location())
@@ -448,7 +445,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.COLD_DECIDUOUS_FOREST.location())
                 .addOptional(RuBiomes.DRY_BUSHLAND.location())
                 .addOptional(RuBiomes.SPIRES.location())
-                .addOptional(RuBiomes.SMOULDERING_WOODLAND.location())
+                .addOptional(RuBiomes.ASHEN_WOODLAND.location())
                 .addOptional(RuBiomes.SAGUARO_DESERT.location())
         ;
         //this.tag(BiomeTags.HAS_MINESHAFT_MESA);
@@ -718,7 +715,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.SHRUBLAND.location())
         ;
         this.tag(TagKey.create(Registries.BIOME, new ResourceLocation("forge", "is_plateau")))
-                .addOptional(RuBiomes.DARK_SAKURA_GROVE.location())
+                .addOptional(RuBiomes.SAKURA_GROVE.location())
                 .addOptional(RuBiomes.HIGHLAND_FIELDS.location())
                 .addOptional(RuBiomes.STEPPE.location())
                 .addOptional(RuBiomes.ICY_HEIGHTS.location())
@@ -726,7 +723,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
         this.tag(TagKey.create(Registries.BIOME, new ResourceLocation("forge", "is_rare")))
                 .addOptional(RuBiomes.ALPHA_GROVE.location())
                 .addOptional(RuBiomes.TROPICS.location())
-                .addOptional(RuBiomes.SMOULDERING_WOODLAND.location())
+                .addOptional(RuBiomes.ASHEN_WOODLAND.location())
                 .addOptional(RuBiomes.FUNGAL_FEN.location())
         ;
         this.tag(TagKey.create(Registries.BIOME, new ResourceLocation("forge", "is_sandy")))
@@ -751,7 +748,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
         ;
         this.tag(TagKey.create(Registries.BIOME, new ResourceLocation("forge", "is_spooky")))
                 .addOptional(RuBiomes.BLACKWOOD_FOREST.location())
-                .addOptional(RuBiomes.SMOULDERING_WOODLAND.location())
+                .addOptional(RuBiomes.ASHEN_WOODLAND.location())
         ;
         this.tag(TagKey.create(Registries.BIOME, new ResourceLocation("forge", "is_swamp")))
                 .addOptional(RuBiomes.BAYOU.location())
@@ -765,7 +762,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
         this.tag(TagKey.create(Registries.BIOME, new ResourceLocation("forge", "is_void")))
         ;
         this.tag(TagKey.create(Registries.BIOME, new ResourceLocation("forge", "is_wasteland")))
-                .addOptional(RuBiomes.SMOULDERING_WOODLAND.location())
+                .addOptional(RuBiomes.ASHEN_WOODLAND.location())
         ;
         this.tag(TagKey.create(Registries.BIOME, new ResourceLocation("forge", "is_water")))
         ;

@@ -32,6 +32,8 @@
     "regions_unexplored:barrel_cactus",
     "regions_unexplored:saguaro_cactus",
     "regions_unexplored:salmonberry_bush",
+    "regions_unexplored:flowering_lily_pad",
+    "regions_unexplored:giant_lily_pad",
     "#regions_unexplored:shrubs"
   ]
 }

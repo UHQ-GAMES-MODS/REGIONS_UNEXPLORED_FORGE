@@ -82,7 +82,7 @@ public class RuOverworldSurfaceBuilders {private static final SurfaceRules.RuleS
                                     SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.noiseCondition(RuNoises.WEIGHTED, RuleWeight.getPercent(20)), TERRACOTTA), SurfaceRules.ifTrue(SurfaceRules.noiseCondition(RuNoises.WEIGHTED, RuleWeight.getPercent(60)), RED_SAND))),
 
                             //SMOULDERING_WOODLAND
-                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.SMOULDERING_WOODLAND),
+                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.ASHEN_WOODLAND),
                                     SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, -0.25D), ASHEN_DIRT), SurfaceRules.ifTrue(SurfaceRules.noiseCondition(RuNoises.WEIGHTED, RuleWeight.getPercent(4)), ASH_VENT), ASH)),
 
                             //FUNGAL_FEN
@@ -213,7 +213,7 @@ public class RuOverworldSurfaceBuilders {private static final SurfaceRules.RuleS
                                     SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR),STONE)),
 
                             //ASHEN_BASE
-                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.ICY_DESERT, RuBiomes.SMOULDERING_WOODLAND),
+                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.ICY_DESERT, RuBiomes.ASHEN_WOODLAND),
                                     SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR),ASHEN_DIRT)),
 
                             //ICY_DESERT_BASE

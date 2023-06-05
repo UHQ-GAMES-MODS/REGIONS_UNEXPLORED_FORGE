@@ -9,7 +9,7 @@ import net.regions_unexplored.data.worldgen.features.RuTreeFeatures;
 public class PinkSakuraTreeGrower extends AbstractTreeGrower {
    protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource random, boolean bool) {
       if (random.nextInt(10) == 0) {
-         return RuTreeFeatures.PINK_BIG_SAKURA_TREE;
+         return RuTreeFeatures.BIG_PINK_SAKURA_TREE;
       } else {
          return RuTreeFeatures.PINK_SAKURA_TREE;
       }

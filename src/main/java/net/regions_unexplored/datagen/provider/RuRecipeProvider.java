@@ -84,6 +84,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         oneToOneConversionRecipe(consumer, Items.YELLOW_DYE, RuBlocks.YELLOW_LUPINE.get(), "yellow_dye");
 
         oneToOneConversionRecipe(consumer, Items.ORANGE_DYE, RuBlocks.ORANGE_CONEFLOWER.get(), "orange_dye");
+        oneToOneConversionRecipe(consumer, Items.PINK_DYE, RuBlocks.ORANGE_CONEFLOWER.get(), "pink_dye");
 
         oneToOneConversionRecipe(consumer, Items.PINK_DYE, RuBlocks.PINK_SAKURA_FLOWERS.get(), "pink_dye");
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.PINK_SAKURA_FLOWERS.get(), 6).define('#', RuBlocks.PINK_SAKURA_LEAVES.get()).pattern("###").group("multiface_flowers").unlockedBy("has_pink_sakura_leaves", has(RuBlocks.PINK_SAKURA_LEAVES.get())).save(consumer);

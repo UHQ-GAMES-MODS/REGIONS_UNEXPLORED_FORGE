@@ -132,6 +132,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
         this.tag(ItemTags.FLOWERS)
                 .add(RuBlocks.HYACINTH_FLOWERS.get().asItem())
                 .add(RuBlocks.ORANGE_CONEFLOWER.get().asItem())
+                .add(RuBlocks.SAKURA_PETALS.get().asItem())
                 .add(RuBlocks.PINK_SAKURA_FLOWERS.get().asItem())
                 .add(RuBlocks.RED_SAKURA_FLOWERS.get().asItem())
                 .add(RuBlocks.WHITE_SAKURA_FLOWERS.get().asItem())

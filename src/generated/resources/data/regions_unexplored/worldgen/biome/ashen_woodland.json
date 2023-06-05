@@ -6,11 +6,11 @@
       "minecraft:canyon"
     ]
   },
-  "downfall": 0.8,
+  "downfall": 0.0,
   "effects": {
-    "fog_color": 12638463,
-    "foliage_color": 8437033,
-    "grass_color": 10406459,
+    "fog_color": -6384241,
+    "foliage_color": 15326658,
+    "grass_color": 12434605,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -23,9 +23,15 @@
       "replace_current_music": false,
       "sound": "minecraft:music.overworld.jungle_and_forest"
     },
-    "sky_color": 7972607,
-    "water_color": 4159204,
-    "water_fog_color": 329011
+    "particle": {
+      "options": {
+        "type": "minecraft:ash"
+      },
+      "probability": 0.05
+    },
+    "sky_color": 11644572,
+    "water_color": -10073800,
+    "water_fog_color": -11585236
   },
   "features": [
     [],
@@ -79,18 +85,20 @@
     ],
     [
       "minecraft:glow_lichen",
-      "regions_unexplored:medium_grass",
-      "minecraft:forest_flowers",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
-      "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin"
+      "regions_unexplored:smouldering_dirt",
+      "regions_unexplored:ashen_tree",
+      "regions_unexplored:ashen_pine_tree",
+      "regions_unexplored:wilting_trillium",
+      "regions_unexplored:ashen_grass",
+      "regions_unexplored:ashen_shrub"
     ],
     [
       "minecraft:freeze_top_layer"
     ]
   ],
-  "has_precipitation": true,
+  "has_precipitation": false,
   "spawn_costs": {},
   "spawners": {
     "ambient": [
@@ -102,64 +110,9 @@
       }
     ],
     "axolotls": [],
-    "creature": [
-      {
-        "type": "minecraft:sheep",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 12
-      },
-      {
-        "type": "minecraft:pig",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 10
-      },
-      {
-        "type": "minecraft:chicken",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 10
-      },
-      {
-        "type": "minecraft:cow",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 8
-      },
-      {
-        "type": "minecraft:fox",
-        "maxCount": 4,
-        "minCount": 2,
-        "weight": 8
-      }
-    ],
+    "creature": [],
     "misc": [],
     "monster": [
-      {
-        "type": "minecraft:spider",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 100
-      },
-      {
-        "type": "minecraft:zombie",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 95
-      },
-      {
-        "type": "minecraft:zombie_villager",
-        "maxCount": 1,
-        "minCount": 1,
-        "weight": 5
-      },
-      {
-        "type": "minecraft:skeleton",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 100
-      },
       {
         "type": "minecraft:creeper",
         "maxCount": 4,
@@ -167,22 +120,10 @@
         "weight": 100
       },
       {
-        "type": "minecraft:slime",
+        "type": "minecraft:husk",
         "maxCount": 4,
         "minCount": 4,
         "weight": 100
-      },
-      {
-        "type": "minecraft:enderman",
-        "maxCount": 4,
-        "minCount": 1,
-        "weight": 10
-      },
-      {
-        "type": "minecraft:witch",
-        "maxCount": 1,
-        "minCount": 1,
-        "weight": 5
       }
     ],
     "underground_water_creature": [
@@ -196,5 +137,5 @@
     "water_ambient": [],
     "water_creature": []
   },
-  "temperature": 0.95
+  "temperature": 2.0
 }

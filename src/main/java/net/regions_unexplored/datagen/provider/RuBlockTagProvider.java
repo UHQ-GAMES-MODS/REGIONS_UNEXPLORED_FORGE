@@ -59,6 +59,8 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.BARREL_CACTUS.getKey())
                 .add(RuBlocks.SAGUARO_CACTUS.getKey())
                 .add(RuBlocks.SALMONBERRY_BUSH.getKey())
+                .add(RuBlocks.FLOWERING_LILY_PAD.getKey())
+                .add(RuBlocks.GIANT_LILY_PAD.getKey())
                 .addTags(RuTags.SHRUBS)
         ;
         this.tag(BlockTags.MINEABLE_WITH_HOE)
@@ -100,6 +102,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.YELLOW_BIOSHROOM_BLOCK.getKey())
                 .add(RuBlocks.PRISMOSS_SPROUT.getKey())
                 .add(RuBlocks.ORANGE_CONEFLOWER.getKey())
+                .add(RuBlocks.SAKURA_PETALS.getKey())
         ;
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(RuBlocks.ASH_VENT.getKey())
@@ -385,6 +388,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
         this.tag(BlockTags.FLOWERS)
                 .add(RuBlocks.HYACINTH_FLOWERS.getKey())
                 .add(RuBlocks.ORANGE_CONEFLOWER.getKey())
+                .add(RuBlocks.SAKURA_PETALS.getKey())
                 .add(RuBlocks.PINK_SAKURA_FLOWERS.getKey())
                 .add(RuBlocks.RED_SAKURA_FLOWERS.getKey())
                 .add(RuBlocks.WHITE_SAKURA_FLOWERS.getKey())
@@ -398,6 +402,8 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.PLAINS_MUD.getKey())
         ;
         this.tag(BlockTags.FROG_PREFER_JUMP_TO)
+                .add(RuBlocks.FLOWERING_LILY_PAD.getKey())
+                .add(RuBlocks.GIANT_LILY_PAD.getKey())
         ;
         this.tag(BlockTags.FROGS_SPAWNABLE_ON)
                 .add(RuBlocks.FOREST_COARSE_DIRT.getKey())
@@ -444,6 +450,8 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.JOSHUA_LEAVES.getKey())
                 .add(RuBlocks.PRISMARITE_CLUSTER.getKey())
                 .add(RuBlocks.LARGE_PRISMARITE_CLUSTER.getKey())
+                .add(RuBlocks.FLOWERING_LILY_PAD.getKey())
+                .add(RuBlocks.GIANT_LILY_PAD.getKey())
         ;
         //this.tag(BlockTags.INVALID_SPAWN_INSIDE);
         //this.tag(BlockTags.IRON_ORES);
@@ -1261,6 +1269,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.YELLOW_BIOSHROOM.getKey())
                 .add(RuBlocks.SALMONBERRY_BUSH.getKey())
                 .add(RuBlocks.ORANGE_CONEFLOWER.getKey())
+                .add(RuBlocks.SAKURA_PETALS.getKey())
                 .add(RuBlocks.FLOWERING_LILY_PAD.getKey())
                 .add(RuBlocks.GIANT_LILY_PAD.getKey())
                 .addTags(BlockTags.FLOWERS)

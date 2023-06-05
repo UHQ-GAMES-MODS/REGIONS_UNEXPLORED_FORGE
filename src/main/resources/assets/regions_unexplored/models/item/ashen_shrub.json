@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "regions_unexplored:item/ashen_shrub"
+    "layer0": "regions_unexplored:block/ashen_shrub_top"
   }
 }

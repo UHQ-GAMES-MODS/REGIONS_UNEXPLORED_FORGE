@@ -4,7 +4,6 @@ import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.npc.VillagerType;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
@@ -41,7 +40,7 @@ public class BiomeRegistry {
         //FOREST
         register(context, RuBiomes.AUTUMNAL_MAPLE_FOREST, ForestBiomes.autumnalMapleForest(featuresGetter, carversGetter));
         register(context, RuBiomes.BAMBOO_FOREST, ForestBiomes.bambooForest(featuresGetter, carversGetter));
-        register(context, RuBiomes.DARK_SAKURA_GROVE, ForestBiomes.darkSakuraGrove(featuresGetter, carversGetter));
+        register(context, RuBiomes.SAKURA_GROVE, ForestBiomes.sakuraGrove(featuresGetter, carversGetter));
         register(context, RuBiomes.DECIDUOUS_FOREST, ForestBiomes.deciduousForest(featuresGetter, carversGetter));
         register(context, RuBiomes.MAPLE_FOREST, ForestBiomes.mapleForest(featuresGetter, carversGetter));
         register(context, RuBiomes.MAUVE_HILLS, ForestBiomes.mauveHills(featuresGetter, carversGetter));
@@ -101,7 +100,7 @@ public class BiomeRegistry {
         register(context, RuBiomes.HYACINTH_DEEPS, AquaticBiomes.hyacinthDeeps(featuresGetter, carversGetter));
         register(context, RuBiomes.MUDDY_RIVER, AquaticBiomes.muddyRiver(featuresGetter, carversGetter));
         register(context, RuBiomes.ROCKY_REEF, AquaticBiomes.rockyReef(featuresGetter, carversGetter));
-        register(context, RuBiomes.SMOULDERING_WOODLAND, AquaticBiomes.smoulderingWoodland(featuresGetter, carversGetter));
+        register(context, RuBiomes.ASHEN_WOODLAND, AquaticBiomes.ashenWoodland(featuresGetter, carversGetter));
         register(context, RuBiomes.TROPICS, AquaticBiomes.tropics(featuresGetter, carversGetter));
         //FROZEN
         register(context, RuBiomes.COLD_BOREAL_FOREST, FrozenBiomes.coldBorealForest(featuresGetter, carversGetter));
@@ -136,7 +135,7 @@ public class BiomeRegistry {
         //FOREST
         registerVillagers(RuBiomes.AUTUMNAL_MAPLE_FOREST, VillagerType.PLAINS);
         registerVillagers(RuBiomes.BAMBOO_FOREST, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.DARK_SAKURA_GROVE, VillagerType.PLAINS);
+        registerVillagers(RuBiomes.SAKURA_GROVE, VillagerType.PLAINS);
         registerVillagers(RuBiomes.DECIDUOUS_FOREST, VillagerType.PLAINS);
         registerVillagers(RuBiomes.MAPLE_FOREST, VillagerType.PLAINS);
         registerVillagers(RuBiomes.MAUVE_HILLS, VillagerType.PLAINS);
@@ -194,7 +193,7 @@ public class BiomeRegistry {
         registerVillagers(RuBiomes.HYACINTH_DEEPS, VillagerType.PLAINS);
         registerVillagers(RuBiomes.MUDDY_RIVER, VillagerType.PLAINS);
         registerVillagers(RuBiomes.ROCKY_REEF, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.SMOULDERING_WOODLAND, VillagerType.PLAINS);
+        registerVillagers(RuBiomes.ASHEN_WOODLAND, VillagerType.PLAINS);
         registerVillagers(RuBiomes.TROPICS, VillagerType.PLAINS);
         //FROZEN
         registerVillagers(RuBiomes.COLD_BOREAL_FOREST, VillagerType.PLAINS);

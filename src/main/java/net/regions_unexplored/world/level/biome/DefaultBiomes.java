@@ -262,7 +262,7 @@ public class DefaultBiomes {
                 return getBiome(RuPrimaryRegionConfig.COOL_ISLAND.get());
             }
             else{
-                return RuBiomes.SMOULDERING_WOODLAND;
+                return RuBiomes.ASHEN_WOODLAND;
             }
         }
         else if(temperature==2){
@@ -270,7 +270,7 @@ public class DefaultBiomes {
                 return getBiome(RuPrimaryRegionConfig.NEUTRAL_ISLAND.get());
             }
             else{
-                return RuBiomes.SMOULDERING_WOODLAND;
+                return RuBiomes.ASHEN_WOODLAND;
             }
         }
         else if(temperature==3){
@@ -606,7 +606,7 @@ public class DefaultBiomes {
                 //-----------ARID,DRY,NEUTRAL,WET,HUMID
                 /*ICY*/     {RuBiomes.ICY_DESERT, RuBiomes.FROZEN_TUNDRA, RuBiomes.FROZEN_FOREST, RuBiomes.COLD_BOREAL_FOREST, RuBiomes.COLD_BOREAL_FOREST},
                 /*COOL*/    {RuBiomes.POPPY_FIELDS, RuBiomes.AUTUMNAL_MAPLE_FOREST, RuBiomes.MAPLE_FOREST, RuBiomes.MAPLE_FOREST, RuBiomes.BOREAL_FOREST},
-                /*NEUTRAL*/ {RuBiomes.MAUVE_HILLS, RuBiomes.MEADOW, RuBiomes.DARK_SAKURA_GROVE, RuBiomes.LUPINE_PLAINS, RuBiomes.BLACKWOOD_FOREST},
+                /*NEUTRAL*/ {RuBiomes.MAUVE_HILLS, RuBiomes.MEADOW, RuBiomes.SAKURA_GROVE, RuBiomes.LUPINE_PLAINS, RuBiomes.BLACKWOOD_FOREST},
                 /*WARM*/    {RuBiomes.WILLOW_FOREST, RuBiomes.MEADOW, RuBiomes.BAMBOO_FOREST, RuBiomes.REDWOODS, RuBiomes.REDWOODS},
                 /*HOT*/     {RuBiomes.DRY_BUSHLAND, RuBiomes.DRY_BUSHLAND, RuBiomes.GRASSLAND, RuBiomes.OUTBACK, RuBiomes.EUCALYPTUS_FOREST}};
 
@@ -633,7 +633,7 @@ public class DefaultBiomes {
                 //-----------ARID,DRY,NEUTRAL,WET,HUMID
                 /*ICY*/     {RuBiomes.ICY_DESERT, RuBiomes.FROZEN_TUNDRA, RuBiomes.FROZEN_TUNDRA, RuBiomes.COLD_BOREAL_FOREST, RuBiomes.SPIRES},
                 /*COOL*/    {RuBiomes.AUTUMNAL_MAPLE_FOREST, RuBiomes.SILVER_BIRCH_FOREST, RuBiomes.MAPLE_FOREST, RuBiomes.BOREAL_FOREST, RuBiomes.GOLDEN_BOREAL_FOREST},
-                /*NEUTRAL*/ {RuBiomes.MAUVE_HILLS, RuBiomes.MEADOW, RuBiomes.DARK_SAKURA_GROVE, RuBiomes.LUPINE_PLAINS, RuBiomes.BLACKWOOD_FOREST},
+                /*NEUTRAL*/ {RuBiomes.MAUVE_HILLS, RuBiomes.MEADOW, RuBiomes.SAKURA_GROVE, RuBiomes.LUPINE_PLAINS, RuBiomes.BLACKWOOD_FOREST},
                 /*WARM*/    {RuBiomes.WILLOW_FOREST, RuBiomes.MEADOW, RuBiomes.BAMBOO_FOREST, RuBiomes.FLOWER_FIELDS, RuBiomes.SPARSE_REDWOODS},
                 /*HOT*/     {RuBiomes.DRY_BUSHLAND, RuBiomes.DRY_BUSHLAND, RuBiomes.OUTBACK, RuBiomes.OUTBACK, RuBiomes.EUCALYPTUS_FOREST}};
 
@@ -661,7 +661,7 @@ public class DefaultBiomes {
                 /*ICY*/     {RuBiomes.ICY_HEIGHTS, RuBiomes.ICY_HEIGHTS, RuBiomes.ICY_HEIGHTS, RuBiomes.ICY_HEIGHTS, RuBiomes.COLD_BOREAL_FOREST},
                 /*COOL*/    {RuBiomes.POPPY_FIELDS, RuBiomes.AUTUMNAL_MAPLE_FOREST, RuBiomes.MAPLE_FOREST, RuBiomes.BOREAL_FOREST, RuBiomes.BOREAL_FOREST},
                 /*NEUTRAL*/ {RuBiomes.HIGHLAND_FIELDS, RuBiomes.HIGHLAND_FIELDS, RuBiomes.HIGHLAND_FIELDS, RuBiomes.HIGHLAND_FIELDS, RuBiomes.BLACKWOOD_FOREST},
-                /*WARM*/    {RuBiomes.DARK_SAKURA_GROVE, RuBiomes.DARK_SAKURA_GROVE, RuBiomes.DARK_SAKURA_GROVE, RuBiomes.DARK_SAKURA_GROVE, RuBiomes.REDWOODS},
+                /*WARM*/    {RuBiomes.SAKURA_GROVE, RuBiomes.SAKURA_GROVE, RuBiomes.SAKURA_GROVE, RuBiomes.SAKURA_GROVE, RuBiomes.REDWOODS},
                 /*HOT*/     {RuBiomes.STEPPE, RuBiomes.STEPPE, RuBiomes.STEPPE, RuBiomes.EUCALYPTUS_FOREST, RuBiomes.EUCALYPTUS_FOREST}};
 
 
@@ -687,8 +687,8 @@ public class DefaultBiomes {
                 //-----------ARID,DRY,NEUTRAL,WET,HUMID
                 /*ICY*/     {RuBiomes.ICY_HEIGHTS, RuBiomes.ICY_HEIGHTS, RuBiomes.ICY_HEIGHTS, RuBiomes.ICY_HEIGHTS, RuBiomes.SPIRES},
                 /*COOL*/    {RuBiomes.AUTUMNAL_MAPLE_FOREST, RuBiomes.AUTUMNAL_MAPLE_FOREST, RuBiomes.MAPLE_FOREST, RuBiomes.BOREAL_FOREST, RuBiomes.GOLDEN_BOREAL_FOREST},
-                /*NEUTRAL*/ {RuBiomes.HIGHLAND_FIELDS, RuBiomes.DARK_SAKURA_GROVE, RuBiomes.DARK_SAKURA_GROVE, RuBiomes.DARK_SAKURA_GROVE, RuBiomes.BLACKWOOD_FOREST},
-                /*WARM*/    {RuBiomes.DARK_SAKURA_GROVE, RuBiomes.DARK_SAKURA_GROVE, RuBiomes.DARK_SAKURA_GROVE, RuBiomes.FLOWER_FIELDS, RuBiomes.SPARSE_REDWOODS},
+                /*NEUTRAL*/ {RuBiomes.HIGHLAND_FIELDS, RuBiomes.SAKURA_GROVE, RuBiomes.SAKURA_GROVE, RuBiomes.SAKURA_GROVE, RuBiomes.BLACKWOOD_FOREST},
+                /*WARM*/    {RuBiomes.SAKURA_GROVE, RuBiomes.SAKURA_GROVE, RuBiomes.SAKURA_GROVE, RuBiomes.FLOWER_FIELDS, RuBiomes.SPARSE_REDWOODS},
                 /*HOT*/     {RuBiomes.STEPPE, RuBiomes.STEPPE, RuBiomes.STEPPE, RuBiomes.EUCALYPTUS_FOREST, RuBiomes.EUCALYPTUS_FOREST}};
 
 
@@ -842,7 +842,7 @@ public class DefaultBiomes {
                 return getBiome(RuSecondaryRegionConfig.COOL_ISLAND.get());
             }
             else{
-                return RuBiomes.SMOULDERING_WOODLAND;
+                return RuBiomes.ASHEN_WOODLAND;
             }
         }
         else if(temperature==2){
@@ -850,7 +850,7 @@ public class DefaultBiomes {
                 return getBiome(RuSecondaryRegionConfig.NEUTRAL_ISLAND.get());
             }
             else{
-                return RuBiomes.SMOULDERING_WOODLAND;
+                return RuBiomes.ASHEN_WOODLAND;
             }
         }
         else if(temperature==3){
@@ -1118,7 +1118,7 @@ public class DefaultBiomes {
                 return getBiome(RuSecondaryRegionConfig.WARM_SLOPE.get());
             }
             else{
-                return RuBiomes.DARK_SAKURA_GROVE;
+                return RuBiomes.SAKURA_GROVE;
             }
         }
         else {
@@ -1160,7 +1160,7 @@ public class DefaultBiomes {
                 return getBiome(RuSecondaryRegionConfig.WARM_SLOPE_VAR.get());
             }
             else{
-                return RuBiomes.DARK_SAKURA_GROVE;
+                return RuBiomes.SAKURA_GROVE;
             }
         }
         else {
@@ -1210,7 +1210,7 @@ public class DefaultBiomes {
         if(biome== RuBiomes.CHALK_CLIFFS){
             return RuCommonConfig.TOGGLE_CHALK_CLIFFS.get();
         }
-        if(biome== RuBiomes.DARK_SAKURA_GROVE){
+        if(biome== RuBiomes.SAKURA_GROVE){
             return RuCommonConfig.TOGGLE_DARK_SAKURA_GROVE.get();
         }
         if(biome== RuBiomes.COLD_BOREAL_FOREST){
@@ -1360,7 +1360,7 @@ public class DefaultBiomes {
         if(biome== RuBiomes.SILVER_BIRCH_FOREST){
             return RuCommonConfig.TOGGLE_SILVER_BIRCH_FOREST.get();
         }
-        if(biome== RuBiomes.SMOULDERING_WOODLAND){
+        if(biome== RuBiomes.ASHEN_WOODLAND){
             return RuCommonConfig.TOGGLE_SMOULDERING_WOODLAND.get();
         }
         if(biome== RuBiomes.SPARSE_REDWOODS){
