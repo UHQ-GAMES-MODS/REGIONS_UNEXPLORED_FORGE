@@ -27,7 +27,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.FEN.location())
                 .addOptional(RuBiomes.FUNGAL_FEN.location())
                 .addOptional(RuBiomes.FLOODED_PLAINS.location())
-                .addOptional(RuBiomes.GIANT_BAYOU.location())
+                .addOptional(RuBiomes.OLD_GROWTH_BAYOU.location())
         ;
         this.tag(BiomeTags.ALLOWS_TROPICAL_FISH_SPAWNS_AT_ANY_HEIGHT)
                 .addOptional(RuBiomes.LUSH_DELTA.location())
@@ -38,14 +38,14 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.FEN.location())
                 .addOptional(RuBiomes.FUNGAL_FEN.location())
                 .addOptional(RuBiomes.FLOODED_PLAINS.location())
-                .addOptional(RuBiomes.GIANT_BAYOU.location())
+                .addOptional(RuBiomes.OLD_GROWTH_BAYOU.location())
         ;
         this.tag(BiomeTags.INCREASED_FIRE_BURNOUT)
                 .addOptional(RuBiomes.BAYOU.location())
                 .addOptional(RuBiomes.FEN.location())
                 .addOptional(RuBiomes.FUNGAL_FEN.location())
                 .addOptional(RuBiomes.FLOODED_PLAINS.location())
-                .addOptional(RuBiomes.GIANT_BAYOU.location())
+                .addOptional(RuBiomes.OLD_GROWTH_BAYOU.location())
                 .addOptional(RuBiomes.REDWOODS.location())
                 .addOptional(RuBiomes.SPARSE_REDWOODS.location())
                 .addOptional(RuBiomes.BAMBOO_FOREST.location())
@@ -119,7 +119,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.TEMPERATE_GROVE.location())
                 .addOptional(RuBiomes.WILLOW_FOREST.location())
                 //TAIGA
-                .addOptional(RuBiomes.BLACKWOOD_FOREST.location())
+                .addOptional(RuBiomes.BLACKWOOD_TAIGA.location())
                 .addOptional(RuBiomes.BOREAL_FOREST.location())
                 .addOptional(RuBiomes.GOLDEN_BOREAL_FOREST.location())
                 .addOptional(RuBiomes.PINE_FOREST.location())
@@ -141,7 +141,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.FEN.location())
                 .addOptional(RuBiomes.FLOODED_PLAINS.location())
                 .addOptional(RuBiomes.FUNGAL_FEN.location())
-                .addOptional(RuBiomes.GIANT_BAYOU.location())
+                .addOptional(RuBiomes.OLD_GROWTH_BAYOU.location())
                 .addOptional(RuBiomes.OLD_GROWTH_RAINFOREST.location())
                 .addOptional(RuBiomes.RAINFOREST.location())
                 //ARID
@@ -195,7 +195,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.DRY_BUSHLAND.location())
         ;
         this.tag(BiomeTags.IS_TAIGA)
-                .addOptional(RuBiomes.BLACKWOOD_FOREST.location())
+                .addOptional(RuBiomes.BLACKWOOD_TAIGA.location())
                 .addOptional(RuBiomes.BOREAL_FOREST.location())
                 .addOptional(RuBiomes.GOLDEN_BOREAL_FOREST.location())
                 .addOptional(RuBiomes.PINE_FOREST.location())
@@ -259,7 +259,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.OUTBACK.location())
                 .addOptional(RuBiomes.TROPICS.location())
                 .addOptional(RuBiomes.BAMBOO_FOREST.location())
-                .addOptional(RuBiomes.GIANT_BAYOU.location())
+                .addOptional(RuBiomes.OLD_GROWTH_BAYOU.location())
                 .addOptional(RuBiomes.FLOODED_PLAINS.location())
                 .addOptional(RuBiomes.FUNGAL_FEN.location())
         ;
@@ -284,7 +284,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.TEMPERATE_GROVE.location())
                 .addOptional(RuBiomes.WILLOW_FOREST.location())
                 //TAIGA
-                .addOptional(RuBiomes.BLACKWOOD_FOREST.location())
+                .addOptional(RuBiomes.BLACKWOOD_TAIGA.location())
                 .addOptional(RuBiomes.BOREAL_FOREST.location())
                 .addOptional(RuBiomes.GOLDEN_BOREAL_FOREST.location())
                 .addOptional(RuBiomes.PINE_FOREST.location())
@@ -341,7 +341,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.FEN.location())
                 .addOptional(RuBiomes.FUNGAL_FEN.location())
                 .addOptional(RuBiomes.FLOODED_PLAINS.location())
-                .addOptional(RuBiomes.GIANT_BAYOU.location())
+                .addOptional(RuBiomes.OLD_GROWTH_BAYOU.location())
         ;
         this.tag(BiomeTags.WITHOUT_PATROL_SPAWNS)
                 .addOptional(RuBiomes.TROPICS.location())
@@ -400,7 +400,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.MAPLE_FOREST.location())
                 .addOptional(RuBiomes.SAKURA_GROVE.location())
                 .addOptional(RuBiomes.CHALK_CLIFFS.location())
-                .addOptional(RuBiomes.GIANT_BAYOU.location())
+                .addOptional(RuBiomes.OLD_GROWTH_BAYOU.location())
                 .addOptional(RuBiomes.TROPICS.location())
                 .addOptional(RuBiomes.PUMPKIN_FIELDS.location())
                 .addOptional(RuBiomes.WILLOW_FOREST.location())
@@ -414,7 +414,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.TEMPERATE_GROVE.location())
                 .addOptional(RuBiomes.GRASSLAND.location())
                 .addOptional(RuBiomes.BAYOU.location())
-                .addOptional(RuBiomes.BLACKWOOD_FOREST.location())
+                .addOptional(RuBiomes.BLACKWOOD_TAIGA.location())
                 .addOptional(RuBiomes.PRAIRIE.location())
                 .addOptional(RuBiomes.BARLEY_FIELDS.location())
                 .addOptional(RuBiomes.POPPY_FIELDS.location())
@@ -504,7 +504,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
         ;
         this.tag(BiomeTags.HAS_RUINED_PORTAL_SWAMP)
                 .addOptional(RuBiomes.BAYOU.location())
-                .addOptional(RuBiomes.GIANT_BAYOU.location())
+                .addOptional(RuBiomes.OLD_GROWTH_BAYOU.location())
                 .addOptional(RuBiomes.FEN.location())
                 .addOptional(RuBiomes.FLOODED_PLAINS.location())
         ;
@@ -541,13 +541,13 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
         ;
         this.tag(BiomeTags.HAS_VILLAGE_TAIGA)
                 .addOptional(RuBiomes.SHRUBLAND.location())
-                .addOptional(RuBiomes.BLACKWOOD_FOREST.location())
+                .addOptional(RuBiomes.BLACKWOOD_TAIGA.location())
                 .addOptional(RuBiomes.BOREAL_FOREST.location())
                 .addOptional(RuBiomes.GOLDEN_BOREAL_FOREST.location())
                 .addOptional(RuBiomes.SPARSE_REDWOODS.location())
         ;
         this.tag(BiomeTags.HAS_WOODLAND_MANSION)
-                .addOptional(RuBiomes.BLACKWOOD_FOREST.location())
+                .addOptional(RuBiomes.BLACKWOOD_TAIGA.location())
                 .addOptional(RuBiomes.REDWOODS.location())
         ;
     }
@@ -580,7 +580,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
         this.tag(TagKey.create(Registries.BIOME, new ResourceLocation("forge", "is_dense/nether")))
         ;
         this.tag(TagKey.create(Registries.BIOME, new ResourceLocation("forge", "is_dense/overworld")))
-                .addOptional(RuBiomes.BLACKWOOD_FOREST.location())
+                .addOptional(RuBiomes.BLACKWOOD_TAIGA.location())
                 .addOptional(RuBiomes.BOREAL_FOREST.location())
                 .addOptional(RuBiomes.GOLDEN_BOREAL_FOREST.location())
                 .addOptional(RuBiomes.REDWOODS.location())
@@ -589,7 +589,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.RAINFOREST.location())
                 .addOptional(RuBiomes.OLD_GROWTH_RAINFOREST.location())
                 .addOptional(RuBiomes.BAYOU.location())
-                .addOptional(RuBiomes.GIANT_BAYOU.location())
+                .addOptional(RuBiomes.OLD_GROWTH_BAYOU.location())
         ;
         //is_dry
         this.tag(TagKey.create(Registries.BIOME, new ResourceLocation("forge", "is_dry/end")))
@@ -657,7 +657,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.REDWOODS.location())
                 .addOptional(RuBiomes.SPARSE_REDWOODS.location())
                 .addOptional(RuBiomes.EUCALYPTUS_FOREST.location())
-                .addOptional(RuBiomes.BLACKWOOD_FOREST.location())
+                .addOptional(RuBiomes.BLACKWOOD_TAIGA.location())
         ;
         //other_forge_tags
         this.tag(TagKey.create(Registries.BIOME, new ResourceLocation("forge", "is_cave")))
@@ -670,7 +670,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
         this.tag(TagKey.create(Registries.BIOME, new ResourceLocation("forge", "is_cold")))
         ;
         this.tag(TagKey.create(Registries.BIOME, new ResourceLocation("forge", "is_coniferous")))
-                .addOptional(RuBiomes.BLACKWOOD_FOREST.location())
+                .addOptional(RuBiomes.BLACKWOOD_TAIGA.location())
                 .addOptional(RuBiomes.BOREAL_FOREST.location())
                 .addOptional(RuBiomes.GOLDEN_BOREAL_FOREST.location())
                 .addOptional(RuBiomes.PINE_FOREST.location())
@@ -695,7 +695,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
         this.tag(TagKey.create(Registries.BIOME, new ResourceLocation("forge", "is_mountain")))
         ;
         this.tag(TagKey.create(Registries.BIOME, new ResourceLocation("forge", "is_mushroom")))
-                .addOptional(RuBiomes.BLACKWOOD_FOREST.location())
+                .addOptional(RuBiomes.BLACKWOOD_TAIGA.location())
                 .addOptional(RuBiomes.BIOSHROOM_CAVES.location())
                 .addOptional(RuBiomes.FUNGAL_FEN.location())
         ;
@@ -747,7 +747,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
         this.tag(TagKey.create(Registries.BIOME, new ResourceLocation("forge", "is_sparse")))
         ;
         this.tag(TagKey.create(Registries.BIOME, new ResourceLocation("forge", "is_spooky")))
-                .addOptional(RuBiomes.BLACKWOOD_FOREST.location())
+                .addOptional(RuBiomes.BLACKWOOD_TAIGA.location())
                 .addOptional(RuBiomes.ASHEN_WOODLAND.location())
         ;
         this.tag(TagKey.create(Registries.BIOME, new ResourceLocation("forge", "is_swamp")))
@@ -755,7 +755,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.FEN.location())
                 .addOptional(RuBiomes.FUNGAL_FEN.location())
                 .addOptional(RuBiomes.FLOODED_PLAINS.location())
-                .addOptional(RuBiomes.GIANT_BAYOU.location())
+                .addOptional(RuBiomes.OLD_GROWTH_BAYOU.location())
         ;
         this.tag(TagKey.create(Registries.BIOME, new ResourceLocation("forge", "is_underground")))
         ;

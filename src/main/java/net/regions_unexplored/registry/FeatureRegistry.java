@@ -5,10 +5,8 @@ import net.minecraft.world.level.levelgen.feature.configurations.MultifaceGrowth
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraftforge.registries.RegistryObject;
 import net.regions_unexplored.RegionsUnexploredMod;
-import net.regions_unexplored.world.level.feature.AirMultifaceGrowthFeature;
-import net.regions_unexplored.world.level.feature.FallenBlobTreeFeature;
-import net.regions_unexplored.world.level.feature.ShrubFeature;
-import net.regions_unexplored.world.level.feature.SmoulderingDirtFeature;
+import net.regions_unexplored.data.worldgen.features.RuTreeFeatures;
+import net.regions_unexplored.world.level.feature.*;
 import net.regions_unexplored.world.level.feature.configuration.FallenTreeConfiguration;
 import net.regions_unexplored.world.level.feature.configuration.RuTreeConfiguration;
 import net.regions_unexplored.world.level.feature.configuration.ShrubConfiguration;
@@ -53,10 +51,13 @@ public class FeatureRegistry {
     public static RegistryObject<Feature> TALL_BRIM_WILLOW;
     //VEGETATION
     public static RegistryObject<Feature> SHRUB;
+    public static RegistryObject<Feature> TREE_SHRUB;
+    public static RegistryObject<Feature> GIANT_LILY;
     //DECORATION
     public static RegistryObject<Feature> AIR_MULTIFACE_GROWTH;
     public static RegistryObject<Feature> FALLEN_BLOB_TREE;
     public static RegistryObject<Feature> SMOULDERING_DIRT;
+    public static RegistryObject<Feature> MEADOW_ROCK;
 
 
     //public static RegistryObject<Feature> ICE_SPIRES;
@@ -102,9 +103,12 @@ public class FeatureRegistry {
         TALL_BRIM_WILLOW = RegionsUnexploredMod.FEATURE_REGISTRY.register("tall_brim_willow", () -> new TallBrimWillowFeature(NoneFeatureConfiguration.CODEC));
         //VEGETATION
         SHRUB = RegionsUnexploredMod.FEATURE_REGISTRY.register("shrub", () -> new ShrubFeature(ShrubConfiguration.CODEC));
+        TREE_SHRUB = RegionsUnexploredMod.FEATURE_REGISTRY.register("tree_shrub", () -> new TreeShrubFeature(RuTreeConfiguration.CODEC));
+        GIANT_LILY = RegionsUnexploredMod.FEATURE_REGISTRY.register("giant_lily", () -> new GiantLilyPadFeature(NoneFeatureConfiguration.CODEC));
         //DECORATION
         AIR_MULTIFACE_GROWTH = RegionsUnexploredMod.FEATURE_REGISTRY.register("air_multiface_growth", () -> new AirMultifaceGrowthFeature(MultifaceGrowthConfiguration.CODEC));
         FALLEN_BLOB_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("fallen_blob_tree", () -> new FallenBlobTreeFeature(FallenTreeConfiguration.CODEC));
         SMOULDERING_DIRT = RegionsUnexploredMod.FEATURE_REGISTRY.register("smouldering_dirt", () -> new SmoulderingDirtFeature(NoneFeatureConfiguration.CODEC));
+        MEADOW_ROCK = RegionsUnexploredMod.FEATURE_REGISTRY.register("meadow_rock", () -> new MeadowRockFeature(NoneFeatureConfiguration.CODEC));
     }
 }

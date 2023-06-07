@@ -94,7 +94,14 @@
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane_swamp",
       "minecraft:patch_pumpkin",
-      "minecraft:seagrass_swamp"
+      "minecraft:seagrass_swamp",
+      "regions_unexplored:cypress_tree",
+      "regions_unexplored:willow_tree_vines",
+      "regions_unexplored:oak_bush_sparse",
+      "regions_unexplored:bayou_vegetation",
+      "regions_unexplored:flowering_lily",
+      "regions_unexplored:willow_cypress_shrub_mix",
+      "regions_unexplored:elephant_ear_sparse"
     ],
     [
       "minecraft:freeze_top_layer"

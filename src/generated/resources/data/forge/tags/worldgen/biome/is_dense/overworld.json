@@ -1,7 +1,7 @@
 {
   "values": [
     {
-      "id": "regions_unexplored:blackwood_forest",
+      "id": "regions_unexplored:blackwood_taiga",
       "required": false
     },
     {
@@ -37,7 +37,7 @@
       "required": false
     },
     {
-      "id": "regions_unexplored:giant_bayou",
+      "id": "regions_unexplored:old_growth_bayou",
       "required": false
     }
   ]

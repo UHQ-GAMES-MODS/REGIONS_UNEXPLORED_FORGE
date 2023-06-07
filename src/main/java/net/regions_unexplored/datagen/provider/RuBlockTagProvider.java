@@ -27,6 +27,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
         addForgeTags(provider);
         //mineable_tags
         this.tag(BlockTags.MINEABLE_WITH_AXE)
+                .add(RuBlocks.MEADOW_SAGE.getKey())
                 .add(RuBlocks.BARLEY.getKey())
                 .add(RuBlocks.CATTAIL.getKey())
                 .add(RuBlocks.DEAD_STEPPE_SHRUB.getKey())
@@ -571,6 +572,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
         //this.tag(BlockTags.OCCLUDES_VIBRATION_SIGNALS);
         this.tag(BlockTags.OVERWORLD_CARVER_REPLACEABLES)
                 .addTags(RuTags.ASH)
+                .add(RuBlocks.MOSSY_STONE.getKey())
         ;
         this.tag(BlockTags.OVERWORLD_NATURAL_LOGS)
                 .add(RuBlocks.ASHEN_LOG.getKey())
@@ -651,6 +653,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
         //this.tag(BlockTags.RAILS);
         //this.tag(BlockTags.REDSTONE_ORES);
         this.tag(BlockTags.REPLACEABLE_PLANTS)
+                .add(RuBlocks.MEADOW_SAGE.getKey())
                 .add(RuBlocks.BARLEY.getKey())
                 .add(RuBlocks.CATTAIL.getKey())
                 .add(RuBlocks.DEAD_STEPPE_SHRUB.getKey())
@@ -1245,6 +1248,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "warped_fungus")))
                 .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "warped_roots")))
                 .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "water")))
+                .add(RuBlocks.MEADOW_SAGE.getKey())
                 .add(RuBlocks.BARLEY.getKey())
                 .add(RuBlocks.BARREL_CACTUS.getKey())
                 .add(RuBlocks.BLUE_BIOSHROOM.getKey())

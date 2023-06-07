@@ -1,5 +1,6 @@
 package net.regions_unexplored.item;
 
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SignItem;
 import net.minecraftforge.registries.RegistryObject;
@@ -60,6 +61,7 @@ public class RuItems {
     public static RegistryObject<Item> WILLOW_CHEST_BOAT;
 
     public static RegistryObject<Item> SALMONBERRY;
+    public static RegistryObject<Item> MEADOW_SAGE;
     
     public static void addItems(){
     BAOBAB_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("baobab_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.BAOBAB_SIGN.get(), RuBlocks.BAOBAB_WALL_SIGN.get()));
@@ -82,8 +84,8 @@ public class RuItems {
     BAOBAB_CHEST_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("baobab_chest_boat", () -> new RuBoatItem(true, RuBoat.ModelType.BAOBAB, (new Item.Properties()).stacksTo(1)));
     BLACKWOOD_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("blackwood_boat", () -> new RuBoatItem(false, RuBoat.ModelType.BLACKWOOD, (new Item.Properties()).stacksTo(1)));
     BLACKWOOD_CHEST_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("blackwood_chest_boat", () -> new RuBoatItem(true, RuBoat.ModelType.BLACKWOOD, (new Item.Properties()).stacksTo(1)));
-    SAKURA_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("sakura_boat", () -> new RuBoatItem(false, RuBoat.ModelType.CHERRY, (new Item.Properties()).stacksTo(1)));
-    SAKURA_CHEST_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("sakura_chest_boat", () -> new RuBoatItem(true, RuBoat.ModelType.CHERRY, (new Item.Properties()).stacksTo(1)));
+    SAKURA_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("sakura_boat", () -> new RuBoatItem(false, RuBoat.ModelType.SAKURA, (new Item.Properties()).stacksTo(1)));
+    SAKURA_CHEST_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("sakura_chest_boat", () -> new RuBoatItem(true, RuBoat.ModelType.SAKURA, (new Item.Properties()).stacksTo(1)));
     CYPRESS_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("cypress_boat", () -> new RuBoatItem(false, RuBoat.ModelType.CYPRESS, (new Item.Properties()).stacksTo(1)));
     CYPRESS_CHEST_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("cypress_chest_boat", () -> new RuBoatItem(true, RuBoat.ModelType.CYPRESS, (new Item.Properties()).stacksTo(1)));
     DEAD_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("dead_boat", () -> new RuBoatItem(false, RuBoat.ModelType.DEAD, (new Item.Properties()).stacksTo(1)));
@@ -110,5 +112,6 @@ public class RuItems {
     WILLOW_CHEST_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("willow_chest_boat", () -> new RuBoatItem(true, RuBoat.ModelType.WILLOW, (new Item.Properties()).stacksTo(1)));
 
     SALMONBERRY = RegionsUnexploredMod.ITEM_REGISTRY.register("salmonberry", () -> new FoodItemWithBlock(RuBlocks.SALMONBERRY_BUSH.get(), new Item.Properties(), new Food(3, 0.3f)));
+    MEADOW_SAGE = RegionsUnexploredMod.ITEM_REGISTRY.register("meadow_sage", () -> new FoodItemWithBlock(RuBlocks.MEADOW_SAGE.get(), new Item.Properties(), new Food(2, 0.15f).addEffect(MobEffects.HEAL, 20, 0.5f)));
     }
 }

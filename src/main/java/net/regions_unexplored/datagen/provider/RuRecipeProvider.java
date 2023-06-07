@@ -31,6 +31,7 @@ import java.util.function.Consumer;
 public class RuRecipeProvider extends RecipeProvider implements IConditionBuilder {
 
     public static final ImmutableList<ItemLike> REDSTONE_SMELTABLES = ImmutableList.of(RuBlocks.RAW_REDSTONE_BLOCK.get(), RuBlocks.REDSTONE_BULB.get());
+    public static final ImmutableList<ItemLike> MOSSY_STONE_SMELTABLES = ImmutableList.of(Blocks.MOSSY_COBBLESTONE);
 
     public RuRecipeProvider(PackOutput output) {
         super(output);
@@ -93,6 +94,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         oneToOneConversionRecipe(consumer, Items.WHITE_DYE, RuBlocks.WHITE_SAKURA_FLOWERS.get(), "white_dye");
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.WHITE_SAKURA_FLOWERS.get(), 6).define('#', RuBlocks.WHITE_SAKURA_LEAVES.get()).pattern("###").group("multiface_flowers").unlockedBy("has_white_sakura_leaves", has(RuBlocks.WHITE_SAKURA_LEAVES.get())).save(consumer);
 
+        oneToOneConversionRecipe(consumer, Items.BLUE_DYE, RuBlocks.MEADOW_SAGE.get(), "blue_dye");
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(RuBlocks.BARLEY.get()), RecipeCategory.FOOD, Items.BREAD, 0.35F, 200).unlockedBy("has_barley", has(RuBlocks.BARLEY.get())).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "barley_smelting"));
         SimpleCookingRecipeBuilder.smoking(Ingredient.of(RuBlocks.BARLEY.get()), RecipeCategory.FOOD, Items.BREAD, 0.35F, 100).unlockedBy("has_barley", has(RuBlocks.BARLEY.get())).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "barley_smoking"));
         oneToOneConversionRecipe(consumer, Items.BROWN_DYE, RuBlocks.CATTAIL.get(), "brown_dye");
@@ -308,7 +310,9 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         stairBuilder(RuBlocks.POLISHED_CHALK_STAIRS.get(), Ingredient.of(RuBlocks.POLISHED_CHALK.get())).group("chalk").unlockedBy("has_polished_chalk", has(RuBlocks.POLISHED_CHALK.get())).save(consumer);
         stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.POLISHED_CHALK_STAIRS.get(), RuBlocks.POLISHED_CHALK.get());
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RuBlocks.MOSSY_STONE.get(), 1).requires(Blocks.STONE).requires(Blocks.VINE).unlockedBy("has_stone", has(Blocks.STONE)).unlockedBy("has_vine", has(Blocks.VINE)).save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, RuBlocks.MOSSY_STONE.get(), 1).requires(Blocks.STONE).requires(Blocks.VINE).group("mossy").unlockedBy("has_stone", has(Blocks.STONE)).unlockedBy("has_vine", has(Blocks.VINE)).save(consumer);
+        oreSmelting(consumer, MOSSY_STONE_SMELTABLES, RecipeCategory.BUILDING_BLOCKS, RuBlocks.MOSSY_STONE.get(), 0.1F, 200, "mossy");
+        oreBlasting(consumer, MOSSY_STONE_SMELTABLES, RecipeCategory.BUILDING_BLOCKS, RuBlocks.MOSSY_STONE.get(), 0.1F, 100, "mossy");
 
         /*-----------------OCEAN_BLOCKS-----------------*/
         //TODO:ADD HYACINTH_LANTERN BEFORE RECIPES

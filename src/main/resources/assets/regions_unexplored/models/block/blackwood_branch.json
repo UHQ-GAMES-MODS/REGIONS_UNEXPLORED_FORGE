@@ -1,9 +1,9 @@
 {
   "parent": "regions_unexplored:block/branch",
   "textures": {
-    "cross": "regions_unexplored:block/blackwood_branch",
-    "cross2": "regions_unexplored:block/blackwood_branch_2",
-    "particle": "regions_unexplored:block/blackwood_branch"
+    "log": "regions_unexplored:block/blackwood_log",
+    "branch": "regions_unexplored:block/blackwood_branch",
+    "particle": "regions_unexplored:block/blackwood_log"
   },
   "render_type": "cutout"
 }

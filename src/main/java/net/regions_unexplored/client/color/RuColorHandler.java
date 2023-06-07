@@ -71,7 +71,8 @@ public class RuColorHandler {
                 RuBlocks.PINE_LEAVES.get(),
                 RuBlocks.REDWOOD_LEAVES.get(),
                 RuBlocks.WILLOW_LEAVES.get(),
-                RuBlocks.MAPLE_LEAVES.get()
+                RuBlocks.MAPLE_LEAVES.get(),
+                RuBlocks.WINDSWEPT_GRASS.get()
         );
     }
     @SubscribeEvent
@@ -92,7 +93,8 @@ public class RuColorHandler {
                 RuBlocks.PINE_LEAVES.get(),
                 RuBlocks.REDWOOD_LEAVES.get(),
                 RuBlocks.WILLOW_LEAVES.get(),
-                RuBlocks.MAPLE_LEAVES.get()
+                RuBlocks.MAPLE_LEAVES.get(),
+                RuBlocks.WINDSWEPT_GRASS.get()
         );
     }
     @SubscribeEvent

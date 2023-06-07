@@ -16,7 +16,7 @@ import net.regions_unexplored.world.level.block.leaves.AppleLeavesBlock;
 import net.regions_unexplored.world.level.block.leaves.JoshuaLeavesBlock;
 import net.regions_unexplored.world.level.block.leaves.MauveLeavesBlock;
 import net.regions_unexplored.world.level.block.leaves.BrimwoodLeavesBlock;
-import net.regions_unexplored.world.level.block.log.AspenLogBlock;
+import net.regions_unexplored.world.level.block.wood.AspenLogBlock;
 
 import java.util.function.Supplier;
 

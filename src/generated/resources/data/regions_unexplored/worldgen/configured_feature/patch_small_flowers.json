@@ -1,0 +1,103 @@
+{
+  "type": "minecraft:flower",
+  "config": {
+    "feature": {
+      "feature": {
+        "type": "minecraft:simple_block",
+        "config": {
+          "to_place": {
+            "type": "minecraft:noise_provider",
+            "noise": {
+              "amplitudes": [
+                1.0
+              ],
+              "firstOctave": 0
+            },
+            "scale": 0.075,
+            "seed": 2345,
+            "states": [
+              {
+                "Name": "regions_unexplored:yellow_lupine"
+              },
+              {
+                "Name": "minecraft:pink_tulip"
+              },
+              {
+                "Name": "regions_unexplored:poppy_bush"
+              },
+              {
+                "Name": "minecraft:oxeye_daisy"
+              },
+              {
+                "Name": "regions_unexplored:red_lupine"
+              },
+              {
+                "Name": "minecraft:cornflower"
+              },
+              {
+                "Name": "regions_unexplored:pink_lupine"
+              },
+              {
+                "Name": "minecraft:orange_tulip"
+              },
+              {
+                "Name": "regions_unexplored:waratah"
+              },
+              {
+                "Name": "minecraft:white_tulip"
+              },
+              {
+                "Name": "regions_unexplored:hyssop"
+              },
+              {
+                "Name": "minecraft:allium"
+              },
+              {
+                "Name": "regions_unexplored:blue_lupine"
+              },
+              {
+                "Name": "regions_unexplored:white_trillium"
+              },
+              {
+                "Name": "minecraft:blue_orchid"
+              },
+              {
+                "Name": "regions_unexplored:fireweed"
+              },
+              {
+                "Name": "regions_unexplored:daisy"
+              },
+              {
+                "Name": "regions_unexplored:purple_lupine"
+              },
+              {
+                "Name": "minecraft:red_tulip"
+              },
+              {
+                "Name": "regions_unexplored:felicia_daisy"
+              },
+              {
+                "Name": "minecraft:poppy"
+              },
+              {
+                "Name": "minecraft:lily_of_the_valley"
+              }
+            ]
+          }
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:air"
+          }
+        }
+      ]
+    },
+    "tries": 96,
+    "xz_spread": 6,
+    "y_spread": 2
+  }
+}

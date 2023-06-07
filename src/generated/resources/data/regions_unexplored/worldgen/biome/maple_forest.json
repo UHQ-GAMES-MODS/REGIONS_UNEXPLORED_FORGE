@@ -84,7 +84,16 @@
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin"
+      "minecraft:patch_pumpkin",
+      "regions_unexplored:maple_tree",
+      "regions_unexplored:red_maple_tree_sparse",
+      "regions_unexplored:big_maple_tree_sparse",
+      "regions_unexplored:spruce_tree_tall_dense",
+      "regions_unexplored:grass",
+      "regions_unexplored:stone_bud_dense",
+      "regions_unexplored:white_trillium",
+      "regions_unexplored:fallen_maple_tree",
+      "regions_unexplored:maple_shrub_mix"
     ],
     [
       "minecraft:freeze_top_layer"

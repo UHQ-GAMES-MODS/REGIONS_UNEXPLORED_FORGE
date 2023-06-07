@@ -35,7 +35,7 @@ public class RuChestBoat extends ChestBoat {
         switch (RuBoat.ModelType.byId(this.entityData.get(DATA_ID_TYPE))) {
             case BLACKWOOD:
                 item = RuItems.BLACKWOOD_CHEST_BOAT.get();
-            case CHERRY:
+            case SAKURA:
                 item = RuItems.SAKURA_CHEST_BOAT.get();
             case CYPRESS:
                 item = RuItems.CYPRESS_CHEST_BOAT.get();

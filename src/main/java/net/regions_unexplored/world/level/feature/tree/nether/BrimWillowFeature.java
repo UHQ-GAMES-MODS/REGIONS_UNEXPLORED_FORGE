@@ -16,7 +16,7 @@ import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.data.tags.RuTags;
-import net.regions_unexplored.world.level.block.log.MagmaLogBlock;
+import net.regions_unexplored.world.level.block.wood.MagmaLogBlock;
 
 import java.util.Random;
 

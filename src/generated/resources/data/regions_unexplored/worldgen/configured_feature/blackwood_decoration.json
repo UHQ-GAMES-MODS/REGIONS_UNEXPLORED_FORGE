@@ -1,0 +1,46 @@
+{
+  "type": "minecraft:simple_block",
+  "config": {
+    "to_place": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "data": {
+            "Name": "regions_unexplored:blue_bioshroom",
+            "Properties": {
+              "stage": "0"
+            }
+          },
+          "weight": 3
+        },
+        {
+          "data": {
+            "Name": "regions_unexplored:pink_bioshroom",
+            "Properties": {
+              "stage": "0"
+            }
+          },
+          "weight": 3
+        },
+        {
+          "data": {
+            "Name": "regions_unexplored:tall_blue_bioshroom",
+            "Properties": {
+              "half": "lower"
+            }
+          },
+          "weight": 1
+        },
+        {
+          "data": {
+            "Name": "regions_unexplored:tall_pink_bioshroom",
+            "Properties": {
+              "half": "lower"
+            }
+          },
+          "weight": 1
+        }
+      ]
+    }
+  }
+}

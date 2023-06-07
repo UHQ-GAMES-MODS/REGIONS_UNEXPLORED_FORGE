@@ -50,7 +50,7 @@ public class BiomeRegistry {
         register(context, RuBiomes.WILLOW_FOREST, ForestBiomes.willowForest(featuresGetter, carversGetter));
         //TAIGA
         //TODO:rename to taigas
-        register(context, RuBiomes.BLACKWOOD_FOREST, TaigaBiomes.blackwoodTaiga(featuresGetter, carversGetter));
+        register(context, RuBiomes.BLACKWOOD_TAIGA, TaigaBiomes.blackwoodTaiga(featuresGetter, carversGetter));
         register(context, RuBiomes.BOREAL_FOREST, TaigaBiomes.borealTaiga(featuresGetter, carversGetter));
         register(context, RuBiomes.GOLDEN_BOREAL_FOREST, TaigaBiomes.goldenBorealTaiga(featuresGetter, carversGetter));
         register(context, RuBiomes.PINE_FOREST, TaigaBiomes.pineTaiga(featuresGetter, carversGetter));
@@ -73,7 +73,7 @@ public class BiomeRegistry {
         register(context, RuBiomes.FEN, WetBiomes.fen(featuresGetter, carversGetter));
         register(context, RuBiomes.FLOODED_PLAINS, WetBiomes.floodedPlains(featuresGetter, carversGetter));
         register(context, RuBiomes.FUNGAL_FEN, WetBiomes.fungalFen(featuresGetter, carversGetter));
-        register(context, RuBiomes.GIANT_BAYOU, WetBiomes.oldGrowthBayou(featuresGetter, carversGetter));
+        register(context, RuBiomes.OLD_GROWTH_BAYOU, WetBiomes.oldGrowthBayou(featuresGetter, carversGetter));
         register(context, RuBiomes.OLD_GROWTH_RAINFOREST, WetBiomes.oldGrowthRainforest(featuresGetter, carversGetter));
         register(context, RuBiomes.RAINFOREST, WetBiomes.rainforest(featuresGetter, carversGetter));
         //ARID
@@ -144,7 +144,7 @@ public class BiomeRegistry {
         registerVillagers(RuBiomes.TEMPERATE_GROVE, VillagerType.PLAINS);
         registerVillagers(RuBiomes.WILLOW_FOREST, VillagerType.PLAINS);
         //TAIGA
-        registerVillagers(RuBiomes.BLACKWOOD_FOREST, VillagerType.PLAINS);
+        registerVillagers(RuBiomes.BLACKWOOD_TAIGA, VillagerType.PLAINS);
         registerVillagers(RuBiomes.BOREAL_FOREST, VillagerType.PLAINS);
         registerVillagers(RuBiomes.GOLDEN_BOREAL_FOREST, VillagerType.PLAINS);
         registerVillagers(RuBiomes.PINE_FOREST, VillagerType.PLAINS);
@@ -166,7 +166,7 @@ public class BiomeRegistry {
         registerVillagers(RuBiomes.FEN, VillagerType.PLAINS);
         registerVillagers(RuBiomes.FLOODED_PLAINS, VillagerType.PLAINS);
         registerVillagers(RuBiomes.FUNGAL_FEN, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.GIANT_BAYOU, VillagerType.PLAINS);
+        registerVillagers(RuBiomes.OLD_GROWTH_BAYOU, VillagerType.PLAINS);
         registerVillagers(RuBiomes.OLD_GROWTH_RAINFOREST, VillagerType.PLAINS);
         registerVillagers(RuBiomes.RAINFOREST, VillagerType.PLAINS);
         //ARID

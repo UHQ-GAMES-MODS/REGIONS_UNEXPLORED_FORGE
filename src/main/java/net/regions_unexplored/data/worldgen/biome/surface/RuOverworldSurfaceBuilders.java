@@ -102,7 +102,7 @@ public class RuOverworldSurfaceBuilders {private static final SurfaceRules.RuleS
                                     SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.yStartCheck(VerticalAnchor.absolute(64), 0)), SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, 0.0D), MUD))),
 
                             //BAYOU
-                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.GIANT_BAYOU),
+                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.OLD_GROWTH_BAYOU),
                                     SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(-0.95D), VANILLA_MUD), SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, 0.0D), VANILLA_MUD))),
 
                             //POPPY_FIELDS
@@ -152,7 +152,7 @@ public class RuOverworldSurfaceBuilders {private static final SurfaceRules.RuleS
                                             SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.yStartCheck(VerticalAnchor.absolute(138), 0)),COARSE_DIRT),
                                             SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.yStartCheck(VerticalAnchor.absolute(142), 0)),
                                                     SurfaceRules.ifTrue(SurfaceRules.noiseCondition(RuNoises.WEIGHTED, 0.05D),COARSE_DIRT)))),
-                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.BLACKWOOD_FOREST, RuBiomes.BOREAL_FOREST, RuBiomes.COLD_BOREAL_FOREST, RuBiomes.GOLDEN_BOREAL_FOREST), FOREST_GRASS_BLOCK),
+                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.BLACKWOOD_TAIGA, RuBiomes.BOREAL_FOREST, RuBiomes.COLD_BOREAL_FOREST, RuBiomes.GOLDEN_BOREAL_FOREST), FOREST_GRASS_BLOCK),
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.TROPICS, RuBiomes.DRY_BUSHLAND, RuBiomes.JOSHUA_DESERT, RuBiomes.BARLEY_FIELDS, RuBiomes.PRAIRIE, RuBiomes.ORCHARD, RuBiomes.STEPPE), PLAINS_GRASS_BLOCK)
                     )))),
 
@@ -179,7 +179,7 @@ public class RuOverworldSurfaceBuilders {private static final SurfaceRules.RuleS
                                     SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, 0.0D), SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR),SANDSTONE))),
 
                             //BAYOU
-                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.GIANT_BAYOU),
+                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.OLD_GROWTH_BAYOU),
                                     SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(-0.95D), SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR),VANILLA_MUD)), SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR),SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.yStartCheck(VerticalAnchor.absolute(64), 0)), SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, 0.0D), VANILLA_MUD))))),
 
                             //TROPICS
@@ -222,7 +222,7 @@ public class RuOverworldSurfaceBuilders {private static final SurfaceRules.RuleS
 
                             //DEFAULT
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.MOUNTAINS), SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR),STONE)),
-                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.BLACKWOOD_FOREST, RuBiomes.BOREAL_FOREST, RuBiomes.COLD_BOREAL_FOREST, RuBiomes.GOLDEN_BOREAL_FOREST), SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR),FOREST_DIRT)),
+                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.BLACKWOOD_TAIGA, RuBiomes.BOREAL_FOREST, RuBiomes.COLD_BOREAL_FOREST, RuBiomes.GOLDEN_BOREAL_FOREST), SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR),FOREST_DIRT)),
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.TROPICS, RuBiomes.DRY_BUSHLAND, RuBiomes.JOSHUA_DESERT, RuBiomes.BARLEY_FIELDS, RuBiomes.PRAIRIE, RuBiomes.ORCHARD, RuBiomes.STEPPE), SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR),PLAINS_DIRT)),
                             SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, false, 0, CaveSurface.FLOOR),SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.waterBlockCheck(-1, 0),GRASS_BLOCK), DIRT)),SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR),DIRT))
                     )),

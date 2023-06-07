@@ -163,19 +163,23 @@ public class BlackwoodTreeFeature extends Feature<RuTreeConfiguration> {
         placeLeavesBlock(level, pos.above().above().east(), randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.above().above().west(), randomSource, treeConfiguration);
 
+        placeLog(level, pos.below().north(), randomSource, treeConfiguration, Direction.Axis.Z);
         placeLog(level, pos.north(), randomSource, treeConfiguration, Direction.Axis.Z);
         placeLog(level, pos.north(2), randomSource, treeConfiguration, Direction.Axis.Z);
         placeLog(level, pos.north(3), randomSource, treeConfiguration, Direction.Axis.Z);
         placeLeavesBlobNorth(level,pos.north(3), randomSource, treeConfiguration);
+        placeLog(level, pos.below().south(), randomSource, treeConfiguration, Direction.Axis.Z);
         placeLog(level, pos.south(), randomSource, treeConfiguration, Direction.Axis.Z);
         placeLog(level, pos.south(2), randomSource, treeConfiguration, Direction.Axis.Z);
         placeLog(level, pos.south(3), randomSource, treeConfiguration, Direction.Axis.Z);
         placeLeavesBlobSouth(level,pos.south(3), randomSource, treeConfiguration);
 
+        placeLog(level, pos.below().east(), randomSource, treeConfiguration, Direction.Axis.X);
         placeLog(level, pos.east(), randomSource, treeConfiguration, Direction.Axis.X);
         placeLog(level, pos.east(2), randomSource, treeConfiguration, Direction.Axis.X);
         placeLog(level, pos.east(3), randomSource, treeConfiguration, Direction.Axis.X);
         placeLeavesBlobEast(level,pos.east(3), randomSource, treeConfiguration);
+        placeLog(level, pos.below().west(), randomSource, treeConfiguration, Direction.Axis.X);
         placeLog(level, pos.west(), randomSource, treeConfiguration, Direction.Axis.X);
         placeLog(level, pos.west(2), randomSource, treeConfiguration, Direction.Axis.X);
         placeLog(level, pos.west(3), randomSource, treeConfiguration, Direction.Axis.X);

@@ -12,7 +12,7 @@ public class CypressTreeGrower extends AbstractTreeGrower {
          return RuTreeFeatures.CYPRESS_TREE;
       }
       else{
-         return RuTreeFeatures.BIG_CYPRESS_TREE;
+         return RuTreeFeatures.GIANT_CYPRESS_TREE;
       }
    }
 }

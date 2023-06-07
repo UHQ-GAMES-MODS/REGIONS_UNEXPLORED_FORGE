@@ -21,9 +21,9 @@ import net.regions_unexplored.world.level.block.plant.aquatic.GiantLilyBlock;
 import net.regions_unexplored.world.level.block.plant.flower.GroundCoverBlock;
 import net.regions_unexplored.world.level.block.plant.food.SalmonBerryBushBlock;
 import net.regions_unexplored.world.level.block.saplinggrowers.*;
-import net.regions_unexplored.world.level.block.log.BambooLogBlock;
-import net.regions_unexplored.world.level.block.log.MagmaLogBlock;
-import net.regions_unexplored.world.level.block.log.StrippedBambooLogBlock;
+import net.regions_unexplored.world.level.block.wood.BambooLogBlock;
+import net.regions_unexplored.world.level.block.wood.MagmaLogBlock;
+import net.regions_unexplored.world.level.block.wood.StrippedBambooLogBlock;
 import net.regions_unexplored.world.level.block.nether.RuNyliumBlock;
 import net.regions_unexplored.world.level.block.other.*;
 import net.regions_unexplored.world.level.block.other_dirt.*;
@@ -110,6 +110,7 @@ public class RuBlocks {
     public static RegistryObject<Block> PINK_SAKURA_FLOWERS;
     public static RegistryObject<Block> WHITE_SAKURA_FLOWERS;
     //TALL_PLANTS
+    public static RegistryObject<Block> MEADOW_SAGE;
     public static RegistryObject<Block> BARLEY;
     public static RegistryObject<Block> CATTAIL;
     public static RegistryObject<Block> TASSEL;
@@ -764,13 +765,13 @@ public class RuBlocks {
         YELLOW_LUPINE = BlockRegistry.registerDefaultBlock("yellow_lupine", () -> new RuFlowerBlock(MobEffects.SATURATION, 4, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
 
         ORANGE_CONEFLOWER = BlockRegistry.registerDefaultBlock("orange_coneflower", () -> new GroundCoverBlock(BlockBehaviour.Properties.of(Material.PLANT).noCollission().sound(SoundType.PINK_PETALS)));
-        //TODO:do datagen
         SAKURA_PETALS = BlockRegistry.registerDefaultBlock("sakura_petals", () -> new GroundCoverBlock(BlockBehaviour.Properties.of(Material.PLANT).noCollission().sound(SoundType.PINK_PETALS)));
 
         RED_SAKURA_FLOWERS = BlockRegistry.registerDefaultBlock("red_sakura_flowers", () -> new GlowLichenBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().strength(0.1F).sound(SoundType.GLOW_LICHEN)));
         PINK_SAKURA_FLOWERS = BlockRegistry.registerDefaultBlock("pink_sakura_flowers", () -> new GlowLichenBlock(BlockBehaviour.Properties.copy(RED_SAKURA_FLOWERS.get())));
         WHITE_SAKURA_FLOWERS = BlockRegistry.registerDefaultBlock("white_sakura_flowers", () -> new GlowLichenBlock(BlockBehaviour.Properties.copy(RED_SAKURA_FLOWERS.get())));
         //TALL_PLANTS
+        MEADOW_SAGE = RegionsUnexploredMod.BLOCK_REGISTRY.register("meadow_sage", () -> new RuDoublePlantBlock(BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ)));
         BARLEY = BlockRegistry.registerDefaultBlock("barley", () -> new RuDoublePlantBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ)));
         CATTAIL = BlockRegistry.registerDefaultBlock("cattail", () -> new CattailBlock(BlockBehaviour.Properties.copy(BARLEY.get())));
         TASSEL = BlockRegistry.registerDefaultBlock("tassel", () -> new RuDoubleFlowerBlock(BlockBehaviour.Properties.copy(BARLEY.get())));
@@ -848,11 +849,11 @@ public class RuBlocks {
         BARREL_CACTUS = BlockRegistry.registerDefaultBlock("barrel_cactus", () -> new BarrelCactusBlock(BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ)));
         CAVE_HYSSOP = BlockRegistry.registerDefaultBlock("cave_hyssop", () -> new CaveFlowerBlock(MobEffects.LUCK, 10, BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ)));
         DUCKWEED = BlockRegistry.registerDuckweedBlock("duckweed", () -> new DuckweedBlock());
-        SPANISH_MOSS = BlockRegistry.registerDefaultBlock("spanish_moss", () -> new SpanishMossBlock(BlockBehaviour.Properties.of(Material.PLANT).randomTicks().noCollission().instabreak().sound(SoundType.AZALEA_LEAVES)));
-        SPANISH_MOSS_PLANT = RegionsUnexploredMod.BLOCK_REGISTRY.register("spanish_moss_plant", () -> new SpanishMossPlantBlock(BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(SoundType.AZALEA_LEAVES)));
+        SPANISH_MOSS = BlockRegistry.registerDefaultBlock("spanish_moss", () -> new SpanishMossBlock(BlockBehaviour.Properties.of(Material.PLANT).randomTicks().noCollission().instabreak().sound(SoundType.LILY_PAD)));
+        SPANISH_MOSS_PLANT = RegionsUnexploredMod.BLOCK_REGISTRY.register("spanish_moss_plant", () -> new SpanishMossPlantBlock(BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(SoundType.LILY_PAD)));
 
-        FLOWERING_LILY_PAD = BlockRegistry.registerLilyBlock("flowering_lily_pad", () -> new FloweringLilyBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).strength(0.2F).sound(SoundType.GLOW_LICHEN).noOcclusion()));
-        GIANT_LILY_PAD = RegionsUnexploredMod.BLOCK_REGISTRY.register("giant_lily_pad", () -> new GiantLilyBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).strength(0.2F).sound(SoundType.GLOW_LICHEN).noOcclusion()));
+        FLOWERING_LILY_PAD = BlockRegistry.registerLilyBlock("flowering_lily_pad", () -> new FloweringLilyBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).strength(0.2F).sound(SoundType.LILY_PAD).noOcclusion()));
+        GIANT_LILY_PAD = RegionsUnexploredMod.BLOCK_REGISTRY.register("giant_lily_pad", () -> new GiantLilyBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).strength(0.2F).sound(SoundType.LILY_PAD).noOcclusion()));
 
         //FOOD_PLANT_BLOCKS
         SALMONBERRY_BUSH = RegionsUnexploredMod.BLOCK_REGISTRY.register("salmonberry_bush", () -> new SalmonBerryBushBlock(BlockBehaviour.Properties.of(Material.PLANT).randomTicks().noCollission().sound(SoundType.SWEET_BERRY_BUSH)));
