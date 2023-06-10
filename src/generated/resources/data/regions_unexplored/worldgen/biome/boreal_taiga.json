@@ -6,11 +6,11 @@
       "minecraft:canyon"
     ]
   },
-  "downfall": 0.3,
+  "downfall": 0.4,
   "effects": {
     "fog_color": 12638463,
-    "foliage_color": 12562512,
-    "grass_color": 10400607,
+    "foliage_color": 8103502,
+    "grass_color": 8957796,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -23,7 +23,7 @@
       "replace_current_music": false,
       "sound": "minecraft:music.overworld.old_growth_taiga"
     },
-    "sky_color": 7972607,
+    "sky_color": 8037887,
     "water_color": 4157364,
     "water_fog_color": 2769769
   },
@@ -83,7 +83,14 @@
       "minecraft:patch_large_fern",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
-      "minecraft:patch_berry_common"
+      "minecraft:patch_berry_common",
+      "regions_unexplored:larch_tree_dense",
+      "regions_unexplored:golden_larch_tree_sparse",
+      "regions_unexplored:birch_tree_aspen",
+      "regions_unexplored:oak_bush_sparse",
+      "regions_unexplored:fallen_larch_tree",
+      "regions_unexplored:grass",
+      "regions_unexplored:larch_shrub"
     ],
     [
       "minecraft:freeze_top_layer"
@@ -207,5 +214,5 @@
     "water_ambient": [],
     "water_creature": []
   },
-  "temperature": 0.45
+  "temperature": 0.5
 }

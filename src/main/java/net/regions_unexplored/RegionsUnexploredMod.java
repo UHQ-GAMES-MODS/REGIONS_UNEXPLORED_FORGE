@@ -119,7 +119,7 @@ public class RegionsUnexploredMod {
 
     private void registerTab(CreativeModeTabEvent.Register event){
         event.registerCreativeModeTab(new ResourceLocation(MOD_ID, "main"), builder -> {
-            builder.icon(() -> new ItemStack(RuBlocks.PRISMARITE_CLUSTER.get())).title(Component.translatable("itemGroup.regions_unexplored_main")).withSearchBar(50).displayItems((featureFlags, output) -> {
+            builder.icon(() -> new ItemStack(RuBlocks.PRISMARITE_CLUSTER.get())).title(Component.translatable("itemGroup.regions_unexplored_main")).hideTitle().withTabsImage(new ResourceLocation(MOD_ID,"textures/gui/container/creative_inventory/tabs.png")).withBackgroundLocation(new ResourceLocation(MOD_ID,"textures/gui/container/creative_inventory/tab_item_search.png")).withSearchBar(58).displayItems((featureFlags, output) -> {
                 output.accept(new ItemStack(RuBlocks.PRISMOSS.get()));
                 output.accept(new ItemStack(RuBlocks.DEEPSLATE_PRISMOSS.get()));
                 output.accept(new ItemStack(RuBlocks.HANGING_PRISMARITE.get()));

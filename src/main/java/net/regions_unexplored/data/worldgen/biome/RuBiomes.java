@@ -21,8 +21,8 @@ public class RuBiomes {
     //TAIGA
     //TODO:rename to taigas
     public static ResourceKey<Biome> BLACKWOOD_TAIGA = createKey("blackwood_taiga");
-    public static ResourceKey<Biome> BOREAL_FOREST = createKey("boreal_forest");
-    public static ResourceKey<Biome> GOLDEN_BOREAL_FOREST = createKey("golden_boreal_forest");
+    public static ResourceKey<Biome> BOREAL_TAIGA = createKey("boreal_taiga");
+    public static ResourceKey<Biome> GOLDEN_BOREAL_TAIGA = createKey("golden_boreal_taiga");
     public static ResourceKey<Biome> PINE_FOREST = createKey("pine_forest");
     public static ResourceKey<Biome> REDWOODS = createKey("redwoods");
     public static ResourceKey<Biome> SPARSE_REDWOODS = createKey("sparse_redwoods");

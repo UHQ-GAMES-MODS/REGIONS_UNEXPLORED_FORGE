@@ -50,12 +50,19 @@ public class GiantLilyBlock extends HorizontalDirectionalBlock implements net.mi
 
     @Override
     public void updateEntityAfterFallOn(BlockGetter blockGetter, Entity entity) {
-        if(entity.getType() != EntityType.FROG) {
-            if (entity.isSuppressingBounce()) {
-                super.updateEntityAfterFallOn(blockGetter, entity);
-            } else {
-                this.bounceUp(entity);
+        Vec3 vec3 = entity.getDeltaMovement();
+        if (vec3.y < -0.7D) {
+            if(entity.getType() != EntityType.FROG) {
+                if (entity.isSuppressingBounce()) {
+                    super.updateEntityAfterFallOn(blockGetter, entity);
+                } else {
+                    this.bounceUp(entity);
+                }
             }
+        }
+        else{
+            entity.setDeltaMovement(entity.getDeltaMovement().multiply(1.0D, 0.0D, 1.0D));
+            entity.setDeltaMovement(entity.getDeltaMovement().multiply(1.0D, 0.0D, 1.0D));
         }
     }
 
@@ -66,19 +73,6 @@ public class GiantLilyBlock extends HorizontalDirectionalBlock implements net.mi
                 double d0 = entity instanceof LivingEntity ? 1.0D : 0.8D;
                 entity.setDeltaMovement(vec3.x, -vec3.y * d0, vec3.z);
             }
-        }
-    }
-
-    @Override
-    public void stepOn(Level level, BlockPos pos, BlockState state, Entity entity) {
-        if(entity.getType() != EntityType.FROG) {
-            double d0 = Math.abs(entity.getDeltaMovement().y);
-            if (d0 < 0.1D && !entity.isSteppingCarefully()) {
-                double d1 = 0.4D + d0 * 0.2D;
-                entity.setDeltaMovement(entity.getDeltaMovement().multiply(d1, 1.0D, d1));
-            }
-
-            super.stepOn(level, pos, state, entity);
         }
     }
 

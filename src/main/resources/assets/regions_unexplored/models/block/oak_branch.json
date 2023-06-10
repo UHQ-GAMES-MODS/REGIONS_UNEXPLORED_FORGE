@@ -1,9 +1,9 @@
 {
   "parent": "regions_unexplored:block/branch",
   "textures": {
-    "cross": "regions_unexplored:block/oak_branch",
-    "cross2": "regions_unexplored:block/oak_branch_2",
-    "particle": "regions_unexplored:block/oak_branch"
+    "log": "block/oak_log",
+    "branch": "regions_unexplored:block/oak_branch",
+    "particle": "block/oak_log"
   },
   "render_type": "cutout"
 }

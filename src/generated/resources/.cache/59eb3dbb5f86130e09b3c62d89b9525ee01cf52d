@@ -1,4 +1,4 @@
-// 1.19.4	2023-06-06T17:25:01.6369781	Loot Tables
+// 1.19.4	2023-06-08T00:29:15.1493481	Loot Tables
 c40c39945b81934eca6ffec8eca8cf5dc6e839bc data/regions_unexplored/loot_tables/blocks/acacia_branch.json
 99511dc6aa6a87b11a6114b9ded41bc99287bf7b data/regions_unexplored/loot_tables/blocks/acacia_shrub.json
 c4aa4fd0a2bc5d7c8f2c93b8062200beed4881cf data/regions_unexplored/loot_tables/blocks/alpha_dandelion.json
@@ -417,6 +417,7 @@ bf1b95a536c425858f8198e4a8b147e7164a397a data/regions_unexplored/loot_tables/blo
 4df0d973da60e4a445e4d7662dd652f058d57900 data/regions_unexplored/loot_tables/blocks/prismarite_cluster.json
 d220c3176287677863b927b3501455a262e1b700 data/regions_unexplored/loot_tables/blocks/prismoss.json
 b03c6648315122aca8fd43728e00c451a3667837 data/regions_unexplored/loot_tables/blocks/prismoss_sprout.json
+6dd49b4788055c3e436262e4f75b1548d414b9bb data/regions_unexplored/loot_tables/blocks/purple_coneflower.json
 7ebf10432c42ff6e762c0464346cad83e98a1ea1 data/regions_unexplored/loot_tables/blocks/purple_lupine.json
 dc0917481ed7d03be49759af7be430cb38b4e09a data/regions_unexplored/loot_tables/blocks/purple_painted_planks.json
 cd9e3f266e17c1fa4e71be8e164f02cad073a677 data/regions_unexplored/loot_tables/blocks/purple_painted_slab.json

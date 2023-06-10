@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_orange_coneflower": {
+    "has_sakura_petals": {
       "conditions": {
         "items": [
           {
             "items": [
-              "regions_unexplored:orange_coneflower"
+              "regions_unexplored:sakura_petals"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "regions_unexplored:pink_dye_from_orange_coneflower"
+        "recipe": "regions_unexplored:pink_dye_from_sakura_petals"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_orange_coneflower",
+      "has_sakura_petals",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "regions_unexplored:pink_dye_from_orange_coneflower"
+      "regions_unexplored:pink_dye_from_sakura_petals"
     ]
   }
 }

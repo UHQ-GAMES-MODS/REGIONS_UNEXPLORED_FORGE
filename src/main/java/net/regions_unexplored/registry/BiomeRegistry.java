@@ -51,8 +51,8 @@ public class BiomeRegistry {
         //TAIGA
         //TODO:rename to taigas
         register(context, RuBiomes.BLACKWOOD_TAIGA, TaigaBiomes.blackwoodTaiga(featuresGetter, carversGetter));
-        register(context, RuBiomes.BOREAL_FOREST, TaigaBiomes.borealTaiga(featuresGetter, carversGetter));
-        register(context, RuBiomes.GOLDEN_BOREAL_FOREST, TaigaBiomes.goldenBorealTaiga(featuresGetter, carversGetter));
+        register(context, RuBiomes.BOREAL_TAIGA, TaigaBiomes.borealTaiga(featuresGetter, carversGetter));
+        register(context, RuBiomes.GOLDEN_BOREAL_TAIGA, TaigaBiomes.goldenBorealTaiga(featuresGetter, carversGetter));
         register(context, RuBiomes.PINE_FOREST, TaigaBiomes.pineTaiga(featuresGetter, carversGetter));
         register(context, RuBiomes.REDWOODS, TaigaBiomes.redwoods(featuresGetter, carversGetter));
         register(context, RuBiomes.SPARSE_REDWOODS, TaigaBiomes.sparseRedwoods(featuresGetter, carversGetter));
@@ -62,7 +62,7 @@ public class BiomeRegistry {
         register(context, RuBiomes.FLOWER_FIELDS, PlainsBiomes.flowerFields(featuresGetter, carversGetter));
         register(context, RuBiomes.GRASSLAND, PlainsBiomes.grassland(featuresGetter, carversGetter));
         register(context, RuBiomes.LUPINE_PLAINS, PlainsBiomes.lupinePlains(featuresGetter, carversGetter));
-        register(context, RuBiomes.MEADOW, PlainsBiomes.meadow(featuresGetter, carversGetter));
+        register(context, RuBiomes.MEADOW, PlainsBiomes.rockyMeadow(featuresGetter, carversGetter));
         register(context, RuBiomes.POPPY_FIELDS, PlainsBiomes.poppyFields(featuresGetter, carversGetter));
         register(context, RuBiomes.PRAIRIE, PlainsBiomes.prairie(featuresGetter, carversGetter));
         register(context, RuBiomes.PUMPKIN_FIELDS, PlainsBiomes.pumpkinFields(featuresGetter, carversGetter));
@@ -145,8 +145,8 @@ public class BiomeRegistry {
         registerVillagers(RuBiomes.WILLOW_FOREST, VillagerType.PLAINS);
         //TAIGA
         registerVillagers(RuBiomes.BLACKWOOD_TAIGA, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.BOREAL_FOREST, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.GOLDEN_BOREAL_FOREST, VillagerType.PLAINS);
+        registerVillagers(RuBiomes.BOREAL_TAIGA, VillagerType.PLAINS);
+        registerVillagers(RuBiomes.GOLDEN_BOREAL_TAIGA, VillagerType.PLAINS);
         registerVillagers(RuBiomes.PINE_FOREST, VillagerType.PLAINS);
         registerVillagers(RuBiomes.REDWOODS, VillagerType.PLAINS);
         registerVillagers(RuBiomes.SPARSE_REDWOODS, VillagerType.PLAINS);

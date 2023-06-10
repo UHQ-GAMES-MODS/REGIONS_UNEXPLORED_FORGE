@@ -323,7 +323,7 @@ public class RuPrimaryRegionConfig {
         MID_COOL_DRY = BUILDER.define("cool_dry", RuBiomes.AUTUMNAL_MAPLE_FOREST.location().toString());
         MID_COOL_NEUTRAL = BUILDER.define("cool_neutral", RuBiomes.MAPLE_FOREST.location().toString());
         MID_COOL_WET = BUILDER.define("cool_wet", RuBiomes.MAPLE_FOREST.location().toString());
-        MID_COOL_HUMID = BUILDER.define("cool_humid", RuBiomes.BOREAL_FOREST.location().toString());
+        MID_COOL_HUMID = BUILDER.define("cool_humid", RuBiomes.BOREAL_TAIGA.location().toString());
         BUILDER.comment("neutral_biomes");
         MID_NEUTRAL_ARID = BUILDER.define("neutral_arid", RuBiomes.ORCHARD.location().toString());
         MID_NEUTRAL_DRY = BUILDER.define("neutral_dry", RuBiomes.SHRUBLAND.location().toString());
@@ -354,8 +354,8 @@ public class RuPrimaryRegionConfig {
         MID_VAR_COOL_ARID = BUILDER.define("cool_arid", RuBiomes.AUTUMNAL_MAPLE_FOREST.location().toString());
         MID_VAR_COOL_DRY = BUILDER.define("cool_dry", RuBiomes.SILVER_BIRCH_FOREST.location().toString());
         MID_VAR_COOL_NEUTRAL = BUILDER.define("cool_neutral", RuBiomes.MAPLE_FOREST.location().toString());
-        MID_VAR_COOL_WET = BUILDER.define("cool_wet", RuBiomes.BOREAL_FOREST.location().toString());
-        MID_VAR_COOL_HUMID = BUILDER.define("cool_humid", RuBiomes.GOLDEN_BOREAL_FOREST.location().toString());
+        MID_VAR_COOL_WET = BUILDER.define("cool_wet", RuBiomes.BOREAL_TAIGA.location().toString());
+        MID_VAR_COOL_HUMID = BUILDER.define("cool_humid", RuBiomes.GOLDEN_BOREAL_TAIGA.location().toString());
         BUILDER.comment("neutral_biomes");
         MID_VAR_NEUTRAL_ARID = BUILDER.define("neutral_arid", RuBiomes.ORCHARD.location().toString());
         MID_VAR_NEUTRAL_DRY = BUILDER.define("neutral_dry", RuBiomes.SHRUBLAND.location().toString());
@@ -387,8 +387,8 @@ public class RuPrimaryRegionConfig {
         PLT_COOL_ARID = BUILDER.define("cool_arid", RuBiomes.AUTUMNAL_MAPLE_FOREST.location().toString());
         PLT_COOL_DRY = BUILDER.define("cool_dry", RuBiomes.AUTUMNAL_MAPLE_FOREST.location().toString());
         PLT_COOL_NEUTRAL = BUILDER.define("cool_neutral", RuBiomes.MAPLE_FOREST.location().toString());
-        PLT_COOL_WET = BUILDER.define("cool_wet", RuBiomes.BOREAL_FOREST.location().toString());
-        PLT_COOL_HUMID = BUILDER.define("cool_humid", RuBiomes.BOREAL_FOREST.location().toString());
+        PLT_COOL_WET = BUILDER.define("cool_wet", RuBiomes.BOREAL_TAIGA.location().toString());
+        PLT_COOL_HUMID = BUILDER.define("cool_humid", RuBiomes.BOREAL_TAIGA.location().toString());
         BUILDER.comment("neutral_biomes");
         PLT_NEUTRAL_ARID = BUILDER.define("neutral_arid", RuBiomes.HIGHLAND_FIELDS.location().toString());
         PLT_NEUTRAL_DRY = BUILDER.define("neutral_dry", RuBiomes.HIGHLAND_FIELDS.location().toString());
@@ -419,8 +419,8 @@ public class RuPrimaryRegionConfig {
         PLT_VAR_COOL_ARID = BUILDER.define("cool_arid", RuBiomes.AUTUMNAL_MAPLE_FOREST.location().toString());
         PLT_VAR_COOL_DRY = BUILDER.define("cool_dry", RuBiomes.SILVER_BIRCH_FOREST.location().toString());
         PLT_VAR_COOL_NEUTRAL = BUILDER.define("cool_neutral", RuBiomes.MAPLE_FOREST.location().toString());
-        PLT_VAR_COOL_WET = BUILDER.define("cool_wet", RuBiomes.BOREAL_FOREST.location().toString());
-        PLT_VAR_COOL_HUMID = BUILDER.define("cool_humid", RuBiomes.GOLDEN_BOREAL_FOREST.location().toString());
+        PLT_VAR_COOL_WET = BUILDER.define("cool_wet", RuBiomes.BOREAL_TAIGA.location().toString());
+        PLT_VAR_COOL_HUMID = BUILDER.define("cool_humid", RuBiomes.GOLDEN_BOREAL_TAIGA.location().toString());
         BUILDER.comment("neutral_biomes");
         PLT_VAR_NEUTRAL_ARID = BUILDER.define("neutral_arid", RuBiomes.HIGHLAND_FIELDS.location().toString());
         PLT_VAR_NEUTRAL_DRY = BUILDER.define("neutral_dry", RuBiomes.HIGHLAND_FIELDS.location().toString());

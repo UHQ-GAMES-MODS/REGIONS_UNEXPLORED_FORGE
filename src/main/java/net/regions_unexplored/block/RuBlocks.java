@@ -104,6 +104,7 @@ public class RuBlocks {
     public static RegistryObject<Block> YELLOW_LUPINE;
 
     public static RegistryObject<Block> ORANGE_CONEFLOWER;
+    public static RegistryObject<Block> PURPLE_CONEFLOWER;
     public static RegistryObject<Block> SAKURA_PETALS;
 
     public static RegistryObject<Block> RED_SAKURA_FLOWERS;
@@ -765,6 +766,7 @@ public class RuBlocks {
         YELLOW_LUPINE = BlockRegistry.registerDefaultBlock("yellow_lupine", () -> new RuFlowerBlock(MobEffects.SATURATION, 4, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
 
         ORANGE_CONEFLOWER = BlockRegistry.registerDefaultBlock("orange_coneflower", () -> new GroundCoverBlock(BlockBehaviour.Properties.of(Material.PLANT).noCollission().sound(SoundType.PINK_PETALS)));
+        PURPLE_CONEFLOWER = BlockRegistry.registerDefaultBlock("purple_coneflower", () -> new GroundCoverBlock(BlockBehaviour.Properties.of(Material.PLANT).noCollission().sound(SoundType.PINK_PETALS)));
         SAKURA_PETALS = BlockRegistry.registerDefaultBlock("sakura_petals", () -> new GroundCoverBlock(BlockBehaviour.Properties.of(Material.PLANT).noCollission().sound(SoundType.PINK_PETALS)));
 
         RED_SAKURA_FLOWERS = BlockRegistry.registerDefaultBlock("red_sakura_flowers", () -> new GlowLichenBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().strength(0.1F).sound(SoundType.GLOW_LICHEN)));

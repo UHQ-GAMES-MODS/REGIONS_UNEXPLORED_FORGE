@@ -47,6 +47,7 @@ public class RuVegetationPlacements {
     public static final ResourceKey<PlacedFeature> MEADOW_SAGE = PlacedFeatureRegistry.createKey("meadow_sage");
 
     public static final ResourceKey<PlacedFeature> ORANGE_CONEFLOWER = PlacedFeatureRegistry.createKey("orange_coneflower");
+    public static final ResourceKey<PlacedFeature> PURPLE_CONEFLOWER = PlacedFeatureRegistry.createKey("purple_coneflower");
     public static final ResourceKey<PlacedFeature> SAKURA_FLOWERS = PlacedFeatureRegistry.createKey("sakura_flowers");
     //MULTIFACE FLOWERS
     public static final ResourceKey<PlacedFeature> RED_SAKURA_FLOWERS = PlacedFeatureRegistry.createKey("red_sakura_flowers");
@@ -138,6 +139,7 @@ public class RuVegetationPlacements {
         final Holder<ConfiguredFeature<?, ?>> MEADOW_SAGE = featureGetter.getOrThrow(RuVegetationFeatures.MEADOW_SAGE);
 
         final Holder<ConfiguredFeature<?, ?>> ORANGE_CONEFLOWER = featureGetter.getOrThrow(RuVegetationFeatures.PATCH_ORANGE_CONEFLOWER);
+        final Holder<ConfiguredFeature<?, ?>> PURPLE_CONEFLOWER = featureGetter.getOrThrow(RuVegetationFeatures.PATCH_PURPLE_CONEFLOWER);
         final Holder<ConfiguredFeature<?, ?>> SAKURA_FLOWERS = featureGetter.getOrThrow(RuVegetationFeatures.PATCH_SAKURA_FLOWERS);
         //MULTIFACE FLOWERS
         final Holder<ConfiguredFeature<?, ?>> RED_SAKURA_FLOWERS = featureGetter.getOrThrow(RuVegetationFeatures.RED_SAKURA_FLOWERS);
@@ -224,6 +226,7 @@ public class RuVegetationPlacements {
         register(context, RuVegetationPlacements.MEADOW_SAGE, MEADOW_SAGE, RarityFilter.onAverageOnceEvery(4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome());
 
         register(context, RuVegetationPlacements.ORANGE_CONEFLOWER, ORANGE_CONEFLOWER, NoiseThresholdCountPlacement.of(-0.8D, 5, 10), RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(context, RuVegetationPlacements.PURPLE_CONEFLOWER, PURPLE_CONEFLOWER, NoiseThresholdCountPlacement.of(-0.8D, 5, 10), RarityFilter.onAverageOnceEvery(12), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         register(context, RuVegetationPlacements.SAKURA_FLOWERS, SAKURA_FLOWERS, NoiseThresholdCountPlacement.of(-0.8D, 5, 10), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         //MULTIFACE FLOWERS
         register(context, RuVegetationPlacements.RED_SAKURA_FLOWERS, RED_SAKURA_FLOWERS, CountPlacement.of(15), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome());
@@ -262,7 +265,7 @@ public class RuVegetationPlacements {
         register(context, RuVegetationPlacements.RED_MAPLE_SHRUB, RED_MAPLE_SHRUB, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome());
         register(context, RuVegetationPlacements.ORANGE_MAPLE_SHRUB, ORANGE_MAPLE_SHRUB, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome());
         register(context, RuVegetationPlacements.MAUVE_SHRUB, MAUVE_SHRUB, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome());
-        register(context, RuVegetationPlacements.OAK_SHRUB, OAK_SHRUB, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome());
+        register(context, RuVegetationPlacements.OAK_SHRUB, OAK_SHRUB, RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome());
         register(context, RuVegetationPlacements.PALM_SHRUB, PALM_SHRUB, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome());
         register(context, RuVegetationPlacements.PINE_SHRUB, PINE_SHRUB, CountPlacement.of(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome());
         register(context, RuVegetationPlacements.REDWOOD_SHRUB, REDWOOD_SHRUB, CountPlacement.of(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome());

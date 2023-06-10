@@ -97,6 +97,7 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         dropSelf(RuBlocks.YELLOW_LUPINE.get());
 
         add(RuBlocks.ORANGE_CONEFLOWER.get(), (block) -> createPetalsDrops(block));
+        add(RuBlocks.PURPLE_CONEFLOWER.get(), (block) -> createPetalsDrops(block));
         add(RuBlocks.SAKURA_PETALS.get(), (block) -> createPetalsDrops(block));
 
         add(RuBlocks.RED_SAKURA_FLOWERS.get(), (block) -> createMultifaceBlockDrops(block, HAS_SHEARS));

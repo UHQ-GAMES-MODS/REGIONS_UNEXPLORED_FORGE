@@ -171,7 +171,7 @@ public class PlainsBiomes {
                 .build();
     }
 
-    public static Biome meadow(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome rockyMeadow(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(0.8F))
                 .fogColor(OVERWORLD_FOG_COLOR)

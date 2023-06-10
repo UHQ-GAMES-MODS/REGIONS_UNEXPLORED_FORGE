@@ -69,6 +69,8 @@ public class RuTreeFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> BIG_BLACKWOOD_TREE = ConfiguredFeatureRegistry.createKey("big_blackwood_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> GIANT_BLACKWOOD_TREE = ConfiguredFeatureRegistry.createKey("giant_blackwood_tree");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BIRCH_TREE_ASPEN = ConfiguredFeatureRegistry.createKey("birch_tree_aspen");
+
     public static final ResourceKey<ConfiguredFeature<?, ?>> TALL_DARK_OAK = ConfiguredFeatureRegistry.createKey("tall_dark_oak");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> SAKURA_TREE = ConfiguredFeatureRegistry.createKey("sakura_tree");
@@ -113,6 +115,7 @@ public class RuTreeFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> MAUVE_OAK = ConfiguredFeatureRegistry.createKey("mauve_oak");
     public static final ResourceKey<ConfiguredFeature<?, ?>> BIG_MAUVE_OAK = ConfiguredFeatureRegistry.createKey("big_mauve_oak");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OAK_TREE_WITH_BRANCH = ConfiguredFeatureRegistry.createKey("oak_tree_with_branch");
     public static final ResourceKey<ConfiguredFeature<?, ?>> OAK_TREE_SHRUB = ConfiguredFeatureRegistry.createKey("oak_tree_shrub");
     public static final ResourceKey<ConfiguredFeature<?, ?>> OAK_BUSH = ConfiguredFeatureRegistry.createKey("oak_bush");
 
@@ -129,8 +132,8 @@ public class RuTreeFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> SAGUARO_CACTUS = ConfiguredFeatureRegistry.createKey("saguaro_cactus");
 
     //DONE
-    public static final ResourceKey<ConfiguredFeature<?, ?>> SILVER_BIRCH = ConfiguredFeatureRegistry.createKey("silver_birch");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> SILVER_BIRCH_TALL = ConfiguredFeatureRegistry.createKey("silver_birch_tall");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SILVER_BIRCH_TREE = ConfiguredFeatureRegistry.createKey("silver_birch_tree");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SILVER_BIRCH_TREE_TALL = ConfiguredFeatureRegistry.createKey("silver_birch_tree_tall");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> SPRUCE_TREE_TALL = ConfiguredFeatureRegistry.createKey("spruce_tree_tall");
 
@@ -169,6 +172,8 @@ public class RuTreeFeatures {
         register(context, BLACKWOOD_TREE, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(RuBlocks.BLACKWOOD_LOG.get().defaultBlockState()), new StraightTrunkPlacer(12, 4, 2), BlockStateProvider.simple(RuBlocks.BLACKWOOD_LEAVES.get().defaultBlockState()), new SpruceFoliagePlacer(UniformInt.of(2, 3), UniformInt.of(2, 2), UniformInt.of(5, 5)), new TwoLayersFeatureSize(2, 0, 2)).ignoreVines().build());
         register(context, BIG_BLACKWOOD_TREE, FeatureRegistry.BLACKWOOD_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.BLACKWOOD_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.BLACKWOOD_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.BLACKWOOD_BRANCH.get().defaultBlockState()), 19, 5));
         register(context, GIANT_BLACKWOOD_TREE, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(RuBlocks.BLACKWOOD_LOG.get().defaultBlockState()), new GiantTrunkPlacer(22, 4, 5), BlockStateProvider.simple(RuBlocks.BLACKWOOD_LEAVES.get().defaultBlockState()), new MegaPineFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0), UniformInt.of(13, 17)), new TwoLayersFeatureSize(1, 1, 2)).build());
+
+        register(context, BIRCH_TREE_ASPEN, FeatureRegistry.ASPEN_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(Blocks.BIRCH_LOG.defaultBlockState()), BlockStateProvider.simple(Blocks.BIRCH_LEAVES.defaultBlockState()), BlockStateProvider.simple(RuBlocks.BIRCH_BRANCH.get().defaultBlockState()), 4, 3));
 
         register(context, TALL_DARK_OAK, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.DARK_OAK_LOG), new DarkOakTrunkPlacer(8, 4, 1), BlockStateProvider.simple(Blocks.DARK_OAK_LEAVES), new DarkOakFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)), new ThreeLayersFeatureSize(1, 1, 0, 1, 2, OptionalInt.empty())).ignoreVines().build());
 
@@ -214,6 +219,7 @@ public class RuTreeFeatures {
         register(context, MAUVE_OAK, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(RuBlocks.MAUVE_LOG.get().defaultBlockState()), new StraightTrunkPlacer(5, 2, 0),BlockStateProvider.simple(RuBlocks.MAUVE_LEAVES.get().defaultBlockState()), new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3), new TwoLayersFeatureSize(1, 0, 1)).decorators(List.of(new BeehiveDecorator(0.25f))).ignoreVines().build());
         register(context, BIG_MAUVE_OAK, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(RuBlocks.MAUVE_LOG.get().defaultBlockState()), new FancyTrunkPlacer(8, 11, 0),BlockStateProvider.simple(RuBlocks.MAUVE_LEAVES.get().defaultBlockState()), new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(4), 4), new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4))).ignoreVines().build());
 
+        register(context, OAK_TREE_WITH_BRANCH, FeatureRegistry.MAPLE_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(Blocks.OAK_LOG.defaultBlockState()), BlockStateProvider.simple(Blocks.OAK_LEAVES.defaultBlockState()), BlockStateProvider.simple(RuBlocks.OAK_BRANCH.get().defaultBlockState()), 6, 4));
         register(context, OAK_TREE_SHRUB, FeatureRegistry.TREE_SHRUB.get(), new RuTreeConfiguration(BlockStateProvider.simple(Blocks.OAK_LOG.defaultBlockState()), BlockStateProvider.simple(Blocks.OAK_LEAVES.defaultBlockState()), BlockStateProvider.simple(RuBlocks.OAK_BRANCH.get().defaultBlockState()), 1, 0));
         register(context, OAK_BUSH, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.OAK_LOG.defaultBlockState()), new StraightTrunkPlacer(1, 0, 0), BlockStateProvider.simple(Blocks.OAK_LEAVES.defaultBlockState()), new BushFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 2), new TwoLayersFeatureSize(0, 0, 0)).build());
 
@@ -228,8 +234,8 @@ public class RuTreeFeatures {
 
         register(context, SAGUARO_CACTUS, FeatureRegistry.SAGUARO_CACTUS.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.SAGUARO_CACTUS.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.CACTUS_FLOWER.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.REDWOOD_BRANCH.get().defaultBlockState()), 7, 2));
 
-        register(context, SILVER_BIRCH, FeatureRegistry.ASPEN_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.SILVER_BIRCH_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.SILVER_BIRCH_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.SILVER_BIRCH_BRANCH.get().defaultBlockState()), 4, 4));
-        register(context, SILVER_BIRCH_TALL, FeatureRegistry.ASPEN_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.SILVER_BIRCH_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.SILVER_BIRCH_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.SILVER_BIRCH_BRANCH.get().defaultBlockState()), 5, 5));
+        register(context, SILVER_BIRCH_TREE, FeatureRegistry.ASPEN_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.SILVER_BIRCH_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.SILVER_BIRCH_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.SILVER_BIRCH_BRANCH.get().defaultBlockState()), 4, 4));
+        register(context, SILVER_BIRCH_TREE_TALL, FeatureRegistry.ASPEN_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.SILVER_BIRCH_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.SILVER_BIRCH_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.SILVER_BIRCH_BRANCH.get().defaultBlockState()), 5, 5));
 
         register(context, SPRUCE_TREE_TALL, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.SPRUCE_LOG.defaultBlockState()), new StraightTrunkPlacer(13, 2, 2), BlockStateProvider.simple(Blocks.SPRUCE_LEAVES.defaultBlockState()), new SpruceFoliagePlacer(UniformInt.of(2, 3), UniformInt.of(2, 2), UniformInt.of(5, 5)), new TwoLayersFeatureSize(2, 0, 2)).ignoreVines().build());
 

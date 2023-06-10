@@ -65,220 +65,338 @@ public class LarchTreeFeature extends Feature<RuTreeConfiguration> {
     }
 
     public void placeTop(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        BlockPos.MutableBlockPos placePos = new BlockPos.MutableBlockPos(pos.getX(),pos.getY()-2,pos.getZ());
+        BlockPos.MutableBlockPos placePos = new BlockPos.MutableBlockPos(pos.getX(),pos.getY()-6,pos.getZ());
         placeLeavesBlobTop(level, pos, randomSource, treeConfiguration);
         placeBranchesShort(level, placePos, randomSource, treeConfiguration);
-        placePos.move(Direction.DOWN);placePos.move(Direction.DOWN);
-        placeBranchesShort(level, placePos, randomSource, treeConfiguration);
         placePos.move(Direction.DOWN);placePos.move(Direction.DOWN);placePos.move(Direction.DOWN);
         placeBranchesLong(level, placePos, randomSource, treeConfiguration);
         placePos.move(Direction.DOWN);placePos.move(Direction.DOWN);placePos.move(Direction.DOWN);
         placeBranchesLong(level, placePos, randomSource, treeConfiguration);
-        if(randomSource.nextInt(2)==0){
-            placePos.move(Direction.DOWN);placePos.move(Direction.DOWN);
+        placePos.move(Direction.DOWN);placePos.move(Direction.DOWN);placePos.move(Direction.DOWN);
+        if(randomSource.nextInt(3)==0){
             placeBranchesLong(level, placePos, randomSource, treeConfiguration);
+            placePos.move(Direction.DOWN);placePos.move(Direction.DOWN);
+            placeBranchesShort(level, placePos, randomSource, treeConfiguration);
+        }
+        else{
+            placePos.move(Direction.UP);
+            placeBranchesShort(level, placePos, randomSource, treeConfiguration);
         }
     }
 
     public void placeBranchesShort(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
         int type = randomSource.nextInt(2);
-        if(type==0){
-            placeLog(level, pos.north(), randomSource, treeConfiguration, Direction.Axis.Z);
-            placeLeavesBlobNorth(level,pos.north(), randomSource, treeConfiguration);
 
-            placeLog(level, pos.south(), randomSource, treeConfiguration, Direction.Axis.Z);
-            placeLeavesBlobSouth(level,pos.south(), randomSource, treeConfiguration);
+        placeLog(level, pos.north(), randomSource, treeConfiguration, Direction.Axis.Z);
+        placeLeavesBlobNorth(level,pos.north(), randomSource, treeConfiguration);
+        placeLog(level, pos.south(), randomSource, treeConfiguration, Direction.Axis.Z);
+        placeLeavesBlobSouth(level,pos.south(), randomSource, treeConfiguration);
 
-            placeLog(level, pos.below().east(), randomSource, treeConfiguration, Direction.Axis.X);
-            placeLeavesBlobEast(level,pos.below().east(), randomSource, treeConfiguration);
-
-            placeLog(level, pos.below().west(), randomSource, treeConfiguration, Direction.Axis.X);
-            placeLeavesBlobWest(level,pos.below().west(), randomSource, treeConfiguration);
-        }
-        else{
-            placeLog(level, pos.below().north(), randomSource, treeConfiguration, Direction.Axis.Z);
-            placeLeavesBlobNorth(level,pos.below().north(), randomSource, treeConfiguration);
-
-            placeLog(level, pos.below().south(), randomSource, treeConfiguration, Direction.Axis.Z);
-            placeLeavesBlobSouth(level,pos.below().south(), randomSource, treeConfiguration);
-
-            placeLog(level, pos.east(), randomSource, treeConfiguration, Direction.Axis.X);
-            placeLeavesBlobEast(level,pos.east(), randomSource, treeConfiguration);
-
-            placeLog(level, pos.west(), randomSource, treeConfiguration, Direction.Axis.X);
-            placeLeavesBlobWest(level,pos.west(), randomSource, treeConfiguration);
-        }
+        placeLog(level, pos.east(), randomSource, treeConfiguration, Direction.Axis.X);
+        placeLeavesBlobEast(level,pos.east(), randomSource, treeConfiguration);
+        placeLog(level, pos.west(), randomSource, treeConfiguration, Direction.Axis.X);
+        placeLeavesBlobWest(level,pos.west(), randomSource, treeConfiguration);
     }
-
     public void placeBranchesLong(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
         int type = randomSource.nextInt(2);
-        if(type==0){
-            placeLog(level, pos.north(), randomSource, treeConfiguration, Direction.Axis.Z);
-            placeLog(level, pos.below().north().north(), randomSource, treeConfiguration, Direction.Axis.Z);
-            placeLeavesBlobNorth(level,pos.below().north().north(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.north(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.north().east(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.north().west(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.south(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.south().east(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.south().west(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.east(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.west(), randomSource, treeConfiguration);
 
-            placeLog(level, pos.south(), randomSource, treeConfiguration, Direction.Axis.Z);
-            placeLog(level, pos.below().south().south(), randomSource, treeConfiguration, Direction.Axis.Z);
-            placeLeavesBlobSouth(level,pos.below().south().south(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().north(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().north().east(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().north().west(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().south(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().south().east(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().south().west(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().east(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().west(), randomSource, treeConfiguration);
 
-            placeLog(level, pos.below().east(), randomSource, treeConfiguration, Direction.Axis.X);
-            placeLog(level, pos.below().below().east().east(), randomSource, treeConfiguration, Direction.Axis.X);
-            placeLeavesBlobEast(level,pos.below().below().east().east(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().above().north(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().above().north().east(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().above().north().west(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().above().south(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().above().south().east(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().above().south().west(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().above().east(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().above().west(), randomSource, treeConfiguration);
 
-            placeLog(level, pos.below().west(), randomSource, treeConfiguration, Direction.Axis.X);
-            placeLog(level, pos.below().below().west().west(), randomSource, treeConfiguration, Direction.Axis.X);
-            placeLeavesBlobWest(level,pos.below().below().west().west(), randomSource, treeConfiguration);
-        }
-        else{
-            placeLog(level, pos.below().north(), randomSource, treeConfiguration, Direction.Axis.Z);
-            placeLog(level, pos.below().below().north().north(), randomSource, treeConfiguration, Direction.Axis.Z);
-            placeLeavesBlobNorth(level,pos.below().below().north().north(), randomSource, treeConfiguration);
+        placeLog(level, pos.north().below(), randomSource, treeConfiguration, Direction.Axis.Z);
+        placeLog(level, pos.north(), randomSource, treeConfiguration, Direction.Axis.Z);
+        placeLog(level, pos.north(2), randomSource, treeConfiguration, Direction.Axis.Z);
+        placeLeavesBlobNorth(level,pos.north(2), randomSource, treeConfiguration);
+        placeLog(level, pos.south().below(), randomSource, treeConfiguration, Direction.Axis.Z);
+        placeLog(level, pos.south(), randomSource, treeConfiguration, Direction.Axis.Z);
+        placeLog(level, pos.south(2), randomSource, treeConfiguration, Direction.Axis.Z);
+        placeLeavesBlobSouth(level,pos.south(2), randomSource, treeConfiguration);
 
-            placeLog(level, pos.below().south(), randomSource, treeConfiguration, Direction.Axis.Z);
-            placeLog(level, pos.below().below().south().south(), randomSource, treeConfiguration, Direction.Axis.Z);
-            placeLeavesBlobSouth(level,pos.below().below().south().south(), randomSource, treeConfiguration);
+        placeLog(level, pos.east().below(), randomSource, treeConfiguration, Direction.Axis.X);
+        placeLog(level, pos.east(), randomSource, treeConfiguration, Direction.Axis.X);
+        placeLog(level, pos.east(2), randomSource, treeConfiguration, Direction.Axis.X);
+        placeLeavesBlobEast(level,pos.east(2), randomSource, treeConfiguration);
+        placeLog(level, pos.west().below(), randomSource, treeConfiguration, Direction.Axis.X);
+        placeLog(level, pos.west(), randomSource, treeConfiguration, Direction.Axis.X);
+        placeLog(level, pos.west(2), randomSource, treeConfiguration, Direction.Axis.X);
+        placeLeavesBlobWest(level,pos.west(2), randomSource, treeConfiguration);
+    }
+    public void placeBranchesXLong(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
+        int type = randomSource.nextInt(2);
+        placeLeavesBlock(level, pos.north(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.north().east(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.north().west(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.south(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.south().east(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.south().west(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.east(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.west(), randomSource, treeConfiguration);
 
-            placeLog(level, pos.east(), randomSource, treeConfiguration, Direction.Axis.X);
-            placeLog(level, pos.below().east().east(), randomSource, treeConfiguration, Direction.Axis.X);
-            placeLeavesBlobEast(level,pos.below().east().east(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().north(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().north().east(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().north().west(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().south(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().south().east(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().south().west(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().east(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().west(), randomSource, treeConfiguration);
 
-            placeLog(level, pos.west(), randomSource, treeConfiguration, Direction.Axis.X);
-            placeLog(level, pos.below().west().west(), randomSource, treeConfiguration, Direction.Axis.X);
-            placeLeavesBlobWest(level,pos.below().west().west(), randomSource, treeConfiguration);
-        }
+        placeLeavesBlock(level, pos.above().above().north(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().above().north().east(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().above().north().west(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().above().south(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().above().south().east(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().above().south().west(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().above().east(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().above().west(), randomSource, treeConfiguration);
+
+        placeLog(level, pos.below().north(), randomSource, treeConfiguration, Direction.Axis.Z);
+        placeLog(level, pos.north(), randomSource, treeConfiguration, Direction.Axis.Z);
+        placeLog(level, pos.north(2), randomSource, treeConfiguration, Direction.Axis.Z);
+        placeLog(level, pos.north(3), randomSource, treeConfiguration, Direction.Axis.Z);
+        placeLeavesBlobNorth(level,pos.north(3), randomSource, treeConfiguration);
+        placeLog(level, pos.below().south(), randomSource, treeConfiguration, Direction.Axis.Z);
+        placeLog(level, pos.south(), randomSource, treeConfiguration, Direction.Axis.Z);
+        placeLog(level, pos.south(2), randomSource, treeConfiguration, Direction.Axis.Z);
+        placeLog(level, pos.south(3), randomSource, treeConfiguration, Direction.Axis.Z);
+        placeLeavesBlobSouth(level,pos.south(3), randomSource, treeConfiguration);
+
+        placeLog(level, pos.below().east(), randomSource, treeConfiguration, Direction.Axis.X);
+        placeLog(level, pos.east(), randomSource, treeConfiguration, Direction.Axis.X);
+        placeLog(level, pos.east(2), randomSource, treeConfiguration, Direction.Axis.X);
+        placeLog(level, pos.east(3), randomSource, treeConfiguration, Direction.Axis.X);
+        placeLeavesBlobEast(level,pos.east(3), randomSource, treeConfiguration);
+        placeLog(level, pos.below().west(), randomSource, treeConfiguration, Direction.Axis.X);
+        placeLog(level, pos.west(), randomSource, treeConfiguration, Direction.Axis.X);
+        placeLog(level, pos.west(2), randomSource, treeConfiguration, Direction.Axis.X);
+        placeLog(level, pos.west(3), randomSource, treeConfiguration, Direction.Axis.X);
+        placeLeavesBlobWest(level,pos.west(3), randomSource, treeConfiguration);
     }
 
     public boolean placeLeavesBlobTop(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
         Random random = new Random();
-        int n = random.nextInt(3);
+        BlockPos pos2 = pos.below(3);
+        int top = random.nextInt(2);
 
-        placeLeavesBlock(level, pos, randomSource, treeConfiguration);
 
-        placeLeavesBlock(level, pos, randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.north(), randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.south(), randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.east(), randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.west(), randomSource, treeConfiguration);
+        if(top==0){
+            placeLeavesBlock(level, pos, randomSource, treeConfiguration);
+            placeLeavesBlock(level, pos.north(), randomSource, treeConfiguration);
+            placeLeavesBlock(level, pos.south(), randomSource, treeConfiguration);
+            placeLeavesBlock(level, pos.east(), randomSource, treeConfiguration);
+            placeLeavesBlock(level, pos.west(), randomSource, treeConfiguration);
+            placeLeavesBlock(level, pos.above(), randomSource, treeConfiguration);
+            placeLeavesBlock(level, pos.above(2), randomSource, treeConfiguration);
 
-        placeLeavesBlock(level, pos.north().east(), randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.north().west(), randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.south().east(), randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.south().west(), randomSource, treeConfiguration);
-
-        placeLeavesBlock(level, pos.above(), randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.above().north(), randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.above().south(), randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.above().east(), randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.above().west(), randomSource, treeConfiguration);
-        if(randomSource.nextInt(3)==0) {
-            placeLeavesBlock(level, pos.above().north().east(), randomSource, treeConfiguration);
+            placeLeavesBlock(level, pos.below(2).north(), randomSource, treeConfiguration);
+            placeLeavesBlock(level, pos.below(2).south(), randomSource, treeConfiguration);
+            placeLeavesBlock(level, pos.below(2).east(), randomSource, treeConfiguration);
+            placeLeavesBlock(level, pos.below(2).west(), randomSource, treeConfiguration);
         }
-        if(randomSource.nextInt(3)==0) {
-            placeLeavesBlock(level, pos.above().north().west(), randomSource, treeConfiguration);
-        }
-        if(randomSource.nextInt(3)==0) {
-            placeLeavesBlock(level, pos.above().south().east(), randomSource, treeConfiguration);
-        }
-        if(randomSource.nextInt(3)==0) {
-            placeLeavesBlock(level, pos.above().south().west(), randomSource, treeConfiguration);
+        else{
+            placeLeavesBlock(level, pos.above(), randomSource, treeConfiguration);
+            placeLeavesBlock(level, pos.above().north(), randomSource, treeConfiguration);
+            placeLeavesBlock(level, pos.above().south(), randomSource, treeConfiguration);
+            placeLeavesBlock(level, pos.above().east(), randomSource, treeConfiguration);
+            placeLeavesBlock(level, pos.above().west(), randomSource, treeConfiguration);
+            placeLeavesBlock(level, pos.above(2), randomSource, treeConfiguration);
+            placeLeavesBlock(level, pos.above(3), randomSource, treeConfiguration);
+
+            placeLeavesBlock(level, pos.below().north(), randomSource, treeConfiguration);
+            placeLeavesBlock(level, pos.below().south(), randomSource, treeConfiguration);
+            placeLeavesBlock(level, pos.below().east(), randomSource, treeConfiguration);
+            placeLeavesBlock(level, pos.below().west(), randomSource, treeConfiguration);
+
+            placeLeavesBlock(level, pos.below(2).north(), randomSource, treeConfiguration);
+            placeLeavesBlock(level, pos.below(2).south(), randomSource, treeConfiguration);
+            placeLeavesBlock(level, pos.below(2).east(), randomSource, treeConfiguration);
+            placeLeavesBlock(level, pos.below(2).west(), randomSource, treeConfiguration);
         }
 
-        placeLeavesBlock(level, pos.above().above(), randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.above().above().north(), randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.above().above().south(), randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.above().above().east(), randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.above().above().west(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos2, randomSource, treeConfiguration);
+        placeLog(level, pos2.north(), randomSource, treeConfiguration, Direction.Axis.Z);
+        placeLog(level, pos2.south(), randomSource, treeConfiguration, Direction.Axis.Z);
+        placeLog(level, pos2.east(), randomSource, treeConfiguration, Direction.Axis.X);
+        placeLog(level, pos2.west(), randomSource, treeConfiguration, Direction.Axis.X);
+        placeLeavesBlock(level, pos2.north().east(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos2.north().west(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos2.south().east(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos2.south().west(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos2.north(2), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos2.north(2).east(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos2.north(2).west(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos2.south(2), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos2.south(2).east(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos2.south(2).west(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos2.east(2), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos2.east(2).north(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos2.east(2).south(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos2.west(2), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos2.west(2).north(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos2.west(2).south(), randomSource, treeConfiguration);
 
-        placeLeavesBlock(level, pos.above().above().above(), randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.above().above().above().above(), randomSource, treeConfiguration);
         return true;
     }
+
     public boolean placeLeavesBlobNorth(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
         Random random = new Random();
         int n = random.nextInt(3);
 
+        placeLeavesBlock(level, pos.south(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.south().east(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.south().west(), randomSource, treeConfiguration);
+
         placeLeavesBlock(level, pos, randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.north(), randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.east(), randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.west(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.east(2), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.west(2), randomSource, treeConfiguration);
+
+        placeLeavesBlock(level, pos.north(), randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.north().east(), randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.north().west(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.north().east(2), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.north().west(2), randomSource, treeConfiguration);
+
+        placeLeavesBlock(level, pos.north(2), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.north(2).east(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.north(2).west(), randomSource, treeConfiguration);
 
         placeLeavesBlock(level, pos.above(), randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.above().north(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above(2), randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.above().east(), randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.above().west(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().north(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().north().east(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().north().west(), randomSource, treeConfiguration);
 
-        placeLeavesBlock(level, pos.above().above().south(), randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.above().above(), randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.above().above().south().east(), randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.above().above().south().west(), randomSource, treeConfiguration);
+
+
         return true;
     }
     public boolean placeLeavesBlobSouth(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
         Random random = new Random();
         int n = random.nextInt(3);
 
+        placeLeavesBlock(level, pos.north(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.north().east(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.north().west(), randomSource, treeConfiguration);
+
         placeLeavesBlock(level, pos, randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.south(), randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.east(), randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.west(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.east(2), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.west(2), randomSource, treeConfiguration);
+
+        placeLeavesBlock(level, pos.south(), randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.south().east(), randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.south().west(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.south().east(2), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.south().west(2), randomSource, treeConfiguration);
+
+        placeLeavesBlock(level, pos.south(2), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.south(2).east(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.south(2).west(), randomSource, treeConfiguration);
 
         placeLeavesBlock(level, pos.above(), randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.above().south(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above(2), randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.above().east(), randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.above().west(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().south(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().south().east(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().south().west(), randomSource, treeConfiguration);
 
-        placeLeavesBlock(level, pos.above().above().north(), randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.above().above(), randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.above().above().north().east(), randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.above().above().north().west(), randomSource, treeConfiguration);
         return true;
     }
     public boolean placeLeavesBlobEast(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
         Random random = new Random();
         int n = random.nextInt(3);
 
+        placeLeavesBlock(level, pos.west(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.west().north(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.west().south(), randomSource, treeConfiguration);
+
         placeLeavesBlock(level, pos, randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.east(), randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.north(), randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.south(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.north(2), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.south(2), randomSource, treeConfiguration);
+
+        placeLeavesBlock(level, pos.east(), randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.east().north(), randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.east().south(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.east().north(2), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.east().south(2), randomSource, treeConfiguration);
+
+        placeLeavesBlock(level, pos.east(2), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.east(2).north(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.east(2).south(), randomSource, treeConfiguration);
 
         placeLeavesBlock(level, pos.above(), randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.above().east(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above(2), randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.above().north(), randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.above().south(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().east(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().east().north(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().east().south(), randomSource, treeConfiguration);
 
-        placeLeavesBlock(level, pos.above().above().west(), randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.above().above(), randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.above().above().west().north(), randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.above().above().west().south(), randomSource, treeConfiguration);
         return true;
     }
     public boolean placeLeavesBlobWest(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
         Random random = new Random();
         int n = random.nextInt(3);
 
+        placeLeavesBlock(level, pos.east(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.east().north(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.east().south(), randomSource, treeConfiguration);
+
         placeLeavesBlock(level, pos, randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.west(), randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.north(), randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.south(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.north(2), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.south(2), randomSource, treeConfiguration);
+
+        placeLeavesBlock(level, pos.west(), randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.west().north(), randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.west().south(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.west().north(2), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.west().south(2), randomSource, treeConfiguration);
+
+        placeLeavesBlock(level, pos.west(2), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.west(2).north(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.west(2).south(), randomSource, treeConfiguration);
 
         placeLeavesBlock(level, pos.above(), randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.above().west(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above(2), randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.above().north(), randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.above().south(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().west(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().west().north(), randomSource, treeConfiguration);
+        placeLeavesBlock(level, pos.above().west().south(), randomSource, treeConfiguration);
 
-        placeLeavesBlock(level, pos.above().above().east(), randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.above().above(), randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.above().above().east().north(), randomSource, treeConfiguration);
-        placeLeavesBlock(level, pos.above().above().east().south(), randomSource, treeConfiguration);
         return true;
     }
 

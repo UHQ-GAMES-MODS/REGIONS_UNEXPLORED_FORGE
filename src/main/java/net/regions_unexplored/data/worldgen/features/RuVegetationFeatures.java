@@ -69,6 +69,7 @@ public class RuVegetationFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> MEADOW_SAGE = ConfiguredFeatureRegistry.createKey("meadow_sage");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_ORANGE_CONEFLOWER = ConfiguredFeatureRegistry.createKey("patch_orange_coneflower");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_PURPLE_CONEFLOWER = ConfiguredFeatureRegistry.createKey("patch_purple_coneflower");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_SAKURA_FLOWERS = ConfiguredFeatureRegistry.createKey("patch_sakura_flowers");
     //MULTIFACE FLOWERS
     public static final ResourceKey<ConfiguredFeature<?, ?>> RED_SAKURA_FLOWERS = ConfiguredFeatureRegistry.createKey("red_sakura_flowers");
@@ -130,11 +131,13 @@ public class RuVegetationFeatures {
         HolderGetter<ConfiguredFeature<?, ?>> holderGetter = context.lookup(Registries.CONFIGURED_FEATURE);
         //Petal-Like Builders
         SimpleWeightedRandomList.Builder<BlockState> orangeConeflowerBuilder = SimpleWeightedRandomList.builder();
+        SimpleWeightedRandomList.Builder<BlockState> purpleConeflowerBuilder = SimpleWeightedRandomList.builder();
         SimpleWeightedRandomList.Builder<BlockState> sakuraFlowerBuilder = SimpleWeightedRandomList.builder();
 
         for(int i = 1; i <= 4; ++i) {
             for(Direction direction : Direction.Plane.HORIZONTAL) {
                 orangeConeflowerBuilder.add(RuBlocks.ORANGE_CONEFLOWER.get().defaultBlockState().setValue(GroundCoverBlock.AMOUNT, Integer.valueOf(i)).setValue(GroundCoverBlock.FACING, direction), 1);
+                purpleConeflowerBuilder.add(RuBlocks.PURPLE_CONEFLOWER.get().defaultBlockState().setValue(GroundCoverBlock.AMOUNT, Integer.valueOf(i)).setValue(GroundCoverBlock.FACING, direction), 1);
                 sakuraFlowerBuilder.add(RuBlocks.SAKURA_PETALS.get().defaultBlockState().setValue(GroundCoverBlock.AMOUNT, Integer.valueOf(i)).setValue(GroundCoverBlock.FACING, direction), 1);
             }
         }
@@ -167,6 +170,7 @@ public class RuVegetationFeatures {
         register(context, MEADOW_SAGE, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(RuBlocks.MEADOW_SAGE.get())));
         
         register(context, PATCH_ORANGE_CONEFLOWER, Feature.FLOWER, new RandomPatchConfiguration(96, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(orangeConeflowerBuilder)))));
+        register(context, PATCH_PURPLE_CONEFLOWER, Feature.FLOWER, new RandomPatchConfiguration(96, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(purpleConeflowerBuilder)))));
         register(context, PATCH_SAKURA_FLOWERS, Feature.FLOWER, new RandomPatchConfiguration(96, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(sakuraFlowerBuilder)))));
 
         //MULTIFACE FLOWERS
