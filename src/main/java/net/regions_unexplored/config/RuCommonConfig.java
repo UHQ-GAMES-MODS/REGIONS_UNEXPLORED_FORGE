@@ -7,6 +7,13 @@ public class RuCommonConfig {
     public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
     public static final ForgeConfigSpec SPEC;
 
+    public static final ForgeConfigSpec.ConfigValue<Boolean> TOGGLE_MAUVE_LEAVES_PARTICLE;
+    public static final ForgeConfigSpec.ConfigValue<Boolean> TOGGLE_RED_SAKURA_LEAVES_PARTICLE;
+    public static final ForgeConfigSpec.ConfigValue<Boolean> TOGGLE_PINK_SAKURA_LEAVES_PARTICLE;
+    public static final ForgeConfigSpec.ConfigValue<Boolean> TOGGLE_WHITE_SAKURA_LEAVES_PARTICLE;
+    public static final ForgeConfigSpec.ConfigValue<Boolean> TOGGLE_RED_MAPLE_LEAVES_PARTICLE;
+    public static final ForgeConfigSpec.ConfigValue<Boolean> TOGGLE_ORANGE_MAPLE_LEAVES_PARTICLE;
+    public static final ForgeConfigSpec.ConfigValue<Boolean> TOGGLE_SILVER_BIRCH_LEAVES_PARTICLE;
 
     public static final ForgeConfigSpec.DoubleValue EUCALYPTUS_TRANSITION_SIZE;
     public static final ForgeConfigSpec.ConfigValue<Double> EUCALYPTUS_SATURATION;
@@ -18,6 +25,7 @@ public class RuCommonConfig {
 
     public static final ForgeConfigSpec.ConfigValue<Integer> REGION_PRIMARY_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> REGION_SECONDARY_WEIGHT;
+    public static final ForgeConfigSpec.ConfigValue<Integer> REGION_RARE_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> REGION_NETHER_WEIGHT;
 
     public static final ForgeConfigSpec.ConfigValue<Boolean> TOGGLE_REDSTONE_CAVES;
@@ -105,6 +113,9 @@ public class RuCommonConfig {
 
         REGION_SECONDARY_WEIGHT = BUILDER.comment("Sets Terrablender region weight for the secondary region.")
                 .defineInRange("secondary_region_weight", 8, 0, 2147483646);
+
+        REGION_RARE_WEIGHT = BUILDER.comment("Sets Terrablender region weight for the rare region.")
+                .defineInRange("rare_region_weight", 1, 0, 2147483646);
 
         REGION_NETHER_WEIGHT = BUILDER.comment("Sets Terrablender region weight for Nether region.")
                 .defineInRange("nether_region_weight", 14, 0, 2147483646);
@@ -197,7 +208,14 @@ public class RuCommonConfig {
 
         BUILDER.pop();
         //
-        BUILDER.push("block_color_options");
+        BUILDER.push("client_options");
+        TOGGLE_MAUVE_LEAVES_PARTICLE = BUILDER.define("toggle_mauve_leaves_particles", true);
+        TOGGLE_RED_SAKURA_LEAVES_PARTICLE = BUILDER.define("toggle_red_sakura_leaves_particles", true);
+        TOGGLE_PINK_SAKURA_LEAVES_PARTICLE = BUILDER.define("toggle_pink_sakura_leaves_particles", true);
+        TOGGLE_WHITE_SAKURA_LEAVES_PARTICLE = BUILDER.define("toggle_white_sakura_leaves_particles", true);
+        TOGGLE_RED_MAPLE_LEAVES_PARTICLE = BUILDER.define("toggle_red_maple_leaves_particles", true);
+        TOGGLE_ORANGE_MAPLE_LEAVES_PARTICLE = BUILDER.define("toggle_orange_maple_leaves_particles", true);
+        TOGGLE_SILVER_BIRCH_LEAVES_PARTICLE = BUILDER.define("toggle_silver_birch_leaves_particles", true);
 
         BUILDER.comment("block_color_options");
         EUCALYPTUS_TRANSITION_SIZE = BUILDER.comment("Sets Eucalyptus colour transition size. Bigger number = bigger distance between colours.")

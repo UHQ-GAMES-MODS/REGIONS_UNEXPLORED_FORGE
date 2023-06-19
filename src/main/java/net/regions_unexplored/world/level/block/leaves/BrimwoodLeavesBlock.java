@@ -6,12 +6,11 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.material.MaterialColor;
+import net.minecraft.world.level.material.MapColor;
 
 public class BrimwoodLeavesBlock extends LeavesBlock {
-    public BrimwoodLeavesBlock(MaterialColor colour) {
-        super(Properties.of(Material.LEAVES, colour).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(BrimwoodLeavesBlock::ocelotOrParrot).isSuffocating(BrimwoodLeavesBlock::never).isViewBlocking(BrimwoodLeavesBlock::never));
+    public BrimwoodLeavesBlock(MapColor colour) {
+        super(Properties.of().mapColor(colour).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(BrimwoodLeavesBlock::ocelotOrParrot).isSuffocating(BrimwoodLeavesBlock::never).isViewBlocking(BrimwoodLeavesBlock::never));
     }
 
     @Override

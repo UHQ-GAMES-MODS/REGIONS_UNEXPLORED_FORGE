@@ -30,5 +30,6 @@
     "recipes": [
       "regions_unexplored:bone_meal_from_marrowstone"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -30,5 +30,6 @@
     "recipes": [
       "regions_unexplored:blackwood_slab"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

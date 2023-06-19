@@ -30,5 +30,6 @@
     "recipes": [
       "regions_unexplored:blackwood_sapling_from_blackwood_shrub"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

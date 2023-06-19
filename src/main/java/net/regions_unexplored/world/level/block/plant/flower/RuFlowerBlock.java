@@ -49,14 +49,4 @@ public class RuFlowerBlock extends FlowerBlock {
             return SHAPE.move(vec3.x, vec3.y, vec3.z);
         }
     }
-
-    @Override
-    public boolean canBeReplaced(BlockState state, BlockPlaceContext context) {
-        return false;
-    }
-
-    @Override
-    public PushReaction getPistonPushReaction(BlockState state) {
-        return PushReaction.DESTROY;
-    }
 }

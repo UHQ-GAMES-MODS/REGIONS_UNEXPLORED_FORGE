@@ -6,6 +6,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
@@ -33,6 +34,9 @@ public class RuItemTagProvider extends ItemTagsProvider {
         //this.tag(ItemTags.ARROWS);
         //this.tag(ItemTags.AXES);
         //this.tag(ItemTags.AXOLOTL_TEMPT_ITEMS);
+        this.tag(ItemTags.BAMBOO_BLOCKS)
+                .addTags(RuTags.BAMBOO_LOGS_ITEM)
+        ;
         //this.tag(ItemTags.BANNERS);
         //this.tag(ItemTags.BEACON_PAYMENT_ITEMS);
         //this.tag(ItemTags.BEDS);
@@ -92,18 +96,20 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.DEEPSLATE_GRASS_BLOCK.get().asItem())
                 .add(RuBlocks.DEEPSLATE_PRISMOSS.get().asItem())
                 .add(RuBlocks.DEEPSLATE_VIRIDESCENT_NYLIUM.get().asItem())
-                .add(RuBlocks.FOREST_COARSE_DIRT.get().asItem())
-                .add(RuBlocks.FOREST_DIRT.get().asItem())
-                .add(RuBlocks.FOREST_DIRT_PATH.get().asItem())
-                .add(RuBlocks.FOREST_FARMLAND.get().asItem())
-                .add(RuBlocks.FOREST_GRASS_BLOCK.get().asItem())
-                .add(RuBlocks.FOREST_MUD.get().asItem())
-                .add(RuBlocks.PLAINS_COARSE_DIRT.get().asItem())
-                .add(RuBlocks.PLAINS_DIRT.get().asItem())
-                .add(RuBlocks.PLAINS_DIRT_PATH.get().asItem())
-                .add(RuBlocks.PLAINS_FARMLAND.get().asItem())
-                .add(RuBlocks.PLAINS_GRASS_BLOCK.get().asItem())
-                .add(RuBlocks.PLAINS_MUD.get().asItem())
+                .add(RuBlocks.PEAT_COARSE_DIRT.get().asItem())
+                .add(RuBlocks.PEAT_PODZOL.get().asItem())
+                .add(RuBlocks.PEAT_DIRT.get().asItem())
+                .add(RuBlocks.PEAT_DIRT_PATH.get().asItem())
+                .add(RuBlocks.PEAT_FARMLAND.get().asItem())
+                .add(RuBlocks.PEAT_GRASS_BLOCK.get().asItem())
+                .add(RuBlocks.PEAT_MUD.get().asItem())
+                .add(RuBlocks.SILT_COARSE_DIRT.get().asItem())
+                .add(RuBlocks.SILT_PODZOL.get().asItem())
+                .add(RuBlocks.SILT_DIRT.get().asItem())
+                .add(RuBlocks.SILT_DIRT_PATH.get().asItem())
+                .add(RuBlocks.SILT_FARMLAND.get().asItem())
+                .add(RuBlocks.SILT_GRASS_BLOCK.get().asItem())
+                .add(RuBlocks.SILT_MUD.get().asItem())
                 .add(RuBlocks.PRISMOSS.get().asItem())
                 .add(RuBlocks.STONE_GRASS_BLOCK.get().asItem())
                 .add(RuBlocks.VIRIDESCENT_NYLIUM.get().asItem())

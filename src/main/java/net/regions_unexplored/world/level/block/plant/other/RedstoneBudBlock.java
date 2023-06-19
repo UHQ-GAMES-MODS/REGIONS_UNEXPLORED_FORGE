@@ -23,11 +23,6 @@ public class RedstoneBudBlock extends BushBlock {
     }
 
     @Override
-    public PushReaction getPistonPushReaction(BlockState state) {
-        return PushReaction.DESTROY;
-    }
-
-    @Override
     public boolean canBeReplaced(BlockState state, BlockPlaceContext context) {
         return false;
     }

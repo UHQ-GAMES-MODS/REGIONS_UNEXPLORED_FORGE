@@ -17,11 +17,6 @@ public class RuSandyDoublePlantBlock extends DoublePlantBlock {
     }
 
     @Override
-    public PushReaction getPistonPushReaction(BlockState state) {
-        return PushReaction.DESTROY;
-    }
-
-    @Override
     public boolean mayPlaceOn(BlockState state, BlockGetter getter, BlockPos pos) {
         return state.is(RuTags.SANDY_PLANT_CAN_SURVIVE_ON);
     }

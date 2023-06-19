@@ -24,5 +24,6 @@
     "recipes": [
       "regions_unexplored:blackwood_boat"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

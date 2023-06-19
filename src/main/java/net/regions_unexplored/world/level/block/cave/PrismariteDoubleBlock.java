@@ -25,10 +25,5 @@ public class PrismariteDoubleBlock extends DoublePlantBlock {
     public PlantType getPlantType(BlockGetter getter, BlockPos pos) {
         return PlantType.CAVE;
     }
-
-    @Override
-    public PushReaction getPistonPushReaction(BlockState state) {
-        return PushReaction.DESTROY;
-    }
 }
 

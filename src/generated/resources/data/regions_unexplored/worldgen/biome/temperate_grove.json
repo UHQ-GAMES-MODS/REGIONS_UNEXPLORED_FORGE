@@ -21,7 +21,7 @@
       "max_delay": 24000,
       "min_delay": 12000,
       "replace_current_music": false,
-      "sound": "minecraft:music.overworld.jungle_and_forest"
+      "sound": "minecraft:music.overworld.forest"
     },
     "sky_color": 7907327,
     "water_color": 4159204,
@@ -89,7 +89,7 @@
       "regions_unexplored:maple_tree_sparse",
       "regions_unexplored:birch_tree_aspen",
       "regions_unexplored:meadow_rock",
-      "regions_unexplored:fallen_oak_tree",
+      "regions_unexplored:fallen_oak_tree_sparse",
       "regions_unexplored:grass",
       "regions_unexplored:purple_coneflower",
       "regions_unexplored:oak_shrub"

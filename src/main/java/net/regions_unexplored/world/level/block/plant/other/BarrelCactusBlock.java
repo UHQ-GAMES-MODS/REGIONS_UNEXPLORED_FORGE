@@ -45,9 +45,4 @@ public class BarrelCactusBlock extends BushBlock implements net.minecraftforge.c
     public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
         entity.hurt(level.damageSources().cactus(), 0.25F);
     }
-
-    @Override
-    public PushReaction getPistonPushReaction(BlockState state) {
-        return PushReaction.DESTROY;
-    }
 }

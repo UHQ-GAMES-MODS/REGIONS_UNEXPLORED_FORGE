@@ -30,5 +30,6 @@
     "recipes": [
       "regions_unexplored:stick_from_baobab_branch"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

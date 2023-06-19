@@ -30,5 +30,6 @@
     "recipes": [
       "regions_unexplored:barley_smelting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

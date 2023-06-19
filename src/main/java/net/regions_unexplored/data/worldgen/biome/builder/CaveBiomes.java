@@ -78,7 +78,7 @@ public class CaveBiomes {
                 .grassColorOverride(-11093410)
                 .ambientParticle(new AmbientParticleSettings(ParticleTypes.SPORE_BLOSSOM_AIR, 0.01F))
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_LUSH_CAVES));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseLushCaveGeneration(featureGetter, carverGetter, false);
@@ -109,7 +109,7 @@ public class CaveBiomes {
                 .foliageColorOverride(-10118056)
                 .grassColorOverride(-9658528)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_LUSH_CAVES));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseLushCaveGeneration(featureGetter, carverGetter, true);
@@ -141,7 +141,7 @@ public class CaveBiomes {
                 .grassColorOverride(-6625354)
                 .ambientParticle(new AmbientParticleSettings(ParticleTypes.FIREWORK, 0.002f))
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_DRIPSTONE_CAVES));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseCaveGeneration(featureGetter, carverGetter);
@@ -172,7 +172,7 @@ public class CaveBiomes {
                 .foliageColorOverride(-6044317)
                 .grassColorOverride(-6044317)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_DRIPSTONE_CAVES));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseCaveGeneration(featureGetter, carverGetter);
@@ -204,7 +204,7 @@ public class CaveBiomes {
                 .grassColorOverride(-8621472)
                 .ambientParticle(new AmbientParticleSettings(ParticleTypes.WHITE_ASH, 0.1F))
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_DEEP_DARK));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseCaveGeneration(featureGetter, carverGetter);

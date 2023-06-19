@@ -73,11 +73,6 @@ public class JoshuaLeavesBlock extends DoublePlantBlock implements SimpleWaterlo
         return false;
     }
 
-    @Override
-    public PushReaction getPistonPushReaction(BlockState state) {
-        return PushReaction.BLOCK;
-    }
-
     @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         BlockPos blockpos = context.getClickedPos();

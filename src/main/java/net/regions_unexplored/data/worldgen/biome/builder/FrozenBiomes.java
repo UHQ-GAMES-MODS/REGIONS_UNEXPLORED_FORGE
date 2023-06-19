@@ -66,7 +66,7 @@ public class FrozenBiomes {
                 .foliageColorOverride(7578936)
                 .grassColorOverride(8700997)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_GROVE));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseFrozenTaigaGeneration(featureGetter, carverGetter);
@@ -97,7 +97,7 @@ public class FrozenBiomes {
                 .foliageColorOverride(7578936)
                 .grassColorOverride(8700997)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_SNOWY_SLOPES));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseFrozenGeneration(featureGetter, carverGetter);
@@ -128,7 +128,7 @@ public class FrozenBiomes {
                 .foliageColorOverride(-9922472)
                 .grassColorOverride(-9917084)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_GROVE));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseFrozenTaigaGeneration(featureGetter, carverGetter);
@@ -159,7 +159,7 @@ public class FrozenBiomes {
                 .foliageColorOverride(-5207984)
                 .grassColorOverride(-5215920)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_GROVE));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseFrozenGeneration(featureGetter, carverGetter);
@@ -180,40 +180,6 @@ public class FrozenBiomes {
                 .build();
     }
 
-    public static Biome icyDesert(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
-        //TODO:Complete Biome
-        BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
-                .skyColor(calculateSkyColor(0.0F))
-                .fogColor(OVERWORLD_FOG_COLOR)
-                .waterColor(NORMAL_WATER_COLOR)
-                .waterFogColor(NORMAL_WATER_FOG_COLOR)
-                .foliageColorOverride(-10247846)
-                .grassColorOverride(-10247846)
-                .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
-
-        //add features
-        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(featureGetter, carverGetter);
-        RuBiomeDefaultFeatures.globalOverworldGeneration(biomeBuilder);
-        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
-        BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
-
-        //add RU features
-
-
-        //add mob spawns
-        MobSpawnSettings.Builder spawnBuilder = baseFrozenSpawning(true);
-
-        return (new Biome.BiomeBuilder())
-                .hasPrecipitation(false)
-                .temperature(-2f)
-                .downfall(0.0f)
-                .specialEffects(effectBuilder.build())
-                .mobSpawnSettings(spawnBuilder.build())
-                .generationSettings(biomeBuilder.build())
-                .build();
-    }
-
     public static Biome icyHeights(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
         //TODO:Complete Biome
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
@@ -224,7 +190,7 @@ public class FrozenBiomes {
                 .foliageColorOverride(-9913745)
                 .grassColorOverride(-9059189)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FROZEN_PEAKS));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseFrozenGeneration(featureGetter, carverGetter);
@@ -255,7 +221,7 @@ public class FrozenBiomes {
                 .foliageColorOverride(-11097502)
                 .grassColorOverride(-11097488)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_SNOWY_SLOPES));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseFrozenGeneration(featureGetter, carverGetter);

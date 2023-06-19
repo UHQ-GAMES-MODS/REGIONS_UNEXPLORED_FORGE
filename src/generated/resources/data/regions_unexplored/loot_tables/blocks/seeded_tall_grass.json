@@ -137,5 +137,6 @@
       ],
       "rolls": 1.0
     }
-  ]
+  ],
+  "random_sequence": "regions_unexplored:blocks/seeded_tall_grass"
 }

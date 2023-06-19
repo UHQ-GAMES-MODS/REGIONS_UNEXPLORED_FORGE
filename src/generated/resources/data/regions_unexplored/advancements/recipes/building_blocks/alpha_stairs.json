@@ -30,5 +30,6 @@
     "recipes": [
       "regions_unexplored:alpha_stairs"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

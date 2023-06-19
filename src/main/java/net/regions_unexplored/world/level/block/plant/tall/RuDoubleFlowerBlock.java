@@ -49,10 +49,5 @@ public class RuDoubleFlowerBlock extends DoublePlantBlock implements Bonemealabl
     public boolean canBeReplaced(BlockState state, BlockPlaceContext context) {
         return false;
     }
-
-    @Override
-    public PushReaction getPistonPushReaction(BlockState state) {
-        return PushReaction.DESTROY;
-    }
 }
 

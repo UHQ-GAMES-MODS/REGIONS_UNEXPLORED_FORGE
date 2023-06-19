@@ -1,0 +1,25 @@
+{
+  "feature": "regions_unexplored:patch_red_maple_leaf_pile",
+  "placement": [
+    {
+      "type": "minecraft:noise_threshold_count",
+      "above_noise": 24,
+      "below_noise": 5,
+      "noise_level": -0.8
+    },
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 10
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "MOTION_BLOCKING"
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

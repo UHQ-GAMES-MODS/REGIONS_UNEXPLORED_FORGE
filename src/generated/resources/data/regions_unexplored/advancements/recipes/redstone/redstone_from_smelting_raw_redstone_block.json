@@ -30,5 +30,6 @@
     "recipes": [
       "regions_unexplored:redstone_from_smelting_raw_redstone_block"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

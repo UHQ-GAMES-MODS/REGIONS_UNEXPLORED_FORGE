@@ -30,5 +30,6 @@
     "recipes": [
       "regions_unexplored:deepslate_prismoss"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

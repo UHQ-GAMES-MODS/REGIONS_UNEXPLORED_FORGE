@@ -30,5 +30,6 @@
     "recipes": [
       "regions_unexplored:baobab_sapling_from_baobab_shrub"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

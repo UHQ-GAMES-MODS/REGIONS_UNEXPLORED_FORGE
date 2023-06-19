@@ -126,7 +126,7 @@ public class WetBiomes {
                 .foliageColorOverride(-9651647)
                 .grassColorOverride(-9651647)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseJungleGeneration(featureGetter, carverGetter);
@@ -291,7 +291,7 @@ public class WetBiomes {
                 .foliageColorOverride(-11032271)
                 .grassColorOverride(-9718455)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseJungleGeneration(featureGetter, carverGetter);
@@ -322,7 +322,7 @@ public class WetBiomes {
                 .foliageColorOverride(-11032271)
                 .grassColorOverride(-9718455)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseJungleGeneration(featureGetter, carverGetter);

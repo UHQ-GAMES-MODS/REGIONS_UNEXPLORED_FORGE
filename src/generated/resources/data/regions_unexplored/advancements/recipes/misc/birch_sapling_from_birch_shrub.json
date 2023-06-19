@@ -30,5 +30,6 @@
     "recipes": [
       "regions_unexplored:birch_sapling_from_birch_shrub"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

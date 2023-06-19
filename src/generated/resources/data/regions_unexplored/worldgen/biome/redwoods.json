@@ -87,11 +87,11 @@
       "minecraft:patch_pumpkin",
       "regions_unexplored:ultra_redwood_tree",
       "regions_unexplored:giant_redwood_tree_dense",
-      "regions_unexplored:oak_bush_dense",
       "regions_unexplored:redwood_tree",
-      "regions_unexplored:redwood_shrub",
+      "regions_unexplored:oak_bush_dense",
       "regions_unexplored:redwoods_vegetation",
-      "regions_unexplored:rare_salmonberry_bush"
+      "regions_unexplored:rare_salmonberry_bush",
+      "regions_unexplored:redwood_shrub"
     ],
     [
       "minecraft:freeze_top_layer"

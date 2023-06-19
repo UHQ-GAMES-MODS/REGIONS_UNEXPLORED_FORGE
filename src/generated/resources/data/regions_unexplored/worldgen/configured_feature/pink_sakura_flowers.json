@@ -4,8 +4,8 @@
     "block": "regions_unexplored:pink_sakura_flowers",
     "can_be_placed_on": [
       "minecraft:grass_block",
-      "regions_unexplored:forest_grass_block",
-      "regions_unexplored:plains_grass_block"
+      "regions_unexplored:peat_grass_block",
+      "regions_unexplored:silt_grass_block"
     ],
     "can_place_on_ceiling": false,
     "can_place_on_floor": true,

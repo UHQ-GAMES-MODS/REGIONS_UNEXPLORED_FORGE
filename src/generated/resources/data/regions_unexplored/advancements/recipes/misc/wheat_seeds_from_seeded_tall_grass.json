@@ -30,5 +30,6 @@
     "recipes": [
       "regions_unexplored:wheat_seeds_from_seeded_tall_grass"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -30,5 +30,6 @@
     "recipes": [
       "regions_unexplored:brimwood_wood_from_brimwood_log_magma"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

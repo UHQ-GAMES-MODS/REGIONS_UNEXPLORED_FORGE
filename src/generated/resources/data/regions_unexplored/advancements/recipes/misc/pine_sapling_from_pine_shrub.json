@@ -30,5 +30,6 @@
     "recipes": [
       "regions_unexplored:pine_sapling_from_pine_shrub"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

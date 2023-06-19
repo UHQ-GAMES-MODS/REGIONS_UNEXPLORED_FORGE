@@ -30,5 +30,6 @@
     "recipes": [
       "regions_unexplored:birch_branch_from_birch_log"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

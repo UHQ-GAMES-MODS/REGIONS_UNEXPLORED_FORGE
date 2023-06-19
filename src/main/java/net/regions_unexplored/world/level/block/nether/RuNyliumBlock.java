@@ -15,9 +15,8 @@ import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.lighting.LayerLightEngine;
+import net.minecraft.world.level.lighting.LightEngine;
 import net.regions_unexplored.block.RuBlocks;
-import net.regions_unexplored.data.worldgen.features.RuVegetationFeatures;
 
 public class RuNyliumBlock extends Block implements BonemealableBlock {
     public RuNyliumBlock(Properties properties) {
@@ -27,7 +26,7 @@ public class RuNyliumBlock extends Block implements BonemealableBlock {
     private static boolean canBeNylium(BlockState state, LevelReader level, BlockPos pos) {
         BlockPos blockpos = pos.above();
         BlockState blockstate = level.getBlockState(blockpos);
-        int i = LayerLightEngine.getLightBlockInto(level, state, pos, blockstate, blockpos, Direction.UP, blockstate.getLightBlock(level, blockpos));
+        int i = LightEngine.getLightBlockInto(level, state, pos, blockstate, blockpos, Direction.UP, blockstate.getLightBlock(level, blockpos));
         return i < level.getMaxLightLevel();
     }
 

@@ -30,5 +30,6 @@
     "recipes": [
       "regions_unexplored:chalk_grass_block"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

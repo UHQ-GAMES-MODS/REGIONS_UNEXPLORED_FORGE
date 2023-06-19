@@ -21,7 +21,7 @@
       "max_delay": 24000,
       "min_delay": 12000,
       "replace_current_music": false,
-      "sound": "minecraft:music.overworld.jungle_and_forest"
+      "sound": "minecraft:music.overworld.forest"
     },
     "sky_color": 8103167,
     "water_color": 4159204,
@@ -89,6 +89,7 @@
       "regions_unexplored:fallen_silver_birch_tree",
       "regions_unexplored:tassel",
       "regions_unexplored:seeded_grass",
+      "regions_unexplored:silver_birch_leaf_pile_dense",
       "regions_unexplored:orange_coneflower"
     ],
     [

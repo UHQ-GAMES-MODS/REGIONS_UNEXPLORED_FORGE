@@ -55,7 +55,7 @@ public class CoastalBiomes {
                 .foliageColorOverride(-8414642)
                 .grassColorOverride(-6044317)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseCoastGeneration(featureGetter, carverGetter);
@@ -86,7 +86,7 @@ public class CoastalBiomes {
                 .foliageColorOverride(-8933043)
                 .grassColorOverride(-2697863)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseCoastGeneration(featureGetter, carverGetter);
@@ -117,7 +117,7 @@ public class CoastalBiomes {
                 .foliageColorOverride(-8673714)
                 .grassColorOverride(-7819420)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseCoastGeneration(featureGetter, carverGetter);

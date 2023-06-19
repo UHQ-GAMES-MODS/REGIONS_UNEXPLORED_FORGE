@@ -30,5 +30,6 @@
     "recipes": [
       "regions_unexplored:orange_dye_from_orange_coneflower"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -16,11 +16,6 @@ public class DoubleBioshroomBlock extends DoublePlantBlock {
     }
 
     @Override
-    public PushReaction getPistonPushReaction(BlockState state) {
-        return PushReaction.DESTROY;
-    }
-
-    @Override
     public PlantType getPlantType(BlockGetter getter, BlockPos pos) {
         return PlantType.CAVE;
     }

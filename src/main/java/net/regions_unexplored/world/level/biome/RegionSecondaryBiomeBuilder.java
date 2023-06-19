@@ -11,7 +11,7 @@ import java.util.function.Consumer;
 public class RegionSecondaryBiomeBuilder {
     //TODO:Complete Class
 
-    private final Climate.Parameter[] temperatures = new Climate.Parameter[]{
+    public final Climate.Parameter[] temperatures = new Climate.Parameter[]{
             Climate.Parameter.span(-1.0F, -0.45F),
             Climate.Parameter.span(-0.45F, -0.15F),
             Climate.Parameter.span(-0.15F, 0.2F),
@@ -19,7 +19,7 @@ public class RegionSecondaryBiomeBuilder {
             Climate.Parameter.span(0.55F, 1.0F)
     };
 
-    private final Climate.Parameter[] humidities = new Climate.Parameter[]{
+    public final Climate.Parameter[] humidities = new Climate.Parameter[]{
             Climate.Parameter.span(-1.0F, -0.35F),
             Climate.Parameter.span(-0.35F, -0.1F),
             Climate.Parameter.span(-0.1F, 0.1F),
@@ -27,7 +27,7 @@ public class RegionSecondaryBiomeBuilder {
             Climate.Parameter.span(0.3F, 1.0F)
     };
 
-    private final Climate.Parameter[] erosions = new Climate.Parameter[]{
+    public final Climate.Parameter[] erosions = new Climate.Parameter[]{
             Climate.Parameter.span(-1.0F, -0.78F),
             Climate.Parameter.span(-0.78F, -0.375F),
             Climate.Parameter.span(-0.375F, -0.2225F),
@@ -37,28 +37,28 @@ public class RegionSecondaryBiomeBuilder {
             Climate.Parameter.span(0.55F, 1.0F)
     };
 
-    private final Climate.Parameter FULL_RANGE = Climate.Parameter.span(-1.0F, 1.0F);
-    private final Climate.Parameter FROZEN_RANGE = this.temperatures[0];
-    private final Climate.Parameter UNFROZEN_RANGE = Climate.Parameter.span(this.temperatures[1], this.temperatures[4]);
+    public final Climate.Parameter FULL_RANGE = Climate.Parameter.span(-1.0F, 1.0F);
+    public final Climate.Parameter FROZEN_RANGE = this.temperatures[0];
+    public final Climate.Parameter UNFROZEN_RANGE = Climate.Parameter.span(this.temperatures[1], this.temperatures[4]);
 
-    private final Climate.Parameter mushroomFieldsContinentalness = Climate.Parameter.span(-1.2F, -1.05F);
-    private final Climate.Parameter deepOceanContinentalness = Climate.Parameter.span(-1.05F, -0.455F);
-    private final Climate.Parameter oceanContinentalness = Climate.Parameter.span(-0.455F, -0.19F);
-    private final Climate.Parameter coastContinentalness = Climate.Parameter.span(-0.19F, -0.11F);
-    private final Climate.Parameter inlandContinentalness = Climate.Parameter.span(-0.11F, 0.55F);
-    private final Climate.Parameter nearInlandContinentalness = Climate.Parameter.span(-0.11F, 0.03F);
-    private final Climate.Parameter midInlandContinentalness = Climate.Parameter.span(0.03F, 0.3F);
-    private final Climate.Parameter farInlandContinentalness = Climate.Parameter.span(0.3F, 1.0F);
+    public final Climate.Parameter mushroomFieldsContinentalness = Climate.Parameter.span(-1.2F, -1.05F);
+    public final Climate.Parameter deepOceanContinentalness = Climate.Parameter.span(-1.05F, -0.455F);
+    public final Climate.Parameter oceanContinentalness = Climate.Parameter.span(-0.455F, -0.19F);
+    public final Climate.Parameter coastContinentalness = Climate.Parameter.span(-0.19F, -0.11F);
+    public final Climate.Parameter inlandContinentalness = Climate.Parameter.span(-0.11F, 0.55F);
+    public final Climate.Parameter nearInlandContinentalness = Climate.Parameter.span(-0.11F, 0.03F);
+    public final Climate.Parameter midInlandContinentalness = Climate.Parameter.span(0.03F, 0.3F);
+    public final Climate.Parameter farInlandContinentalness = Climate.Parameter.span(0.3F, 1.0F);
 
-    private final ResourceKey<Biome>[][] MIDDLE_BIOMES = DefaultBiomes.getSecondaryMiddleBiome();
-    private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = DefaultBiomes.getSecondaryMiddleBiomeVariant();
-    private final ResourceKey<Biome>[][] PLATEAU_BIOMES = DefaultBiomes.getSecondaryPlateauBiome();
-    private final ResourceKey<Biome>[][] PLATEAU_BIOMES_VARIANT = DefaultBiomes.getSecondaryPlateauBiomeVariant();
-    private final ResourceKey<Biome>[][] SHATTERED_BIOMES = DefaultBiomes.getSecondaryShatteredBiome();
-    private final ResourceKey<Biome>[][] RIVER_BIOMES = DefaultBiomes.getSecondaryRiverBiome();
-    private final ResourceKey<Biome>[][] RIVER_BIOMES_VARIANT = DefaultBiomes.getSecondaryRiverBiomeVariant();
-    private final ResourceKey<Biome>[][] SWAMP_BIOMES = DefaultBiomes.getSecondarySwampBiome();
-    private final ResourceKey<Biome>[][] OCEANS = DefaultBiomes.getSecondaryOceanBiome();
+    public final ResourceKey<Biome>[][] MIDDLE_BIOMES = DefaultBiomes.getSecondaryMiddleBiome();
+    public final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = DefaultBiomes.getSecondaryMiddleBiomeVariant();
+    public final ResourceKey<Biome>[][] PLATEAU_BIOMES = DefaultBiomes.getSecondaryPlateauBiome();
+    public final ResourceKey<Biome>[][] PLATEAU_BIOMES_VARIANT = DefaultBiomes.getSecondaryPlateauBiomeVariant();
+    public final ResourceKey<Biome>[][] SHATTERED_BIOMES = DefaultBiomes.getSecondaryShatteredBiome();
+    public final ResourceKey<Biome>[][] RIVER_BIOMES = DefaultBiomes.getSecondaryRiverBiome();
+    public final ResourceKey<Biome>[][] RIVER_BIOMES_VARIANT = DefaultBiomes.getSecondaryRiverBiomeVariant();
+    public final ResourceKey<Biome>[][] SWAMP_BIOMES = DefaultBiomes.getSecondarySwampBiome();
+    public final ResourceKey<Biome>[][] OCEANS = DefaultBiomes.getSecondaryOceanBiome();
 
     public void addBiomes(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder) {
         this.addOffCoastBiomes(builder);
@@ -66,7 +66,7 @@ public class RegionSecondaryBiomeBuilder {
         this.addUndergroundBiomes(builder);
     }
 
-    private void addOffCoastBiomes(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder) {
+    public void addOffCoastBiomes(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder) {
         this.addSurfaceBiome(builder, this.temperatures[0], this.FULL_RANGE, this.mushroomFieldsContinentalness, this.FULL_RANGE, this.FULL_RANGE, 0.0F, DefaultBiomes.isBiomeEnabled(DefaultBiomes.getSecondaryIslandBiome(0)) ? DefaultBiomes.getSecondaryIslandBiome(0) :Biomes.MUSHROOM_FIELDS);
         this.addSurfaceBiome(builder, this.temperatures[1], this.FULL_RANGE, this.mushroomFieldsContinentalness, this.FULL_RANGE, this.FULL_RANGE, 0.0F, DefaultBiomes.isBiomeEnabled(DefaultBiomes.getSecondaryIslandBiome(1)) ? DefaultBiomes.getSecondaryIslandBiome(1) :Biomes.MUSHROOM_FIELDS);
         this.addSurfaceBiome(builder, this.temperatures[2], this.FULL_RANGE, this.mushroomFieldsContinentalness, this.FULL_RANGE, this.FULL_RANGE, 0.0F, DefaultBiomes.isBiomeEnabled(DefaultBiomes.getSecondaryIslandBiome(2)) ? DefaultBiomes.getSecondaryIslandBiome(2) :Biomes.MUSHROOM_FIELDS);
@@ -81,7 +81,7 @@ public class RegionSecondaryBiomeBuilder {
 
     }
 
-    private void addInlandBiomes(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder) {
+    public void addInlandBiomes(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder) {
         this.addMidSlice(builder, Climate.Parameter.span(-1.0F, -0.93333334F));
         this.addHighSlice(builder, Climate.Parameter.span(-0.93333334F, -0.7666667F));
         this.addPeaks(builder, Climate.Parameter.span(-0.7666667F, -0.56666666F));
@@ -97,7 +97,7 @@ public class RegionSecondaryBiomeBuilder {
         this.addMidSlice(builder, Climate.Parameter.span(0.93333334F, 1.0F));
     }
 
-    private void addPeaks(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder, Climate.Parameter weirdness) {
+    public void addPeaks(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder, Climate.Parameter weirdness) {
         for(int i = 0; i < this.temperatures.length; ++i) {
             Climate.Parameter temperature = this.temperatures[i];
 
@@ -125,7 +125,7 @@ public class RegionSecondaryBiomeBuilder {
 
     }
 
-    private void addHighSlice(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder, Climate.Parameter weirdness) {
+    public void addHighSlice(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder, Climate.Parameter weirdness) {
         for(int i = 0; i < this.temperatures.length; ++i) {
             Climate.Parameter temperature = this.temperatures[i];
 
@@ -156,7 +156,7 @@ public class RegionSecondaryBiomeBuilder {
 
     }
 
-    private void addMidSlice(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder, Climate.Parameter weirdness) {
+    public void addMidSlice(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder, Climate.Parameter weirdness) {
         ResourceKey<Biome> stoneBeachCold = DefaultBiomes.isBiomeEnabled(DefaultBiomes.getSecondaryStoneShoreBiome(true)) ? DefaultBiomes.getSecondaryStoneShoreBiome(true) : Biomes.STONY_SHORE;
         ResourceKey<Biome> stoneBeachHot = DefaultBiomes.isBiomeEnabled(DefaultBiomes.getSecondaryStoneShoreBiome(false)) ? DefaultBiomes.getSecondaryStoneShoreBiome(false) : Biomes.STONY_SHORE;
         this.addSurfaceBiome(builder, Climate.Parameter.span(this.temperatures[0], this.temperatures[2]), this.FULL_RANGE, this.coastContinentalness, Climate.Parameter.span(this.erosions[0], this.erosions[2]), weirdness, 0.0F, stoneBeachCold);
@@ -205,7 +205,7 @@ public class RegionSecondaryBiomeBuilder {
 
     }
 
-    private void addLowSlice(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder, Climate.Parameter weirdness) {
+    public void addLowSlice(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder, Climate.Parameter weirdness) {
         ResourceKey<Biome> stoneBeachCold = DefaultBiomes.isBiomeEnabled(DefaultBiomes.getSecondaryStoneShoreBiome(true)) ? DefaultBiomes.getSecondaryStoneShoreBiome(true) : Biomes.STONY_SHORE;
         ResourceKey<Biome> stoneBeachHot = DefaultBiomes.isBiomeEnabled(DefaultBiomes.getSecondaryStoneShoreBiome(false)) ? DefaultBiomes.getSecondaryStoneShoreBiome(false) : Biomes.STONY_SHORE;
         this.addSurfaceBiome(builder, Climate.Parameter.span(this.temperatures[0], this.temperatures[2]), this.FULL_RANGE, this.coastContinentalness, Climate.Parameter.span(this.erosions[0], this.erosions[2]), weirdness, 0.0F, stoneBeachCold);
@@ -237,7 +237,7 @@ public class RegionSecondaryBiomeBuilder {
 
     }
 
-    private void addValleys(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder, Climate.Parameter weirdness) {
+    public void addValleys(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder, Climate.Parameter weirdness) {
         ResourceKey<Biome> stoneBeachCold = DefaultBiomes.isBiomeEnabled(DefaultBiomes.getSecondaryStoneShoreBiome(true)) ? DefaultBiomes.getSecondaryStoneShoreBiome(true) : Biomes.STONY_SHORE;
         ResourceKey<Biome> stoneBeachHot = DefaultBiomes.isBiomeEnabled(DefaultBiomes.getSecondaryStoneShoreBiome(false)) ? DefaultBiomes.getSecondaryStoneShoreBiome(false) : Biomes.STONY_SHORE;
         for(int i = 0; i < this.temperatures.length; ++i) {
@@ -261,7 +261,7 @@ public class RegionSecondaryBiomeBuilder {
 
     }
 
-    private void addUndergroundBiomes(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder) {
+    public void addUndergroundBiomes(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder) {
         this.addUndergroundBiome(builder, this.FULL_RANGE, this.FULL_RANGE, Climate.Parameter.span(-1.0F, -0.79F), this.FULL_RANGE, Climate.Parameter.span(-1.0F, 0.0F), 0.0F, DefaultBiomes.isBiomeEnabled(DefaultBiomes.getSecondaryCaveBiome(2)) ? DefaultBiomes.getSecondaryCaveBiome(2) : Biomes.LUSH_CAVES);
         this.addUndergroundBiome(builder, this.FULL_RANGE, this.FULL_RANGE, Climate.Parameter.span(-1.0F, -0.79F), this.FULL_RANGE, Climate.Parameter.span(0.0F, 1.0F), 0.0F, DefaultBiomes.isBiomeEnabled(DefaultBiomes.getSecondaryCaveBiome(7)) ? DefaultBiomes.getSecondaryCaveBiome(7) : Biomes.DRIPSTONE_CAVES);
 
@@ -278,7 +278,7 @@ public class RegionSecondaryBiomeBuilder {
         this.addBottomBiome(builder, this.FULL_RANGE, this.FULL_RANGE, this.FULL_RANGE, Climate.Parameter.span(this.erosions[2], this.erosions[3]), this.FULL_RANGE, 0.0F, DefaultBiomes.isBiomeEnabled(DefaultBiomes.getSecondaryCaveBiome(8)) ? DefaultBiomes.getSecondaryCaveBiome(8) : Biomes.DEEP_DARK);
     }
 
-    private ResourceKey<Biome> pickMiddleBiome(int temperature, int humidity, Climate.Parameter weirdness) {
+    public ResourceKey<Biome> pickMiddleBiome(int temperature, int humidity, Climate.Parameter weirdness) {
         if (weirdness.max() < 0L) {
             if(DefaultBiomes.isBiomeEnabled(this.MIDDLE_BIOMES[temperature][humidity])){
                 return this.MIDDLE_BIOMES[temperature][humidity];
@@ -306,21 +306,21 @@ public class RegionSecondaryBiomeBuilder {
         }
     }
 
-    private ResourceKey<Biome> pickMiddleBiomeOrSlopeIfCold(int temperature, int humidity, Climate.Parameter weirdness) {
+    public ResourceKey<Biome> pickMiddleBiomeOrSlopeIfCold(int temperature, int humidity, Climate.Parameter weirdness) {
         return temperature == 0 ? this.pickSlopeBiome(temperature, humidity, weirdness) : this.pickMiddleBiome(temperature, humidity, weirdness);
     }
 
-    private ResourceKey<Biome> maybePickToweringCliffsBiome(int temperature, int humidity, Climate.Parameter weirdness, ResourceKey<Biome> fallbackBiome) {
+    public ResourceKey<Biome> maybePickToweringCliffsBiome(int temperature, int humidity, Climate.Parameter weirdness, ResourceKey<Biome> fallbackBiome) {
         ResourceKey<Biome> resourceKey = DefaultBiomes.isBiomeEnabled(DefaultBiomes.getSecondaryShatteredCliffBiome()) ? DefaultBiomes.getSecondaryShatteredCliffBiome() : Biomes.WINDSWEPT_SAVANNA;
         return temperature > 1 && humidity < 4 && weirdness.max() >= 0L ? resourceKey : fallbackBiome;
     }
 
-    private ResourceKey<Biome> pickShatteredCoastBiome(int temperature, int humidity, Climate.Parameter weirdness) {
+    public ResourceKey<Biome> pickShatteredCoastBiome(int temperature, int humidity, Climate.Parameter weirdness) {
         ResourceKey<Biome> resourceKey = weirdness.max() >= 0L ? this.pickMiddleBiome(temperature, humidity, weirdness) : this.pickBeachBiome(temperature);
         return this.maybePickToweringCliffsBiome(temperature, humidity, weirdness, resourceKey);
     }
 
-    private ResourceKey<Biome> pickBeachBiome(int temperature) {
+    public ResourceKey<Biome> pickBeachBiome(int temperature) {
         if (temperature == 0) {
             return DefaultBiomes.isBiomeEnabled(DefaultBiomes.getSecondaryBeachBiome(temperature)) ? DefaultBiomes.getSecondaryBeachBiome(temperature) : Biomes.SNOWY_BEACH;
         }
@@ -338,7 +338,7 @@ public class RegionSecondaryBiomeBuilder {
         }
     }
 
-    private ResourceKey<Biome> pickPlateauBiome(int temperature, int humidity, Climate.Parameter weirdness) {
+    public ResourceKey<Biome> pickPlateauBiome(int temperature, int humidity, Climate.Parameter weirdness) {
         if (weirdness.max() < 0L) {
             if(DefaultBiomes.isBiomeEnabled(this.PLATEAU_BIOMES[temperature][humidity])){
                 return this.PLATEAU_BIOMES[temperature][humidity];
@@ -366,7 +366,7 @@ public class RegionSecondaryBiomeBuilder {
         }
     }
 
-    private ResourceKey<Biome> pickPeakBiome(int temperature, int humidity, Climate.Parameter weirdness) {
+    public ResourceKey<Biome> pickPeakBiome(int temperature, int humidity, Climate.Parameter weirdness) {
         if (temperature == 0) {
             if(weirdness.max() < 0L) {
                 return DefaultBiomes.isBiomeEnabled(DefaultBiomes.getSecondaryPeakBiome(temperature)) ? DefaultBiomes.getSecondaryPeakBiome(temperature) : Biomes.JAGGED_PEAKS;
@@ -409,7 +409,7 @@ public class RegionSecondaryBiomeBuilder {
         }
     }
 
-    private ResourceKey<Biome> pickSlopeBiome(int temperature, int humidity, Climate.Parameter weirdness) {
+    public ResourceKey<Biome> pickSlopeBiome(int temperature, int humidity, Climate.Parameter weirdness) {
         if (temperature == 0) {
             if(weirdness.max() < 0L) {
                 return DefaultBiomes.isBiomeEnabled(DefaultBiomes.getSecondarySlopeBiome(temperature)) ? DefaultBiomes.getSecondarySlopeBiome(temperature) : Biomes.SNOWY_SLOPES;
@@ -452,12 +452,12 @@ public class RegionSecondaryBiomeBuilder {
         }
     }
 
-    private ResourceKey<Biome> pickShatteredBiome(int temperature, int humidity, Climate.Parameter weirdness) {
+    public ResourceKey<Biome> pickShatteredBiome(int temperature, int humidity, Climate.Parameter weirdness) {
         ResourceKey<Biome> resourceKey = DefaultBiomes.isBiomeEnabled(this.SHATTERED_BIOMES[temperature][humidity]) ? this.SHATTERED_BIOMES[temperature][humidity] : VanillaFallbackBiome.VANILLA_SHATTERED_BIOMES[temperature][humidity];
         return resourceKey == null ? this.pickMiddleBiome(temperature, humidity, weirdness) : resourceKey;
     }
 
-    private ResourceKey<Biome> pickRiverBiome(int temperature, int humidity, Climate.Parameter weirdness) {
+    public ResourceKey<Biome> pickRiverBiome(int temperature, int humidity, Climate.Parameter weirdness) {
         if (weirdness.max() < 0L) {
             if(DefaultBiomes.isBiomeEnabled(this.RIVER_BIOMES[temperature][humidity])){
                 return this.RIVER_BIOMES[temperature][humidity];
@@ -485,7 +485,7 @@ public class RegionSecondaryBiomeBuilder {
         }
     }
 
-    private ResourceKey<Biome> pickSwampBiome(int temperature, int humidity) {
+    public ResourceKey<Biome> pickSwampBiome(int temperature, int humidity) {
         if(DefaultBiomes.isBiomeEnabled(this.SWAMP_BIOMES[temperature][humidity])){
             return this.SWAMP_BIOMES[temperature][humidity];
         }
@@ -494,16 +494,16 @@ public class RegionSecondaryBiomeBuilder {
         }
     }
 
-    private void addSurfaceBiome(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder, Climate.Parameter temperature, Climate.Parameter humidity, Climate.Parameter continentalness, Climate.Parameter erosion, Climate.Parameter weirdness, float offset, ResourceKey<Biome> biome) {
+    public void addSurfaceBiome(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder, Climate.Parameter temperature, Climate.Parameter humidity, Climate.Parameter continentalness, Climate.Parameter erosion, Climate.Parameter weirdness, float offset, ResourceKey<Biome> biome) {
         builder.accept(Pair.of(Climate.parameters(temperature, humidity, continentalness, erosion, Climate.Parameter.point(0.0F), weirdness, offset), biome));
         builder.accept(Pair.of(Climate.parameters(temperature, humidity, continentalness, erosion, Climate.Parameter.point(1.0F), weirdness, offset), biome));
     }
 
-    private void addUndergroundBiome(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder, Climate.Parameter temperature, Climate.Parameter humidity, Climate.Parameter continentalness, Climate.Parameter erosion, Climate.Parameter weirdness, float offset, ResourceKey<Biome> biome) {
+    public void addUndergroundBiome(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder, Climate.Parameter temperature, Climate.Parameter humidity, Climate.Parameter continentalness, Climate.Parameter erosion, Climate.Parameter weirdness, float offset, ResourceKey<Biome> biome) {
         builder.accept(Pair.of(Climate.parameters(temperature, humidity, continentalness, erosion, Climate.Parameter.span(0.2F, 0.9F), weirdness, offset), biome));
     }
 
-    private void addBottomBiome(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder, Climate.Parameter temperature, Climate.Parameter humidity, Climate.Parameter continentalness, Climate.Parameter erosion, Climate.Parameter weirdness, float offset, ResourceKey<Biome> biome) {
+    public void addBottomBiome(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder, Climate.Parameter temperature, Climate.Parameter humidity, Climate.Parameter continentalness, Climate.Parameter erosion, Climate.Parameter weirdness, float offset, ResourceKey<Biome> biome) {
         builder.accept(Pair.of(Climate.parameters(temperature, humidity, continentalness, erosion, Climate.Parameter.point(1.1F), weirdness, offset), biome));
     }
 }

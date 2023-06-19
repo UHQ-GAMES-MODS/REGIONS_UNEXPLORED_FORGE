@@ -30,5 +30,6 @@
     "recipes": [
       "regions_unexplored:polished_chalk_from_chalk_grass_block_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

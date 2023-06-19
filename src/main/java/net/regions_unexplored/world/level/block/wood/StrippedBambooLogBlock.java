@@ -14,10 +14,10 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.material.MaterialColor;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
@@ -26,7 +26,7 @@ public class StrippedBambooLogBlock extends Block implements SimpleWaterloggedBl
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
     public StrippedBambooLogBlock() {
-        super(Properties.of(Material.BAMBOO, MaterialColor.SAND).sound(SoundType.BAMBOO).strength(2f, 3f).noOcclusion()
+        super(Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASS).sound(SoundType.BAMBOO).strength(2f, 3f).noOcclusion()
                 .isRedstoneConductor((bs, br, bp) -> false));
         this.registerDefaultState(this.stateDefinition.any().setValue(AXIS, Direction.Axis.Y).setValue(WATERLOGGED, Boolean.valueOf(false)));
     }

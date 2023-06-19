@@ -76,11 +76,6 @@ public class CattailBlock extends DoublePlantBlock implements SimpleWaterloggedB
         return false;
     }
 
-    @Override
-    public PushReaction getPistonPushReaction(BlockState state) {
-        return PushReaction.DESTROY;
-    }
-
     @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         BlockPos blockpos = context.getClickedPos();

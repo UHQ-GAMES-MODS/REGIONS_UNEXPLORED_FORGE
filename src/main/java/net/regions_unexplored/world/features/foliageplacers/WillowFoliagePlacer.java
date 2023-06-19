@@ -132,9 +132,7 @@ public class WillowFoliagePlacer extends FoliagePlacer {
         } else {
             BlockState blockstate = treeConfiguration.foliageProvider.getState(random, pos);
             if (blockstate.hasProperty(BlockStateProperties.WATERLOGGED)) {
-                blockstate = blockstate.setValue(BlockStateProperties.WATERLOGGED, Boolean.valueOf(level.isFluidAtPosition(pos, (p_225638_) -> {
-                    return p_225638_.isSourceOfType(Fluids.WATER);
-                })));
+                blockstate = blockstate.setValue(BlockStateProperties.WATERLOGGED, level.isFluidAtPosition(pos, (p_225638_) -> p_225638_.isSourceOfType(Fluids.WATER)));
             }
 
             setter.set(pos, blockstate);

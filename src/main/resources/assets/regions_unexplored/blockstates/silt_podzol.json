@@ -1,0 +1,24 @@
+{
+  "variants": {
+    "snowy=false": [
+      {
+        "model": "regions_unexplored:block/silt_podzol"
+      },
+      {
+        "model": "regions_unexplored:block/silt_podzol",
+        "y": 90
+      },
+      {
+        "model": "regions_unexplored:block/silt_podzol",
+        "y": 180
+      },
+      {
+        "model": "regions_unexplored:block/silt_podzol",
+        "y": 270
+      }
+    ],
+    "snowy=true": {
+      "model": "regions_unexplored:block/silt_grass_block_snow"
+    }
+  }
+}

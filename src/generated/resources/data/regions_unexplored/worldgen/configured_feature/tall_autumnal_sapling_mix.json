@@ -39,15 +39,6 @@
             }
           },
           "weight": 4
-        },
-        {
-          "data": {
-            "Name": "regions_unexplored:dead_shrub",
-            "Properties": {
-              "half": "lower"
-            }
-          },
-          "weight": 1
         }
       ]
     }

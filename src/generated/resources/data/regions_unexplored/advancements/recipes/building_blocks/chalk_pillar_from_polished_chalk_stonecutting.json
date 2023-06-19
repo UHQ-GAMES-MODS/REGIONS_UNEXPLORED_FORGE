@@ -30,5 +30,6 @@
     "recipes": [
       "regions_unexplored:chalk_pillar_from_polished_chalk_stonecutting"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

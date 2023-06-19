@@ -88,9 +88,9 @@
       "regions_unexplored:giant_redwood_tree_sparse",
       "regions_unexplored:redwood_tree",
       "regions_unexplored:oak_bush_sparse",
-      "regions_unexplored:redwood_shrub",
       "regions_unexplored:redwoods_vegetation",
-      "regions_unexplored:common_salmonberry_bush"
+      "regions_unexplored:rare_salmonberry_bush",
+      "regions_unexplored:redwood_shrub"
     ],
     [
       "minecraft:freeze_top_layer"

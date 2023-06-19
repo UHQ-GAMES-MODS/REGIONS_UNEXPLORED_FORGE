@@ -1,16 +1,18 @@
 {
   "values": [
     "regions_unexplored:alpha_grass_block",
-    "regions_unexplored:forest_coarse_dirt",
-    "regions_unexplored:forest_dirt",
-    "regions_unexplored:forest_dirt_path",
-    "regions_unexplored:forest_grass_block",
-    "regions_unexplored:forest_mud",
-    "regions_unexplored:plains_coarse_dirt",
-    "regions_unexplored:plains_dirt",
-    "regions_unexplored:plains_dirt_path",
-    "regions_unexplored:plains_grass_block",
-    "regions_unexplored:plains_mud",
+    "regions_unexplored:peat_coarse_dirt",
+    "regions_unexplored:peat_podzol",
+    "regions_unexplored:peat_dirt",
+    "regions_unexplored:peat_dirt_path",
+    "regions_unexplored:peat_grass_block",
+    "regions_unexplored:peat_mud",
+    "regions_unexplored:silt_coarse_dirt",
+    "regions_unexplored:silt_podzol",
+    "regions_unexplored:silt_dirt",
+    "regions_unexplored:silt_dirt_path",
+    "regions_unexplored:silt_grass_block",
+    "regions_unexplored:silt_mud",
     "minecraft:podzol",
     "minecraft:coarse_dirt"
   ]

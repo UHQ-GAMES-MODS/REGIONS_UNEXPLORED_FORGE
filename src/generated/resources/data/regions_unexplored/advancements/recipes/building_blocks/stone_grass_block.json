@@ -30,5 +30,6 @@
     "recipes": [
       "regions_unexplored:stone_grass_block"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

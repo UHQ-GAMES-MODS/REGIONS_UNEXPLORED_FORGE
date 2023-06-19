@@ -30,5 +30,6 @@
     "recipes": [
       "regions_unexplored:tall_pink_bioshroom"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

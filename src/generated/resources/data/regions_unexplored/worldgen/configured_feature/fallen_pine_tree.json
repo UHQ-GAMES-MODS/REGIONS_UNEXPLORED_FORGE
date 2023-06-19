@@ -1,0 +1,41 @@
+{
+  "type": "regions_unexplored:fallen_blob_tree",
+  "config": {
+    "foliage_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "regions_unexplored:pine_leaves",
+        "Properties": {
+          "distance": "7",
+          "persistent": "false",
+          "waterlogged": "false"
+        }
+      }
+    },
+    "has_leaves": false,
+    "minimum_size": 5,
+    "size_variation": 6,
+    "stump_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "regions_unexplored:pine_log",
+        "Properties": {
+          "axis": "y",
+          "is_stripped": "false",
+          "transition_block": "false"
+        }
+      }
+    },
+    "trunk_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "regions_unexplored:pine_log",
+        "Properties": {
+          "axis": "y",
+          "is_stripped": "false",
+          "transition_block": "false"
+        }
+      }
+    }
+  }
+}

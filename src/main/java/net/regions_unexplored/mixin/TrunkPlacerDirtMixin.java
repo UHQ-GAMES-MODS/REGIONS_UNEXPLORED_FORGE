@@ -23,10 +23,10 @@ public abstract class TrunkPlacerDirtMixin {
     @Inject(at=@At("HEAD"), method = "setDirtAt(Lnet/minecraft/world/level/LevelSimulatedReader;Ljava/util/function/BiConsumer;Lnet/minecraft/util/RandomSource;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/levelgen/feature/configurations/TreeConfiguration;)V")
     private static void setDirtAt(LevelSimulatedReader level, BiConsumer<BlockPos, BlockState> dirt, RandomSource random, BlockPos pos, TreeConfiguration configuration, CallbackInfo ci) {
         if (!(((net.minecraft.world.level.LevelReader) level).getBlockState(pos).onTreeGrow((net.minecraft.world.level.LevelReader) level, dirt, random, pos, configuration)) && (isForestGrass(level, pos))) {
-            dirt.accept(pos, RuBlocks.FOREST_DIRT.get().defaultBlockState());
+            dirt.accept(pos, RuBlocks.PEAT_DIRT.get().defaultBlockState());
         }
         if (!(((net.minecraft.world.level.LevelReader) level).getBlockState(pos).onTreeGrow((net.minecraft.world.level.LevelReader) level, dirt, random, pos, configuration)) && (isPlainsGrass(level, pos))) {
-            dirt.accept(pos, RuBlocks.PLAINS_DIRT.get().defaultBlockState());
+            dirt.accept(pos, RuBlocks.SILT_DIRT.get().defaultBlockState());
         }
         if (!(((net.minecraft.world.level.LevelReader) level).getBlockState(pos).onTreeGrow((net.minecraft.world.level.LevelReader) level, dirt, random, pos, configuration)) && (isAlphaGrass(level, pos))) {
             dirt.accept(pos, Blocks.DIRT.defaultBlockState());
@@ -35,12 +35,12 @@ public abstract class TrunkPlacerDirtMixin {
 
     private static boolean isForestGrass(LevelSimulatedReader p_70296_, BlockPos p_70297_) {
         return p_70296_.isStateAtPosition(p_70297_, (p_70304_) -> {
-            return p_70304_.is(RuBlocks.FOREST_GRASS_BLOCK.get())||p_70304_.is(RuBlocks.FOREST_DIRT.get()) ;
+            return p_70304_.is(RuBlocks.PEAT_GRASS_BLOCK.get())||p_70304_.is(RuBlocks.PEAT_DIRT.get()) ;
         });
     }
     private static boolean isPlainsGrass(LevelSimulatedReader p_70296_, BlockPos p_70297_) {
         return p_70296_.isStateAtPosition(p_70297_, (p_70304_) -> {
-            return p_70304_.is(RuBlocks.PLAINS_GRASS_BLOCK.get())||p_70304_.is(RuBlocks.PLAINS_DIRT.get()) ;
+            return p_70304_.is(RuBlocks.SILT_GRASS_BLOCK.get())||p_70304_.is(RuBlocks.SILT_DIRT.get()) ;
         });
     }
     private static boolean isAlphaGrass(LevelSimulatedReader p_70296_, BlockPos p_70297_) {

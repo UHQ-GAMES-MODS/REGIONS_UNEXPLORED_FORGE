@@ -44,9 +44,4 @@ public class RuSnowyPlantBlock extends BushBlock implements net.minecraftforge.c
         }
         return state.is(RuTags.SNOW_PLANT_CAN_SURVIVE_ON);
     }
-
-    @Override
-    public PushReaction getPistonPushReaction(BlockState state) {
-        return PushReaction.DESTROY;
-    }
 }

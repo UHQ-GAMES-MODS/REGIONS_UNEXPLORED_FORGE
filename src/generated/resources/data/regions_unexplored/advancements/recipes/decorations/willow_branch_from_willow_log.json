@@ -30,5 +30,6 @@
     "recipes": [
       "regions_unexplored:willow_branch_from_willow_log"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

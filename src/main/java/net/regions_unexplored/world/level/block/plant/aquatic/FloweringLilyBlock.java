@@ -8,14 +8,10 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.BonemealableBlock;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
-import net.minecraft.world.level.block.WaterlilyBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
-import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -59,12 +55,7 @@ public class FloweringLilyBlock extends WaterlilyBlock implements BonemealableBl
     protected boolean mayPlaceOn(BlockState state, BlockGetter getter, BlockPos pos) {
         FluidState fluidState = getter.getFluidState(pos);
         FluidState fluidState1 = getter.getFluidState(pos.above());
-        return (fluidState.getType() == Fluids.WATER || state.getMaterial() == Material.ICE) && fluidState1.getType() == Fluids.EMPTY;
-    }
-
-    @Override
-    public PushReaction getPistonPushReaction(BlockState state) {
-        return PushReaction.DESTROY;
+        return (fluidState.getType() == Fluids.WATER || state.getBlock() instanceof IceBlock) && fluidState1.getType() == Fluids.EMPTY;
     }
 
     @Override

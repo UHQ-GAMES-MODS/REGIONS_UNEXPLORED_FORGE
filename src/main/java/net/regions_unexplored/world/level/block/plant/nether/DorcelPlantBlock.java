@@ -35,9 +35,4 @@ public class DorcelPlantBlock extends FlowerBlock {
     public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
             entity.hurt(level.damageSources().source(RuDamageTypes.DORCEL), 1.0F);
     }
-
-    @Override
-    public PushReaction getPistonPushReaction(BlockState state) {
-        return PushReaction.DESTROY;
-    }
 }

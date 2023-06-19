@@ -1,15 +1,34 @@
 {
   "variants": {
-    "axis=x": {
+    "axis=x,is_stripped=false": {
       "model": "regions_unexplored:block/pine_log",
       "x": 90,
       "y": 90
     },
-    "axis=y": {
+    "axis=x,is_stripped=true": {
+      "model": "regions_unexplored:block/stripped_pine_log",
+      "x": 90,
+      "y": 90
+    },
+
+    "axis=y,transition_block=false,is_stripped=false": {
       "model": "regions_unexplored:block/pine_log"
     },
-    "axis=z": {
+    "axis=y,transition_block=true,is_stripped=false": {
+      "model": "regions_unexplored:block/pine_log_transition"
+    },
+    "axis=y,transition_block=false,is_stripped=true": {
+      "model": "regions_unexplored:block/stripped_pine_log"
+    },
+    "axis=y,transition_block=true,is_stripped=true": {
+      "model": "regions_unexplored:block/stripped_pine_log"
+    },
+
+    "axis=z,is_stripped=false": {
       "model": "regions_unexplored:block/pine_log",
+      "x": 90
+    },"axis=z,is_stripped=true": {
+      "model": "regions_unexplored:block/stripped_pine_log",
       "x": 90
     }
   }

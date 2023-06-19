@@ -70,7 +70,8 @@
     "regions_unexplored:giant_lily_pad",
     "#minecraft:flowers",
     "#minecraft:leaves",
-    "#minecraft:replaceable_plants",
+    "#minecraft:replaceable",
+    "#minecraft:replaceable_by_trees",
     "#minecraft:saplings",
     "#regions_unexplored:branches",
     "#regions_unexplored:shrubs"

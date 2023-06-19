@@ -123,8 +123,46 @@ public class GiantLilyBlock extends HorizontalDirectionalBlock implements net.mi
         return false;
     }
 
-    public BlockState getStateForPlacement(BlockPlaceContext p_54779_) {
-        return this.defaultBlockState().setValue(FACING, p_54779_.getHorizontalDirection().getOpposite());
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        Level level = context.getLevel();
+        BlockPos pos = context.getClickedPos();
+        Direction direction = context.getHorizontalDirection().getOpposite();
+
+        if(context.getHorizontalDirection().getOpposite()==Direction.NORTH){
+            if(!level.isClientSide()){
+                level.setBlock(pos.west(), this.defaultBlockState().setValue(HorizontalDirectionalBlock.FACING, Direction.WEST), 20);
+                level.setBlock(pos.south().west(), this.defaultBlockState().setValue(HorizontalDirectionalBlock.FACING, Direction.SOUTH), 20);
+                level.setBlock(pos.south(), this.defaultBlockState().setValue(HorizontalDirectionalBlock.FACING, Direction.EAST), 20);
+                level.blockUpdated(pos.west(), Blocks.AIR);
+                level.blockUpdated(pos.south().west(), Blocks.AIR);
+                level.blockUpdated(pos.south(), Blocks.AIR);
+            }
+            return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
+        }
+        else if(context.getHorizontalDirection().getOpposite()==Direction.EAST){
+            if(!level.isClientSide()){
+                level.setBlock(pos.north(), this.defaultBlockState().setValue(HorizontalDirectionalBlock.FACING, Direction.NORTH), 20);
+                level.setBlock(pos.west(), this.defaultBlockState().setValue(HorizontalDirectionalBlock.FACING, Direction.SOUTH), 20);
+                level.setBlock(pos.west().north(), this.defaultBlockState().setValue(HorizontalDirectionalBlock.FACING, Direction.WEST), 20);
+            }
+            return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
+        }
+        else if(context.getHorizontalDirection().getOpposite()==Direction.SOUTH){
+            if(!level.isClientSide()){
+                level.setBlock(pos.north().east(), this.defaultBlockState().setValue(HorizontalDirectionalBlock.FACING, Direction.NORTH), 20);
+                level.setBlock(pos.east(), this.defaultBlockState().setValue(HorizontalDirectionalBlock.FACING, Direction.EAST), 20);
+                level.setBlock(pos.north(), this.defaultBlockState().setValue(HorizontalDirectionalBlock.FACING, Direction.WEST), 20);
+            }
+            return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
+        }
+        else{
+            if(!level.isClientSide()){
+                level.setBlock(pos.east(), this.defaultBlockState().setValue(HorizontalDirectionalBlock.FACING, Direction.NORTH), 20);
+                level.setBlock(pos.south().east(), this.defaultBlockState().setValue(HorizontalDirectionalBlock.FACING, Direction.EAST), 20);
+                level.setBlock(pos.south(), this.defaultBlockState().setValue(HorizontalDirectionalBlock.FACING, Direction.SOUTH), 20);
+            }
+            return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
+        }
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> p_54794_) {

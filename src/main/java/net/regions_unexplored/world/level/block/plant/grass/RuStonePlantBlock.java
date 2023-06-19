@@ -48,9 +48,4 @@ public class RuStonePlantBlock extends BushBlock implements BonemealableBlock, n
 
     public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
     }
-
-    @Override
-    public PushReaction getPistonPushReaction(BlockState state) {
-        return PushReaction.DESTROY;
-    }
 }

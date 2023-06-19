@@ -21,8 +21,8 @@ public class RuColorHandler {
     public static void grassBlockColorLoad(RegisterColorHandlersEvent.Block event) {
         event.getBlockColors().register((bs, world, pos, index) -> {
                     return world != null && pos != null ? BiomeColors.getAverageGrassColor(world, pos) : GrassColor.get(0.5D, 1.0D);
-                },      RuBlocks.FOREST_GRASS_BLOCK.get(),
-                RuBlocks.PLAINS_GRASS_BLOCK.get(),
+                },      RuBlocks.PEAT_GRASS_BLOCK.get(),
+                RuBlocks.SILT_GRASS_BLOCK.get(),
                 RuBlocks.STONE_GRASS_BLOCK.get(),
                 RuBlocks.DEEPSLATE_GRASS_BLOCK.get(),
                 RuBlocks.CHALK_GRASS_BLOCK.get(),
@@ -41,8 +41,8 @@ public class RuColorHandler {
     public static void grassItemColorLoad(RegisterColorHandlersEvent.Item event) {
         event.getItemColors().register((stack, index) -> {
                     return GrassColor.get(0.5D, 1.0D);
-                },      RuBlocks.FOREST_GRASS_BLOCK.get(),
-                RuBlocks.PLAINS_GRASS_BLOCK.get(),
+                },      RuBlocks.PEAT_GRASS_BLOCK.get(),
+                RuBlocks.SILT_GRASS_BLOCK.get(),
                 RuBlocks.STONE_GRASS_BLOCK.get(),
                 RuBlocks.DEEPSLATE_GRASS_BLOCK.get(),
                 RuBlocks.CHALK_GRASS_BLOCK.get(),
@@ -73,6 +73,7 @@ public class RuColorHandler {
                 RuBlocks.REDWOOD_LEAVES.get(),
                 RuBlocks.WILLOW_LEAVES.get(),
                 RuBlocks.MAPLE_LEAVES.get(),
+                RuBlocks.MAPLE_LEAF_PILE.get(),
                 RuBlocks.WINDSWEPT_GRASS.get()
         );
     }
@@ -95,6 +96,7 @@ public class RuColorHandler {
                 RuBlocks.REDWOOD_LEAVES.get(),
                 RuBlocks.WILLOW_LEAVES.get(),
                 RuBlocks.MAPLE_LEAVES.get(),
+                RuBlocks.MAPLE_LEAF_PILE.get(),
                 RuBlocks.WINDSWEPT_GRASS.get()
         );
     }
@@ -125,7 +127,9 @@ public class RuColorHandler {
     public static void aspenColorLoad(RegisterColorHandlersEvent.Block event) {
         event.getBlockColors().register((bs, world, pos, index) -> {
             return world != null && pos != null ? getAspenColor(world, pos) : FoliageColor.getDefaultColor();
-        }, RuBlocks.SILVER_BIRCH_LEAVES.get());
+        }, RuBlocks.SILVER_BIRCH_LEAVES.get(),
+                RuBlocks.SILVER_BIRCH_LEAF_PILE.get()
+        );
     }
 
     public static int getAspenColor(BlockAndTintGetter world, BlockPos pos) {

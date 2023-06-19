@@ -12,14 +12,13 @@ import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.material.MaterialColor;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.regions_unexplored.block.RuBlocks;
 
 public class CactusSaplingBlock extends SaplingBlock {
     public CactusSaplingBlock(AbstractTreeGrower tree) {
-        super(tree, Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_MAGENTA).noCollission().instabreak().sound(SoundType.GRASS));
+        super(tree, Properties.of().mapColor(MapColor.COLOR_MAGENTA).replaceable().pushReaction(PushReaction.DESTROY).noCollission().instabreak().sound(SoundType.GRASS));
     }
 
     @Override
@@ -31,11 +30,6 @@ public class CactusSaplingBlock extends SaplingBlock {
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos p_51030_) {
         BlockPos blockpos = p_51030_.below();
         return mayPlaceOn(level.getBlockState(blockpos), level, blockpos);
-    }
-
-    @Override
-    public PushReaction getPistonPushReaction(BlockState state) {
-        return PushReaction.DESTROY;
     }
 
     @Override

@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SnowLayerBlock;
 import net.minecraft.world.level.block.SnowyDirtBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.lighting.LayerLightEngine;
+import net.minecraft.world.level.lighting.LightEngine;
 import net.regions_unexplored.block.RuBlocks;
 
 public abstract class ChalkDirtBlock extends SnowyDirtBlock {
@@ -26,7 +26,7 @@ public abstract class ChalkDirtBlock extends SnowyDirtBlock {
       } else if (blockState.getFluidState().getAmount() == 8) {
          return false;
       } else {
-         int i = LayerLightEngine.getLightBlockInto(reader, state, pos, blockState, blockPos, Direction.UP, blockState.getLightBlock(reader, blockPos));
+         int i = LightEngine.getLightBlockInto(reader, state, pos, blockState, blockPos, Direction.UP, blockState.getLightBlock(reader, blockPos));
          return i < reader.getMaxLightLevel();
       }
    }

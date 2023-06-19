@@ -3,7 +3,6 @@ package net.regions_unexplored.data.worldgen.biome.builder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
-import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.sounds.Musics;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
@@ -14,7 +13,6 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.regions_unexplored.data.worldgen.RuBiomeDefaultFeatures;
-import net.regions_unexplored.data.worldgen.features.RuMiscOverworldFeatures;
 import net.regions_unexplored.data.worldgen.placement.RuMiscOverworldPlacements;
 import net.regions_unexplored.data.worldgen.placement.RuTreePlacements;
 import net.regions_unexplored.data.worldgen.placement.RuVegetationPlacements;
@@ -171,7 +169,6 @@ public class TaigaBiomes {
     }
 
     public static Biome pineTaiga(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
-        //TODO:Complete Biome
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(0.7F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -186,6 +183,16 @@ public class TaigaBiomes {
         BiomeGenerationSettings.Builder biomeBuilder = baseTaigaGeneration(featureGetter, carverGetter, true);
 
         //add RU features
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.PINE_TREE_ON_DIRT);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.PINE_TREE_TALL_ON_DIRT);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.PINE_TREE_SHRUB_ON_GRASS);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuMiscOverworldPlacements.FALLEN_PINE_TREE);
+
+        RuBiomeDefaultFeatures.addDirtSurfaceVegetation(biomeBuilder);
+
+        RuBiomeDefaultFeatures.addTaigaFlowerPatch(biomeBuilder);
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.PINE_SHRUB);
 
 
         //add mob spawns
@@ -218,10 +225,12 @@ public class TaigaBiomes {
         //add RU features
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.ULTRA_REDWOOD_TREE);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.GIANT_REDWOOD_TREE_DENSE);
-        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.OAK_BUSH_DENSE);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.REDWOOD_TREE);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.OAK_BUSH_DENSE);
+
         RuBiomeDefaultFeatures.redwoodDecoration(biomeBuilder);
-        RuBiomeDefaultFeatures.addRareSalmonberryBush(biomeBuilder);
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.REDWOOD_SHRUB);
 
         //add mob spawns
         MobSpawnSettings.Builder spawnBuilder = baseTaigaSpawning();
@@ -254,8 +263,10 @@ public class TaigaBiomes {
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.GIANT_REDWOOD_TREE_SPARSE);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.REDWOOD_TREE);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.OAK_BUSH_SPARSE);
+
         RuBiomeDefaultFeatures.redwoodDecoration(biomeBuilder);
-        RuBiomeDefaultFeatures.addCommonSalmonberryBush(biomeBuilder);
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.REDWOOD_SHRUB);
 
         //add mob spawns
         MobSpawnSettings.Builder spawnBuilder = baseTaigaSpawning();

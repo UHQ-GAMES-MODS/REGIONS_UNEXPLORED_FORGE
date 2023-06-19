@@ -60,13 +60,17 @@ public class ForestBiomes {
                 .foliageColorOverride(9877306)
                 .grassColorOverride(12896058)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseForestGeneration(featureGetter, carverGetter, true);
 
         //add RU features
-
+        RuBiomeDefaultFeatures.autumnalTrees(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.GRASS);
+        RuBiomeDefaultFeatures.addSparseOrangeCornflower(biomeBuilder);
+        RuBiomeDefaultFeatures.addMapleGroundcover(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.AUTUMNAL_SHRUB_MIX);
 
         //add mob spawns
         MobSpawnSettings.Builder spawnBuilder = baseForestSpawning();
@@ -91,7 +95,7 @@ public class ForestBiomes {
                 .foliageColorOverride(11140963)
                 .grassColorOverride(11853428)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseForestGeneration(featureGetter, carverGetter, true);
@@ -123,7 +127,7 @@ public class ForestBiomes {
                 .foliageColorOverride(8437033)
                 .grassColorOverride(10406459)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseForestGeneration(featureGetter, carverGetter, false);
@@ -158,7 +162,7 @@ public class ForestBiomes {
                 .foliageColorOverride(7578936)
                 .grassColorOverride(8700997)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseForestGeneration(featureGetter, carverGetter, true);
@@ -189,7 +193,7 @@ public class ForestBiomes {
                 .foliageColorOverride(6462505)
                 .grassColorOverride(9550928)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseForestGeneration(featureGetter, carverGetter, true);
@@ -225,7 +229,7 @@ public class ForestBiomes {
                 .foliageColorOverride(3966928)
                 .grassColorOverride(7518100)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseForestGeneration(featureGetter, carverGetter, true);
@@ -257,7 +261,7 @@ public class ForestBiomes {
                 .foliageColorOverride(10669160)
                 .grassColorOverride(11717735)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseForestGeneration(featureGetter, carverGetter, true);
@@ -288,7 +292,7 @@ public class ForestBiomes {
                 .foliageColorOverride(8960834)
                 .grassColorOverride(11585338)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseForestGeneration(featureGetter, carverGetter, false);
@@ -299,6 +303,7 @@ public class ForestBiomes {
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuMiscOverworldPlacements.FALLEN_SILVER_BIRCH_TREE);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.TASSEL);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.SEEDED_GRASS);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.SILVER_BIRCH_LEAF_PILE_DENSE);
         RuBiomeDefaultFeatures.addOrangeCornflower(biomeBuilder);
 
 
@@ -326,7 +331,7 @@ public class ForestBiomes {
                 .foliageColorOverride(7054415)
                 .grassColorOverride(8432236)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseForestGeneration(featureGetter, carverGetter, true);
@@ -336,7 +341,7 @@ public class ForestBiomes {
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.MAPLE_TREE_SPARSE);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.BIRCH_TREE_ASPEN);
         RuBiomeDefaultFeatures.addMeadowRocks(biomeBuilder);
-        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuMiscOverworldPlacements.FALLEN_OAK_TREE);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuMiscOverworldPlacements.FALLEN_OAK_TREE_SPARSE);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.GRASS);
         RuBiomeDefaultFeatures.addPurpleCornflower(biomeBuilder);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.OAK_SHRUB);
@@ -366,7 +371,7 @@ public class ForestBiomes {
                 .foliageColorOverride(7778144)
                 .grassColorOverride(8037223)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseForestGeneration(featureGetter, carverGetter, true);

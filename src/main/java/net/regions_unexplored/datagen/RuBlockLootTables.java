@@ -103,6 +103,11 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         add(RuBlocks.RED_SAKURA_FLOWERS.get(), (block) -> createMultifaceBlockDrops(block, HAS_SHEARS));
         add(RuBlocks.PINK_SAKURA_FLOWERS.get(), (block) -> createMultifaceBlockDrops(block, HAS_SHEARS));
         add(RuBlocks.WHITE_SAKURA_FLOWERS.get(), (block) -> createMultifaceBlockDrops(block, HAS_SHEARS));
+
+        add(RuBlocks.MAPLE_LEAF_PILE.get(), (block) -> createPetalsDrops(block));
+        add(RuBlocks.RED_MAPLE_LEAF_PILE.get(), (block) -> createPetalsDrops(block));
+        add(RuBlocks.ORANGE_MAPLE_LEAF_PILE.get(), (block) -> createPetalsDrops(block));
+        add(RuBlocks.SILVER_BIRCH_LEAF_PILE.get(), (block) -> createPetalsDrops(block));
         //TALL_PLANTS
         add(RuBlocks.MEADOW_SAGE.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         add(RuBlocks.BARLEY.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
@@ -318,19 +323,21 @@ public class RuBlockLootTables extends BlockLootSubProvider {
 
         /*-----------------DIRT_BLOCKS-----------------*/
         //FOREST_DIRT_BLOCKS
-        add(RuBlocks.FOREST_GRASS_BLOCK.get(), (block) -> createSingleItemTableWithSilkTouch(block, RuBlocks.FOREST_DIRT.get()));
-        dropSelf(RuBlocks.FOREST_DIRT.get());
-        add(RuBlocks.FOREST_DIRT_PATH.get(), (block) -> createSingleItemTableWithSilkTouch(block, RuBlocks.FOREST_DIRT.get()));
-        dropSelf(RuBlocks.FOREST_COARSE_DIRT.get());
-        dropSelf(RuBlocks.FOREST_MUD.get());
-        add(RuBlocks.FOREST_FARMLAND.get(), (block) -> createSingleItemTableWithSilkTouch(block, RuBlocks.FOREST_DIRT.get()));
+        add(RuBlocks.PEAT_GRASS_BLOCK.get(), (block) -> createSingleItemTableWithSilkTouch(block, RuBlocks.PEAT_DIRT.get()));
+        dropSelf(RuBlocks.PEAT_DIRT.get());
+        add(RuBlocks.PEAT_DIRT_PATH.get(), (block) -> createSingleItemTableWithSilkTouch(block, RuBlocks.PEAT_DIRT.get()));
+        dropSelf(RuBlocks.PEAT_COARSE_DIRT.get());
+        dropSelf(RuBlocks.PEAT_PODZOL.get());
+        dropSelf(RuBlocks.PEAT_MUD.get());
+        add(RuBlocks.PEAT_FARMLAND.get(), (block) -> createSingleItemTableWithSilkTouch(block, RuBlocks.PEAT_DIRT.get()));
         //PLAINS_DIRT_BLOCKS
-        add(RuBlocks.PLAINS_GRASS_BLOCK.get(), (block) -> createSingleItemTableWithSilkTouch(block, RuBlocks.PLAINS_DIRT.get()));
-        dropSelf(RuBlocks.PLAINS_DIRT.get());
-        add(RuBlocks.PLAINS_DIRT_PATH.get(), (block) -> createSingleItemTableWithSilkTouch(block, RuBlocks.PLAINS_DIRT.get()));
-        dropSelf(RuBlocks.PLAINS_COARSE_DIRT.get());
-        dropSelf(RuBlocks.PLAINS_MUD.get());
-        add(RuBlocks.PLAINS_FARMLAND.get(), (block) -> createSingleItemTableWithSilkTouch(block, RuBlocks.PLAINS_DIRT.get()));
+        add(RuBlocks.SILT_GRASS_BLOCK.get(), (block) -> createSingleItemTableWithSilkTouch(block, RuBlocks.SILT_DIRT.get()));
+        dropSelf(RuBlocks.SILT_DIRT.get());
+        add(RuBlocks.SILT_DIRT_PATH.get(), (block) -> createSingleItemTableWithSilkTouch(block, RuBlocks.SILT_DIRT.get()));
+        dropSelf(RuBlocks.SILT_COARSE_DIRT.get());
+        dropSelf(RuBlocks.SILT_PODZOL.get());
+        dropSelf(RuBlocks.SILT_MUD.get());
+        add(RuBlocks.SILT_FARMLAND.get(), (block) -> createSingleItemTableWithSilkTouch(block, RuBlocks.SILT_DIRT.get()));
         //OTHER_DIRT_BLOCKS
         add(RuBlocks.ALPHA_GRASS_BLOCK.get(), (block) -> createSingleItemTableWithSilkTouch(block, Blocks.DIRT));
         dropSelf(RuBlocks.ASHEN_DIRT.get());
@@ -572,7 +579,6 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         add(RuBlocks.PALM_WALL_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.PALM_SIGN.get()));
         //PINE_BLOCKS
         dropSelf(RuBlocks.PINE_LOG.get());
-        dropSelf(RuBlocks.PINE_LOG_TRANSITION.get());
         dropSelf(RuBlocks.STRIPPED_PINE_LOG.get());
         dropSelf(RuBlocks.PINE_WOOD.get());
         dropSelf(RuBlocks.STRIPPED_PINE_WOOD.get());

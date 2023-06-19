@@ -30,5 +30,6 @@
     "recipes": [
       "regions_unexplored:joshua_stairs"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

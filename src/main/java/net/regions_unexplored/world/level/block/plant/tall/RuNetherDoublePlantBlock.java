@@ -23,11 +23,6 @@ public class RuNetherDoublePlantBlock extends DoublePlantBlock {
         return false;
     }
 
-    @Override
-    public PushReaction getPistonPushReaction(BlockState state) {
-        return PushReaction.DESTROY;
-    }
-
     protected boolean mayPlaceOn(BlockState state, BlockGetter getter, BlockPos pos) {
         return state.is(BlockTags.NYLIUM) || state.is(Blocks.SOUL_SOIL) || super.mayPlaceOn(state, getter, pos);
     }

@@ -3,23 +3,17 @@ package net.regions_unexplored.world.level.feature.tree;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelSimulatedReader;
 import net.minecraft.world.level.WorldGenLevel;
-import net.minecraft.world.level.block.BeehiveBlock;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LeavesBlock;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.data.tags.RuTags;
-import net.regions_unexplored.world.level.block.plant.other.BranchBlock;
 import net.regions_unexplored.world.level.feature.configuration.RuTreeConfiguration;
 
 import java.util.Random;
@@ -75,11 +69,11 @@ public class TreeShrubFeature extends Feature<RuTreeConfiguration> {
         if(level.isOutsideBuildHeight(pos)){
             return true;
         }
-        if(level.getBlockState(pos).is(RuBlocks.FOREST_GRASS_BLOCK.get())){
-            level.setBlock(pos, RuBlocks.FOREST_DIRT.get().defaultBlockState(), 2);
+        if(level.getBlockState(pos).is(RuBlocks.PEAT_GRASS_BLOCK.get())){
+            level.setBlock(pos, RuBlocks.PEAT_DIRT.get().defaultBlockState(), 2);
         }
-        else if(level.getBlockState(pos).is(RuBlocks.PLAINS_GRASS_BLOCK.get())){
-            level.setBlock(pos, RuBlocks.PLAINS_DIRT.get().defaultBlockState(), 2);
+        else if(level.getBlockState(pos).is(RuBlocks.SILT_GRASS_BLOCK.get())){
+            level.setBlock(pos, RuBlocks.SILT_DIRT.get().defaultBlockState(), 2);
         }
         else if(level.getBlockState(pos).is(RuBlocks.ALPHA_GRASS_BLOCK.get())){
             level.setBlock(pos, Blocks.DIRT.defaultBlockState(), 2);
@@ -94,11 +88,11 @@ public class TreeShrubFeature extends Feature<RuTreeConfiguration> {
             return true;
         }
 
-        if(level.getBlockState(pos.below()).is(RuBlocks.FOREST_GRASS_BLOCK.get())){
-            level.setBlock(pos.below(), RuBlocks.FOREST_DIRT.get().defaultBlockState(), 2);
+        if(level.getBlockState(pos.below()).is(RuBlocks.PEAT_GRASS_BLOCK.get())){
+            level.setBlock(pos.below(), RuBlocks.PEAT_DIRT.get().defaultBlockState(), 2);
         }
-        else if(level.getBlockState(pos.below()).is(RuBlocks.PLAINS_GRASS_BLOCK.get())){
-            level.setBlock(pos.below(), RuBlocks.PLAINS_DIRT.get().defaultBlockState(), 2);
+        else if(level.getBlockState(pos.below()).is(RuBlocks.SILT_GRASS_BLOCK.get())){
+            level.setBlock(pos.below(), RuBlocks.SILT_DIRT.get().defaultBlockState(), 2);
         }
         else if(level.getBlockState(pos.below()).is(RuBlocks.ALPHA_GRASS_BLOCK.get())){
             level.setBlock(pos.below(), Blocks.DIRT.defaultBlockState(), 2);

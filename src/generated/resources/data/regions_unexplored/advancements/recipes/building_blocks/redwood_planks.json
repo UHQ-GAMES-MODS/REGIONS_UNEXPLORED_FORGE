@@ -28,5 +28,6 @@
     "recipes": [
       "regions_unexplored:redwood_planks"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

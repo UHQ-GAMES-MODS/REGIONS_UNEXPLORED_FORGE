@@ -30,5 +30,6 @@
     "recipes": [
       "regions_unexplored:red_dye_from_waratah"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

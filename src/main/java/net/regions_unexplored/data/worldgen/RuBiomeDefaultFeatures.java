@@ -13,11 +13,18 @@ public class RuBiomeDefaultFeatures {
     }
     public static void redwoodDecoration(BiomeGenerationSettings.Builder builder) {
         builder.addFeature(GenerationStep.Decoration.SURFACE_STRUCTURES, RuMiscOverworldPlacements.REDWOODS_ROCK);
-        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.REDWOOD_SHRUB);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.REDWOODS_VEGETATION);
+        addRareSalmonberryBush(builder);
     }
     public static void addMeadowRocks(BiomeGenerationSettings.Builder builder) {
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuMiscOverworldPlacements.MEADOW_ROCK);
+    }
+    public static void addDirtSurfaceVegetation(BiomeGenerationSettings.Builder builder) {
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.DIRT_VEGETATION);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.GRASS_VEGETATION);
+    }
+    public static void addTaigaFlowerPatch(BiomeGenerationSettings.Builder builder) {
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.TRILLIUM_DAISY);
     }
     public static void addMeadowVegetation(BiomeGenerationSettings.Builder builder) {
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.MEADOW_VEGETATION);
@@ -35,6 +42,23 @@ public class RuBiomeDefaultFeatures {
     }
     public static void addOrangeCornflower(BiomeGenerationSettings.Builder builder) {
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.ORANGE_CONEFLOWER);
+    }
+    public static void autumnalTrees(BiomeGenerationSettings.Builder builder) {
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.ORANGE_MAPLE_TREE_ON_GRASS);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.RED_MAPLE_TREE_ON_GRASS);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.MAPLE_TREE_ON_GRASS);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.SILVER_BIRCH_ON_GRASS);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.BIG_ORANGE_MAPLE_TREE_ON_GRASS);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.BIG_RED_MAPLE_TREE_ON_GRASS);
+    }
+    public static void addSparseOrangeCornflower(BiomeGenerationSettings.Builder builder) {
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.SPARSE_ORANGE_CONEFLOWER);
+    }
+    public static void addMapleGroundcover(BiomeGenerationSettings.Builder builder) {
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.SILVER_BIRCH_LEAF_PILE);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.ORANGE_MAPLE_LEAF_PILE);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.RED_MAPLE_LEAF_PILE);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.MAPLE_LEAF_PILE);
     }
     public static void addPurpleCornflower(BiomeGenerationSettings.Builder builder) {
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.PURPLE_CONEFLOWER);

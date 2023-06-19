@@ -41,10 +41,6 @@
       "required": false
     },
     {
-      "id": "regions_unexplored:icy_desert",
-      "required": false
-    },
-    {
       "id": "regions_unexplored:icy_heights",
       "required": false
     },

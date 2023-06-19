@@ -30,5 +30,6 @@
       ],
       "rolls": 1.0
     }
-  ]
+  ],
+  "random_sequence": "regions_unexplored:blocks/gray_painted_slab"
 }

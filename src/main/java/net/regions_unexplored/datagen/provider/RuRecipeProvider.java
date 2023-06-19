@@ -1,8 +1,6 @@
 package net.regions_unexplored.datagen.provider;
 
 import com.google.common.collect.ImmutableList;
-import net.minecraft.core.Registry;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -15,10 +13,8 @@ import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
-import net.minecraftforge.registries.RegistryObject;
 import net.regions_unexplored.RegionsUnexploredMod;
 import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.data.tags.RuTags;
@@ -191,10 +187,6 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.YELLOW_BIOSHROOM_BLOCK.get(), 1).define('#', RuBlocks.YELLOW_BIOSHROOM.get()).pattern("##").pattern("##").group("bioshroom_blocks").unlockedBy("has_yellow_bioshroom", has(RuBlocks.YELLOW_BIOSHROOM.get())).save(consumer);
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.GLOWING_YELLOW_BIOSHROOM_BLOCK.get(), 1).define('#', RuBlocks.YELLOW_BIOSHROOM_BLOCK.get()).define('X', Blocks.GLOWSTONE).pattern(" # ").pattern("#X#").pattern(" # ").group("bioshroom_blocks").unlockedBy("has_yellow_bioshroom_block", has(RuBlocks.YELLOW_BIOSHROOM_BLOCK.get())).save(consumer);
 
-        //TODO:BAMBOO_RECIPES
-        //-----------BAMBOO_LOG;
-        //-----------STRIPPED_BAMBOO_LOG;
-
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(RuBlocks.SAGUARO_CACTUS.get()), RecipeCategory.MISC, Items.GREEN_DYE, 1.0F, 200).group("cactus").unlockedBy("has_saguaro_cactus", has(RuBlocks.SAGUARO_CACTUS.get())).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getConversionRecipeName(Items.GREEN_DYE, RuBlocks.SAGUARO_CACTUS.get())));
 
         /*-----------------BRANCHES-----------------*/
@@ -265,11 +257,11 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.WILLOW_BRANCH.get(), "stick", 4);
 
         /*-----------------DIRT_BLOCKS-----------------*/
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.FOREST_COARSE_DIRT.get(), 4).define('D', RuBlocks.FOREST_DIRT.get()).define('G', Blocks.GRAVEL).pattern("DG").pattern("GD").group("coarse_dirt").unlockedBy("has_gravel", has(Blocks.GRAVEL)).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.PLAINS_COARSE_DIRT.get(), 4).define('D', RuBlocks.PLAINS_DIRT.get()).define('G', Blocks.GRAVEL).pattern("DG").pattern("GD").group("coarse_dirt").unlockedBy("has_gravel", has(Blocks.GRAVEL)).save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.PEAT_COARSE_DIRT.get(), 4).define('D', RuBlocks.PEAT_DIRT.get()).define('G', Blocks.GRAVEL).pattern("DG").pattern("GD").group("coarse_dirt").unlockedBy("has_gravel", has(Blocks.GRAVEL)).save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.SILT_COARSE_DIRT.get(), 4).define('D', RuBlocks.SILT_DIRT.get()).define('G', Blocks.GRAVEL).pattern("DG").pattern("GD").group("coarse_dirt").unlockedBy("has_gravel", has(Blocks.GRAVEL)).save(consumer);
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.ASHEN_DIRT.get(), 4).define('D', Blocks.DIRT).define('G', RuTags.ASH_ITEM).pattern("DG").pattern("GD").group("coarse_dirt").unlockedBy("has_ash", has(RuTags.ASH_ITEM)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getConversionRecipeName(RuBlocks.ASHEN_DIRT.get(), Blocks.DIRT)));
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.ASHEN_DIRT.get(), 4).define('D', RuBlocks.FOREST_DIRT.get()).define('G', RuTags.ASH_ITEM).pattern("DG").pattern("GD").group("coarse_dirt").unlockedBy("has_ash", has(RuTags.ASH_ITEM)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getConversionRecipeName(RuBlocks.ASHEN_DIRT.get(), RuBlocks.FOREST_DIRT.get())));
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.ASHEN_DIRT.get(), 4).define('D', RuBlocks.PLAINS_DIRT.get()).define('G', RuTags.ASH_ITEM).pattern("DG").pattern("GD").group("coarse_dirt").unlockedBy("has_ash", has(RuTags.ASH_ITEM)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getConversionRecipeName(RuBlocks.ASHEN_DIRT.get(), RuBlocks.PLAINS_DIRT.get())));
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.ASHEN_DIRT.get(), 4).define('D', RuBlocks.PEAT_DIRT.get()).define('G', RuTags.ASH_ITEM).pattern("DG").pattern("GD").group("coarse_dirt").unlockedBy("has_ash", has(RuTags.ASH_ITEM)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getConversionRecipeName(RuBlocks.ASHEN_DIRT.get(), RuBlocks.PEAT_DIRT.get())));
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.ASHEN_DIRT.get(), 4).define('D', RuBlocks.SILT_DIRT.get()).define('G', RuTags.ASH_ITEM).pattern("DG").pattern("GD").group("coarse_dirt").unlockedBy("has_ash", has(RuTags.ASH_ITEM)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getConversionRecipeName(RuBlocks.ASHEN_DIRT.get(), RuBlocks.SILT_DIRT.get())));
 
         /*-----------------STONE_BLOCKS-----------------*/
 

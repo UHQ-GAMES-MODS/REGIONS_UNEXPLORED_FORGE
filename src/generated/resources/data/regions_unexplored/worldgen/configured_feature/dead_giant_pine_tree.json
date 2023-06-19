@@ -50,7 +50,9 @@
       "state": {
         "Name": "regions_unexplored:pine_log",
         "Properties": {
-          "axis": "y"
+          "axis": "y",
+          "is_stripped": "false",
+          "transition_block": "false"
         }
       }
     }

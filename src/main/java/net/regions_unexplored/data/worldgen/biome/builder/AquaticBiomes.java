@@ -108,7 +108,7 @@ public class AquaticBiomes {
                 .foliageColorOverride(6028091)
                 .grassColorOverride(8901207)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(featureGetter, carverGetter);
@@ -146,7 +146,7 @@ public class AquaticBiomes {
                 .foliageColorOverride(-5718172)
                 .grassColorOverride(-4733087)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseRiverGeneration(featureGetter, carverGetter);
@@ -209,7 +209,7 @@ public class AquaticBiomes {
                 .foliageColorOverride(-7159980)
                 .grassColorOverride(-6044317)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseRiverGeneration(featureGetter, carverGetter);
@@ -278,7 +278,7 @@ public class AquaticBiomes {
                 .grassColorOverride(12434605)
                 .ambientParticle(new AmbientParticleSettings(ParticleTypes.ASH, 0.05F))
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseIslandGeneration(featureGetter, carverGetter, false);
@@ -318,7 +318,7 @@ public class AquaticBiomes {
                 .foliageColorOverride(-11617740)
                 .grassColorOverride(-11225797)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseIslandGeneration(featureGetter, carverGetter, true);

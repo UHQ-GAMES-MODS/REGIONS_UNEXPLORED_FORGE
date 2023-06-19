@@ -30,5 +30,6 @@
     "recipes": [
       "regions_unexplored:jungle_branch_from_jungle_log"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

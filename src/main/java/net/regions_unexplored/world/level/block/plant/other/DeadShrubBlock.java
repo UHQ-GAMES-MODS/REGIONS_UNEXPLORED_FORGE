@@ -20,11 +20,6 @@ public class DeadShrubBlock extends BushBlock implements net.minecraftforge.comm
         super(properties);
     }
 
-    @Override
-    public PushReaction getPistonPushReaction(BlockState state) {
-        return PushReaction.DESTROY;
-    }
-
     public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
         if(state== RuBlocks.SMALL_DESERT_SHRUB.get().defaultBlockState()){
             return SHAPE_SMALL_DESERT_SHRUB;

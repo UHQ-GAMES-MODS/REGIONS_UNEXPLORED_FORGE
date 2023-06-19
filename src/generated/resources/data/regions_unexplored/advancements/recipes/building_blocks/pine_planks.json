@@ -28,5 +28,6 @@
     "recipes": [
       "regions_unexplored:pine_planks"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

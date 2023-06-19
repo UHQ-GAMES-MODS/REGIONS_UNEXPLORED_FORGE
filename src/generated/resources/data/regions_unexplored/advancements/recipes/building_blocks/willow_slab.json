@@ -30,5 +30,6 @@
     "recipes": [
       "regions_unexplored:willow_slab"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -39,11 +39,6 @@ public class CaveFlowerBlock extends BushBlock {
         return PlantType.CAVE;
     }
 
-    @Override
-    public PushReaction getPistonPushReaction(BlockState state) {
-        return PushReaction.DESTROY;
-    }
-
     public MobEffect getSuspiciousStewEffect() {
         return this.suspiciousStewEffect;
     }

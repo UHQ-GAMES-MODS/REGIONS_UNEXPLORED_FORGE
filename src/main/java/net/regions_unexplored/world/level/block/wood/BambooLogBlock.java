@@ -17,10 +17,10 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.material.MaterialColor;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.ToolAction;
@@ -36,7 +36,7 @@ public class BambooLogBlock extends Block implements BonemealableBlock,SimpleWat
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
     public BambooLogBlock() {
-        super(Properties.of(Material.BAMBOO, MaterialColor.COLOR_LIGHT_GREEN).sound(SoundType.BAMBOO).strength(2f, 3f).noOcclusion()
+        super(Properties.of().mapColor(MapColor.COLOR_LIGHT_GREEN).instrument(NoteBlockInstrument.BASS).sound(SoundType.BAMBOO).strength(2f, 3f).noOcclusion()
                 .isRedstoneConductor((bs, br, bp) -> false));
         this.registerDefaultState(this.stateDefinition.any().setValue(AXIS, Direction.Axis.Y).setValue(LEAVES, false).setValue(WATERLOGGED, Boolean.valueOf(false)));
     }

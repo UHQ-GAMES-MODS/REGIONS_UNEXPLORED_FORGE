@@ -17,11 +17,6 @@ public class AshenShrubBlock extends DoublePlantBlock {
     }
 
     @Override
-    public PushReaction getPistonPushReaction(BlockState state) {
-        return PushReaction.DESTROY;
-    }
-
-    @Override
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         if (state.getValue(HALF) != DoubleBlockHalf.UPPER) {
             BlockPos blockpos = pos.below();

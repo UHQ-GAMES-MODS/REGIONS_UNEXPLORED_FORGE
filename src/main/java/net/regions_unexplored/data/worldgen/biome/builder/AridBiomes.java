@@ -83,7 +83,7 @@ public class AridBiomes {
                 .foliageColorOverride(-6636971)
                 .grassColorOverride(-4670891)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_BADLANDS));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseSavannaGeneration(featureGetter, carverGetter, true);
@@ -114,7 +114,7 @@ public class AridBiomes {
                 .foliageColorOverride(-5060484)
                 .grassColorOverride(-3552115)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_BADLANDS));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseSavannaGeneration(featureGetter, carverGetter, false);
@@ -145,7 +145,7 @@ public class AridBiomes {
                 .foliageColorOverride(-8409523)
                 .grassColorOverride(-5213)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_DESERT));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseDesertGeneration(featureGetter, carverGetter, false);
@@ -176,7 +176,7 @@ public class AridBiomes {
                 .foliageColorOverride(-8016810)
                 .grassColorOverride(-4670891)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_DESERT));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseDesertGeneration(featureGetter, carverGetter, true);
@@ -207,7 +207,7 @@ public class AridBiomes {
                 .foliageColorOverride(-6836695)
                 .grassColorOverride(-4212907)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_DESERT));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseDesertGeneration(featureGetter, carverGetter, true);
@@ -238,7 +238,7 @@ public class AridBiomes {
                 .foliageColorOverride(-5589135)
                 .grassColorOverride(-5067675)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_STONY_PEAKS));
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseSavannaGeneration(featureGetter, carverGetter, false);

@@ -24,5 +24,6 @@
     "recipes": [
       "regions_unexplored:sakura_boat"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

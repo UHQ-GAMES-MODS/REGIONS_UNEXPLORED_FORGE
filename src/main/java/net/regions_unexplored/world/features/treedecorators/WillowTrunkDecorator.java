@@ -17,19 +17,13 @@ package net.regions_unexplored.world.features.treedecorators;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.util.RandomSource;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelSimulatedReader;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorType;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TrunkVineDecorator;
 import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.data.tags.RuTags;
-import net.regions_unexplored.world.level.feature.configuration.RuTreeConfiguration;
-import net.regions_unexplored.world.level.feature.tree.AshenTreeFeature;
 
 import java.util.Random;
 
@@ -87,10 +81,10 @@ public class WillowTrunkDecorator extends TrunkVineDecorator {
 		LevelSimulatedReader level = context.level();
 		
 		if(level.isStateAtPosition(pos, WillowTrunkDecorator::isForestGrass)){
-			context.setBlock(pos, RuBlocks.FOREST_DIRT.get().defaultBlockState());
+			context.setBlock(pos, RuBlocks.PEAT_DIRT.get().defaultBlockState());
 		}
 		else if(level.isStateAtPosition(pos, WillowTrunkDecorator::isPlainsGrass)){
-			context.setBlock(pos, RuBlocks.PLAINS_DIRT.get().defaultBlockState());
+			context.setBlock(pos, RuBlocks.SILT_DIRT.get().defaultBlockState());
 		}
 		else if(level.isStateAtPosition(pos, WillowTrunkDecorator::isGrass)){
 			context.setBlock(pos, Blocks.DIRT.defaultBlockState());
@@ -103,10 +97,10 @@ public class WillowTrunkDecorator extends TrunkVineDecorator {
 		}
 
 		if(level.isStateAtPosition(pos, WillowTrunkDecorator::isForestGrass)){
-			context.setBlock(pos.below(), RuBlocks.FOREST_DIRT.get().defaultBlockState());
+			context.setBlock(pos.below(), RuBlocks.PEAT_DIRT.get().defaultBlockState());
 		}
 		else if(level.isStateAtPosition(pos, WillowTrunkDecorator::isPlainsGrass)){
-			context.setBlock(pos.below(), RuBlocks.PLAINS_DIRT.get().defaultBlockState());
+			context.setBlock(pos.below(), RuBlocks.SILT_DIRT.get().defaultBlockState());
 		}
 		else if(level.isStateAtPosition(pos, WillowTrunkDecorator::isGrass)){
 			context.setBlock(pos.below(), Blocks.DIRT.defaultBlockState());
@@ -120,12 +114,12 @@ public class WillowTrunkDecorator extends TrunkVineDecorator {
 				||state.is(RuBlocks.ALPHA_GRASS_BLOCK.get());
 	}
 	public static boolean isForestGrass(BlockState state) {
-		return state.is(RuBlocks.FOREST_GRASS_BLOCK.get())
-				||state.is(RuBlocks.FOREST_DIRT.get());
+		return state.is(RuBlocks.PEAT_GRASS_BLOCK.get())
+				||state.is(RuBlocks.PEAT_DIRT.get());
 	}
 	public static boolean isPlainsGrass(BlockState state) {
-		return state.is(RuBlocks.PLAINS_GRASS_BLOCK.get())
-				||state.is(RuBlocks.PLAINS_DIRT.get());
+		return state.is(RuBlocks.SILT_GRASS_BLOCK.get())
+				||state.is(RuBlocks.SILT_DIRT.get());
 	}
 	public static boolean isDirt(BlockState state) {
 		return state.is(BlockTags.DIRT);
@@ -134,11 +128,11 @@ public class WillowTrunkDecorator extends TrunkVineDecorator {
 		return state.is(Blocks.GRASS_BLOCK)
 				||state.is(Blocks.MYCELIUM)
 				||state.is(Blocks.DIRT)
-				||state.is(RuBlocks.FOREST_GRASS_BLOCK.get())
-				||state.is(RuBlocks.PLAINS_GRASS_BLOCK.get())
+				||state.is(RuBlocks.PEAT_GRASS_BLOCK.get())
+				||state.is(RuBlocks.SILT_GRASS_BLOCK.get())
 				||state.is(RuBlocks.ALPHA_GRASS_BLOCK.get())
-				||state.is(RuBlocks.FOREST_DIRT.get())
-				||state.is(RuBlocks.PLAINS_DIRT.get());
+				||state.is(RuBlocks.PEAT_DIRT.get())
+				||state.is(RuBlocks.SILT_DIRT.get());
 	}
 
 	public static boolean isReplaceableBlock(BlockState state) {

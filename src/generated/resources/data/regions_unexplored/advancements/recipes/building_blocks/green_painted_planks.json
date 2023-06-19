@@ -28,5 +28,6 @@
     "recipes": [
       "regions_unexplored:green_painted_planks"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

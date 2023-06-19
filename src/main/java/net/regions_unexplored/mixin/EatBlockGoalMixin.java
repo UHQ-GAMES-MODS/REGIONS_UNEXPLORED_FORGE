@@ -28,16 +28,16 @@ public class EatBlockGoalMixin extends Goal {
         if (((EatBlockGoal)(Object)this).getEatAnimationTick() == this.adjustedTickDelay(4)) {
             BlockPos blockpos = ((EatBlockGoal)(Object)this).mob.blockPosition();
             BlockPos blockpos1 = blockpos.below();
-            if (((EatBlockGoal)(Object)this).level.getBlockState(blockpos1).is(RuBlocks.FOREST_GRASS_BLOCK.get())) {
+            if (((EatBlockGoal)(Object)this).level.getBlockState(blockpos1).is(RuBlocks.PEAT_GRASS_BLOCK.get())) {
                 if (((EatBlockGoal)(Object)this).level.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING)) {
-                    ((EatBlockGoal)(Object)this).level.levelEvent(2001, blockpos1, Block.getId(RuBlocks.FOREST_GRASS_BLOCK.get().defaultBlockState()));
-                    ((EatBlockGoal)(Object)this).level.setBlock(blockpos1, RuBlocks.FOREST_DIRT.get().defaultBlockState(), 2);
+                    ((EatBlockGoal)(Object)this).level.levelEvent(2001, blockpos1, Block.getId(RuBlocks.PEAT_GRASS_BLOCK.get().defaultBlockState()));
+                    ((EatBlockGoal)(Object)this).level.setBlock(blockpos1, RuBlocks.PEAT_DIRT.get().defaultBlockState(), 2);
                 }
                 ((EatBlockGoal)(Object)this).mob.ate();
-            } else if (((EatBlockGoal)(Object)this).level.getBlockState(blockpos1).is(RuBlocks.PLAINS_GRASS_BLOCK.get())) {
+            } else if (((EatBlockGoal)(Object)this).level.getBlockState(blockpos1).is(RuBlocks.SILT_GRASS_BLOCK.get())) {
                 if (((EatBlockGoal)(Object)this).level.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING)) {
-                    ((EatBlockGoal)(Object)this).level.levelEvent(2001, blockpos1, Block.getId(RuBlocks.PLAINS_GRASS_BLOCK.get().defaultBlockState()));
-                    ((EatBlockGoal)(Object)this).level.setBlock(blockpos1, RuBlocks.PLAINS_DIRT.get().defaultBlockState(), 2);
+                    ((EatBlockGoal)(Object)this).level.levelEvent(2001, blockpos1, Block.getId(RuBlocks.SILT_GRASS_BLOCK.get().defaultBlockState()));
+                    ((EatBlockGoal)(Object)this).level.setBlock(blockpos1, RuBlocks.SILT_DIRT.get().defaultBlockState(), 2);
                 }
                 ((EatBlockGoal)(Object)this).mob.ate();
             } else if (((EatBlockGoal)(Object)this).level.getBlockState(blockpos1).is(RuBlocks.ALPHA_GRASS_BLOCK.get())) {
@@ -60,12 +60,12 @@ public class EatBlockGoalMixin extends Goal {
                 return true;
             } else if (((EatBlockGoal) (Object) this).level.getBlockState(blockPos.below()).is(Blocks.GRASS_BLOCK)) {
                 return ((EatBlockGoal) (Object) this).level.getBlockState(blockPos.below()).is(Blocks.GRASS_BLOCK);
-            } else if (((EatBlockGoal) (Object) this).level.getBlockState(blockPos.below()).is(RuBlocks.PLAINS_GRASS_BLOCK.get())) {
-                return ((EatBlockGoal) (Object) this).level.getBlockState(blockPos.below()).is(RuBlocks.PLAINS_GRASS_BLOCK.get());
+            } else if (((EatBlockGoal) (Object) this).level.getBlockState(blockPos.below()).is(RuBlocks.SILT_GRASS_BLOCK.get())) {
+                return ((EatBlockGoal) (Object) this).level.getBlockState(blockPos.below()).is(RuBlocks.SILT_GRASS_BLOCK.get());
             } else if (((EatBlockGoal) (Object) this).level.getBlockState(blockPos.below()).is(RuBlocks.ALPHA_GRASS_BLOCK.get())) {
                 return ((EatBlockGoal) (Object) this).level.getBlockState(blockPos.below()).is(RuBlocks.ALPHA_GRASS_BLOCK.get());
             } else {
-                return ((EatBlockGoal) (Object) this).level.getBlockState(blockPos.below()).is(RuBlocks.FOREST_GRASS_BLOCK.get());
+                return ((EatBlockGoal) (Object) this).level.getBlockState(blockPos.below()).is(RuBlocks.PEAT_GRASS_BLOCK.get());
             }
         }
     }

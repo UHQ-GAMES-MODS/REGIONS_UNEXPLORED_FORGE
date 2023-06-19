@@ -11,10 +11,5 @@ public class RuDoublePlantBlock extends DoublePlantBlock {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(HALF, DoubleBlockHalf.LOWER));
     }
-
-    @Override
-    public PushReaction getPistonPushReaction(BlockState state) {
-        return PushReaction.DESTROY;
-    }
 }
 

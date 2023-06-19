@@ -71,9 +71,4 @@ public class AshenGrassBlock extends BushBlock implements net.minecraftforge.com
         }
         return null;
     }
-
-    @Override
-    public PushReaction getPistonPushReaction(BlockState state) {
-        return PushReaction.DESTROY;
-    }
 }

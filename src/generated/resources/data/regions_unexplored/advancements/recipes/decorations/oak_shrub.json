@@ -30,5 +30,6 @@
     "recipes": [
       "regions_unexplored:oak_shrub"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

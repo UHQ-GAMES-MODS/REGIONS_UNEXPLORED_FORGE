@@ -21,10 +21,15 @@
       "predicate": {
         "type": "minecraft:matching_blocks",
         "blocks": [
+          "minecraft:podzol",
           "minecraft:coarse_dirt",
           "minecraft:dirt",
-          "regions_unexplored:forest_dirt",
-          "regions_unexplored:plains_dirt"
+          "regions_unexplored:peat_dirt",
+          "regions_unexplored:silt_dirt",
+          "regions_unexplored:peat_coarse_dirt",
+          "regions_unexplored:silt_coarse_dirt",
+          "regions_unexplored:peat_podzol",
+          "regions_unexplored:silt_podzol"
         ],
         "offset": [
           0,

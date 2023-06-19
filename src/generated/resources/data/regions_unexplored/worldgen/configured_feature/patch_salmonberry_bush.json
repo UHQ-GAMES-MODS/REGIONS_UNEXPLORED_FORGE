@@ -31,8 +31,10 @@
                 "blocks": [
                   "minecraft:grass_block",
                   "minecraft:podzol",
-                  "regions_unexplored:forest_grass_block",
-                  "regions_unexplored:plains_grass_block"
+                  "regions_unexplored:peat_grass_block",
+                  "regions_unexplored:silt_grass_block",
+                  "regions_unexplored:peat_podzol",
+                  "regions_unexplored:silt_podzol"
                 ],
                 "offset": [
                   0,

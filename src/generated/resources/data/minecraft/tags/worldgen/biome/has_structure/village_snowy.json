@@ -7,10 +7,6 @@
     {
       "id": "regions_unexplored:cold_boreal_forest",
       "required": false
-    },
-    {
-      "id": "regions_unexplored:icy_desert",
-      "required": false
     }
   ]
 }

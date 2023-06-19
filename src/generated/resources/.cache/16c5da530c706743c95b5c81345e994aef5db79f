@@ -1,4 +1,4 @@
-// 1.19.4	2023-06-08T00:29:15.1658615	Tags for minecraft:item mod id regions_unexplored
+// 1.20.1	2023-06-13T05:19:55.4504475	Tags for minecraft:item mod id regions_unexplored
 914c9df004e88dd755019bb8a47f4ebbda48219a data/forge/tags/items/doors/wooden.json
 10847dd41329b781f6e653e4bebe467fc4193f89 data/forge/tags/items/fences/wooden.json
 9fc0147d114431209adb1a2ac10308038b667b0b data/forge/tags/items/fence_gates/wooden.json
@@ -19,10 +19,11 @@ af2dfa084f3d25041f6b875fce7a4f4fd1d0316a data/forge/tags/items/stairs/stone.json
 09c0622c3044356c2c66fa4e01f731e7b72ed63d data/forge/tags/items/stripped_wood.json
 3149b691b9f98c1b572ff562890c9e8edffb6fc4 data/forge/tags/items/trapdoors/wooden.json
 07a5c3b7653936c74c977e802c3d53718131e20c data/forge/tags/items/wood.json
+1cc6465fdc3acf8fe7b1b7222366b5ac6a51047f data/minecraft/tags/items/bamboo_blocks.json
 fb2afa64492a14c62885e517520b1ff5d7354b95 data/minecraft/tags/items/birch_logs.json
 ff9c0701ceb29a49a334f0fdf400892390a1b5bf data/minecraft/tags/items/boats.json
 01411c9f6bd33b079e79a369658d6987307b2e70 data/minecraft/tags/items/chest_boats.json
-7af5ccc6ca4f92cdb50e0d8b0e07e3c50c53de1e data/minecraft/tags/items/dirt.json
+2406070686365a55fc43cd30340369e5745bf275 data/minecraft/tags/items/dirt.json
 9fc0147d114431209adb1a2ac10308038b667b0b data/minecraft/tags/items/fence_gates.json
 30ee358e3f1d728e686700f5bcd675cac368c962 data/minecraft/tags/items/flowers.json
 ee8f3bcae046cef41ea1e6c6a42314d291c303b2 data/minecraft/tags/items/fox_food.json

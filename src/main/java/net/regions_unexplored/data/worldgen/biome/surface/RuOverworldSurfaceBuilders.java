@@ -12,46 +12,60 @@ import net.regions_unexplored.data.noise.RuNoises;
 import net.regions_unexplored.data.noise.RuleWeight;
 import net.regions_unexplored.data.worldgen.biome.RuBiomes;
 
-public class RuOverworldSurfaceBuilders {private static final SurfaceRules.RuleSource AIR = makeStateRule(Blocks.CAVE_AIR);
-    private static final SurfaceRules.RuleSource BEDROCK = makeStateRule(Blocks.BEDROCK);
-    private static final SurfaceRules.RuleSource DIRT = makeStateRule(Blocks.DIRT);
-    private static final SurfaceRules.RuleSource PACKED_ICE = makeStateRule(Blocks.PACKED_ICE);
-    private static final SurfaceRules.RuleSource SAND = makeStateRule(Blocks.SAND);
-    private static final SurfaceRules.RuleSource STONE = makeStateRule(Blocks.STONE);
-    private static final SurfaceRules.RuleSource HYACINTH_STONE = makeStateRule(RuBlocks.HYACINTH_STONE.get());
-    private static final SurfaceRules.RuleSource SANDSTONE = makeStateRule(Blocks.SANDSTONE);
-    private static final SurfaceRules.RuleSource GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
-    private static final SurfaceRules.RuleSource PODZOL = makeStateRule(Blocks.PODZOL);
-    private static final SurfaceRules.RuleSource COARSE_DIRT = makeStateRule(Blocks.COARSE_DIRT);
-    private static final SurfaceRules.RuleSource GRAVEL = makeStateRule(Blocks.GRAVEL);
-    private static final SurfaceRules.RuleSource SNOW_BLOCK = makeStateRule(Blocks.SNOW_BLOCK);
+public class RuOverworldSurfaceBuilders {
+    private static final SurfaceRules.RuleSource AIR = makeStateRule(Blocks.CAVE_AIR);
     private static final SurfaceRules.RuleSource WATER = makeStateRule(Blocks.WATER);
-    private static final SurfaceRules.RuleSource MUD = makeStateRule(RuBlocks.FOREST_MUD.get());
-    private static final SurfaceRules.RuleSource MOSSY_STONE = makeStateRule(RuBlocks.MOSSY_STONE.get());
-    private static final SurfaceRules.RuleSource VANILLA_MUD = makeStateRule(Blocks.MUD);
-    private static final SurfaceRules.RuleSource ASH = makeStateRule(RuBlocks.ASH.get());
-    private static final SurfaceRules.RuleSource ASH_VENT = makeStateRule(RuBlocks.ASH_VENT.get());
-    private static final SurfaceRules.RuleSource ASHEN_DIRT = makeStateRule(RuBlocks.ASHEN_DIRT.get());
+
+    private static final SurfaceRules.RuleSource PEAT_GRASS_BLOCK = makeStateRule(RuCommonConfig.TOGGLE_CUSTOM_DIRTS.get() ? RuBlocks.PEAT_GRASS_BLOCK.get() : Blocks.GRASS_BLOCK);
+    private static final SurfaceRules.RuleSource PEAT_COARSE_DIRT = makeStateRule(RuCommonConfig.TOGGLE_CUSTOM_DIRTS.get() ? RuBlocks.PEAT_COARSE_DIRT.get() : Blocks.COARSE_DIRT);
+    private static final SurfaceRules.RuleSource PEAT_PODZOL = makeStateRule(RuCommonConfig.TOGGLE_CUSTOM_DIRTS.get() ? RuBlocks.PEAT_PODZOL.get() : Blocks.PODZOL);
+    private static final SurfaceRules.RuleSource PEAT_DIRT = makeStateRule(RuCommonConfig.TOGGLE_CUSTOM_DIRTS.get() ? RuBlocks.PEAT_DIRT.get() : Blocks.DIRT);
+    private static final SurfaceRules.RuleSource PEAT_MUD = makeStateRule(RuCommonConfig.TOGGLE_CUSTOM_DIRTS.get() ? RuBlocks.PEAT_MUD.get() : Blocks.MUD);
+
+    private static final SurfaceRules.RuleSource SILT_GRASS_BLOCK = makeStateRule(RuCommonConfig.TOGGLE_CUSTOM_DIRTS.get() ? RuBlocks.SILT_GRASS_BLOCK.get() : Blocks.GRASS_BLOCK);
+    private static final SurfaceRules.RuleSource SILT_COARSE_DIRT = makeStateRule(RuCommonConfig.TOGGLE_CUSTOM_DIRTS.get() ? RuBlocks.SILT_COARSE_DIRT.get() : Blocks.COARSE_DIRT);
+    private static final SurfaceRules.RuleSource SILT_PODZOL = makeStateRule(RuCommonConfig.TOGGLE_CUSTOM_DIRTS.get() ? RuBlocks.SILT_PODZOL.get() : Blocks.PODZOL);
+    private static final SurfaceRules.RuleSource SILT_DIRT = makeStateRule(RuCommonConfig.TOGGLE_CUSTOM_DIRTS.get() ? RuBlocks.SILT_DIRT.get() : Blocks.DIRT);
+    private static final SurfaceRules.RuleSource SILT_MUD = makeStateRule(RuCommonConfig.TOGGLE_CUSTOM_DIRTS.get() ? RuBlocks.SILT_MUD.get() : Blocks.MUD);
+
+    private static final SurfaceRules.RuleSource GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
+    private static final SurfaceRules.RuleSource MYCELIUM = makeStateRule(Blocks.MYCELIUM);
+    private static final SurfaceRules.RuleSource COARSE_DIRT = makeStateRule(Blocks.COARSE_DIRT);
+    private static final SurfaceRules.RuleSource PODZOL = makeStateRule(Blocks.PODZOL);
+    private static final SurfaceRules.RuleSource DIRT = makeStateRule(Blocks.DIRT);
+    private static final SurfaceRules.RuleSource MUD = makeStateRule(Blocks.MUD);
+
+    private static final SurfaceRules.RuleSource ALPHA_GRASS = makeStateRule(RuBlocks.ALPHA_GRASS_BLOCK.get());
+    private static final SurfaceRules.RuleSource ALPHA_DIRT = makeStateRule(Blocks.DIRT);
+
+    private static final SurfaceRules.RuleSource CHALK_GRASS_BLOCK = makeStateRule(RuBlocks.CHALK_GRASS_BLOCK.get());
     private static final SurfaceRules.RuleSource VIRIDESCENT_NYLIUM = makeStateRule(RuBlocks.VIRIDESCENT_NYLIUM.get());
     private static final SurfaceRules.RuleSource DEEPSLATE_VIRIDESCENT_NYLIUM = makeStateRule(RuBlocks.DEEPSLATE_VIRIDESCENT_NYLIUM.get());
     private static final SurfaceRules.RuleSource PRISMOSS = makeStateRule(RuBlocks.PRISMOSS.get());
     private static final SurfaceRules.RuleSource DEEPSLATE_PRISMOSS = makeStateRule(RuBlocks.DEEPSLATE_PRISMOSS.get());
-    private static final SurfaceRules.RuleSource FOREST_GRASS_BLOCK = makeStateRule(RuCommonConfig.TOGGLE_CUSTOM_DIRTS.get() ? RuBlocks.FOREST_GRASS_BLOCK.get() : Blocks.GRASS_BLOCK);
-    private static final SurfaceRules.RuleSource FOREST_DIRT = makeStateRule(RuBlocks.FOREST_DIRT.get());
-    private static final SurfaceRules.RuleSource FOREST_COARSE_DIRT = makeStateRule(RuBlocks.FOREST_COARSE_DIRT.get());
-    private static final SurfaceRules.RuleSource PLAINS_GRASS_BLOCK = makeStateRule(RuBlocks.PLAINS_GRASS_BLOCK.get());
-    private static final SurfaceRules.RuleSource PLAINS_DIRT = makeStateRule(RuBlocks.PLAINS_DIRT.get());
-    private static final SurfaceRules.RuleSource PLAINS_COARSE_DIRT = makeStateRule(RuBlocks.PLAINS_COARSE_DIRT.get());
-    private static final SurfaceRules.RuleSource ALPHA_GRASS = makeStateRule(RuBlocks.ALPHA_GRASS_BLOCK.get());
-    private static final SurfaceRules.RuleSource ALPHA_DIRT = makeStateRule(Blocks.DIRT);
-    private static final SurfaceRules.RuleSource CHALK_GRASS_BLOCK = makeStateRule(RuBlocks.CHALK_GRASS_BLOCK.get());
-    private static final SurfaceRules.RuleSource CHALK = makeStateRule(RuBlocks.CHALK.get());
     private static final SurfaceRules.RuleSource RAW_REDSTONE = makeStateRule(RuBlocks.RAW_REDSTONE_BLOCK.get());
+
+    private static final SurfaceRules.RuleSource BEDROCK = makeStateRule(Blocks.BEDROCK);
+    private static final SurfaceRules.RuleSource CHALK = makeStateRule(RuBlocks.CHALK.get());
+    private static final SurfaceRules.RuleSource STONE = makeStateRule(Blocks.STONE);
     private static final SurfaceRules.RuleSource TERRACOTTA = makeStateRule(Blocks.TERRACOTTA);
-    private static final SurfaceRules.RuleSource RED_SAND = makeStateRule(Blocks.RED_SAND);
-    private static final SurfaceRules.RuleSource MYCELIUM = makeStateRule(Blocks.MYCELIUM);
     private static final SurfaceRules.RuleSource COBBLESTONE = makeStateRule(Blocks.COBBLESTONE);
+    private static final SurfaceRules.RuleSource MOSSY_STONE = makeStateRule(RuBlocks.MOSSY_STONE.get());
+
+    private static final SurfaceRules.RuleSource SAND = makeStateRule(Blocks.SAND);
+    private static final SurfaceRules.RuleSource RED_SAND = makeStateRule(Blocks.RED_SAND);
+    private static final SurfaceRules.RuleSource GRAVEL = makeStateRule(Blocks.GRAVEL);
+    private static final SurfaceRules.RuleSource SANDSTONE = makeStateRule(Blocks.SANDSTONE);
+
+    private static final SurfaceRules.RuleSource ASH = makeStateRule(RuBlocks.ASH.get());
+    private static final SurfaceRules.RuleSource ASHEN_DIRT = makeStateRule(RuBlocks.ASHEN_DIRT.get());
+    private static final SurfaceRules.RuleSource ASH_VENT = makeStateRule(RuBlocks.ASH_VENT.get());
+
+    private static final SurfaceRules.RuleSource SNOW_BLOCK = makeStateRule(Blocks.SNOW_BLOCK);
     private static final SurfaceRules.RuleSource POWDER_SNOW = makeStateRule(Blocks.POWDER_SNOW);
+    private static final SurfaceRules.RuleSource PACKED_ICE = makeStateRule(Blocks.PACKED_ICE);
+
+
 
     public static SurfaceRules.RuleSource makeRules()
     {
@@ -59,7 +73,7 @@ public class RuOverworldSurfaceBuilders {private static final SurfaceRules.RuleS
         SurfaceRules.ConditionSource y63 = SurfaceRules.yBlockCheck(VerticalAnchor.absolute(63), 0);
             return SurfaceRules.sequence(
                     SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(),SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, false, 0, CaveSurface.FLOOR),SurfaceRules.ifTrue(SurfaceRules.waterBlockCheck(-1, 0),SurfaceRules.sequence(
-                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.ICY_DESERT, RuBiomes.ICY_HEIGHTS, RuBiomes.SPIRES, RuBiomes.FROZEN_FOREST), SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.POWDER_SNOW, 0.45D, 0.58D), POWDER_SNOW)),
+                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.ICY_HEIGHTS, RuBiomes.SPIRES, RuBiomes.FROZEN_FOREST), SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.POWDER_SNOW, 0.45D, 0.58D), POWDER_SNOW)),
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.FROZEN_FOREST),SNOW_BLOCK),
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.REDWOODS), PODZOL),
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.PINE_SLOPES), COARSE_DIRT),
@@ -67,15 +81,15 @@ public class RuOverworldSurfaceBuilders {private static final SurfaceRules.RuleS
 
                             //PUMPKIN_FIELDS
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.PUMPKIN_FIELDS),
-                                    SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(2.5D), COARSE_DIRT), SurfaceRules.ifTrue(surfaceNoiseAbove(1.75D), PODZOL))),
+                                    SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(-1.75D), SILT_PODZOL), SILT_GRASS_BLOCK)),
 
                             //PODZOL/COARSE_DIRT SURFACE
-                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.DECIDUOUS_FOREST, RuBiomes.RAINFOREST, RuBiomes.PINE_FOREST, RuBiomes.OLD_GROWTH_RAINFOREST),
+                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.DECIDUOUS_FOREST, RuBiomes.RAINFOREST, RuBiomes.OLD_GROWTH_RAINFOREST),
                                     SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(1.75D), COARSE_DIRT), SurfaceRules.ifTrue(surfaceNoiseAbove(-0.95D), PODZOL))),
 
-                            //ICY_DESERT
-                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.ICY_DESERT),
-                                    SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(1.75D), SNOW_BLOCK), SurfaceRules.ifTrue(surfaceNoiseAbove(-0.5D), SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, 0.0D), PACKED_ICE)), GRAVEL)),
+                            //PODZOL/COARSE_DIRT SURFACE
+                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.PINE_FOREST),
+                                    SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(1.75D), PEAT_COARSE_DIRT), SurfaceRules.ifTrue(surfaceNoiseAbove(-0.95D), PEAT_PODZOL), PEAT_GRASS_BLOCK)),
 
                             //OUTBACK
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.OUTBACK),
@@ -99,11 +113,11 @@ public class RuOverworldSurfaceBuilders {private static final SurfaceRules.RuleS
 
                             //BAYOU
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.BAYOU),
-                                    SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.yStartCheck(VerticalAnchor.absolute(64), 0)), SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, 0.0D), MUD))),
+                                    SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.yStartCheck(VerticalAnchor.absolute(64), 0)), SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, 0.0D), PEAT_MUD))),
 
                             //BAYOU
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.OLD_GROWTH_BAYOU),
-                                    SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(-0.95D), VANILLA_MUD), SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, 0.0D), VANILLA_MUD))),
+                                    SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(-0.95D), MUD), SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, 0.0D), MUD))),
 
                             //POPPY_FIELDS
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.POPPY_FIELDS),
@@ -120,7 +134,7 @@ public class RuOverworldSurfaceBuilders {private static final SurfaceRules.RuleS
 
                             //DRY_BUSHLAND
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.DRY_BUSHLAND),
-                                    SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, RuleWeight.getPercent(40)), PLAINS_COARSE_DIRT)),
+                                    SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, RuleWeight.getPercent(40)), SILT_COARSE_DIRT)),
 
                             //BAOBAB_SAVANNA
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.BAOBAB_SAVANNA),
@@ -152,8 +166,8 @@ public class RuOverworldSurfaceBuilders {private static final SurfaceRules.RuleS
                                             SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.yStartCheck(VerticalAnchor.absolute(138), 0)),COARSE_DIRT),
                                             SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.yStartCheck(VerticalAnchor.absolute(142), 0)),
                                                     SurfaceRules.ifTrue(SurfaceRules.noiseCondition(RuNoises.WEIGHTED, 0.05D),COARSE_DIRT)))),
-                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.BLACKWOOD_TAIGA, RuBiomes.BOREAL_TAIGA, RuBiomes.COLD_BOREAL_FOREST, RuBiomes.GOLDEN_BOREAL_TAIGA), FOREST_GRASS_BLOCK),
-                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.TROPICS, RuBiomes.DRY_BUSHLAND, RuBiomes.JOSHUA_DESERT, RuBiomes.BARLEY_FIELDS, RuBiomes.PRAIRIE, RuBiomes.ORCHARD, RuBiomes.STEPPE), PLAINS_GRASS_BLOCK)
+                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.BLACKWOOD_TAIGA, RuBiomes.BOREAL_TAIGA, RuBiomes.COLD_BOREAL_FOREST, RuBiomes.GOLDEN_BOREAL_TAIGA), PEAT_GRASS_BLOCK),
+                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.AUTUMNAL_MAPLE_FOREST, RuBiomes.SILVER_BIRCH_FOREST, RuBiomes.TROPICS, RuBiomes.DRY_BUSHLAND, RuBiomes.JOSHUA_DESERT, RuBiomes.BARLEY_FIELDS, RuBiomes.PRAIRIE, RuBiomes.ORCHARD, RuBiomes.STEPPE), SILT_GRASS_BLOCK)
                     )))),
 
                     SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(),SurfaceRules.sequence(
@@ -180,7 +194,7 @@ public class RuOverworldSurfaceBuilders {private static final SurfaceRules.RuleS
 
                             //BAYOU
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.OLD_GROWTH_BAYOU),
-                                    SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(-0.95D), SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR),VANILLA_MUD)), SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR),SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.yStartCheck(VerticalAnchor.absolute(64), 0)), SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, 0.0D), VANILLA_MUD))))),
+                                    SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(-0.95D), SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR), MUD)), SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR),SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.yStartCheck(VerticalAnchor.absolute(64), 0)), SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, 0.0D), MUD))))),
 
                             //TROPICS
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.TROPICS),
@@ -208,23 +222,14 @@ public class RuOverworldSurfaceBuilders {private static final SurfaceRules.RuleS
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.MAPLE_FOREST),
                                     SurfaceRules.ifTrue(shieldNoise(1.65D), SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR),STONE))),
 
-                            //STONE_BASE
-                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.ICY_DESERT, RuBiomes.HYACINTH_DEEPS),
-                                    SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR),STONE)),
-
                             //ASHEN_BASE
-                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.ICY_DESERT, RuBiomes.ASHEN_WOODLAND),
+                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.ASHEN_WOODLAND),
                                     SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR),ASHEN_DIRT)),
-
-                            //ICY_DESERT_BASE
-                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.ICY_DESERT),
-                                    SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR),STONE)),
 
                             //DEFAULT
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.MOUNTAINS), SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR),STONE)),
-                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.BLACKWOOD_TAIGA, RuBiomes.BOREAL_TAIGA, RuBiomes.COLD_BOREAL_FOREST, RuBiomes.GOLDEN_BOREAL_TAIGA), SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR),FOREST_DIRT)),
-                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.TROPICS, RuBiomes.DRY_BUSHLAND, RuBiomes.JOSHUA_DESERT, RuBiomes.BARLEY_FIELDS, RuBiomes.PRAIRIE, RuBiomes.ORCHARD, RuBiomes.STEPPE), SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR),PLAINS_DIRT)),
-                            SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, false, 0, CaveSurface.FLOOR),SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.waterBlockCheck(-1, 0),GRASS_BLOCK), DIRT)),SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR),DIRT))
+                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.PINE_FOREST, RuBiomes.BLACKWOOD_TAIGA, RuBiomes.BOREAL_TAIGA, RuBiomes.COLD_BOREAL_FOREST, RuBiomes.GOLDEN_BOREAL_TAIGA), SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR),PEAT_DIRT)),
+                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.AUTUMNAL_MAPLE_FOREST, RuBiomes.SILVER_BIRCH_FOREST, RuBiomes.TROPICS, RuBiomes.DRY_BUSHLAND, RuBiomes.JOSHUA_DESERT, RuBiomes.BARLEY_FIELDS, RuBiomes.PRAIRIE, RuBiomes.ORCHARD, RuBiomes.STEPPE), SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR), SILT_DIRT))
                     )),
                     //REDSTONE_CAVES
                     SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.REDSTONE_CAVES),

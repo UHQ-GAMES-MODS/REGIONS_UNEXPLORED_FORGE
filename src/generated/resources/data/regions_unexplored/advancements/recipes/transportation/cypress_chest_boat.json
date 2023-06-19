@@ -28,5 +28,6 @@
     "recipes": [
       "regions_unexplored:cypress_chest_boat"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

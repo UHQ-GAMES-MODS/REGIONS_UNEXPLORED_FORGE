@@ -49,13 +49,13 @@ public class TillableDirtBlock extends Block {
                 level.addParticle(ParticleTypes.SPLASH, (double) pos.getX() + level.random.nextDouble(), (double) (pos.getY() + 1), (double) pos.getZ() + level.random.nextDouble(), (double) (level.random.nextFloat() / 2.0F), 5.0E-5D, (double) (level.random.nextFloat() / 2.0F));
             }
             level.playSound((Player) null, pos, SoundEvents.BOTTLE_EMPTY, SoundSource.BLOCKS, 1.0F, 1.0F);
-            if(level.getBlockState(pos)==RuBlocks.FOREST_DIRT.get().defaultBlockState()||level.getBlockState(pos)==RuBlocks.FOREST_COARSE_DIRT.get().defaultBlockState()){
-                level.setBlock(pos, RuBlocks.FOREST_MUD.get().defaultBlockState(), 2);
-                level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, RuBlocks.FOREST_MUD.get().defaultBlockState()));
+            if(level.getBlockState(pos)==RuBlocks.PEAT_DIRT.get().defaultBlockState()||level.getBlockState(pos)==RuBlocks.PEAT_COARSE_DIRT.get().defaultBlockState()){
+                level.setBlock(pos, RuBlocks.PEAT_MUD.get().defaultBlockState(), 2);
+                level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, RuBlocks.PEAT_MUD.get().defaultBlockState()));
             }
-            else if(level.getBlockState(pos)==RuBlocks.PLAINS_DIRT.get().defaultBlockState()||level.getBlockState(pos)==RuBlocks.PLAINS_COARSE_DIRT.get().defaultBlockState()){
-                level.setBlock(pos, RuBlocks.PLAINS_MUD.get().defaultBlockState(), 2);
-                level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, RuBlocks.PLAINS_MUD.get().defaultBlockState()));
+            else if(level.getBlockState(pos)==RuBlocks.SILT_DIRT.get().defaultBlockState()||level.getBlockState(pos)==RuBlocks.SILT_COARSE_DIRT.get().defaultBlockState()){
+                level.setBlock(pos, RuBlocks.SILT_MUD.get().defaultBlockState(), 2);
+                level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, RuBlocks.SILT_MUD.get().defaultBlockState()));
             }
             else{
                 level.setBlock(pos, Blocks.MUD.defaultBlockState(), 2);
@@ -83,14 +83,14 @@ public class TillableDirtBlock extends Block {
 
         if (ToolActions.SHOVEL_FLATTEN == action && context.getItemInHand().canPerformAction(ToolActions.SHOVEL_FLATTEN)) {
             Block block = state.getBlock();
-            if (block == RuBlocks.FOREST_COARSE_DIRT.get()) {
-                return RuBlocks.FOREST_DIRT_PATH.get().defaultBlockState();
-            } else if (block == RuBlocks.FOREST_DIRT.get()) {
-                return RuBlocks.FOREST_DIRT_PATH.get().defaultBlockState();
-            } else if (block == RuBlocks.PLAINS_COARSE_DIRT.get()) {
-                return RuBlocks.PLAINS_DIRT_PATH.get().defaultBlockState();
-            } else if (block == RuBlocks.PLAINS_DIRT.get()) {
-                return RuBlocks.PLAINS_DIRT_PATH.get().defaultBlockState();
+            if (block == RuBlocks.PEAT_COARSE_DIRT.get()) {
+                return RuBlocks.PEAT_DIRT_PATH.get().defaultBlockState();
+            } else if (block == RuBlocks.PEAT_DIRT.get()) {
+                return RuBlocks.PEAT_DIRT_PATH.get().defaultBlockState();
+            } else if (block == RuBlocks.SILT_COARSE_DIRT.get()) {
+                return RuBlocks.SILT_DIRT_PATH.get().defaultBlockState();
+            } else if (block == RuBlocks.SILT_DIRT.get()) {
+                return RuBlocks.SILT_DIRT_PATH.get().defaultBlockState();
             } else {
                 return null;
             }
@@ -99,14 +99,14 @@ public class TillableDirtBlock extends Block {
 
         if (ToolActions.HOE_TILL == action && context.getItemInHand().canPerformAction(ToolActions.HOE_TILL)) {
             Block block = state.getBlock();
-            if (block == RuBlocks.FOREST_COARSE_DIRT.get()) {
-                return RuBlocks.FOREST_DIRT.get().defaultBlockState();
-            } else if (block == RuBlocks.FOREST_DIRT.get()) {
-                return RuBlocks.FOREST_FARMLAND.get().defaultBlockState();
-            } else if (block == RuBlocks.PLAINS_COARSE_DIRT.get()) {
-                return RuBlocks.PLAINS_DIRT.get().defaultBlockState();
-            } else if (block == RuBlocks.PLAINS_DIRT.get()) {
-                return RuBlocks.PLAINS_FARMLAND.get().defaultBlockState();
+            if (block == RuBlocks.PEAT_COARSE_DIRT.get()) {
+                return RuBlocks.PEAT_DIRT.get().defaultBlockState();
+            } else if (block == RuBlocks.PEAT_DIRT.get()) {
+                return RuBlocks.PEAT_FARMLAND.get().defaultBlockState();
+            } else if (block == RuBlocks.SILT_COARSE_DIRT.get()) {
+                return RuBlocks.SILT_DIRT.get().defaultBlockState();
+            } else if (block == RuBlocks.SILT_DIRT.get()) {
+                return RuBlocks.SILT_FARMLAND.get().defaultBlockState();
             } else {
                 return null;
             }

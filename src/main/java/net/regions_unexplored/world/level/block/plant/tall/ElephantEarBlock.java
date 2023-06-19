@@ -36,8 +36,4 @@ public class ElephantEarBlock extends DoublePlantBlock {
         return false;
     }
 
-    @Override
-    public PushReaction getPistonPushReaction(BlockState state) {
-        return PushReaction.DESTROY;
-    }
 }

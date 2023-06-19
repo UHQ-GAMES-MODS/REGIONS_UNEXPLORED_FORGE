@@ -12,7 +12,7 @@
         }
       }
     },
-    "has_leaves": true,
+    "has_leaves": false,
     "minimum_size": 4,
     "size_variation": 4,
     "stump_provider": {

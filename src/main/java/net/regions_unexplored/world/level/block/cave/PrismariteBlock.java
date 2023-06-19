@@ -35,10 +35,5 @@ public class PrismariteBlock extends BushBlock {
         return PlantType.CAVE;
     }
 
-    @Override
-    public PushReaction getPistonPushReaction(BlockState state) {
-        return PushReaction.DESTROY;
-    }
-
 
 }

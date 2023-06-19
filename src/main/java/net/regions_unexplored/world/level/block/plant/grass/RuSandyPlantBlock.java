@@ -69,9 +69,4 @@ public class RuSandyPlantBlock extends BushBlock implements BonemealableBlock, n
         }
 
     }
-
-    @Override
-    public PushReaction getPistonPushReaction(BlockState state) {
-        return PushReaction.DESTROY;
-    }
 }

@@ -30,5 +30,6 @@
     "recipes": [
       "regions_unexplored:mangrove_propagule_from_mangrove_shrub"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -30,5 +30,6 @@
     "recipes": [
       "regions_unexplored:palm_beard_from_palm_log"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

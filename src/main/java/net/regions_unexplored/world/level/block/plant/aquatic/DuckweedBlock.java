@@ -6,18 +6,18 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.IceBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.WaterlilyBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
-import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.PushReaction;
 
 public class DuckweedBlock extends WaterlilyBlock {
 
     public DuckweedBlock() {
-        super(Properties.of(Material.PLANT).sound(SoundType.CORAL_BLOCK).instabreak().noCollission().noOcclusion()
+        super(Properties.of().sound(SoundType.CORAL_BLOCK).instabreak().noCollission().noOcclusion().pushReaction(PushReaction.DESTROY).ignitedByLava()
                 .isRedstoneConductor((bs, br, bp) -> false));
         this.registerDefaultState(this.stateDefinition.any());
     }
@@ -52,12 +52,7 @@ public class DuckweedBlock extends WaterlilyBlock {
     protected boolean mayPlaceOn(BlockState state, BlockGetter getter, BlockPos pos) {
         FluidState fluidState = getter.getFluidState(pos);
         FluidState fluidState1 = getter.getFluidState(pos.above());
-        return (fluidState.getType() == Fluids.WATER || state.getMaterial() == Material.ICE) && fluidState1.getType() == Fluids.EMPTY;
-    }
-
-    @Override
-    public PushReaction getPistonPushReaction(BlockState state) {
-        return PushReaction.DESTROY;
+        return (fluidState.getType() == Fluids.WATER || state.getBlock() instanceof IceBlock) && fluidState1.getType() == Fluids.EMPTY;
     }
 
 }

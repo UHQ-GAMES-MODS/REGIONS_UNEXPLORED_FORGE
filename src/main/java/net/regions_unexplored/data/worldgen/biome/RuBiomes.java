@@ -31,7 +31,7 @@ public class RuBiomes {
     public static ResourceKey<Biome> FLOWER_FIELDS = createKey("flower_fields");
     public static ResourceKey<Biome> GRASSLAND = createKey("grassland");
     public static ResourceKey<Biome> LUPINE_PLAINS = createKey("lupine_plains");
-    public static ResourceKey<Biome> MEADOW = createKey("meadow");
+    public static ResourceKey<Biome> ROCKY_MEADOW = createKey("rocky_meadow");
     public static ResourceKey<Biome> POPPY_FIELDS = createKey("poppy_fields");
     public static ResourceKey<Biome> PRAIRIE = createKey("prairie");
     public static ResourceKey<Biome> PUMPKIN_FIELDS = createKey("pumpkin_fields");
@@ -76,7 +76,6 @@ public class RuBiomes {
     public static ResourceKey<Biome> COLD_DECIDUOUS_FOREST = createKey("cold_deciduous_forest");
     public static ResourceKey<Biome> FROZEN_FOREST = createKey("frozen_forest");
     public static ResourceKey<Biome> FROZEN_TUNDRA = createKey("frozen_tundra");
-    public static ResourceKey<Biome> ICY_DESERT = createKey("icy_desert");
     public static ResourceKey<Biome> ICY_HEIGHTS = createKey("icy_heights");
     public static ResourceKey<Biome> SPIRES = createKey("spires");
     //CAVE

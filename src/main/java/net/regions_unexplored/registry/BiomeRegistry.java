@@ -15,6 +15,7 @@ import net.regions_unexplored.data.worldgen.biome.builder.*;
 import net.regions_unexplored.data.worldgen.biome.surface.RuOverworldSurfaceBuilders;
 import net.regions_unexplored.world.level.region.RuRegionNether;
 import net.regions_unexplored.world.level.region.RuRegionPrimary;
+import net.regions_unexplored.world.level.region.RuRegionRare;
 import net.regions_unexplored.world.level.region.RuRegionSecondary;
 import terrablender.api.Regions;
 import terrablender.api.SurfaceRuleManager;
@@ -28,6 +29,7 @@ public class BiomeRegistry {
     public static void setupTerrablender() {
         Regions.register(new RuRegionPrimary(RuCommonConfig.REGION_PRIMARY_WEIGHT.get()));
         Regions.register(new RuRegionSecondary(RuCommonConfig.REGION_SECONDARY_WEIGHT.get()));
+        Regions.register(new RuRegionRare(RuCommonConfig.REGION_RARE_WEIGHT.get()));
         Regions.register(new RuRegionNether(RuCommonConfig.REGION_NETHER_WEIGHT.get()));
         SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, RegionsUnexploredMod.MOD_ID, RuOverworldSurfaceBuilders.makeRules());
     }
@@ -62,7 +64,7 @@ public class BiomeRegistry {
         register(context, RuBiomes.FLOWER_FIELDS, PlainsBiomes.flowerFields(featuresGetter, carversGetter));
         register(context, RuBiomes.GRASSLAND, PlainsBiomes.grassland(featuresGetter, carversGetter));
         register(context, RuBiomes.LUPINE_PLAINS, PlainsBiomes.lupinePlains(featuresGetter, carversGetter));
-        register(context, RuBiomes.MEADOW, PlainsBiomes.rockyMeadow(featuresGetter, carversGetter));
+        register(context, RuBiomes.ROCKY_MEADOW, PlainsBiomes.rockyMeadow(featuresGetter, carversGetter));
         register(context, RuBiomes.POPPY_FIELDS, PlainsBiomes.poppyFields(featuresGetter, carversGetter));
         register(context, RuBiomes.PRAIRIE, PlainsBiomes.prairie(featuresGetter, carversGetter));
         register(context, RuBiomes.PUMPKIN_FIELDS, PlainsBiomes.pumpkinFields(featuresGetter, carversGetter));
@@ -107,7 +109,6 @@ public class BiomeRegistry {
         register(context, RuBiomes.COLD_DECIDUOUS_FOREST, FrozenBiomes.coldDeciduousForest(featuresGetter, carversGetter));
         register(context, RuBiomes.FROZEN_FOREST, FrozenBiomes.frozenPineTaiga(featuresGetter, carversGetter));
         register(context, RuBiomes.FROZEN_TUNDRA, FrozenBiomes.frozenTundra(featuresGetter, carversGetter));
-        register(context, RuBiomes.ICY_DESERT, FrozenBiomes.icyDesert(featuresGetter, carversGetter));
         register(context, RuBiomes.ICY_HEIGHTS, FrozenBiomes.icyHeights(featuresGetter, carversGetter));
         register(context, RuBiomes.SPIRES, FrozenBiomes.spires(featuresGetter, carversGetter));
         //CAVE
@@ -155,7 +156,7 @@ public class BiomeRegistry {
         registerVillagers(RuBiomes.FLOWER_FIELDS, VillagerType.PLAINS);
         registerVillagers(RuBiomes.GRASSLAND, VillagerType.PLAINS);
         registerVillagers(RuBiomes.LUPINE_PLAINS, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.MEADOW, VillagerType.PLAINS);
+        registerVillagers(RuBiomes.ROCKY_MEADOW, VillagerType.PLAINS);
         registerVillagers(RuBiomes.POPPY_FIELDS, VillagerType.PLAINS);
         registerVillagers(RuBiomes.PRAIRIE, VillagerType.PLAINS);
         registerVillagers(RuBiomes.PUMPKIN_FIELDS, VillagerType.PLAINS);
@@ -200,7 +201,6 @@ public class BiomeRegistry {
         registerVillagers(RuBiomes.COLD_DECIDUOUS_FOREST, VillagerType.PLAINS);
         registerVillagers(RuBiomes.FROZEN_FOREST, VillagerType.PLAINS);
         registerVillagers(RuBiomes.FROZEN_TUNDRA, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.ICY_DESERT, VillagerType.PLAINS);
         registerVillagers(RuBiomes.ICY_HEIGHTS, VillagerType.PLAINS);
         registerVillagers(RuBiomes.SPIRES, VillagerType.PLAINS);
         //CAVE

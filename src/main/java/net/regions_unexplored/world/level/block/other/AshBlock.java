@@ -17,7 +17,6 @@ import net.minecraft.world.level.block.Fallable;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.material.Material;
 import net.regions_unexplored.world.level.block.state.properties.RuBlockStateProperties;
 
 public class AshBlock extends Block implements Fallable {
@@ -59,8 +58,7 @@ public class AshBlock extends Block implements Fallable {
     }
 
     public static boolean isFree(BlockState state) {
-        Material material = state.getMaterial();
-        return state.isAir() || state.is(BlockTags.FIRE) || material.isLiquid() || state.canBeReplaced();
+        return state.isAir() || state.is(BlockTags.FIRE) || state.liquid() || state.canBeReplaced();
     }
 
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {

@@ -30,5 +30,6 @@
     "recipes": [
       "regions_unexplored:silver_birch_branch_from_silver_birch_log"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }
