@@ -1,0 +1,43 @@
+{
+  "feature": "regions_unexplored:prairie_tree_mix",
+  "placement": [
+    {
+      "type": "minecraft:noise_based_count",
+      "noise_factor": 30.0,
+      "noise_offset": -0.5,
+      "noise_to_count_ratio": 60
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:surface_water_depth_filter",
+      "max_water_depth": 0
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR"
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:matching_blocks",
+        "blocks": [
+          "minecraft:grass_block",
+          "regions_unexplored:peat_grass_block",
+          "regions_unexplored:silt_grass_block",
+          "regions_unexplored:stone_grass_block",
+          "regions_unexplored:deepslate_grass_block"
+        ],
+        "offset": [
+          0,
+          -1,
+          0
+        ]
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

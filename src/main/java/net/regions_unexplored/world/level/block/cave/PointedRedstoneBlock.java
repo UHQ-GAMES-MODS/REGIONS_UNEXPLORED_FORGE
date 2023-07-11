@@ -1,6 +1,7 @@
 package net.regions_unexplored.world.level.block.cave;
 
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.collect.Sets;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleOptions;
@@ -19,10 +20,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.Fallable;
-import net.minecraft.world.level.block.SimpleWaterloggedBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.*;
@@ -41,6 +39,7 @@ import net.regions_unexplored.block.RuBlocks;
 
 import javax.annotation.Nullable;
 import java.util.Optional;
+import java.util.Set;
 import java.util.function.BiPredicate;
 import java.util.function.Predicate;
 
@@ -48,6 +47,7 @@ public class PointedRedstoneBlock extends Block implements Fallable, SimpleWater
     public static final DirectionProperty TIP_DIRECTION = BlockStateProperties.VERTICAL_DIRECTION;
     public static final EnumProperty<DripstoneThickness> THICKNESS = BlockStateProperties.DRIPSTONE_THICKNESS;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+    public static final IntegerProperty POWER = BlockStateProperties.POWER;
     private static final VoxelShape TIP_MERGE_SHAPE = Block.box(5.0D, 0.0D, 5.0D, 11.0D, 16.0D, 11.0D);
     private static final VoxelShape TIP_SHAPE_UP = Block.box(5.0D, 0.0D, 5.0D, 11.0D, 8.0D, 11.0D);
     private static final VoxelShape TIP_SHAPE_DOWN = Block.box(5.0D, 5.0D, 5.0D, 11.0D, 16.0D, 11.0D);
@@ -58,15 +58,21 @@ public class PointedRedstoneBlock extends Block implements Fallable, SimpleWater
 
     public PointedRedstoneBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(TIP_DIRECTION, Direction.UP).setValue(THICKNESS, DripstoneThickness.TIP).setValue(WATERLOGGED, Boolean.valueOf(false)));
+        this.registerDefaultState(this.stateDefinition.any().setValue(TIP_DIRECTION, Direction.UP).setValue(THICKNESS, DripstoneThickness.TIP).setValue(WATERLOGGED, Boolean.valueOf(false)).setValue(POWER, 0));
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> stateBuilder) {
-        stateBuilder.add(TIP_DIRECTION, THICKNESS, WATERLOGGED);
+        stateBuilder.add(TIP_DIRECTION, THICKNESS, WATERLOGGED, POWER);
     }
 
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         return isValidPointedDripstonePlacement(level, pos, state.getValue(TIP_DIRECTION));
+    }
+
+    @Override
+    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos blockPos, boolean b) {
+        int powerLevel = getPowerLevel(level, pos);
+        level.setBlock(pos, state.setValue(POWER, powerLevel), 2);
     }
 
     public BlockState updateShape(BlockState state1, Direction direction, BlockState state, LevelAccessor level, BlockPos pos, BlockPos pos1) {
@@ -91,7 +97,8 @@ public class PointedRedstoneBlock extends Block implements Fallable, SimpleWater
             } else {
                 boolean flag = state1.getValue(THICKNESS) == DripstoneThickness.TIP_MERGE;
                 DripstoneThickness dripstonethickness = calculateDripstoneThickness(level, pos, direction1, flag);
-                return state1.setValue(THICKNESS, dripstonethickness);
+                int powerLevel = getPowerLevel(level, pos);
+                return state1.setValue(THICKNESS, dripstonethickness).setValue(POWER, powerLevel);
             }
         }
     }
@@ -127,6 +134,9 @@ public class PointedRedstoneBlock extends Block implements Fallable, SimpleWater
     }
 
     public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        int powerLevel = getPowerLevel(level, pos);
+        level.setBlock(pos, state.setValue(POWER, powerLevel), 2);
+
         if (isStalagmite(state) && !this.canSurvive(state, level, pos)) {
             level.destroyBlock(pos, true);
         } else {
@@ -135,15 +145,63 @@ public class PointedRedstoneBlock extends Block implements Fallable, SimpleWater
 
     }
 
+    public int getPowerLevel(LevelAccessor level, BlockPos pos) {
+        int powerLevel = 0;
+        if(level.getBlockState(pos.north()).getBlock() instanceof RedStoneWireBlock){
+            if(level.getBlockState(pos.north()).getValue(RedStoneWireBlock.SOUTH) == RedstoneSide.SIDE){
+                if(level.getBlockState(pos.north()).getValue(RedStoneWireBlock.POWER)>powerLevel){
+                    powerLevel = level.getBlockState(pos.north()).getValue(RedStoneWireBlock.POWER);
+                }
+            }
+        }
+        if(level.getBlockState(pos.south()).getBlock() instanceof RedStoneWireBlock){
+            if(level.getBlockState(pos.south()).getValue(RedStoneWireBlock.NORTH) == RedstoneSide.SIDE){
+                if(level.getBlockState(pos.south()).getValue(RedStoneWireBlock.POWER)>powerLevel){
+                    powerLevel = level.getBlockState(pos.south()).getValue(RedStoneWireBlock.POWER);
+                }
+            }
+        }
+        if(level.getBlockState(pos.east()).getBlock() instanceof RedStoneWireBlock){
+            if(level.getBlockState(pos.east()).getValue(RedStoneWireBlock.WEST) == RedstoneSide.SIDE){
+                if(level.getBlockState(pos.east()).getValue(RedStoneWireBlock.POWER)>powerLevel){
+                    powerLevel = level.getBlockState(pos.east()).getValue(RedStoneWireBlock.POWER);
+                }
+            }
+        }
+        if(level.getBlockState(pos.west()).getBlock() instanceof RedStoneWireBlock){
+            if(level.getBlockState(pos.west()).getValue(RedStoneWireBlock.EAST) == RedstoneSide.SIDE){
+                if(level.getBlockState(pos.west()).getValue(RedStoneWireBlock.POWER)>powerLevel){
+                    powerLevel = level.getBlockState(pos.west()).getValue(RedStoneWireBlock.POWER);
+                }
+            }
+        }
+        if(level.getBlockState(pos.below()).getBlock() instanceof PointedRedstoneBlock){
+                if(level.getBlockState(pos.below()).getValue(POWER)>powerLevel){
+                    powerLevel = level.getBlockState(pos.below()).getValue(RedStoneWireBlock.POWER);
+                }
+        }
+        if(level.getBlockState(pos.above()).getBlock() instanceof PointedRedstoneBlock){
+            if(level.getBlockState(pos.above()).getValue(POWER)>powerLevel){
+                powerLevel = level.getBlockState(pos.above()).getValue(RedStoneWireBlock.POWER);
+            }
+        }
+
+        return powerLevel == 0 ? powerLevel : powerLevel-1;
+    }
+
+    public boolean isSignalSource(BlockState state) {
+        return true;
+    }
+
+    public int getSignal(BlockState state, BlockGetter getter, BlockPos pos, Direction direction) {
+        return state.getValue(POWER)-1;
+    }
+
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         if (random.nextFloat() < 0.011377778F && isStalactiteStartPos(state, level, pos)) {
             growStalactiteOrStalagmiteIfPossible(state, level, pos, random);
         }
 
-    }
-
-    public PushReaction getPistonPushReaction(BlockState state) {
-        return PushReaction.DESTROY;
     }
 
     @Nullable
@@ -157,7 +215,7 @@ public class PointedRedstoneBlock extends Block implements Fallable, SimpleWater
         } else {
             boolean flag = !context.isSecondaryUseActive();
             DripstoneThickness dripstonethickness = calculateDripstoneThickness(levelaccessor, blockpos, direction1, flag);
-            return dripstonethickness == null ? null : this.defaultBlockState().setValue(TIP_DIRECTION, direction1).setValue(THICKNESS, dripstonethickness).setValue(WATERLOGGED, Boolean.valueOf(levelaccessor.getFluidState(blockpos).getType() == Fluids.WATER));
+            return dripstonethickness == null ? null : this.defaultBlockState().setValue(TIP_DIRECTION, direction1).setValue(THICKNESS, dripstonethickness).setValue(WATERLOGGED, Boolean.valueOf(levelaccessor.getFluidState(blockpos).getType() == Fluids.WATER)).setValue(POWER, getPowerLevel(levelaccessor, blockpos));
         }
     }
 

@@ -92,7 +92,11 @@
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin"
+      "minecraft:patch_pumpkin",
+      "regions_unexplored:prismoss_sprout",
+      "regions_unexplored:cave_hyssop",
+      "regions_unexplored:prismarite_clusters",
+      "regions_unexplored:hanging_prismarite_cluster"
     ],
     [
       "minecraft:freeze_top_layer"

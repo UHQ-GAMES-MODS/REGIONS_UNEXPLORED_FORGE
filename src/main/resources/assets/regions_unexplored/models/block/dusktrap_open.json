@@ -1,0 +1,8 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "regions_unexplored:block/dusktrap_top_open",
+    "particle": "regions_unexplored:block/dusktrap_top_open"
+  },
+  "render_type": "cutout"
+}

@@ -1,34 +1,16 @@
 {
   "variants": {
-    "axis=x": [
-      {
-        "model": "regions_unexplored:block/eucalyptus_log",
-        "x": 90,
-        "y": 90
-      },
-      {
-        "model": "regions_unexplored:block/eucalyptus_log_1",
-        "x": 90,
-        "y": 90
-      }
-    ],
-    "axis=y": [
-      {
-        "model": "regions_unexplored:block/eucalyptus_log"
-      },
-      {
-        "model": "regions_unexplored:block/eucalyptus_log_1"
-      }
-    ],
-    "axis=z": [
-      {
-        "model": "regions_unexplored:block/eucalyptus_log",
-        "x": 90
-      },
-      {
-        "model": "regions_unexplored:block/eucalyptus_log_1",
-        "x": 90
-      }
-    ]
+    "axis=x": {
+      "model": "regions_unexplored:block/eucalyptus_log",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "regions_unexplored:block/eucalyptus_log"
+    },
+    "axis=z": {
+      "model": "regions_unexplored:block/eucalyptus_log",
+      "x": 90
+    }
   }
 }

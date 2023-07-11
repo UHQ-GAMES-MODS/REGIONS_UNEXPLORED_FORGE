@@ -1,0 +1,8 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "regions_unexplored:block/poppy_bush",
+    "particle": "regions_unexplored:block/poppy_bush"
+  },
+  "render_type": "cutout"
+}

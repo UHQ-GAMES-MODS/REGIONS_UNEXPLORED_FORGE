@@ -1,0 +1,12 @@
+{
+  "feature": "regions_unexplored:patch_prismoss_sprout",
+  "placement": [
+    {
+      "type": "minecraft:count_on_every_layer",
+      "count": 25
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

@@ -80,7 +80,7 @@ public class RuBiomes {
     public static ResourceKey<Biome> SPIRES = createKey("spires");
     //CAVE
     public static ResourceKey<Biome> BIOSHROOM_CAVES = createKey("bioshroom_caves");
-    public static ResourceKey<Biome> LUSH_DELTA = createKey("lush_delta");
+    public static ResourceKey<Biome> ANCIENT_DELTA = createKey("ancient_delta");
     public static ResourceKey<Biome> PRISMACHASM = createKey("prismachasm");
     public static ResourceKey<Biome> REDSTONE_CAVES = createKey("redstone_caves");
     public static ResourceKey<Biome> SCORCHING_CAVES = createKey("scorching_caves");

@@ -1,4 +1,4 @@
-// 1.20.1	2023-06-13T05:19:55.4504475	Tags for minecraft:item mod id regions_unexplored
+// 1.20.1	2023-07-10T00:00:39.0258002	Tags for minecraft:item mod id regions_unexplored
 914c9df004e88dd755019bb8a47f4ebbda48219a data/forge/tags/items/doors/wooden.json
 10847dd41329b781f6e653e4bebe467fc4193f89 data/forge/tags/items/fences/wooden.json
 9fc0147d114431209adb1a2ac10308038b667b0b data/forge/tags/items/fence_gates/wooden.json
@@ -14,7 +14,7 @@ e98198189935cc3ba088a21c404570f7d910c514 data/forge/tags/items/sand/colorless.js
 fbd3b5574bd57030107ab08e4b239ea1520ad7e1 data/forge/tags/items/stained_glass.json
 af2dfa084f3d25041f6b875fce7a4f4fd1d0316a data/forge/tags/items/stairs/stone.json
 4a271eadcc07c48d19d88766abd48f8411aff99f data/forge/tags/items/stairs/wooden.json
-6d7ed93655a427e5fd2be3b95708147da996ebb6 data/forge/tags/items/stone.json
+947330ceb54814cbdfa1f0984a8e984955d073ea data/forge/tags/items/stone.json
 2db807ee60a42d6bea97dae5c922fd7383daf6fc data/forge/tags/items/stripped_logs.json
 09c0622c3044356c2c66fa4e01f731e7b72ed63d data/forge/tags/items/stripped_wood.json
 3149b691b9f98c1b572ff562890c9e8edffb6fc4 data/forge/tags/items/trapdoors/wooden.json
@@ -23,7 +23,7 @@ af2dfa084f3d25041f6b875fce7a4f4fd1d0316a data/forge/tags/items/stairs/stone.json
 fb2afa64492a14c62885e517520b1ff5d7354b95 data/minecraft/tags/items/birch_logs.json
 ff9c0701ceb29a49a334f0fdf400892390a1b5bf data/minecraft/tags/items/boats.json
 01411c9f6bd33b079e79a369658d6987307b2e70 data/minecraft/tags/items/chest_boats.json
-2406070686365a55fc43cd30340369e5745bf275 data/minecraft/tags/items/dirt.json
+ef1636bcd026e93e76e76d31be2a612e3d5a9d7e data/minecraft/tags/items/dirt.json
 9fc0147d114431209adb1a2ac10308038b667b0b data/minecraft/tags/items/fence_gates.json
 30ee358e3f1d728e686700f5bcd675cac368c962 data/minecraft/tags/items/flowers.json
 ee8f3bcae046cef41ea1e6c6a42314d291c303b2 data/minecraft/tags/items/fox_food.json
@@ -37,10 +37,11 @@ e98198189935cc3ba088a21c404570f7d910c514 data/minecraft/tags/items/sand.json
 fb97479d5c65d84035db7e4c56b68676b8b08da7 data/minecraft/tags/items/saplings.json
 29d18f31d47959cc802732e91cb3b8a7140f9cd1 data/minecraft/tags/items/signs.json
 8ec272c54edc1df8941d6e1e627a2c3f2bce813d data/minecraft/tags/items/slabs.json
-e5e92dfcfb9b3643d9f8b3ff8eb899b3e7397204 data/minecraft/tags/items/small_flowers.json
+45a604af1045ed3387590fa9d90de4c4d653d198 data/minecraft/tags/items/small_flowers.json
 e98198189935cc3ba088a21c404570f7d910c514 data/minecraft/tags/items/smelts_to_glass.json
 af2dfa084f3d25041f6b875fce7a4f4fd1d0316a data/minecraft/tags/items/stairs.json
 f450d327c6328120fe52b30afd70cde8f233db46 data/minecraft/tags/items/tall_flowers.json
+4dc3428c65d10356f650543dec9f058fb5a4a182 data/minecraft/tags/items/trim_materials.json
 2eed7b008499f907b7837da7ebfc14ebff14b935 data/minecraft/tags/items/warped_stems.json
 4c7fcca0d17285ee04b3c0fa755237e1c4bbd5d8 data/minecraft/tags/items/wart_blocks.json
 05d4cd2d1e6e5132fd1175e67ec8df9221ace1ea data/minecraft/tags/items/wooden_buttons.json
@@ -59,7 +60,7 @@ c693fa708394f8561ff1109d81f834e9cdde37ca data/regions_unexplored/tags/items/baob
 a80909545cb6695cf2660332dfda8d54445f8172 data/regions_unexplored/tags/items/cypress_logs.json
 f5252ff413c0acb9c0670b12e04c37e02f241c0b data/regions_unexplored/tags/items/dead_logs.json
 99c78e980701f3d7791da998970f8544c6dd5fa8 data/regions_unexplored/tags/items/eucalyptus_logs.json
-ae82ef64629c80d1708990ad5b31b2cc5ed53d8a data/regions_unexplored/tags/items/grass.json
+f3eacbff0f3a28d9e4f092dfc3952e2662ab7ccf data/regions_unexplored/tags/items/grass.json
 cfa21f84ebdcb69008792bb52248b17096d51e21 data/regions_unexplored/tags/items/joshua_logs.json
 b80440c23d00bc9266a6d6e1072130bbe7e47b54 data/regions_unexplored/tags/items/larch_logs.json
 cc9f68f8f8188f9bd378cf90a07d557dde9ce4f9 data/regions_unexplored/tags/items/maple_logs.json

@@ -634,7 +634,7 @@ public class RuSecondaryRegionConfig {
         CAVE_2 = BUILDER.define("cave_2_biome", Biomes.DRIPSTONE_CAVES.location().toString());
         CAVE_3 = BUILDER.define("cave_3_biome", Biomes.DEEP_DARK.location().toString());
         CAVE_4 = BUILDER.define("cave_4_biome", RuBiomes.BIOSHROOM_CAVES.location().toString());
-        CAVE_5 = BUILDER.define("cave_5_biome", RuBiomes.LUSH_DELTA.location().toString());
+        CAVE_5 = BUILDER.define("cave_5_biome", RuBiomes.ANCIENT_DELTA.location().toString());
         CAVE_6 = BUILDER.define("cave_6_biome", RuBiomes.PRISMACHASM.location().toString());
         CAVE_7 = BUILDER.define("cave_7_biome", RuBiomes.REDSTONE_CAVES.location().toString());
         CAVE_8 = BUILDER.define("cave_8_biome", RuBiomes.SCORCHING_CAVES.location().toString());

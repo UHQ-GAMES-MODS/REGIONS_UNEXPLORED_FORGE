@@ -61,6 +61,7 @@ public class RuItems {
     public static RegistryObject<Item> WILLOW_CHEST_BOAT;
 
     public static RegistryObject<Item> SALMONBERRY;
+    public static RegistryObject<Item> DUSKMELON_SLICE;
     public static RegistryObject<Item> MEADOW_SAGE;
     
     public static void addItems(){
@@ -112,6 +113,7 @@ public class RuItems {
     WILLOW_CHEST_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("willow_chest_boat", () -> new RuBoatItem(true, RuBoat.ModelType.WILLOW, (new Item.Properties()).stacksTo(1)));
 
     SALMONBERRY = RegionsUnexploredMod.ITEM_REGISTRY.register("salmonberry", () -> new FoodItemWithBlock(RuBlocks.SALMONBERRY_BUSH.get(), new Item.Properties(), new Food(3, 0.3f)));
+    DUSKMELON_SLICE = RegionsUnexploredMod.ITEM_REGISTRY.register("duskmelon_slice", () -> new FoodItemWithBlock(RuBlocks.DUSKMELON.get(), new Item.Properties(), new Food(2, 1.1f).addEffect(MobEffects.BLINDNESS, 240, 1)));
     MEADOW_SAGE = RegionsUnexploredMod.ITEM_REGISTRY.register("meadow_sage", () -> new FoodItemWithBlock(RuBlocks.MEADOW_SAGE.get(), new Item.Properties(), new Food(2, 0.15f).addEffect(MobEffects.HEAL, 20, 0.5f)));
     }
 }

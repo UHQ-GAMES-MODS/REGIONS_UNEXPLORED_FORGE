@@ -1,5 +1,5 @@
-// 1.20.1	2023-06-13T05:19:55.4479453	Tags for minecraft:worldgen/biome mod id regions_unexplored
-541d00a36e03d43958388b5900e450c7bdc0c975 data/forge/tags/worldgen/biome/is_cave.json
+// 1.20.1	2023-07-10T23:44:40.4725448	Tags for minecraft:worldgen/biome mod id regions_unexplored
+36649860d25a60634c9747c746e4a7f41282eab1 data/forge/tags/worldgen/biome/is_cave.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/worldgen/biome/is_cold.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/worldgen/biome/is_cold/end.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/worldgen/biome/is_cold/nether.json
@@ -18,7 +18,7 @@ e3602de74065b1087709645b552536298e936ef2 data/forge/tags/worldgen/biome/is_dry/o
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/worldgen/biome/is_hot/end.json
 1ac2b3eceb90652e3ba551b09349d038e2cd88f9 data/forge/tags/worldgen/biome/is_hot/nether.json
 ee386b0bd8a1f72aac38eb25c42cab7ad9d0a237 data/forge/tags/worldgen/biome/is_hot/overworld.json
-f39b567cbb1eb32e27bdb48f60567ea6fa98ce4a data/forge/tags/worldgen/biome/is_lush.json
+3bcd5daf01f658ecea234fb7181018fa3b82e26c data/forge/tags/worldgen/biome/is_lush.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/worldgen/biome/is_mountain.json
 e2b63310ef88e7c1d7ef5c6ae9388681e498f4fd data/forge/tags/worldgen/biome/is_mushroom.json
 fd8cfb2f5944a5c939cf4bb29cb743ff69ce29f8 data/forge/tags/worldgen/biome/is_peak.json
@@ -43,7 +43,7 @@ d055b5b98914c2381d4ca3371362bd3f78217a34 data/forge/tags/worldgen/biome/is_waste
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/worldgen/biome/is_wet/nether.json
 ddaa0668b75dedd5afe6a3d6eeb2152a10a36f2d data/forge/tags/worldgen/biome/is_wet/overworld.json
 fe51a8c76e1a3e321c05ff1d4d3dd041d833a5d3 data/minecraft/tags/worldgen/biome/allows_surface_slime_spawns.json
-f39b567cbb1eb32e27bdb48f60567ea6fa98ce4a data/minecraft/tags/worldgen/biome/allows_tropical_fish_spawns_at_any_height.json
+3bcd5daf01f658ecea234fb7181018fa3b82e26c data/minecraft/tags/worldgen/biome/allows_tropical_fish_spawns_at_any_height.json
 fe51a8c76e1a3e321c05ff1d4d3dd041d833a5d3 data/minecraft/tags/worldgen/biome/has_closer_water_fog.json
 d01aacf3251418b31206081232d211255aa56c7a data/minecraft/tags/worldgen/biome/has_structure/bastion_remnant.json
 a233b10af80e5954f02266a9e443eeeeffdbbd59 data/minecraft/tags/worldgen/biome/has_structure/buried_treasure.json
@@ -58,7 +58,7 @@ e5b854bbdfb186218dfbb20908744cb58c096ccc data/minecraft/tags/worldgen/biome/has_
 f6874a3abd319a7c1afaa9fc4206a68ab5909e4f data/minecraft/tags/worldgen/biome/has_structure/ruined_portal_desert.json
 51545f2606fed4db3308741169af045e337fa8f9 data/minecraft/tags/worldgen/biome/has_structure/ruined_portal_jungle.json
 e188a8cd65fe0d0648f745cf638f1c2b1152ba28 data/minecraft/tags/worldgen/biome/has_structure/ruined_portal_mountain.json
-10ad7e1fe5b1e5548dc25408eabb8e2020b5321a data/minecraft/tags/worldgen/biome/has_structure/ruined_portal_standard.json
+91e747c8953aa35760349eb65b2fd95d05845a9f data/minecraft/tags/worldgen/biome/has_structure/ruined_portal_standard.json
 2c85c2cd3ab0e6aa160f5fa2e4a30d4907f89f79 data/minecraft/tags/worldgen/biome/has_structure/ruined_portal_swamp.json
 8ef7c6f25375961c2701f3b9d38e698d5c0e7f67 data/minecraft/tags/worldgen/biome/has_structure/swamp_hut.json
 d9275709f00f6c34c7a964e4908ad48beef4aadb data/minecraft/tags/worldgen/biome/has_structure/village_desert.json
@@ -78,7 +78,7 @@ f3d2a874b85873d3a146e6474cf63dba8b222ea4 data/minecraft/tags/worldgen/biome/is_b
 a8d27d83b4f3bc77708361b1b48b582d51ff4687 data/minecraft/tags/worldgen/biome/is_mountain.json
 1ac2b3eceb90652e3ba551b09349d038e2cd88f9 data/minecraft/tags/worldgen/biome/is_nether.json
 2a35e3f4c5a43275344195dd4ab27cf264dd8a6f data/minecraft/tags/worldgen/biome/is_ocean.json
-16b2c6c03c72fb37b4b1da165d8efdafb162c8b2 data/minecraft/tags/worldgen/biome/is_overworld.json
+2c994368f55e87a89d1a295b80c65f066e8b1fa7 data/minecraft/tags/worldgen/biome/is_overworld.json
 d79aa902b7a47a1988e66c9288e3af57352def85 data/minecraft/tags/worldgen/biome/is_river.json
 47c10ffe0e62c0f6956328a394255576e53e64f8 data/minecraft/tags/worldgen/biome/is_savanna.json
 e518be8544858932a2746716d40643f242a9b590 data/minecraft/tags/worldgen/biome/is_taiga.json
@@ -95,7 +95,7 @@ b776a40e464619060050d54e9a97f0c56763d712 data/minecraft/tags/worldgen/biome/spaw
 57a283e3b88a860ebbf2d16e9a0ca1928dd52e1e data/minecraft/tags/worldgen/biome/spawns_snow_foxes.json
 7342db2c630541087cfc7c1dad052f46e4d2e2e9 data/minecraft/tags/worldgen/biome/spawns_warm_variant_frogs.json
 57a283e3b88a860ebbf2d16e9a0ca1928dd52e1e data/minecraft/tags/worldgen/biome/spawns_white_rabbits.json
-9bd247913b53d8fe0a6ecd56809f872859431965 data/minecraft/tags/worldgen/biome/stronghold_biased_to.json
+919ec5b1c33d1d992c43f2c697c06cb4b872159d data/minecraft/tags/worldgen/biome/stronghold_biased_to.json
 fe51a8c76e1a3e321c05ff1d4d3dd041d833a5d3 data/minecraft/tags/worldgen/biome/water_on_map_outlines.json
 440485c95ff0181b95d2cd45a7d8d7cb1b2b6b65 data/minecraft/tags/worldgen/biome/without_patrol_spawns.json
 440485c95ff0181b95d2cd45a7d8d7cb1b2b6b65 data/minecraft/tags/worldgen/biome/without_wandering_trader_spawns.json

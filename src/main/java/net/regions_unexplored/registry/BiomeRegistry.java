@@ -15,7 +15,6 @@ import net.regions_unexplored.data.worldgen.biome.builder.*;
 import net.regions_unexplored.data.worldgen.biome.surface.RuOverworldSurfaceBuilders;
 import net.regions_unexplored.world.level.region.RuRegionNether;
 import net.regions_unexplored.world.level.region.RuRegionPrimary;
-import net.regions_unexplored.world.level.region.RuRegionRare;
 import net.regions_unexplored.world.level.region.RuRegionSecondary;
 import terrablender.api.Regions;
 import terrablender.api.SurfaceRuleManager;
@@ -29,7 +28,6 @@ public class BiomeRegistry {
     public static void setupTerrablender() {
         Regions.register(new RuRegionPrimary(RuCommonConfig.REGION_PRIMARY_WEIGHT.get()));
         Regions.register(new RuRegionSecondary(RuCommonConfig.REGION_SECONDARY_WEIGHT.get()));
-        Regions.register(new RuRegionRare(RuCommonConfig.REGION_RARE_WEIGHT.get()));
         Regions.register(new RuRegionNether(RuCommonConfig.REGION_NETHER_WEIGHT.get()));
         SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, RegionsUnexploredMod.MOD_ID, RuOverworldSurfaceBuilders.makeRules());
     }
@@ -112,8 +110,8 @@ public class BiomeRegistry {
         register(context, RuBiomes.ICY_HEIGHTS, FrozenBiomes.icyHeights(featuresGetter, carversGetter));
         register(context, RuBiomes.SPIRES, FrozenBiomes.spires(featuresGetter, carversGetter));
         //CAVE
+        register(context, RuBiomes.ANCIENT_DELTA, CaveBiomes.ancientDelta(featuresGetter, carversGetter));
         register(context, RuBiomes.BIOSHROOM_CAVES, CaveBiomes.bioshroomCaves(featuresGetter, carversGetter));
-        register(context, RuBiomes.LUSH_DELTA, CaveBiomes.lushDelta(featuresGetter, carversGetter));
         register(context, RuBiomes.PRISMACHASM, CaveBiomes.prismachasm(featuresGetter, carversGetter));
         register(context, RuBiomes.REDSTONE_CAVES, CaveBiomes.redstoneCaves(featuresGetter, carversGetter));
         register(context, RuBiomes.SCORCHING_CAVES, CaveBiomes.scorchingCaves(featuresGetter, carversGetter));
@@ -205,7 +203,7 @@ public class BiomeRegistry {
         registerVillagers(RuBiomes.SPIRES, VillagerType.PLAINS);
         //CAVE
         registerVillagers(RuBiomes.BIOSHROOM_CAVES, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.LUSH_DELTA, VillagerType.PLAINS);
+        registerVillagers(RuBiomes.ANCIENT_DELTA, VillagerType.PLAINS);
         registerVillagers(RuBiomes.PRISMACHASM, VillagerType.PLAINS);
         registerVillagers(RuBiomes.REDSTONE_CAVES, VillagerType.PLAINS);
         registerVillagers(RuBiomes.SCORCHING_CAVES, VillagerType.PLAINS);

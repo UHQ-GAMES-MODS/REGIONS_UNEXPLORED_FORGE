@@ -1,0 +1,9 @@
+{
+	"parent": "regions_unexplored:block/duskmelon_base",
+	"textures": {
+		"particle": "regions_unexplored:block/duskmelon_stage1",
+		"melon": "regions_unexplored:block/duskmelon_stage1",
+		"leaf": "regions_unexplored:block/dusk_leaf"
+	},
+	"render_type": "cutout"
+}

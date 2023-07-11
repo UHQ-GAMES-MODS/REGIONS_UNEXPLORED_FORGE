@@ -15,7 +15,7 @@ import net.regions_unexplored.world.level.block.cave.PointedRedstoneBlock;
 import java.util.function.Consumer;
 
 public class PointedRedstoneUtils {
-    protected static double getRedstoneHeight(double v, double v1, double v2, double v3) {
+    public static double getRedstoneHeight(double v, double v1, double v2, double v3) {
         if (v < v3) {
             v = v3;
         }
@@ -30,7 +30,7 @@ public class PointedRedstoneUtils {
         return d5 / 0.384D * v1;
     }
 
-    protected static boolean isCircleMostlyEmbeddedInStone(WorldGenLevel level, BlockPos pos, int i1) {
+    public static boolean isCircleMostlyEmbeddedInStone(WorldGenLevel level, BlockPos pos, int i1) {
         if (isEmptyOrWaterOrLava(level, pos)) {
             return false;
         } else {
@@ -49,15 +49,15 @@ public class PointedRedstoneUtils {
         }
     }
 
-    protected static boolean isEmptyOrWater(LevelAccessor level, BlockPos pos) {
+    public static boolean isEmptyOrWater(LevelAccessor level, BlockPos pos) {
         return level.isStateAtPosition(pos, PointedRedstoneUtils::isEmptyOrWater);
     }
 
-    protected static boolean isEmptyOrWaterOrLava(LevelAccessor level, BlockPos pos) {
+    public static boolean isEmptyOrWaterOrLava(LevelAccessor level, BlockPos pos) {
         return level.isStateAtPosition(pos, PointedRedstoneUtils::isEmptyOrWaterOrLava);
     }
 
-    protected static void buildBaseToTipColumn(Direction direction, int i1, boolean bool, Consumer<BlockState> consumer) {
+    public static void buildBaseToTipColumn(Direction direction, int i1, boolean bool, Consumer<BlockState> consumer) {
         if (i1 >= 3) {
             consumer.accept(createPointedRedstone(direction, DripstoneThickness.BASE));
 
@@ -76,7 +76,7 @@ public class PointedRedstoneUtils {
 
     }
 
-    protected static void growPointedRedstone(LevelAccessor level, BlockPos pos, Direction direction, int i, boolean bool) {
+    public static void growPointedRedstone(LevelAccessor level, BlockPos pos, Direction direction, int i, boolean bool) {
         if (isRedstoneBase(level.getBlockState(pos.relative(direction.getOpposite())))) {
             BlockPos.MutableBlockPos pos1 = pos.mutable();
             buildBaseToTipColumn(direction, i, bool, (p_190846_) -> {
@@ -90,7 +90,7 @@ public class PointedRedstoneUtils {
         }
     }
 
-    protected static boolean placeRedstoneBlockIfPossible(LevelAccessor level, BlockPos pos) {
+    public static boolean placeRedstoneBlockIfPossible(LevelAccessor level, BlockPos pos) {
         BlockState blockstate = level.getBlockState(pos);
         if (blockstate.is(BlockTags.DRIPSTONE_REPLACEABLE)) {
             level.setBlock(pos, RuBlocks.RAW_REDSTONE_BLOCK.get().defaultBlockState(), 2);
@@ -100,7 +100,7 @@ public class PointedRedstoneUtils {
         }
     }
 
-    private static BlockState createPointedRedstone(Direction direction, DripstoneThickness thickness) {
+    public static BlockState createPointedRedstone(Direction direction, DripstoneThickness thickness) {
         return RuBlocks.POINTED_REDSTONE.get().defaultBlockState().setValue(PointedRedstoneBlock.TIP_DIRECTION, direction).setValue(PointedRedstoneBlock.THICKNESS, thickness);
     }
 

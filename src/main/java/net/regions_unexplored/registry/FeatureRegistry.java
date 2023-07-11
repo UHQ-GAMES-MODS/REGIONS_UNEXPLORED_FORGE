@@ -7,9 +7,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.regions_unexplored.RegionsUnexploredMod;
 import net.regions_unexplored.data.worldgen.features.RuTreeFeatures;
 import net.regions_unexplored.world.level.feature.*;
-import net.regions_unexplored.world.level.feature.configuration.FallenTreeConfiguration;
-import net.regions_unexplored.world.level.feature.configuration.RuTreeConfiguration;
-import net.regions_unexplored.world.level.feature.configuration.ShrubConfiguration;
+import net.regions_unexplored.world.level.feature.configuration.*;
 import net.regions_unexplored.world.level.feature.tree.*;
 import net.regions_unexplored.world.level.feature.tree.nether.BrimWillowFeature;
 import net.regions_unexplored.world.level.feature.tree.nether.TallBrimWillowFeature;
@@ -48,7 +46,13 @@ public class FeatureRegistry {
     public static RegistryObject<Feature> SAKURA_TREE;
     public static RegistryObject<Feature> SUPER_REDWOOD_TREE;
     public static RegistryObject<Feature> ULTRA_REDWOOD_TREE;
-
+    //CAVE
+    public static RegistryObject<Feature> POINTED_REDSTONE;
+    public static RegistryObject<Feature> LARGE_POINTED_REDSTONE;
+    public static RegistryObject<Feature> POINTED_REDSTONE_CLUSTER;
+    public static RegistryObject<Feature> HANGING_PRISMARITE;
+    public static RegistryObject<Feature> DROPLEAF;
+    //NETHER
     public static RegistryObject<Feature> BRIM_WILLOW;
     public static RegistryObject<Feature> TALL_BRIM_WILLOW;
     //VEGETATION
@@ -102,7 +106,13 @@ public class FeatureRegistry {
         SAKURA_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("sakura_tree", () -> new SakuraTreeFeature(RuTreeConfiguration.CODEC));
         SUPER_REDWOOD_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("super_redwood_tree", () -> new SuperRedwoodTreeFeature(RuTreeConfiguration.CODEC));
         ULTRA_REDWOOD_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("ultra_redwood_tree", () -> new UltraRedwoodTreeFeature(RuTreeConfiguration.CODEC));
-
+        //CAVE
+        POINTED_REDSTONE = RegionsUnexploredMod.FEATURE_REGISTRY.register("pointed_redstone", () -> new PointedRedstoneFeature(PointedRedstoneConfiguration.CODEC));
+        LARGE_POINTED_REDSTONE = RegionsUnexploredMod.FEATURE_REGISTRY.register("large_pointed_redstone", () -> new LargePointedRedstoneFeature(LargePointedRedstoneConfiguration.CODEC));
+        POINTED_REDSTONE_CLUSTER = RegionsUnexploredMod.FEATURE_REGISTRY.register("pointed_redstone_cluster", () -> new PointedRedstoneClusterFeature(PointedRedstoneClusterConfiguration.CODEC));
+        HANGING_PRISMARITE = RegionsUnexploredMod.FEATURE_REGISTRY.register("hanging_prismarite", () -> new HangingPrismariteFeature(NoneFeatureConfiguration.CODEC));
+        DROPLEAF = RegionsUnexploredMod.FEATURE_REGISTRY.register("dropleaf", () -> new DropleafFeature(NoneFeatureConfiguration.CODEC));
+        //NETHER
         BRIM_WILLOW = RegionsUnexploredMod.FEATURE_REGISTRY.register("brim_willow", () -> new BrimWillowFeature(NoneFeatureConfiguration.CODEC));
         TALL_BRIM_WILLOW = RegionsUnexploredMod.FEATURE_REGISTRY.register("tall_brim_willow", () -> new TallBrimWillowFeature(NoneFeatureConfiguration.CODEC));
         //VEGETATION

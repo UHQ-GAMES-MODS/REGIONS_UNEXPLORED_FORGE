@@ -30,7 +30,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.OLD_GROWTH_BAYOU.location())
         ;
         this.tag(BiomeTags.ALLOWS_TROPICAL_FISH_SPAWNS_AT_ANY_HEIGHT)
-                .addOptional(RuBiomes.LUSH_DELTA.location())
+                .addOptional(RuBiomes.ANCIENT_DELTA.location())
                 .addOptional(RuBiomes.BIOSHROOM_CAVES.location())
         ;
         this.tag(BiomeTags.HAS_CLOSER_WATER_FOG)
@@ -179,7 +179,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.SPIRES.location())
                 //CAVE
                 .addOptional(RuBiomes.BIOSHROOM_CAVES.location())
-                .addOptional(RuBiomes.LUSH_DELTA.location())
+                .addOptional(RuBiomes.ANCIENT_DELTA.location())
                 .addOptional(RuBiomes.PRISMACHASM.location())
                 .addOptional(RuBiomes.REDSTONE_CAVES.location())
                 .addOptional(RuBiomes.SCORCHING_CAVES.location())
@@ -326,7 +326,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.SPIRES.location())
                 //CAVE
                 .addOptional(RuBiomes.BIOSHROOM_CAVES.location())
-                .addOptional(RuBiomes.LUSH_DELTA.location())
+                .addOptional(RuBiomes.ANCIENT_DELTA.location())
                 .addOptional(RuBiomes.PRISMACHASM.location())
                 .addOptional(RuBiomes.REDSTONE_CAVES.location())
         ;
@@ -489,7 +489,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.FLOWER_FIELDS.location())
                 .addOptional(RuBiomes.ROCKY_MEADOW.location())
                 .addOptional(RuBiomes.REDSTONE_CAVES.location())
-                .addOptional(RuBiomes.LUSH_DELTA.location())
+                .addOptional(RuBiomes.ANCIENT_DELTA.location())
                 .addOptional(RuBiomes.PRISMACHASM.location())
                 .addOptional(RuBiomes.SCORCHING_CAVES.location())
                 .addOptional(RuBiomes.BIOSHROOM_CAVES.location())
@@ -651,7 +651,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
         ;
         //other_forge_tags
         this.tag(TagKey.create(Registries.BIOME, new ResourceLocation("forge", "is_cave")))
-                .addOptional(RuBiomes.LUSH_DELTA.location())
+                .addOptional(RuBiomes.ANCIENT_DELTA.location())
                 .addOptional(RuBiomes.REDSTONE_CAVES.location())
                 .addOptional(RuBiomes.PRISMACHASM.location())
                 .addOptional(RuBiomes.BIOSHROOM_CAVES.location())
@@ -679,7 +679,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
         this.tag(TagKey.create(Registries.BIOME, new ResourceLocation("forge", "is_hot")))
         ;
         this.tag(TagKey.create(Registries.BIOME, new ResourceLocation("forge", "is_lush")))
-                .addOptional(RuBiomes.LUSH_DELTA.location())
+                .addOptional(RuBiomes.ANCIENT_DELTA.location())
                 .addOptional(RuBiomes.BIOSHROOM_CAVES.location())
         ;
         this.tag(TagKey.create(Registries.BIOME, new ResourceLocation("forge", "is_mountain")))

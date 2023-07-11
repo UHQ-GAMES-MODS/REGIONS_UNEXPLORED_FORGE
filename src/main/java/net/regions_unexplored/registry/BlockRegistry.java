@@ -45,12 +45,6 @@ public class BlockRegistry {
         return toReturn;
     }
 
-    //Configure log block
-    public static RotatedPillarBlock log(MapColor colour, MapColor colour2, SoundType sound) {
-        return new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor((p_152624_) -> {
-            return p_152624_.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? colour : colour2;
-        }).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(sound).ignitedByLava());
-    }
     public static PineLogBlock pineLog(MapColor colour, MapColor colour2, SoundType sound) {
         return new PineLogBlock(BlockBehaviour.Properties.of().mapColor((p_152624_) -> {
             return p_152624_.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? colour : colour2;
@@ -61,7 +55,12 @@ public class BlockRegistry {
             return p_152624_.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? colour : colour2;
         }).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(sound).ignitedByLava());
     }
-
+    //Configure log block
+    public static RotatedPillarBlock log(MapColor colour, MapColor colour2, SoundType sound) {
+        return new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor((p_152624_) -> {
+            return p_152624_.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? colour : colour2;
+        }).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(sound).ignitedByLava());
+    }
     //Configure wood block
     public static RotatedPillarBlock woodBlock(MapColor colour, SoundType sound) {
         return new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(sound).ignitedByLava());
@@ -109,6 +108,66 @@ public class BlockRegistry {
     //Configure wall sign
     public static RuWallSignBlock wallSign(SoundType sound, Block block, WoodType woodType) {
         return new RuWallSignBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).sound(sound).ignitedByLava().dropsLike(block), woodType);
+    }
+    //Configure log block
+    public static RotatedPillarBlock fireproofLog(MapColor colour, MapColor colour2, SoundType sound) {
+        return new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor((p_152624_) -> {
+            return p_152624_.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? colour : colour2;
+        }).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(sound));
+    }
+    //Configure log block
+    public static RotatedPillarBlock fireproofMagmaLog(MapColor colour, MapColor colour2, SoundType sound) {
+        return new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor((p_152624_) -> {
+            return p_152624_.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? colour : colour2;
+        }).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(sound));
+    }
+    //Configure wood block
+    public static RotatedPillarBlock fireproofWoodBlock(MapColor colour, SoundType sound) {
+        return new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(sound));
+    }
+    //Configure wooden planks
+    public static Block fireproofWoodPlanks(MapColor colour, SoundType sound) {
+        return new Block(BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(sound));
+    }
+    //Configure wooden stairs
+    public static StairBlock fireproofWoodStairs(MapColor colour, SoundType sound) {
+        return new StairBlock(Blocks.OAK_PLANKS.defaultBlockState(), BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(sound));
+    }
+    //Configure wooden slab
+    public static SlabBlock fireproofWoodSlab(MapColor colour, SoundType sound) {
+        return new SlabBlock(BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(sound));
+    }
+    //Configure wooden door
+    public static DoorBlock fireproofWoodDoor(MapColor colour, SoundType sound, BlockSetType blockSetType) {
+        return new DoorBlock(BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(3.0F).sound(sound).noOcclusion(), blockSetType);
+    }
+    //Configure wooden trap door
+    public static TrapDoorBlock fireproofWoodTrapDoor(MapColor colour, SoundType sound, BlockSetType blockSetType) {
+        return new TrapDoorBlock(BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(3.0F).sound(sound).noOcclusion(), blockSetType);
+    }
+    //Configure wooden fence
+    public static FenceBlock fireproofWoodFence(MapColor colour, SoundType sound) {
+        return new FenceBlock(BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(sound).ignitedByLava());
+    }
+    //Configure wooden gate
+    public static FenceGateBlock fireproofWoodFenceGate(MapColor colour, WoodType type, SoundType sound) {
+        return new FenceGateBlock(BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(sound), type);
+    }
+    //Configure wooden pressure plate
+    public static PressurePlateBlock fireproofWoodPressurePlate(MapColor colour, SoundType sound, BlockSetType blockSetType) {
+        return new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).noCollission().strength(0.5F).sound(sound), blockSetType);
+    }
+    //Configure wooden button
+    public static ButtonBlock fireproofWoodButton(SoundType sound, BlockSetType blockSetType) {
+        return new ButtonBlock(BlockBehaviour.Properties.of().noCollission().strength(0.5F).sound(sound), blockSetType, 30, true);
+    }
+    //Configure sign
+    public static RuStandingSignBlock fireproofSign(SoundType sound, WoodType woodType) {
+        return new RuStandingSignBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).sound(sound), woodType);
+    }
+    //Configure wall sign
+    public static RuWallSignBlock fireproofWallSign(SoundType sound, Block block, WoodType woodType) {
+        return new RuWallSignBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).sound(sound).dropsLike(block), woodType);
     }
 
     //Configure leaves blocks

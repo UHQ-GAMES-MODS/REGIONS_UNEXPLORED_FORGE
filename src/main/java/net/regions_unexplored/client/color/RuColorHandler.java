@@ -24,17 +24,18 @@ public class RuColorHandler {
                 },      RuBlocks.PEAT_GRASS_BLOCK.get(),
                 RuBlocks.SILT_GRASS_BLOCK.get(),
                 RuBlocks.STONE_GRASS_BLOCK.get(),
+                RuBlocks.ARGILLITE_GRASS_BLOCK.get(),
                 RuBlocks.DEEPSLATE_GRASS_BLOCK.get(),
                 RuBlocks.CHALK_GRASS_BLOCK.get(),
                 RuBlocks.MEDIUM_GRASS.get(),
                 RuBlocks.STEPPE_GRASS.get(),
                 RuBlocks.STONE_BUD.get(),
-                RuBlocks.SEEDED_TALL_GRASS.get(),
-                RuBlocks.SEEDED_GRASS.get(),
                 RuBlocks.ORANGE_CONEFLOWER.get(),
                 RuBlocks.PURPLE_CONEFLOWER.get(),
                 RuBlocks.TASSEL.get(),
-                RuBlocks.SAKURA_PETALS.get()
+                RuBlocks.SAKURA_PETALS.get(),
+                RuBlocks.BLADED_GRASS.get(),
+                RuBlocks.BLADED_TALL_GRASS.get()
         );
     }
     @SubscribeEvent
@@ -44,13 +45,14 @@ public class RuColorHandler {
                 },      RuBlocks.PEAT_GRASS_BLOCK.get(),
                 RuBlocks.SILT_GRASS_BLOCK.get(),
                 RuBlocks.STONE_GRASS_BLOCK.get(),
+                RuBlocks.ARGILLITE_GRASS_BLOCK.get(),
                 RuBlocks.DEEPSLATE_GRASS_BLOCK.get(),
                 RuBlocks.CHALK_GRASS_BLOCK.get(),
                 RuBlocks.MEDIUM_GRASS.get(),
                 RuBlocks.STEPPE_GRASS.get(),
                 RuBlocks.STONE_BUD.get(),
-                RuBlocks.SEEDED_TALL_GRASS.get(),
-                RuBlocks.SEEDED_GRASS.get()
+                RuBlocks.BLADED_GRASS.get(),
+                RuBlocks.BLADED_TALL_GRASS.get()
         );
     }
 

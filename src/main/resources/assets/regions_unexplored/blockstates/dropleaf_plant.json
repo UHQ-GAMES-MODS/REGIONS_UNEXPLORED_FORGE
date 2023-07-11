@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "regions_unexplored:block/dropleaf_plant"
+      },
+      {
+        "model": "regions_unexplored:block/dropleaf_plant",
+        "y": 90
+      }
+    ]
+  }
+}

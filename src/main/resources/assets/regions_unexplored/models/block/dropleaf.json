@@ -1,0 +1,9 @@
+{
+	"parent": "regions_unexplored:block/dropleaf_base",
+	"textures": {
+		"particle": "regions_unexplored:block/dropleaf_leaf",
+		"stem": "regions_unexplored:block/dropleaf_stem",
+		"leaf": "regions_unexplored:block/dropleaf_leaf"
+	},
+	"render_type": "cutout"
+}

@@ -27,6 +27,7 @@ public class RuFlowerBlock extends FlowerBlock {
     public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
         Vec3 vec3 = state.getOffset(getter, pos);
         if(state== RuBlocks.POPPY_BUSH.get().defaultBlockState()
+                ||state== RuBlocks.SALMON_POPPY_BUSH.get().defaultBlockState()
                 ||state== RuBlocks.BLUE_LUPINE.get().defaultBlockState()
                 ||state== RuBlocks.PINK_LUPINE.get().defaultBlockState()
                 ||state== RuBlocks.PURPLE_LUPINE.get().defaultBlockState()

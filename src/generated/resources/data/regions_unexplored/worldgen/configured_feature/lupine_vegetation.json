@@ -37,12 +37,6 @@
                   "Name": "regions_unexplored:purple_lupine"
                 },
                 "weight": 10
-              },
-              {
-                "data": {
-                  "Name": "minecraft:grass"
-                },
-                "weight": 5
               }
             ]
           }
@@ -58,8 +52,8 @@
         }
       ]
     },
-    "tries": 64,
-    "xz_spread": 7,
-    "y_spread": 3
+    "tries": 96,
+    "xz_spread": 6,
+    "y_spread": 2
   }
 }

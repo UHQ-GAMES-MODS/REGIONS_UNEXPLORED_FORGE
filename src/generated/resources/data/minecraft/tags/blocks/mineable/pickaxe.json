@@ -17,6 +17,7 @@
     "regions_unexplored:glistering_wart",
     "regions_unexplored:marrowstone",
     "regions_unexplored:mossy_stone",
+    "regions_unexplored:argillite",
     "regions_unexplored:mycotoxic_moss",
     "regions_unexplored:pointed_redstone",
     "regions_unexplored:polished_chalk",
@@ -27,6 +28,7 @@
     "regions_unexplored:redstone_bud",
     "regions_unexplored:redstone_bulb",
     "regions_unexplored:stone_grass_block",
+    "regions_unexplored:argillite_grass_block",
     "regions_unexplored:viridescent_nylium"
   ]
 }

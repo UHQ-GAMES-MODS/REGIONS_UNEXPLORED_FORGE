@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:simple_block",
+  "config": {
+    "to_place": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "data": {
+            "Name": "regions_unexplored:duskmelon",
+            "Properties": {
+              "age": "1"
+            }
+          },
+          "weight": 3
+        },
+        {
+          "data": {
+            "Name": "regions_unexplored:duskmelon",
+            "Properties": {
+              "age": "2"
+            }
+          },
+          "weight": 2
+        }
+      ]
+    }
+  }
+}

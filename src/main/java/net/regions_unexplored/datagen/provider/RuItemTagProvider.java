@@ -112,6 +112,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.SILT_MUD.get().asItem())
                 .add(RuBlocks.PRISMOSS.get().asItem())
                 .add(RuBlocks.STONE_GRASS_BLOCK.get().asItem())
+                .add(RuBlocks.ARGILLITE_GRASS_BLOCK.get().asItem())
                 .add(RuBlocks.VIRIDESCENT_NYLIUM.get().asItem())
         ;
         //this.tag(ItemTags.DOORS);
@@ -358,6 +359,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.HYSSOP.get().asItem())
                 .add(RuBlocks.PINK_LUPINE.get().asItem())
                 .add(RuBlocks.POPPY_BUSH.get().asItem())
+                .add(RuBlocks.SALMON_POPPY_BUSH.get().asItem())
                 .add(RuBlocks.PURPLE_LUPINE.get().asItem())
                 .add(RuBlocks.RED_LUPINE.get().asItem())
                 .add(RuBlocks.WARATAH.get().asItem())
@@ -386,6 +388,9 @@ public class RuItemTagProvider extends ItemTagsProvider {
         //this.tag(ItemTags.TERRACOTTA);
         //this.tag(ItemTags.TOOLS);
         //this.tag(ItemTags.TRAPDOORS);
+        this.tag(ItemTags.TRIM_MATERIALS)
+                .add(RuBlocks.PRISMARITE_CLUSTER.get().asItem())
+        ;
         //this.tag(ItemTags.WALLS);
         this.tag(ItemTags.WARPED_STEMS)
                 .add(RuBlocks.BRIMWOOD_LOG.get().asItem())
@@ -563,7 +568,6 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.FROZEN_GRASS.get().asItem())
                 .add(RuBlocks.MEDIUM_GRASS.get().asItem())
                 .add(RuBlocks.SANDY_GRASS.get().asItem())
-                .add(RuBlocks.SEEDED_GRASS.get().asItem())
                 .add(RuBlocks.STEPPE_GRASS.get().asItem())
                 .add(RuBlocks.STEPPE_SHRUB.get().asItem())
                 .add(RuBlocks.STONE_BUD.get().asItem())
@@ -869,6 +873,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
         //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "stained_glass_panes")));
         this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "stone")))
                 .add(RuBlocks.MOSSY_STONE.get().asItem())
+                .add(RuBlocks.ARGILLITE.get().asItem())
                 .add(RuBlocks.CHALK.get().asItem())
                 .add(RuBlocks.POLISHED_CHALK.get().asItem())
         ;

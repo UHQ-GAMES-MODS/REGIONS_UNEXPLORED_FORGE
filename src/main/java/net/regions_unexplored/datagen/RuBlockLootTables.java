@@ -55,11 +55,19 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         add(RuBlocks.REDSTONE_BUD.get(), (block) -> createSilkTouchDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(Items.REDSTONE).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))));
         dropSelf(RuBlocks.REDSTONE_BULB.get());
         //OTHER_CAVE_BLOCKS
+        add(RuBlocks.ARGILLITE_GRASS_BLOCK.get(), (block) -> createSingleItemTableWithSilkTouch(block, RuBlocks.ARGILLITE.get()));
         add(RuBlocks.STONE_GRASS_BLOCK.get(), (block) -> createSingleItemTableWithSilkTouch(block, Blocks.STONE));
         add(RuBlocks.DEEPSLATE_GRASS_BLOCK.get(), (block) -> createSingleItemTableWithSilkTouch(block, Blocks.DEEPSLATE));
         add(RuBlocks.VIRIDESCENT_NYLIUM.get(), (block) -> createSingleItemTableWithSilkTouch(block, Blocks.STONE));
         add(RuBlocks.DEEPSLATE_VIRIDESCENT_NYLIUM.get(), (block) -> createSingleItemTableWithSilkTouch(block, Blocks.DEEPSLATE));
 
+        add(RuBlocks.CORPSE_FLOWER.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
+        add(RuBlocks.BLADED_GRASS.get(), (block) -> createGrassDrops(block));
+        add(RuBlocks.BLADED_TALL_GRASS.get(), (block) -> createDoublePlantWithSeedDrops(block, RuBlocks.BLADED_GRASS.get()));
+        add(RuBlocks.DROPLEAF.get(), (block) -> createSilkTouchOrShearsDispatchTable(block, LootItem.lootTableItem(block).when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, 0.33F, 0.55F, 0.77F, 1.0F))));
+        add(RuBlocks.DROPLEAF_PLANT.get(), (block) -> createSilkTouchOrShearsDispatchTable(block, LootItem.lootTableItem(block).when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, 0.33F, 0.55F, 0.77F, 1.0F))));
+        add(RuBlocks.DUSKMELON.get(), (block) -> applyExplosionDecay(block, LootTable.lootTable().withPool(LootPool.lootPool().when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(RuBlocks.DUSKMELON.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(SalmonBerryBushBlock.AGE, 3))).add(LootItem.lootTableItem(RuItems.DUSKMELON_SLICE.get())).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F))).apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE))).withPool(LootPool.lootPool().when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(RuBlocks.DUSKMELON.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(SweetBerryBushBlock.AGE, 2))).add(LootItem.lootTableItem(RuItems.DUSKMELON_SLICE.get())).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))).apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)))));
+        add(RuBlocks.DUSKTRAP.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         /*-----------------PLANTS-----------------*/
         //GRASS_BLOCKS
         dropSelf(RuBlocks.DEAD_STEPPE_SHRUB.get());
@@ -67,7 +75,6 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         add(RuBlocks.FROZEN_GRASS.get(), (block) -> createGrassDrops(block));
         add(RuBlocks.MEDIUM_GRASS.get(), (block) -> createGrassDrops(block));
         add(RuBlocks.SANDY_GRASS.get(), (block) -> createGrassDrops(block));
-        add(RuBlocks.SEEDED_GRASS.get(), (block) -> createGrassDrops(block));
         add(RuBlocks.SMALL_DESERT_SHRUB.get(), (block) -> createShearsOnlyDrop(block));
         add(RuBlocks.STEPPE_GRASS.get(), (block) -> createGrassDrops(block));
         add(RuBlocks.STEPPE_SHRUB.get(), (block) -> createGrassDrops(block));
@@ -75,7 +82,6 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         //TALL_GRASS_BLOCKS
         add(RuBlocks.ELEPHANT_EAR.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         add(RuBlocks.SANDY_TALL_GRASS.get(), (block) -> createDoublePlantWithSeedDrops(block, RuBlocks.SANDY_GRASS.get()));
-        add(RuBlocks.SEEDED_TALL_GRASS.get(), (block) -> createDoublePlantWithSeedDrops(block, RuBlocks.SEEDED_GRASS.get()));
         add(RuBlocks.STEPPE_TALL_GRASS.get(), (block) -> createDoublePlantWithSeedDrops(block, RuBlocks.STEPPE_GRASS.get()));
         add(RuBlocks.WINDSWEPT_GRASS.get(), (block) -> createDoublePlantWithSeedDropsNoGrass(block, RuBlocks.WINDSWEPT_GRASS.get()));
         //FLOWERS
@@ -89,6 +95,7 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         dropSelf(RuBlocks.HYSSOP.get());
         dropSelf(RuBlocks.PINK_LUPINE.get());
         dropSelf(RuBlocks.POPPY_BUSH.get());
+        dropSelf(RuBlocks.SALMON_POPPY_BUSH.get());
         dropSelf(RuBlocks.PURPLE_LUPINE.get());
         dropSelf(RuBlocks.RED_LUPINE.get());
         dropSelf(RuBlocks.WARATAH.get());
@@ -207,6 +214,7 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         add(RuBlocks.POTTED_HYSSOP.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_PINK_LUPINE.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_POPPY_BUSH.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_SALMON_POPPY_BUSH.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_PURPLE_LUPINE.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_RED_LUPINE.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_WARATAH.get(), (block) -> createPotFlowerItemTable(block));
@@ -355,7 +363,8 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         dropSelf(RuBlocks.POLISHED_CHALK.get());
         add(RuBlocks.POLISHED_CHALK_SLAB.get(), (block) -> createSlabItemTable(block));
         dropSelf(RuBlocks.POLISHED_CHALK_STAIRS.get());
-        //MOSSY_STONES
+        //STONES
+        dropSelf(RuBlocks.ARGILLITE.get());
         add(RuBlocks.MOSSY_STONE.get(), (block) -> createSingleItemTableWithSilkTouch(block, Blocks.MOSSY_COBBLESTONE));
 
         /*-----------------OCEAN_BLOCKS-----------------*/

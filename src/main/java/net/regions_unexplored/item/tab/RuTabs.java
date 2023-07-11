@@ -42,13 +42,18 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.VIRIDESCENT_NYLIUM.get()));
                             output.accept(new ItemStack(RuBlocks.DEEPSLATE_VIRIDESCENT_NYLIUM.get()));
 
+                            output.accept(new ItemStack(RuBlocks.CORPSE_FLOWER.get()));
+                            output.accept(new ItemStack(RuBlocks.BLADED_GRASS.get()));
+                            output.accept(new ItemStack(RuBlocks.BLADED_TALL_GRASS.get()));
+                            output.accept(new ItemStack(RuBlocks.DROPLEAF.get()));
+                            output.accept(new ItemStack(RuBlocks.DUSKMELON.get()));
+                            output.accept(new ItemStack(RuBlocks.DUSKTRAP.get()));
                             /*-----------------PLANTS-----------------*/
                             //GRASS_BLOCKS
                             output.accept(new ItemStack(RuBlocks.DEAD_STEPPE_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.FROZEN_GRASS.get()));
                             output.accept(new ItemStack(RuBlocks.MEDIUM_GRASS.get()));
                             output.accept(new ItemStack(RuBlocks.SANDY_GRASS.get()));
-                            output.accept(new ItemStack(RuBlocks.SEEDED_GRASS.get()));
                             output.accept(new ItemStack(RuBlocks.SMALL_DESERT_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.STEPPE_GRASS.get()));
                             output.accept(new ItemStack(RuBlocks.STEPPE_SHRUB.get()));
@@ -56,7 +61,6 @@ public class RuTabs {
                             //TALL_GRASS_BLOCKS
                             output.accept(new ItemStack(RuBlocks.ELEPHANT_EAR.get()));
                             output.accept(new ItemStack(RuBlocks.SANDY_TALL_GRASS.get()));
-                            output.accept(new ItemStack(RuBlocks.SEEDED_TALL_GRASS.get()));
                             output.accept(new ItemStack(RuBlocks.STEPPE_TALL_GRASS.get()));
                             output.accept(new ItemStack(RuBlocks.WINDSWEPT_GRASS.get()));
                             //FLOWERS
@@ -70,6 +74,7 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.HYSSOP.get()));
                             output.accept(new ItemStack(RuBlocks.PINK_LUPINE.get()));
                             output.accept(new ItemStack(RuBlocks.POPPY_BUSH.get()));
+                            output.accept(new ItemStack(RuBlocks.SALMON_POPPY_BUSH.get()));
                             output.accept(new ItemStack(RuBlocks.PURPLE_LUPINE.get()));
                             output.accept(new ItemStack(RuBlocks.RED_LUPINE.get()));
                             output.accept(new ItemStack(RuBlocks.WARATAH.get()));
@@ -275,7 +280,8 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.POLISHED_CHALK.get()));
                             output.accept(new ItemStack(RuBlocks.POLISHED_CHALK_SLAB.get()));
                             output.accept(new ItemStack(RuBlocks.POLISHED_CHALK_STAIRS.get()));
-                            //MOSSY_STONES
+                            //STONES
+                            output.accept(new ItemStack(RuBlocks.ARGILLITE.get()));
                             output.accept(new ItemStack(RuBlocks.MOSSY_STONE.get()));
 
                             /*-----------------OCEAN_BLOCKS-----------------*/

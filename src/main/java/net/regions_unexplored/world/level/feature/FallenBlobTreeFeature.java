@@ -63,7 +63,7 @@ public class FallenBlobTreeFeature extends Feature<FallenTreeConfiguration> {
                 else{
                     placeLogZ(level, placePos, randomSource, treeConfiguration);
                     placeMoss(level, placePos.east(), randomSource, treeConfiguration);
-                    placeMoss(level, placePos.above(), randomSource, treeConfiguration);
+                    placeMossAbove(level, placePos.above(), randomSource, treeConfiguration);
                     placeMoss(level, placePos.west(), randomSource, treeConfiguration);
                 }
                 if(placeCheck == height){
@@ -88,7 +88,7 @@ public class FallenBlobTreeFeature extends Feature<FallenTreeConfiguration> {
                 else{
                     placeLogZ(level, placePos, randomSource, treeConfiguration);
                     placeMoss(level, placePos.east(), randomSource, treeConfiguration);
-                    placeMoss(level, placePos.above(), randomSource, treeConfiguration);
+                    placeMossAbove(level, placePos.above(), randomSource, treeConfiguration);
                     placeMoss(level, placePos.west(), randomSource, treeConfiguration);
                 }
                 if(placeCheck == height){
@@ -284,6 +284,20 @@ public class FallenBlobTreeFeature extends Feature<FallenTreeConfiguration> {
             return true;
         }
         if(level.getBlockState(pos).canBeReplaced()&&randomSource.nextInt(5)==0){
+            if(level.getBlockState(pos.below()).isFaceSturdy(level, pos.below(), Direction.UP)) {
+                if(level.getBlockState(pos).getBlock() instanceof DoublePlantBlock){
+                    level.setBlock(pos.above(), Blocks.AIR.defaultBlockState(), 2);
+                }
+                level.setBlock(pos, Blocks.MOSS_CARPET.defaultBlockState(), 2);
+            }
+        }
+        return true;
+    }
+    public boolean placeMossAbove(LevelAccessor level, BlockPos pos, RandomSource randomSource, FallenTreeConfiguration treeConfiguration) {
+        if(level.isOutsideBuildHeight(pos)){
+            return true;
+        }
+        if(level.getBlockState(pos).canBeReplaced()&&randomSource.nextInt(2)==0){
             if(level.getBlockState(pos.below()).isFaceSturdy(level, pos.below(), Direction.UP)) {
                 if(level.getBlockState(pos).getBlock() instanceof DoublePlantBlock){
                     level.setBlock(pos.above(), Blocks.AIR.defaultBlockState(), 2);

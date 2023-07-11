@@ -58,10 +58,8 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
 
         /*-----------------PLANTS-----------------*/
         oneToOneConversionRecipe(consumer, Items.BROWN_DYE, RuBlocks.DEAD_STEPPE_SHRUB.get(), "brown_dye");
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.WHEAT_SEEDS, 1).requires(RuBlocks.SEEDED_GRASS.get()).group("seeds").unlockedBy("has_seeded_grass", has(RuBlocks.SEEDED_GRASS.get())).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getConversionRecipeName(Items.WHEAT_SEEDS, RuBlocks.SEEDED_GRASS.get())));
         oneToOneConversionRecipe(consumer, Items.BROWN_DYE, RuBlocks.SMALL_DESERT_SHRUB.get(), "brown_dye");
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.WHEAT_SEEDS, 2).requires(RuBlocks.SEEDED_TALL_GRASS.get()).group("seeds").unlockedBy("has_seeded_tall_grass", has(RuBlocks.SEEDED_TALL_GRASS.get())).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getConversionRecipeName(Items.WHEAT_SEEDS, RuBlocks.SEEDED_TALL_GRASS.get())));
 
         oneToOneConversionRecipe(consumer, Items.YELLOW_DYE, RuBlocks.ALPHA_DANDELION.get(), "yellow_dye");
         oneToOneConversionRecipe(consumer, Items.RED_DYE, RuBlocks.ALPHA_ROSE.get(), "red_dye");
@@ -73,6 +71,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         oneToOneConversionRecipe(consumer, Items.PURPLE_DYE, RuBlocks.HYSSOP.get(), "purple_dye");
         oneToOneConversionRecipe(consumer, Items.PINK_DYE, RuBlocks.PINK_LUPINE.get(), "pink_dye");
         oneToOneConversionRecipe(consumer, Items.RED_DYE, RuBlocks.POPPY_BUSH.get(), "red_dye");
+        oneToOneConversionRecipe(consumer, Items.PINK_DYE, RuBlocks.SALMON_POPPY_BUSH.get(), "pink_dye");
         oneToOneConversionRecipe(consumer, Items.PURPLE_DYE, RuBlocks.PURPLE_LUPINE.get(), "purple_dye");
         oneToOneConversionRecipe(consumer, Items.RED_DYE, RuBlocks.RED_LUPINE.get(), "red_dye");
         oneToOneConversionRecipe(consumer, Items.RED_DYE, RuBlocks.WARATAH.get(), "red_dye");

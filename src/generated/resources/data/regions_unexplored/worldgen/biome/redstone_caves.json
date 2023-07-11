@@ -70,7 +70,8 @@
       "minecraft:underwater_magma",
       "minecraft:disk_sand",
       "minecraft:disk_clay",
-      "minecraft:disk_gravel"
+      "minecraft:disk_gravel",
+      "regions_unexplored:ore_redstone_large"
     ],
     [],
     [
@@ -86,7 +87,12 @@
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin"
+      "minecraft:patch_pumpkin",
+      "regions_unexplored:pointed_redstone",
+      "regions_unexplored:large_pointed_redstone",
+      "regions_unexplored:pointed_redstone_cluster",
+      "regions_unexplored:redstone_bud",
+      "regions_unexplored:redstone_bulb"
     ],
     [
       "minecraft:freeze_top_layer"
