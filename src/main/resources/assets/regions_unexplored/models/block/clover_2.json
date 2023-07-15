@@ -1,0 +1,98 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"flowerbed": "regions_unexplored:block/clover",
+		"stem": "regions_unexplored:block/clover_stem",
+		"particle": "regions_unexplored:block/clover"
+	},
+	"render_type": "cutout",
+	"elements": [
+		{
+			"from": [8, 1.99, 0],
+			"to": [16, 1.99, 8],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, -1, 0]},
+			"faces": {
+				"up": {"uv": [8, 0, 16, 8], "texture": "#flowerbed", "tintindex": 0},
+				"down": {"uv": [8, 8, 16, 0], "texture": "#flowerbed", "tintindex": 0}
+			}
+		},
+		{
+			"from": [12.4, 0, 3.8],
+			"to": [13.4, 1.99, 3.8],
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, 0, 1]},
+			"faces": {
+				"north": {"uv": [0, 5, 1, 7], "texture": "#stem", "tintindex": 1},
+				"east": {"uv": [0, 0, 0, 3], "texture": "#stem", "tintindex": 1},
+				"south": {"uv": [0, 5, 1, 7], "texture": "#stem", "tintindex": 1},
+				"west": {"uv": [0, 0, 0, 3], "texture": "#stem", "tintindex": 1},
+				"up": {"uv": [0, 0, 0, 1], "rotation": 270, "texture": "#stem", "tintindex": 1},
+				"down": {"uv": [0, 0, 0, 1], "rotation": 90, "texture": "#stem", "tintindex": 1}
+			}
+		},
+		{
+			"from": [12.9, 0, 3.3],
+			"to": [12.9, 1.99, 4.3],
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, 0, 1]},
+			"faces": {
+				"north": {"uv": [0, 0, 0, 3], "texture": "#stem", "tintindex": 1},
+				"east": {"uv": [0, 5, 1, 7], "texture": "#stem", "tintindex": 1},
+				"south": {"uv": [0, 0, 0, 3], "texture": "#stem", "tintindex": 1},
+				"west": {"uv": [0, 5, 1, 7], "texture": "#stem", "tintindex": 1},
+				"up": {"uv": [0, 0, 0, 1], "texture": "#stem", "tintindex": 1},
+				"down": {"uv": [0, 0, 0, 1], "texture": "#stem", "tintindex": 1}
+			}
+		},
+		{
+			"from": [13.4, 0, -1.2],
+			"to": [14.4, 1.99, -1.2],
+			"rotation": {"angle": -45, "axis": "y", "origin": [9, 0, -4]},
+			"faces": {
+				"north": {"uv": [0, 5, 1, 7], "texture": "#stem", "tintindex": 1},
+				"east": {"uv": [0, 0, 0, 3], "texture": "#stem", "tintindex": 1},
+				"south": {"uv": [0, 5, 1, 7], "texture": "#stem", "tintindex": 1},
+				"west": {"uv": [0, 0, 0, 3], "texture": "#stem", "tintindex": 1},
+				"up": {"uv": [0, 0, 0, 1], "rotation": 270, "texture": "#stem", "tintindex": 1},
+				"down": {"uv": [0, 0, 0, 1], "rotation": 90, "texture": "#stem", "tintindex": 1}
+			}
+		},
+		{
+			"from": [13.9, 0, -1.7],
+			"to": [13.9, 1.99, -0.7],
+			"rotation": {"angle": -45, "axis": "y", "origin": [9, 0, -4]},
+			"faces": {
+				"north": {"uv": [0, 0, 0, 3], "texture": "#stem", "tintindex": 1},
+				"east": {"uv": [0, 5, 1, 7], "texture": "#stem", "tintindex": 1},
+				"south": {"uv": [0, 0, 0, 3], "texture": "#stem", "tintindex": 1},
+				"west": {"uv": [0, 5, 1, 7], "texture": "#stem", "tintindex": 1},
+				"up": {"uv": [0, 0, 0, 1], "texture": "#stem", "tintindex": 1},
+				"down": {"uv": [0, 0, 0, 1], "texture": "#stem", "tintindex": 1}
+			}
+		},
+		{
+			"from": [16.65, 0, -2.95],
+			"to": [16.65, 1.99, -1.95],
+			"rotation": {"angle": -45, "axis": "y", "origin": [7.5, 0, -2.5]},
+			"faces": {
+				"north": {"uv": [0, 0, 0, 3], "texture": "#stem", "tintindex": 1},
+				"east": {"uv": [0, 5, 1, 7], "texture": "#stem", "tintindex": 1},
+				"south": {"uv": [0, 0, 0, 3], "texture": "#stem", "tintindex": 1},
+				"west": {"uv": [0, 5, 1, 7], "texture": "#stem", "tintindex": 1},
+				"up": {"uv": [0, 0, 0, 1], "texture": "#stem", "tintindex": 1},
+				"down": {"uv": [0, 0, 0, 1], "texture": "#stem", "tintindex": 1}
+			}
+		},
+		{
+			"from": [16.15, 0, -2.45],
+			"to": [17.15, 1.99, -2.45],
+			"rotation": {"angle": -45, "axis": "y", "origin": [7.5, 0, -2.5]},
+			"faces": {
+				"north": {"uv": [0, 5, 1, 7], "texture": "#stem", "tintindex": 1},
+				"east": {"uv": [0, 0, 0, 3], "texture": "#stem", "tintindex": 1},
+				"south": {"uv": [0, 5, 1, 7], "texture": "#stem", "tintindex": 1},
+				"west": {"uv": [0, 0, 0, 3], "texture": "#stem", "tintindex": 1},
+				"up": {"uv": [0, 0, 0, 1], "rotation": 270, "texture": "#stem", "tintindex": 1},
+				"down": {"uv": [0, 0, 0, 1], "rotation": 90, "texture": "#stem", "tintindex": 1}
+			}
+		}
+	]
+}

@@ -14,6 +14,7 @@ public class RuCommonConfig {
     public static final ForgeConfigSpec.ConfigValue<Boolean> TOGGLE_RED_MAPLE_LEAVES_PARTICLE;
     public static final ForgeConfigSpec.ConfigValue<Boolean> TOGGLE_ORANGE_MAPLE_LEAVES_PARTICLE;
     public static final ForgeConfigSpec.ConfigValue<Boolean> TOGGLE_SILVER_BIRCH_LEAVES_PARTICLE;
+    public static final ForgeConfigSpec.ConfigValue<Boolean> TOGGLE_ENCHANTED_BIRCH_LEAVES_PARTICLE;
 
     public static final ForgeConfigSpec.DoubleValue EUCALYPTUS_TRANSITION_SIZE;
     public static final ForgeConfigSpec.ConfigValue<Double> EUCALYPTUS_SATURATION;
@@ -216,6 +217,7 @@ public class RuCommonConfig {
         TOGGLE_RED_MAPLE_LEAVES_PARTICLE = BUILDER.define("toggle_red_maple_leaves_particles", true);
         TOGGLE_ORANGE_MAPLE_LEAVES_PARTICLE = BUILDER.define("toggle_orange_maple_leaves_particles", true);
         TOGGLE_SILVER_BIRCH_LEAVES_PARTICLE = BUILDER.define("toggle_silver_birch_leaves_particles", true);
+        TOGGLE_ENCHANTED_BIRCH_LEAVES_PARTICLE = BUILDER.define("toggle_enchanted_birch_leaves_particles", true);
 
         BUILDER.comment("block_color_options");
         EUCALYPTUS_TRANSITION_SIZE = BUILDER.comment("Sets Eucalyptus colour transition size. Bigger number = bigger distance between colours.")

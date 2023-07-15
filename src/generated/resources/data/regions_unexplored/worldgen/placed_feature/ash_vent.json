@@ -1,0 +1,12 @@
+{
+  "feature": "regions_unexplored:ash_vent",
+  "placement": [
+    {
+      "type": "minecraft:count_on_every_layer",
+      "count": 7
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

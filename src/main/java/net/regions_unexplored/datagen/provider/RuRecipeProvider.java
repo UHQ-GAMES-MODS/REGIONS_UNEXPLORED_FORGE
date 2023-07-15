@@ -81,7 +81,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
 
         oneToOneConversionRecipe(consumer, Items.ORANGE_DYE, RuBlocks.ORANGE_CONEFLOWER.get(), "orange_dye");
         oneToOneConversionRecipe(consumer, Items.PURPLE_DYE, RuBlocks.PURPLE_CONEFLOWER.get(), "purple_dye");
-        oneToOneConversionRecipe(consumer, Items.PINK_DYE, RuBlocks.SAKURA_PETALS.get(), "pink_dye");
+        oneToOneConversionRecipe(consumer, Items.LIGHT_BLUE_DYE, RuBlocks.ASTER.get(), "light_blue_dye");
 
         oneToOneConversionRecipe(consumer, Items.PINK_DYE, RuBlocks.PINK_SAKURA_FLOWERS.get(), "pink_dye");
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.PINK_SAKURA_FLOWERS.get(), 6).define('#', RuBlocks.PINK_SAKURA_LEAVES.get()).pattern("###").group("multiface_flowers").unlockedBy("has_pink_sakura_leaves", has(RuBlocks.PINK_SAKURA_LEAVES.get())).save(consumer);
@@ -124,6 +124,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         oneToOneConversionRecipe(consumer, RuBlocks.REDWOOD_SAPLING.get(), RuBlocks.REDWOOD_SHRUB.get(), "saplings", 2);
         oneToOneConversionRecipe(consumer, RuBlocks.RED_SAKURA_SAPLING.get(), RuBlocks.RED_SAKURA_SHRUB.get(), "saplings", 2);
         oneToOneConversionRecipe(consumer, RuBlocks.RED_MAPLE_SAPLING.get(), RuBlocks.RED_MAPLE_SHRUB.get(), "saplings", 2);
+        oneToOneConversionRecipe(consumer, RuBlocks.ENCHANTED_BIRCH_SAPLING.get(), RuBlocks.ENCHANTED_BIRCH_SHRUB.get(), "saplings", 2);
         oneToOneConversionRecipe(consumer, RuBlocks.SILVER_BIRCH_SAPLING.get(), RuBlocks.SILVER_BIRCH_SHRUB.get(), "saplings", 2);
         oneToOneConversionRecipe(consumer, Blocks.SPRUCE_SAPLING, RuBlocks.SPRUCE_SHRUB.get(), "saplings", 2);
         oneToOneConversionRecipe(consumer, RuBlocks.WHITE_SAKURA_SAPLING.get(), RuBlocks.WHITE_SAKURA_SHRUB.get(), "saplings", 2);
@@ -155,6 +156,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.REDWOOD_SHRUB.get(), 1).define('#', RuBlocks.REDWOOD_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_redwood_sapling", has(RuBlocks.REDWOOD_SAPLING.get())).save(consumer);
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.RED_SAKURA_SHRUB.get(), 1).define('#', RuBlocks.RED_SAKURA_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_red_sakura_sapling", has(RuBlocks.RED_SAKURA_SAPLING.get())).save(consumer);
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.RED_MAPLE_SHRUB.get(), 1).define('#', RuBlocks.RED_MAPLE_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_red_maple_sapling", has(RuBlocks.RED_MAPLE_SAPLING.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.ENCHANTED_BIRCH_SHRUB.get(), 1).define('#', RuBlocks.ENCHANTED_BIRCH_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_silver_birch_sapling", has(RuBlocks.SILVER_BIRCH_SAPLING.get())).save(consumer);
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.SILVER_BIRCH_SHRUB.get(), 1).define('#', RuBlocks.SILVER_BIRCH_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_silver_birch_sapling", has(RuBlocks.SILVER_BIRCH_SAPLING.get())).save(consumer);
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.SPRUCE_SHRUB.get(), 1).define('#', Blocks.SPRUCE_SAPLING).pattern("#").pattern("#").group("shrubs").unlockedBy("has_spruce_sapling", has(Blocks.SPRUCE_SAPLING)).save(consumer);
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.WHITE_SAKURA_SHRUB.get(), 1).define('#', RuBlocks.WHITE_SAKURA_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_white_sakura_sapling", has(RuBlocks.WHITE_SAKURA_SAPLING.get())).save(consumer);

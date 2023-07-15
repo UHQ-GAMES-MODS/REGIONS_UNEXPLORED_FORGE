@@ -1,13 +1,13 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "group": "pink_dye",
+  "group": "light_blue_dye",
   "ingredients": [
     {
-      "item": "regions_unexplored:sakura_petals"
+      "item": "regions_unexplored:aster"
     }
   ],
   "result": {
-    "item": "minecraft:pink_dye"
+    "item": "minecraft:light_blue_dye"
   }
 }

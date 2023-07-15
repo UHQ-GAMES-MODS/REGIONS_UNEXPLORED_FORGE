@@ -86,8 +86,12 @@
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
       "regions_unexplored:oak_tree_with_branch",
-      "regions_unexplored:big_oak_tree",
-      "regions_unexplored:oak_bush_sparse"
+      "regions_unexplored:oak_tree_with_flowers",
+      "regions_unexplored:big_oak_tree_dense",
+      "regions_unexplored:oak_bush_sparse",
+      "regions_unexplored:fallen_oak_tree_dense",
+      "regions_unexplored:deciduous_vegetation",
+      "regions_unexplored:oak_shrub"
     ],
     [
       "minecraft:freeze_top_layer"

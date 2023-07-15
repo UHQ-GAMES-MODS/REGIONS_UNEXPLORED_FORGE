@@ -3,9 +3,12 @@ package net.regions_unexplored.world.level.block.plant.tall;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
@@ -38,19 +41,28 @@ public class DuskTrapBlock extends DoublePlantBlock {
     public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
         Vec3 inPos = new Vec3(pos.getX()+0.05D, pos.getY(), pos.getZ()+0.05D);
         Vec3 outPos = new Vec3(pos.getX()+0.95D, pos.getY(), pos.getZ()+0.95D);
-
-
         Vec3 entityPos = entity.position();
-
-        if (!level.isClientSide) {
-            if(entity instanceof Monster){
-                if(entityPos.x>inPos.x&&entityPos.z>inPos.z&&entityPos.x<outPos.x&&entityPos.z<outPos.z&&entity.isAlive()){
-                    entity.makeStuckInBlock(state, new Vec3(0.4D, 0.1D, 0.4D));
+        boolean isInside = entityPos.x>inPos.x&&entityPos.z>inPos.z&&entityPos.x<outPos.x&&entityPos.z<outPos.z;
+        boolean isItem = entity instanceof ItemEntity;
+        if(!isItem){
+            if(isInside){
+                entity.makeStuckInBlock(state, new Vec3(0.4D, 0.1D, 0.4D));
+            }
+            if (!level.isClientSide) {
+                if(isInside&&entity.isAlive()){
                     entity.hurt(level.damageSources().source(RuDamageTypes.DUSK_TRAP), 3.0F);
                     this.setClosedAndScheduleTick(state, level, pos, true, null);
                 }
                 else{
                     setOpen(state, level, pos);
+                }
+            }
+        }
+        else{
+            if (!level.isClientSide) {
+                entity.hurt(level.damageSources().source(RuDamageTypes.DUSK_TRAP), 3.0F);
+                if(!state.getValue(CLOSED)) {
+                    this.setClosedAndScheduleTick(state, level, pos, true, null);
                 }
             }
         }

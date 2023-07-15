@@ -1,12 +1,16 @@
 package net.regions_unexplored.registry;
 
 import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.configurations.ColumnFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.MultifaceGrowthConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.VegetationPatchConfiguration;
 import net.minecraftforge.registries.RegistryObject;
 import net.regions_unexplored.RegionsUnexploredMod;
 import net.regions_unexplored.data.worldgen.features.RuTreeFeatures;
 import net.regions_unexplored.world.level.feature.*;
+import net.regions_unexplored.world.level.feature.bioshroom.GiantBlueBioshroomFeature;
+import net.regions_unexplored.world.level.feature.bioshroom.GiantGreenBioshroomFeature;
 import net.regions_unexplored.world.level.feature.configuration.*;
 import net.regions_unexplored.world.level.feature.tree.*;
 import net.regions_unexplored.world.level.feature.tree.nether.BrimWillowFeature;
@@ -21,12 +25,10 @@ public class FeatureRegistry {
     //public static RegistryObject<Feature> HYACINTH_PLANTS;
     //public static RegistryObject<Feature> OCEAN_ROCK;
     //BIOSHROOMS
-    //public static RegistryObject<Feature> GIANT_GREEN_BIOSHROOM;
-    //public static RegistryObject<Feature> GIANT_BLUE_BIOSHROOM;
+    public static RegistryObject<Feature> GIANT_BLUE_BIOSHROOM;
+    public static RegistryObject<Feature> GIANT_GREEN_BIOSHROOM;
     //public static RegistryObject<Feature> GIANT_PINK_BIOSHROOM;
     //public static RegistryObject<Feature> GIANT_YELLOW_BIOSHROOM;
-
-
     //TREES
     public static RegistryObject<Feature> ASHEN_TREE;
     public static RegistryObject<Feature> ASPEN_TREE;
@@ -52,6 +54,10 @@ public class FeatureRegistry {
     public static RegistryObject<Feature> POINTED_REDSTONE_CLUSTER;
     public static RegistryObject<Feature> HANGING_PRISMARITE;
     public static RegistryObject<Feature> DROPLEAF;
+    public static RegistryObject<Feature> BASALT_BLOB;
+    public static RegistryObject<Feature> ASH_VENT;
+    public static RegistryObject<Feature> LAVA_FALL;
+    public static RegistryObject<Feature> OVERWORLD_LAVA_DELTA;
     //NETHER
     public static RegistryObject<Feature> BRIM_WILLOW;
     public static RegistryObject<Feature> TALL_BRIM_WILLOW;
@@ -87,6 +93,9 @@ public class FeatureRegistry {
     //public static RegistryObject<Feature> MEADOW_ROCKS;
 
     public static void addFeatures() {
+        //BIOSHROOMS
+        GIANT_BLUE_BIOSHROOM = RegionsUnexploredMod.FEATURE_REGISTRY.register("giant_blue_bioshroom", () -> new GiantBlueBioshroomFeature(GiantBioshroomConfiguration.CODEC));
+        GIANT_GREEN_BIOSHROOM = RegionsUnexploredMod.FEATURE_REGISTRY.register("giant_green_bioshroom", () -> new GiantGreenBioshroomFeature(GiantBioshroomConfiguration.CODEC));
         //TREES
         ASHEN_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("ashen_tree", () -> new AshenTreeFeature(RuTreeConfiguration.CODEC));
         ASPEN_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("aspen_tree", () -> new AspenTreeFeature(RuTreeConfiguration.CODEC));
@@ -112,6 +121,10 @@ public class FeatureRegistry {
         POINTED_REDSTONE_CLUSTER = RegionsUnexploredMod.FEATURE_REGISTRY.register("pointed_redstone_cluster", () -> new PointedRedstoneClusterFeature(PointedRedstoneClusterConfiguration.CODEC));
         HANGING_PRISMARITE = RegionsUnexploredMod.FEATURE_REGISTRY.register("hanging_prismarite", () -> new HangingPrismariteFeature(NoneFeatureConfiguration.CODEC));
         DROPLEAF = RegionsUnexploredMod.FEATURE_REGISTRY.register("dropleaf", () -> new DropleafFeature(NoneFeatureConfiguration.CODEC));
+        BASALT_BLOB = RegionsUnexploredMod.FEATURE_REGISTRY.register("basalt_blob", () -> new BasaltBlobFeature(ColumnFeatureConfiguration.CODEC));
+        ASH_VENT = RegionsUnexploredMod.FEATURE_REGISTRY.register("scorch_vent", () -> new AshVentFeature(NoneFeatureConfiguration.CODEC));
+        LAVA_FALL = RegionsUnexploredMod.FEATURE_REGISTRY.register("lava_fall", () -> new LavaFallFeature(NoneFeatureConfiguration.CODEC));
+        OVERWORLD_LAVA_DELTA = RegionsUnexploredMod.FEATURE_REGISTRY.register("overworld_lava_delta", () -> new LavaDeltaFeature(VegetationPatchConfiguration.CODEC));
         //NETHER
         BRIM_WILLOW = RegionsUnexploredMod.FEATURE_REGISTRY.register("brim_willow", () -> new BrimWillowFeature(NoneFeatureConfiguration.CODEC));
         TALL_BRIM_WILLOW = RegionsUnexploredMod.FEATURE_REGISTRY.register("tall_brim_willow", () -> new TallBrimWillowFeature(NoneFeatureConfiguration.CODEC));

@@ -11,7 +11,7 @@
               "add": false,
               "conditions": [
                 {
-                  "block": "regions_unexplored:sakura_petals",
+                  "block": "regions_unexplored:clover",
                   "condition": "minecraft:block_state_property",
                   "properties": {
                     "flower_amount": "1"
@@ -25,7 +25,7 @@
               "add": false,
               "conditions": [
                 {
-                  "block": "regions_unexplored:sakura_petals",
+                  "block": "regions_unexplored:clover",
                   "condition": "minecraft:block_state_property",
                   "properties": {
                     "flower_amount": "2"
@@ -39,7 +39,7 @@
               "add": false,
               "conditions": [
                 {
-                  "block": "regions_unexplored:sakura_petals",
+                  "block": "regions_unexplored:clover",
                   "condition": "minecraft:block_state_property",
                   "properties": {
                     "flower_amount": "3"
@@ -53,7 +53,7 @@
               "add": false,
               "conditions": [
                 {
-                  "block": "regions_unexplored:sakura_petals",
+                  "block": "regions_unexplored:clover",
                   "condition": "minecraft:block_state_property",
                   "properties": {
                     "flower_amount": "4"
@@ -67,11 +67,11 @@
               "function": "minecraft:explosion_decay"
             }
           ],
-          "name": "regions_unexplored:sakura_petals"
+          "name": "regions_unexplored:clover"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "regions_unexplored:blocks/sakura_petals"
+  "random_sequence": "regions_unexplored:blocks/clover"
 }

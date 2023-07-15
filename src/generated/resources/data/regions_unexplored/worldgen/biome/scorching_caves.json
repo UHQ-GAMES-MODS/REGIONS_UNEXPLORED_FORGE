@@ -46,7 +46,10 @@
       "minecraft:monster_room",
       "minecraft:monster_room_deep"
     ],
-    [],
+    [
+      "regions_unexplored:basalt_blob",
+      "regions_unexplored:ash_vent"
+    ],
     [],
     [
       "minecraft:ore_dirt",
@@ -81,7 +84,9 @@
     [],
     [
       "minecraft:spring_water",
-      "minecraft:spring_lava"
+      "minecraft:spring_lava",
+      "regions_unexplored:overworld_lava_delta",
+      "regions_unexplored:lava_fall"
     ],
     [
       "minecraft:glow_lichen",

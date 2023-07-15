@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_sakura_petals": {
+    "has_silver_birch_sapling": {
       "conditions": {
         "items": [
           {
             "items": [
-              "regions_unexplored:sakura_petals"
+              "regions_unexplored:silver_birch_sapling"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "regions_unexplored:pink_dye_from_sakura_petals"
+        "recipe": "regions_unexplored:enchanted_birch_shrub"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_sakura_petals",
+      "has_silver_birch_sapling",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "regions_unexplored:pink_dye_from_sakura_petals"
+      "regions_unexplored:enchanted_birch_shrub"
     ]
   },
   "sends_telemetry_event": false

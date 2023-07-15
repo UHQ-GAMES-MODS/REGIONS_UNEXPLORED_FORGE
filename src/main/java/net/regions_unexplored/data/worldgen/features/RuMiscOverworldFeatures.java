@@ -34,6 +34,7 @@ import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.data.tags.RuTags;
 import net.regions_unexplored.registry.ConfiguredFeatureRegistry;
 import net.regions_unexplored.registry.FeatureRegistry;
+import net.regions_unexplored.world.level.block.other.AshBlock;
 import net.regions_unexplored.world.level.block.wood.AspenLogBlock;
 import net.regions_unexplored.world.level.feature.configuration.FallenTreeConfiguration;
 import net.regions_unexplored.world.level.feature.configuration.LargePointedRedstoneConfiguration;
@@ -66,6 +67,11 @@ public class RuMiscOverworldFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> HANGING_PRISMARITE_CLUSTER = ConfiguredFeatureRegistry.createKey("hanging_prismarite_cluster");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> MINERAL_POOL = ConfiguredFeatureRegistry.createKey("mineral_pool");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> LAVA_FALL = ConfiguredFeatureRegistry.createKey("lava_fall");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_LAVA_DELTA = ConfiguredFeatureRegistry.createKey("overworld_lava_delta");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ASH_VENT = ConfiguredFeatureRegistry.createKey("ash_vent");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BASALT_BLOB = ConfiguredFeatureRegistry.createKey("basalt_blob");
     //OTHER_FEATURES
     public static final ResourceKey<ConfiguredFeature<?, ?>> SMOULDERING_DIRT = ConfiguredFeatureRegistry.createKey("smouldering_dirt");
     public static final ResourceKey<ConfiguredFeature<?, ?>> MEADOW_ROCK = ConfiguredFeatureRegistry.createKey("meadow_rock");
@@ -103,6 +109,11 @@ public class RuMiscOverworldFeatures {
         register(context, HANGING_PRISMARITE_CLUSTER, FeatureRegistry.HANGING_PRISMARITE.get(), FeatureConfiguration.NONE);
 
         register(context, MINERAL_POOL, Feature.WATERLOGGED_VEGETATION_PATCH, new VegetationPatchConfiguration(BlockTags.LUSH_GROUND_REPLACEABLE, BlockStateProvider.simple(Blocks.CALCITE), PlacementUtils.inlinePlaced(holderGetter.getOrThrow(CaveFeatures.POINTED_DRIPSTONE)), CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 5, 0.1F, UniformInt.of(4, 7), 0.7F));
+
+        register(context, LAVA_FALL, FeatureRegistry.LAVA_FALL.get(), FeatureConfiguration.NONE);
+        register(context, OVERWORLD_LAVA_DELTA, FeatureRegistry.OVERWORLD_LAVA_DELTA.get(), new VegetationPatchConfiguration(BlockTags.LUSH_GROUND_REPLACEABLE, BlockStateProvider.simple(RuBlocks.VOLCANIC_ASH.get().defaultBlockState().setValue(AshBlock.HAS_GRAVITY, false)), PlacementUtils.inlinePlaced(holderGetter.getOrThrow(CaveFeatures.POINTED_DRIPSTONE)), CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 5, 0.1F, UniformInt.of(4, 7), 0.7F));
+        register(context, ASH_VENT, FeatureRegistry.ASH_VENT.get(), FeatureConfiguration.NONE);
+        register(context, BASALT_BLOB, FeatureRegistry.BASALT_BLOB.get(), new ColumnFeatureConfiguration(ConstantInt.of(1), UniformInt.of(1, 4)));
         //OTHER_FEATURES
         register(context, SMOULDERING_DIRT, FeatureRegistry.SMOULDERING_DIRT.get(), FeatureConfiguration.NONE);
         register(context, MEADOW_ROCK, FeatureRegistry.MEADOW_ROCK.get(), FeatureConfiguration.NONE);

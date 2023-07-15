@@ -1,0 +1,19 @@
+{
+  "feature": "regions_unexplored:patch_grass",
+  "placement": [
+    {
+      "type": "minecraft:count_on_every_layer",
+      "count": 70
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:matching_blocks",
+        "blocks": "minecraft:air"
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

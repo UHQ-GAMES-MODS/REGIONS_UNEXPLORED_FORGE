@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "regions_unexplored:block/enchanted_birch_shrub"
+    },
+    "half=lower": {
+      "model": "regions_unexplored:block/enchanted_birch_shrub_bottom"
+    }
+  }
+}

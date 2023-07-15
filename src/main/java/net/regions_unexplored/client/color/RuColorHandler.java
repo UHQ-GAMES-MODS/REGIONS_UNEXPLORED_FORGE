@@ -33,7 +33,7 @@ public class RuColorHandler {
                 RuBlocks.ORANGE_CONEFLOWER.get(),
                 RuBlocks.PURPLE_CONEFLOWER.get(),
                 RuBlocks.TASSEL.get(),
-                RuBlocks.SAKURA_PETALS.get(),
+                RuBlocks.CLOVER.get(),
                 RuBlocks.BLADED_GRASS.get(),
                 RuBlocks.BLADED_TALL_GRASS.get()
         );
@@ -134,8 +134,22 @@ public class RuColorHandler {
         );
     }
 
+    @SubscribeEvent
+    public static void enchantedAspenColorLoad(RegisterColorHandlersEvent.Block event) {
+        event.getBlockColors().register((bs, world, pos, index) -> {
+                    return world != null && pos != null ? getEnchantedAspenColor(world, pos) : FoliageColor.getDefaultColor();
+                }, RuBlocks.ENCHANTED_BIRCH_LEAVES.get(),
+                RuBlocks.ENCHANTED_BIRCH_LEAF_PILE.get()
+        );
+    }
+
     public static int getAspenColor(BlockAndTintGetter world, BlockPos pos) {
-        Color aspen = Color.getHSBColor(((Mth.sin(((float)pos.getX()/10) + Mth.sin(((float)pos.getZ() + (float)pos.getX()) / 50) * 3)) / 75)+0.15F, 0.9F, 1.0F);
+        Color aspen = Color.getHSBColor(((Mth.sin(((float)pos.getX()/10) + Mth.sin(((float)pos.getZ() + (float)pos.getX()) / 50) * 3)) / 75)+0.15F, 0.8F, 1.0F);
+        return aspen.getRGB();
+    }
+
+    public static int getEnchantedAspenColor(BlockAndTintGetter world, BlockPos pos) {
+        Color aspen = Color.getHSBColor(((Mth.sin(((float)pos.getX()/10) + Mth.sin(((float)pos.getZ() + (float)pos.getX()) / 50) * 3)) / 50)+0.58F, 0.8F, 1.0F);
         return aspen.getRGB();
     }
 

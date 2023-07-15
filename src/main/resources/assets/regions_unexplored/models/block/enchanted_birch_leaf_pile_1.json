@@ -1,0 +1,8 @@
+{
+  "parent": "regions_unexplored:block/leaf_pile_1",
+  "textures": {
+    "flowerbed": "regions_unexplored:block/enchanted_birch_leaf_pile",
+    "particle": "regions_unexplored:block/enchanted_birch_leaf_pile"
+  },
+  "render_type": "cutout"
+}
