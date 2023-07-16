@@ -93,12 +93,11 @@ public class RuVegetationFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_ENCHANTED_BIRCH_LEAF_PILE = ConfiguredFeatureRegistry.createKey("patch_enchanted_birch_leaf_pile");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_ORANGE_CONEFLOWER = ConfiguredFeatureRegistry.createKey("patch_orange_coneflower");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_PURPLE_CONEFLOWER = ConfiguredFeatureRegistry.createKey("patch_purple_coneflower");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_SAKURA_FLOWERS = ConfiguredFeatureRegistry.createKey("patch_sakura_flowers");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_MAGNOLIA_FLOWERS = ConfiguredFeatureRegistry.createKey("patch_magnolia_flowers");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_CLOVER = ConfiguredFeatureRegistry.createKey("patch_clover");
     //MULTIFACE FLOWERS
-    public static final ResourceKey<ConfiguredFeature<?, ?>> RED_SAKURA_FLOWERS = ConfiguredFeatureRegistry.createKey("red_sakura_flowers");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> PINK_SAKURA_FLOWERS = ConfiguredFeatureRegistry.createKey("pink_sakura_flowers");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> WHITE_SAKURA_FLOWERS = ConfiguredFeatureRegistry.createKey("white_sakura_flowers");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PINK_MAGNOLIA_FLOWERS = ConfiguredFeatureRegistry.createKey("pink_magnolia_flowers");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> WHITE_MAGNOLIA_FLOWERS = ConfiguredFeatureRegistry.createKey("white_magnolia_flowers");
     //FOOD_PLANTS
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_SALMONBERRY_BUSH = ConfiguredFeatureRegistry.createKey("patch_salmonberry_bush");
     public static final ResourceKey<ConfiguredFeature<?, ?>> DUSKMELON = ConfiguredFeatureRegistry.createKey("duskmelon");
@@ -117,10 +116,9 @@ public class RuVegetationFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> BAOBAB_SHRUB = ConfiguredFeatureRegistry.createKey("baobab_shrub");
     public static final ResourceKey<ConfiguredFeature<?, ?>> BIRCH_SHRUB = ConfiguredFeatureRegistry.createKey("birch_shrub");
     public static final ResourceKey<ConfiguredFeature<?, ?>> BLACKWOOD_SHRUB = ConfiguredFeatureRegistry.createKey("blackwood_shrub");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> SAKURA_SHRUB = ConfiguredFeatureRegistry.createKey("sakura_shrub");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> RED_SAKURA_SHRUB = ConfiguredFeatureRegistry.createKey("red_sakura_shrub");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> PINK_SAKURA_SHRUB = ConfiguredFeatureRegistry.createKey("pink_sakura_shrub");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> WHITE_SAKURA_SHRUB = ConfiguredFeatureRegistry.createKey("white_sakura_shrub");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MAGNOLIA_SHRUB = ConfiguredFeatureRegistry.createKey("magnolia_shrub");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PINK_MAGNOLIA_SHRUB = ConfiguredFeatureRegistry.createKey("pink_magnolia_shrub");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> WHITE_MAGNOLIA_SHRUB = ConfiguredFeatureRegistry.createKey("white_magnolia_shrub");
     public static final ResourceKey<ConfiguredFeature<?, ?>> CYPRESS_SHRUB = ConfiguredFeatureRegistry.createKey("cypress_shrub");
     public static final ResourceKey<ConfiguredFeature<?, ?>> DARK_OAK_SHRUB = ConfiguredFeatureRegistry.createKey("dark_oak_shrub");
     public static final ResourceKey<ConfiguredFeature<?, ?>> DEAD_SHRUB = ConfiguredFeatureRegistry.createKey("dead_shrub");
@@ -147,7 +145,7 @@ public class RuVegetationFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> AUTUMNAL_SHRUB_MIX = ConfiguredFeatureRegistry.createKey("autumnal_shrub_mix");
     public static final ResourceKey<ConfiguredFeature<?, ?>> BIRCH_SHRUB_MIX = ConfiguredFeatureRegistry.createKey("birch_shrub_mix");
     public static final ResourceKey<ConfiguredFeature<?, ?>> BLACKWOOD_DARK_OAK_SHRUB_MIX = ConfiguredFeatureRegistry.createKey("blackwood_dark_oak_shrub_mix");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> SAKURA_SHRUB_MIX = ConfiguredFeatureRegistry.createKey("sakura_shrub_mix");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MAGNOLIA_SHRUB_MIX = ConfiguredFeatureRegistry.createKey("magnolia_shrub_mix");
     public static final ResourceKey<ConfiguredFeature<?, ?>> DEAD_SHRUB_MIX = ConfiguredFeatureRegistry.createKey("dead_shrub_mix");
     public static final ResourceKey<ConfiguredFeature<?, ?>> LARCH_SHRUB_MIX = ConfiguredFeatureRegistry.createKey("larch_shrub_mix");
     public static final ResourceKey<ConfiguredFeature<?, ?>> GOLDEN_LARCH_SHRUB_MIX = ConfiguredFeatureRegistry.createKey("golden_larch_shrub_mix");
@@ -174,7 +172,7 @@ public class RuVegetationFeatures {
         //Petal-Like Builders
         SimpleWeightedRandomList.Builder<BlockState> orangeConeflowerBuilder = SimpleWeightedRandomList.builder();
         SimpleWeightedRandomList.Builder<BlockState> purpleConeflowerBuilder = SimpleWeightedRandomList.builder();
-        SimpleWeightedRandomList.Builder<BlockState> sakuraFlowerBuilder = SimpleWeightedRandomList.builder();
+        SimpleWeightedRandomList.Builder<BlockState> magnoliaFlowerBuilder = SimpleWeightedRandomList.builder();
         SimpleWeightedRandomList.Builder<BlockState> cloverBuilder = SimpleWeightedRandomList.builder();
         //Other Builders
         SimpleWeightedRandomList.Builder<BlockState> duskMelon = SimpleWeightedRandomList.builder();
@@ -188,7 +186,7 @@ public class RuVegetationFeatures {
                 enchantedBirchLeafPileBuilder.add(RuBlocks.ENCHANTED_BIRCH_LEAF_PILE.get().defaultBlockState().setValue(GroundCoverBlock.AMOUNT, Integer.valueOf(i)).setValue(GroundCoverBlock.FACING, direction), 1);
                 orangeConeflowerBuilder.add(RuBlocks.ORANGE_CONEFLOWER.get().defaultBlockState().setValue(GroundCoverBlock.AMOUNT, Integer.valueOf(i)).setValue(GroundCoverBlock.FACING, direction), 1);
                 purpleConeflowerBuilder.add(RuBlocks.PURPLE_CONEFLOWER.get().defaultBlockState().setValue(GroundCoverBlock.AMOUNT, Integer.valueOf(i)).setValue(GroundCoverBlock.FACING, direction), 1);
-                sakuraFlowerBuilder.add(Blocks.PINK_PETALS.defaultBlockState().setValue(GroundCoverBlock.AMOUNT, Integer.valueOf(i)).setValue(GroundCoverBlock.FACING, direction), 1);
+                magnoliaFlowerBuilder.add(Blocks.PINK_PETALS.defaultBlockState().setValue(GroundCoverBlock.AMOUNT, Integer.valueOf(i)).setValue(GroundCoverBlock.FACING, direction), 1);
                 cloverBuilder.add(RuBlocks.CLOVER.get().defaultBlockState().setValue(GroundCoverBlock.AMOUNT, Integer.valueOf(i)).setValue(GroundCoverBlock.FACING, direction), 1);
             }
         }
@@ -245,13 +243,12 @@ public class RuVegetationFeatures {
         register(context, PATCH_ENCHANTED_BIRCH_LEAF_PILE, Feature.FLOWER, new RandomPatchConfiguration(96, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(enchantedBirchLeafPileBuilder)))));
         register(context, PATCH_ORANGE_CONEFLOWER, Feature.FLOWER, new RandomPatchConfiguration(96, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(orangeConeflowerBuilder)))));
         register(context, PATCH_PURPLE_CONEFLOWER, Feature.FLOWER, new RandomPatchConfiguration(96, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(purpleConeflowerBuilder)))));
-        register(context, PATCH_SAKURA_FLOWERS, Feature.FLOWER, new RandomPatchConfiguration(96, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(sakuraFlowerBuilder)))));
+        register(context, PATCH_MAGNOLIA_FLOWERS, Feature.FLOWER, new RandomPatchConfiguration(96, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(magnoliaFlowerBuilder)))));
         register(context, PATCH_CLOVER, Feature.FLOWER, new RandomPatchConfiguration(96, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(cloverBuilder)))));
 
         //MULTIFACE FLOWERS
-        register(context, RED_SAKURA_FLOWERS, FeatureRegistry.AIR_MULTIFACE_GROWTH.get(), new MultifaceGrowthConfiguration((MultifaceBlock)RuBlocks.RED_SAKURA_FLOWERS.get(), 20, true, false, false, 1.0F, HolderSet.direct(Block::builtInRegistryHolder, Blocks.GRASS_BLOCK, RuBlocks.PEAT_GRASS_BLOCK.get(), RuBlocks.SILT_GRASS_BLOCK.get())));
-        register(context, PINK_SAKURA_FLOWERS, FeatureRegistry.AIR_MULTIFACE_GROWTH.get(), new MultifaceGrowthConfiguration((MultifaceBlock)RuBlocks.PINK_SAKURA_FLOWERS.get(), 20, true, false, false, 1.0F, HolderSet.direct(Block::builtInRegistryHolder, Blocks.GRASS_BLOCK, RuBlocks.PEAT_GRASS_BLOCK.get(), RuBlocks.SILT_GRASS_BLOCK.get())));
-        register(context, WHITE_SAKURA_FLOWERS, FeatureRegistry.AIR_MULTIFACE_GROWTH.get(), new MultifaceGrowthConfiguration((MultifaceBlock)RuBlocks.WHITE_SAKURA_FLOWERS.get(), 20, true, false, false, 1.0F, HolderSet.direct(Block::builtInRegistryHolder, Blocks.GRASS_BLOCK, RuBlocks.PEAT_GRASS_BLOCK.get(), RuBlocks.SILT_GRASS_BLOCK.get())));
+        register(context, PINK_MAGNOLIA_FLOWERS, FeatureRegistry.AIR_MULTIFACE_GROWTH.get(), new MultifaceGrowthConfiguration((MultifaceBlock)RuBlocks.PINK_MAGNOLIA_FLOWERS.get(), 20, true, false, false, 1.0F, HolderSet.direct(Block::builtInRegistryHolder, Blocks.GRASS_BLOCK, RuBlocks.PEAT_GRASS_BLOCK.get(), RuBlocks.SILT_GRASS_BLOCK.get())));
+        register(context, WHITE_MAGNOLIA_FLOWERS, FeatureRegistry.AIR_MULTIFACE_GROWTH.get(), new MultifaceGrowthConfiguration((MultifaceBlock)RuBlocks.WHITE_MAGNOLIA_FLOWERS.get(), 20, true, false, false, 1.0F, HolderSet.direct(Block::builtInRegistryHolder, Blocks.GRASS_BLOCK, RuBlocks.PEAT_GRASS_BLOCK.get(), RuBlocks.SILT_GRASS_BLOCK.get())));
         //FOOD_PLANTS
         register(context, PATCH_SALMONBERRY_BUSH, Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(RuBlocks.SALMONBERRY_BUSH.get().defaultBlockState().setValue(SalmonBerryBushBlock.AGE, Integer.valueOf(3)))), List.of(Blocks.GRASS_BLOCK, Blocks.PODZOL, RuBlocks.PEAT_GRASS_BLOCK.get(), RuBlocks.SILT_GRASS_BLOCK.get(), RuBlocks.PEAT_PODZOL.get(), RuBlocks.SILT_PODZOL.get())));
         register(context, DUSKMELON, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(duskMelon)));
@@ -271,10 +268,9 @@ public class RuVegetationFeatures {
         register(context, BAOBAB_SHRUB, FeatureRegistry.SHRUB.get(), new ShrubConfiguration(BlockStateProvider.simple(RuBlocks.BAOBAB_SHRUB.get().defaultBlockState())));
         register(context, BIRCH_SHRUB, FeatureRegistry.SHRUB.get(), new ShrubConfiguration(BlockStateProvider.simple(RuBlocks.BIRCH_SHRUB.get().defaultBlockState())));
         register(context, BLACKWOOD_SHRUB, FeatureRegistry.SHRUB.get(), new ShrubConfiguration(BlockStateProvider.simple(RuBlocks.BLACKWOOD_SHRUB.get().defaultBlockState())));
-        register(context, SAKURA_SHRUB, FeatureRegistry.SHRUB.get(), new ShrubConfiguration(BlockStateProvider.simple(RuBlocks.SAKURA_SHRUB.get().defaultBlockState())));
-        register(context, RED_SAKURA_SHRUB, FeatureRegistry.SHRUB.get(), new ShrubConfiguration(BlockStateProvider.simple(RuBlocks.RED_SAKURA_SHRUB.get().defaultBlockState())));
-        register(context, PINK_SAKURA_SHRUB, FeatureRegistry.SHRUB.get(), new ShrubConfiguration(BlockStateProvider.simple(RuBlocks.PINK_SAKURA_SHRUB.get().defaultBlockState())));
-        register(context, WHITE_SAKURA_SHRUB, FeatureRegistry.SHRUB.get(), new ShrubConfiguration(BlockStateProvider.simple(RuBlocks.WHITE_SAKURA_SHRUB.get().defaultBlockState())));
+        register(context, MAGNOLIA_SHRUB, FeatureRegistry.SHRUB.get(), new ShrubConfiguration(BlockStateProvider.simple(RuBlocks.MAGNOLIA_SHRUB.get().defaultBlockState())));
+        register(context, PINK_MAGNOLIA_SHRUB, FeatureRegistry.SHRUB.get(), new ShrubConfiguration(BlockStateProvider.simple(RuBlocks.PINK_MAGNOLIA_SHRUB.get().defaultBlockState())));
+        register(context, WHITE_MAGNOLIA_SHRUB, FeatureRegistry.SHRUB.get(), new ShrubConfiguration(BlockStateProvider.simple(RuBlocks.WHITE_MAGNOLIA_SHRUB.get().defaultBlockState())));
         register(context, CYPRESS_SHRUB, FeatureRegistry.SHRUB.get(), new ShrubConfiguration(BlockStateProvider.simple(RuBlocks.CYPRESS_SHRUB.get().defaultBlockState())));
         register(context, DARK_OAK_SHRUB, FeatureRegistry.SHRUB.get(), new ShrubConfiguration(BlockStateProvider.simple(RuBlocks.DARK_OAK_SHRUB.get().defaultBlockState())));
         register(context, DEAD_SHRUB, FeatureRegistry.SHRUB.get(), new ShrubConfiguration(BlockStateProvider.simple(RuBlocks.DEAD_SHRUB.get().defaultBlockState())));
@@ -301,7 +297,7 @@ public class RuVegetationFeatures {
         register(context, AUTUMNAL_SHRUB_MIX, FeatureRegistry.SHRUB.get(), new ShrubConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(RuBlocks.MAPLE_SHRUB.get().defaultBlockState(), 2).add(RuBlocks.SILVER_BIRCH_SHRUB.get().defaultBlockState(), 4).add(RuBlocks.RED_MAPLE_SHRUB.get().defaultBlockState(), 4).add(RuBlocks.ORANGE_MAPLE_SHRUB.get().defaultBlockState(), 4))));
         register(context, BIRCH_SHRUB_MIX, FeatureRegistry.SHRUB.get(), new ShrubConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(RuBlocks.SILVER_BIRCH_SHRUB.get().defaultBlockState(), 3).add(RuBlocks.BIRCH_SHRUB.get().defaultBlockState(), 1))));
         register(context, BLACKWOOD_DARK_OAK_SHRUB_MIX, FeatureRegistry.SHRUB.get(), new ShrubConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(RuBlocks.BLACKWOOD_SHRUB.get().defaultBlockState(), 3).add(RuBlocks.DARK_OAK_SHRUB.get().defaultBlockState(), 1))));
-        register(context, SAKURA_SHRUB_MIX, FeatureRegistry.SHRUB.get(), new ShrubConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(RuBlocks.SAKURA_SHRUB.get().defaultBlockState(), 1).add(RuBlocks.RED_SAKURA_SHRUB.get().defaultBlockState(), 1).add(RuBlocks.PINK_SAKURA_SHRUB.get().defaultBlockState(), 1).add(RuBlocks.WHITE_SAKURA_SHRUB.get().defaultBlockState(), 1))));
+        register(context, MAGNOLIA_SHRUB_MIX, FeatureRegistry.SHRUB.get(), new ShrubConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(RuBlocks.MAGNOLIA_SHRUB.get().defaultBlockState(), 1).add(RuBlocks.PINK_MAGNOLIA_SHRUB.get().defaultBlockState(), 1).add(RuBlocks.WHITE_MAGNOLIA_SHRUB.get().defaultBlockState(), 1))));
         register(context, DEAD_SHRUB_MIX, FeatureRegistry.SHRUB.get(), new ShrubConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(RuBlocks.DEAD_SHRUB.get().defaultBlockState(), 2).add(RuBlocks.DEAD_PINE_SHRUB.get().defaultBlockState(), 1))));
         register(context, LARCH_SHRUB_MIX, FeatureRegistry.SHRUB.get(), new ShrubConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(RuBlocks.LARCH_SHRUB.get().defaultBlockState(), 3).add(RuBlocks.GOLDEN_LARCH_SHRUB.get().defaultBlockState(), 1))));
         register(context, GOLDEN_LARCH_SHRUB_MIX, FeatureRegistry.SHRUB.get(), new ShrubConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(RuBlocks.LARCH_SHRUB.get().defaultBlockState(), 1).add(RuBlocks.GOLDEN_LARCH_SHRUB.get().defaultBlockState(), 3))));

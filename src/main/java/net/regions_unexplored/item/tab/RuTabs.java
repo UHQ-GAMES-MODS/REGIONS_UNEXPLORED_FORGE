@@ -86,9 +86,8 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.ORANGE_CONEFLOWER.get()));
                             output.accept(new ItemStack(RuBlocks.PURPLE_CONEFLOWER.get()));
 
-                            output.accept(new ItemStack(RuBlocks.RED_SAKURA_FLOWERS.get()));
-                            output.accept(new ItemStack(RuBlocks.PINK_SAKURA_FLOWERS.get()));
-                            output.accept(new ItemStack(RuBlocks.WHITE_SAKURA_FLOWERS.get()));
+                            output.accept(new ItemStack(RuBlocks.PINK_MAGNOLIA_FLOWERS.get()));
+                            output.accept(new ItemStack(RuBlocks.WHITE_MAGNOLIA_FLOWERS.get()));
 
                             output.accept(new ItemStack(RuBlocks.MAPLE_LEAF_PILE.get()));
                             output.accept(new ItemStack(RuBlocks.RED_MAPLE_LEAF_PILE.get()));
@@ -110,7 +109,7 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.BAOBAB_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.BLACKWOOD_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.CACTUS_FLOWER.get()));
-                            output.accept(new ItemStack(RuBlocks.SAKURA_SAPLING.get()));
+                            output.accept(new ItemStack(RuBlocks.MAGNOLIA_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.CYPRESS_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.DEAD_PINE_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.DEAD_SAPLING.get()));
@@ -124,21 +123,20 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.ORANGE_MAPLE_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.PALM_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.PINE_SAPLING.get()));
-                            output.accept(new ItemStack(RuBlocks.PINK_SAKURA_SAPLING.get()));
+                            output.accept(new ItemStack(RuBlocks.PINK_MAGNOLIA_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.REDWOOD_SAPLING.get()));
-                            output.accept(new ItemStack(RuBlocks.RED_SAKURA_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.RED_MAPLE_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.BRIMWOOD_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.ENCHANTED_BIRCH_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.SILVER_BIRCH_SAPLING.get()));
-                            output.accept(new ItemStack(RuBlocks.WHITE_SAKURA_SAPLING.get()));
+                            output.accept(new ItemStack(RuBlocks.WHITE_MAGNOLIA_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.WILLOW_SAPLING.get()));
                             //SHRUBS
                             output.accept(new ItemStack(RuBlocks.ACACIA_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.BAOBAB_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.BIRCH_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.BLACKWOOD_SHRUB.get()));
-                            output.accept(new ItemStack(RuBlocks.SAKURA_SHRUB.get()));
+                            output.accept(new ItemStack(RuBlocks.MAGNOLIA_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.CYPRESS_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.DARK_OAK_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.DEAD_PINE_SHRUB.get()));
@@ -156,14 +154,13 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.ORANGE_MAPLE_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.PALM_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.PINE_SHRUB.get()));
-                            output.accept(new ItemStack(RuBlocks.PINK_SAKURA_SHRUB.get()));
+                            output.accept(new ItemStack(RuBlocks.PINK_MAGNOLIA_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.REDWOOD_SHRUB.get()));
-                            output.accept(new ItemStack(RuBlocks.RED_SAKURA_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.RED_MAPLE_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.ENCHANTED_BIRCH_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.SILVER_BIRCH_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.SPRUCE_SHRUB.get()));
-                            output.accept(new ItemStack(RuBlocks.WHITE_SAKURA_SHRUB.get()));
+                            output.accept(new ItemStack(RuBlocks.WHITE_MAGNOLIA_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.WILLOW_SHRUB.get()));
                             //MUSHROOMS
                             output.accept(new ItemStack(RuBlocks.BLUE_BIOSHROOM.get()));
@@ -205,7 +202,7 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.BAMBOO_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.BAOBAB_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.BLACKWOOD_LEAVES.get()));
-                            output.accept(new ItemStack(RuBlocks.SAKURA_LEAVES.get()));
+                            output.accept(new ItemStack(RuBlocks.MAGNOLIA_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.CYPRESS_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.DEAD_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.DEAD_PINE_LEAVES.get()));
@@ -219,13 +216,12 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.ORANGE_MAPLE_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.PALM_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.PINE_LEAVES.get()));
-                            output.accept(new ItemStack(RuBlocks.PINK_SAKURA_LEAVES.get()));
+                            output.accept(new ItemStack(RuBlocks.PINK_MAGNOLIA_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.REDWOOD_LEAVES.get()));
-                            output.accept(new ItemStack(RuBlocks.RED_SAKURA_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.RED_MAPLE_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.BRIMWOOD_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.SILVER_BIRCH_LEAVES.get()));
-                            output.accept(new ItemStack(RuBlocks.WHITE_SAKURA_LEAVES.get()));
+                            output.accept(new ItemStack(RuBlocks.WHITE_MAGNOLIA_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.WILLOW_LEAVES.get()));
 
                             /*-----------------BRANCHES-----------------*/
@@ -233,7 +229,7 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.BAOBAB_BRANCH.get()));
                             output.accept(new ItemStack(RuBlocks.BIRCH_BRANCH.get()));
                             output.accept(new ItemStack(RuBlocks.BLACKWOOD_BRANCH.get()));
-                            output.accept(new ItemStack(RuBlocks.SAKURA_BRANCH.get()));
+                            output.accept(new ItemStack(RuBlocks.MAGNOLIA_BRANCH.get()));
                             output.accept(new ItemStack(RuBlocks.CYPRESS_BRANCH.get()));
                             output.accept(new ItemStack(RuBlocks.DARK_OAK_BRANCH.get()));
                             output.accept(new ItemStack(RuBlocks.DEAD_BRANCH.get()));
@@ -367,20 +363,20 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.BRIMWOOD_BUTTON.get()));
                             output.accept(new ItemStack(RuBlocks.BRIMWOOD_SIGN.get()));
                             //SAKURA_BLOCKS
-                            output.accept(new ItemStack(RuBlocks.SAKURA_LOG.get()));
-                            output.accept(new ItemStack(RuBlocks.STRIPPED_SAKURA_LOG.get()));
-                            output.accept(new ItemStack(RuBlocks.SAKURA_WOOD.get()));
-                            output.accept(new ItemStack(RuBlocks.STRIPPED_SAKURA_WOOD.get()));
-                            output.accept(new ItemStack(RuBlocks.SAKURA_PLANKS.get()));
-                            output.accept(new ItemStack(RuBlocks.SAKURA_STAIRS.get()));
-                            output.accept(new ItemStack(RuBlocks.SAKURA_SLAB.get()));
-                            output.accept(new ItemStack(RuBlocks.SAKURA_FENCE.get()));
-                            output.accept(new ItemStack(RuBlocks.SAKURA_DOOR.get()));
-                            output.accept(new ItemStack(RuBlocks.SAKURA_FENCE_GATE.get()));
-                            output.accept(new ItemStack(RuBlocks.SAKURA_TRAPDOOR.get()));
-                            output.accept(new ItemStack(RuBlocks.SAKURA_PRESSURE_PLATE.get()));
-                            output.accept(new ItemStack(RuBlocks.SAKURA_BUTTON.get()));
-                            output.accept(new ItemStack(RuBlocks.SAKURA_SIGN.get()));
+                            output.accept(new ItemStack(RuBlocks.MAGNOLIA_LOG.get()));
+                            output.accept(new ItemStack(RuBlocks.STRIPPED_MAGNOLIA_LOG.get()));
+                            output.accept(new ItemStack(RuBlocks.MAGNOLIA_WOOD.get()));
+                            output.accept(new ItemStack(RuBlocks.STRIPPED_MAGNOLIA_WOOD.get()));
+                            output.accept(new ItemStack(RuBlocks.MAGNOLIA_PLANKS.get()));
+                            output.accept(new ItemStack(RuBlocks.MAGNOLIA_STAIRS.get()));
+                            output.accept(new ItemStack(RuBlocks.MAGNOLIA_SLAB.get()));
+                            output.accept(new ItemStack(RuBlocks.MAGNOLIA_FENCE.get()));
+                            output.accept(new ItemStack(RuBlocks.MAGNOLIA_DOOR.get()));
+                            output.accept(new ItemStack(RuBlocks.MAGNOLIA_FENCE_GATE.get()));
+                            output.accept(new ItemStack(RuBlocks.MAGNOLIA_TRAPDOOR.get()));
+                            output.accept(new ItemStack(RuBlocks.MAGNOLIA_PRESSURE_PLATE.get()));
+                            output.accept(new ItemStack(RuBlocks.MAGNOLIA_BUTTON.get()));
+                            output.accept(new ItemStack(RuBlocks.MAGNOLIA_SIGN.get()));
                             //CYPRESS_BLOCKS
                             output.accept(new ItemStack(RuBlocks.CYPRESS_LOG.get()));
                             output.accept(new ItemStack(RuBlocks.STRIPPED_CYPRESS_LOG.get()));

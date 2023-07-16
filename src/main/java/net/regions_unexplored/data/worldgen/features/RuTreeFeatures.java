@@ -1,21 +1,15 @@
 package net.regions_unexplored.data.worldgen.features;
 
 import com.google.common.collect.ImmutableList;
-import net.minecraft.core.Direction;
 import net.minecraft.core.HolderGetter;
-import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
-import net.minecraft.data.worldgen.features.FeatureUtils;
-import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.MangrovePropaguleBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -24,13 +18,8 @@ import net.minecraft.world.level.levelgen.feature.configurations.TreeConfigurati
 import net.minecraft.world.level.levelgen.feature.featuresize.ThreeLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.*;
-import net.minecraft.world.level.levelgen.feature.rootplacers.AboveRootPlacement;
-import net.minecraft.world.level.levelgen.feature.rootplacers.MangroveRootPlacement;
-import net.minecraft.world.level.levelgen.feature.rootplacers.MangroveRootPlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
-import net.minecraft.world.level.levelgen.feature.stateproviders.RandomizedIntStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
-import net.minecraft.world.level.levelgen.feature.treedecorators.AttachedToLeavesDecorator;
 import net.minecraft.world.level.levelgen.feature.treedecorators.BeehiveDecorator;
 import net.minecraft.world.level.levelgen.feature.treedecorators.LeaveVineDecorator;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.*;
@@ -46,7 +35,6 @@ import net.regions_unexplored.world.level.feature.configuration.GiantBioshroomCo
 import net.regions_unexplored.world.level.feature.configuration.RuTreeConfiguration;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.OptionalInt;
 
 public class RuTreeFeatures {
@@ -84,14 +72,12 @@ public class RuTreeFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> TALL_DARK_OAK = ConfiguredFeatureRegistry.createKey("tall_dark_oak");
 
-    public static final ResourceKey<ConfiguredFeature<?, ?>> SAKURA_TREE = ConfiguredFeatureRegistry.createKey("sakura_tree");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> RED_SAKURA_TREE = ConfiguredFeatureRegistry.createKey("red_sakura_tree");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> PINK_SAKURA_TREE = ConfiguredFeatureRegistry.createKey("pink_sakura_tree");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> WHITE_SAKURA_TREE = ConfiguredFeatureRegistry.createKey("white_sakura_tree");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> BIG_SAKURA_TREE = ConfiguredFeatureRegistry.createKey("big_sakura_tree");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> BIG_RED_SAKURA_TREE = ConfiguredFeatureRegistry.createKey("big_red_sakura_tree");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> BIG_PINK_SAKURA_TREE = ConfiguredFeatureRegistry.createKey("big_pink_sakura_tree");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> BIG_WHITE_SAKURA_TREE = ConfiguredFeatureRegistry.createKey("big_white_sakura_tree");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MAGNOLIA_TREE = ConfiguredFeatureRegistry.createKey("magnolia_tree");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PINK_MAGNOLIA_TREE = ConfiguredFeatureRegistry.createKey("pink_magnolia_tree");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> WHITE_MAGNOLIA_TREE = ConfiguredFeatureRegistry.createKey("white_magnolia_tree");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BIG_MAGNOLIA_TREE = ConfiguredFeatureRegistry.createKey("big_magnolia_tree");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BIG_PINK_MAGNOLIA_TREE = ConfiguredFeatureRegistry.createKey("big_pink_magnolia_tree");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BIG_WHITE_MAGNOLIA_TREE = ConfiguredFeatureRegistry.createKey("big_white_magnolia_tree");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> CYPRESS_TREE = ConfiguredFeatureRegistry.createKey("cypress_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> GIANT_CYPRESS_TREE = ConfiguredFeatureRegistry.createKey("giant_cypress_tree");
@@ -198,14 +184,12 @@ public class RuTreeFeatures {
 
         register(context, TALL_DARK_OAK, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.DARK_OAK_LOG), new DarkOakTrunkPlacer(8, 4, 1), BlockStateProvider.simple(Blocks.DARK_OAK_LEAVES), new DarkOakFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)), new ThreeLayersFeatureSize(1, 1, 0, 1, 2, OptionalInt.empty())).ignoreVines().build());
 
-        register(context, BIG_SAKURA_TREE, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(RuBlocks.SAKURA_LOG.get().defaultBlockState()),new FancyTrunkPlacer(8, 11, 0),BlockStateProvider.simple(RuBlocks.SAKURA_LEAVES.get().defaultBlockState()),new SakuraFoliagePlacer(ConstantInt.of(4), ConstantInt.of(0), ConstantInt.of(5), 0.25F), new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4))).ignoreVines().build());
-        register(context, SAKURA_TREE, FeatureRegistry.SAKURA_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.SAKURA_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.SAKURA_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.SAKURA_BRANCH.get().defaultBlockState()), 1, 4));
-        register(context, RED_SAKURA_TREE, FeatureRegistry.SAKURA_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.SAKURA_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.RED_SAKURA_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.SAKURA_BRANCH.get().defaultBlockState()), 1, 5));
-        register(context, BIG_RED_SAKURA_TREE, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(RuBlocks.SAKURA_LOG.get().defaultBlockState()),new FancyTrunkPlacer(8, 11, 0),BlockStateProvider.simple(RuBlocks.RED_SAKURA_LEAVES.get().defaultBlockState()),new SakuraFoliagePlacer(ConstantInt.of(4), ConstantInt.of(0), ConstantInt.of(5), 0.25F), new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4))).ignoreVines().build());
-        register(context, PINK_SAKURA_TREE, FeatureRegistry.SAKURA_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.SAKURA_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.PINK_SAKURA_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.SAKURA_BRANCH.get().defaultBlockState()), 1, 4));
-        register(context, BIG_PINK_SAKURA_TREE, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(RuBlocks.SAKURA_LOG.get().defaultBlockState()),new FancyTrunkPlacer(8, 11, 0),BlockStateProvider.simple(RuBlocks.PINK_SAKURA_LEAVES.get().defaultBlockState()),new SakuraFoliagePlacer(ConstantInt.of(4), ConstantInt.of(0), ConstantInt.of(5), 0.25F), new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4))).ignoreVines().build());
-        register(context, WHITE_SAKURA_TREE, FeatureRegistry.SAKURA_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.SAKURA_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.WHITE_SAKURA_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.SAKURA_BRANCH.get().defaultBlockState()), 1, 5));
-        register(context, BIG_WHITE_SAKURA_TREE, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(RuBlocks.SAKURA_LOG.get().defaultBlockState()),new FancyTrunkPlacer(8, 11, 0),BlockStateProvider.simple(RuBlocks.WHITE_SAKURA_LEAVES.get().defaultBlockState()),new SakuraFoliagePlacer(ConstantInt.of(4), ConstantInt.of(0), ConstantInt.of(5), 0.25F), new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4))).ignoreVines().build());
+        register(context, BIG_MAGNOLIA_TREE, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(RuBlocks.MAGNOLIA_LOG.get().defaultBlockState()),new FancyTrunkPlacer(8, 11, 0),BlockStateProvider.simple(RuBlocks.MAGNOLIA_LEAVES.get().defaultBlockState()),new SakuraFoliagePlacer(ConstantInt.of(4), ConstantInt.of(0), ConstantInt.of(5), 0.25F), new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4))).ignoreVines().build());
+        register(context, MAGNOLIA_TREE, FeatureRegistry.SAKURA_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.MAGNOLIA_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.MAGNOLIA_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.MAGNOLIA_BRANCH.get().defaultBlockState()), 1, 4));
+        register(context, PINK_MAGNOLIA_TREE, FeatureRegistry.SAKURA_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.MAGNOLIA_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.PINK_MAGNOLIA_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.MAGNOLIA_BRANCH.get().defaultBlockState()), 1, 4));
+        register(context, BIG_PINK_MAGNOLIA_TREE, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(RuBlocks.MAGNOLIA_LOG.get().defaultBlockState()),new FancyTrunkPlacer(8, 11, 0),BlockStateProvider.simple(RuBlocks.PINK_MAGNOLIA_LEAVES.get().defaultBlockState()),new SakuraFoliagePlacer(ConstantInt.of(4), ConstantInt.of(0), ConstantInt.of(5), 0.25F), new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4))).ignoreVines().build());
+        register(context, WHITE_MAGNOLIA_TREE, FeatureRegistry.SAKURA_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.MAGNOLIA_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.WHITE_MAGNOLIA_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.MAGNOLIA_BRANCH.get().defaultBlockState()), 1, 5));
+        register(context, BIG_WHITE_MAGNOLIA_TREE, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(RuBlocks.MAGNOLIA_LOG.get().defaultBlockState()),new FancyTrunkPlacer(8, 11, 0),BlockStateProvider.simple(RuBlocks.WHITE_MAGNOLIA_LEAVES.get().defaultBlockState()),new SakuraFoliagePlacer(ConstantInt.of(4), ConstantInt.of(0), ConstantInt.of(5), 0.25F), new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4))).ignoreVines().build());
         register(context, CYPRESS_TREE, FeatureRegistry.CYPRESS_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.CYPRESS_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.CYPRESS_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.CYPRESS_BRANCH.get().defaultBlockState()), 17, 4));
         register(context, GIANT_CYPRESS_TREE, FeatureRegistry.GIANT_CYPRESS_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.CYPRESS_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.CYPRESS_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.CYPRESS_BRANCH.get().defaultBlockState()), 25, 5));
 

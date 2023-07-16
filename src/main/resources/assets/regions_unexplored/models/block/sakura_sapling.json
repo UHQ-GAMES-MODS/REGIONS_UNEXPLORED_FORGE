@@ -1,8 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "regions_unexplored:block/sakura_sapling",
-    "particle": "regions_unexplored:block/sakura_sapling"
-  },
-  "render_type": "cutout"
-}

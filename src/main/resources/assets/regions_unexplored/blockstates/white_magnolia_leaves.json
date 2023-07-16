@@ -1,0 +1,33 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "regions_unexplored:block/white_magnolia_leaves"
+      },
+      {
+        "model": "regions_unexplored:block/white_magnolia_leaves_1"
+      },
+      {
+        "model": "regions_unexplored:block/white_magnolia_leaves_1"
+      },
+      {
+        "model": "regions_unexplored:block/white_magnolia_leaves_2"
+      },
+      {
+        "model": "regions_unexplored:block/white_magnolia_leaves_2"
+      },
+      {
+        "model": "regions_unexplored:block/white_magnolia_leaves_2"
+      },
+      {
+        "model": "regions_unexplored:block/white_magnolia_leaves_2"
+      },
+      {
+        "model": "regions_unexplored:block/white_magnolia_leaves_2"
+      },
+      {
+        "model": "regions_unexplored:block/white_magnolia_leaves_2"
+      }
+    ]
+  }
+}

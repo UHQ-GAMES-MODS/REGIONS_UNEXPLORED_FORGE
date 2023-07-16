@@ -1,8 +1,0 @@
-{
-  "parent": "block/slab",
-  "textures": {
-    "bottom": "regions_unexplored:block/sakura_planks",
-    "top": "regions_unexplored:block/sakura_planks",
-    "side": "regions_unexplored:block/sakura_planks"
-  }
-}

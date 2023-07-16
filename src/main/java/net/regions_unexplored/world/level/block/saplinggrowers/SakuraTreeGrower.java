@@ -9,9 +9,9 @@ import net.regions_unexplored.data.worldgen.features.RuTreeFeatures;
 public class SakuraTreeGrower extends AbstractTreeGrower {
    protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource random, boolean bool) {
       if (random.nextInt(10) == 0) {
-         return RuTreeFeatures.BIG_SAKURA_TREE;
+         return RuTreeFeatures.BIG_MAGNOLIA_TREE;
       } else {
-         return RuTreeFeatures.SAKURA_TREE;
+         return RuTreeFeatures.MAGNOLIA_TREE;
       }
    }
 }

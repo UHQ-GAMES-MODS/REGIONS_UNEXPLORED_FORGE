@@ -15,7 +15,7 @@ public class RuItems {
     //TODO:Complete Class
     public static RegistryObject<Item> BAOBAB_SIGN;
     public static RegistryObject<Item> BLACKWOOD_SIGN;
-    public static RegistryObject<Item> SAKURA_SIGN;
+    public static RegistryObject<Item> MAGNOLIA_SIGN;
     public static RegistryObject<Item> CYPRESS_SIGN;
     public static RegistryObject<Item> DEAD_SIGN;
     public static RegistryObject<Item> EUCALYPTUS_SIGN;
@@ -33,8 +33,8 @@ public class RuItems {
     public static RegistryObject<Item> BAOBAB_CHEST_BOAT;
     public static RegistryObject<Item> BLACKWOOD_BOAT;
     public static RegistryObject<Item> BLACKWOOD_CHEST_BOAT;
-    public static RegistryObject<Item> SAKURA_BOAT;
-    public static RegistryObject<Item> SAKURA_CHEST_BOAT;
+    public static RegistryObject<Item> MAGNOLIA_BOAT;
+    public static RegistryObject<Item> MAGNOLIA_CHEST_BOAT;
     public static RegistryObject<Item> CYPRESS_BOAT;
     public static RegistryObject<Item> CYPRESS_CHEST_BOAT;
     public static RegistryObject<Item> DEAD_BOAT;
@@ -67,7 +67,7 @@ public class RuItems {
     public static void addItems(){
     BAOBAB_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("baobab_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.BAOBAB_SIGN.get(), RuBlocks.BAOBAB_WALL_SIGN.get()));
     BLACKWOOD_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("blackwood_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.BLACKWOOD_SIGN.get(), RuBlocks.BLACKWOOD_WALL_SIGN.get()));
-    SAKURA_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("sakura_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.SAKURA_SIGN.get(), RuBlocks.SAKURA_WALL_SIGN.get()));
+    MAGNOLIA_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("magnolia_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.MAGNOLIA_SIGN.get(), RuBlocks.MAGNOLIA_WALL_SIGN.get()));
     CYPRESS_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("cypress_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.CYPRESS_SIGN.get(), RuBlocks.CYPRESS_WALL_SIGN.get()));
     DEAD_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("dead_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.DEAD_SIGN.get(), RuBlocks.DEAD_WALL_SIGN.get()));
     EUCALYPTUS_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("eucalyptus_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.EUCALYPTUS_SIGN.get(), RuBlocks.EUCALYPTUS_WALL_SIGN.get()));
@@ -85,8 +85,8 @@ public class RuItems {
     BAOBAB_CHEST_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("baobab_chest_boat", () -> new RuBoatItem(true, RuBoat.ModelType.BAOBAB, (new Item.Properties()).stacksTo(1)));
     BLACKWOOD_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("blackwood_boat", () -> new RuBoatItem(false, RuBoat.ModelType.BLACKWOOD, (new Item.Properties()).stacksTo(1)));
     BLACKWOOD_CHEST_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("blackwood_chest_boat", () -> new RuBoatItem(true, RuBoat.ModelType.BLACKWOOD, (new Item.Properties()).stacksTo(1)));
-    SAKURA_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("sakura_boat", () -> new RuBoatItem(false, RuBoat.ModelType.SAKURA, (new Item.Properties()).stacksTo(1)));
-    SAKURA_CHEST_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("sakura_chest_boat", () -> new RuBoatItem(true, RuBoat.ModelType.SAKURA, (new Item.Properties()).stacksTo(1)));
+    MAGNOLIA_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("magnolia_boat", () -> new RuBoatItem(false, RuBoat.ModelType.MAGNOLIA, (new Item.Properties()).stacksTo(1)));
+    MAGNOLIA_CHEST_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("magnolia_chest_boat", () -> new RuBoatItem(true, RuBoat.ModelType.MAGNOLIA, (new Item.Properties()).stacksTo(1)));
     CYPRESS_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("cypress_boat", () -> new RuBoatItem(false, RuBoat.ModelType.CYPRESS, (new Item.Properties()).stacksTo(1)));
     CYPRESS_CHEST_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("cypress_chest_boat", () -> new RuBoatItem(true, RuBoat.ModelType.CYPRESS, (new Item.Properties()).stacksTo(1)));
     DEAD_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("dead_boat", () -> new RuBoatItem(false, RuBoat.ModelType.DEAD, (new Item.Properties()).stacksTo(1)));

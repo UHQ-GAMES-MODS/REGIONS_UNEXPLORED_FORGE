@@ -6,7 +6,6 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
@@ -56,7 +55,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuItems.PALM_BOAT.getKey())
                 .add(RuItems.PINE_BOAT.getKey())
                 .add(RuItems.REDWOOD_BOAT.getKey())
-                .add(RuItems.SAKURA_BOAT.getKey())
+                .add(RuItems.MAGNOLIA_BOAT.getKey())
                 .add(RuItems.WILLOW_BOAT.getKey())
         ;
         //this.tag(ItemTags.BUTTONS);
@@ -74,7 +73,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuItems.PALM_CHEST_BOAT.getKey())
                 .add(RuItems.PINE_CHEST_BOAT.getKey())
                 .add(RuItems.REDWOOD_CHEST_BOAT.getKey())
-                .add(RuItems.SAKURA_CHEST_BOAT.getKey())
+                .add(RuItems.MAGNOLIA_CHEST_BOAT.getKey())
                 .add(RuItems.WILLOW_CHEST_BOAT.getKey())
         ;
         //this.tag(ItemTags.CLUSTER_MAX_HARVESTABLES);
@@ -131,7 +130,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.PALM_FENCE_GATE.get().asItem())
                 .add(RuBlocks.PINE_FENCE_GATE.get().asItem())
                 .add(RuBlocks.REDWOOD_FENCE_GATE.get().asItem())
-                .add(RuBlocks.SAKURA_FENCE_GATE.get().asItem())
+                .add(RuBlocks.MAGNOLIA_FENCE_GATE.get().asItem())
                 .add(RuBlocks.WILLOW_FENCE_GATE.get().asItem())
         ;
         //this.tag(ItemTags.FENCES);
@@ -140,9 +139,8 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.HYACINTH_FLOWERS.get().asItem())
                 .add(RuBlocks.ORANGE_CONEFLOWER.get().asItem())
                 .add(RuBlocks.PURPLE_CONEFLOWER.get().asItem())
-                .add(RuBlocks.PINK_SAKURA_FLOWERS.get().asItem())
-                .add(RuBlocks.RED_SAKURA_FLOWERS.get().asItem())
-                .add(RuBlocks.WHITE_SAKURA_FLOWERS.get().asItem())
+                .add(RuBlocks.PINK_MAGNOLIA_FLOWERS.get().asItem())
+                .add(RuBlocks.WHITE_MAGNOLIA_FLOWERS.get().asItem())
         ;
         this.tag(ItemTags.FOX_FOOD)
                 .add(RuItems.SALMONBERRY.getKey())
@@ -175,16 +173,15 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.ORANGE_MAPLE_LEAVES.get().asItem())
                 .add(RuBlocks.PALM_LEAVES.get().asItem())
                 .add(RuBlocks.PINE_LEAVES.get().asItem())
-                .add(RuBlocks.PINK_SAKURA_LEAVES.get().asItem())
+                .add(RuBlocks.PINK_MAGNOLIA_LEAVES.get().asItem())
                 .add(RuBlocks.REDWOOD_LEAVES.get().asItem())
                 .add(RuBlocks.RED_MAPLE_LEAVES.get().asItem())
-                .add(RuBlocks.RED_SAKURA_LEAVES.get().asItem())
-                .add(RuBlocks.SAKURA_LEAVES.get().asItem())
+                .add(RuBlocks.MAGNOLIA_LEAVES.get().asItem())
                 .add(RuBlocks.SILVER_BIRCH_LEAVES.get().asItem())
                 .add(RuBlocks.ENCHANTED_BIRCH_LEAVES.get().asItem())
                 .add(RuBlocks.SPANISH_MOSS.get().asItem())
                 .add(RuBlocks.SPANISH_MOSS_PLANT.get().asItem())
-                .add(RuBlocks.WHITE_SAKURA_LEAVES.get().asItem())
+                .add(RuBlocks.WHITE_MAGNOLIA_LEAVES.get().asItem())
                 .add(RuBlocks.WILLOW_LEAVES.get().asItem())
         ;
         //this.tag(ItemTags.LECTERN_BOOKS);
@@ -269,7 +266,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.PALM_PLANKS.get().asItem())
                 .add(RuBlocks.PINE_PLANKS.get().asItem())
                 .add(RuBlocks.REDWOOD_PLANKS.get().asItem())
-                .add(RuBlocks.SAKURA_PLANKS.get().asItem())
+                .add(RuBlocks.MAGNOLIA_PLANKS.get().asItem())
                 .add(RuBlocks.WILLOW_PLANKS.get().asItem())
                 .add(RuBlocks.LIGHT_GRAY_PAINTED_PLANKS.get().asItem())
                 .add(RuBlocks.BLACK_PAINTED_PLANKS.get().asItem())
@@ -316,14 +313,13 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.ORANGE_MAPLE_SAPLING.get().asItem())
                 .add(RuBlocks.PALM_SAPLING.get().asItem())
                 .add(RuBlocks.PINE_SAPLING.get().asItem())
-                .add(RuBlocks.PINK_SAKURA_SAPLING.get().asItem())
+                .add(RuBlocks.PINK_MAGNOLIA_SAPLING.get().asItem())
                 .add(RuBlocks.REDWOOD_SAPLING.get().asItem())
                 .add(RuBlocks.RED_MAPLE_SAPLING.get().asItem())
-                .add(RuBlocks.RED_SAKURA_SAPLING.get().asItem())
-                .add(RuBlocks.SAKURA_SAPLING.get().asItem())
+                .add(RuBlocks.MAGNOLIA_SAPLING.get().asItem())
                 .add(RuBlocks.ENCHANTED_BIRCH_SAPLING.get().asItem())
                 .add(RuBlocks.SILVER_BIRCH_SAPLING.get().asItem())
-                .add(RuBlocks.WHITE_SAKURA_SAPLING.get().asItem())
+                .add(RuBlocks.WHITE_MAGNOLIA_SAPLING.get().asItem())
                 .add(RuBlocks.WILLOW_SAPLING.get().asItem())
         ;
         //this.tag(ItemTags.SHOVELS);
@@ -341,7 +337,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.PALM_SIGN.get().asItem())
                 .add(RuBlocks.PINE_SIGN.get().asItem())
                 .add(RuBlocks.REDWOOD_SIGN.get().asItem())
-                .add(RuBlocks.SAKURA_SIGN.get().asItem())
+                .add(RuBlocks.MAGNOLIA_SIGN.get().asItem())
                 .add(RuBlocks.WILLOW_SIGN.get().asItem())
         ;
         this.tag(ItemTags.SLABS)
@@ -424,7 +420,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.PALM_BUTTON.get().asItem())
                 .add(RuBlocks.PINE_BUTTON.get().asItem())
                 .add(RuBlocks.REDWOOD_BUTTON.get().asItem())
-                .add(RuBlocks.SAKURA_BUTTON.get().asItem())
+                .add(RuBlocks.MAGNOLIA_BUTTON.get().asItem())
                 .add(RuBlocks.WILLOW_BUTTON.get().asItem())
         ;
         this.tag(ItemTags.WOODEN_DOORS)
@@ -440,7 +436,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.PALM_DOOR.get().asItem())
                 .add(RuBlocks.PINE_DOOR.get().asItem())
                 .add(RuBlocks.REDWOOD_DOOR.get().asItem())
-                .add(RuBlocks.SAKURA_DOOR.get().asItem())
+                .add(RuBlocks.MAGNOLIA_DOOR.get().asItem())
                 .add(RuBlocks.WILLOW_DOOR.get().asItem())
         ;
         this.tag(ItemTags.WOODEN_FENCES)
@@ -456,7 +452,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.PALM_FENCE.get().asItem())
                 .add(RuBlocks.PINE_FENCE.get().asItem())
                 .add(RuBlocks.REDWOOD_FENCE.get().asItem())
-                .add(RuBlocks.SAKURA_FENCE.get().asItem())
+                .add(RuBlocks.MAGNOLIA_FENCE.get().asItem())
                 .add(RuBlocks.WILLOW_FENCE.get().asItem())
         ;
         this.tag(ItemTags.WOODEN_PRESSURE_PLATES)
@@ -472,7 +468,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.PALM_PRESSURE_PLATE.get().asItem())
                 .add(RuBlocks.PINE_PRESSURE_PLATE.get().asItem())
                 .add(RuBlocks.REDWOOD_PRESSURE_PLATE.get().asItem())
-                .add(RuBlocks.SAKURA_PRESSURE_PLATE.get().asItem())
+                .add(RuBlocks.MAGNOLIA_PRESSURE_PLATE.get().asItem())
                 .add(RuBlocks.WILLOW_PRESSURE_PLATE.get().asItem())
         ;
         this.tag(ItemTags.WOODEN_SLABS)
@@ -489,7 +485,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.PALM_SLAB.get().asItem())
                 .add(RuBlocks.PINE_SLAB.get().asItem())
                 .add(RuBlocks.REDWOOD_SLAB.get().asItem())
-                .add(RuBlocks.SAKURA_SLAB.get().asItem())
+                .add(RuBlocks.MAGNOLIA_SLAB.get().asItem())
                 .add(RuBlocks.WILLOW_SLAB.get().asItem())
                 .add(RuBlocks.LIGHT_GRAY_PAINTED_SLAB.get().asItem())
                 .add(RuBlocks.BLACK_PAINTED_SLAB.get().asItem())
@@ -522,7 +518,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.PALM_STAIRS.get().asItem())
                 .add(RuBlocks.PINE_STAIRS.get().asItem())
                 .add(RuBlocks.REDWOOD_STAIRS.get().asItem())
-                .add(RuBlocks.SAKURA_STAIRS.get().asItem())
+                .add(RuBlocks.MAGNOLIA_STAIRS.get().asItem())
                 .add(RuBlocks.WILLOW_STAIRS.get().asItem())
                 .add(RuBlocks.LIGHT_GRAY_PAINTED_STAIRS.get().asItem())
                 .add(RuBlocks.BLACK_PAINTED_STAIRS.get().asItem())
@@ -554,7 +550,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.PALM_TRAPDOOR.get().asItem())
                 .add(RuBlocks.PINE_TRAPDOOR.get().asItem())
                 .add(RuBlocks.REDWOOD_TRAPDOOR.get().asItem())
-                .add(RuBlocks.SAKURA_TRAPDOOR.get().asItem())
+                .add(RuBlocks.MAGNOLIA_TRAPDOOR.get().asItem())
                 .add(RuBlocks.WILLOW_TRAPDOOR.get().asItem())
         ;
         //this.tag(ItemTags.WOOL);
@@ -599,7 +595,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.PALM_BEARD.get().asItem())
                 .add(RuBlocks.PINE_BRANCH.get().asItem())
                 .add(RuBlocks.REDWOOD_BRANCH.get().asItem())
-                .add(RuBlocks.SAKURA_BRANCH.get().asItem())
+                .add(RuBlocks.MAGNOLIA_BRANCH.get().asItem())
                 .add(RuBlocks.SILVER_BIRCH_BRANCH.get().asItem())
                 .add(RuBlocks.SPRUCE_BRANCH.get().asItem())
                 .add(RuBlocks.WILLOW_BRANCH.get().asItem())
@@ -609,10 +605,9 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.BAOBAB_SHRUB.get().asItem())
                 .add(RuBlocks.BIRCH_SHRUB.get().asItem())
                 .add(RuBlocks.BLACKWOOD_SHRUB.get().asItem())
-                .add(RuBlocks.SAKURA_SHRUB.get().asItem())
-                .add(RuBlocks.RED_SAKURA_SHRUB.get().asItem())
-                .add(RuBlocks.PINK_SAKURA_SHRUB.get().asItem())
-                .add(RuBlocks.WHITE_SAKURA_SHRUB.get().asItem())
+                .add(RuBlocks.MAGNOLIA_SHRUB.get().asItem())
+                .add(RuBlocks.PINK_MAGNOLIA_SHRUB.get().asItem())
+                .add(RuBlocks.WHITE_MAGNOLIA_SHRUB.get().asItem())
                 .add(RuBlocks.CYPRESS_SHRUB.get().asItem())
                 .add(RuBlocks.DARK_OAK_SHRUB.get().asItem())
                 .add(RuBlocks.DEAD_SHRUB.get().asItem())
@@ -661,10 +656,10 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.STRIPPED_BLACKWOOD_WOOD.get().asItem())
         ;
         this.tag(RuTags.SAKURA_LOGS_ITEM)
-                .add(RuBlocks.SAKURA_LOG.get().asItem())
-                .add(RuBlocks.STRIPPED_SAKURA_LOG.get().asItem())
-                .add(RuBlocks.SAKURA_WOOD.get().asItem())
-                .add(RuBlocks.STRIPPED_SAKURA_WOOD.get().asItem())
+                .add(RuBlocks.MAGNOLIA_LOG.get().asItem())
+                .add(RuBlocks.STRIPPED_MAGNOLIA_LOG.get().asItem())
+                .add(RuBlocks.MAGNOLIA_WOOD.get().asItem())
+                .add(RuBlocks.STRIPPED_MAGNOLIA_WOOD.get().asItem())
         ;
         this.tag(RuTags.CYPRESS_LOGS_ITEM)
                 .add(RuBlocks.CYPRESS_LOG.get().asItem())
@@ -767,7 +762,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.PALM_FENCE_GATE.get().asItem())
                 .add(RuBlocks.PINE_FENCE_GATE.get().asItem())
                 .add(RuBlocks.REDWOOD_FENCE_GATE.get().asItem())
-                .add(RuBlocks.SAKURA_FENCE_GATE.get().asItem())
+                .add(RuBlocks.MAGNOLIA_FENCE_GATE.get().asItem())
                 .add(RuBlocks.WILLOW_FENCE_GATE.get().asItem())
         ;
         //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "fences/nether_brick")));
@@ -785,7 +780,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.PALM_FENCE.get().asItem())
                 .add(RuBlocks.PINE_FENCE.get().asItem())
                 .add(RuBlocks.REDWOOD_FENCE.get().asItem())
-                .add(RuBlocks.SAKURA_FENCE.get().asItem())
+                .add(RuBlocks.MAGNOLIA_FENCE.get().asItem())
                 .add(RuBlocks.WILLOW_FENCE.get().asItem())
         ;
         //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "glass/colorless")));
@@ -893,7 +888,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.PALM_TRAPDOOR.get().asItem())
                 .add(RuBlocks.PINE_TRAPDOOR.get().asItem())
                 .add(RuBlocks.REDWOOD_TRAPDOOR.get().asItem())
-                .add(RuBlocks.SAKURA_TRAPDOOR.get().asItem())
+                .add(RuBlocks.MAGNOLIA_TRAPDOOR.get().asItem())
                 .add(RuBlocks.WILLOW_TRAPDOOR.get().asItem())
         ;
         this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "doors/wooden")))
@@ -909,7 +904,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.PALM_DOOR.get().asItem())
                 .add(RuBlocks.PINE_DOOR.get().asItem())
                 .add(RuBlocks.REDWOOD_DOOR.get().asItem())
-                .add(RuBlocks.SAKURA_DOOR.get().asItem())
+                .add(RuBlocks.MAGNOLIA_DOOR.get().asItem())
                 .add(RuBlocks.WILLOW_DOOR.get().asItem())
         ;
         this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "stairs/wooden")))
@@ -926,7 +921,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.PALM_STAIRS.get().asItem())
                 .add(RuBlocks.PINE_STAIRS.get().asItem())
                 .add(RuBlocks.REDWOOD_STAIRS.get().asItem())
-                .add(RuBlocks.SAKURA_STAIRS.get().asItem())
+                .add(RuBlocks.MAGNOLIA_STAIRS.get().asItem())
                 .add(RuBlocks.WILLOW_STAIRS.get().asItem())
                 .add(RuBlocks.LIGHT_GRAY_PAINTED_STAIRS.get().asItem())
                 .add(RuBlocks.BLACK_PAINTED_STAIRS.get().asItem())
@@ -964,7 +959,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.PALM_SLAB.get().asItem())
                 .add(RuBlocks.PINE_SLAB.get().asItem())
                 .add(RuBlocks.REDWOOD_SLAB.get().asItem())
-                .add(RuBlocks.SAKURA_SLAB.get().asItem())
+                .add(RuBlocks.MAGNOLIA_SLAB.get().asItem())
                 .add(RuBlocks.WILLOW_SLAB.get().asItem())
                 .add(RuBlocks.LIGHT_GRAY_PAINTED_SLAB.get().asItem())
                 .add(RuBlocks.BLACK_PAINTED_SLAB.get().asItem())
@@ -1002,7 +997,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.PALM_PLANKS.get().asItem())
                 .add(RuBlocks.PINE_PLANKS.get().asItem())
                 .add(RuBlocks.REDWOOD_PLANKS.get().asItem())
-                .add(RuBlocks.SAKURA_PLANKS.get().asItem())
+                .add(RuBlocks.MAGNOLIA_PLANKS.get().asItem())
                 .add(RuBlocks.WILLOW_PLANKS.get().asItem())
                 .add(RuBlocks.LIGHT_GRAY_PAINTED_PLANKS.get().asItem())
                 .add(RuBlocks.BLACK_PAINTED_PLANKS.get().asItem())
@@ -1039,7 +1034,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.PALM_LOG.get().asItem())
                 .add(RuBlocks.PINE_LOG.get().asItem())
                 .add(RuBlocks.REDWOOD_LOG.get().asItem())
-                .add(RuBlocks.SAKURA_LOG.get().asItem())
+                .add(RuBlocks.MAGNOLIA_LOG.get().asItem())
                 .add(RuBlocks.SILVER_BIRCH_LOG.get().asItem())
                 .add(RuBlocks.WILLOW_LOG.get().asItem())
         ;
@@ -1058,7 +1053,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.PALM_WOOD.get().asItem())
                 .add(RuBlocks.PINE_WOOD.get().asItem())
                 .add(RuBlocks.REDWOOD_WOOD.get().asItem())
-                .add(RuBlocks.SAKURA_WOOD.get().asItem())
+                .add(RuBlocks.MAGNOLIA_WOOD.get().asItem())
                 .add(RuBlocks.SILVER_BIRCH_WOOD.get().asItem())
                 .add(RuBlocks.WILLOW_WOOD.get().asItem())
         ;
@@ -1077,7 +1072,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.STRIPPED_PALM_LOG.get().asItem())
                 .add(RuBlocks.STRIPPED_PINE_LOG.get().asItem())
                 .add(RuBlocks.STRIPPED_REDWOOD_LOG.get().asItem())
-                .add(RuBlocks.STRIPPED_SAKURA_LOG.get().asItem())
+                .add(RuBlocks.STRIPPED_MAGNOLIA_LOG.get().asItem())
                 .add(RuBlocks.STRIPPED_WILLOW_LOG.get().asItem())
         ;
         this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "stripped_wood")))
@@ -1094,7 +1089,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.STRIPPED_PALM_WOOD.get().asItem())
                 .add(RuBlocks.STRIPPED_PINE_WOOD.get().asItem())
                 .add(RuBlocks.STRIPPED_REDWOOD_WOOD.get().asItem())
-                .add(RuBlocks.STRIPPED_SAKURA_WOOD.get().asItem())
+                .add(RuBlocks.STRIPPED_MAGNOLIA_WOOD.get().asItem())
                 .add(RuBlocks.STRIPPED_WILLOW_WOOD.get().asItem())
         ;
         //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "storage_blocks")));

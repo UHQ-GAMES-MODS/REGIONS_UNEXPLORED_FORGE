@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "regions_unexplored:block/stripped_sakura_log",
-    "particle": "regions_unexplored:block/stripped_sakura_log"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "regions_unexplored:block/sakura_shrub_top",
-    "particle": "regions_unexplored:block/sakura_shrub_top"
-  },
-  "render_type": "cutout"
-}

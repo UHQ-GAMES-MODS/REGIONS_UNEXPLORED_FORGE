@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "regions_unexplored:block/pink_sakura_shrub_top"
-  }
-}

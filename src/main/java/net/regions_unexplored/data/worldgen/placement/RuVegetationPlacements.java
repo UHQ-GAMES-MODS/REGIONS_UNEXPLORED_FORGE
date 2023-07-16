@@ -76,12 +76,11 @@ public class RuVegetationPlacements {
     public static final ResourceKey<PlacedFeature> ORANGE_CONEFLOWER = PlacedFeatureRegistry.createKey("orange_coneflower");
     public static final ResourceKey<PlacedFeature> SPARSE_ORANGE_CONEFLOWER = PlacedFeatureRegistry.createKey("sparse_orange_coneflower");
     public static final ResourceKey<PlacedFeature> PURPLE_CONEFLOWER = PlacedFeatureRegistry.createKey("purple_coneflower");
-    public static final ResourceKey<PlacedFeature> SAKURA_FLOWERS = PlacedFeatureRegistry.createKey("sakura_flowers");
+    public static final ResourceKey<PlacedFeature> MAGNOLIA_FLOWERS = PlacedFeatureRegistry.createKey("magnolia_flowers");
     public static final ResourceKey<PlacedFeature> CLOVER = PlacedFeatureRegistry.createKey("clover");
     //MULTIFACE FLOWERS
-    public static final ResourceKey<PlacedFeature> RED_SAKURA_FLOWERS = PlacedFeatureRegistry.createKey("red_sakura_flowers");
-    public static final ResourceKey<PlacedFeature> PINK_SAKURA_FLOWERS = PlacedFeatureRegistry.createKey("pink_sakura_flowers");
-    public static final ResourceKey<PlacedFeature> WHITE_SAKURA_FLOWERS = PlacedFeatureRegistry.createKey("white_sakura_flowers");
+    public static final ResourceKey<PlacedFeature> PINK_MAGNOLIA_FLOWERS = PlacedFeatureRegistry.createKey("pink_magnolia_flowers");
+    public static final ResourceKey<PlacedFeature> WHITE_MAGNOLIA_FLOWERS = PlacedFeatureRegistry.createKey("white_magnolia_flowers");
     //FOOD_PLANTS
     public static final ResourceKey<PlacedFeature> RARE_SALMONBERRY_BUSH = PlacedFeatureRegistry.createKey("rare_salmonberry_bush");
     public static final ResourceKey<PlacedFeature> COMMON_SALMONBERRY_BUSH = PlacedFeatureRegistry.createKey("common_salmonberry_bush");
@@ -102,10 +101,9 @@ public class RuVegetationPlacements {
     public static final ResourceKey<PlacedFeature> BAOBAB_SHRUB = PlacedFeatureRegistry.createKey("baobab_shrub");
     public static final ResourceKey<PlacedFeature> BIRCH_SHRUB = PlacedFeatureRegistry.createKey("birch_shrub");
     public static final ResourceKey<PlacedFeature> BLACKWOOD_SHRUB = PlacedFeatureRegistry.createKey("blackwood_shrub");
-    public static final ResourceKey<PlacedFeature> SAKURA_SHRUB = PlacedFeatureRegistry.createKey("sakura_shrub");
-    public static final ResourceKey<PlacedFeature> RED_SAKURA_SHRUB = PlacedFeatureRegistry.createKey("red_sakura_shrub");
-    public static final ResourceKey<PlacedFeature> PINK_SAKURA_SHRUB = PlacedFeatureRegistry.createKey("pink_sakura_shrub");
-    public static final ResourceKey<PlacedFeature> WHITE_SAKURA_SHRUB = PlacedFeatureRegistry.createKey("white_sakura_shrub");
+    public static final ResourceKey<PlacedFeature> MAGNOLIA_SHRUB = PlacedFeatureRegistry.createKey("magnolia_shrub");
+    public static final ResourceKey<PlacedFeature> PINK_MAGNOLIA_SHRUB = PlacedFeatureRegistry.createKey("pink_magnolia_shrub");
+    public static final ResourceKey<PlacedFeature> WHITE_MAGNOLIA_SHRUB = PlacedFeatureRegistry.createKey("white_magnolia_shrub");
     public static final ResourceKey<PlacedFeature> CYPRESS_SHRUB = PlacedFeatureRegistry.createKey("cypress_shrub");
     public static final ResourceKey<PlacedFeature> DARK_OAK_SHRUB = PlacedFeatureRegistry.createKey("dark_oak_shrub");
     public static final ResourceKey<PlacedFeature> DEAD_SHRUB = PlacedFeatureRegistry.createKey("dead_shrub");
@@ -132,7 +130,7 @@ public class RuVegetationPlacements {
     public static final ResourceKey<PlacedFeature> AUTUMNAL_SHRUB_MIX = PlacedFeatureRegistry.createKey("autumnal_shrub_mix");
     public static final ResourceKey<PlacedFeature> BIRCH_SHRUB_MIX = PlacedFeatureRegistry.createKey("birch_shrub_mix");
     public static final ResourceKey<PlacedFeature> BLACKWOOD_DARK_OAK_SHRUB_MIX = PlacedFeatureRegistry.createKey("blackwood_dark_oak_shrub_mix");
-    public static final ResourceKey<PlacedFeature> SAKURA_SHRUB_MIX = PlacedFeatureRegistry.createKey("sakura_shrub_mix");
+    public static final ResourceKey<PlacedFeature> MAGNOLIA_SHRUB_MIX = PlacedFeatureRegistry.createKey("magnolia_shrub_mix");
     public static final ResourceKey<PlacedFeature> DEAD_SHRUB_MIX = PlacedFeatureRegistry.createKey("dead_shrub_mix");
     public static final ResourceKey<PlacedFeature> LARCH_SHRUB_MIX = PlacedFeatureRegistry.createKey("larch_shrub_mix");
     public static final ResourceKey<PlacedFeature> GOLDEN_LARCH_SHRUB_MIX = PlacedFeatureRegistry.createKey("golden_larch_shrub_mix");
@@ -195,7 +193,7 @@ public class RuVegetationPlacements {
 
         final Holder<ConfiguredFeature<?, ?>> ORANGE_CONEFLOWER = featureGetter.getOrThrow(RuVegetationFeatures.PATCH_ORANGE_CONEFLOWER);
         final Holder<ConfiguredFeature<?, ?>> PURPLE_CONEFLOWER = featureGetter.getOrThrow(RuVegetationFeatures.PATCH_PURPLE_CONEFLOWER);
-        final Holder<ConfiguredFeature<?, ?>> SAKURA_FLOWERS = featureGetter.getOrThrow(RuVegetationFeatures.PATCH_SAKURA_FLOWERS);
+        final Holder<ConfiguredFeature<?, ?>> MAGNOLIA_FLOWERS = featureGetter.getOrThrow(RuVegetationFeatures.PATCH_MAGNOLIA_FLOWERS);
         final Holder<ConfiguredFeature<?, ?>> CLOVER = featureGetter.getOrThrow(RuVegetationFeatures.PATCH_CLOVER);
         //MULTIFACE FLOWERS
         final Holder<ConfiguredFeature<?, ?>> MAPLE_LEAF_PILE = featureGetter.getOrThrow(RuVegetationFeatures.PATCH_MAPLE_LEAF_PILE);
@@ -203,9 +201,8 @@ public class RuVegetationPlacements {
         final Holder<ConfiguredFeature<?, ?>> ORANGE_MAPLE_LEAF_PILE = featureGetter.getOrThrow(RuVegetationFeatures.PATCH_ORANGE_MAPLE_LEAF_PILE);
         final Holder<ConfiguredFeature<?, ?>> SILVER_BIRCH_LEAF_PILE = featureGetter.getOrThrow(RuVegetationFeatures.PATCH_SILVER_BIRCH_LEAF_PILE);
         final Holder<ConfiguredFeature<?, ?>> ENCHANTED_BIRCH_LEAF_PILE = featureGetter.getOrThrow(RuVegetationFeatures.PATCH_ENCHANTED_BIRCH_LEAF_PILE);
-        final Holder<ConfiguredFeature<?, ?>> RED_SAKURA_FLOWERS = featureGetter.getOrThrow(RuVegetationFeatures.RED_SAKURA_FLOWERS);
-        final Holder<ConfiguredFeature<?, ?>> PINK_SAKURA_FLOWERS = featureGetter.getOrThrow(RuVegetationFeatures.PINK_SAKURA_FLOWERS);
-        final Holder<ConfiguredFeature<?, ?>> WHITE_SAKURA_FLOWERS = featureGetter.getOrThrow(RuVegetationFeatures.WHITE_SAKURA_FLOWERS);
+        final Holder<ConfiguredFeature<?, ?>> PINK_MAGNOLIA_FLOWERS = featureGetter.getOrThrow(RuVegetationFeatures.PINK_MAGNOLIA_FLOWERS);
+        final Holder<ConfiguredFeature<?, ?>> WHITE_MAGNOLIA_FLOWERS = featureGetter.getOrThrow(RuVegetationFeatures.WHITE_MAGNOLIA_FLOWERS);
         //FOOD_PLANTS
         final Holder<ConfiguredFeature<?, ?>> SALMONBERRY_BUSH = featureGetter.getOrThrow(RuVegetationFeatures.PATCH_SALMONBERRY_BUSH);
         final Holder<ConfiguredFeature<?, ?>> DUSKMELON = featureGetter.getOrThrow(RuVegetationFeatures.DUSKMELON);
@@ -224,10 +221,9 @@ public class RuVegetationPlacements {
         final Holder<ConfiguredFeature<?, ?>> BAOBAB_SHRUB = featureGetter.getOrThrow(RuVegetationFeatures.BAOBAB_SHRUB);
         final Holder<ConfiguredFeature<?, ?>> BIRCH_SHRUB =  featureGetter.getOrThrow(RuVegetationFeatures.BIRCH_SHRUB);
         final Holder<ConfiguredFeature<?, ?>> BLACKWOOD_SHRUB = featureGetter.getOrThrow(RuVegetationFeatures.BLACKWOOD_SHRUB);
-        final Holder<ConfiguredFeature<?, ?>> SAKURA_SHRUB = featureGetter.getOrThrow(RuVegetationFeatures.SAKURA_SHRUB);
-        final Holder<ConfiguredFeature<?, ?>> RED_SAKURA_SHRUB = featureGetter.getOrThrow(RuVegetationFeatures.RED_SAKURA_SHRUB);
-        final Holder<ConfiguredFeature<?, ?>> PINK_SAKURA_SHRUB = featureGetter.getOrThrow(RuVegetationFeatures.PINK_SAKURA_SHRUB);
-        final Holder<ConfiguredFeature<?, ?>> WHITE_SAKURA_SHRUB = featureGetter.getOrThrow(RuVegetationFeatures.WHITE_SAKURA_SHRUB);
+        final Holder<ConfiguredFeature<?, ?>> MAGNOLIA_SHRUB = featureGetter.getOrThrow(RuVegetationFeatures.MAGNOLIA_SHRUB);
+        final Holder<ConfiguredFeature<?, ?>> PINK_MAGNOLIA_SHRUB = featureGetter.getOrThrow(RuVegetationFeatures.PINK_MAGNOLIA_SHRUB);
+        final Holder<ConfiguredFeature<?, ?>> WHITE_MAGNOLIA_SHRUB = featureGetter.getOrThrow(RuVegetationFeatures.WHITE_MAGNOLIA_SHRUB);
         final Holder<ConfiguredFeature<?, ?>> CYPRESS_SHRUB = featureGetter.getOrThrow(RuVegetationFeatures.CYPRESS_SHRUB);
         final Holder<ConfiguredFeature<?, ?>> DARK_OAK_SHRUB = featureGetter.getOrThrow(RuVegetationFeatures.DARK_OAK_SHRUB);
         final Holder<ConfiguredFeature<?, ?>> DEAD_SHRUB = featureGetter.getOrThrow(RuVegetationFeatures.DEAD_SHRUB);
@@ -254,7 +250,7 @@ public class RuVegetationPlacements {
         final Holder<ConfiguredFeature<?, ?>> AUTUMNAL_SHRUB_MIX = featureGetter.getOrThrow(RuVegetationFeatures.AUTUMNAL_SHRUB_MIX);
         final Holder<ConfiguredFeature<?, ?>> BIRCH_SHRUB_MIX = featureGetter.getOrThrow(RuVegetationFeatures.BIRCH_SHRUB_MIX);
         final Holder<ConfiguredFeature<?, ?>> BLACKWOOD_DARK_OAK_SHRUB_MIX = featureGetter.getOrThrow(RuVegetationFeatures.BLACKWOOD_DARK_OAK_SHRUB_MIX);
-        final Holder<ConfiguredFeature<?, ?>> SAKURA_SHRUB_MIX = featureGetter.getOrThrow(RuVegetationFeatures.SAKURA_SHRUB_MIX);
+        final Holder<ConfiguredFeature<?, ?>> MAGNOLIA_SHRUB_MIX = featureGetter.getOrThrow(RuVegetationFeatures.MAGNOLIA_SHRUB_MIX);
         final Holder<ConfiguredFeature<?, ?>> DEAD_SHRUB_MIX = featureGetter.getOrThrow(RuVegetationFeatures.DEAD_SHRUB_MIX);
         final Holder<ConfiguredFeature<?, ?>> LARCH_SHRUB_MIX = featureGetter.getOrThrow(RuVegetationFeatures.LARCH_SHRUB_MIX);
         final Holder<ConfiguredFeature<?, ?>> GOLDEN_LARCH_SHRUB_MIX = featureGetter.getOrThrow(RuVegetationFeatures.GOLDEN_LARCH_SHRUB_MIX);
@@ -324,12 +320,11 @@ public class RuVegetationPlacements {
         register(context, RuVegetationPlacements.ORANGE_CONEFLOWER, ORANGE_CONEFLOWER, NoiseThresholdCountPlacement.of(-0.8D, 5, 10), RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         register(context, RuVegetationPlacements.SPARSE_ORANGE_CONEFLOWER, ORANGE_CONEFLOWER, NoiseThresholdCountPlacement.of(-0.8D, 5, 10), RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         register(context, RuVegetationPlacements.PURPLE_CONEFLOWER, PURPLE_CONEFLOWER, NoiseThresholdCountPlacement.of(-0.8D, 5, 10), RarityFilter.onAverageOnceEvery(12), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
-        register(context, RuVegetationPlacements.SAKURA_FLOWERS, SAKURA_FLOWERS, NoiseThresholdCountPlacement.of(-0.8D, 5, 10), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(context, RuVegetationPlacements.MAGNOLIA_FLOWERS, MAGNOLIA_FLOWERS, NoiseThresholdCountPlacement.of(-0.8D, 5, 10), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         register(context, RuVegetationPlacements.CLOVER, CLOVER, NoiseThresholdCountPlacement.of(-0.8D, 5, 12), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         //MULTIFACE FLOWERS
-        register(context, RuVegetationPlacements.RED_SAKURA_FLOWERS, RED_SAKURA_FLOWERS, CountPlacement.of(15), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome());
-        register(context, RuVegetationPlacements.PINK_SAKURA_FLOWERS, PINK_SAKURA_FLOWERS, CountPlacement.of(15), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome());
-        register(context, RuVegetationPlacements.WHITE_SAKURA_FLOWERS, WHITE_SAKURA_FLOWERS, CountPlacement.of(15), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome());
+        register(context, RuVegetationPlacements.PINK_MAGNOLIA_FLOWERS, PINK_MAGNOLIA_FLOWERS, CountPlacement.of(15), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome());
+        register(context, RuVegetationPlacements.WHITE_MAGNOLIA_FLOWERS, WHITE_MAGNOLIA_FLOWERS, CountPlacement.of(15), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome());
         //FOOD_PLANTS
         register(context, RuVegetationPlacements.RARE_SALMONBERRY_BUSH, SALMONBERRY_BUSH, RarityFilter.onAverageOnceEvery(64), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
         register(context, RuVegetationPlacements.COMMON_SALMONBERRY_BUSH, SALMONBERRY_BUSH, RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
@@ -343,17 +338,16 @@ public class RuVegetationPlacements {
         register(context, RuVegetationPlacements.GIANT_LILY, GIANT_LILY, CountPlacement.of(3), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
         register(context, RuVegetationPlacements.ELEPHANT_EAR_SPARSE, ELEPHANT_EAR, CountPlacement.of(4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
         register(context, RuVegetationPlacements.ELEPHANT_EAR_DENSE, ELEPHANT_EAR, CountPlacement.of(10), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
-        register(context, RuVegetationPlacements.DROPLEAF, DROPLEAF, CountOnEveryLayerPlacement.of(255), InSquarePlacement.spread(), PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT, BiomeFilter.biome());
+        register(context, RuVegetationPlacements.DROPLEAF, DROPLEAF, CountOnEveryLayerPlacement.of(255), PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT, BiomeFilter.biome());
         //SHRUBS
         register(context, RuVegetationPlacements.ASHEN_SHRUB, ASHEN_SHRUB, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome());
         register(context, RuVegetationPlacements.ACACIA_SHRUB, ACACIA_SHRUB, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome());
         register(context, RuVegetationPlacements.BAOBAB_SHRUB, BAOBAB_SHRUB, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome());
         register(context, RuVegetationPlacements.BIRCH_SHRUB, BIRCH_SHRUB, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome());
         register(context, RuVegetationPlacements.BLACKWOOD_SHRUB, BLACKWOOD_SHRUB, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome());
-        register(context, RuVegetationPlacements.SAKURA_SHRUB, SAKURA_SHRUB, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome());
-        register(context, RuVegetationPlacements.RED_SAKURA_SHRUB, RED_SAKURA_SHRUB, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome());
-        register(context, RuVegetationPlacements.PINK_SAKURA_SHRUB, PINK_SAKURA_SHRUB, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome());
-        register(context, RuVegetationPlacements.WHITE_SAKURA_SHRUB, WHITE_SAKURA_SHRUB, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome());
+        register(context, RuVegetationPlacements.MAGNOLIA_SHRUB, MAGNOLIA_SHRUB, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome());
+        register(context, RuVegetationPlacements.PINK_MAGNOLIA_SHRUB, PINK_MAGNOLIA_SHRUB, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome());
+        register(context, RuVegetationPlacements.WHITE_MAGNOLIA_SHRUB, WHITE_MAGNOLIA_SHRUB, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome());
         register(context, RuVegetationPlacements.CYPRESS_SHRUB, CYPRESS_SHRUB, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome());
         register(context, RuVegetationPlacements.DARK_OAK_SHRUB, DARK_OAK_SHRUB, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome());
         register(context, RuVegetationPlacements.DEAD_SHRUB, DEAD_SHRUB, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome());
@@ -380,7 +374,7 @@ public class RuVegetationPlacements {
         register(context, RuVegetationPlacements.AUTUMNAL_SHRUB_MIX, AUTUMNAL_SHRUB_MIX, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome());
         register(context, RuVegetationPlacements.BIRCH_SHRUB_MIX, BIRCH_SHRUB_MIX, CountPlacement.of(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome());
         register(context, RuVegetationPlacements.BLACKWOOD_DARK_OAK_SHRUB_MIX, BLACKWOOD_DARK_OAK_SHRUB_MIX, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome());
-        register(context, RuVegetationPlacements.SAKURA_SHRUB_MIX, SAKURA_SHRUB_MIX, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome());
+        register(context, RuVegetationPlacements.MAGNOLIA_SHRUB_MIX, MAGNOLIA_SHRUB_MIX, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome());
         register(context, RuVegetationPlacements.DEAD_SHRUB_MIX, DEAD_SHRUB_MIX, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome());
         register(context, RuVegetationPlacements.LARCH_SHRUB_MIX, LARCH_SHRUB_MIX, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome());
         register(context, RuVegetationPlacements.GOLDEN_LARCH_SHRUB_MIX, GOLDEN_LARCH_SHRUB_MIX, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome());

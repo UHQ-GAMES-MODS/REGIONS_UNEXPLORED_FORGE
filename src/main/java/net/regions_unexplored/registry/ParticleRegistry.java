@@ -46,19 +46,13 @@ public class ParticleRegistry {
             };
         });
 
-        Minecraft.getInstance().particleEngine.register(RuParticleTypes.RED_SAKURA_LEAVES.get(), (p_277215_) -> {
+        Minecraft.getInstance().particleEngine.register(RuParticleTypes.PINK_MAGNOLIA_LEAVES.get(), (p_277215_) -> {
             return (p_277217_, p_277218_, p_277219_, p_277220_, p_277221_, p_277222_, p_277223_, p_277224_) -> {
                 return new LeafParticle(p_277218_, p_277219_, p_277220_, p_277221_, p_277215_);
             };
         });
 
-        Minecraft.getInstance().particleEngine.register(RuParticleTypes.PINK_SAKURA_LEAVES.get(), (p_277215_) -> {
-            return (p_277217_, p_277218_, p_277219_, p_277220_, p_277221_, p_277222_, p_277223_, p_277224_) -> {
-                return new LeafParticle(p_277218_, p_277219_, p_277220_, p_277221_, p_277215_);
-            };
-        });
-
-        Minecraft.getInstance().particleEngine.register(RuParticleTypes.WHITE_SAKURA_LEAVES.get(), (p_277215_) -> {
+        Minecraft.getInstance().particleEngine.register(RuParticleTypes.WHITE_MAGNOLIA_LEAVES.get(), (p_277215_) -> {
             return (p_277217_, p_277218_, p_277219_, p_277220_, p_277221_, p_277222_, p_277223_, p_277224_) -> {
                 return new LeafParticle(p_277218_, p_277219_, p_277220_, p_277221_, p_277215_);
             };

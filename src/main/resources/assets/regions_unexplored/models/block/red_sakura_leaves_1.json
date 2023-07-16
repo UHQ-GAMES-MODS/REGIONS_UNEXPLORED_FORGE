@@ -1,7 +1,0 @@
-{
-  "parent": "block/leaves",
-  "textures": {
-    "all": "regions_unexplored:block/red_sakura_leaves_1",
-    "particle": "regions_unexplored:block/red_sakura_leaves_1"
-  }
-}

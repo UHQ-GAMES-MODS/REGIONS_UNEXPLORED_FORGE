@@ -7,7 +7,7 @@ public class RuWoodTypes {
     public static WoodType BAOBAB = WoodType.register(new WoodType(RegionsUnexploredMod.MOD_ID + ":baobab", RuBlockSetType.BAOBAB));
     public static WoodType BLACKWOOD = WoodType.register(new WoodType(RegionsUnexploredMod.MOD_ID + ":blackwood", RuBlockSetType.BLACKWOOD));
     public static WoodType BRIMWOOD = WoodType.register(new WoodType(RegionsUnexploredMod.MOD_ID + ":brimwood", RuBlockSetType.BRIMWOOD));
-    public static WoodType SAKURA = WoodType.register(new WoodType(RegionsUnexploredMod.MOD_ID + ":sakura", RuBlockSetType.SAKURA));
+    public static WoodType MAGNOLIA = WoodType.register(new WoodType(RegionsUnexploredMod.MOD_ID + ":magnolia", RuBlockSetType.MAGNOLIA));
     public static WoodType CYPRESS = WoodType.register(new WoodType(RegionsUnexploredMod.MOD_ID + ":cypress", RuBlockSetType.CYPRESS));
     public static WoodType DEAD = WoodType.register(new WoodType(RegionsUnexploredMod.MOD_ID + ":dead", RuBlockSetType.DEAD));
     public static WoodType EUCALYPTUS = WoodType.register(new WoodType(RegionsUnexploredMod.MOD_ID + ":eucalyptus", RuBlockSetType.EUCALYPTUS));

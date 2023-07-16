@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/flowerbed_1",
-  "textures": {
-    "flowerbed": "regions_unexplored:block/sakura_petals",
-    "stem": "minecraft:block/pink_petals_stem"
-  },
-  "render_type": "cutout"
-}
