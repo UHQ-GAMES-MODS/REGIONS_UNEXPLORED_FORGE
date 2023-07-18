@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "regions_unexplored:block/tsubaki_top"
+    "layer0": "regions_unexplored:block/tsubaki"
   }
 }

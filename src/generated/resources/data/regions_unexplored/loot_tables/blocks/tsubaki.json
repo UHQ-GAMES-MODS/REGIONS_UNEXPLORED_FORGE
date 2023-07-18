@@ -11,15 +11,6 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "conditions": [
-            {
-              "block": "regions_unexplored:tsubaki",
-              "condition": "minecraft:block_state_property",
-              "properties": {
-                "half": "lower"
-              }
-            }
-          ],
           "name": "regions_unexplored:tsubaki"
         }
       ],

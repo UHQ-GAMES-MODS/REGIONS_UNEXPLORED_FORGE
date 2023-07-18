@@ -114,7 +114,7 @@ public class ForestBiomes {
                 .build();
     }
 
-    public static Biome sakuraGrove(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome magnoliaHighlands(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(0.75F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -130,9 +130,12 @@ public class ForestBiomes {
 
         //add RU features
         RuBiomeDefaultFeatures.sakuraTrees(biomeBuilder);
-        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.TSUBAKI);
+
+        RuBiomeDefaultFeatures.addTsubaki(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.GRASS);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.DAY_LILY);
+
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.MAGNOLIA_SHRUB_MIX);
-        RuBiomeDefaultFeatures.addSakuraFlowers(biomeBuilder);
 
         //add mob spawns
         MobSpawnSettings.Builder spawnBuilder = baseForestSpawning();

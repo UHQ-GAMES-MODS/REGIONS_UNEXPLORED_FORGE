@@ -49,6 +49,7 @@ public class RuVegetationFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_MEADOW_VEGETATION = ConfiguredFeatureRegistry.createKey("patch_meadow_vegetation");
     //GRASS
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_GRASS = ConfiguredFeatureRegistry.createKey("patch_grass");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_SNOW_GRASS = ConfiguredFeatureRegistry.createKey("patch_snow_grass");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_TALL_GRASS = ConfiguredFeatureRegistry.createKey("patch_tall_grass");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_MEDIUM_GRASS = ConfiguredFeatureRegistry.createKey("patch_medium_grass");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_WINDSWEPT_GRASS = ConfiguredFeatureRegistry.createKey("patch_windswept_grass");
@@ -79,9 +80,12 @@ public class RuVegetationFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_SHRUBLAND_FLOWERS = ConfiguredFeatureRegistry.createKey("patch_shrubland_flowers");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_POPPIES = ConfiguredFeatureRegistry.createKey("patch_poppies");
     public static final ResourceKey<ConfiguredFeature<?, ?>> TASSEL = ConfiguredFeatureRegistry.createKey("tassel");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> WHITE_SNOWBELLE = ConfiguredFeatureRegistry.createKey("white_snowbelle");
     public static final ResourceKey<ConfiguredFeature<?, ?>> CORPSE_FLOWER = ConfiguredFeatureRegistry.createKey("corpse_flower");
     public static final ResourceKey<ConfiguredFeature<?, ?>> DUSKTRAP = ConfiguredFeatureRegistry.createKey("dusktrap");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> DAY_LILY = ConfiguredFeatureRegistry.createKey("day_lily");
     public static final ResourceKey<ConfiguredFeature<?, ?>> TSUBAKI = ConfiguredFeatureRegistry.createKey("tsubaki");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BLEEDING_HEART = ConfiguredFeatureRegistry.createKey("bleeding_heart");
     public static final ResourceKey<ConfiguredFeature<?, ?>> BARLEY = ConfiguredFeatureRegistry.createKey("barley");
     public static final ResourceKey<ConfiguredFeature<?, ?>> MEADOW_SAGE = ConfiguredFeatureRegistry.createKey("meadow_sage");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_REDSTONE_BULB = ConfiguredFeatureRegistry.createKey("patch_redstone_bulb");
@@ -199,6 +203,7 @@ public class RuVegetationFeatures {
         register(context, PATCH_MEADOW_VEGETATION, Feature.FLOWER, new RandomPatchConfiguration(96, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(RuBlocks.HYSSOP.get().defaultBlockState(), 20).add(RuBlocks.FIREWEED.get().defaultBlockState(), 15).add(RuBlocks.DAISY.get().defaultBlockState(), 10).add(Blocks.GRASS.defaultBlockState(), 40))))));
         //GRASS
         register(context, PATCH_GRASS, Feature.RANDOM_PATCH, grassPatch(BlockStateProvider.simple(Blocks.GRASS.defaultBlockState()), 32));
+        register(context, PATCH_SNOW_GRASS, Feature.RANDOM_PATCH, grassPatch(BlockStateProvider.simple(RuBlocks.FROZEN_GRASS.get().defaultBlockState()), 32));
         register(context, PATCH_TALL_GRASS, Feature.RANDOM_PATCH, grassPatch(BlockStateProvider.simple(Blocks.TALL_GRASS.defaultBlockState()), 32));
         register(context, PATCH_MEDIUM_GRASS, Feature.RANDOM_PATCH, grassPatch(BlockStateProvider.simple(RuBlocks.MEDIUM_GRASS.get().defaultBlockState()), 32));
         register(context, PATCH_WINDSWEPT_GRASS, Feature.RANDOM_PATCH, grassPatch(BlockStateProvider.simple(RuBlocks.WINDSWEPT_GRASS.get().defaultBlockState()), 32));
@@ -229,9 +234,12 @@ public class RuVegetationFeatures {
         register(context, PATCH_SHRUBLAND_FLOWERS, Feature.RANDOM_PATCH, new RandomPatchConfiguration(32, 4, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(RuBlocks.RED_LUPINE.get().defaultBlockState(), 1).add(RuBlocks.BLUE_LUPINE.get().defaultBlockState(), 1))))));
         register(context, PATCH_POPPIES, Feature.FLOWER, new RandomPatchConfiguration(96, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new NoiseProvider(2345L, new NormalNoise.NoiseParameters(0, 1.0D), 0.075F, List.of(RuBlocks.POPPY_BUSH.get().defaultBlockState(), RuBlocks.SALMON_POPPY_BUSH.get().defaultBlockState()))))));
         register(context, TASSEL, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(RuBlocks.TASSEL.get())));
+        register(context, WHITE_SNOWBELLE, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(RuBlocks.WHITE_SNOWBELLE.get())));
         register(context, CORPSE_FLOWER, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(RuBlocks.CORPSE_FLOWER.get())));
         register(context, DUSKTRAP, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(RuBlocks.DUSKTRAP.get())));
-        register(context, TSUBAKI, Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(RuBlocks.TSUBAKI.get()))));
+        register(context, DAY_LILY, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(RuBlocks.DAY_LILY.get())));
+        register(context, TSUBAKI, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(RuBlocks.TSUBAKI.get())));
+        register(context, BLEEDING_HEART, Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(RuBlocks.BLEEDING_HEART.get()))));
         register(context, BARLEY, Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(RuBlocks.BARLEY.get()))));
         register(context, MEADOW_SAGE, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(RuBlocks.MEADOW_SAGE.get())));
         register(context, PATCH_REDSTONE_BULB, Feature.RANDOM_PATCH, grassPatch(BlockStateProvider.simple(RuBlocks.REDSTONE_BULB.get().defaultBlockState()), 64));

@@ -28,6 +28,7 @@ public class RuVegetationPlacements {
     public static final ResourceKey<PlacedFeature> CAVE_GRASS = PlacedFeatureRegistry.createKey("cave_grass");
     public static final ResourceKey<PlacedFeature> TALL_GRASS = PlacedFeatureRegistry.createKey("tall_grass");
     public static final ResourceKey<PlacedFeature> CAVE_TALL_GRASS = PlacedFeatureRegistry.createKey("cave_tall_grass");
+    public static final ResourceKey<PlacedFeature> SNOW_GRASS = PlacedFeatureRegistry.createKey("snow_grass");
     public static final ResourceKey<PlacedFeature> MEDIUM_GRASS = PlacedFeatureRegistry.createKey("medium_grass");
     public static final ResourceKey<PlacedFeature> WINDSWEPT_GRASS = PlacedFeatureRegistry.createKey("windswept_grass");
     public static final ResourceKey<PlacedFeature> STONE_BUD_DENSE = PlacedFeatureRegistry.createKey("stone_bud_dense");
@@ -61,7 +62,10 @@ public class RuVegetationPlacements {
     public static final ResourceKey<PlacedFeature> TASSEL_DENSE = PlacedFeatureRegistry.createKey("tassel_dense");
     public static final ResourceKey<PlacedFeature> CORPSE_FLOWER = PlacedFeatureRegistry.createKey("corpse_flower");
     public static final ResourceKey<PlacedFeature> DUSKTRAP = PlacedFeatureRegistry.createKey("dusktrap");
+    public static final ResourceKey<PlacedFeature> DAY_LILY = PlacedFeatureRegistry.createKey("day_lily");
     public static final ResourceKey<PlacedFeature> TSUBAKI = PlacedFeatureRegistry.createKey("tsubaki");
+    public static final ResourceKey<PlacedFeature> BLEEDING_HEART = PlacedFeatureRegistry.createKey("bleeding_heart");
+    public static final ResourceKey<PlacedFeature> SNOWBELLE = PlacedFeatureRegistry.createKey("snowbelle");
     public static final ResourceKey<PlacedFeature> BARLEY_SPARSE = PlacedFeatureRegistry.createKey("barley_sparse");
     public static final ResourceKey<PlacedFeature> BARLEY_DENSE = PlacedFeatureRegistry.createKey("barley_dense");
     public static final ResourceKey<PlacedFeature> MEADOW_SAGE = PlacedFeatureRegistry.createKey("meadow_sage");
@@ -154,6 +158,7 @@ public class RuVegetationPlacements {
         final Holder<ConfiguredFeature<?, ?>> MEADOW_VEGETATION = featureGetter.getOrThrow(RuVegetationFeatures.PATCH_MEADOW_VEGETATION);
         //GRASS
         final Holder<ConfiguredFeature<?, ?>> MEDIUM_GRASS = featureGetter.getOrThrow(RuVegetationFeatures.PATCH_MEDIUM_GRASS);
+        final Holder<ConfiguredFeature<?, ?>> SNOW_GRASS = featureGetter.getOrThrow(RuVegetationFeatures.PATCH_SNOW_GRASS);
         final Holder<ConfiguredFeature<?, ?>> GRASS = featureGetter.getOrThrow(RuVegetationFeatures.PATCH_GRASS);
         final Holder<ConfiguredFeature<?, ?>> TALL_GRASS = featureGetter.getOrThrow(RuVegetationFeatures.PATCH_TALL_GRASS);
         final Holder<ConfiguredFeature<?, ?>> WINDSWEPT_GRASS = featureGetter.getOrThrow(RuVegetationFeatures.PATCH_WINDSWEPT_GRASS);
@@ -184,9 +189,12 @@ public class RuVegetationPlacements {
         final Holder<ConfiguredFeature<?, ?>> SHRUBLAND_FLOWERS = featureGetter.getOrThrow(RuVegetationFeatures.PATCH_SHRUBLAND_FLOWERS);
         final Holder<ConfiguredFeature<?, ?>> POPPIES = featureGetter.getOrThrow(RuVegetationFeatures.PATCH_POPPIES);
         final Holder<ConfiguredFeature<?, ?>> TASSEL = featureGetter.getOrThrow(RuVegetationFeatures.TASSEL);
+        final Holder<ConfiguredFeature<?, ?>> SNOWBELLE = featureGetter.getOrThrow(RuVegetationFeatures.WHITE_SNOWBELLE);
         final Holder<ConfiguredFeature<?, ?>> CORPSE_FLOWER = featureGetter.getOrThrow(RuVegetationFeatures.CORPSE_FLOWER);
         final Holder<ConfiguredFeature<?, ?>> DUSKTRAP = featureGetter.getOrThrow(RuVegetationFeatures.DUSKTRAP);
+        final Holder<ConfiguredFeature<?, ?>> DAY_LILY = featureGetter.getOrThrow(RuVegetationFeatures.DAY_LILY);
         final Holder<ConfiguredFeature<?, ?>> TSUBAKI = featureGetter.getOrThrow(RuVegetationFeatures.TSUBAKI);
+        final Holder<ConfiguredFeature<?, ?>> BLEEDING_HEART = featureGetter.getOrThrow(RuVegetationFeatures.BLEEDING_HEART);
         final Holder<ConfiguredFeature<?, ?>> BARLEY = featureGetter.getOrThrow(RuVegetationFeatures.BARLEY);
         final Holder<ConfiguredFeature<?, ?>> MEADOW_SAGE = featureGetter.getOrThrow(RuVegetationFeatures.MEADOW_SAGE);
         final Holder<ConfiguredFeature<?, ?>> REDSTONE_BULB = featureGetter.getOrThrow(RuVegetationFeatures.PATCH_REDSTONE_BULB);
@@ -274,6 +282,7 @@ public class RuVegetationPlacements {
         register(context, RuVegetationPlacements.TALL_GRASS, TALL_GRASS, List.of(NoiseThresholdCountPlacement.of(-0.8D, 5, 7), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
         register(context, RuVegetationPlacements.CAVE_TALL_GRASS, TALL_GRASS, List.of(CountOnEveryLayerPlacement.of(15), BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_PREDICATE), BiomeFilter.biome()));
         register(context, RuVegetationPlacements.MEDIUM_GRASS, MEDIUM_GRASS, List.of(NoiseThresholdCountPlacement.of(-0.8D, 5, 7), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
+        register(context, RuVegetationPlacements.SNOW_GRASS, SNOW_GRASS, List.of(NoiseThresholdCountPlacement.of(-0.8D, 5, 7), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
         register(context, RuVegetationPlacements.WINDSWEPT_GRASS, WINDSWEPT_GRASS, List.of(NoiseThresholdCountPlacement.of(-0.8D, 5, 6), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
         register(context, RuVegetationPlacements.STONE_BUD_DENSE, STONE_BUD, List.of(NoiseThresholdCountPlacement.of(-0.8D, 5, 12), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
         register(context, RuVegetationPlacements.STONE_BUD_SPARSE, STONE_BUD, List.of(NoiseThresholdCountPlacement.of(-0.8D, 5, 4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
@@ -303,9 +312,12 @@ public class RuVegetationPlacements {
         register(context, RuVegetationPlacements.POPPIES, POPPIES, NoiseThresholdCountPlacement.of(-0.8D, 5, 14), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         register(context, RuVegetationPlacements.TASSEL_SPARSE, TASSEL, CountPlacement.of(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         register(context, RuVegetationPlacements.TASSEL_DENSE, TASSEL, CountPlacement.of(8), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(context, RuVegetationPlacements.SNOWBELLE, SNOWBELLE, CountPlacement.of(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         register(context, RuVegetationPlacements.CORPSE_FLOWER, CORPSE_FLOWER, CountOnEveryLayerPlacement.of(10), BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_PREDICATE), BiomeFilter.biome());
         register(context, RuVegetationPlacements.DUSKTRAP, DUSKTRAP, CountOnEveryLayerPlacement.of(4), BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_PREDICATE), BiomeFilter.biome());
-        register(context, RuVegetationPlacements.TSUBAKI, TSUBAKI, RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, CountPlacement.of(ClampedInt.of(UniformInt.of(-3, 1), 0, 1)), BiomeFilter.biome());
+        register(context, RuVegetationPlacements.DAY_LILY, DAY_LILY, CountPlacement.of(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(context, RuVegetationPlacements.TSUBAKI, TSUBAKI, CountPlacement.of(4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(context, RuVegetationPlacements.BLEEDING_HEART, BLEEDING_HEART, RarityFilter.onAverageOnceEvery(12), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         register(context, RuVegetationPlacements.BARLEY_SPARSE, BARLEY, RarityFilter.onAverageOnceEvery(4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, CountPlacement.of(ClampedInt.of(UniformInt.of(-3, 1), 0, 1)), BiomeFilter.biome());
         register(context, RuVegetationPlacements.BARLEY_DENSE, BARLEY, NoiseBasedCountPlacement.of(155, 75.0D, 0.0D), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BlockPredicateFilter.forPredicate(PlacedFeatureRegistry.onGrassBlockPredicate), BiomeFilter.biome());
         register(context, RuVegetationPlacements.MEADOW_SAGE, MEADOW_SAGE, RarityFilter.onAverageOnceEvery(4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());

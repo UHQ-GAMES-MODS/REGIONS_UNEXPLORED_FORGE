@@ -63,6 +63,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
 
         oneToOneConversionRecipe(consumer, Items.YELLOW_DYE, RuBlocks.ALPHA_DANDELION.get(), "yellow_dye");
         oneToOneConversionRecipe(consumer, Items.RED_DYE, RuBlocks.ALPHA_ROSE.get(), "red_dye");
+        oneToOneConversionRecipe(consumer, Items.MAGENTA_DYE, RuBlocks.BLEEDING_HEART.get(), "magenta_dye");
         oneToOneConversionRecipe(consumer, Items.BLUE_DYE, RuBlocks.BLUE_LUPINE.get(), "blue_dye");
         oneToOneConversionRecipe(consumer, Items.LIGHT_GRAY_DYE, RuBlocks.DAISY.get(), "light_gray_dye");
         oneToOneConversionRecipe(consumer, Items.BLACK_DYE, RuBlocks.DORCEL.get(), "black_dye");
@@ -78,6 +79,41 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         oneToOneConversionRecipe(consumer, Items.WHITE_DYE, RuBlocks.WHITE_TRILLIUM.get(), "white_dye");
         oneToOneConversionRecipe(consumer, Items.BROWN_DYE, RuBlocks.WILTING_TRILLIUM.get(), "brown_dye");
         oneToOneConversionRecipe(consumer, Items.YELLOW_DYE, RuBlocks.YELLOW_LUPINE.get(), "yellow_dye");
+        oneToOneConversionRecipe(consumer, Items.RED_DYE, RuBlocks.TSUBAKI.get(), "red_dye");
+
+        //SNOWBELLE
+        oneToOneConversionRecipe(consumer, Items.RED_DYE, RuBlocks.RED_SNOWBELLE.get(), "red_dye");
+        snowbelle(consumer, RuBlocks.RED_SNOWBELLE.get(), TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dyes/red")));
+        oneToOneConversionRecipe(consumer, Items.ORANGE_DYE, RuBlocks.ORANGE_SNOWBELLE.get(), "orange_dye");
+        snowbelle(consumer, RuBlocks.ORANGE_SNOWBELLE.get(), TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dyes/orange")));
+        oneToOneConversionRecipe(consumer, Items.YELLOW_DYE, RuBlocks.YELLOW_SNOWBELLE.get(), "yellow_dye");
+        snowbelle(consumer, RuBlocks.YELLOW_SNOWBELLE.get(), TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dyes/yellow")));
+        oneToOneConversionRecipe(consumer, Items.LIME_DYE, RuBlocks.LIME_SNOWBELLE.get(), "lime_dye");
+        snowbelle(consumer, RuBlocks.LIME_SNOWBELLE.get(), TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dyes/lime")));
+        oneToOneConversionRecipe(consumer, Items.GREEN_DYE, RuBlocks.GREEN_SNOWBELLE.get(), "green_dye");
+        snowbelle(consumer, RuBlocks.GREEN_SNOWBELLE.get(), TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dyes/green")));
+        oneToOneConversionRecipe(consumer, Items.CYAN_DYE, RuBlocks.CYAN_SNOWBELLE.get(), "cyan_dye");
+        snowbelle(consumer, RuBlocks.CYAN_SNOWBELLE.get(), TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dyes/cyan")));
+        oneToOneConversionRecipe(consumer, Items.LIGHT_BLUE_DYE, RuBlocks.LIGHT_BLUE_SNOWBELLE.get(), "light_blue_dye");
+        snowbelle(consumer, RuBlocks.LIGHT_BLUE_SNOWBELLE.get(), TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dyes/light_blue")));
+        oneToOneConversionRecipe(consumer, Items.BLUE_DYE, RuBlocks.BLUE_SNOWBELLE.get(), "blue_dye");
+        snowbelle(consumer, RuBlocks.BLUE_SNOWBELLE.get(), TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dyes/blue")));
+        oneToOneConversionRecipe(consumer, Items.PURPLE_DYE, RuBlocks.PURPLE_SNOWBELLE.get(), "purple_dye");
+        snowbelle(consumer, RuBlocks.PURPLE_SNOWBELLE.get(), TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dyes/purple")));
+        oneToOneConversionRecipe(consumer, Items.MAGENTA_DYE, RuBlocks.MAGENTA_SNOWBELLE.get(), "magenta_dye");
+        snowbelle(consumer, RuBlocks.MAGENTA_SNOWBELLE.get(), TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dyes/magenta")));
+        oneToOneConversionRecipe(consumer, Items.PINK_DYE, RuBlocks.PINK_SNOWBELLE.get(), "pink_dye");
+        snowbelle(consumer, RuBlocks.PINK_SNOWBELLE.get(), TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dyes/pink")));
+        oneToOneConversionRecipe(consumer, Items.BROWN_DYE, RuBlocks.BROWN_SNOWBELLE.get(), "brown_dye");
+        snowbelle(consumer, RuBlocks.BROWN_SNOWBELLE.get(), TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dyes/brown")));
+        oneToOneConversionRecipe(consumer, Items.WHITE_DYE, RuBlocks.WHITE_SNOWBELLE.get(), "white_dye");
+        snowbelle(consumer, RuBlocks.WHITE_SNOWBELLE.get(), TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dyes/white")));
+        oneToOneConversionRecipe(consumer, Items.LIGHT_GRAY_DYE, RuBlocks.LIGHT_GRAY_SNOWBELLE.get(), "light_gray_dye");
+        snowbelle(consumer, RuBlocks.LIGHT_GRAY_SNOWBELLE.get(), TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dyes/light_gray")));
+        oneToOneConversionRecipe(consumer, Items.GRAY_DYE, RuBlocks.GRAY_SNOWBELLE.get(), "gray_dye");
+        snowbelle(consumer, RuBlocks.GRAY_SNOWBELLE.get(), TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dyes/gray")));
+        oneToOneConversionRecipe(consumer, Items.BLACK_DYE, RuBlocks.BLACK_SNOWBELLE.get(), "black_dye");
+        snowbelle(consumer, RuBlocks.BLACK_SNOWBELLE.get(), TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dyes/black")));
 
         oneToOneConversionRecipe(consumer, Items.ORANGE_DYE, RuBlocks.ORANGE_CONEFLOWER.get(), "orange_dye");
         oneToOneConversionRecipe(consumer, Items.PURPLE_DYE, RuBlocks.PURPLE_CONEFLOWER.get(), "purple_dye");
@@ -93,7 +129,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         SimpleCookingRecipeBuilder.smoking(Ingredient.of(RuBlocks.BARLEY.get()), RecipeCategory.FOOD, Items.BREAD, 0.35F, 100).unlockedBy("has_barley", has(RuBlocks.BARLEY.get())).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "barley_smoking"));
         oneToOneConversionRecipe(consumer, Items.BROWN_DYE, RuBlocks.CATTAIL.get(), "brown_dye");
         oneToOneConversionRecipe(consumer, Items.LIGHT_GRAY_DYE, RuBlocks.TASSEL.get(), "light_gray_dye");
-        oneToOneConversionRecipe(consumer, Items.ORANGE_DYE, RuBlocks.TSUBAKI.get(), "orange_dye");
+        oneToOneConversionRecipe(consumer, Items.ORANGE_DYE, RuBlocks.DAY_LILY.get(), "orange_dye");
 
         oneToOneConversionRecipe(consumer, Blocks.ACACIA_SAPLING, RuBlocks.ACACIA_SHRUB.get(), "saplings", 2);
         oneToOneConversionRecipe(consumer, Blocks.BIRCH_SAPLING, RuBlocks.BIRCH_SHRUB.get(), "saplings", 2);
@@ -631,6 +667,10 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
 
     protected static void paintedPlanks(Consumer<FinishedRecipe> consumer, ItemLike result, TagKey<Item> dye) {
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, result, 8).define('X', dye).define('#', ItemTags.PLANKS).pattern("###").pattern("#X#").pattern("###").group("painted_planks").unlockedBy("has_planks", has(ItemTags.PLANKS)).save(consumer);
+    }
+
+    protected static void snowbelle(Consumer<FinishedRecipe> consumer, ItemLike result, TagKey<Item> dye) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, result).requires(dye).requires(RuTags.SNOWBELLE_ITEM).group("snowbelle").unlockedBy("has_snowbelle", has(RuTags.SNOWBELLE_ITEM)).save(consumer);
     }
 
     protected static void planksFromOneLog(Consumer<FinishedRecipe> p_259712_, ItemLike p_259052_, ItemLike p_259045_, int i) {

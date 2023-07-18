@@ -40,7 +40,7 @@ public class BiomeRegistry {
         //FOREST
         register(context, RuBiomes.AUTUMNAL_MAPLE_FOREST, ForestBiomes.autumnalMapleForest(featuresGetter, carversGetter));
         register(context, RuBiomes.BAMBOO_FOREST, ForestBiomes.bambooForest(featuresGetter, carversGetter));
-        register(context, RuBiomes.SAKURA_GROVE, ForestBiomes.sakuraGrove(featuresGetter, carversGetter));
+        register(context, RuBiomes.MAGNOLIA_HIGHLANDS, ForestBiomes.magnoliaHighlands(featuresGetter, carversGetter));
         register(context, RuBiomes.DECIDUOUS_FOREST, ForestBiomes.deciduousForest(featuresGetter, carversGetter));
         register(context, RuBiomes.MAPLE_FOREST, ForestBiomes.mapleForest(featuresGetter, carversGetter));
         register(context, RuBiomes.MAUVE_HILLS, ForestBiomes.mauveHills(featuresGetter, carversGetter));
@@ -53,11 +53,10 @@ public class BiomeRegistry {
         register(context, RuBiomes.BLACKWOOD_TAIGA, TaigaBiomes.blackwoodTaiga(featuresGetter, carversGetter));
         register(context, RuBiomes.BOREAL_TAIGA, TaigaBiomes.borealTaiga(featuresGetter, carversGetter));
         register(context, RuBiomes.GOLDEN_BOREAL_TAIGA, TaigaBiomes.goldenBorealTaiga(featuresGetter, carversGetter));
-        register(context, RuBiomes.PINE_FOREST, TaigaBiomes.pineTaiga(featuresGetter, carversGetter));
+        register(context, RuBiomes.PINE_TAIGA, TaigaBiomes.pineTaiga(featuresGetter, carversGetter));
         register(context, RuBiomes.REDWOODS, TaigaBiomes.redwoods(featuresGetter, carversGetter));
         register(context, RuBiomes.SPARSE_REDWOODS, TaigaBiomes.sparseRedwoods(featuresGetter, carversGetter));
         //PLAINS
-        //TODO:rename FLOWER_FIELD(s)
         register(context, RuBiomes.BARLEY_FIELDS, PlainsBiomes.barleyFields(featuresGetter, carversGetter));
         register(context, RuBiomes.FLOWER_FIELDS, PlainsBiomes.flowerFields(featuresGetter, carversGetter));
         register(context, RuBiomes.GRASSLAND, PlainsBiomes.grassland(featuresGetter, carversGetter));
@@ -103,9 +102,9 @@ public class BiomeRegistry {
         register(context, RuBiomes.ASHEN_WOODLAND, AquaticBiomes.ashenWoodland(featuresGetter, carversGetter));
         register(context, RuBiomes.TROPICS, AquaticBiomes.tropics(featuresGetter, carversGetter));
         //FROZEN
-        register(context, RuBiomes.COLD_BOREAL_FOREST, FrozenBiomes.coldBorealForest(featuresGetter, carversGetter));
+        register(context, RuBiomes.COLD_BOREAL_TAIGA, FrozenBiomes.coldBorealTaiga(featuresGetter, carversGetter));
         register(context, RuBiomes.COLD_DECIDUOUS_FOREST, FrozenBiomes.coldDeciduousForest(featuresGetter, carversGetter));
-        register(context, RuBiomes.FROZEN_FOREST, FrozenBiomes.frozenPineTaiga(featuresGetter, carversGetter));
+        register(context, RuBiomes.FROZEN_PINE_TAIGA, FrozenBiomes.frozenPineTaiga(featuresGetter, carversGetter));
         register(context, RuBiomes.FROZEN_TUNDRA, FrozenBiomes.frozenTundra(featuresGetter, carversGetter));
         register(context, RuBiomes.ICY_HEIGHTS, FrozenBiomes.icyHeights(featuresGetter, carversGetter));
         register(context, RuBiomes.SPIRES, FrozenBiomes.spires(featuresGetter, carversGetter));
@@ -134,7 +133,7 @@ public class BiomeRegistry {
         //FOREST
         registerVillagers(RuBiomes.AUTUMNAL_MAPLE_FOREST, VillagerType.PLAINS);
         registerVillagers(RuBiomes.BAMBOO_FOREST, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.SAKURA_GROVE, VillagerType.PLAINS);
+        registerVillagers(RuBiomes.MAGNOLIA_HIGHLANDS, VillagerType.PLAINS);
         registerVillagers(RuBiomes.DECIDUOUS_FOREST, VillagerType.PLAINS);
         registerVillagers(RuBiomes.MAPLE_FOREST, VillagerType.PLAINS);
         registerVillagers(RuBiomes.MAUVE_HILLS, VillagerType.PLAINS);
@@ -146,7 +145,7 @@ public class BiomeRegistry {
         registerVillagers(RuBiomes.BLACKWOOD_TAIGA, VillagerType.PLAINS);
         registerVillagers(RuBiomes.BOREAL_TAIGA, VillagerType.PLAINS);
         registerVillagers(RuBiomes.GOLDEN_BOREAL_TAIGA, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.PINE_FOREST, VillagerType.PLAINS);
+        registerVillagers(RuBiomes.PINE_TAIGA, VillagerType.PLAINS);
         registerVillagers(RuBiomes.REDWOODS, VillagerType.PLAINS);
         registerVillagers(RuBiomes.SPARSE_REDWOODS, VillagerType.PLAINS);
         //PLAINS
@@ -195,9 +194,9 @@ public class BiomeRegistry {
         registerVillagers(RuBiomes.ASHEN_WOODLAND, VillagerType.PLAINS);
         registerVillagers(RuBiomes.TROPICS, VillagerType.PLAINS);
         //FROZEN
-        registerVillagers(RuBiomes.COLD_BOREAL_FOREST, VillagerType.PLAINS);
+        registerVillagers(RuBiomes.COLD_BOREAL_TAIGA, VillagerType.PLAINS);
         registerVillagers(RuBiomes.COLD_DECIDUOUS_FOREST, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.FROZEN_FOREST, VillagerType.PLAINS);
+        registerVillagers(RuBiomes.FROZEN_PINE_TAIGA, VillagerType.PLAINS);
         registerVillagers(RuBiomes.FROZEN_TUNDRA, VillagerType.PLAINS);
         registerVillagers(RuBiomes.ICY_HEIGHTS, VillagerType.PLAINS);
         registerVillagers(RuBiomes.SPIRES, VillagerType.PLAINS);

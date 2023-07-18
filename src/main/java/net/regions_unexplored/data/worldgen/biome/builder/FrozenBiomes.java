@@ -8,9 +8,13 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
+import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.regions_unexplored.data.worldgen.RuBiomeDefaultFeatures;
+import net.regions_unexplored.data.worldgen.placement.RuMiscOverworldPlacements;
+import net.regions_unexplored.data.worldgen.placement.RuTreePlacements;
+import net.regions_unexplored.data.worldgen.placement.RuVegetationPlacements;
 
 public class FrozenBiomes {
     //TODO:Complete Class
@@ -39,6 +43,7 @@ public class FrozenBiomes {
     private static BiomeGenerationSettings.Builder baseFrozenGeneration(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
         BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(featureGetter, carverGetter);
         RuBiomeDefaultFeatures.globalOverworldGeneration(biomeBuilder);
+        RuBiomeDefaultFeatures.mediumGrass(biomeBuilder);
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
         BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
@@ -56,15 +61,14 @@ public class FrozenBiomes {
         return biomeBuilder;
     }
 
-    public static Biome coldBorealForest(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
-        //TODO:Complete Biome
+    public static Biome coldBorealTaiga(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(0.0F))
                 .fogColor(OVERWORLD_FOG_COLOR)
                 .waterColor(NORMAL_WATER_COLOR)
                 .waterFogColor(NORMAL_WATER_FOG_COLOR)
-                .foliageColorOverride(7578936)
-                .grassColorOverride(8700997)
+                .foliageColorOverride(-9922472)
+                .grassColorOverride(-9917084)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_GROVE));
 
@@ -72,6 +76,17 @@ public class FrozenBiomes {
         BiomeGenerationSettings.Builder biomeBuilder = baseFrozenTaigaGeneration(featureGetter, carverGetter);
 
         //add RU features
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.LARCH_TREE_DENSE);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.GOLDEN_LARCH_TREE_SPARSE);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.BIRCH_TREE_ASPEN);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.OAK_BUSH_SPARSE);
+
+        RuBiomeDefaultFeatures.addSnowbelle(biomeBuilder);
+        RuBiomeDefaultFeatures.bleedingHeart(biomeBuilder);
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuMiscOverworldPlacements.FALLEN_LARCH_TREE);
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.LARCH_SHRUB);
 
 
         //add mob spawns
@@ -104,6 +119,8 @@ public class FrozenBiomes {
 
         //add RU features
 
+        RuBiomeDefaultFeatures.bleedingHeart(biomeBuilder);
+
 
         //add mob spawns
         MobSpawnSettings.Builder spawnBuilder = baseFrozenSpawning(false);
@@ -134,6 +151,17 @@ public class FrozenBiomes {
         BiomeGenerationSettings.Builder biomeBuilder = baseFrozenTaigaGeneration(featureGetter, carverGetter);
 
         //add RU features
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.SCOTTS_PINE_TREE_ON_SNOW);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.SCOTTS_PINE_TREE_TALL_ON_SNOW);
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.PINE_TREE_SHRUB_ON_SNOW);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuMiscOverworldPlacements.FALLEN_PINE_TREE);
+
+        RuBiomeDefaultFeatures.bleedingHeart(biomeBuilder);
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.SNOW_GRASS);
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.PINE_SHRUB);
 
 
         //add mob spawns
@@ -165,6 +193,17 @@ public class FrozenBiomes {
         BiomeGenerationSettings.Builder biomeBuilder = baseFrozenGeneration(featureGetter, carverGetter);
 
         //add RU features
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.SPRUCE_TREE_TALL_SPARSE);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.OAK_TREE_SHRUB_DENSE);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.OAK_BUSH_SINGLE);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.SPRUCE_TREE_SHRUB_DENSE);
+
+        RuBiomeDefaultFeatures.addSnowbelle(biomeBuilder);
+        RuBiomeDefaultFeatures.bleedingHeart(biomeBuilder);
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.SNOW_GRASS);
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.SPRUCE_SHRUB);
 
 
         //add mob spawns
@@ -196,6 +235,8 @@ public class FrozenBiomes {
         BiomeGenerationSettings.Builder biomeBuilder = baseFrozenGeneration(featureGetter, carverGetter);
 
         //add RU features
+
+        RuBiomeDefaultFeatures.bleedingHeart(biomeBuilder);
 
 
         //add mob spawns

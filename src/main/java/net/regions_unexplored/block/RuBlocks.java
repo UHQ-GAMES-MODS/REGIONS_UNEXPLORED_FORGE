@@ -19,6 +19,7 @@ import net.regions_unexplored.world.level.block.forest_dirt.PeatGrassBlock;
 import net.regions_unexplored.world.level.block.plant.aquatic.FloweringLilyBlock;
 import net.regions_unexplored.world.level.block.plant.aquatic.GiantLilyBlock;
 import net.regions_unexplored.world.level.block.plant.flower.GroundCoverBlock;
+import net.regions_unexplored.world.level.block.plant.flower.RuSnowFlowerBlock;
 import net.regions_unexplored.world.level.block.plant.food.DuskmelonBlock;
 import net.regions_unexplored.world.level.block.plant.food.SalmonBerryBushBlock;
 import net.regions_unexplored.world.level.block.saplinggrowers.*;
@@ -95,6 +96,7 @@ public class RuBlocks {
     public static RegistryObject<Block> ALPHA_DANDELION;
     public static RegistryObject<Block> ALPHA_ROSE;
     public static RegistryObject<Block> ASTER;
+    public static RegistryObject<Block> BLEEDING_HEART;
     public static RegistryObject<Block> BLUE_LUPINE;
     public static RegistryObject<Block> DAISY;
     public static RegistryObject<Block> DORCEL;
@@ -117,6 +119,23 @@ public class RuBlocks {
 
     public static RegistryObject<Block> PINK_MAGNOLIA_FLOWERS;
     public static RegistryObject<Block> WHITE_MAGNOLIA_FLOWERS;
+    //SNOWBELLE
+    public static RegistryObject<Block> RED_SNOWBELLE;
+    public static RegistryObject<Block> ORANGE_SNOWBELLE;
+    public static RegistryObject<Block> YELLOW_SNOWBELLE;
+    public static RegistryObject<Block> LIME_SNOWBELLE;
+    public static RegistryObject<Block> GREEN_SNOWBELLE;
+    public static RegistryObject<Block> CYAN_SNOWBELLE;
+    public static RegistryObject<Block> LIGHT_BLUE_SNOWBELLE;
+    public static RegistryObject<Block> BLUE_SNOWBELLE;
+    public static RegistryObject<Block> PURPLE_SNOWBELLE;
+    public static RegistryObject<Block> MAGENTA_SNOWBELLE;
+    public static RegistryObject<Block> PINK_SNOWBELLE;
+    public static RegistryObject<Block> BROWN_SNOWBELLE;
+    public static RegistryObject<Block> WHITE_SNOWBELLE;
+    public static RegistryObject<Block> LIGHT_GRAY_SNOWBELLE;
+    public static RegistryObject<Block> GRAY_SNOWBELLE;
+    public static RegistryObject<Block> BLACK_SNOWBELLE;
 
     public static RegistryObject<Block> MAPLE_LEAF_PILE;
     public static RegistryObject<Block> RED_MAPLE_LEAF_PILE;
@@ -129,6 +148,7 @@ public class RuBlocks {
     public static RegistryObject<Block> CATTAIL;
     public static RegistryObject<Block> TASSEL;
     public static RegistryObject<Block> TSUBAKI;
+    public static RegistryObject<Block> DAY_LILY;
     //SAPLINGS
     public static RegistryObject<Block> ALPHA_SAPLING;
     public static RegistryObject<Block> APPLE_OAK_SAPLING;
@@ -214,6 +234,7 @@ public class RuBlocks {
     public static RegistryObject<Block> POTTED_ALPHA_DANDELION;
     public static RegistryObject<Block> POTTED_ALPHA_ROSE;
     public static RegistryObject<Block> POTTED_ASTER;
+    public static RegistryObject<Block> POTTED_BLEEDING_HEART;
     public static RegistryObject<Block> POTTED_BLUE_LUPINE;
     public static RegistryObject<Block> POTTED_DAISY;
     public static RegistryObject<Block> POTTED_DORCEL;
@@ -266,6 +287,23 @@ public class RuBlocks {
     //OTHER_POTTED_PLANTS
     public static RegistryObject<Block> POTTED_BARREL_CACTUS;
     public static RegistryObject<Block> POTTED_CAVE_HYSSOP;
+    //POTTED_SNOWBELLE
+    public static RegistryObject<Block> POTTED_RED_SNOWBELLE;
+    public static RegistryObject<Block> POTTED_ORANGE_SNOWBELLE;
+    public static RegistryObject<Block> POTTED_YELLOW_SNOWBELLE;
+    public static RegistryObject<Block> POTTED_LIME_SNOWBELLE;
+    public static RegistryObject<Block> POTTED_GREEN_SNOWBELLE;
+    public static RegistryObject<Block> POTTED_CYAN_SNOWBELLE;
+    public static RegistryObject<Block> POTTED_LIGHT_BLUE_SNOWBELLE;
+    public static RegistryObject<Block> POTTED_BLUE_SNOWBELLE;
+    public static RegistryObject<Block> POTTED_PURPLE_SNOWBELLE;
+    public static RegistryObject<Block> POTTED_MAGENTA_SNOWBELLE;
+    public static RegistryObject<Block> POTTED_PINK_SNOWBELLE;
+    public static RegistryObject<Block> POTTED_BROWN_SNOWBELLE;
+    public static RegistryObject<Block> POTTED_WHITE_SNOWBELLE;
+    public static RegistryObject<Block> POTTED_LIGHT_GRAY_SNOWBELLE;
+    public static RegistryObject<Block> POTTED_GRAY_SNOWBELLE;
+    public static RegistryObject<Block> POTTED_BLACK_SNOWBELLE;
 
     /*-----------------PLANT_BLOCKS-----------------*/
     //MUSHROOMS
@@ -775,6 +813,7 @@ public class RuBlocks {
         ALPHA_DANDELION = BlockRegistry.registerDefaultBlock("alpha_dandelion", () -> new RuFlowerBlock(MobEffects.JUMP, 5, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
         ALPHA_ROSE = BlockRegistry.registerDefaultBlock("alpha_rose", () -> new RuFlowerBlock(MobEffects.JUMP, 5, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
         ASTER = BlockRegistry.registerDefaultBlock("aster", () -> new RuFlowerBlock(MobEffects.CONFUSION, 10, BlockBehaviour.Properties.copy(Blocks.DANDELION).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 13)));
+        BLEEDING_HEART = BlockRegistry.registerDefaultBlock("bleeding_heart", () -> new RuSnowFlowerBlock(MobEffects.POISON, 9, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
         BLUE_LUPINE = BlockRegistry.registerDefaultBlock("blue_lupine", () -> new RuFlowerBlock(MobEffects.SATURATION, 4, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
         DAISY = BlockRegistry.registerDefaultBlock("daisy", () -> new RuFlowerBlock(MobEffects.MOVEMENT_SPEED, 8, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
         DORCEL = BlockRegistry.registerDefaultBlock("dorcel", () -> new DorcelPlantBlock(MobEffects.WITHER, 20, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
@@ -787,10 +826,10 @@ public class RuBlocks {
         PURPLE_LUPINE = BlockRegistry.registerDefaultBlock("purple_lupine", () -> new RuFlowerBlock(MobEffects.SATURATION, 4, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
         RED_LUPINE = BlockRegistry.registerDefaultBlock("red_lupine", () -> new RuFlowerBlock(MobEffects.SATURATION, 4, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
         WARATAH = BlockRegistry.registerDefaultBlock("waratah", () -> new RuFlowerBlock(MobEffects.JUMP, 5, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+        TSUBAKI = BlockRegistry.registerDefaultBlock("tsubaki", () -> new RuFlowerBlock(MobEffects.HEAL, 3, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
         WHITE_TRILLIUM = BlockRegistry.registerDefaultBlock("white_trillium", () -> new RuFlowerBlock(MobEffects.DIG_SPEED, 7, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
         WILTING_TRILLIUM = BlockRegistry.registerDefaultBlock("wilting_trillium", () -> new RuFlowerBlock(MobEffects.DIG_SLOWDOWN, 4, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
         YELLOW_LUPINE = BlockRegistry.registerDefaultBlock("yellow_lupine", () -> new RuFlowerBlock(MobEffects.SATURATION, 4, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
-
 
         ORANGE_CONEFLOWER = BlockRegistry.registerDefaultBlock("orange_coneflower", () -> new GroundCoverBlock(BlockBehaviour.Properties.of().pushReaction(PushReaction.DESTROY).ignitedByLava().noCollission().sound(SoundType.PINK_PETALS)));
         PURPLE_CONEFLOWER = BlockRegistry.registerDefaultBlock("purple_coneflower", () -> new GroundCoverBlock(BlockBehaviour.Properties.of().pushReaction(PushReaction.DESTROY).ignitedByLava().noCollission().sound(SoundType.PINK_PETALS)));
@@ -798,6 +837,23 @@ public class RuBlocks {
 
         PINK_MAGNOLIA_FLOWERS = BlockRegistry.registerDefaultBlock("pink_magnolia_flowers", () -> new GlowLichenBlock(BlockBehaviour.Properties.of().pushReaction(PushReaction.DESTROY).ignitedByLava().replaceable().noCollission().strength(0.1F).sound(SoundType.GLOW_LICHEN)));
         WHITE_MAGNOLIA_FLOWERS = BlockRegistry.registerDefaultBlock("white_magnolia_flowers", () -> new GlowLichenBlock(BlockBehaviour.Properties.copy(PINK_MAGNOLIA_FLOWERS.get())));
+        //SNOWBELLE
+        RED_SNOWBELLE = BlockRegistry.registerDefaultBlock("red_snowbelle", () -> new RuFlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 10, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+        ORANGE_SNOWBELLE = BlockRegistry.registerDefaultBlock("orange_snowbelle", () -> new RuFlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 10, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+        YELLOW_SNOWBELLE = BlockRegistry.registerDefaultBlock("yellow_snowbelle", () -> new RuFlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 10, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+        LIME_SNOWBELLE = BlockRegistry.registerDefaultBlock("lime_snowbelle", () -> new RuFlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 10, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+        GREEN_SNOWBELLE = BlockRegistry.registerDefaultBlock("green_snowbelle", () -> new RuFlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 10, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+        CYAN_SNOWBELLE = BlockRegistry.registerDefaultBlock("cyan_snowbelle", () -> new RuFlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 10, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+        LIGHT_BLUE_SNOWBELLE = BlockRegistry.registerDefaultBlock("light_blue_snowbelle", () -> new RuFlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 10, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+        BLUE_SNOWBELLE = BlockRegistry.registerDefaultBlock("blue_snowbelle", () -> new RuFlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 10, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+        PURPLE_SNOWBELLE = BlockRegistry.registerDefaultBlock("purple_snowbelle", () -> new RuFlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 10, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+        MAGENTA_SNOWBELLE = BlockRegistry.registerDefaultBlock("magenta_snowbelle", () -> new RuFlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 10, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+        PINK_SNOWBELLE = BlockRegistry.registerDefaultBlock("pink_snowbelle", () -> new RuFlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 10, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+        BROWN_SNOWBELLE = BlockRegistry.registerDefaultBlock("brown_snowbelle", () -> new RuFlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 10, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+        WHITE_SNOWBELLE = BlockRegistry.registerDefaultBlock("white_snowbelle", () -> new RuFlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 10, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+        LIGHT_GRAY_SNOWBELLE = BlockRegistry.registerDefaultBlock("light_gray_snowbelle", () -> new RuFlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 10, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+        GRAY_SNOWBELLE = BlockRegistry.registerDefaultBlock("gray_snowbelle", () -> new RuFlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 10, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+        BLACK_SNOWBELLE = BlockRegistry.registerDefaultBlock("black_snowbelle", () -> new RuFlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 10, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
 
         MAPLE_LEAF_PILE = BlockRegistry.registerDefaultBlock("maple_leaf_pile", () -> new GroundCoverBlock(BlockBehaviour.Properties.of().pushReaction(PushReaction.DESTROY).replaceable().ignitedByLava().noCollission().sound(SoundType.AZALEA_LEAVES)));
         RED_MAPLE_LEAF_PILE = BlockRegistry.registerDefaultBlock("red_maple_leaf_pile", () -> new GroundCoverBlock(BlockBehaviour.Properties.of().pushReaction(PushReaction.DESTROY).replaceable().ignitedByLava().noCollission().sound(SoundType.AZALEA_LEAVES)));
@@ -809,7 +865,7 @@ public class RuBlocks {
         BARLEY = BlockRegistry.registerDefaultBlock("barley", () -> new RuDoublePlantBlock(BlockBehaviour.Properties.copy(Blocks.SUNFLOWER)));
         CATTAIL = BlockRegistry.registerDefaultBlock("cattail", () -> new CattailBlock(BlockBehaviour.Properties.copy(Blocks.SUNFLOWER)));
         TASSEL = BlockRegistry.registerDefaultBlock("tassel", () -> new RuDoubleFlowerBlock(BlockBehaviour.Properties.copy(Blocks.SUNFLOWER)));
-        TSUBAKI = BlockRegistry.registerDefaultBlock("tsubaki", () -> new RuDoubleFlowerBlock(BlockBehaviour.Properties.copy(Blocks.SUNFLOWER)));
+        DAY_LILY = BlockRegistry.registerDefaultBlock("day_lily", () -> new RuDoubleFlowerBlock(BlockBehaviour.Properties.copy(Blocks.SUNFLOWER)));
         //SAPLINGS
         ALPHA_SAPLING = BlockRegistry.registerDefaultBlock("alpha_sapling", () -> new RuSaplingBlock(new AlphaOakGrower()));
         APPLE_OAK_SAPLING = BlockRegistry.registerDefaultBlock("apple_oak_sapling", () -> new RuSaplingBlock(new AppleOakTreeGrower()));
@@ -896,6 +952,7 @@ public class RuBlocks {
         POTTED_ALPHA_DANDELION = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_alpha_dandelion", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, ALPHA_DANDELION, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
         POTTED_ALPHA_ROSE = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_alpha_rose", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, ALPHA_ROSE, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
         POTTED_ASTER = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_aster", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, ASTER, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
+        POTTED_BLEEDING_HEART = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_bleeding_heart", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, BLEEDING_HEART, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
         POTTED_BLUE_LUPINE = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_blue_lupine", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, BLUE_LUPINE, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
         POTTED_DAISY = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_daisy", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, DAISY, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
         POTTED_DORCEL = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_dorcel", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, DORCEL, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
@@ -948,7 +1005,23 @@ public class RuBlocks {
         //OTHER_POTTED_PLANTS
         POTTED_BARREL_CACTUS = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_barrel_cactus", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, BARREL_CACTUS, BlockBehaviour.Properties.copy(Blocks.POTTED_CACTUS)));
         POTTED_CAVE_HYSSOP = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_cave_hyssop", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, CAVE_HYSSOP, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
-
+        //POTTED_SNOWBELLE
+        POTTED_RED_SNOWBELLE = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_red_snowbelle", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, RED_SNOWBELLE, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
+        POTTED_ORANGE_SNOWBELLE = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_orange_snowbelle", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, ORANGE_SNOWBELLE, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
+        POTTED_YELLOW_SNOWBELLE = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_yellow_snowbelle", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, YELLOW_SNOWBELLE, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
+        POTTED_LIME_SNOWBELLE = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_lime_snowbelle", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, LIME_SNOWBELLE, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
+        POTTED_GREEN_SNOWBELLE = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_green_snowbelle", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, GREEN_SNOWBELLE, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
+        POTTED_CYAN_SNOWBELLE = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_cyan_snowbelle", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, CYAN_SNOWBELLE, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
+        POTTED_LIGHT_BLUE_SNOWBELLE = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_light_blue_snowbelle", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, LIGHT_BLUE_SNOWBELLE, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
+        POTTED_BLUE_SNOWBELLE = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_blue_snowbelle", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, BLUE_SNOWBELLE, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
+        POTTED_PURPLE_SNOWBELLE = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_purple_snowbelle", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, PURPLE_SNOWBELLE, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
+        POTTED_MAGENTA_SNOWBELLE = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_magenta_snowbelle", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, MAGENTA_SNOWBELLE, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
+        POTTED_PINK_SNOWBELLE = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_pink_snowbelle", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, PINK_SNOWBELLE, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
+        POTTED_BROWN_SNOWBELLE = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_brown_snowbelle", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, BROWN_SNOWBELLE, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
+        POTTED_WHITE_SNOWBELLE = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_white_snowbelle", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, WHITE_SNOWBELLE, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
+        POTTED_LIGHT_GRAY_SNOWBELLE = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_light_gray_snowbelle", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, LIGHT_GRAY_SNOWBELLE, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
+        POTTED_GRAY_SNOWBELLE = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_gray_snowbelle", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, GRAY_SNOWBELLE, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
+        POTTED_BLACK_SNOWBELLE = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_black_snowbelle", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, BLACK_SNOWBELLE, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
         /*-----------------PLANT_BLOCKS-----------------*/
         //MUSHROOMS
         BLUE_BIOSHROOM_BLOCK = BlockRegistry.registerDefaultBlock("blue_bioshroom_block", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLUE).instrument(NoteBlockInstrument.BASS).sound(SoundType.WART_BLOCK).strength(0.6f)));

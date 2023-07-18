@@ -49,10 +49,7 @@
                   "to_place": {
                     "type": "minecraft:simple_state_provider",
                     "state": {
-                      "Name": "regions_unexplored:tsubaki",
-                      "Properties": {
-                        "half": "lower"
-                      }
+                      "Name": "regions_unexplored:tsubaki"
                     }
                   }
                 }

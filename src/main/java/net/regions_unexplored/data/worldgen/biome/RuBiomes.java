@@ -10,7 +10,7 @@ public class RuBiomes {
     //FOREST
     public static ResourceKey<Biome> AUTUMNAL_MAPLE_FOREST = createKey("autumnal_maple_forest");
     public static ResourceKey<Biome> BAMBOO_FOREST = createKey("bamboo_forest");
-    public static ResourceKey<Biome> SAKURA_GROVE = createKey("sakura_grove");
+    public static ResourceKey<Biome> MAGNOLIA_HIGHLANDS = createKey("magnolia_highlands");
     public static ResourceKey<Biome> DECIDUOUS_FOREST = createKey("deciduous_forest");
     public static ResourceKey<Biome> MAPLE_FOREST = createKey("maple_forest");
     public static ResourceKey<Biome> MAUVE_HILLS = createKey("mauve_hills");
@@ -19,11 +19,10 @@ public class RuBiomes {
     public static ResourceKey<Biome> TEMPERATE_GROVE = createKey("temperate_grove");
     public static ResourceKey<Biome> WILLOW_FOREST = createKey("willow_forest");
     //TAIGA
-    //TODO:rename to taigas
     public static ResourceKey<Biome> BLACKWOOD_TAIGA = createKey("blackwood_taiga");
     public static ResourceKey<Biome> BOREAL_TAIGA = createKey("boreal_taiga");
     public static ResourceKey<Biome> GOLDEN_BOREAL_TAIGA = createKey("golden_boreal_taiga");
-    public static ResourceKey<Biome> PINE_FOREST = createKey("pine_forest");
+    public static ResourceKey<Biome> PINE_TAIGA = createKey("pine_taiga");
     public static ResourceKey<Biome> REDWOODS = createKey("redwoods");
     public static ResourceKey<Biome> SPARSE_REDWOODS = createKey("sparse_redwoods");
     //PLAINS
@@ -72,9 +71,9 @@ public class RuBiomes {
     public static ResourceKey<Biome> ROCKY_REEF = createKey("rocky_reef");
     public static ResourceKey<Biome> TROPICS = createKey("tropics");
     //FROZEN
-    public static ResourceKey<Biome> COLD_BOREAL_FOREST = createKey("cold_boreal_forest");
+    public static ResourceKey<Biome> COLD_BOREAL_TAIGA = createKey("cold_boreal_taiga");
     public static ResourceKey<Biome> COLD_DECIDUOUS_FOREST = createKey("cold_deciduous_forest");
-    public static ResourceKey<Biome> FROZEN_FOREST = createKey("frozen_forest");
+    public static ResourceKey<Biome> FROZEN_PINE_TAIGA = createKey("frozen_pine_taiga");
     public static ResourceKey<Biome> FROZEN_TUNDRA = createKey("frozen_tundra");
     public static ResourceKey<Biome> ICY_HEIGHTS = createKey("icy_heights");
     public static ResourceKey<Biome> SPIRES = createKey("spires");

@@ -52,6 +52,7 @@ public class RuColorHandler {
                 RuBlocks.STEPPE_GRASS.get(),
                 RuBlocks.STONE_BUD.get(),
                 RuBlocks.BLADED_GRASS.get(),
+                RuBlocks.CLOVER.get(),
                 RuBlocks.BLADED_TALL_GRASS.get()
         );
     }

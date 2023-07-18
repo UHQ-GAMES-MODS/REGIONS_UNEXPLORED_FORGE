@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "snowbelle",
+  "ingredients": [
+    {
+      "tag": "forge:dyes/purple"
+    },
+    {
+      "tag": "regions_unexplored:snowbelle"
+    }
+  ],
+  "result": {
+    "item": "regions_unexplored:purple_snowbelle"
+  }
+}

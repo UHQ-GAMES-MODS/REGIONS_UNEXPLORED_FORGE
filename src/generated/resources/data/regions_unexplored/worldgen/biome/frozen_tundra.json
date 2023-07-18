@@ -79,10 +79,19 @@
     ],
     [
       "minecraft:glow_lichen",
+      "regions_unexplored:medium_grass",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin"
+      "minecraft:patch_pumpkin",
+      "regions_unexplored:spruce_tree_tall_sparse",
+      "regions_unexplored:oak_tree_shrub_dense",
+      "regions_unexplored:oak_bush_single",
+      "regions_unexplored:spruce_tree_shrub_dense",
+      "regions_unexplored:snowbelle",
+      "regions_unexplored:bleeding_heart",
+      "regions_unexplored:snow_grass",
+      "regions_unexplored:spruce_shrub"
     ],
     [
       "minecraft:freeze_top_layer"

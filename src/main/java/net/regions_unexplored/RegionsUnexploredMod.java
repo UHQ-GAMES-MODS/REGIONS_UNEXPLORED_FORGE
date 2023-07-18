@@ -1,14 +1,13 @@
 package net.regions_unexplored;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -30,10 +29,12 @@ import net.regions_unexplored.client.particle.RuParticleTypes;
 import net.regions_unexplored.config.RuCommonConfig;
 import net.regions_unexplored.config.RuPrimaryRegionConfig;
 import net.regions_unexplored.config.RuSecondaryRegionConfig;
+import net.regions_unexplored.entity.RuEntities;
 import net.regions_unexplored.item.RuItems;
 import net.regions_unexplored.item.tab.RuTabs;
 import net.regions_unexplored.registry.BiomeRegistry;
 import net.regions_unexplored.registry.FeatureRegistry;
+import net.regions_unexplored.registry.WoodTypeRegistry;
 import net.regions_unexplored.world.features.foliageplacers.SakuraFoliagePlacer;
 import net.regions_unexplored.world.features.foliageplacers.WillowFoliagePlacer;
 import net.regions_unexplored.world.features.treedecorators.BlackwoodBioshroom;
@@ -89,6 +90,7 @@ public class RegionsUnexploredMod {
         RuBlocks.addBlocks();
         RuBlockEntities.addBlockEntities();
         RuItems.addItems();
+        RuEntities.addEntities();
         RuParticleTypes.addParticles();
     }
 
@@ -101,6 +103,9 @@ public class RegionsUnexploredMod {
 
     //set up client side features
     public void clientSetup(final FMLClientSetupEvent event) {
+        WoodTypeRegistry.addWoodTypes();
+        WoodTypeRegistry.addSheets();
+        BlockEntityRenderers.register(RuBlockEntities.SIGN_BLOCK_ENTITIES.get(), SignRenderer::new);
     }
 
     //set up non-client side features

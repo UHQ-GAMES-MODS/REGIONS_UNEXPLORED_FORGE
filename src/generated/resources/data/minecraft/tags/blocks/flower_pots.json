@@ -10,6 +10,7 @@
     "regions_unexplored:potted_barrel_cactus",
     "regions_unexplored:potted_blackwood_sapling",
     "regions_unexplored:potted_blue_bioshroom",
+    "regions_unexplored:potted_bleeding_heart",
     "regions_unexplored:potted_blue_lupine",
     "regions_unexplored:potted_brimwood_sapling",
     "regions_unexplored:potted_cactus_flower",
@@ -52,6 +53,22 @@
     "regions_unexplored:potted_willow_sapling",
     "regions_unexplored:potted_wilting_trillium",
     "regions_unexplored:potted_yellow_bioshroom",
-    "regions_unexplored:potted_yellow_lupine"
+    "regions_unexplored:potted_yellow_lupine",
+    "regions_unexplored:potted_red_snowbelle",
+    "regions_unexplored:potted_orange_snowbelle",
+    "regions_unexplored:potted_yellow_snowbelle",
+    "regions_unexplored:potted_lime_snowbelle",
+    "regions_unexplored:potted_green_snowbelle",
+    "regions_unexplored:potted_cyan_snowbelle",
+    "regions_unexplored:potted_light_blue_snowbelle",
+    "regions_unexplored:potted_blue_snowbelle",
+    "regions_unexplored:potted_purple_snowbelle",
+    "regions_unexplored:potted_magenta_snowbelle",
+    "regions_unexplored:potted_pink_snowbelle",
+    "regions_unexplored:potted_brown_snowbelle",
+    "regions_unexplored:potted_white_snowbelle",
+    "regions_unexplored:potted_light_gray_snowbelle",
+    "regions_unexplored:potted_gray_snowbelle",
+    "regions_unexplored:potted_black_snowbelle"
   ]
 }

@@ -1,7 +1,7 @@
 {
-  "parent": "block/flower_pot_cross",
+  "parent": "regions_unexplored:block/bonsai_pot_cross",
   "textures": {
-    "plant": "regions_unexplored:block/white_magnolia_sapling"
+    "plant": "regions_unexplored:block/white_magnolia_bonsai"
   },
   "render_type": "cutout"
 }

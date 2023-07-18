@@ -19,6 +19,7 @@ public class RuTags {
     public static final TagKey<Block> BIOSHROOM_GROW_BLOCK = createBlock("bioshroom_grow_block");
     public static final TagKey<Block> REPLACEABLE_BLOCKS = createBlock("replaceable_blocks");
     public static final TagKey<Block> PRISMARITE_CRYSTALS = createBlock("prismarite_crystals");
+    public static final TagKey<Block> SNOWBELLE = createBlock("snowbelle");
     public static final TagKey<Block> GRASS = createBlock("grass");
     public static final TagKey<Block> SHRUBS = createBlock("shrubs");
     public static final TagKey<Block> TREE_GRASS_REPLACEABLES = createBlock("tree_grass_replaceables");
@@ -42,6 +43,7 @@ public class RuTags {
     public static final TagKey<Block> WILLOW_LOGS = createBlock("willow_logs");
     //items
     public static final TagKey<Item> PRISMARITE_CRYSTALS_ITEM = createItem("prismarite_crystals");
+    public static final TagKey<Item> SNOWBELLE_ITEM = createItem("snowbelle");
     public static final TagKey<Item> GRASS_ITEM = createItem("grass");
     public static final TagKey<Item> SHRUBS_ITEM = createItem("shrubs");
     public static final TagKey<Item> ASH_ITEM = createItem("ash");

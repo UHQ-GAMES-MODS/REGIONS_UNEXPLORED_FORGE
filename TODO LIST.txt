@@ -4,4 +4,7 @@
 -complete biomes
 -finish tree growers
 -add functionality to some extra blocks
--
+-complete potted plants
+-add furnace burn times
+-add flammability to blocks
+-add minor functionality, eg. composting, stripping, tilling, flattening

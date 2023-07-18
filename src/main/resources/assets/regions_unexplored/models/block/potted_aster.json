@@ -1,7 +1,7 @@
 {
   "parent": "block/flower_pot_cross",
   "textures": {
-    "plant": "regions_unexplored:block/potted_aster"
+    "plant": "regions_unexplored:block/aster"
   },
   "render_type": "cutout"
 }
