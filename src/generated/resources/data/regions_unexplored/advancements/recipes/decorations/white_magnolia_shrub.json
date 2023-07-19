@@ -7,7 +7,7 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_white_sakura_sapling": {
+    "has_white_magnolia_sapling": {
       "conditions": {
         "items": [
           {
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_white_sakura_sapling",
+      "has_white_magnolia_sapling",
       "has_the_recipe"
     ]
   ],

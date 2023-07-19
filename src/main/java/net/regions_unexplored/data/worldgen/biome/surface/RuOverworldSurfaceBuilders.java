@@ -130,11 +130,6 @@ public class RuOverworldSurfaceBuilders {
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.FROZEN_TUNDRA),
                                     SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, 0.0D), SNOW_BLOCK)),
 
-                            //WILLOW_FOREST
-                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.WILLOW_FOREST),
-                                    SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.yStartCheck(VerticalAnchor.absolute(65), 0)), STONE)),
-
-
                             //DRY_BUSHLAND
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.DRY_BUSHLAND),
                                     SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, RuleWeight.getPercent(40)), SILT_COARSE_DIRT)),
@@ -202,10 +197,6 @@ public class RuOverworldSurfaceBuilders {
                             //TROPICS
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.TROPICS),
                                     SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.yStartCheck(VerticalAnchor.absolute(65), 0)), SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR),SAND)))),
-
-                            //MIXED_FOREST BASE
-                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.WILLOW_FOREST),
-                                    SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.yStartCheck(VerticalAnchor.absolute(65), 0)), SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR),STONE))),
 
                             //SNOWCAPPED_MOUNTAINS
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.MOUNTAINS),

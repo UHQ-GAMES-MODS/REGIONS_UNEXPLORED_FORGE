@@ -1,5 +1,5 @@
 {
-  "feature": "regions_unexplored:barley",
+  "feature": "regions_unexplored:patch_barley",
   "placement": [
     {
       "type": "minecraft:rarity_filter",

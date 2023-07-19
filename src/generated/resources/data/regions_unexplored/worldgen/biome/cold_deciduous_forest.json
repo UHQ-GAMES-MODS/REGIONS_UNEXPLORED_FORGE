@@ -9,8 +9,8 @@
   "downfall": 0.8,
   "effects": {
     "fog_color": 12638463,
-    "foliage_color": 7578936,
-    "grass_color": 8700997,
+    "foliage_color": 5614468,
+    "grass_color": 6732196,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -84,7 +84,15 @@
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
-      "regions_unexplored:bleeding_heart"
+      "regions_unexplored:oak_tree_with_branch",
+      "regions_unexplored:big_oak_tree_sparse",
+      "regions_unexplored:big_red_maple_tree_sparse",
+      "regions_unexplored:spruce_tree_tall_on_snow",
+      "regions_unexplored:fallen_oak_tree_sparse",
+      "regions_unexplored:frozen_flowers",
+      "regions_unexplored:snowbelle",
+      "regions_unexplored:ferns",
+      "regions_unexplored:spruce_shrub"
     ],
     [
       "minecraft:freeze_top_layer"
@@ -178,5 +186,5 @@
     "water_ambient": [],
     "water_creature": []
   },
-  "temperature": 0.75
+  "temperature": -1.5
 }

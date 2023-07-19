@@ -38,6 +38,7 @@ import net.regions_unexplored.registry.WoodTypeRegistry;
 import net.regions_unexplored.world.features.foliageplacers.SakuraFoliagePlacer;
 import net.regions_unexplored.world.features.foliageplacers.WillowFoliagePlacer;
 import net.regions_unexplored.world.features.treedecorators.BlackwoodBioshroom;
+import net.regions_unexplored.world.features.treedecorators.ChanceWillowTrunkDecorator;
 import net.regions_unexplored.world.features.treedecorators.WillowTrunkDecorator;
 import org.slf4j.Logger;
 
@@ -120,6 +121,7 @@ public class RegionsUnexploredMod {
 
     private static void registerTreeDecorators(){
         ForgeRegistries.TREE_DECORATOR_TYPES.register("blackwood_bioshrooms", BlackwoodBioshroom.tdt);
+        ForgeRegistries.TREE_DECORATOR_TYPES.register("chance_willow_trunk_decorator", ChanceWillowTrunkDecorator.tdt);
         ForgeRegistries.TREE_DECORATOR_TYPES.register("willow_trunk_decorator", WillowTrunkDecorator.tdt);
     }
 

@@ -10,13 +10,19 @@
             "entries": [
               {
                 "data": {
-                  "Name": "regions_unexplored:white_trillium"
+                  "Name": "regions_unexplored:daisy"
                 },
-                "weight": 1
+                "weight": 2
               },
               {
                 "data": {
-                  "Name": "regions_unexplored:felicia_daisy"
+                  "Name": "minecraft:allium"
+                },
+                "weight": 2
+              },
+              {
+                "data": {
+                  "Name": "minecraft:cornflower"
                 },
                 "weight": 1
               }

@@ -1,0 +1,7 @@
+{
+  "parent": "regions_unexplored:block/icicle",
+  "textures": {
+    "cross": "regions_unexplored:block/icicle_down_tip_merge"
+  },
+  "render_type": "cutout"
+}

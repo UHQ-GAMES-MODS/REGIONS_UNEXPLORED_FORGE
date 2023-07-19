@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_pink_sakura_sapling": {
+    "has_pink_magnolia_sapling": {
       "conditions": {
         "items": [
           {
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_pink_sakura_sapling",
+      "has_pink_magnolia_sapling",
       "has_the_recipe"
     ]
   ],

@@ -1,9 +1,9 @@
 {
-  "feature": "regions_unexplored:patch_trillium_daisy",
+  "feature": "regions_unexplored:patch_willow_flowers",
   "placement": [
     {
       "type": "minecraft:rarity_filter",
-      "chance": 12
+      "chance": 10
     },
     {
       "type": "minecraft:in_square"

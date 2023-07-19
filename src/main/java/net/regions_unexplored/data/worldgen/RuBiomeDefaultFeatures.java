@@ -34,17 +34,19 @@ public class RuBiomeDefaultFeatures {
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuMiscOverworldPlacements.MEADOW_ROCK);
     }
     public static void bleedingHeart(BiomeGenerationSettings.Builder biomeBuilder) {
-        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.BLEEDING_HEART);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.FROZEN_FLOWERS);
+    }
+    public static void addWillowFlowers(BiomeGenerationSettings.Builder biomeBuilder) {
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.WILLOW_FLOWERS);
     }
     public static void addAster(BiomeGenerationSettings.Builder biomeBuilder) {
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.ASTER);
     }
-    public static void addSnowbelle(BiomeGenerationSettings.Builder biomeBuilder) {
-        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.SNOWBELLE);
+    public static void addTulips(BiomeGenerationSettings.Builder biomeBuilder) {
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.TULIPS);
     }
-    public static void addPrairieGrass(BiomeGenerationSettings.Builder biomeBuilder) {
-        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.GRASS);
-        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.TALL_GRASS);
+    public static void shrublandFlowers(BiomeGenerationSettings.Builder biomeBuilder) {
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.SHRUBLAND_FLOWERS);
     }
     public static void addPrairieFlowers(BiomeGenerationSettings.Builder biomeBuilder) {
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.PRAIRIE_FLOWERS);
@@ -57,7 +59,7 @@ public class RuBiomeDefaultFeatures {
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.GRASS_VEGETATION);
     }
     public static void addTaigaFlowerPatch(BiomeGenerationSettings.Builder biomeBuilder) {
-        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.TRILLIUM_DAISY);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.AZURE_DAISY);
     }
     public static void addMeadowVegetation(BiomeGenerationSettings.Builder biomeBuilder) {
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.MEADOW_VEGETATION);
@@ -70,9 +72,6 @@ public class RuBiomeDefaultFeatures {
     public static void addRareSalmonberryBush(BiomeGenerationSettings.Builder biomeBuilder) {
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.RARE_SALMONBERRY_BUSH);
     }
-    public static void addCommonSalmonberryBush(BiomeGenerationSettings.Builder biomeBuilder) {
-        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.COMMON_SALMONBERRY_BUSH);
-    }
     public static void addOrangeCornflower(BiomeGenerationSettings.Builder biomeBuilder) {
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.ORANGE_CONEFLOWER);
     }
@@ -83,9 +82,6 @@ public class RuBiomeDefaultFeatures {
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.SILVER_BIRCH_ON_GRASS);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.BIG_ORANGE_MAPLE_TREE_ON_GRASS);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.BIG_RED_MAPLE_TREE_ON_GRASS);
-    }
-    public static void addSparseOrangeCornflower(BiomeGenerationSettings.Builder biomeBuilder) {
-        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.SPARSE_ORANGE_CONEFLOWER);
     }
     public static void addMapleGroundcover(BiomeGenerationSettings.Builder biomeBuilder) {
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.SILVER_BIRCH_LEAF_PILE_SPARSE);

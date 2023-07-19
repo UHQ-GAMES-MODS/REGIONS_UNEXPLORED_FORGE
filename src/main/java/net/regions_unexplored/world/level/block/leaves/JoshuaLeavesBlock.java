@@ -63,7 +63,7 @@ public class JoshuaLeavesBlock extends DoublePlantBlock implements SimpleWaterlo
                 return groundState.is(BlockTags.LOGS);
             }
             else{
-            return true;
+            return groundState.isFaceSturdy(level, blockpos, Direction.UP);
             }
         }
     }

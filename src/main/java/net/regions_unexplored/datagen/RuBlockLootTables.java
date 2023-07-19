@@ -110,6 +110,7 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         add(RuBlocks.PURPLE_CONEFLOWER.get(), (block) -> createPetalsDrops(block));
         add(RuBlocks.CLOVER.get(), (block) -> createPetalsDrops(block));
 
+        add(RuBlocks.BLUE_MAGNOLIA_FLOWERS.get(), (block) -> createMultifaceBlockDrops(block, HAS_SHEARS));
         add(RuBlocks.PINK_MAGNOLIA_FLOWERS.get(), (block) -> createMultifaceBlockDrops(block, HAS_SHEARS));
         add(RuBlocks.WHITE_MAGNOLIA_FLOWERS.get(), (block) -> createMultifaceBlockDrops(block, HAS_SHEARS));
         //SNOWBELLE
@@ -162,6 +163,7 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         dropSelf(RuBlocks.ORANGE_MAPLE_SAPLING.get());
         dropSelf(RuBlocks.PALM_SAPLING.get());
         dropSelf(RuBlocks.PINE_SAPLING.get());
+        dropSelf(RuBlocks.BLUE_MAGNOLIA_SAPLING.get());
         dropSelf(RuBlocks.PINK_MAGNOLIA_SAPLING.get());
         dropSelf(RuBlocks.REDWOOD_SAPLING.get());
         dropSelf(RuBlocks.RED_MAPLE_SAPLING.get());
@@ -194,6 +196,7 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         add(RuBlocks.ORANGE_MAPLE_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         add(RuBlocks.PALM_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         add(RuBlocks.PINE_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
+        add(RuBlocks.BLUE_MAGNOLIA_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         add(RuBlocks.PINK_MAGNOLIA_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         add(RuBlocks.REDWOOD_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         add(RuBlocks.RED_MAPLE_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
@@ -212,6 +215,7 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         add(RuBlocks.TALL_PINK_BIOSHROOM.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         add(RuBlocks.TALL_YELLOW_BIOSHROOM.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         //OTHER_PLANT_BLOCKS
+        add(RuBlocks.ICICLE.get(), (block) -> createSilkTouchOnlyTable(block));
         dropSelf(RuBlocks.BARREL_CACTUS.get());
         dropSelf(RuBlocks.CAVE_HYSSOP.get());
         dropSelf(RuBlocks.DUCKWEED.get());
@@ -264,6 +268,7 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         add(RuBlocks.POTTED_ORANGE_MAPLE_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_PALM_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_PINE_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_BLUE_MAGNOLIA_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_PINK_MAGNOLIA_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_REDWOOD_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_RED_MAPLE_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
@@ -335,6 +340,7 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         add(RuBlocks.ORANGE_MAPLE_LEAVES.get(), (block) -> createOakLeavesDrops(block, RuBlocks.ORANGE_MAPLE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.PALM_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.PALM_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.PINE_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.PINE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        add(RuBlocks.BLUE_MAGNOLIA_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.BLUE_MAGNOLIA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.PINK_MAGNOLIA_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.PINK_MAGNOLIA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.REDWOOD_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.REDWOOD_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.RED_MAPLE_LEAVES.get(), (block) -> createOakLeavesDrops(block, RuBlocks.RED_MAPLE_SHRUB.get(), NORMAL_LEAVES_SAPLING_CHANCES));

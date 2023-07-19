@@ -8,6 +8,7 @@ public class RuCommonConfig {
     public static final ForgeConfigSpec SPEC;
 
     public static final ForgeConfigSpec.ConfigValue<Boolean> TOGGLE_MAUVE_LEAVES_PARTICLE;
+    public static final ForgeConfigSpec.ConfigValue<Boolean> TOGGLE_BLUE_MAGNOLIA_LEAVES_PARTICLE;
     public static final ForgeConfigSpec.ConfigValue<Boolean> TOGGLE_PINK_MAGNOLIA_LEAVES_PARTICLE;
     public static final ForgeConfigSpec.ConfigValue<Boolean> TOGGLE_WHITE_MAGNOLIA_LEAVES_PARTICLE;
     public static final ForgeConfigSpec.ConfigValue<Boolean> TOGGLE_RED_MAPLE_LEAVES_PARTICLE;
@@ -210,6 +211,7 @@ public class RuCommonConfig {
         //
         BUILDER.push("client_options");
         TOGGLE_MAUVE_LEAVES_PARTICLE = BUILDER.define("toggle_mauve_leaves_particles", true);
+        TOGGLE_BLUE_MAGNOLIA_LEAVES_PARTICLE = BUILDER.define("toggle_blue_magnolia_leaves_particles", true);
         TOGGLE_PINK_MAGNOLIA_LEAVES_PARTICLE = BUILDER.define("toggle_pink_magnolia_leaves_particles", true);
         TOGGLE_WHITE_MAGNOLIA_LEAVES_PARTICLE = BUILDER.define("toggle_white_magnolia_leaves_particles", true);
         TOGGLE_RED_MAPLE_LEAVES_PARTICLE = BUILDER.define("toggle_red_maple_leaves_particles", true);

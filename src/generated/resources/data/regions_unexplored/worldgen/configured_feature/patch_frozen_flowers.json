@@ -6,10 +6,21 @@
         "type": "minecraft:simple_block",
         "config": {
           "to_place": {
-            "type": "minecraft:simple_state_provider",
-            "state": {
-              "Name": "regions_unexplored:bleeding_heart"
-            }
+            "type": "minecraft:weighted_state_provider",
+            "entries": [
+              {
+                "data": {
+                  "Name": "regions_unexplored:bleeding_heart"
+                },
+                "weight": 3
+              },
+              {
+                "data": {
+                  "Name": "minecraft:lily_of_the_valley"
+                },
+                "weight": 2
+              }
+            ]
           }
         }
       },

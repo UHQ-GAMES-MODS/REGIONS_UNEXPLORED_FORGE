@@ -79,6 +79,7 @@
     ],
     [
       "minecraft:glow_lichen",
+      "regions_unexplored:medium_grass",
       "minecraft:patch_large_fern",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
@@ -87,7 +88,7 @@
       "regions_unexplored:scotts_pine_tree_tall_on_snow",
       "regions_unexplored:pine_tree_shrub_on_snow",
       "regions_unexplored:fallen_pine_tree",
-      "regions_unexplored:bleeding_heart",
+      "regions_unexplored:frozen_flowers",
       "regions_unexplored:snow_grass",
       "regions_unexplored:pine_shrub"
     ],

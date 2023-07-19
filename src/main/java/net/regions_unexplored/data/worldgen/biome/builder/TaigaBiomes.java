@@ -106,11 +106,10 @@ public class TaigaBiomes {
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.GOLDEN_LARCH_TREE_SPARSE);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.BIRCH_TREE_ASPEN);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.OAK_BUSH_SPARSE);
-
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuMiscOverworldPlacements.FALLEN_LARCH_TREE);
+
+        RuBiomeDefaultFeatures.addTaigaFlowerPatch(biomeBuilder);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.GRASS);
-        //TODO:ADD TAIGA FLOWERS
-        //RuBiomeDefaultFeatures.addTaigaFlowers(biomeBuilder);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.LARCH_SHRUB);
 
 
@@ -147,11 +146,11 @@ public class TaigaBiomes {
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.LARCH_TREE_SPARSE);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.BIRCH_TREE_ASPEN);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.OAK_BUSH_SPARSE);
-
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuMiscOverworldPlacements.FALLEN_LARCH_TREE);
+
+
+        RuBiomeDefaultFeatures.addTaigaFlowerPatch(biomeBuilder);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.GRASS);
-        //TODO:ADD TAIGA FLOWERS
-        //RuBiomeDefaultFeatures.addTaigaFlowers(biomeBuilder);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.GOLDEN_LARCH_SHRUB_MIX);
 
 
@@ -188,9 +187,8 @@ public class TaigaBiomes {
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.PINE_TREE_SHRUB_ON_GRASS);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuMiscOverworldPlacements.FALLEN_PINE_TREE);
 
-        RuBiomeDefaultFeatures.addDirtSurfaceVegetation(biomeBuilder);
-
         RuBiomeDefaultFeatures.addTaigaFlowerPatch(biomeBuilder);
+        RuBiomeDefaultFeatures.addDirtSurfaceVegetation(biomeBuilder);
 
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.PINE_SHRUB);
 

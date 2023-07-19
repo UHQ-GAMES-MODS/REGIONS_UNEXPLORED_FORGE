@@ -51,6 +51,7 @@ public class RuMiscOverworldPlacements {
     //OTHER_FEATURES
     public static final ResourceKey<PlacedFeature>  MINERAL_POOL = PlacedFeatureRegistry.createKey("mineral_pool");
 
+    public static final ResourceKey<PlacedFeature> ICICLE_UP = PlacedFeatureRegistry.createKey("icicle_up");
     public static final ResourceKey<PlacedFeature> SMOULDERING_DIRT = PlacedFeatureRegistry.createKey("smouldering_dirt");
     public static final ResourceKey<PlacedFeature> MEADOW_ROCK = PlacedFeatureRegistry.createKey("meadow_rock");
     public static final ResourceKey<PlacedFeature> NOISE_PUMPKINS = PlacedFeatureRegistry.createKey("noise_pumpkins");
@@ -86,6 +87,7 @@ public class RuMiscOverworldPlacements {
         final Holder<ConfiguredFeature<?, ?>>  ASH_VENT = featureGetter.getOrThrow(RuMiscOverworldFeatures.ASH_VENT);
         final Holder<ConfiguredFeature<?, ?>>  BASALT_BLOB = featureGetter.getOrThrow(RuMiscOverworldFeatures.BASALT_BLOB);
         //OTHER_FEATURES
+        final Holder<ConfiguredFeature<?, ?>>  ICICLE_UP = featureGetter.getOrThrow(RuMiscOverworldFeatures.ICICLE_UP);
         final Holder<ConfiguredFeature<?, ?>>  SMOULDERING_DIRT = featureGetter.getOrThrow(RuMiscOverworldFeatures.SMOULDERING_DIRT);
         final Holder<ConfiguredFeature<?, ?>>  MEADOW_ROCK = featureGetter.getOrThrow(RuMiscOverworldFeatures.MEADOW_ROCK);
         final Holder<ConfiguredFeature<?, ?>>  NOISE_PUMPKINS = featureGetter.getOrThrow(RuMiscOverworldFeatures.PATCH_NOISE_PUMPKINS);
@@ -119,6 +121,7 @@ public class RuMiscOverworldPlacements {
         register(context, RuMiscOverworldPlacements.ASH_VENT, ASH_VENT, List.of(CountOnEveryLayerPlacement.of(7), BiomeFilter.biome()));
         register(context, RuMiscOverworldPlacements.BASALT_BLOB, BASALT_BLOB, CountOnEveryLayerPlacement.of(4), BiomeFilter.biome());
         //OTHER_FEATURES
+        register(context, RuMiscOverworldPlacements.ICICLE_UP, ICICLE_UP, List.of(CountPlacement.of(4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BlockPredicateFilter.forPredicate(PlacedFeatureRegistry.onSnowPredicate), BiomeFilter.biome()));
         register(context, RuMiscOverworldPlacements.SMOULDERING_DIRT, SMOULDERING_DIRT, CountPlacement.of(25), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE,  BiomeFilter.biome());
         register(context, RuMiscOverworldPlacements.MEADOW_ROCK, MEADOW_ROCK, List.of(CountPlacement.of(1), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
         register(context, RuMiscOverworldPlacements.NOISE_PUMPKINS, NOISE_PUMPKINS, List.of(CountPlacement.of(18), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));

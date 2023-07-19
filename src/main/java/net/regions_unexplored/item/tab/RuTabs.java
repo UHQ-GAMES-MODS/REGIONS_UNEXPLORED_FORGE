@@ -107,6 +107,7 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.BROWN_SNOWBELLE.get()));
                             output.accept(new ItemStack(RuBlocks.BLACK_SNOWBELLE.get()));
 
+                            output.accept(new ItemStack(RuBlocks.BLUE_MAGNOLIA_FLOWERS.get()));
                             output.accept(new ItemStack(RuBlocks.PINK_MAGNOLIA_FLOWERS.get()));
                             output.accept(new ItemStack(RuBlocks.WHITE_MAGNOLIA_FLOWERS.get()));
 
@@ -139,6 +140,7 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.LARCH_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.GOLDEN_LARCH_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.MAGNOLIA_SAPLING.get()));
+                            output.accept(new ItemStack(RuBlocks.BLUE_MAGNOLIA_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.PINK_MAGNOLIA_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.WHITE_MAGNOLIA_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.MAPLE_SAPLING.get()));
@@ -166,6 +168,7 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.LARCH_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.GOLDEN_LARCH_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.MAGNOLIA_SHRUB.get()));
+                            output.accept(new ItemStack(RuBlocks.BLUE_MAGNOLIA_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.PINK_MAGNOLIA_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.WHITE_MAGNOLIA_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.MANGROVE_SHRUB.get()));
@@ -232,6 +235,7 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.LARCH_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.GOLDEN_LARCH_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.MAGNOLIA_LEAVES.get()));
+                            output.accept(new ItemStack(RuBlocks.BLUE_MAGNOLIA_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.PINK_MAGNOLIA_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.WHITE_MAGNOLIA_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.MAPLE_LEAVES.get()));

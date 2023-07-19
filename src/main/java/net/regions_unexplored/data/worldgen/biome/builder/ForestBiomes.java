@@ -129,9 +129,12 @@ public class ForestBiomes {
         BiomeGenerationSettings.Builder biomeBuilder = baseForestGeneration(featureGetter, carverGetter, false);
 
         //add RU features
-        RuBiomeDefaultFeatures.sakuraTrees(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.MAGNOLIA_TREE);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.PINK_MAGNOLIA_TREE);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.WHITE_MAGNOLIA_TREE);
 
         RuBiomeDefaultFeatures.addTsubaki(biomeBuilder);
+
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.GRASS);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.DAY_LILY);
 
@@ -393,8 +396,13 @@ public class ForestBiomes {
         BiomeGenerationSettings.Builder biomeBuilder = baseForestGeneration(featureGetter, carverGetter, true);
 
         //add RU features
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.BIG_WILLOW_TREE);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.WILLOW_TREE);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.BLUE_MAGNOLIA_TREE);
 
+        RuBiomeDefaultFeatures.addWillowFlowers(biomeBuilder);
 
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.FERNS);
         //add mob spawns
         MobSpawnSettings.Builder spawnBuilder = baseForestSpawning();
         spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.FOX, 10, 3, 4));

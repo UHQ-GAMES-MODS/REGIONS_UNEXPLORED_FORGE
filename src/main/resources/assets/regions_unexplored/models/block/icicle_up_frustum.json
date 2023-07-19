@@ -1,0 +1,7 @@
+{
+  "parent": "regions_unexplored:block/icicle",
+  "textures": {
+    "cross": "regions_unexplored:block/icicle_up_frustum"
+  },
+  "render_type": "cutout"
+}

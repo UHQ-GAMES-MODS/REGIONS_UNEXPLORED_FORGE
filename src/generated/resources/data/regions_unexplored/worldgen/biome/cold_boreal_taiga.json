@@ -79,6 +79,7 @@
     ],
     [
       "minecraft:glow_lichen",
+      "regions_unexplored:medium_grass",
       "minecraft:patch_large_fern",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
@@ -87,9 +88,9 @@
       "regions_unexplored:golden_larch_tree_sparse",
       "regions_unexplored:birch_tree_aspen",
       "regions_unexplored:oak_bush_sparse",
-      "regions_unexplored:snowbelle",
-      "regions_unexplored:bleeding_heart",
       "regions_unexplored:fallen_larch_tree",
+      "regions_unexplored:azure_daisy",
+      "regions_unexplored:snowbelle",
       "regions_unexplored:larch_shrub"
     ],
     [

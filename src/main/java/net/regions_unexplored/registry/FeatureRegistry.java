@@ -66,10 +66,12 @@ public class FeatureRegistry {
     public static RegistryObject<Feature> TREE_SHRUB;
     public static RegistryObject<Feature> GIANT_LILY;
     //DECORATION
+    public static RegistryObject<Feature> ICICLE_UP;
     public static RegistryObject<Feature> AIR_MULTIFACE_GROWTH;
     public static RegistryObject<Feature> FALLEN_BLOB_TREE;
     public static RegistryObject<Feature> SMOULDERING_DIRT;
     public static RegistryObject<Feature> MEADOW_ROCK;
+    public static RegistryObject<Feature> SPIRE;
 
 
     //public static RegistryObject<Feature> ICE_SPIRES;
@@ -133,9 +135,11 @@ public class FeatureRegistry {
         TREE_SHRUB = RegionsUnexploredMod.FEATURE_REGISTRY.register("tree_shrub", () -> new TreeShrubFeature(RuTreeConfiguration.CODEC));
         GIANT_LILY = RegionsUnexploredMod.FEATURE_REGISTRY.register("giant_lily", () -> new GiantLilyPadFeature(NoneFeatureConfiguration.CODEC));
         //DECORATION
+        ICICLE_UP = RegionsUnexploredMod.FEATURE_REGISTRY.register("icicle_up", () -> new FloorIcicleFeature(NoneFeatureConfiguration.CODEC));
         AIR_MULTIFACE_GROWTH = RegionsUnexploredMod.FEATURE_REGISTRY.register("air_multiface_growth", () -> new AirMultifaceGrowthFeature(MultifaceGrowthConfiguration.CODEC));
         FALLEN_BLOB_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("fallen_blob_tree", () -> new FallenBlobTreeFeature(FallenTreeConfiguration.CODEC));
         SMOULDERING_DIRT = RegionsUnexploredMod.FEATURE_REGISTRY.register("smouldering_dirt", () -> new SmoulderingDirtFeature(NoneFeatureConfiguration.CODEC));
         MEADOW_ROCK = RegionsUnexploredMod.FEATURE_REGISTRY.register("meadow_rock", () -> new MeadowRockFeature(NoneFeatureConfiguration.CODEC));
+        SPIRE = RegionsUnexploredMod.FEATURE_REGISTRY.register("spire", () -> new IceSpireFeature(RuTreeConfiguration.CODEC));
     }
 }

@@ -117,6 +117,7 @@ public class RuBlocks {
     public static RegistryObject<Block> PURPLE_CONEFLOWER;
     public static RegistryObject<Block> CLOVER;
 
+    public static RegistryObject<Block> BLUE_MAGNOLIA_FLOWERS;
     public static RegistryObject<Block> PINK_MAGNOLIA_FLOWERS;
     public static RegistryObject<Block> WHITE_MAGNOLIA_FLOWERS;
     //SNOWBELLE
@@ -170,6 +171,7 @@ public class RuBlocks {
     public static RegistryObject<Block> ORANGE_MAPLE_SAPLING;
     public static RegistryObject<Block> PALM_SAPLING;
     public static RegistryObject<Block> PINE_SAPLING;
+    public static RegistryObject<Block> BLUE_MAGNOLIA_SAPLING;
     public static RegistryObject<Block> PINK_MAGNOLIA_SAPLING;
     public static RegistryObject<Block> REDWOOD_SAPLING;
     public static RegistryObject<Block> RED_MAPLE_SAPLING;
@@ -201,6 +203,7 @@ public class RuBlocks {
     public static RegistryObject<Block> ORANGE_MAPLE_SHRUB;
     public static RegistryObject<Block> PALM_SHRUB;
     public static RegistryObject<Block> PINE_SHRUB;
+    public static RegistryObject<Block> BLUE_MAGNOLIA_SHRUB;
     public static RegistryObject<Block> PINK_MAGNOLIA_SHRUB;
     public static RegistryObject<Block> REDWOOD_SHRUB;
     public static RegistryObject<Block> RED_MAPLE_SHRUB;
@@ -219,6 +222,7 @@ public class RuBlocks {
     public static RegistryObject<Block> TALL_PINK_BIOSHROOM;
     public static RegistryObject<Block> TALL_YELLOW_BIOSHROOM;
     //OTHER_PLANT_BLOCKS
+    public static RegistryObject<Block> ICICLE;
     public static RegistryObject<Block> BARREL_CACTUS;
     public static RegistryObject<Block> CAVE_HYSSOP;
     public static RegistryObject<Block> DUCKWEED;
@@ -271,6 +275,7 @@ public class RuBlocks {
     public static RegistryObject<Block> POTTED_ORANGE_MAPLE_SAPLING;
     public static RegistryObject<Block> POTTED_PALM_SAPLING;
     public static RegistryObject<Block> POTTED_PINE_SAPLING;
+    public static RegistryObject<Block> POTTED_BLUE_MAGNOLIA_SAPLING;
     public static RegistryObject<Block> POTTED_PINK_MAGNOLIA_SAPLING;
     public static RegistryObject<Block> POTTED_REDWOOD_SAPLING;
     public static RegistryObject<Block> POTTED_RED_MAPLE_SAPLING;
@@ -341,6 +346,7 @@ public class RuBlocks {
     public static RegistryObject<Block> ORANGE_MAPLE_LEAVES;
     public static RegistryObject<Block> PALM_LEAVES;
     public static RegistryObject<Block> PINE_LEAVES;
+    public static RegistryObject<Block> BLUE_MAGNOLIA_LEAVES;
     public static RegistryObject<Block> PINK_MAGNOLIA_LEAVES;
     public static RegistryObject<Block> REDWOOD_LEAVES;
     public static RegistryObject<Block> RED_MAPLE_LEAVES;
@@ -835,8 +841,9 @@ public class RuBlocks {
         PURPLE_CONEFLOWER = BlockRegistry.registerDefaultBlock("purple_coneflower", () -> new GroundCoverBlock(BlockBehaviour.Properties.of().pushReaction(PushReaction.DESTROY).ignitedByLava().noCollission().sound(SoundType.PINK_PETALS)));
         CLOVER = BlockRegistry.registerDefaultBlock("clover", () -> new GroundCoverBlock(BlockBehaviour.Properties.of().pushReaction(PushReaction.DESTROY).replaceable().ignitedByLava().noCollission().sound(SoundType.PINK_PETALS)));
 
-        PINK_MAGNOLIA_FLOWERS = BlockRegistry.registerDefaultBlock("pink_magnolia_flowers", () -> new GlowLichenBlock(BlockBehaviour.Properties.of().pushReaction(PushReaction.DESTROY).ignitedByLava().replaceable().noCollission().strength(0.1F).sound(SoundType.GLOW_LICHEN)));
-        WHITE_MAGNOLIA_FLOWERS = BlockRegistry.registerDefaultBlock("white_magnolia_flowers", () -> new GlowLichenBlock(BlockBehaviour.Properties.copy(PINK_MAGNOLIA_FLOWERS.get())));
+        BLUE_MAGNOLIA_FLOWERS = BlockRegistry.registerDefaultBlock("blue_magnolia_flowers", () -> new GlowLichenBlock(BlockBehaviour.Properties.of().pushReaction(PushReaction.DESTROY).ignitedByLava().replaceable().noCollission().strength(0.1F).sound(SoundType.GLOW_LICHEN)));
+        PINK_MAGNOLIA_FLOWERS = BlockRegistry.registerDefaultBlock("pink_magnolia_flowers", () -> new GlowLichenBlock(BlockBehaviour.Properties.copy(BLUE_MAGNOLIA_FLOWERS.get())));
+        WHITE_MAGNOLIA_FLOWERS = BlockRegistry.registerDefaultBlock("white_magnolia_flowers", () -> new GlowLichenBlock(BlockBehaviour.Properties.copy(BLUE_MAGNOLIA_FLOWERS.get())));
         //SNOWBELLE
         RED_SNOWBELLE = BlockRegistry.registerDefaultBlock("red_snowbelle", () -> new RuFlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 10, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
         ORANGE_SNOWBELLE = BlockRegistry.registerDefaultBlock("orange_snowbelle", () -> new RuFlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 10, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
@@ -887,6 +894,7 @@ public class RuBlocks {
         ORANGE_MAPLE_SAPLING = BlockRegistry.registerDefaultBlock("orange_maple_sapling", () -> new RuSaplingBlock(new OrangeMapleTreeGrower()));
         PALM_SAPLING = BlockRegistry.registerDefaultBlock("palm_sapling", () -> new RuSaplingBlock(new PalmTreeGrower()));
         PINE_SAPLING = BlockRegistry.registerDefaultBlock("pine_sapling", () -> new RuSaplingBlock(new PineTreeGrower()));
+        BLUE_MAGNOLIA_SAPLING = BlockRegistry.registerDefaultBlock("blue_magnolia_sapling", () -> new RuSaplingBlock(new BlueMagnoliaTreeGrower()));
         PINK_MAGNOLIA_SAPLING = BlockRegistry.registerDefaultBlock("pink_magnolia_sapling", () -> new RuSaplingBlock(new PinkMagnoliaTreeGrower()));
         REDWOOD_SAPLING = BlockRegistry.registerDefaultBlock("redwood_sapling", () -> new RuSaplingBlock(new RedwoodTreeGrower()));
         RED_MAPLE_SAPLING = BlockRegistry.registerDefaultBlock("red_maple_sapling", () -> new RuSaplingBlock(new RedMapleTreeGrower()));
@@ -918,6 +926,7 @@ public class RuBlocks {
         ORANGE_MAPLE_SHRUB = BlockRegistry.registerDefaultBlock("orange_maple_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
         PALM_SHRUB = BlockRegistry.registerDefaultBlock("palm_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
         PINE_SHRUB = BlockRegistry.registerDefaultBlock("pine_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
+        BLUE_MAGNOLIA_SHRUB = BlockRegistry.registerDefaultBlock("blue_magnolia_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
         PINK_MAGNOLIA_SHRUB = BlockRegistry.registerDefaultBlock("pink_magnolia_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
         REDWOOD_SHRUB = BlockRegistry.registerDefaultBlock("redwood_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
         RED_MAPLE_SHRUB = BlockRegistry.registerDefaultBlock("red_maple_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
@@ -936,6 +945,7 @@ public class RuBlocks {
         TALL_PINK_BIOSHROOM = BlockRegistry.registerDefaultBlock("tall_pink_bioshroom", () -> new DoubleBioshroomBlock(BlockBehaviour.Properties.copy(TALL_BLUE_BIOSHROOM.get())));
         TALL_YELLOW_BIOSHROOM = BlockRegistry.registerDefaultBlock("tall_yellow_bioshroom", () -> new DoubleBioshroomBlock(BlockBehaviour.Properties.copy(TALL_BLUE_BIOSHROOM.get())));
         //OTHER_PLANT_BLOCKS
+        ICICLE = BlockRegistry.registerDefaultBlock("icicle", () -> new IcicleBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_BLUE).noOcclusion().sound(SoundType.GLASS).strength(1F, 0.6F).dynamicShape().offsetType(BlockBehaviour.OffsetType.XZ)));
         BARREL_CACTUS = BlockRegistry.registerDefaultBlock("barrel_cactus", () -> new BarrelCactusBlock(BlockBehaviour.Properties.of().pushReaction(PushReaction.DESTROY).ignitedByLava().noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ)));
         CAVE_HYSSOP = BlockRegistry.registerDefaultBlock("cave_hyssop", () -> new CaveFlowerBlock(MobEffects.LUCK, 10, BlockBehaviour.Properties.of().pushReaction(PushReaction.DESTROY).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ)));
         DUCKWEED = BlockRegistry.registerDuckweedBlock("duckweed", () -> new DuckweedBlock());
@@ -989,6 +999,7 @@ public class RuBlocks {
         POTTED_ORANGE_MAPLE_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_orange_maple_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, ORANGE_MAPLE_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         POTTED_PALM_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_palm_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, PALM_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         POTTED_PINE_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_pine_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, PINE_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
+        POTTED_BLUE_MAGNOLIA_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_blue_magnolia_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, BLUE_MAGNOLIA_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         POTTED_PINK_MAGNOLIA_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_pink_magnolia_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, PINK_MAGNOLIA_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         POTTED_REDWOOD_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_redwood_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, REDWOOD_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         POTTED_RED_MAPLE_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_red_maple_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, RED_MAPLE_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
@@ -1058,6 +1069,7 @@ public class RuBlocks {
         ORANGE_MAPLE_LEAVES = BlockRegistry.registerDefaultBlock("orange_maple_leaves", () -> BlockRegistry.orangeMapleLeaves(MapColor.COLOR_ORANGE));
         PALM_LEAVES = BlockRegistry.registerDefaultBlock("palm_leaves", () -> BlockRegistry.leaves(MapColor.PLANT));
         PINE_LEAVES = BlockRegistry.registerDefaultBlock("pine_leaves", () -> BlockRegistry.leaves(MapColor.PLANT));
+        BLUE_MAGNOLIA_LEAVES = BlockRegistry.registerDefaultBlock("blue_magnolia_leaves", () -> BlockRegistry.blueMagnoliaLeaves(MapColor.COLOR_LIGHT_BLUE));
         PINK_MAGNOLIA_LEAVES = BlockRegistry.registerDefaultBlock("pink_magnolia_leaves", () -> BlockRegistry.pinkMagnoliaLeaves(MapColor.COLOR_PINK));
         REDWOOD_LEAVES = BlockRegistry.registerDefaultBlock("redwood_leaves", () -> BlockRegistry.leaves(MapColor.PLANT));
         RED_MAPLE_LEAVES = BlockRegistry.registerDefaultBlock("red_maple_leaves", () -> BlockRegistry.redMapleLeaves(MapColor.COLOR_RED));

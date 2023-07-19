@@ -1,5 +1,5 @@
 {
-  "feature": "regions_unexplored:lupine_vegetation",
+  "feature": "regions_unexplored:patch_lupine_vegetation",
   "placement": [
     {
       "type": "minecraft:count",

@@ -73,6 +73,7 @@ public class RuMiscOverworldFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> ASH_VENT = ConfiguredFeatureRegistry.createKey("ash_vent");
     public static final ResourceKey<ConfiguredFeature<?, ?>> BASALT_BLOB = ConfiguredFeatureRegistry.createKey("basalt_blob");
     //OTHER_FEATURES
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ICICLE_UP = ConfiguredFeatureRegistry.createKey("icicle_up");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SMOULDERING_DIRT = ConfiguredFeatureRegistry.createKey("smouldering_dirt");
     public static final ResourceKey<ConfiguredFeature<?, ?>> MEADOW_ROCK = ConfiguredFeatureRegistry.createKey("meadow_rock");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_NOISE_PUMPKINS = ConfiguredFeatureRegistry.createKey("patch_noise_pumpkins");
@@ -115,6 +116,7 @@ public class RuMiscOverworldFeatures {
         register(context, ASH_VENT, FeatureRegistry.ASH_VENT.get(), FeatureConfiguration.NONE);
         register(context, BASALT_BLOB, FeatureRegistry.BASALT_BLOB.get(), new ColumnFeatureConfiguration(ConstantInt.of(1), UniformInt.of(1, 4)));
         //OTHER_FEATURES
+        register(context, ICICLE_UP, FeatureRegistry.ICICLE_UP.get(), FeatureConfiguration.NONE);
         register(context, SMOULDERING_DIRT, FeatureRegistry.SMOULDERING_DIRT.get(), FeatureConfiguration.NONE);
         register(context, MEADOW_ROCK, FeatureRegistry.MEADOW_ROCK.get(), FeatureConfiguration.NONE);
         register(context, PATCH_NOISE_PUMPKINS, Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.PUMPKIN.defaultBlockState(), 4).add(Blocks.CARVED_PUMPKIN.defaultBlockState().setValue(CarvedPumpkinBlock.FACING, Direction.NORTH), 1).add(Blocks.CARVED_PUMPKIN.defaultBlockState().setValue(CarvedPumpkinBlock.FACING, Direction.SOUTH), 1).add(Blocks.CARVED_PUMPKIN.defaultBlockState().setValue(CarvedPumpkinBlock.FACING, Direction.EAST), 1).add(Blocks.CARVED_PUMPKIN.defaultBlockState().setValue(CarvedPumpkinBlock.FACING, Direction.WEST), 1).add(Blocks.AIR.defaultBlockState(), 75))), List.of(RuBlocks.SILT_PODZOL.get(), Blocks.SNOW_BLOCK), 125));

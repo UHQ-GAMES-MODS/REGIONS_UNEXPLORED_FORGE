@@ -83,7 +83,12 @@
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin"
+      "minecraft:patch_pumpkin",
+      "regions_unexplored:icicle_up",
+      "regions_unexplored:ice_spire",
+      "regions_unexplored:spruce_tree_tall_on_snow",
+      "regions_unexplored:frozen_flowers",
+      "regions_unexplored:snow_grass"
     ],
     [
       "minecraft:freeze_top_layer"

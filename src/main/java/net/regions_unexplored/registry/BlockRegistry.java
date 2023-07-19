@@ -177,6 +177,9 @@ public class BlockRegistry {
     public static MauveLeavesBlock mauveLeaves(MapColor colour) {
         return new MauveLeavesBlock(BlockBehaviour.Properties.of().mapColor(colour).ignitedByLava().strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(BlockRegistry::ocelotOrParrot).isSuffocating(BlockRegistry::never).isViewBlocking(BlockRegistry::never));
     }
+    public static BlueMagnoliaLeavesBlock blueMagnoliaLeaves(MapColor colour) {
+        return new BlueMagnoliaLeavesBlock(BlockBehaviour.Properties.of().mapColor(colour).ignitedByLava().strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(BlockRegistry::ocelotOrParrot).isSuffocating(BlockRegistry::never).isViewBlocking(BlockRegistry::never));
+    }
     public static PinkMagnoliaLeavesBlock pinkMagnoliaLeaves(MapColor colour) {
         return new PinkMagnoliaLeavesBlock(BlockBehaviour.Properties.of().mapColor(colour).ignitedByLava().strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(BlockRegistry::ocelotOrParrot).isSuffocating(BlockRegistry::never).isViewBlocking(BlockRegistry::never));
     }
