@@ -403,6 +403,7 @@ public class ForestBiomes {
         RuBiomeDefaultFeatures.addWillowFlowers(biomeBuilder);
 
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.FERNS);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.WILLOW_MAGNOLIA_SHRUB_MIX);
         //add mob spawns
         MobSpawnSettings.Builder spawnBuilder = baseForestSpawning();
         spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.FOX, 10, 3, 4));

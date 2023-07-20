@@ -1,0 +1,28 @@
+{
+  "type": "regions_unexplored:shrub",
+  "config": {
+    "sapling_provider": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "data": {
+            "Name": "regions_unexplored:willow_shrub",
+            "Properties": {
+              "half": "lower"
+            }
+          },
+          "weight": 2
+        },
+        {
+          "data": {
+            "Name": "regions_unexplored:blue_magnolia_shrub",
+            "Properties": {
+              "half": "lower"
+            }
+          },
+          "weight": 1
+        }
+      ]
+    }
+  }
+}

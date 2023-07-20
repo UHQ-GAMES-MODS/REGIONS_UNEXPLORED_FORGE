@@ -89,7 +89,8 @@
       "regions_unexplored:willow_tree",
       "regions_unexplored:blue_magnolia_tree",
       "regions_unexplored:willow_flowers",
-      "regions_unexplored:ferns"
+      "regions_unexplored:ferns",
+      "regions_unexplored:willow_magnolia_shrub_mix"
     ],
     [
       "minecraft:freeze_top_layer"

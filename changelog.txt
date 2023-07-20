@@ -1,4 +1,72 @@
 -0.5.0
+    +BLOCK ADDITIONS:
+        +AQUATIC BLOCKS
+            -Hyacinth Bloom
+            -Hyacinth Flowers
+            -Tall Hyacinth Stock
+        +CAVE BLOCKS
+            -Bladed Grass
+            -Bladed Tall Grass
+            -Corpse Flower
+            -Dropleaf
+            -Duskmelon
+            -Dusktrap
+        +PLANT BLOCKS
+            -Ashen Grass
+            -Clover
+            -Flowering Lily Pad(can be bone-mealed into Giant Lily Pad)
+            -Giant Lily Pad
+            -Windswept Grass
+        +FLOWER BLOCKS
+            -Aster
+            -Bleeding Heart
+            -Blue, Pink, and White Magnolia Flowers
+            -Day Lily
+            -Dyeable Snowbelle Flower(all colours)
+            -Meadow Sage
+            -Orange and Purple Coneflower
+            -Salmon Poppy Bush
+        +SAPLING BLOCKS
+            -Ashen Sapling*
+            -Blue Magnolia Sapling
+            -Enchanted Sapling
+        +SHRUB BLOCKS
+            -Ashen Shrub
+            -Blue Magnolia Shrub
+            -Cherry Shrub*
+            -Enchanted Shrub
+        +LEAVES BLOCKS
+            -Ashen Leaves
+            -Blue Magnolia Leaves
+            -Enchanted Leaves
+        +BRANCH BLOCKS
+            -Cherry Branch*
+        +DIRT BLOCKS
+            -Ashen Dirt
+            -Peat Podzol
+            -Silt Podzol
+        +STONE BLOCKS
+            -Argillite Stone Type(Grass, Bricks, Polished)
+        +WOOD BLOCKS
+            -Ashen Log and Wood(Dead woodset)
+            -Hanging Signs for all wood sets*
+            -Silver Birch Log and Wood(Birch woodset)
+        +OTHER BLOCKS
+            -Enchanted and Silver Birch Leaf Pile
+            -Red, Orange, and Green Maple Leaf Pile
+            -Salmonberry Bush
+
+    +BLOCK CHANGES:
+        -Retextured almost every block
+        -Made Tsubaki one block tall
+        -Potted Saplings now have a separate "Bonsai" texture
+        -Renamed Cherry woodset to Magnolia
+        -Renamed Forest Dirts to Peat
+        -Renamed Plains Dirts to Silt
+        -Renamed Sculkwood woodset to Brimwood and gave it a different look
+        -Renamed Tall Saplings to Shrubs
+
+
   -Made Repository Public
   +TBD
   -test
