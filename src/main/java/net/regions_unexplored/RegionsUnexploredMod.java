@@ -2,6 +2,7 @@ package net.regions_unexplored;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.registries.Registries;
@@ -107,6 +108,7 @@ public class RegionsUnexploredMod {
         WoodTypeRegistry.addWoodTypes();
         WoodTypeRegistry.addSheets();
         BlockEntityRenderers.register(RuBlockEntities.SIGN_BLOCK_ENTITIES.get(), SignRenderer::new);
+        BlockEntityRenderers.register(RuBlockEntities.HANGING_SIGN_BLOCK_ENTITIES.get(), HangingSignRenderer::new);
     }
 
     //set up non-client side features

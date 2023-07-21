@@ -84,7 +84,13 @@
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
-      "regions_unexplored:frozen_flowers"
+      "regions_unexplored:scotts_pine_tree_mountain_on_snow",
+      "regions_unexplored:dead_scotts_pine_tree_mountain_on_snow",
+      "regions_unexplored:pine_tree_shrub_on_snow_sparse",
+      "regions_unexplored:fallen_pine_tree_on_snow",
+      "regions_unexplored:rock_on_snow",
+      "regions_unexplored:frozen_flowers",
+      "regions_unexplored:snow_grass"
     ],
     [
       "minecraft:freeze_top_layer"

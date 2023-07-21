@@ -88,7 +88,8 @@ public class RuVegetationFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> CORPSE_FLOWER = ConfiguredFeatureRegistry.createKey("corpse_flower");
     public static final ResourceKey<ConfiguredFeature<?, ?>> DUSKTRAP = ConfiguredFeatureRegistry.createKey("dusktrap");
     public static final ResourceKey<ConfiguredFeature<?, ?>> DAY_LILY = ConfiguredFeatureRegistry.createKey("day_lily");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> TSUBAKI = ConfiguredFeatureRegistry.createKey("tsubaki");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_TSUBAKI = ConfiguredFeatureRegistry.createKey("patch_tsubaki");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_HYSSOP = ConfiguredFeatureRegistry.createKey("patch_hyssop");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_BARLEY = ConfiguredFeatureRegistry.createKey("patch_barley");
     public static final ResourceKey<ConfiguredFeature<?, ?>> MEADOW_SAGE = ConfiguredFeatureRegistry.createKey("meadow_sage");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_REDSTONE_BULB = ConfiguredFeatureRegistry.createKey("patch_redstone_bulb");
@@ -259,7 +260,8 @@ public class RuVegetationFeatures {
         register(context, PATCH_TULIPS, Feature.FLOWER, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.WHITE_TULIP.defaultBlockState(), 4).add(Blocks.PINK_TULIP.defaultBlockState(), 2).add(Blocks.ORANGE_TULIP.defaultBlockState(), 2).add(Blocks.RED_TULIP.defaultBlockState(), 2)))));
         register(context, PATCH_WHITE_TRILLIUM, Feature.FLOWER, new RandomPatchConfiguration(32, 4, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(RuBlocks.WHITE_TRILLIUM.get().defaultBlockState())))));
         register(context, PATCH_WILTING_TRILLIUM, Feature.FLOWER, new RandomPatchConfiguration(32, 4, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(RuBlocks.WILTING_TRILLIUM.get().defaultBlockState())))));
-        register(context, TSUBAKI, Feature.FLOWER, new RandomPatchConfiguration(32, 1, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(RuBlocks.TSUBAKI.get())))));
+        register(context, PATCH_TSUBAKI, Feature.FLOWER, new RandomPatchConfiguration(32, 1, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(RuBlocks.TSUBAKI.get())))));
+        register(context, PATCH_HYSSOP, Feature.FLOWER, new RandomPatchConfiguration(16, 1, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(RuBlocks.HYSSOP.get())))));
         //TREE
         register(context, BLACKWOOD_BIOSHROOMS, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.MUSHROOM_STEM.defaultBlockState()), new StraightTrunkPlacer(2, 1, 0), BlockStateProvider.simple(Blocks.MUSHROOM_STEM.defaultBlockState()), new BlobFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0), 0), new TwoLayersFeatureSize(0, 0, 0)).decorators(ImmutableList.of(BlackwoodBioshroom.INSTANCE)).ignoreVines().build());
         //MULTIFACE

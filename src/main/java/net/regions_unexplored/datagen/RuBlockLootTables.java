@@ -454,6 +454,8 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         dropSelf(RuBlocks.BAOBAB_BUTTON.get());
         dropSelf(RuBlocks.BAOBAB_SIGN.get());
         add(RuBlocks.BAOBAB_WALL_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.BAOBAB_SIGN.get()));
+        dropSelf(RuBlocks.BAOBAB_HANGING_SIGN.get());
+        add(RuBlocks.BAOBAB_WALL_HANGING_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.BAOBAB_HANGING_SIGN.get()));
         //BLACKWOOD_BLOCKS
         dropSelf(RuBlocks.BLACKWOOD_LOG.get());
         dropSelf(RuBlocks.STRIPPED_BLACKWOOD_LOG.get());

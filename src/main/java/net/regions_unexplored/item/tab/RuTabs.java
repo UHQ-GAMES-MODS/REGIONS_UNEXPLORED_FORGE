@@ -325,6 +325,7 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.ASHEN_GRASS.get()));
 
                             /*-----------------OTHER_BLOCKS-----------------*/
+                            output.accept(new ItemStack(RuBlocks.ICICLE.get()));
                             output.accept(new ItemStack(RuBlocks.ASH.get()));
                             output.accept(new ItemStack(RuBlocks.VOLCANIC_ASH.get()));
                             output.accept(new ItemStack(RuBlocks.ASH_VENT.get()));
@@ -357,6 +358,7 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.BAOBAB_PRESSURE_PLATE.get()));
                             output.accept(new ItemStack(RuBlocks.BAOBAB_BUTTON.get()));
                             output.accept(new ItemStack(RuBlocks.BAOBAB_SIGN.get()));
+                            output.accept(new ItemStack(RuBlocks.BAOBAB_HANGING_SIGN.get()));
                             //BLACKWOOD_BLOCKS
                             output.accept(new ItemStack(RuBlocks.BLACKWOOD_LOG.get()));
                             output.accept(new ItemStack(RuBlocks.STRIPPED_BLACKWOOD_LOG.get()));

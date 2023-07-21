@@ -410,8 +410,6 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         pressurePlate(consumer, RuBlocks.BRIMWOOD_PRESSURE_PLATE.get(), RuBlocks.BRIMWOOD_PLANKS.get());
         woodenButton(consumer, RuBlocks.BRIMWOOD_BUTTON.get(), RuBlocks.BRIMWOOD_PLANKS.get());
         woodenSign(consumer, RuBlocks.BRIMWOOD_SIGN.get(), RuBlocks.BRIMWOOD_PLANKS.get());
-        woodenBoat(consumer, RuItems.BRIMWOOD_BOAT.get(), RuBlocks.BRIMWOOD_PLANKS.get());
-        chestBoat(consumer, RuItems.BRIMWOOD_CHEST_BOAT.get(), RuBlocks.BRIMWOOD_PLANKS.get());
         //SAKURA_BLOCKS
         woodFromLogs(consumer, RuBlocks.MAGNOLIA_WOOD.get(), RuBlocks.MAGNOLIA_LOG.get());
         woodFromLogs(consumer, RuBlocks.STRIPPED_MAGNOLIA_WOOD.get(), RuBlocks.STRIPPED_MAGNOLIA_LOG.get());

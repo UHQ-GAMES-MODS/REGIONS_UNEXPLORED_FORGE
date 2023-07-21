@@ -1,0 +1,38 @@
+{
+  "type": "regions_unexplored:stripped_pine_tree",
+  "config": {
+    "branch_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "regions_unexplored:pine_branch",
+        "Properties": {
+          "facing": "north"
+        }
+      }
+    },
+    "foliage_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "regions_unexplored:dead_pine_leaves",
+        "Properties": {
+          "distance": "7",
+          "persistent": "false",
+          "waterlogged": "false"
+        }
+      }
+    },
+    "minimum_size": 10,
+    "size_variation": 4,
+    "trunk_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "regions_unexplored:pine_log",
+        "Properties": {
+          "axis": "y",
+          "is_stripped": "false",
+          "transition_block": "false"
+        }
+      }
+    }
+  }
+}

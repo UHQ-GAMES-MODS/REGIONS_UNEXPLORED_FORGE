@@ -53,6 +53,7 @@ public class RuMiscOverworldFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> FALLEN_OAK_TREE = ConfiguredFeatureRegistry.createKey("fallen_oak_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> FALLEN_OAK_TREE_WITH_BLOB = ConfiguredFeatureRegistry.createKey("fallen_oak_tree_with_blob");
     public static final ResourceKey<ConfiguredFeature<?, ?>> FALLEN_PINE_TREE = ConfiguredFeatureRegistry.createKey("fallen_pine_tree");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> FALLEN_SNOW_PINE_TREE = ConfiguredFeatureRegistry.createKey("fallen_snow_pine_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> FALLEN_SILVER_BIRCH_TREE = ConfiguredFeatureRegistry.createKey("fallen_silver_birch_tree");
     //CAVE_FEATURES
     public static final ResourceKey<ConfiguredFeature<?, ?>> POINTED_REDSTONE = ConfiguredFeatureRegistry.createKey("pointed_redstone");
@@ -76,6 +77,7 @@ public class RuMiscOverworldFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> ICICLE_UP = ConfiguredFeatureRegistry.createKey("icicle_up");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SMOULDERING_DIRT = ConfiguredFeatureRegistry.createKey("smouldering_dirt");
     public static final ResourceKey<ConfiguredFeature<?, ?>> MEADOW_ROCK = ConfiguredFeatureRegistry.createKey("meadow_rock");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ROCK = ConfiguredFeatureRegistry.createKey("rock");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_NOISE_PUMPKINS = ConfiguredFeatureRegistry.createKey("patch_noise_pumpkins");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
@@ -96,6 +98,7 @@ public class RuMiscOverworldFeatures {
         register(context, FALLEN_OAK_TREE, FeatureRegistry.FALLEN_BLOB_TREE.get(), new FallenTreeConfiguration(BlockStateProvider.simple(Blocks.OAK_LOG.defaultBlockState()), BlockStateProvider.simple(Blocks.OAK_LOG.defaultBlockState()), BlockStateProvider.simple(RuBlocks.DEAD_LEAVES.get().defaultBlockState()), 4, 4, false));
         register(context, FALLEN_OAK_TREE_WITH_BLOB, FeatureRegistry.FALLEN_BLOB_TREE.get(), new FallenTreeConfiguration(BlockStateProvider.simple(Blocks.OAK_LOG.defaultBlockState()), BlockStateProvider.simple(Blocks.OAK_LOG.defaultBlockState()), BlockStateProvider.simple(RuBlocks.DEAD_LEAVES.get().defaultBlockState()), 4, 4, true));
         register(context, FALLEN_PINE_TREE, FeatureRegistry.FALLEN_BLOB_TREE.get(), new FallenTreeConfiguration(BlockStateProvider.simple(RuBlocks.PINE_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.PINE_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.PINE_LEAVES.get().defaultBlockState()), 5, 6, false));
+        register(context, FALLEN_SNOW_PINE_TREE, FeatureRegistry.FALLEN_SNOW_TREE.get(), new FallenTreeConfiguration(BlockStateProvider.simple(RuBlocks.STRIPPED_PINE_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.STRIPPED_PINE_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.PINE_LEAVES.get().defaultBlockState()), 5, 6, false));
         register(context, FALLEN_SILVER_BIRCH_TREE, FeatureRegistry.FALLEN_BLOB_TREE.get(), new FallenTreeConfiguration(BlockStateProvider.simple(RuBlocks.SILVER_BIRCH_LOG.get().defaultBlockState().setValue(AspenLogBlock.IS_BASE, true)), BlockStateProvider.simple(RuBlocks.SILVER_BIRCH_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.SILVER_BIRCH_LEAVES.get().defaultBlockState()), 4, 3, false));
         //CAVE_FEATURES
         register(context, POINTED_REDSTONE, Feature.SIMPLE_RANDOM_SELECTOR, new SimpleRandomFeatureConfiguration(HolderSet.direct(PlacementUtils.inlinePlaced(FeatureRegistry.POINTED_REDSTONE.get(), new PointedRedstoneConfiguration(0.5F, 0.7F, 0.5F, 0.5F), EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1))), PlacementUtils.inlinePlaced(FeatureRegistry.POINTED_REDSTONE.get(), new PointedRedstoneConfiguration(0.5F, 0.7F, 0.5F, 0.5F), EnvironmentScanPlacement.scanningFor(Direction.UP, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(-1))))));
@@ -119,6 +122,7 @@ public class RuMiscOverworldFeatures {
         register(context, ICICLE_UP, FeatureRegistry.ICICLE_UP.get(), FeatureConfiguration.NONE);
         register(context, SMOULDERING_DIRT, FeatureRegistry.SMOULDERING_DIRT.get(), FeatureConfiguration.NONE);
         register(context, MEADOW_ROCK, FeatureRegistry.MEADOW_ROCK.get(), FeatureConfiguration.NONE);
+        register(context, ROCK, FeatureRegistry.ROCK.get(), FeatureConfiguration.NONE);
         register(context, PATCH_NOISE_PUMPKINS, Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.PUMPKIN.defaultBlockState(), 4).add(Blocks.CARVED_PUMPKIN.defaultBlockState().setValue(CarvedPumpkinBlock.FACING, Direction.NORTH), 1).add(Blocks.CARVED_PUMPKIN.defaultBlockState().setValue(CarvedPumpkinBlock.FACING, Direction.SOUTH), 1).add(Blocks.CARVED_PUMPKIN.defaultBlockState().setValue(CarvedPumpkinBlock.FACING, Direction.EAST), 1).add(Blocks.CARVED_PUMPKIN.defaultBlockState().setValue(CarvedPumpkinBlock.FACING, Direction.WEST), 1).add(Blocks.AIR.defaultBlockState(), 75))), List.of(RuBlocks.SILT_PODZOL.get(), Blocks.SNOW_BLOCK), 125));
     }
 

@@ -60,8 +60,6 @@ public class RuBoat extends Boat {
                 item = RuItems.PINE_BOAT.get();
             case REDWOOD:
                 item = RuItems.REDWOOD_BOAT.get();
-            case BRIMWOOD:
-                item = RuItems.BRIMWOOD_BOAT.get();
             case WILLOW:
                 item = RuItems.WILLOW_BOAT.get();
             default:
@@ -151,7 +149,6 @@ public class RuBoat extends Boat {
         PALM("palm", RuBlocks.PALM_PLANKS.get()),
         PINE("pine", RuBlocks.PINE_PLANKS.get()),
         REDWOOD("redwood", RuBlocks.REDWOOD_PLANKS.get()),
-        BRIMWOOD("brimwood", RuBlocks.BRIMWOOD_PLANKS.get()),
         WILLOW("willow", RuBlocks.WILLOW_PLANKS.get());
 
         private final String name;

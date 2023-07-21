@@ -33,6 +33,9 @@ public class RuBiomeDefaultFeatures {
     public static void addMeadowRocks(BiomeGenerationSettings.Builder biomeBuilder) {
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuMiscOverworldPlacements.MEADOW_ROCK);
     }
+    public static void addHyssop(BiomeGenerationSettings.Builder biomeBuilder) {
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.HYSSOP);
+    }
     public static void bleedingHeart(BiomeGenerationSettings.Builder biomeBuilder) {
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.FROZEN_FLOWERS);
     }

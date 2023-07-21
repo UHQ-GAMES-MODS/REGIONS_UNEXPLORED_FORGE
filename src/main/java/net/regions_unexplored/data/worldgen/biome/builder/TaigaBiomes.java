@@ -185,7 +185,7 @@ public class TaigaBiomes {
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.PINE_TREE_ON_DIRT);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.PINE_TREE_TALL_ON_DIRT);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.PINE_TREE_SHRUB_ON_GRASS);
-        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuMiscOverworldPlacements.FALLEN_PINE_TREE);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuMiscOverworldPlacements.FALLEN_PINE_TREE_ON_DIRT);
 
         RuBiomeDefaultFeatures.addTaigaFlowerPatch(biomeBuilder);
         RuBiomeDefaultFeatures.addDirtSurfaceVegetation(biomeBuilder);

@@ -162,7 +162,7 @@ public class FrozenBiomes {
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.SCOTTS_PINE_TREE_TALL_ON_SNOW);
 
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.PINE_TREE_SHRUB_ON_SNOW);
-        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuMiscOverworldPlacements.FALLEN_PINE_TREE);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuMiscOverworldPlacements.FALLEN_PINE_TREE_ON_DIRT);
 
         RuBiomeDefaultFeatures.bleedingHeart(biomeBuilder);
 
@@ -241,8 +241,15 @@ public class FrozenBiomes {
         BiomeGenerationSettings.Builder biomeBuilder = baseFrozenGeneration(featureGetter, carverGetter);
 
         //add RU features
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.SCOTTS_PINE_TREE_MOUNTAIN_ON_SNOW);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.DEAD_SCOTTS_PINE_TREE_MOUNTAIN_ON_SNOW);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.PINE_TREE_SHRUB_ON_SNOW_SPARSE);
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuMiscOverworldPlacements.FALLEN_PINE_TREE_ON_SNOW);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuMiscOverworldPlacements.ROCK_ON_SNOW);
 
         RuBiomeDefaultFeatures.bleedingHeart(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.SNOW_GRASS);
 
 
         //add mob spawns

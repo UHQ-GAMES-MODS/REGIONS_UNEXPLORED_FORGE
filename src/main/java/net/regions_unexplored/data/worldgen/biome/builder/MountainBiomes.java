@@ -8,9 +8,13 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
+import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.regions_unexplored.data.worldgen.RuBiomeDefaultFeatures;
+import net.regions_unexplored.data.worldgen.placement.RuMiscOverworldPlacements;
+import net.regions_unexplored.data.worldgen.placement.RuTreePlacements;
+import net.regions_unexplored.data.worldgen.placement.RuVegetationPlacements;
 
 public class MountainBiomes {
     //TODO:Complete Class
@@ -249,7 +253,14 @@ public class MountainBiomes {
         BiomeGenerationSettings.Builder biomeBuilder = baseExtremeHillsGeneration(featureGetter, carverGetter);
 
         //add RU features
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.SCOTTS_PINE_TREE_MOUNTAIN);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.DEAD_SCOTTS_PINE_TREE_MOUNTAIN);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuMiscOverworldPlacements.FALLEN_PINE_TREE);
 
+        RuBiomeDefaultFeatures.addHyssop(biomeBuilder);
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.FERNS);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.PINE_DEAD_SHRUB_MIX);
 
         //add mob spawns
         MobSpawnSettings.Builder spawnBuilder = baseExtremeHillsSpawning();

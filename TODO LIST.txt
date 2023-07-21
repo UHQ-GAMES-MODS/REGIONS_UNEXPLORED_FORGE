@@ -2,9 +2,49 @@
 //TODO:COMPLETE LIST
 
 -complete biomes
+    //EASY
+    -arid_mountains
+    -bamboo_forest
+    -chalk_cliffs
+    -cold_river
+    -grassy_beach
+    -gravel_beach
+    -highland_fields
+    -joshua_desert
+    -mountains
+    -muddy_river
+    -outback
+    -pine_slopes
+    -rocky_reef
+    -saguaro_desert
+    -steppe
+
+    //HARD
+    -baobab_savanna
+    -dry_bushland
+    -eucalyptus_forest
+    -fen
+    -flooded_plains
+    -fungal_fen
+    -hyacinth_deeps
+    -lush_hills
+    -old_growth_rainforest
+    -rainforest
+    -tropics
+
+    //NETHER
+    -blackstone_basin
+    -corrupted_holt
+    -fluxing_caverns
+    -glistering_meadow
+    -mycotoxic_undergrowth
+    -redstone_abyss(maybe replace?)
+
+    -TOTAL LEFT:30
 -finish tree growers
 -add functionality to some extra blocks
 -complete potted plants
 -add furnace burn times
 -add flammability to blocks
 -add minor functionality, eg. composting, stripping, tilling, flattening
+-fix joshua leaves loot table

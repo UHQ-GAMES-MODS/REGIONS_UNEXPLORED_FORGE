@@ -1,5 +1,6 @@
 package net.regions_unexplored.block.entity;
 
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.RegistryObject;
 import net.regions_unexplored.RegionsUnexploredMod;
@@ -8,6 +9,7 @@ import net.regions_unexplored.block.RuBlocks;
 public class RuBlockEntities {
     
     public static RegistryObject<BlockEntityType<RuSignBlockEntity>> SIGN_BLOCK_ENTITIES;
+    public static RegistryObject<BlockEntityType<RuHangingSignBlockEntity>> HANGING_SIGN_BLOCK_ENTITIES;
     
     public static void addBlockEntities() {
         SIGN_BLOCK_ENTITIES = RegionsUnexploredMod.BLOCK_ENTITY_REGISTRY.register("sign_block_entity", () ->
@@ -29,6 +31,14 @@ public class RuBlockEntities {
                         RuBlocks.PINE_WALL_SIGN.get(), RuBlocks.PINE_SIGN.get(),
                         RuBlocks.REDWOOD_WALL_SIGN.get(), RuBlocks.REDWOOD_SIGN.get(),
                         RuBlocks.WILLOW_WALL_SIGN.get(), RuBlocks.WILLOW_SIGN.get()
+
+                ).build(null));
+
+        HANGING_SIGN_BLOCK_ENTITIES = RegionsUnexploredMod.BLOCK_ENTITY_REGISTRY.register("hanging_sign_block_entity", () ->
+
+                BlockEntityType.Builder.of(RuHangingSignBlockEntity::new,
+
+                        RuBlocks.BAOBAB_WALL_HANGING_SIGN.get(), RuBlocks.BAOBAB_HANGING_SIGN.get()
 
                 ).build(null));
     }

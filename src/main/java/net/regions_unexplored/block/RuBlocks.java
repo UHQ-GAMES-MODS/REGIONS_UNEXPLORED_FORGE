@@ -4,6 +4,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.registries.RegistryObject;
@@ -464,6 +465,8 @@ public class RuBlocks {
     public static RegistryObject<Block> BAOBAB_BUTTON;
     public static RegistryObject<Block> BAOBAB_SIGN;
     public static RegistryObject<Block> BAOBAB_WALL_SIGN;
+    public static RegistryObject<Block> BAOBAB_HANGING_SIGN;
+    public static RegistryObject<Block> BAOBAB_WALL_HANGING_SIGN;
     //BLACKWOOD_BLOCKS
     public static RegistryObject<Block> BLACKWOOD_LOG;
     public static RegistryObject<Block> STRIPPED_BLACKWOOD_LOG;
@@ -1184,6 +1187,8 @@ public class RuBlocks {
         BAOBAB_BUTTON = BlockRegistry.registerDefaultBlock("baobab_button", () -> BlockRegistry.woodButton(SoundType.CHERRY_WOOD, RuBlockSetType.BAOBAB));
         BAOBAB_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("baobab_sign", () -> BlockRegistry.sign(SoundType.CHERRY_WOOD, RuWoodTypes.BAOBAB));
         BAOBAB_WALL_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("baobab_wall_sign", () -> BlockRegistry.wallSign(SoundType.CHERRY_WOOD, BAOBAB_SIGN.get(), RuWoodTypes.BAOBAB));
+        BAOBAB_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("baobab_hanging_sign", () -> BlockRegistry.hangingSign(MapColor.WOOD, SoundType.CHERRY_WOOD, RuWoodTypes.BAOBAB));
+        BAOBAB_WALL_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("baobab_wall_hanging_sign", () -> BlockRegistry.wallHangingSign(MapColor.WOOD, SoundType.CHERRY_WOOD, BAOBAB_SIGN.get(), RuWoodTypes.BAOBAB));
         //BLACKWOOD_BLOCKS
         BLACKWOOD_LOG = BlockRegistry.registerDefaultBlock("blackwood_log", () -> BlockRegistry.log(MapColor.TERRACOTTA_BLACK, MapColor.TERRACOTTA_BROWN, SoundType.NETHER_WOOD));
         STRIPPED_BLACKWOOD_LOG = BlockRegistry.registerDefaultBlock("stripped_blackwood_log", () -> BlockRegistry.log(MapColor.TERRACOTTA_BLACK, MapColor.TERRACOTTA_BLACK, SoundType.NETHER_WOOD));
@@ -1217,7 +1222,7 @@ public class RuBlocks {
         BRIMWOOD_BUTTON = BlockRegistry.registerDefaultBlock("brimwood_button", () -> BlockRegistry.fireproofWoodButton(SoundType.NETHER_WOOD, RuBlockSetType.BRIMWOOD));
         BRIMWOOD_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("brimwood_sign", () -> BlockRegistry.fireproofSign(SoundType.NETHER_WOOD, RuWoodTypes.BRIMWOOD));
         BRIMWOOD_WALL_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("brimwood_wall_sign", () -> BlockRegistry.fireproofWallSign(SoundType.NETHER_WOOD, BRIMWOOD_SIGN.get(), RuWoodTypes.BRIMWOOD));
-        //CHERRY_BLOCKS
+        //MAGNOLIA_BLOCKS
         MAGNOLIA_LOG = BlockRegistry.registerDefaultBlock("magnolia_log", () -> BlockRegistry.log(MapColor.TERRACOTTA_PINK, MapColor.STONE, SoundType.CHERRY_WOOD));
         STRIPPED_MAGNOLIA_LOG = BlockRegistry.registerDefaultBlock("stripped_magnolia_log", () -> BlockRegistry.log(MapColor.TERRACOTTA_PINK, MapColor.TERRACOTTA_PINK, SoundType.CHERRY_WOOD));
         MAGNOLIA_WOOD = BlockRegistry.registerDefaultBlock("magnolia_wood", () -> BlockRegistry.woodBlock(MapColor.STONE, SoundType.CHERRY_WOOD));

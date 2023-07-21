@@ -15,7 +15,9 @@ import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.registries.RegistryObject;
 import net.regions_unexplored.RegionsUnexploredMod;
 import net.regions_unexplored.world.level.block.leaves.*;
+import net.regions_unexplored.world.level.block.sign.RuCeilingHangingSignBlock;
 import net.regions_unexplored.world.level.block.sign.RuStandingSignBlock;
+import net.regions_unexplored.world.level.block.sign.RuWallHangingSignBlock;
 import net.regions_unexplored.world.level.block.sign.RuWallSignBlock;
 import net.regions_unexplored.world.level.block.wood.AspenLogBlock;
 import net.regions_unexplored.world.level.block.wood.PineLogBlock;
@@ -108,6 +110,14 @@ public class BlockRegistry {
     //Configure wall sign
     public static RuWallSignBlock wallSign(SoundType sound, Block block, WoodType woodType) {
         return new RuWallSignBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).sound(sound).ignitedByLava().dropsLike(block), woodType);
+    }
+    //Configure hanging sign
+    public static RuCeilingHangingSignBlock hangingSign(MapColor color, SoundType sound, WoodType woodType) {
+        return new RuCeilingHangingSignBlock(BlockBehaviour.Properties.of().mapColor(color).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava().sound(sound), woodType);
+    }
+    //Configure hanging wall sign
+    public static RuWallHangingSignBlock wallHangingSign(MapColor color, SoundType sound, Block block, WoodType woodType) {
+        return new RuWallHangingSignBlock(BlockBehaviour.Properties.of().mapColor(color).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava().sound(sound).dropsLike(block), woodType);
     }
     //Configure log block
     public static RotatedPillarBlock fireproofLog(MapColor colour, MapColor colour2, SoundType sound) {
