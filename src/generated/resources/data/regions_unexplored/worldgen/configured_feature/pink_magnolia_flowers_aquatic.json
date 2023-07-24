@@ -1,0 +1,15 @@
+{
+  "type": "regions_unexplored:air_multiface_growth",
+  "config": {
+    "block": "regions_unexplored:pink_magnolia_flowers",
+    "can_be_placed_on": [
+      "minecraft:stone",
+      "regions_unexplored:stone_grass_block"
+    ],
+    "can_place_on_ceiling": true,
+    "can_place_on_floor": true,
+    "can_place_on_wall": true,
+    "chance_of_spreading": 1.0,
+    "search_range": 20
+  }
+}

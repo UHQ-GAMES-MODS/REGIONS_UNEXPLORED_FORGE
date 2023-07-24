@@ -88,7 +88,12 @@
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane_desert",
       "minecraft:patch_pumpkin",
-      "minecraft:patch_cactus_desert"
+      "minecraft:patch_cactus_desert",
+      "regions_unexplored:large_joshua_tree",
+      "regions_unexplored:medium_joshua_tree",
+      "regions_unexplored:joshua_tree_shrub",
+      "regions_unexplored:joshua_vegetation",
+      "regions_unexplored:joshua_shrub"
     ],
     [
       "minecraft:freeze_top_layer"

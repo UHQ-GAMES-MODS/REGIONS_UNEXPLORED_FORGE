@@ -8,6 +8,7 @@ import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DoublePlantBlock;
@@ -83,7 +84,7 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         add(RuBlocks.ELEPHANT_EAR.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         add(RuBlocks.SANDY_TALL_GRASS.get(), (block) -> createDoublePlantWithSeedDrops(block, RuBlocks.SANDY_GRASS.get()));
         add(RuBlocks.STEPPE_TALL_GRASS.get(), (block) -> createDoublePlantWithSeedDrops(block, RuBlocks.STEPPE_GRASS.get()));
-        add(RuBlocks.WINDSWEPT_GRASS.get(), (block) -> createDoublePlantWithSeedDropsNoGrass(block, RuBlocks.WINDSWEPT_GRASS.get()));
+        add(RuBlocks.WINDSWEPT_GRASS.get(), (block) -> createDoublePlantWithSeedDropsNoGrass(block, RuBlocks.WINDSWEPT_GRASS.get(), Items.WHEAT_SEEDS));
         //FLOWERS
         dropSelf(RuBlocks.ALPHA_DANDELION.get());
         dropSelf(RuBlocks.ALPHA_ROSE.get());
@@ -179,6 +180,7 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         add(RuBlocks.BIRCH_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         add(RuBlocks.BLACKWOOD_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         add(RuBlocks.MAGNOLIA_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
+        add(RuBlocks.CHERRY_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         add(RuBlocks.CYPRESS_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         add(RuBlocks.DARK_OAK_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         add(RuBlocks.DEAD_PINE_SHRUB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
@@ -333,7 +335,7 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         add(RuBlocks.EUCALYPTUS_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.EUCALYPTUS_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.FLOWERING_LEAVES.get(), (block) -> createOakLeavesDrops(block, RuBlocks.FLOWERING_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.GOLDEN_LARCH_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.GOLDEN_LARCH_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
-        add(RuBlocks.JOSHUA_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.JOSHUA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        add(RuBlocks.JOSHUA_LEAVES.get(), (block) -> createDoublePlantWithSeedDropsNoGrass(block, RuBlocks.JOSHUA_LEAVES.get(), RuBlocks.JOSHUA_SAPLING.get()));
         add(RuBlocks.LARCH_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.LARCH_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.MAPLE_LEAVES.get(), (block) -> createOakLeavesDrops(block, RuBlocks.MAPLE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.MAUVE_LEAVES.get(), (block) -> createOakLeavesDrops(block, RuBlocks.MAUVE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
@@ -768,8 +770,8 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         return RegionsUnexploredMod.BLOCK_REGISTRY.getEntries().stream().map(RegistryObject::get)::iterator;
     }
 
-    protected LootTable.Builder createDoublePlantWithSeedDropsNoGrass(Block p_248590_, Block p_248735_) {
-        LootPoolEntryContainer.Builder<?> builder = LootItem.lootTableItem(p_248735_).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))).when(HAS_SHEARS).otherwise(this.applyExplosionCondition(p_248590_, LootItem.lootTableItem(Items.WHEAT_SEEDS)).when(LootItemRandomChanceCondition.randomChance(0.125F)));
+    protected LootTable.Builder createDoublePlantWithSeedDropsNoGrass(Block p_248590_, Block p_248735_, ItemLike item) {
+        LootPoolEntryContainer.Builder<?> builder = LootItem.lootTableItem(p_248735_).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))).when(HAS_SHEARS).otherwise(this.applyExplosionCondition(p_248590_, LootItem.lootTableItem(item)).when(LootItemRandomChanceCondition.randomChance(0.125F)));
         return LootTable.lootTable().withPool(LootPool.lootPool().add(builder).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(p_248590_).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER))).when(LocationCheck.checkLocation(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(p_248590_).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER).build()).build()), new BlockPos(0, 1, 0)))).withPool(LootPool.lootPool().add(builder).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(p_248590_).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER))).when(LocationCheck.checkLocation(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(p_248590_).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER).build()).build()), new BlockPos(0, -1, 0))));
     }
 }

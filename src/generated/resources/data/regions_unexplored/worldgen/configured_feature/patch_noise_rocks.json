@@ -1,0 +1,76 @@
+{
+  "type": "minecraft:random_patch",
+  "config": {
+    "feature": {
+      "feature": {
+        "type": "minecraft:simple_block",
+        "config": {
+          "to_place": {
+            "type": "minecraft:weighted_state_provider",
+            "entries": [
+              {
+                "data": {
+                  "Name": "regions_unexplored:stone_grass_block",
+                  "Properties": {
+                    "snowy": "false"
+                  }
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "regions_unexplored:mossy_stone"
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "minecraft:stone"
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "minecraft:cobblestone"
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "minecraft:air"
+                },
+                "weight": 75
+              }
+            ]
+          }
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:all_of",
+            "predicates": [
+              {
+                "type": "minecraft:matching_blocks",
+                "blocks": "minecraft:air"
+              },
+              {
+                "type": "minecraft:matching_blocks",
+                "blocks": "minecraft:grass_block",
+                "offset": [
+                  0,
+                  -1,
+                  0
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "tries": 125,
+    "xz_spread": 7,
+    "y_spread": 3
+  }
+}

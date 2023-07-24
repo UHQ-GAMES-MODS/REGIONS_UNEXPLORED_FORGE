@@ -4,17 +4,68 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.minecraft.world.level.levelgen.placement.PlacementModifier;
+import net.minecraft.world.level.levelgen.placement.*;
+import net.regions_unexplored.data.worldgen.features.RuAquaticFeatures;
+import net.regions_unexplored.data.worldgen.features.RuVegetationFeatures;
+import net.regions_unexplored.registry.PlacedFeatureRegistry;
 
 import java.util.List;
 
 public class RuAquaticPlacements {
-    //TODO:Build Class
+    public static final ResourceKey<PlacedFeature> TALL_HYACINTH_STOCK = PlacedFeatureRegistry.createKey("tall_hyacinth_stock");
+    public static final ResourceKey<PlacedFeature> HYACINTH_PLANTS = PlacedFeatureRegistry.createKey("hyacinth_plants");
+    public static final ResourceKey<PlacedFeature> HYACINTH_FLOWERS = PlacedFeatureRegistry.createKey("hyacinth_flowers");
+    public static final ResourceKey<PlacedFeature> HYACINTH_ROCKS = PlacedFeatureRegistry.createKey("hyacinth_rocks");
+
+    public static final ResourceKey<PlacedFeature> MOSSY_SEA_ROCKS = PlacedFeatureRegistry.createKey("mossy_sea_rocks");
+    public static final ResourceKey<PlacedFeature> BLUE_MAGNOLIA_FLOWERS_AQUATIC = PlacedFeatureRegistry.createKey("red_magnolia_flowers_aquatic");
+    public static final ResourceKey<PlacedFeature> PINK_MAGNOLIA_FLOWERS_AQUATIC = PlacedFeatureRegistry.createKey("pink_magnolia_flowers_aquatic");
+    public static final ResourceKey<PlacedFeature> WHITE_MAGNOLIA_FLOWERS_AQUATIC = PlacedFeatureRegistry.createKey("white_magnolia_flowers_aquatic");
+    public static final ResourceKey<PlacedFeature> JUNGLE_TREE_AQUATIC = PlacedFeatureRegistry.createKey("jungle_tree_aquatic");
+    public static final ResourceKey<PlacedFeature> PALM_TREE_AQUATIC = PlacedFeatureRegistry.createKey("palm_tree_aquatic");
+    public static final ResourceKey<PlacedFeature> ELEPHANT_EAR_AQUATIC = PlacedFeatureRegistry.createKey("elephant_ear_aquatic");
+    public static final ResourceKey<PlacedFeature> PALM_SAPLING_AQUATIC = PlacedFeatureRegistry.createKey("palm_sapling_aquatic");
+
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> featureGetter = context.lookup(Registries.CONFIGURED_FEATURE);
+
+        final Holder<ConfiguredFeature<?, ?>> TALL_HYACINTH_STOCK = featureGetter.getOrThrow(RuAquaticFeatures.TALL_HYACINTH_STOCK);
+        final Holder<ConfiguredFeature<?, ?>> HYACINTH_PLANTS = featureGetter.getOrThrow(RuAquaticFeatures.HYACINTH_PLANTS);
+        final Holder<ConfiguredFeature<?, ?>> HYACINTH_FLOWERS = featureGetter.getOrThrow(RuAquaticFeatures.HYACINTH_FLOWERS);
+        final Holder<ConfiguredFeature<?, ?>> HYACINTH_ROCKS = featureGetter.getOrThrow(RuAquaticFeatures.HYACINTH_ROCKS);
+
+        final Holder<ConfiguredFeature<?, ?>> MOSSY_SEA_ROCKS = featureGetter.getOrThrow(RuAquaticFeatures.MOSSY_SEA_ROCKS);
+        final Holder<ConfiguredFeature<?, ?>> BLUE_MAGNOLIA_FLOWERS_AQUATIC = featureGetter.getOrThrow(RuAquaticFeatures.BLUE_MAGNOLIA_FLOWERS_AQUATIC);
+        final Holder<ConfiguredFeature<?, ?>> PINK_MAGNOLIA_FLOWERS_AQUATIC = featureGetter.getOrThrow(RuAquaticFeatures.PINK_MAGNOLIA_FLOWERS_AQUATIC);
+        final Holder<ConfiguredFeature<?, ?>> WHITE_MAGNOLIA_FLOWERS_AQUATIC = featureGetter.getOrThrow(RuAquaticFeatures.WHITE_MAGNOLIA_FLOWERS_AQUATIC);
+        final Holder<ConfiguredFeature<?, ?>> JUNGLE_TREE_AQUATIC = featureGetter.getOrThrow(RuAquaticFeatures.JUNGLE_TREE_AQUATIC);
+        final Holder<ConfiguredFeature<?, ?>> PALM_TREE_AQUATIC = featureGetter.getOrThrow(RuAquaticFeatures.PALM_TREE_AQUATIC);
+        final Holder<ConfiguredFeature<?, ?>> ELEPHANT_EAR_AQUATIC = featureGetter.getOrThrow(RuAquaticFeatures.ELEPHANT_EAR_AQUATIC);
+        final Holder<ConfiguredFeature<?, ?>> PALM_SAPLING_AQUATIC = featureGetter.getOrThrow(RuVegetationFeatures.PALM_SHRUB);
+
+
+        register(context, RuAquaticPlacements.TALL_HYACINTH_STOCK, TALL_HYACINTH_STOCK, NoiseBasedCountPlacement.of(20, 80.0D, 0.3D), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome());
+        register(context, RuAquaticPlacements.HYACINTH_PLANTS, HYACINTH_PLANTS, seagrassPlacement(80));
+        register(context, RuAquaticPlacements.HYACINTH_FLOWERS, HYACINTH_FLOWERS, CountPlacement.of(15), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome());
+        register(context, RuAquaticPlacements.HYACINTH_ROCKS, HYACINTH_ROCKS, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome());
+        register(context, RuAquaticPlacements.MOSSY_SEA_ROCKS, MOSSY_SEA_ROCKS, NoiseBasedCountPlacement.of(1, 80.0D, 0.3D), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome());
+
+        register(context, RuAquaticPlacements.BLUE_MAGNOLIA_FLOWERS_AQUATIC, BLUE_MAGNOLIA_FLOWERS_AQUATIC, CountPlacement.of(35), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome());
+        register(context, RuAquaticPlacements.PINK_MAGNOLIA_FLOWERS_AQUATIC, PINK_MAGNOLIA_FLOWERS_AQUATIC, CountPlacement.of(35), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome());
+        register(context, RuAquaticPlacements.WHITE_MAGNOLIA_FLOWERS_AQUATIC, WHITE_MAGNOLIA_FLOWERS_AQUATIC, CountPlacement.of(35), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome());
+        register(context, RuAquaticPlacements.JUNGLE_TREE_AQUATIC, JUNGLE_TREE_AQUATIC, List.of(CountPlacement.of(24), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
+        register(context, RuAquaticPlacements.PALM_TREE_AQUATIC, PALM_TREE_AQUATIC, List.of(CountPlacement.of(15), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
+        register(context, RuAquaticPlacements.PALM_SAPLING_AQUATIC, PALM_SAPLING_AQUATIC, List.of(CountPlacement.of(5), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
+        register(context, RuAquaticPlacements.ELEPHANT_EAR_AQUATIC, ELEPHANT_EAR_AQUATIC, List.of(CountPlacement.of(8), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
+
+    }
+
+    private static List<PlacementModifier> seagrassPlacement(int count) {
+        return List.of(InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, CountPlacement.of(count), BiomeFilter.biome());
     }
 
     protected static void register(BootstapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<ConfiguredFeature<?, ?>> feature, PlacementModifier... placement) {

@@ -8,6 +8,7 @@ public class RuBlockStateProperties {
     public static final BooleanProperty TRANSITION_BLOCK = BooleanProperty.create("transition_block");
     public static final BooleanProperty SMOULDERING = BooleanProperty.create("smouldering");
     public static final BooleanProperty LEAVES = BooleanProperty.create("leaves");
+    public static final BooleanProperty IS_RED = BooleanProperty.create("is_red");
     public static final BooleanProperty NATURAL = BooleanProperty.create("natural");
     public static final BooleanProperty CLOSED = BooleanProperty.create("closed");
     public static final BooleanProperty IS_BASE = BooleanProperty.create("is_base");

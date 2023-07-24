@@ -1,10 +1,7 @@
 package net.regions_unexplored.registry;
 
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.ColumnFeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.MultifaceGrowthConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.VegetationPatchConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraftforge.registries.RegistryObject;
 import net.regions_unexplored.RegionsUnexploredMod;
 import net.regions_unexplored.data.worldgen.features.RuTreeFeatures;
@@ -17,13 +14,6 @@ import net.regions_unexplored.world.level.feature.tree.nether.BrimWillowFeature;
 import net.regions_unexplored.world.level.feature.tree.nether.TallBrimWillowFeature;
 
 public class FeatureRegistry {
-    //TODO:Complete Class
-    //AQUATIC
-    //public static RegistryObject<Feature> ROCK_PILLAR;
-    //public static RegistryObject<Feature> AIR_MULTIFACE_GROWTH;
-    //public static RegistryObject<Feature> TALL_HYACINTH_STOCK;
-    //public static RegistryObject<Feature> HYACINTH_PLANTS;
-    //public static RegistryObject<Feature> OCEAN_ROCK;
     //BIOSHROOMS
     public static RegistryObject<Feature> GIANT_BLUE_BIOSHROOM;
     public static RegistryObject<Feature> GIANT_GREEN_BIOSHROOM;
@@ -32,6 +22,7 @@ public class FeatureRegistry {
     //TREES
     public static RegistryObject<Feature> ASHEN_TREE;
     public static RegistryObject<Feature> ASPEN_TREE;
+    public static RegistryObject<Feature> BAMBOO_TREE;
     public static RegistryObject<Feature> BLACKWOOD_TREE;
     public static RegistryObject<Feature> CYPRESS_TREE;
     public static RegistryObject<Feature> EUCALYPTUS_TREE;
@@ -42,6 +33,7 @@ public class FeatureRegistry {
     public static RegistryObject<Feature> MEDIUM_JOSHUA_TREE;
     public static RegistryObject<Feature> PALM_TREE;
     public static RegistryObject<Feature> PINE_TREE;
+    public static RegistryObject<Feature> SMALL_JOSHUA_TREE;
     public static RegistryObject<Feature> STRIPPED_PINE_TREE;
     public static RegistryObject<Feature> REDWOOD_TREE;
     public static RegistryObject<Feature> SAGUARO_CACTUS;
@@ -74,8 +66,11 @@ public class FeatureRegistry {
     public static RegistryObject<Feature> MEADOW_ROCK;
     public static RegistryObject<Feature> ROCK;
     public static RegistryObject<Feature> SPIRE;
-
-
+    //AQUATIC
+    public static RegistryObject<Feature> ROCK_PILLAR;
+    public static RegistryObject<Feature> TALL_HYACINTH_STOCK;
+    public static RegistryObject<Feature> HYACINTH_PLANTS;
+    public static RegistryObject<Feature> OCEAN_ROCK;
     //public static RegistryObject<Feature> ICE_SPIRES;
     //public static RegistryObject<Feature> WATER_CATTAIL;
     //public static RegistryObject<Feature> SMALL_BUSH;
@@ -103,6 +98,7 @@ public class FeatureRegistry {
         //TREES
         ASHEN_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("ashen_tree", () -> new AshenTreeFeature(RuTreeConfiguration.CODEC));
         ASPEN_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("aspen_tree", () -> new AspenTreeFeature(RuTreeConfiguration.CODEC));
+        BAMBOO_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("bamboo_tree", () -> new BambooTreeFeature(RuTreeConfiguration.CODEC));
         BLACKWOOD_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("blackwood_tree", () -> new BlackwoodTreeFeature(RuTreeConfiguration.CODEC));
         CYPRESS_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("cypress_tree", () -> new CypressTreeFeature(RuTreeConfiguration.CODEC));
         EUCALYPTUS_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("eucalyptus_tree", () -> new EucalyptusTreeFeature(RuTreeConfiguration.CODEC));
@@ -113,6 +109,7 @@ public class FeatureRegistry {
         MEDIUM_JOSHUA_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("medium_joshua_tree", () -> new MediumJoshuaTreeFeature(NoneFeatureConfiguration.CODEC));
         PALM_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("palm_tree", () -> new PalmTreeFeature(RuTreeConfiguration.CODEC));
         PINE_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("pine_tree", () -> new PineTreeFeature(RuTreeConfiguration.CODEC));
+        SMALL_JOSHUA_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("small_joshua_tree", () -> new SmallJoshuaTreeFeature(RuTreeConfiguration.CODEC));
         STRIPPED_PINE_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("stripped_pine_tree", () -> new StrippedPineTreeFeature(RuTreeConfiguration.CODEC));
         REDWOOD_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("redwood_tree", () -> new RedwoodTreeFeature(RuTreeConfiguration.CODEC));
         SAGUARO_CACTUS = RegionsUnexploredMod.FEATURE_REGISTRY.register("saguaro_cactus", () -> new SaguaroCactusFeature(RuTreeConfiguration.CODEC));
@@ -145,5 +142,10 @@ public class FeatureRegistry {
         MEADOW_ROCK = RegionsUnexploredMod.FEATURE_REGISTRY.register("meadow_rock", () -> new MeadowRockFeature(NoneFeatureConfiguration.CODEC));
         ROCK = RegionsUnexploredMod.FEATURE_REGISTRY.register("rock", () -> new RockFeature(NoneFeatureConfiguration.CODEC));
         SPIRE = RegionsUnexploredMod.FEATURE_REGISTRY.register("spire", () -> new IceSpireFeature(RuTreeConfiguration.CODEC));
+        //AQUATIC
+        ROCK_PILLAR = RegionsUnexploredMod.FEATURE_REGISTRY.register("rock_pillar", () -> new RockPillarFeature(NoneFeatureConfiguration.CODEC));
+        TALL_HYACINTH_STOCK = RegionsUnexploredMod.FEATURE_REGISTRY.register("tall_hyacinth_stock", () -> new HyacinthStockFeature(HyacinthStockConfiguration.CODEC));
+        HYACINTH_PLANTS = RegionsUnexploredMod.FEATURE_REGISTRY.register("hyacinth_plants", () -> new HyacinthPlantsFeature(ProbabilityFeatureConfiguration.CODEC));
+        OCEAN_ROCK = RegionsUnexploredMod.FEATURE_REGISTRY.register("ocean_rock", () -> new SeaRockFeature(SeaRockConfiguration.CODEC));
     }
 }

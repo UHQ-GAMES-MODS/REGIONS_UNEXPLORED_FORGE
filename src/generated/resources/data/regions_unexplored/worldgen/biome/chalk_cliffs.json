@@ -79,10 +79,16 @@
     ],
     [
       "minecraft:glow_lichen",
+      "regions_unexplored:medium_grass",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin"
+      "minecraft:patch_pumpkin",
+      "regions_unexplored:oak_bush_with_flowers",
+      "regions_unexplored:daisy",
+      "regions_unexplored:tassel_sparse",
+      "regions_unexplored:grass",
+      "regions_unexplored:flowering_shrub"
     ],
     [
       "minecraft:freeze_top_layer"

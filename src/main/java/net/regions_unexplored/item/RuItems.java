@@ -13,7 +13,6 @@ import net.regions_unexplored.entity.custom.RuBoat;
 import net.regions_unexplored.item.items.RuBoatItem;
 
 public class RuItems {
-    //TODO:Complete Class
     public static RegistryObject<Item> BAOBAB_HANGING_SIGN;
     public static RegistryObject<Item> BLACKWOOD_HANGING_SIGN;
     public static RegistryObject<Item> MAGNOLIA_HANGING_SIGN;

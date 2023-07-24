@@ -13,6 +13,9 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.regions_unexplored.data.worldgen.RuBiomeDefaultFeatures;
+import net.regions_unexplored.data.worldgen.placement.RuMiscOverworldPlacements;
+import net.regions_unexplored.data.worldgen.placement.RuTreePlacements;
+import net.regions_unexplored.data.worldgen.placement.RuVegetationPlacements;
 
 public class AridBiomes {
     //TODO:Complete Class
@@ -67,7 +70,7 @@ public class AridBiomes {
             biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_CACTUS_DESERT);
         }
         else{
-            //TODO:Build dense Cactus feature
+            biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.CACTUS_DENSE);
         }
         BiomeDefaultFeatures.addDesertExtraDecoration(biomeBuilder);
         return biomeBuilder;
@@ -151,7 +154,12 @@ public class AridBiomes {
         BiomeGenerationSettings.Builder biomeBuilder = baseDesertGeneration(featureGetter, carverGetter, false);
 
         //add RU features
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.LARGE_JOSHUA_TREE);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.MEDIUM_JOSHUA_TREE);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.JOSHUA_TREE_SHRUB);
 
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.JOSHUA_VEGETATION);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.JOSHUA_SHRUB);
 
         //add mob spawns
         MobSpawnSettings.Builder spawnBuilder = baseDesertSpawning();
@@ -182,7 +190,10 @@ public class AridBiomes {
         BiomeGenerationSettings.Builder biomeBuilder = baseDesertGeneration(featureGetter, carverGetter, true);
 
         //add RU features
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.ACACIA_TREE_SHRUB);
 
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.OUTBACK_VEGETATION);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.ACACIA_SHRUB);
 
         //add mob spawns
         MobSpawnSettings.Builder spawnBuilder = baseDesertSpawning();
@@ -198,7 +209,6 @@ public class AridBiomes {
     }
 
     public static Biome saguaroDesert(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
-        //TODO:Complete Biome
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(2F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -213,6 +223,12 @@ public class AridBiomes {
         BiomeGenerationSettings.Builder biomeBuilder = baseDesertGeneration(featureGetter, carverGetter, true);
 
         //add RU features
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuMiscOverworldPlacements.QUICKSAND);
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.SAGUARO_CACTUS);
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.BARREL_CACTUS);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.SANDY_GRASS);
 
 
         //add mob spawns
@@ -229,7 +245,6 @@ public class AridBiomes {
     }
 
     public static Biome steppe(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
-        //TODO:Complete Biome
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(2F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -244,7 +259,7 @@ public class AridBiomes {
         BiomeGenerationSettings.Builder biomeBuilder = baseSavannaGeneration(featureGetter, carverGetter, false);
 
         //add RU features
-
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.STEPPE_VEGETATION);
 
         //add mob spawns
         MobSpawnSettings.Builder spawnBuilder = baseSavannaSpawning();

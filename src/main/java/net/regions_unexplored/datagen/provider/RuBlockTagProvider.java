@@ -7,6 +7,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.regions_unexplored.block.RuBlocks;
@@ -691,7 +692,9 @@ public class RuBlockTagProvider extends BlockTagsProvider {
         //this.tag(BlockTags.POLAR_BEARS_SPAWNABLE_ON_ALTERNATE);
         //this.tag(BlockTags.PORTALS);
         //this.tag(BlockTags.PRESSURE_PLATES);
-        //this.tag(BlockTags.PREVENT_MOB_SPAWNING_INSIDE);
+        this.tag(BlockTags.PREVENT_MOB_SPAWNING_INSIDE)
+                .add(RuBlocks.QUICKSAND.getKey())
+        ;
         this.tag(BlockTags.RABBITS_SPAWNABLE_ON)
                 .add(RuBlocks.ALPHA_GRASS_BLOCK.getKey())
                 .add(RuBlocks.PEAT_COARSE_DIRT.getKey())
@@ -1089,7 +1092,10 @@ public class RuBlockTagProvider extends BlockTagsProvider {
         //this.tag(BlockTags.WOOL);
         //this.tag(BlockTags.WOOL_CARPETS);
 
-
+        this.tag(RuTags.QUICKSAND_REPLACEABLES)
+                .addTags(BlockTags.SAND)
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "sandstone")))
+        ;
         this.tag(RuTags.ASH)
                 .add(RuBlocks.ASH.getKey())
                 .add(RuBlocks.VOLCANIC_ASH.getKey())
@@ -1141,6 +1147,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.BAOBAB_SHRUB.getKey())
                 .add(RuBlocks.BIRCH_SHRUB.getKey())
                 .add(RuBlocks.BLACKWOOD_SHRUB.getKey())
+                .add(RuBlocks.CHERRY_SHRUB.getKey())
                 .add(RuBlocks.MAGNOLIA_SHRUB.getKey())
                 .add(RuBlocks.BLUE_MAGNOLIA_SHRUB.getKey())
                 .add(RuBlocks.PINK_MAGNOLIA_SHRUB.getKey())

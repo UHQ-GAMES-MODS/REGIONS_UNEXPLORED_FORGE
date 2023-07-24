@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
+    "is_red=false": {
       "model": "regions_unexplored:block/sandy_grass"
+    },
+    "is_red=true": {
+      "model": "regions_unexplored:block/red_sandy_grass"
     }
   }
 }

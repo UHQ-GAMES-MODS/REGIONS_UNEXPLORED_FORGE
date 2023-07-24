@@ -20,6 +20,7 @@ public class RuTags {
     public static final TagKey<Block> REPLACEABLE_BLOCKS = createBlock("replaceable_blocks");
     public static final TagKey<Block> PRISMARITE_CRYSTALS = createBlock("prismarite_crystals");
     public static final TagKey<Block> SNOWBELLE = createBlock("snowbelle");
+    public static final TagKey<Block> QUICKSAND_REPLACEABLES = createBlock("quicksand_replaceables");
     public static final TagKey<Block> GRASS = createBlock("grass");
     public static final TagKey<Block> SHRUBS = createBlock("shrubs");
     public static final TagKey<Block> TREE_GRASS_REPLACEABLES = createBlock("tree_grass_replaceables");

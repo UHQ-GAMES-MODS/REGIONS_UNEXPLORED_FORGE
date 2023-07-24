@@ -32,6 +32,18 @@ public class SaguaroCactusFeature extends Feature<RuTreeConfiguration> {
         WorldGenLevel level = context.level();
         int height_main = context.random().nextInt(treeConfiguration.sizeVariation) + treeConfiguration.minimumSize;
 
+        BlockPos checkCactus = pos.above(3);
+        if(level.getBlockState(checkCactus.north()).is(RuBlocks.SAGUARO_CACTUS.get())||
+           level.getBlockState(checkCactus.south()).is(RuBlocks.SAGUARO_CACTUS.get())||
+           level.getBlockState(checkCactus.east()).is(RuBlocks.SAGUARO_CACTUS.get())||
+           level.getBlockState(checkCactus.west()).is(RuBlocks.SAGUARO_CACTUS.get())||
+           level.getBlockState(checkCactus.north().east()).is(RuBlocks.SAGUARO_CACTUS.get())||
+           level.getBlockState(checkCactus.north().west()).is(RuBlocks.SAGUARO_CACTUS.get())||
+           level.getBlockState(checkCactus.south().east()).is(RuBlocks.SAGUARO_CACTUS.get())||
+           level.getBlockState(checkCactus.south().west()).is(RuBlocks.SAGUARO_CACTUS.get())){
+            return false;
+        }
+
         int check = 0;
         BlockPos.MutableBlockPos checkPos = pos.mutable();
         while (check <= height_main) {

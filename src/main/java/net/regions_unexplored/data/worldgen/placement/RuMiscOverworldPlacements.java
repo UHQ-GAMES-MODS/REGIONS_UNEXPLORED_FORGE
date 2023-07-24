@@ -15,6 +15,7 @@ import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;
+import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.data.worldgen.features.RuMiscOverworldFeatures;
 import net.regions_unexplored.registry.PlacedFeatureRegistry;
 
@@ -48,13 +49,18 @@ public class RuMiscOverworldPlacements {
     public static final ResourceKey<PlacedFeature>  ASH_VENT = PlacedFeatureRegistry.createKey("ash_vent");
     public static final ResourceKey<PlacedFeature>  BASALT_BLOB = PlacedFeatureRegistry.createKey("basalt_blob");
     //OTHER_FEATURES
+    public static final ResourceKey<PlacedFeature>  QUICKSAND = PlacedFeatureRegistry.createKey("quicksand");
     public static final ResourceKey<PlacedFeature>  MINERAL_POOL = PlacedFeatureRegistry.createKey("mineral_pool");
 
     public static final ResourceKey<PlacedFeature> ICICLE_UP = PlacedFeatureRegistry.createKey("icicle_up");
     public static final ResourceKey<PlacedFeature> SMOULDERING_DIRT = PlacedFeatureRegistry.createKey("smouldering_dirt");
     public static final ResourceKey<PlacedFeature> MEADOW_ROCK = PlacedFeatureRegistry.createKey("meadow_rock");
+    public static final ResourceKey<PlacedFeature> ROCK = PlacedFeatureRegistry.createKey("rock");
+    public static final ResourceKey<PlacedFeature> ROCK_ON_GRAVEL = PlacedFeatureRegistry.createKey("rock_on_gravel");
     public static final ResourceKey<PlacedFeature> ROCK_ON_SNOW = PlacedFeatureRegistry.createKey("rock_on_snow");
     public static final ResourceKey<PlacedFeature> NOISE_PUMPKINS = PlacedFeatureRegistry.createKey("noise_pumpkins");
+    public static final ResourceKey<PlacedFeature> NOISE_ROCKS = PlacedFeatureRegistry.createKey("noise_rocks");
+    public static final ResourceKey<PlacedFeature> NOISE_BUSH = PlacedFeatureRegistry.createKey("noise_bush");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> featureGetter = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -81,6 +87,7 @@ public class RuMiscOverworldPlacements {
         final Holder<ConfiguredFeature<?, ?>>  PRISMARITE_CLUSTERS = featureGetter.getOrThrow(RuMiscOverworldFeatures.PRISMARITE_CLUSTERS);
         final Holder<ConfiguredFeature<?, ?>>  HANGING_PRISMARITE_CLUSTER = featureGetter.getOrThrow(RuMiscOverworldFeatures.HANGING_PRISMARITE_CLUSTER);
 
+        final Holder<ConfiguredFeature<?, ?>>  QUICKSAND = featureGetter.getOrThrow(RuMiscOverworldFeatures.QUICKSAND);
         final Holder<ConfiguredFeature<?, ?>>  MINERAL_POOL = featureGetter.getOrThrow(RuMiscOverworldFeatures.MINERAL_POOL);
 
         final Holder<ConfiguredFeature<?, ?>>  LAVA_FALL = featureGetter.getOrThrow(RuMiscOverworldFeatures.LAVA_FALL);
@@ -93,6 +100,8 @@ public class RuMiscOverworldPlacements {
         final Holder<ConfiguredFeature<?, ?>>  MEADOW_ROCK = featureGetter.getOrThrow(RuMiscOverworldFeatures.MEADOW_ROCK);
         final Holder<ConfiguredFeature<?, ?>>  ROCK = featureGetter.getOrThrow(RuMiscOverworldFeatures.ROCK);
         final Holder<ConfiguredFeature<?, ?>>  NOISE_PUMPKINS = featureGetter.getOrThrow(RuMiscOverworldFeatures.PATCH_NOISE_PUMPKINS);
+        final Holder<ConfiguredFeature<?, ?>>  NOISE_ROCKS = featureGetter.getOrThrow(RuMiscOverworldFeatures.PATCH_NOISE_ROCKS);
+        final Holder<ConfiguredFeature<?, ?>>  NOISE_BUSH = featureGetter.getOrThrow(RuMiscOverworldFeatures.PATCH_NOISE_BUSH);
 
         //--------------------PLACEMENTS--------------------//
         //ROCKS
@@ -118,6 +127,7 @@ public class RuMiscOverworldPlacements {
         register(context, RuMiscOverworldPlacements.PRISMARITE_CLUSTERS, PRISMARITE_CLUSTERS, List.of(CountOnEveryLayerPlacement.of(8), BiomeFilter.biome()));
         register(context, RuMiscOverworldPlacements.HANGING_PRISMARITE_CLUSTER, HANGING_PRISMARITE_CLUSTER, CountPlacement.of(UniformInt.of(78, 126)), InSquarePlacement.spread(), PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT, BiomeFilter.biome());
 
+        register(context, RuMiscOverworldPlacements.QUICKSAND, QUICKSAND, commonOrePlacement(4, HeightRangePlacement.uniform(VerticalAnchor.absolute(50), VerticalAnchor.absolute(85))));
         register(context, RuMiscOverworldPlacements.MINERAL_POOL, MINERAL_POOL, CountPlacement.of(70), InSquarePlacement.spread(), PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
 
         register(context, RuMiscOverworldPlacements.LAVA_FALL, LAVA_FALL, List.of(CountOnEveryLayerPlacement.of(6), InSquarePlacement.spread(), BiomeFilter.biome()));
@@ -128,8 +138,12 @@ public class RuMiscOverworldPlacements {
         register(context, RuMiscOverworldPlacements.ICICLE_UP, ICICLE_UP, List.of(CountPlacement.of(4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BlockPredicateFilter.forPredicate(PlacedFeatureRegistry.onSnowPredicate), BiomeFilter.biome()));
         register(context, RuMiscOverworldPlacements.SMOULDERING_DIRT, SMOULDERING_DIRT, CountPlacement.of(25), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE,  BiomeFilter.biome());
         register(context, RuMiscOverworldPlacements.MEADOW_ROCK, MEADOW_ROCK, List.of(CountPlacement.of(1), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
+        register(context, RuMiscOverworldPlacements.ROCK, ROCK, List.of(CountPlacement.of(3), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
+        register(context, RuMiscOverworldPlacements.ROCK_ON_GRAVEL, ROCK, List.of(CountPlacement.of(3), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(RuBlocks.STONE_BUD.get()), BiomeFilter.biome()));
         register(context, RuMiscOverworldPlacements.ROCK_ON_SNOW, ROCK, List.of(CountPlacement.of(1), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(PlacedFeatureRegistry.onSnowPredicate), BiomeFilter.biome()));
         register(context, RuMiscOverworldPlacements.NOISE_PUMPKINS, NOISE_PUMPKINS, List.of(CountPlacement.of(18), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+        register(context, RuMiscOverworldPlacements.NOISE_ROCKS, NOISE_ROCKS, List.of(CountPlacement.of(15), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+        register(context, RuMiscOverworldPlacements.NOISE_BUSH, NOISE_BUSH, List.of(CountPlacement.of(15), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
     }
     private static List<PlacementModifier> orePlacement(PlacementModifier placementModifier, PlacementModifier placementModifier1) {
         return List.of(placementModifier, InSquarePlacement.spread(), placementModifier1, BiomeFilter.biome());

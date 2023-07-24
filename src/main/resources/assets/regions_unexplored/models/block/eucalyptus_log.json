@@ -6,5 +6,5 @@
     "3": "regions_unexplored:block/eucalyptus_log_top",
     "particle": "regions_unexplored:block/eucalyptus_log"
   },
-  "render_type": "s"
+  "render_type": "translucent"
 }

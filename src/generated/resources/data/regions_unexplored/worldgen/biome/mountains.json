@@ -81,7 +81,11 @@
       "minecraft:spring_lava"
     ],
     [
-      "minecraft:glow_lichen"
+      "minecraft:glow_lichen",
+      "regions_unexplored:pine_tree_on_dirt",
+      "regions_unexplored:fallen_pine_tree_on_dirt",
+      "regions_unexplored:mountain_vegetation",
+      "regions_unexplored:pine_shrub"
     ],
     [
       "minecraft:freeze_top_layer"

@@ -9,8 +9,6 @@ import net.minecraft.world.level.biome.Climate;
 import java.util.function.Consumer;
 
 public class RegionSecondaryBiomeBuilder {
-    //TODO:Complete Class
-
     public final Climate.Parameter[] temperatures = new Climate.Parameter[]{
             Climate.Parameter.span(-1.0F, -0.45F),
             Climate.Parameter.span(-0.45F, -0.15F),

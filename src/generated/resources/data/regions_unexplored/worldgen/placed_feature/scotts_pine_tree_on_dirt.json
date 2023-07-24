@@ -1,0 +1,45 @@
+{
+  "feature": "regions_unexplored:stripped_pine_tree",
+  "placement": [
+    {
+      "type": "minecraft:count",
+      "count": 11
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:surface_water_depth_filter",
+      "max_water_depth": 0
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR"
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:matching_blocks",
+        "blocks": [
+          "minecraft:podzol",
+          "minecraft:coarse_dirt",
+          "minecraft:dirt",
+          "regions_unexplored:peat_dirt",
+          "regions_unexplored:silt_dirt",
+          "regions_unexplored:peat_coarse_dirt",
+          "regions_unexplored:silt_coarse_dirt",
+          "regions_unexplored:peat_podzol",
+          "regions_unexplored:silt_podzol"
+        ],
+        "offset": [
+          0,
+          -1,
+          0
+        ]
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

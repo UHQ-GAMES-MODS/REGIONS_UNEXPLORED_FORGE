@@ -1,17 +1,21 @@
 package net.regions_unexplored.world.level.block.plant.grass;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.TagKey;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.BonemealableBlock;
-import net.minecraft.world.level.block.BushBlock;
-import net.minecraft.world.level.block.DoublePlantBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -19,19 +23,41 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.data.tags.RuTags;
 import net.regions_unexplored.world.level.block.plant.tall.RuSandyDoublePlantBlock;
+import net.regions_unexplored.world.level.block.state.properties.RuBlockStateProperties;
 
 import static net.minecraft.world.level.block.DoublePlantBlock.copyWaterloggedFrom;
 
 public class RuSandyPlantBlock extends BushBlock implements BonemealableBlock, net.minecraftforge.common.IForgeShearable {
+    public static final BooleanProperty IS_RED = RuBlockStateProperties.IS_RED;
     protected static final float AABB_OFFSET = 6.0F;
     protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 13.0D, 14.0D);
 
     public RuSandyPlantBlock(Properties properties) {
         super(properties);
+        this.registerDefaultState(this.defaultBlockState().setValue(IS_RED, false));
     }
 
     public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
         return SHAPE;
+    }
+
+    public BlockState updateShape(BlockState state, Direction direction, BlockState state1, LevelAccessor level, BlockPos pos, BlockPos pos2) {
+        if(level.getBlockState(pos.below()).is(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "sand/red")))){
+            state.setValue(IS_RED, true);
+        }
+        else{
+            state.setValue(IS_RED, false);
+        }
+        return !state.canSurvive(level, pos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, direction, state1, level, pos, pos2);
+    }
+
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> stateBuilder) {
+        stateBuilder.add(IS_RED);
+    }
+
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        boolean isRed = context.getLevel().getBlockState(context.getClickedPos().below()).is(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "sand/red")));
+        return (this.defaultBlockState().setValue(IS_RED, isRed));
     }
 
     public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, boolean b) {

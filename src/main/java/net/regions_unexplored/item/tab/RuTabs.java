@@ -158,6 +158,7 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.BAOBAB_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.BIRCH_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.BLACKWOOD_SHRUB.get()));
+                            output.accept(new ItemStack(RuBlocks.CHERRY_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.CYPRESS_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.DEAD_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.DEAD_PINE_SHRUB.get()));

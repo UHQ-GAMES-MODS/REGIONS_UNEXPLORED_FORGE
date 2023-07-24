@@ -1,0 +1,36 @@
+{
+  "type": "regions_unexplored:small_joshua_tree",
+  "config": {
+    "branch_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "regions_unexplored:joshua_beard",
+        "Properties": {
+          "facing": "north"
+        }
+      }
+    },
+    "foliage_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "regions_unexplored:joshua_leaves",
+        "Properties": {
+          "half": "lower",
+          "natural": "false",
+          "waterlogged": "false"
+        }
+      }
+    },
+    "minimum_size": 1,
+    "size_variation": 1,
+    "trunk_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "regions_unexplored:joshua_log",
+        "Properties": {
+          "axis": "y"
+        }
+      }
+    }
+  }
+}

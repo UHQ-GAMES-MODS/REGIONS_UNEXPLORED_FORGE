@@ -1,64 +1,28 @@
 {
-  "type": "minecraft:tree",
+  "type": "regions_unexplored:bamboo_tree",
   "config": {
-    "decorators": [],
-    "dirt_provider": {
+    "branch_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "minecraft:podzol",
+        "Name": "regions_unexplored:oak_branch",
         "Properties": {
-          "snowy": "false"
+          "facing": "north"
         }
       }
     },
-    "foliage_placer": {
-      "type": "minecraft:random_spread_foliage_placer",
-      "foliage_height": 5,
-      "leaf_placement_attempts": 150,
-      "offset": 0,
-      "radius": 2
-    },
     "foliage_provider": {
-      "type": "minecraft:weighted_state_provider",
-      "entries": [
-        {
-          "data": {
-            "Name": "regions_unexplored:bamboo_leaves",
-            "Properties": {
-              "distance": "7",
-              "persistent": "false",
-              "waterlogged": "false"
-            }
-          },
-          "weight": 5
-        },
-        {
-          "data": {
-            "Name": "regions_unexplored:bamboo_leaves",
-            "Properties": {
-              "distance": "7",
-              "persistent": "false",
-              "waterlogged": "false"
-            }
-          },
-          "weight": 1
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "regions_unexplored:bamboo_leaves",
+        "Properties": {
+          "distance": "7",
+          "persistent": "false",
+          "waterlogged": "false"
         }
-      ]
+      }
     },
-    "force_dirt": false,
-    "ignore_vines": true,
-    "minimum_size": {
-      "type": "minecraft:two_layers_feature_size",
-      "limit": 1,
-      "lower_size": 0,
-      "upper_size": 1
-    },
-    "trunk_placer": {
-      "type": "minecraft:straight_trunk_placer",
-      "base_height": 12,
-      "height_rand_a": 9,
-      "height_rand_b": 0
-    },
+    "minimum_size": 12,
+    "size_variation": 8,
     "trunk_provider": {
       "type": "minecraft:weighted_state_provider",
       "entries": [
@@ -71,7 +35,7 @@
               "waterlogged": "false"
             }
           },
-          "weight": 3
+          "weight": 1
         },
         {
           "data": {
@@ -82,7 +46,7 @@
               "waterlogged": "false"
             }
           },
-          "weight": 1
+          "weight": 2
         }
       ]
     }

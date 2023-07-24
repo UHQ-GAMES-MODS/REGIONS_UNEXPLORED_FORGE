@@ -1,0 +1,11 @@
+{
+  "type": "regions_unexplored:ocean_rock",
+  "config": {
+    "alt_state": {
+      "Name": "regions_unexplored:mossy_stone"
+    },
+    "state": {
+      "Name": "minecraft:stone"
+    }
+  }
+}

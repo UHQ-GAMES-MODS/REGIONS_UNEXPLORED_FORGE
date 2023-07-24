@@ -3,7 +3,6 @@ package net.regions_unexplored.config;
 import net.minecraftforge.common.ForgeConfigSpec;
 
 public class RuCommonConfig {
-    //TODO:Complete Class
     public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
     public static final ForgeConfigSpec SPEC;
 

@@ -35,7 +35,6 @@ public class BiomeRegistry {
     public static void bootstrap(BootstapContext<Biome> context) {
         HolderGetter<ConfiguredWorldCarver<?>> carversGetter = context.lookup(Registries.CONFIGURED_CARVER);
         HolderGetter<PlacedFeature> featuresGetter = context.lookup(Registries.PLACED_FEATURE);
-        //TODO:Add biome builder classes
 
         //FOREST
         register(context, RuBiomes.AUTUMNAL_MAPLE_FOREST, ForestBiomes.autumnalMapleForest(featuresGetter, carversGetter));
@@ -49,7 +48,6 @@ public class BiomeRegistry {
         register(context, RuBiomes.TEMPERATE_GROVE, ForestBiomes.temperateGrove(featuresGetter, carversGetter));
         register(context, RuBiomes.WILLOW_FOREST, ForestBiomes.willowForest(featuresGetter, carversGetter));
         //TAIGA
-        //TODO:rename to taigas
         register(context, RuBiomes.BLACKWOOD_TAIGA, TaigaBiomes.blackwoodTaiga(featuresGetter, carversGetter));
         register(context, RuBiomes.BOREAL_TAIGA, TaigaBiomes.borealTaiga(featuresGetter, carversGetter));
         register(context, RuBiomes.GOLDEN_BOREAL_TAIGA, TaigaBiomes.goldenBorealTaiga(featuresGetter, carversGetter));
@@ -86,8 +84,8 @@ public class BiomeRegistry {
         register(context, RuBiomes.ARID_MOUNTAINS, MountainBiomes.aridMountains(featuresGetter, carversGetter));
         register(context, RuBiomes.HIGHLAND_FIELDS, MountainBiomes.highlandFields(featuresGetter, carversGetter));
         register(context, RuBiomes.LUSH_HILLS, MountainBiomes.lushHills(featuresGetter, carversGetter));
-        register(context, RuBiomes.MOUNTAINS, MountainBiomes.mountains(featuresGetter, carversGetter));
-        register(context, RuBiomes.PINE_SLOPES, MountainBiomes.pineSlopes(featuresGetter, carversGetter));
+        register(context, RuBiomes.MOUNTAINS, MountainBiomes.mountainsAndSlopes(featuresGetter, carversGetter, false));
+        register(context, RuBiomes.PINE_SLOPES, MountainBiomes.mountainsAndSlopes(featuresGetter, carversGetter, true));
         register(context, RuBiomes.TOWERING_CLIFFS, MountainBiomes.toweringCliffs(featuresGetter, carversGetter));
         //COASTAL
         register(context, RuBiomes.CHALK_CLIFFS, CoastalBiomes.chalkCliffs(featuresGetter, carversGetter));

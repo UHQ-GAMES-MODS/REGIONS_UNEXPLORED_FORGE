@@ -1,4 +1,4 @@
-// 1.20.1	2023-07-21T02:24:33.1360195	Loot Tables
+// 1.20.1	2023-07-23T18:21:55.3531902	Loot Tables
 fb95ad5062001d6c0fb329989fda986801ec5444 data/regions_unexplored/loot_tables/blocks/acacia_branch.json
 9a9c5fbba217f07ec7cb6067e42dba80d311e355 data/regions_unexplored/loot_tables/blocks/acacia_shrub.json
 db69029ed53dd57ea783ac8375ab18767e9fa5a0 data/regions_unexplored/loot_tables/blocks/alpha_dandelion.json
@@ -114,6 +114,7 @@ a6a13cc96568288cdcceee450d8210477060dc0e data/regions_unexplored/loot_tables/blo
 7ef10371b4b0c8a3771519f333360e4b1e144f64 data/regions_unexplored/loot_tables/blocks/chalk_pillar.json
 432f6b7258a2b6283e949e1e48dc59b66e6de405 data/regions_unexplored/loot_tables/blocks/chalk_slab.json
 007cd95f577205c3431bacdbedcd88b0ce95f6ec data/regions_unexplored/loot_tables/blocks/chalk_stairs.json
+2446e898d082f0ddef4b5c408ce38d879ddd1ac6 data/regions_unexplored/loot_tables/blocks/cherry_shrub.json
 4844c9750e765ce27411ab7cae307fd4f0260e1c data/regions_unexplored/loot_tables/blocks/clover.json
 0d544c3d55b8918c71621e814fa03628fa8eea89 data/regions_unexplored/loot_tables/blocks/cobalt_earlight.json
 7224c407d716e9cf754a90a6a4985d27a46a6286 data/regions_unexplored/loot_tables/blocks/cobalt_nylium.json
@@ -240,7 +241,7 @@ ceb4d2cb01fe1c593d6b5393662a086fe0e405ae data/regions_unexplored/loot_tables/blo
 fcebab826f76fa014bd0ff8a6ab2f4664e4088ef data/regions_unexplored/loot_tables/blocks/joshua_door.json
 a8d6d4156496ed6003b41ff6109a33b77ea21bd2 data/regions_unexplored/loot_tables/blocks/joshua_fence.json
 a9ff092d11a95908979d2d591724a3fefd28b5f1 data/regions_unexplored/loot_tables/blocks/joshua_fence_gate.json
-0cb97fa1f8ee97e9817c16fe492af924ef4dd6ab data/regions_unexplored/loot_tables/blocks/joshua_leaves.json
+ba8cddabff235d4a8a320bd6e8f487746f48d4b9 data/regions_unexplored/loot_tables/blocks/joshua_leaves.json
 b72d5d3d8781c0fa8cf156e63f18aa10670f925c data/regions_unexplored/loot_tables/blocks/joshua_log.json
 c5a7917090a331a9bc9fc6d4a32e373592e10a70 data/regions_unexplored/loot_tables/blocks/joshua_planks.json
 c0f01345f647afe2d115170c632665b0a5a7fa04 data/regions_unexplored/loot_tables/blocks/joshua_pressure_plate.json

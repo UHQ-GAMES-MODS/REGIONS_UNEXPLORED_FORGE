@@ -50,15 +50,7 @@ public class PineLogBlock extends Block {
    @Override
    public BlockState updateShape(BlockState state, Direction direction, BlockState state1, LevelAccessor level, BlockPos pos, BlockPos pos1) {
       boolean isTransition = false;
-      boolean isStripped = state.getValue(IS_STRIPPED);
-      if(state.getValue(AXIS)==Direction.Axis.Y){
-         if(level.getBlockState(pos.below())==RuBlocks.STRIPPED_PINE_LOG.get().defaultBlockState()||level.getBlockState(pos.below())==RuBlocks.PINE_LOG.get().defaultBlockState().setValue(PineLogBlock.IS_STRIPPED, true)){
-            if(level.getBlockState(pos.above())==RuBlocks.PINE_LOG.get().defaultBlockState().setValue(PineLogBlock.IS_STRIPPED, true)){
-               isStripped = true;
-            }
-         }
-      }
-      if(!isStripped){
+      if(!state.getValue(IS_STRIPPED)){
          if(state.getValue(AXIS)==Direction.Axis.Y){
             if(level.getBlockState(pos.below())==RuBlocks.STRIPPED_PINE_LOG.get().defaultBlockState()||level.getBlockState(pos.below())==RuBlocks.PINE_LOG.get().defaultBlockState().setValue(PineLogBlock.IS_STRIPPED, true)){
                isTransition = true;
@@ -66,7 +58,7 @@ public class PineLogBlock extends Block {
          }
       }
 
-      return state.setValue(TRANSITION_BLOCK, isTransition).setValue(TRANSITION_BLOCK, isStripped);
+      return state.setValue(TRANSITION_BLOCK, isTransition);
    }
 
    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> p_55933_) {

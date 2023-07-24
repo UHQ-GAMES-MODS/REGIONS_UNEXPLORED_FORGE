@@ -642,6 +642,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.BAOBAB_SHRUB.get().asItem())
                 .add(RuBlocks.BIRCH_SHRUB.get().asItem())
                 .add(RuBlocks.BLACKWOOD_SHRUB.get().asItem())
+                .add(RuBlocks.CHERRY_SHRUB.get().asItem())
                 .add(RuBlocks.MAGNOLIA_SHRUB.get().asItem())
                 .add(RuBlocks.BLUE_MAGNOLIA_SHRUB.get().asItem())
                 .add(RuBlocks.PINK_MAGNOLIA_SHRUB.get().asItem())
@@ -851,7 +852,6 @@ public class RuItemTagProvider extends ItemTagsProvider {
         //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "seeds/melon")));
         //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "seeds/pumpkin")));
         //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "seeds/wheat")));
-        //TODO:Add other storage tags
         //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "storage_blocks/redstone")));
         //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "tools/axes")));
         //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "tools/bows")));

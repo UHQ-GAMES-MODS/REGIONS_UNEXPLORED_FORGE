@@ -1,0 +1,62 @@
+{
+  "type": "minecraft:random_patch",
+  "config": {
+    "feature": {
+      "feature": {
+        "type": "minecraft:simple_block",
+        "config": {
+          "to_place": {
+            "type": "minecraft:weighted_state_provider",
+            "entries": [
+              {
+                "data": {
+                  "Name": "regions_unexplored:steppe_grass"
+                },
+                "weight": 10
+              },
+              {
+                "data": {
+                  "Name": "regions_unexplored:steppe_shrub"
+                },
+                "weight": 10
+              },
+              {
+                "data": {
+                  "Name": "regions_unexplored:small_desert_shrub"
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "regions_unexplored:steppe_tall_grass",
+                  "Properties": {
+                    "half": "lower"
+                  }
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "regions_unexplored:dead_steppe_shrub"
+                },
+                "weight": 10
+              }
+            ]
+          }
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:air"
+          }
+        }
+      ]
+    },
+    "tries": 32,
+    "xz_spread": 7,
+    "y_spread": 3
+  }
+}

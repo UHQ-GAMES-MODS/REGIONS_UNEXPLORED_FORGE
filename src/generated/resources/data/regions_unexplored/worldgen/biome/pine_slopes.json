@@ -21,7 +21,7 @@
       "max_delay": 24000,
       "min_delay": 12000,
       "replace_current_music": false,
-      "sound": "minecraft:music.overworld.grove"
+      "sound": "minecraft:music.overworld.jagged_peaks"
     },
     "sky_color": 8168703,
     "water_color": 4159204,
@@ -82,7 +82,10 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:patch_tall_grass_2"
+      "regions_unexplored:scotts_pine_tree_on_dirt",
+      "regions_unexplored:fallen_pine_tree_on_dirt",
+      "regions_unexplored:mountain_vegetation",
+      "regions_unexplored:pine_shrub"
     ],
     [
       "minecraft:freeze_top_layer"
@@ -101,12 +104,6 @@
     ],
     "axolotls": [],
     "creature": [
-      {
-        "type": "minecraft:rabbit",
-        "maxCount": 3,
-        "minCount": 2,
-        "weight": 4
-      },
       {
         "type": "minecraft:goat",
         "maxCount": 3,
@@ -176,5 +173,5 @@
     "water_ambient": [],
     "water_creature": []
   },
-  "temperature": 0.35
+  "temperature": 0.28
 }
