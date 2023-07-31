@@ -1,7 +1,15 @@
+
 {
-  "variants": {
-    "": {
-      "model": "regions_unexplored:block/flowering_leaves"
+  "multipart": [
+    {
+      "apply": {
+        "model": "block/oak_leaves"
+      }
+    },
+    {
+      "apply": {
+        "model": "regions_unexplored:block/flowering_leaves"
+      }
     }
-  }
+  ]
 }

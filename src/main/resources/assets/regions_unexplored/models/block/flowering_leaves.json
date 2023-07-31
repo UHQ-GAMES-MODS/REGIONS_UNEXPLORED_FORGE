@@ -1,9 +1,8 @@
 {
-  "parent": "regions_unexplored:block/two_layer_leaves",
+  "parent": "block/cube_all",
   "textures": {
-    "0": "regions_unexplored:block/flowering_leaves",
-    "1": "regions_unexplored:block/flowering_leaves_flower",
-    "particle": "regions_unexplored:block/flowering_leaves"
+    "all": "regions_unexplored:block/flowering_leaves_flower",
+    "particle": "block/oak_leaves"
   },
   "render_type": "cutout"
 }

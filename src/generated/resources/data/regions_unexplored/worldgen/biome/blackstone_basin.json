@@ -9,9 +9,9 @@
       "tick_chance": 0.0111
     },
     "ambient_sound": "minecraft:ambient.crimson_forest.loop",
-    "fog_color": 2094,
-    "foliage_color": 660650,
-    "grass_color": 660650,
+    "fog_color": 395547,
+    "foliage_color": 5463027,
+    "grass_color": 5463027,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -30,9 +30,9 @@
       },
       "probability": 0.02
     },
-    "sky_color": 2094,
-    "water_color": 667776,
-    "water_fog_color": 667776
+    "sky_color": 395547,
+    "water_color": 5463027,
+    "water_fog_color": 395547
   },
   "features": [
     [],
@@ -56,7 +56,13 @@
       "minecraft:ore_gold_nether",
       "minecraft:ore_quartz_nether",
       "minecraft:ore_ancient_debris_large",
-      "minecraft:ore_debris_small"
+      "minecraft:ore_debris_small",
+      "regions_unexplored:obsidian_spire",
+      "regions_unexplored:cobalt_roots",
+      "regions_unexplored:cobalt_earlight",
+      "regions_unexplored:tall_cobalt_earlight",
+      "regions_unexplored:blackstone_cluster",
+      "regions_unexplored:hanging_earlight"
     ]
   ],
   "has_precipitation": false,

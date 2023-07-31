@@ -1,0 +1,8 @@
+{
+  "parent": "block/leaves",
+  "textures": {
+    "all": "regions_unexplored:block/eucalyptus_log_overlay",
+    "particle": "regions_unexplored:block/eucalyptus_log_overlay"
+  },
+  "render_type": "translucent"
+}

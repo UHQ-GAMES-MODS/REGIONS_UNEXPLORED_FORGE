@@ -9,7 +9,7 @@ import net.regions_unexplored.RegionsUnexploredMod;
 public class RuBiomes {
     //FOREST
     public static ResourceKey<Biome> AUTUMNAL_MAPLE_FOREST = createKey("autumnal_maple_forest");//DONE
-    public static ResourceKey<Biome> BAMBOO_FOREST = createKey("bamboo_forest");
+    public static ResourceKey<Biome> BAMBOO_FOREST = createKey("bamboo_forest");//DONE
     public static ResourceKey<Biome> MAGNOLIA_HIGHLANDS = createKey("magnolia_highlands");//DONE
     public static ResourceKey<Biome> DECIDUOUS_FOREST = createKey("deciduous_forest");//DONE
     public static ResourceKey<Biome> MAPLE_FOREST = createKey("maple_forest");//DONE
@@ -37,38 +37,37 @@ public class RuBiomes {
     public static ResourceKey<Biome> SHRUBLAND = createKey("shrubland");//DONE
     //WET
     public static ResourceKey<Biome> BAYOU = createKey("bayou");//DONE
-    public static ResourceKey<Biome> EUCALYPTUS_FOREST = createKey("eucalyptus_forest");
+    public static ResourceKey<Biome> EUCALYPTUS_FOREST = createKey("eucalyptus_forest");//DONE
     public static ResourceKey<Biome> FEN = createKey("fen");
-    public static ResourceKey<Biome> FLOODED_PLAINS = createKey("flooded_plains");
-    public static ResourceKey<Biome> FUNGAL_FEN = createKey("fungal_fen");
+    public static ResourceKey<Biome> MARSH = createKey("marsh");//DONE
+    public static ResourceKey<Biome> FUNGAL_FEN = createKey("fungal_fen");//DONE
     public static ResourceKey<Biome> OLD_GROWTH_BAYOU = createKey("old_growth_bayou");//DONE
     public static ResourceKey<Biome> OLD_GROWTH_RAINFOREST = createKey("old_growth_rainforest");
     public static ResourceKey<Biome> RAINFOREST = createKey("rainforest");
     //ARID
     public static ResourceKey<Biome> BAOBAB_SAVANNA = createKey("baobab_savanna");
     public static ResourceKey<Biome> DRY_BUSHLAND = createKey("dry_bushland");
-    public static ResourceKey<Biome> JOSHUA_DESERT = createKey("joshua_desert");
-    public static ResourceKey<Biome> OUTBACK = createKey("outback");
-    public static ResourceKey<Biome> SAGUARO_DESERT = createKey("saguaro_desert");
-    public static ResourceKey<Biome> STEPPE = createKey("steppe");
+    public static ResourceKey<Biome> JOSHUA_DESERT = createKey("joshua_desert");//DONE
+    public static ResourceKey<Biome> OUTBACK = createKey("outback");//DONE
+    public static ResourceKey<Biome> SAGUARO_DESERT = createKey("saguaro_desert");//DONE
+    public static ResourceKey<Biome> STEPPE = createKey("steppe");//DONE
     //MOUNTAIN
-    public static ResourceKey<Biome> ARID_MOUNTAINS = createKey("arid_mountains");
-    public static ResourceKey<Biome> HIGHLAND_FIELDS = createKey("highland_fields");
-    public static ResourceKey<Biome> LUSH_HILLS = createKey("lush_hills");
-    public static ResourceKey<Biome> MOUNTAINS = createKey("mountains");
-    public static ResourceKey<Biome> PINE_SLOPES = createKey("pine_slopes");
+    public static ResourceKey<Biome> ARID_MOUNTAINS = createKey("arid_mountains");//DONE
+    public static ResourceKey<Biome> HIGHLAND_FIELDS = createKey("highland_fields");//DONE
+    public static ResourceKey<Biome> MOUNTAINS = createKey("mountains");//DONE
+    public static ResourceKey<Biome> PINE_SLOPES = createKey("pine_slopes");//DONE
     public static ResourceKey<Biome> TOWERING_CLIFFS = createKey("towering_cliffs");//DONE
     //COASTAL
-    public static ResourceKey<Biome> CHALK_CLIFFS = createKey("chalk_cliffs");
-    public static ResourceKey<Biome> GRASSY_BEACH = createKey("grassy_beach");
-    public static ResourceKey<Biome> GRAVEL_BEACH = createKey("gravel_beach");
+    public static ResourceKey<Biome> CHALK_CLIFFS = createKey("chalk_cliffs");//DONE
+    public static ResourceKey<Biome> GRASSY_BEACH = createKey("grassy_beach");//DONE
+    public static ResourceKey<Biome> GRAVEL_BEACH = createKey("gravel_beach");//DONE
     //AQUATIC
     public static ResourceKey<Biome> ALPHA_GROVE = createKey("alpha_grove");//DONE
     public static ResourceKey<Biome> ASHEN_WOODLAND = createKey("ashen_woodland");//DONE
-    public static ResourceKey<Biome> COLD_RIVER = createKey("cold_river");
-    public static ResourceKey<Biome> HYACINTH_DEEPS = createKey("hyacinth_deeps");
-    public static ResourceKey<Biome> MUDDY_RIVER = createKey("muddy_river");
-    public static ResourceKey<Biome> ROCKY_REEF = createKey("rocky_reef");
+    public static ResourceKey<Biome> COLD_RIVER = createKey("cold_river");//DONE
+    public static ResourceKey<Biome> HYACINTH_DEEPS = createKey("hyacinth_deeps");//DONE
+    public static ResourceKey<Biome> MUDDY_RIVER = createKey("muddy_river");//DONE
+    public static ResourceKey<Biome> ROCKY_REEF = createKey("rocky_reef");//DONE
     public static ResourceKey<Biome> TROPICS = createKey("tropics");
     //FROZEN
     public static ResourceKey<Biome> COLD_BOREAL_TAIGA = createKey("cold_boreal_taiga");//DONE
@@ -85,7 +84,7 @@ public class RuBiomes {
     public static ResourceKey<Biome> SCORCHING_CAVES = createKey("scorching_caves");//DONE
     //NETHER
     public static ResourceKey<Biome> BLACKSTONE_BASIN = createKey("blackstone_basin");
-    public static ResourceKey<Biome> CORRUPTED_HOLT = createKey("corrupted_holt");
+    public static ResourceKey<Biome> INFERNAL_HOLT = createKey("infernal_holt");
     public static ResourceKey<Biome> GLISTERING_MEADOW = createKey("glistering_meadow");
     public static ResourceKey<Biome> MYCOTOXIC_UNDERGROWTH = createKey("mycotoxic_undergrowth");
     public static ResourceKey<Biome> REDSTONE_HELL = createKey("redstone_hell");

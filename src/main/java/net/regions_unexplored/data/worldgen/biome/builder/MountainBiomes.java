@@ -149,37 +149,6 @@ public class MountainBiomes {
                 .build();
     }
 
-    public static Biome lushHills(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
-        //TODO:Complete Biome
-        BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
-                .skyColor(calculateSkyColor(2F))
-                .fogColor(OVERWORLD_FOG_COLOR)
-                .waterColor(-10566460)
-                .waterFogColor(-12229487)
-                .foliageColorOverride(-8010658)
-                .grassColorOverride(-7493535)
-                .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_CHERRY_GROVE));
-
-        //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseExtremeHillsGeneration(featureGetter, carverGetter);
-
-        //add RU features
-
-
-        //add mob spawns
-        MobSpawnSettings.Builder spawnBuilder = baseExtremeHillsSpawning();
-
-        return (new Biome.BiomeBuilder())
-                .hasPrecipitation(true)
-                .temperature(0.95f)
-                .downfall(0.6f)
-                .specialEffects(effectBuilder.build())
-                .mobSpawnSettings(spawnBuilder.build())
-                .generationSettings(biomeBuilder.build())
-                .build();
-    }
-
     public static Biome mountainsAndSlopes(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter, boolean b) {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(0.4F))

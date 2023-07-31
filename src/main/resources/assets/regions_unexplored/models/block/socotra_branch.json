@@ -1,0 +1,9 @@
+{
+  "parent": "regions_unexplored:block/branch",
+  "textures": {
+    "log": "regions_unexplored:block/socotra_log",
+    "branch": "regions_unexplored:block/socotra_branch",
+    "particle": "regions_unexplored:block/socotra_log"
+  },
+  "render_type": "cutout"
+}

@@ -31,6 +31,9 @@ public class RuBiomeDefaultFeatures {
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.ENCHANTED_BIRCH_TALL);
     }
 
+    public static void addWaratah(BiomeGenerationSettings.Builder p_194721_) {
+        p_194721_.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.WARATAH);
+    }
 
     public static void addDaisies(BiomeGenerationSettings.Builder p_194721_) {
         p_194721_.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.DAISIES);

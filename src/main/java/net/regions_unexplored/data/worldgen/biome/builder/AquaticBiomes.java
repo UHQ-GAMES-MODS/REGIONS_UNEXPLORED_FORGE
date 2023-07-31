@@ -14,6 +14,7 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.regions_unexplored.data.worldgen.RuBiomeDefaultFeatures;
+import net.regions_unexplored.data.worldgen.features.RuVegetationFeatures;
 import net.regions_unexplored.data.worldgen.placement.RuAquaticPlacements;
 import net.regions_unexplored.data.worldgen.placement.RuMiscOverworldPlacements;
 import net.regions_unexplored.data.worldgen.placement.RuTreePlacements;
@@ -203,12 +204,11 @@ public class AquaticBiomes {
     }
 
     public static Biome muddyRiver(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
-        //TODO:Complete Biome
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(0.7F))
                 .fogColor(OVERWORLD_FOG_COLOR)
-                .waterColor(NORMAL_WATER_COLOR)
-                .waterFogColor(NORMAL_WATER_FOG_COLOR)
+                .waterColor(6391957)
+                .waterFogColor(7436392)
                 .foliageColorOverride(-7159980)
                 .grassColorOverride(-6044317)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
@@ -216,9 +216,13 @@ public class AquaticBiomes {
 
         //add features
         BiomeGenerationSettings.Builder biomeBuilder = baseRiverGeneration(featureGetter, carverGetter);
+        BiomeDefaultFeatures.addLukeWarmKelp(biomeBuilder);
 
         //add RU features
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuAquaticPlacements.CATTAIL_RIVER);
 
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.GRASS);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.TALL_GRASS);
 
         //add mob spawns
         MobSpawnSettings.Builder spawnBuilder = baseRiverSpawning(true);

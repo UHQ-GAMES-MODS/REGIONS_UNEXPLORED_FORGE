@@ -9,8 +9,8 @@
   "downfall": 0.85,
   "effects": {
     "fog_color": 12638463,
-    "foliage_color": -9651647,
-    "grass_color": -9651647,
+    "foliage_color": 8828203,
+    "grass_color": 9680182,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -85,7 +85,14 @@
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
       "minecraft:vines",
-      "minecraft:patch_melon"
+      "minecraft:patch_melon",
+      "regions_unexplored:eucalyptus_tree",
+      "regions_unexplored:small_eucalyptus_tree",
+      "regions_unexplored:oak_bush_dense",
+      "regions_unexplored:waratah",
+      "regions_unexplored:elephant_ear_sparse",
+      "regions_unexplored:tall_grass",
+      "regions_unexplored:eucalyptus_shrub"
     ],
     [
       "minecraft:freeze_top_layer"

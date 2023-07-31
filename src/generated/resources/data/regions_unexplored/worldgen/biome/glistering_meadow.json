@@ -9,7 +9,7 @@
       "tick_chance": 0.0111
     },
     "ambient_sound": "minecraft:ambient.crimson_forest.loop",
-    "fog_color": 10362720,
+    "fog_color": 4328552,
     "foliage_color": 12058781,
     "grass_color": 12058781,
     "mood_sound": {
@@ -30,7 +30,7 @@
       },
       "probability": 0.02
     },
-    "sky_color": 10362720,
+    "sky_color": 4328552,
     "water_color": 12058781,
     "water_fog_color": 12058781
   },
@@ -55,7 +55,12 @@
       "minecraft:ore_gold_nether",
       "minecraft:ore_quartz_nether",
       "minecraft:ore_ancient_debris_large",
-      "minecraft:ore_debris_small"
+      "minecraft:ore_debris_small",
+      "regions_unexplored:glistering_meadow_rock",
+      "regions_unexplored:glistering_meadow_bulb",
+      "regions_unexplored:glistering_meadow_grass",
+      "regions_unexplored:glistering_meadow_spire",
+      "regions_unexplored:glistering_meadow_ivy"
     ]
   ],
   "has_precipitation": false,

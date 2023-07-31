@@ -1,0 +1,12 @@
+{
+  "feature": "regions_unexplored:patch_glister_spire",
+  "placement": [
+    {
+      "type": "minecraft:count_on_every_layer",
+      "count": 3
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

@@ -24,8 +24,8 @@
       "sound": "minecraft:music.overworld.forest"
     },
     "sky_color": 7972607,
-    "water_color": 4159204,
-    "water_fog_color": 329011
+    "water_color": 6391957,
+    "water_fog_color": 7436392
   },
   "features": [
     [],
@@ -83,7 +83,11 @@
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
-      "minecraft:seagrass_river"
+      "minecraft:seagrass_river",
+      "minecraft:kelp_warm",
+      "regions_unexplored:cattail_river",
+      "regions_unexplored:grass",
+      "regions_unexplored:tall_grass"
     ],
     [
       "minecraft:freeze_top_layer"

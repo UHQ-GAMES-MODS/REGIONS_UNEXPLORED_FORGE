@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "regions_unexplored:block/socotra_shrub"
+    },
+    "half=lower": {
+      "model": "regions_unexplored:block/socotra_shrub_bottom"
+    }
+  }
+}

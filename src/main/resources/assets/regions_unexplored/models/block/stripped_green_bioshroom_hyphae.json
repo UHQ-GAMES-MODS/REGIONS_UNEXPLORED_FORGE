@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "regions_unexplored:block/stripped_green_bioshroom_stem",
+    "particle": "regions_unexplored:block/stripped_green_bioshroom_stem"
+  }
+}

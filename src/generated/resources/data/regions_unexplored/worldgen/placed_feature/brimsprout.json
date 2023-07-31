@@ -1,0 +1,12 @@
+{
+  "feature": "regions_unexplored:patch_brimsprout",
+  "placement": [
+    {
+      "type": "minecraft:count_on_every_layer",
+      "count": 30
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

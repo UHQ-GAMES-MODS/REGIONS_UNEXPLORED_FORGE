@@ -1,0 +1,12 @@
+{
+  "feature": "regions_unexplored:tall_cobalt_earlight",
+  "placement": [
+    {
+      "type": "minecraft:count_on_every_layer",
+      "count": 3
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

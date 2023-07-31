@@ -20,6 +20,7 @@ import net.regions_unexplored.world.level.block.sign.RuStandingSignBlock;
 import net.regions_unexplored.world.level.block.sign.RuWallHangingSignBlock;
 import net.regions_unexplored.world.level.block.sign.RuWallSignBlock;
 import net.regions_unexplored.world.level.block.wood.AspenLogBlock;
+import net.regions_unexplored.world.level.block.wood.MagmaLogBlock;
 import net.regions_unexplored.world.level.block.wood.PineLogBlock;
 
 import java.util.function.Supplier;
@@ -125,10 +126,8 @@ public class BlockRegistry {
         }).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(sound));
     }
     //Configure log block
-    public static RotatedPillarBlock fireproofMagmaLog(MapColor colour, MapColor colour2, SoundType sound) {
-        return new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor((p_152624_) -> {
-            return p_152624_.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? colour : colour2;
-        }).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(sound));
+    public static MagmaLogBlock fireproofMagmaLog(MapColor colour, SoundType sound) {
+        return new MagmaLogBlock(BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(sound));
     }
     //Configure wood block
     public static RotatedPillarBlock fireproofWoodBlock(MapColor colour, SoundType sound) {
@@ -177,6 +176,14 @@ public class BlockRegistry {
     //Configure wall sign
     public static RuWallSignBlock fireproofWallSign(SoundType sound, Block block, WoodType woodType) {
         return new RuWallSignBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).sound(sound).dropsLike(block), woodType);
+    }
+    //Configure hanging sign
+    public static RuCeilingHangingSignBlock fireproofHangingSign(MapColor color, SoundType sound, WoodType woodType) {
+        return new RuCeilingHangingSignBlock(BlockBehaviour.Properties.of().mapColor(color).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).sound(sound), woodType);
+    }
+    //Configure hanging wall sign
+    public static RuWallHangingSignBlock fireproofWallHangingSign(MapColor color, SoundType sound, Block block, WoodType woodType) {
+        return new RuWallHangingSignBlock(BlockBehaviour.Properties.of().mapColor(color).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).sound(sound).dropsLike(block), woodType);
     }
 
     //Configure leaves blocks

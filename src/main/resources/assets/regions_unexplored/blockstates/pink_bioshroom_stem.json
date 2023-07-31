@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "regions_unexplored:block/pink_bioshroom_stem",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "regions_unexplored:block/pink_bioshroom_stem"
+    },
+    "axis=z": {
+      "model": "regions_unexplored:block/pink_bioshroom_stem",
+      "x": 90
+    }
+  }
+}

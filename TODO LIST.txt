@@ -2,29 +2,24 @@
 //TODO:COMPLETE LIST
 
 -complete biomes
+    //re-think
+    -fungal_fen
+
     //EASIER
-    -muddy_river
-    -eucalyptus_forest
-    -flooded_plains(to be renamed to Marsh)
-    -lush_hills
+    -mycotoxic_undergrowth(nether)
 
     //HARDER
-    -baobab_savanna
-    -dry_bushland
+    -blackstone_basin(nether)
+    -redstone_(nether)
     -fen
-    -fungal_fen
     -old_growth_rainforest
     -rainforest
+
+    //HARDEST
+    -dry_bushland
     -tropics
 
-    //NETHER
-    -blackstone_basin
-    -corrupted_holt
-    -fluxing_caverns
-    -glistering_meadow
-    -mycotoxic_undergrowth
-
-    -TOTAL LEFT:16
+    -TOTAL LEFT:9
 
 -finish tree growers
 -finish retextures
@@ -39,3 +34,10 @@
 -finish hanging sign art
 -add red sandy tall grass
 -add hyacinth lamp
+-add small mushrooms to myc undergrowth
+-redo spire feature
+-do lang file
+-add bioshroom woodsets
+-fix magma brimwood loot table
+-add bamboo recipes
+-fix baobab log tex

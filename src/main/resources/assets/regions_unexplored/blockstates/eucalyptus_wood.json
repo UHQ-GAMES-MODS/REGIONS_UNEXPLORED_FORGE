@@ -1,34 +1,58 @@
 {
-  "variants": {
-    "axis=x": [
-      {
+  "multipart": [
+    {
+      "apply": {
         "model": "regions_unexplored:block/eucalyptus_wood",
         "x": 90,
         "y": 90
       },
-      {
-        "model": "regions_unexplored:block/eucalyptus_wood_1",
+      "when": {
+        "axis": "x"
+      }
+    },
+    {
+      "apply": {
+        "model": "regions_unexplored:block/eucalyptus_wood_overlay",
         "x": 90,
         "y": 90
+      },
+      "when": {
+        "axis": "x"
       }
-    ],
-    "axis=y": [
-      {
+    },
+    {
+      "apply": {
         "model": "regions_unexplored:block/eucalyptus_wood"
       },
-      {
-        "model": "regions_unexplored:block/eucalyptus_wood_1"
+      "when": {
+        "axis": "y"
       }
-    ],
-    "axis=z": [
-      {
+    },
+    {
+      "apply": {
+        "model": "regions_unexplored:block/eucalyptus_wood_overlay"
+      },
+      "when": {
+        "axis": "y"
+      }
+    },
+    {
+      "apply": {
         "model": "regions_unexplored:block/eucalyptus_wood",
         "x": 90
       },
-      {
-        "model": "regions_unexplored:block/eucalyptus_wood_1",
-        "x": 90
+      "when": {
+        "axis": "z"
       }
-    ]
-  }
+    },
+    {
+      "apply": {
+        "model": "regions_unexplored:block/eucalyptus_wood_overlay",
+        "x": 90
+      },
+      "when": {
+        "axis": "z"
+      }
+    }
+  ]
 }

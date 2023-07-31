@@ -1,0 +1,8 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "regions_unexplored:block/tall_cobalt_earlight_bottom",
+    "particle": "regions_unexplored:block/tall_cobalt_earlight_bottom"
+  },
+  "render_type": "cutout"
+}

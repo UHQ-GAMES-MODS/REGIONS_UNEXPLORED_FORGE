@@ -12,6 +12,7 @@ import net.regions_unexplored.RegionsUnexploredMod;
 import net.regions_unexplored.config.RuCommonConfig;
 import net.regions_unexplored.data.worldgen.biome.RuBiomes;
 import net.regions_unexplored.data.worldgen.biome.builder.*;
+import net.regions_unexplored.data.worldgen.biome.surface.RuNetherSurfaceBuilder;
 import net.regions_unexplored.data.worldgen.biome.surface.RuOverworldSurfaceBuilders;
 import net.regions_unexplored.world.level.region.RuRegionNether;
 import net.regions_unexplored.world.level.region.RuRegionPrimary;
@@ -29,6 +30,7 @@ public class BiomeRegistry {
         Regions.register(new RuRegionPrimary(RuCommonConfig.REGION_PRIMARY_WEIGHT.get()));
         Regions.register(new RuRegionSecondary(RuCommonConfig.REGION_SECONDARY_WEIGHT.get()));
         Regions.register(new RuRegionNether(RuCommonConfig.REGION_NETHER_WEIGHT.get()));
+        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.NETHER, RegionsUnexploredMod.MOD_ID, RuNetherSurfaceBuilder.makeRules());
         SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, RegionsUnexploredMod.MOD_ID, RuOverworldSurfaceBuilders.makeRules());
     }
 
@@ -68,7 +70,7 @@ public class BiomeRegistry {
         register(context, RuBiomes.BAYOU, WetBiomes.bayou(featuresGetter, carversGetter));
         register(context, RuBiomes.EUCALYPTUS_FOREST, WetBiomes.eucalyptusForest(featuresGetter, carversGetter));
         register(context, RuBiomes.FEN, WetBiomes.fen(featuresGetter, carversGetter));
-        register(context, RuBiomes.FLOODED_PLAINS, WetBiomes.floodedPlains(featuresGetter, carversGetter));
+        register(context, RuBiomes.MARSH, WetBiomes.marsh(featuresGetter, carversGetter));
         register(context, RuBiomes.FUNGAL_FEN, WetBiomes.fungalFen(featuresGetter, carversGetter));
         register(context, RuBiomes.OLD_GROWTH_BAYOU, WetBiomes.oldGrowthBayou(featuresGetter, carversGetter));
         register(context, RuBiomes.OLD_GROWTH_RAINFOREST, WetBiomes.oldGrowthRainforest(featuresGetter, carversGetter));
@@ -83,7 +85,6 @@ public class BiomeRegistry {
         //MOUNTAIN
         register(context, RuBiomes.ARID_MOUNTAINS, MountainBiomes.aridMountains(featuresGetter, carversGetter));
         register(context, RuBiomes.HIGHLAND_FIELDS, MountainBiomes.highlandFields(featuresGetter, carversGetter));
-        register(context, RuBiomes.LUSH_HILLS, MountainBiomes.lushHills(featuresGetter, carversGetter));
         register(context, RuBiomes.MOUNTAINS, MountainBiomes.mountainsAndSlopes(featuresGetter, carversGetter, false));
         register(context, RuBiomes.PINE_SLOPES, MountainBiomes.mountainsAndSlopes(featuresGetter, carversGetter, true));
         register(context, RuBiomes.TOWERING_CLIFFS, MountainBiomes.toweringCliffs(featuresGetter, carversGetter));
@@ -114,7 +115,7 @@ public class BiomeRegistry {
         register(context, RuBiomes.SCORCHING_CAVES, CaveBiomes.scorchingCaves(featuresGetter, carversGetter));
         //NETHER
         register(context, RuBiomes.BLACKSTONE_BASIN, NetherBiomes.blackstoneBasin(featuresGetter, carversGetter));
-        register(context, RuBiomes.CORRUPTED_HOLT, NetherBiomes.corruptedHolt(featuresGetter, carversGetter));
+        register(context, RuBiomes.INFERNAL_HOLT, NetherBiomes.infernalHolt(featuresGetter, carversGetter));
         register(context, RuBiomes.GLISTERING_MEADOW, NetherBiomes.glisteringMeadow(featuresGetter, carversGetter));
         register(context, RuBiomes.MYCOTOXIC_UNDERGROWTH, NetherBiomes.mycotoxicUndergrowth(featuresGetter, carversGetter));
         register(context, RuBiomes.REDSTONE_HELL, NetherBiomes.redstoneHell(featuresGetter, carversGetter));
@@ -160,7 +161,7 @@ public class BiomeRegistry {
         registerVillagers(RuBiomes.BAYOU, VillagerType.PLAINS);
         registerVillagers(RuBiomes.EUCALYPTUS_FOREST, VillagerType.PLAINS);
         registerVillagers(RuBiomes.FEN, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.FLOODED_PLAINS, VillagerType.PLAINS);
+        registerVillagers(RuBiomes.MARSH, VillagerType.PLAINS);
         registerVillagers(RuBiomes.FUNGAL_FEN, VillagerType.PLAINS);
         registerVillagers(RuBiomes.OLD_GROWTH_BAYOU, VillagerType.PLAINS);
         registerVillagers(RuBiomes.OLD_GROWTH_RAINFOREST, VillagerType.PLAINS);
@@ -175,7 +176,6 @@ public class BiomeRegistry {
         //MOUNTAIN
         registerVillagers(RuBiomes.ARID_MOUNTAINS, VillagerType.PLAINS);
         registerVillagers(RuBiomes.HIGHLAND_FIELDS, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.LUSH_HILLS, VillagerType.PLAINS);
         registerVillagers(RuBiomes.MOUNTAINS, VillagerType.PLAINS);
         registerVillagers(RuBiomes.PINE_SLOPES, VillagerType.PLAINS);
         registerVillagers(RuBiomes.TOWERING_CLIFFS, VillagerType.PLAINS);
@@ -206,7 +206,7 @@ public class BiomeRegistry {
         registerVillagers(RuBiomes.SCORCHING_CAVES, VillagerType.PLAINS);
         //NETHER
         registerVillagers(RuBiomes.BLACKSTONE_BASIN, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.CORRUPTED_HOLT, VillagerType.PLAINS);
+        registerVillagers(RuBiomes.INFERNAL_HOLT, VillagerType.PLAINS);
         registerVillagers(RuBiomes.GLISTERING_MEADOW, VillagerType.PLAINS);
         registerVillagers(RuBiomes.MYCOTOXIC_UNDERGROWTH, VillagerType.PLAINS);
         registerVillagers(RuBiomes.REDSTONE_HELL, VillagerType.PLAINS);

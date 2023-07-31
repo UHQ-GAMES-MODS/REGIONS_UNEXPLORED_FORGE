@@ -29,6 +29,7 @@ public class RuOverworldSurfaceBuilders {
     private static final SurfaceRules.RuleSource SILT_MUD = makeStateRule(RuCommonConfig.TOGGLE_CUSTOM_DIRTS.get() ? RuBlocks.SILT_MUD.get() : Blocks.MUD);
 
     private static final SurfaceRules.RuleSource GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
+    private static final SurfaceRules.RuleSource MOSS_BLOCK = makeStateRule(Blocks.MOSS_BLOCK);
     private static final SurfaceRules.RuleSource MYCELIUM = makeStateRule(Blocks.MYCELIUM);
     private static final SurfaceRules.RuleSource COARSE_DIRT = makeStateRule(Blocks.COARSE_DIRT);
     private static final SurfaceRules.RuleSource PODZOL = makeStateRule(Blocks.PODZOL);
@@ -85,6 +86,7 @@ public class RuOverworldSurfaceBuilders {
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.ICY_HEIGHTS, RuBiomes.SPIRES, RuBiomes.FROZEN_PINE_TAIGA), SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.POWDER_SNOW, 0.45D, 0.58D), POWDER_SNOW)),
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.FROZEN_PINE_TAIGA),SNOW_BLOCK),
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.REDWOODS), PODZOL),
+                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.MUDDY_RIVER), PEAT_MUD),
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.PINE_SLOPES), COARSE_DIRT),
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.SAGUARO_DESERT, RuBiomes.GRASSY_BEACH), SAND),
 
@@ -142,7 +144,7 @@ public class RuOverworldSurfaceBuilders {
 
                             //BAOBAB_SAVANNA
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.BAOBAB_SAVANNA),
-                                    SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(1.75D), TERRACOTTA), SurfaceRules.ifTrue(surfaceNoiseAbove(-0.5D), COARSE_DIRT), GRASS_BLOCK)),
+                                    SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(1.9D), TERRACOTTA), SurfaceRules.ifTrue(surfaceNoiseAbove(1.75D), COARSE_DIRT), GRASS_BLOCK)),
 
                             //TOWERING_CLIFFS
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.TOWERING_CLIFFS),
@@ -151,10 +153,6 @@ public class RuOverworldSurfaceBuilders {
                             //MAPLE_FOREST
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.MAPLE_FOREST),
                                     SurfaceRules.sequence(SurfaceRules.ifTrue(shieldNoise(1.65D), SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, 0.25D), STONE),SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, 0.0D), MOSSY_STONE),STONE)), SurfaceRules.ifTrue(shieldNoise(0.0D), SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, 0.25D), GRASS_BLOCK),SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, -0.25D), COARSE_DIRT),MOSSY_STONE)))),
-
-                            //LUSH_HILLS
-                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.LUSH_HILLS),
-                                    SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(1.75D), STONE), SurfaceRules.ifTrue(surfaceNoiseAbove(-0.5D), COARSE_DIRT), GRASS_BLOCK)),
 
                             //JOSHUA_DESERT
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.JOSHUA_DESERT),
@@ -182,10 +180,10 @@ public class RuOverworldSurfaceBuilders {
 
                             //BAOBAB_SAVANNA BASE
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.BAOBAB_SAVANNA),
-                                    SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.not(surfaceNoiseAbove(1.75D)), SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR),DIRT)), SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 30, CaveSurface.FLOOR),TERRACOTTA))),
+                                    SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.not(surfaceNoiseAbove(1.9D)), SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR),DIRT)), SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 30, CaveSurface.FLOOR),TERRACOTTA))),
 
                             //LUSH_HILLS/CLIFFS BASE
-                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.LUSH_HILLS, RuBiomes.TOWERING_CLIFFS),
+                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.TOWERING_CLIFFS),
                                     SurfaceRules.ifTrue(surfaceNoiseAbove(1.75D), SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR),STONE))),
 
                             //ALPHA_GROVE BASE
@@ -221,6 +219,10 @@ public class RuOverworldSurfaceBuilders {
                             //MAPLE_FOREST_BASE
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.MAPLE_FOREST),
                                     SurfaceRules.ifTrue(shieldNoise(1.65D), SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR),STONE))),
+
+                            //MUD_BASE
+                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.MUDDY_RIVER),
+                                    SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR),PEAT_MUD)),
 
                             //STONE_BASE
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.HYACINTH_DEEPS),

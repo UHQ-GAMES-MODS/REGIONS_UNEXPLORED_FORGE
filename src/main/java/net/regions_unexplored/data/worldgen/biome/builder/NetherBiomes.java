@@ -17,18 +17,19 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.regions_unexplored.client.particle.RuParticleTypes;
+import net.regions_unexplored.data.worldgen.placement.RuNetherPlacements;
+import net.regions_unexplored.data.worldgen.placement.RuTreePlacements;
 
 public class NetherBiomes {
 
     public static Biome blackstoneBasin(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
-        //TODO:Complete Biome
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
-                .skyColor(2094)
-                .fogColor(2094)
-                .waterColor(667776)
-                .waterFogColor(667776)
-                .foliageColorOverride(660650)
-                .grassColorOverride(660650)
+                .skyColor(395547)
+                .fogColor(395547)
+                .waterColor(5463027)
+                .waterFogColor(395547)
+                .foliageColorOverride(5463027)
+                .grassColorOverride(5463027)
                 .ambientParticle(new AmbientParticleSettings(ParticleTypes.WARPED_SPORE, 0.02F))
                 .ambientLoopSound(SoundEvents.AMBIENT_CRIMSON_FOREST_LOOP)
                 .ambientMoodSound(new AmbientMoodSettings(SoundEvents.AMBIENT_WARPED_FOREST_MOOD, 6000, 8, 2.0D))
@@ -50,6 +51,13 @@ public class NetherBiomes {
 
         //add RU features
 
+        TODO:biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.OBSIDIAN_SPIRE);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.COBALT_ROOTS);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.COBALT_EARLIGHT);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.TALL_COBALT_EARLIGHT);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.BLACKSTONE_CLUSTER);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.HANGING_EARLIGHT);
+
 
         //add mob spawns
         MobSpawnSettings.Builder spawnBuilder = (new MobSpawnSettings.Builder())
@@ -68,8 +76,7 @@ public class NetherBiomes {
                 .build();
     }
 
-    public static Biome corruptedHolt(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
-        //TODO:Complete Biome
+    public static Biome infernalHolt(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(3479565)
                 .fogColor(3479565)
@@ -97,6 +104,15 @@ public class NetherBiomes {
         BiomeDefaultFeatures.addNetherDefaultOres(biomeBuilder);
 
         //add RU features
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuTreePlacements.BRIM_WILLOW_TREE);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuTreePlacements.TALL_BRIM_WILLOW_TREE);
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.BRIMSPROUT);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.DORCEL);
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.BRIM_FLAMES);
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.BRIMWOOD_SHRUB);
 
 
         //add mob spawns
@@ -117,10 +133,9 @@ public class NetherBiomes {
     }
 
     public static Biome glisteringMeadow(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
-        //TODO:Complete Biome
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
-                .skyColor(10362720)
-                .fogColor(10362720)
+                .skyColor(4328552)
+                .fogColor(4328552)
                 .waterColor(12058781)
                 .waterFogColor(12058781)
                 .foliageColorOverride(12058781)
@@ -144,6 +159,11 @@ public class NetherBiomes {
         BiomeDefaultFeatures.addNetherDefaultOres(biomeBuilder);
 
         //add RU features
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.GLISTERING_MEADOW_ROCK);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.GLISTERING_MEADOW_BULB);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.GLISTERING_MEADOW_GRASS);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.GLISTERING_MEADOW_SPIRE);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.GLISTERING_MEADOW_IVY);
 
 
         //add mob spawns

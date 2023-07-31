@@ -1,10 +1,6 @@
 {
   "values": [
     {
-      "id": "regions_unexplored:lush_hills",
-      "required": false
-    },
-    {
       "id": "regions_unexplored:towering_cliffs",
       "required": false
     },

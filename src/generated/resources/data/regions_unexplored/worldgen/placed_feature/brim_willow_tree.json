@@ -1,0 +1,12 @@
+{
+  "feature": "regions_unexplored:brim_willow_tree",
+  "placement": [
+    {
+      "type": "minecraft:count_on_every_layer",
+      "count": 2
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

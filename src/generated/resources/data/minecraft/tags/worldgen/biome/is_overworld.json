@@ -113,7 +113,7 @@
       "required": false
     },
     {
-      "id": "regions_unexplored:flooded_plains",
+      "id": "regions_unexplored:marsh",
       "required": false
     },
     {
@@ -162,10 +162,6 @@
     },
     {
       "id": "regions_unexplored:highland_fields",
-      "required": false
-    },
-    {
-      "id": "regions_unexplored:lush_hills",
       "required": false
     },
     {

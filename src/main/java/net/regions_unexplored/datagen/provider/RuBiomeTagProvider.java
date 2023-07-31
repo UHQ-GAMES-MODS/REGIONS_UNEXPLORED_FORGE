@@ -26,7 +26,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.BAYOU.location())
                 .addOptional(RuBiomes.FEN.location())
                 .addOptional(RuBiomes.FUNGAL_FEN.location())
-                .addOptional(RuBiomes.FLOODED_PLAINS.location())
+                .addOptional(RuBiomes.MARSH.location())
                 .addOptional(RuBiomes.OLD_GROWTH_BAYOU.location())
         ;
         this.tag(BiomeTags.ALLOWS_TROPICAL_FISH_SPAWNS_AT_ANY_HEIGHT)
@@ -37,14 +37,14 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.BAYOU.location())
                 .addOptional(RuBiomes.FEN.location())
                 .addOptional(RuBiomes.FUNGAL_FEN.location())
-                .addOptional(RuBiomes.FLOODED_PLAINS.location())
+                .addOptional(RuBiomes.MARSH.location())
                 .addOptional(RuBiomes.OLD_GROWTH_BAYOU.location())
         ;
         this.tag(BiomeTags.INCREASED_FIRE_BURNOUT)
                 .addOptional(RuBiomes.BAYOU.location())
                 .addOptional(RuBiomes.FEN.location())
                 .addOptional(RuBiomes.FUNGAL_FEN.location())
-                .addOptional(RuBiomes.FLOODED_PLAINS.location())
+                .addOptional(RuBiomes.MARSH.location())
                 .addOptional(RuBiomes.OLD_GROWTH_BAYOU.location())
                 .addOptional(RuBiomes.REDWOODS.location())
                 .addOptional(RuBiomes.SPARSE_REDWOODS.location())
@@ -80,7 +80,6 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.WILLOW_FOREST.location())
         ;
         this.tag(BiomeTags.IS_HILL)
-                .addOptional(RuBiomes.LUSH_HILLS.location())
                 .addOptional(RuBiomes.TOWERING_CLIFFS.location())
                 .addOptional(RuBiomes.ICY_HEIGHTS.location())
         ;
@@ -90,7 +89,6 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.EUCALYPTUS_FOREST.location())
         ;
         this.tag(BiomeTags.IS_MOUNTAIN)
-                .addOptional(RuBiomes.LUSH_HILLS.location())
                 .addOptional(RuBiomes.TOWERING_CLIFFS.location())
                 .addOptional(RuBiomes.ICY_HEIGHTS.location())
                 .addOptional(RuBiomes.HIGHLAND_FIELDS.location())
@@ -100,7 +98,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
         this.tag(BiomeTags.IS_NETHER)
                 .addOptional(RuBiomes.MYCOTOXIC_UNDERGROWTH.location())
                 .addOptional(RuBiomes.BLACKSTONE_BASIN.location())
-                .addOptional(RuBiomes.CORRUPTED_HOLT.location())
+                .addOptional(RuBiomes.INFERNAL_HOLT.location())
                 .addOptional(RuBiomes.GLISTERING_MEADOW.location())
                 .addOptional(RuBiomes.REDSTONE_HELL.location())
         ;
@@ -139,7 +137,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.BAYOU.location())
                 .addOptional(RuBiomes.EUCALYPTUS_FOREST.location())
                 .addOptional(RuBiomes.FEN.location())
-                .addOptional(RuBiomes.FLOODED_PLAINS.location())
+                .addOptional(RuBiomes.MARSH.location())
                 .addOptional(RuBiomes.FUNGAL_FEN.location())
                 .addOptional(RuBiomes.OLD_GROWTH_BAYOU.location())
                 .addOptional(RuBiomes.OLD_GROWTH_RAINFOREST.location())
@@ -154,7 +152,6 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 //MOUNTAIN
                 .addOptional(RuBiomes.ARID_MOUNTAINS.location())
                 .addOptional(RuBiomes.HIGHLAND_FIELDS.location())
-                .addOptional(RuBiomes.LUSH_HILLS.location())
                 .addOptional(RuBiomes.MOUNTAINS.location())
                 .addOptional(RuBiomes.PINE_SLOPES.location())
                 .addOptional(RuBiomes.TOWERING_CLIFFS.location())
@@ -256,7 +253,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.TROPICS.location())
                 .addOptional(RuBiomes.BAMBOO_FOREST.location())
                 .addOptional(RuBiomes.OLD_GROWTH_BAYOU.location())
-                .addOptional(RuBiomes.FLOODED_PLAINS.location())
+                .addOptional(RuBiomes.MARSH.location())
                 .addOptional(RuBiomes.FUNGAL_FEN.location())
         ;
         this.tag(BiomeTags.SPAWNS_WHITE_RABBITS)
@@ -310,7 +307,6 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 //MOUNTAIN
                 .addOptional(RuBiomes.ARID_MOUNTAINS.location())
                 .addOptional(RuBiomes.HIGHLAND_FIELDS.location())
-                .addOptional(RuBiomes.LUSH_HILLS.location())
                 .addOptional(RuBiomes.MOUNTAINS.location())
                 .addOptional(RuBiomes.PINE_SLOPES.location())
                 .addOptional(RuBiomes.TOWERING_CLIFFS.location())
@@ -334,7 +330,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.BAYOU.location())
                 .addOptional(RuBiomes.FEN.location())
                 .addOptional(RuBiomes.FUNGAL_FEN.location())
-                .addOptional(RuBiomes.FLOODED_PLAINS.location())
+                .addOptional(RuBiomes.MARSH.location())
                 .addOptional(RuBiomes.OLD_GROWTH_BAYOU.location())
         ;
         this.tag(BiomeTags.WITHOUT_PATROL_SPAWNS)
@@ -388,7 +384,6 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.BAMBOO_FOREST.location())
                 .addOptional(RuBiomes.BAOBAB_SAVANNA.location())
                 .addOptional(RuBiomes.LUPINE_PLAINS.location())
-                .addOptional(RuBiomes.LUSH_HILLS.location())
                 .addOptional(RuBiomes.FLOWER_FIELDS.location())
                 .addOptional(RuBiomes.MAPLE_FOREST.location())
                 .addOptional(RuBiomes.MAGNOLIA_HIGHLANDS.location())
@@ -426,7 +421,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.SPARSE_REDWOODS.location())
                 .addOptional(RuBiomes.EUCALYPTUS_FOREST.location())
                 .addOptional(RuBiomes.MAUVE_HILLS.location())
-                .addOptional(RuBiomes.FLOODED_PLAINS.location())
+                .addOptional(RuBiomes.MARSH.location())
                 .addOptional(RuBiomes.ROCKY_MEADOW.location())
                 .addOptional(RuBiomes.ICY_HEIGHTS.location())
                 .addOptional(RuBiomes.FROZEN_PINE_TAIGA.location())
@@ -442,9 +437,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
         ;
         //this.tag(BiomeTags.HAS_MINESHAFT_MESA);
         //this.tag(BiomeTags.HAS_NETHER_FORTRESS);
-        this.tag(BiomeTags.HAS_NETHER_FOSSIL)
-                .addOptional(RuBiomes.GLISTERING_MEADOW.location())
-        ;
+        //this.tag(BiomeTags.HAS_NETHER_FOSSIL);
         //this.tag(BiomeTags.HAS_OCEAN_MONUMENT);
         this.tag(BiomeTags.HAS_OCEAN_RUIN_COLD)
                 .addOptional(RuBiomes.HYACINTH_DEEPS.location())
@@ -498,7 +491,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.BAYOU.location())
                 .addOptional(RuBiomes.OLD_GROWTH_BAYOU.location())
                 .addOptional(RuBiomes.FEN.location())
-                .addOptional(RuBiomes.FLOODED_PLAINS.location())
+                .addOptional(RuBiomes.MARSH.location())
         ;
         //this.tag(BiomeTags.HAS_SHIPWRECK);
         //this.tag(BiomeTags.HAS_SHIPWRECK_BEACHED);
@@ -506,7 +499,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
         this.tag(BiomeTags.HAS_SWAMP_HUT)
                 .addOptional(RuBiomes.BAYOU.location())
                 .addOptional(RuBiomes.FEN.location())
-                .addOptional(RuBiomes.FLOODED_PLAINS.location())
+                .addOptional(RuBiomes.MARSH.location())
         ;
         this.tag(BiomeTags.HAS_VILLAGE_DESERT)
                 .addOptional(RuBiomes.JOSHUA_DESERT.location())
@@ -587,7 +580,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
         this.tag(TagKey.create(Registries.BIOME, new ResourceLocation("forge", "is_dry/nether")))
                 .addOptional(RuBiomes.MYCOTOXIC_UNDERGROWTH.location())
                 .addOptional(RuBiomes.BLACKSTONE_BASIN.location())
-                .addOptional(RuBiomes.CORRUPTED_HOLT.location())
+                .addOptional(RuBiomes.INFERNAL_HOLT.location())
                 .addOptional(RuBiomes.GLISTERING_MEADOW.location())
                 .addOptional(RuBiomes.REDSTONE_HELL.location())
         ;
@@ -606,7 +599,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
         this.tag(TagKey.create(Registries.BIOME, new ResourceLocation("forge", "is_hot/nether")))
                 .addOptional(RuBiomes.MYCOTOXIC_UNDERGROWTH.location())
                 .addOptional(RuBiomes.BLACKSTONE_BASIN.location())
-                .addOptional(RuBiomes.CORRUPTED_HOLT.location())
+                .addOptional(RuBiomes.INFERNAL_HOLT.location())
                 .addOptional(RuBiomes.GLISTERING_MEADOW.location())
                 .addOptional(RuBiomes.REDSTONE_HELL.location())
         ;
@@ -632,7 +625,6 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.BAOBAB_SAVANNA.location())
                 .addOptional(RuBiomes.DRY_BUSHLAND.location())
                 .addOptional(RuBiomes.TEMPERATE_GROVE.location())
-                .addOptional(RuBiomes.LUSH_HILLS.location())
                 .addOptional(RuBiomes.ICY_HEIGHTS.location())
                 .addOptional(RuBiomes.TOWERING_CLIFFS.location())
         ;
@@ -743,7 +735,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.BAYOU.location())
                 .addOptional(RuBiomes.FEN.location())
                 .addOptional(RuBiomes.FUNGAL_FEN.location())
-                .addOptional(RuBiomes.FLOODED_PLAINS.location())
+                .addOptional(RuBiomes.MARSH.location())
                 .addOptional(RuBiomes.OLD_GROWTH_BAYOU.location())
         ;
         this.tag(TagKey.create(Registries.BIOME, new ResourceLocation("forge", "is_underground")))

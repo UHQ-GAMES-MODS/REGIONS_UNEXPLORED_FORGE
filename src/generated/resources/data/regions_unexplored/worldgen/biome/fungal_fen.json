@@ -40,7 +40,8 @@
       "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode"
+      "minecraft:amethyst_geode",
+      "regions_unexplored:water_edge"
     ],
     [
       "minecraft:fossil_upper",
@@ -85,7 +86,6 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:flower_swamp",
       "minecraft:patch_dead_bush",
       "minecraft:patch_waterlily",
       "minecraft:brown_mushroom_swamp",
@@ -94,7 +94,14 @@
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane_swamp",
       "minecraft:patch_pumpkin",
-      "minecraft:seagrass_swamp"
+      "minecraft:seagrass_swamp",
+      "regions_unexplored:giant_pink_bioshroom",
+      "regions_unexplored:giant_brown_mushroom",
+      "regions_unexplored:giant_red_mushroom",
+      "regions_unexplored:lush_pine_tree",
+      "regions_unexplored:pink_bioshroom_dense",
+      "regions_unexplored:ferns",
+      "regions_unexplored:pine_shrub"
     ],
     [
       "minecraft:freeze_top_layer"

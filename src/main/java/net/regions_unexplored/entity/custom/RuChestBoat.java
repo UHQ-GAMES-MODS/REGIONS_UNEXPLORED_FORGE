@@ -57,6 +57,8 @@ public class RuChestBoat extends ChestBoat {
                 item = RuItems.PINE_CHEST_BOAT.get();
             case REDWOOD:
                 item = RuItems.REDWOOD_CHEST_BOAT.get();
+            case SOCOTRA:
+                item = RuItems.SOCOTRA_CHEST_BOAT.get();
             case WILLOW:
                 item = RuItems.WILLOW_CHEST_BOAT.get();
             default:

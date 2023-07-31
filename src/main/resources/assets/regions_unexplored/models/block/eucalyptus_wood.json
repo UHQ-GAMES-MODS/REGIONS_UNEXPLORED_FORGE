@@ -1,9 +1,7 @@
 {
-  "parent": "regions_unexplored:block/wood_with_overlay",
+  "parent": "block/cube_all",
   "textures": {
-    "0": "regions_unexplored:block/eucalyptus_log",
-    "1": "regions_unexplored:block/eucalyptus_log_overlay",
+    "all": "regions_unexplored:block/eucalyptus_log",
     "particle": "regions_unexplored:block/eucalyptus_log"
-  },
-  "render_type": "translucent"
+  }
 }

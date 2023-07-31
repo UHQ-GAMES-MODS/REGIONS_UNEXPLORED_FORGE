@@ -1,5 +1,5 @@
 {
-  "parent": "regions_unexplored:block/one_layer_tall_sapling",
+  "parent": "block/cross",
   "textures": {
     "cross": "regions_unexplored:block/cobalt_earlight",
     "particle": "regions_unexplored:block/cobalt_earlight"

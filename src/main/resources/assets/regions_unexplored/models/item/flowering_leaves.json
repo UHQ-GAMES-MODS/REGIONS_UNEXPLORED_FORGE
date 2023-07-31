@@ -1,5 +1,5 @@
 {
-  "parent": "regions_unexplored:block/flowering_leaves",
+  "parent": "regions_unexplored:block/flowering_leaves_item",
   "display": {
     "thirdperson": {
       "rotation": [

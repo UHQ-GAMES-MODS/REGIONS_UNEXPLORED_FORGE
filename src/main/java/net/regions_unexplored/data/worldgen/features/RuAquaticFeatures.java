@@ -22,6 +22,7 @@ import net.regions_unexplored.world.level.feature.configuration.RuTreeConfigurat
 import net.regions_unexplored.world.level.feature.configuration.SeaRockConfiguration;
 
 public class RuAquaticFeatures {
+    public static final ResourceKey<ConfiguredFeature<?, ?>> WATER_CATTAIL = ConfiguredFeatureRegistry.createKey("water_cattail");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> TALL_HYACINTH_STOCK = ConfiguredFeatureRegistry.createKey("tall_hyacinth_stock");
     public static final ResourceKey<ConfiguredFeature<?, ?>> HYACINTH_PLANTS = ConfiguredFeatureRegistry.createKey("hyacinth_plants");
@@ -38,6 +39,7 @@ public class RuAquaticFeatures {
     
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         HolderGetter<ConfiguredFeature<?, ?>> holderGetter = context.lookup(Registries.CONFIGURED_FEATURE);
+        register(context, WATER_CATTAIL, FeatureRegistry.WATER_CATTAIL.get(), FeatureConfiguration.NONE);
         
         register(context, TALL_HYACINTH_STOCK, FeatureRegistry.TALL_HYACINTH_STOCK.get(), new HyacinthStockConfiguration(BlockStateProvider.simple(RuBlocks.TALL_HYACINTH_STOCK.get()), 1, 14));
         register(context, HYACINTH_PLANTS, FeatureRegistry.HYACINTH_PLANTS.get(), new ProbabilityFeatureConfiguration(0.1F));

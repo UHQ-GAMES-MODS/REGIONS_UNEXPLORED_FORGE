@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "regions_unexplored:block/glistering_sprout_4"
-  },
-  "render_type": "cutout"
-}

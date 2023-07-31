@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "block/bone_block_top",
+    "up": "regions_unexplored:block/glistering_nylium",
+    "north": "regions_unexplored:block/overgrown_bone_block_side",
+    "east": "regions_unexplored:block/overgrown_bone_block_side",
+    "south": "regions_unexplored:block/overgrown_bone_block_side",
+    "west": "regions_unexplored:block/overgrown_bone_block_side",
+    "particle": "regions_unexplored:block/overgrown_bone_block_side"
+  }
+}

@@ -4,7 +4,6 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
-import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.registries.RegistryObject;
@@ -186,6 +185,7 @@ public class RuBlocks {
     public static RegistryObject<Block> BAOBAB_SHRUB;
     public static RegistryObject<Block> BIRCH_SHRUB;
     public static RegistryObject<Block> BLACKWOOD_SHRUB;
+    public static RegistryObject<Block> BRIMWOOD_SHRUB;
     public static RegistryObject<Block> MAGNOLIA_SHRUB;
     public static RegistryObject<Block> CHERRY_SHRUB;
     public static RegistryObject<Block> CYPRESS_SHRUB;
@@ -484,6 +484,26 @@ public class RuBlocks {
     public static RegistryObject<Block> BLACKWOOD_BUTTON;
     public static RegistryObject<Block> BLACKWOOD_SIGN;
     public static RegistryObject<Block> BLACKWOOD_WALL_SIGN;
+    public static RegistryObject<Block> BLACKWOOD_HANGING_SIGN;
+    public static RegistryObject<Block> BLACKWOOD_WALL_HANGING_SIGN;
+    //BLUE_BIOSHROOM_BLOCKS
+    public static RegistryObject<Block> BLUE_BIOSHROOM_STEM;
+    public static RegistryObject<Block> STRIPPED_BLUE_BIOSHROOM_STEM;
+    public static RegistryObject<Block> BLUE_BIOSHROOM_HYPHAE;
+    public static RegistryObject<Block> STRIPPED_BLUE_BIOSHROOM_HYPHAE;
+    public static RegistryObject<Block> BLUE_BIOSHROOM_PLANKS;
+    public static RegistryObject<Block> BLUE_BIOSHROOM_STAIRS;
+    public static RegistryObject<Block> BLUE_BIOSHROOM_SLAB;
+    public static RegistryObject<Block> BLUE_BIOSHROOM_FENCE;
+    public static RegistryObject<Block> BLUE_BIOSHROOM_DOOR;
+    public static RegistryObject<Block> BLUE_BIOSHROOM_FENCE_GATE;
+    public static RegistryObject<Block> BLUE_BIOSHROOM_TRAPDOOR;
+    public static RegistryObject<Block> BLUE_BIOSHROOM_PRESSURE_PLATE;
+    public static RegistryObject<Block> BLUE_BIOSHROOM_BUTTON;
+    public static RegistryObject<Block> BLUE_BIOSHROOM_SIGN;
+    public static RegistryObject<Block> BLUE_BIOSHROOM_WALL_SIGN;
+    public static RegistryObject<Block> BLUE_BIOSHROOM_HANGING_SIGN;
+    public static RegistryObject<Block> BLUE_BIOSHROOM_WALL_HANGING_SIGN;
     //BRIMWOOD_BLOCKS
     public static RegistryObject<Block> BRIMWOOD_LOG;
     public static RegistryObject<Block> BRIMWOOD_LOG_MAGMA;
@@ -501,22 +521,26 @@ public class RuBlocks {
     public static RegistryObject<Block> BRIMWOOD_BUTTON;
     public static RegistryObject<Block> BRIMWOOD_SIGN;
     public static RegistryObject<Block> BRIMWOOD_WALL_SIGN;
-    //SAKURA_BLOCKS
-    public static RegistryObject<Block> MAGNOLIA_LOG;
-    public static RegistryObject<Block> STRIPPED_MAGNOLIA_LOG;
-    public static RegistryObject<Block> MAGNOLIA_WOOD;
-    public static RegistryObject<Block> STRIPPED_MAGNOLIA_WOOD;
-    public static RegistryObject<Block> MAGNOLIA_PLANKS;
-    public static RegistryObject<Block> MAGNOLIA_STAIRS;
-    public static RegistryObject<Block> MAGNOLIA_SLAB;
-    public static RegistryObject<Block> MAGNOLIA_FENCE;
-    public static RegistryObject<Block> MAGNOLIA_DOOR;
-    public static RegistryObject<Block> MAGNOLIA_FENCE_GATE;
-    public static RegistryObject<Block> MAGNOLIA_TRAPDOOR;
-    public static RegistryObject<Block> MAGNOLIA_PRESSURE_PLATE;
-    public static RegistryObject<Block> MAGNOLIA_BUTTON;
-    public static RegistryObject<Block> MAGNOLIA_SIGN;
-    public static RegistryObject<Block> MAGNOLIA_WALL_SIGN;
+    public static RegistryObject<Block> BRIMWOOD_HANGING_SIGN;
+    public static RegistryObject<Block> BRIMWOOD_WALL_HANGING_SIGN;
+    //COBALT_BLOCKS
+    public static RegistryObject<Block> COBALT_LOG;
+    public static RegistryObject<Block> STRIPPED_COBALT_LOG;
+    public static RegistryObject<Block> COBALT_WOOD;
+    public static RegistryObject<Block> STRIPPED_COBALT_WOOD;
+    public static RegistryObject<Block> COBALT_PLANKS;
+    public static RegistryObject<Block> COBALT_STAIRS;
+    public static RegistryObject<Block> COBALT_SLAB;
+    public static RegistryObject<Block> COBALT_FENCE;
+    public static RegistryObject<Block> COBALT_DOOR;
+    public static RegistryObject<Block> COBALT_FENCE_GATE;
+    public static RegistryObject<Block> COBALT_TRAPDOOR;
+    public static RegistryObject<Block> COBALT_PRESSURE_PLATE;
+    public static RegistryObject<Block> COBALT_BUTTON;
+    public static RegistryObject<Block> COBALT_SIGN;
+    public static RegistryObject<Block> COBALT_WALL_SIGN;
+    public static RegistryObject<Block> COBALT_HANGING_SIGN;
+    public static RegistryObject<Block> COBALT_WALL_HANGING_SIGN;
     //CYPRESS_BLOCKS
     public static RegistryObject<Block> CYPRESS_LOG;
     public static RegistryObject<Block> STRIPPED_CYPRESS_LOG;
@@ -533,6 +557,8 @@ public class RuBlocks {
     public static RegistryObject<Block> CYPRESS_BUTTON;
     public static RegistryObject<Block> CYPRESS_SIGN;
     public static RegistryObject<Block> CYPRESS_WALL_SIGN;
+    public static RegistryObject<Block> CYPRESS_HANGING_SIGN;
+    public static RegistryObject<Block> CYPRESS_WALL_HANGING_SIGN;
     //DEAD_BLOCKS
     public static RegistryObject<Block> DEAD_LOG;
     public static RegistryObject<Block> STRIPPED_DEAD_LOG;
@@ -549,6 +575,8 @@ public class RuBlocks {
     public static RegistryObject<Block> DEAD_BUTTON;
     public static RegistryObject<Block> DEAD_SIGN;
     public static RegistryObject<Block> DEAD_WALL_SIGN;
+    public static RegistryObject<Block> DEAD_HANGING_SIGN;
+    public static RegistryObject<Block> DEAD_WALL_HANGING_SIGN;
     //EUCALYPTUS_BLOCKS
     public static RegistryObject<Block> EUCALYPTUS_LOG;
     public static RegistryObject<Block> STRIPPED_EUCALYPTUS_LOG;
@@ -565,6 +593,26 @@ public class RuBlocks {
     public static RegistryObject<Block> EUCALYPTUS_BUTTON;
     public static RegistryObject<Block> EUCALYPTUS_SIGN;
     public static RegistryObject<Block> EUCALYPTUS_WALL_SIGN;
+    public static RegistryObject<Block> EUCALYPTUS_HANGING_SIGN;
+    public static RegistryObject<Block> EUCALYPTUS_WALL_HANGING_SIGN;
+    //GREEN_BIOSHROOM_BLOCKS
+    public static RegistryObject<Block> GREEN_BIOSHROOM_STEM;
+    public static RegistryObject<Block> STRIPPED_GREEN_BIOSHROOM_STEM;
+    public static RegistryObject<Block> GREEN_BIOSHROOM_HYPHAE;
+    public static RegistryObject<Block> STRIPPED_GREEN_BIOSHROOM_HYPHAE;
+    public static RegistryObject<Block> GREEN_BIOSHROOM_PLANKS;
+    public static RegistryObject<Block> GREEN_BIOSHROOM_STAIRS;
+    public static RegistryObject<Block> GREEN_BIOSHROOM_SLAB;
+    public static RegistryObject<Block> GREEN_BIOSHROOM_FENCE;
+    public static RegistryObject<Block> GREEN_BIOSHROOM_DOOR;
+    public static RegistryObject<Block> GREEN_BIOSHROOM_FENCE_GATE;
+    public static RegistryObject<Block> GREEN_BIOSHROOM_TRAPDOOR;
+    public static RegistryObject<Block> GREEN_BIOSHROOM_PRESSURE_PLATE;
+    public static RegistryObject<Block> GREEN_BIOSHROOM_BUTTON;
+    public static RegistryObject<Block> GREEN_BIOSHROOM_SIGN;
+    public static RegistryObject<Block> GREEN_BIOSHROOM_WALL_SIGN;
+    public static RegistryObject<Block> GREEN_BIOSHROOM_HANGING_SIGN;
+    public static RegistryObject<Block> GREEN_BIOSHROOM_WALL_HANGING_SIGN;
     //JOSHUA_BLOCKS
     public static RegistryObject<Block> JOSHUA_LOG;
     public static RegistryObject<Block> STRIPPED_JOSHUA_LOG;
@@ -581,6 +629,8 @@ public class RuBlocks {
     public static RegistryObject<Block> JOSHUA_BUTTON;
     public static RegistryObject<Block> JOSHUA_SIGN;
     public static RegistryObject<Block> JOSHUA_WALL_SIGN;
+    public static RegistryObject<Block> JOSHUA_HANGING_SIGN;
+    public static RegistryObject<Block> JOSHUA_WALL_HANGING_SIGN;
     //LARCH_BLOCKS
     public static RegistryObject<Block> LARCH_LOG;
     public static RegistryObject<Block> STRIPPED_LARCH_LOG;
@@ -597,6 +647,26 @@ public class RuBlocks {
     public static RegistryObject<Block> LARCH_BUTTON;
     public static RegistryObject<Block> LARCH_SIGN;
     public static RegistryObject<Block> LARCH_WALL_SIGN;
+    public static RegistryObject<Block> LARCH_HANGING_SIGN;
+    public static RegistryObject<Block> LARCH_WALL_HANGING_SIGN;
+    //MAGNOLIA_BLOCKS
+    public static RegistryObject<Block> MAGNOLIA_LOG;
+    public static RegistryObject<Block> STRIPPED_MAGNOLIA_LOG;
+    public static RegistryObject<Block> MAGNOLIA_WOOD;
+    public static RegistryObject<Block> STRIPPED_MAGNOLIA_WOOD;
+    public static RegistryObject<Block> MAGNOLIA_PLANKS;
+    public static RegistryObject<Block> MAGNOLIA_STAIRS;
+    public static RegistryObject<Block> MAGNOLIA_SLAB;
+    public static RegistryObject<Block> MAGNOLIA_FENCE;
+    public static RegistryObject<Block> MAGNOLIA_DOOR;
+    public static RegistryObject<Block> MAGNOLIA_FENCE_GATE;
+    public static RegistryObject<Block> MAGNOLIA_TRAPDOOR;
+    public static RegistryObject<Block> MAGNOLIA_PRESSURE_PLATE;
+    public static RegistryObject<Block> MAGNOLIA_BUTTON;
+    public static RegistryObject<Block> MAGNOLIA_SIGN;
+    public static RegistryObject<Block> MAGNOLIA_WALL_SIGN;
+    public static RegistryObject<Block> MAGNOLIA_HANGING_SIGN;
+    public static RegistryObject<Block> MAGNOLIA_WALL_HANGING_SIGN;
     //MAPLE_BLOCKS
     public static RegistryObject<Block> MAPLE_LOG;
     public static RegistryObject<Block> STRIPPED_MAPLE_LOG;
@@ -613,6 +683,8 @@ public class RuBlocks {
     public static RegistryObject<Block> MAPLE_BUTTON;
     public static RegistryObject<Block> MAPLE_SIGN;
     public static RegistryObject<Block> MAPLE_WALL_SIGN;
+    public static RegistryObject<Block> MAPLE_HANGING_SIGN;
+    public static RegistryObject<Block> MAPLE_WALL_HANGING_SIGN;
     //MAUVE_BLOCKS
     public static RegistryObject<Block> MAUVE_LOG;
     public static RegistryObject<Block> STRIPPED_MAUVE_LOG;
@@ -629,6 +701,8 @@ public class RuBlocks {
     public static RegistryObject<Block> MAUVE_BUTTON;
     public static RegistryObject<Block> MAUVE_SIGN;
     public static RegistryObject<Block> MAUVE_WALL_SIGN;
+    public static RegistryObject<Block> MAUVE_HANGING_SIGN;
+    public static RegistryObject<Block> MAUVE_WALL_HANGING_SIGN;
     //PALM_BLOCKS
     public static RegistryObject<Block> PALM_LOG;
     public static RegistryObject<Block> STRIPPED_PALM_LOG;
@@ -645,9 +719,10 @@ public class RuBlocks {
     public static RegistryObject<Block> PALM_BUTTON;
     public static RegistryObject<Block> PALM_SIGN;
     public static RegistryObject<Block> PALM_WALL_SIGN;
+    public static RegistryObject<Block> PALM_HANGING_SIGN;
+    public static RegistryObject<Block> PALM_WALL_HANGING_SIGN;
     //PINE_BLOCKS
     public static RegistryObject<Block> PINE_LOG;
-    public static RegistryObject<Block> PINE_LOG_TRANSITION;
     public static RegistryObject<Block> STRIPPED_PINE_LOG;
     public static RegistryObject<Block> PINE_WOOD;
     public static RegistryObject<Block> STRIPPED_PINE_WOOD;
@@ -662,6 +737,26 @@ public class RuBlocks {
     public static RegistryObject<Block> PINE_BUTTON;
     public static RegistryObject<Block> PINE_SIGN;
     public static RegistryObject<Block> PINE_WALL_SIGN;
+    public static RegistryObject<Block> PINE_HANGING_SIGN;
+    public static RegistryObject<Block> PINE_WALL_HANGING_SIGN;
+    //PINK_BIOSHROOM_BLOCKS
+    public static RegistryObject<Block> PINK_BIOSHROOM_STEM;
+    public static RegistryObject<Block> STRIPPED_PINK_BIOSHROOM_STEM;
+    public static RegistryObject<Block> PINK_BIOSHROOM_HYPHAE;
+    public static RegistryObject<Block> STRIPPED_PINK_BIOSHROOM_HYPHAE;
+    public static RegistryObject<Block> PINK_BIOSHROOM_PLANKS;
+    public static RegistryObject<Block> PINK_BIOSHROOM_STAIRS;
+    public static RegistryObject<Block> PINK_BIOSHROOM_SLAB;
+    public static RegistryObject<Block> PINK_BIOSHROOM_FENCE;
+    public static RegistryObject<Block> PINK_BIOSHROOM_DOOR;
+    public static RegistryObject<Block> PINK_BIOSHROOM_FENCE_GATE;
+    public static RegistryObject<Block> PINK_BIOSHROOM_TRAPDOOR;
+    public static RegistryObject<Block> PINK_BIOSHROOM_PRESSURE_PLATE;
+    public static RegistryObject<Block> PINK_BIOSHROOM_BUTTON;
+    public static RegistryObject<Block> PINK_BIOSHROOM_SIGN;
+    public static RegistryObject<Block> PINK_BIOSHROOM_WALL_SIGN;
+    public static RegistryObject<Block> PINK_BIOSHROOM_HANGING_SIGN;
+    public static RegistryObject<Block> PINK_BIOSHROOM_WALL_HANGING_SIGN;
     //REDWOOD_BLOCKS
     public static RegistryObject<Block> REDWOOD_LOG;
     public static RegistryObject<Block> STRIPPED_REDWOOD_LOG;
@@ -678,6 +773,26 @@ public class RuBlocks {
     public static RegistryObject<Block> REDWOOD_BUTTON;
     public static RegistryObject<Block> REDWOOD_SIGN;
     public static RegistryObject<Block> REDWOOD_WALL_SIGN;
+    public static RegistryObject<Block> REDWOOD_HANGING_SIGN;
+    public static RegistryObject<Block> REDWOOD_WALL_HANGING_SIGN;
+    //SOCOTRA_BLOCKS
+    public static RegistryObject<Block> SOCOTRA_LOG;
+    public static RegistryObject<Block> STRIPPED_SOCOTRA_LOG;
+    public static RegistryObject<Block> SOCOTRA_WOOD;
+    public static RegistryObject<Block> STRIPPED_SOCOTRA_WOOD;
+    public static RegistryObject<Block> SOCOTRA_PLANKS;
+    public static RegistryObject<Block> SOCOTRA_STAIRS;
+    public static RegistryObject<Block> SOCOTRA_SLAB;
+    public static RegistryObject<Block> SOCOTRA_FENCE;
+    public static RegistryObject<Block> SOCOTRA_DOOR;
+    public static RegistryObject<Block> SOCOTRA_FENCE_GATE;
+    public static RegistryObject<Block> SOCOTRA_TRAPDOOR;
+    public static RegistryObject<Block> SOCOTRA_PRESSURE_PLATE;
+    public static RegistryObject<Block> SOCOTRA_BUTTON;
+    public static RegistryObject<Block> SOCOTRA_SIGN;
+    public static RegistryObject<Block> SOCOTRA_WALL_SIGN;
+    public static RegistryObject<Block> SOCOTRA_HANGING_SIGN;
+    public static RegistryObject<Block> SOCOTRA_WALL_HANGING_SIGN;
     //WILLOW_BLOCKS
     public static RegistryObject<Block> WILLOW_LOG;
     public static RegistryObject<Block> STRIPPED_WILLOW_LOG;
@@ -694,6 +809,26 @@ public class RuBlocks {
     public static RegistryObject<Block> WILLOW_BUTTON;
     public static RegistryObject<Block> WILLOW_SIGN;
     public static RegistryObject<Block> WILLOW_WALL_SIGN;
+    public static RegistryObject<Block> WILLOW_HANGING_SIGN;
+    public static RegistryObject<Block> WILLOW_WALL_HANGING_SIGN;
+    //YELLOW_BIOSHROOM_BLOCKS
+    public static RegistryObject<Block> YELLOW_BIOSHROOM_STEM;
+    public static RegistryObject<Block> STRIPPED_YELLOW_BIOSHROOM_STEM;
+    public static RegistryObject<Block> YELLOW_BIOSHROOM_HYPHAE;
+    public static RegistryObject<Block> STRIPPED_YELLOW_BIOSHROOM_HYPHAE;
+    public static RegistryObject<Block> YELLOW_BIOSHROOM_PLANKS;
+    public static RegistryObject<Block> YELLOW_BIOSHROOM_STAIRS;
+    public static RegistryObject<Block> YELLOW_BIOSHROOM_SLAB;
+    public static RegistryObject<Block> YELLOW_BIOSHROOM_FENCE;
+    public static RegistryObject<Block> YELLOW_BIOSHROOM_DOOR;
+    public static RegistryObject<Block> YELLOW_BIOSHROOM_FENCE_GATE;
+    public static RegistryObject<Block> YELLOW_BIOSHROOM_TRAPDOOR;
+    public static RegistryObject<Block> YELLOW_BIOSHROOM_PRESSURE_PLATE;
+    public static RegistryObject<Block> YELLOW_BIOSHROOM_BUTTON;
+    public static RegistryObject<Block> YELLOW_BIOSHROOM_SIGN;
+    public static RegistryObject<Block> YELLOW_BIOSHROOM_WALL_SIGN;
+    public static RegistryObject<Block> YELLOW_BIOSHROOM_HANGING_SIGN;
+    public static RegistryObject<Block> YELLOW_BIOSHROOM_WALL_HANGING_SIGN;
 
     /*-----------------PAINTED PLANKS-----------------*/
     //PLANKS
@@ -751,12 +886,13 @@ public class RuBlocks {
     /*-----------------NETHER_BLOCKS-----------------*/
     //NETHER_STONES
     public static RegistryObject<Block> BLACKSTONE_CLUSTER;
-    public static RegistryObject<Block> MARROWSTONE;
+    public static RegistryObject<Block> OVERGROWN_BONE_BLOCK;
     //BRIMSPROUT_BLOCKS
     public static RegistryObject<Block> BRIMSPROUT_NYLIUM;
     public static RegistryObject<Block> BRIMSPROUT;
     //COBALT_BLOCKS
     public static RegistryObject<Block> COBALT_EARLIGHT;
+    public static RegistryObject<Block> TALL_COBALT_EARLIGHT;
     public static RegistryObject<Block> COBALT_NYLIUM;
     public static RegistryObject<Block> COBALT_OBSIDIAN;
     public static RegistryObject<Block> COBALT_ROOTS;
@@ -826,7 +962,7 @@ public class RuBlocks {
         BLEEDING_HEART = BlockRegistry.registerDefaultBlock("bleeding_heart", () -> new RuSnowFlowerBlock(MobEffects.POISON, 9, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
         BLUE_LUPINE = BlockRegistry.registerDefaultBlock("blue_lupine", () -> new RuFlowerBlock(MobEffects.SATURATION, 4, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
         DAISY = BlockRegistry.registerDefaultBlock("daisy", () -> new RuFlowerBlock(MobEffects.MOVEMENT_SPEED, 8, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
-        DORCEL = BlockRegistry.registerDefaultBlock("dorcel", () -> new DorcelPlantBlock(MobEffects.WITHER, 20, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+        DORCEL = BlockRegistry.registerDefaultBlock("dorcel", () -> new DorcelPlantBlock(MobEffects.WITHER, 20, BlockBehaviour.Properties.copy(Blocks.DANDELION).speedFactor(0.5F)));
         FELICIA_DAISY = BlockRegistry.registerDefaultBlock("felicia_daisy", () -> new RuFlowerBlock(MobEffects.MOVEMENT_SPEED, 8, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
         FIREWEED = BlockRegistry.registerDefaultBlock("fireweed", () -> new RuFlowerBlock(MobEffects.GLOWING, 2, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
         HYSSOP = BlockRegistry.registerDefaultBlock("hyssop", () -> new RuFlowerBlock(MobEffects.LUCK, 10, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
@@ -912,6 +1048,7 @@ public class RuBlocks {
         BAOBAB_SHRUB = BlockRegistry.registerDefaultBlock("baobab_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
         BIRCH_SHRUB = BlockRegistry.registerDefaultBlock("birch_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
         BLACKWOOD_SHRUB = BlockRegistry.registerDefaultBlock("blackwood_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
+        BRIMWOOD_SHRUB = BlockRegistry.registerDefaultBlock("brimwood_shrub", () -> new BrimwoodShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
         MAGNOLIA_SHRUB = BlockRegistry.registerDefaultBlock("magnolia_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
         CHERRY_SHRUB = BlockRegistry.registerDefaultBlock("cherry_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
         CYPRESS_SHRUB = BlockRegistry.registerDefaultBlock("cypress_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
@@ -1190,7 +1327,7 @@ public class RuBlocks {
         BAOBAB_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("baobab_sign", () -> BlockRegistry.sign(SoundType.CHERRY_WOOD, RuWoodTypes.BAOBAB));
         BAOBAB_WALL_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("baobab_wall_sign", () -> BlockRegistry.wallSign(SoundType.CHERRY_WOOD, BAOBAB_SIGN.get(), RuWoodTypes.BAOBAB));
         BAOBAB_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("baobab_hanging_sign", () -> BlockRegistry.hangingSign(MapColor.WOOD, SoundType.CHERRY_WOOD, RuWoodTypes.BAOBAB));
-        BAOBAB_WALL_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("baobab_wall_hanging_sign", () -> BlockRegistry.wallHangingSign(MapColor.WOOD, SoundType.CHERRY_WOOD, BAOBAB_SIGN.get(), RuWoodTypes.BAOBAB));
+        BAOBAB_WALL_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("baobab_wall_hanging_sign", () -> BlockRegistry.wallHangingSign(MapColor.WOOD, SoundType.CHERRY_WOOD, BAOBAB_HANGING_SIGN.get(), RuWoodTypes.BAOBAB));
         //BLACKWOOD_BLOCKS
         BLACKWOOD_LOG = BlockRegistry.registerDefaultBlock("blackwood_log", () -> BlockRegistry.log(MapColor.TERRACOTTA_BLACK, MapColor.TERRACOTTA_BROWN, SoundType.NETHER_WOOD));
         STRIPPED_BLACKWOOD_LOG = BlockRegistry.registerDefaultBlock("stripped_blackwood_log", () -> BlockRegistry.log(MapColor.TERRACOTTA_BLACK, MapColor.TERRACOTTA_BLACK, SoundType.NETHER_WOOD));
@@ -1207,39 +1344,63 @@ public class RuBlocks {
         BLACKWOOD_BUTTON = BlockRegistry.registerDefaultBlock("blackwood_button", () -> BlockRegistry.woodButton(SoundType.NETHER_WOOD, RuBlockSetType.BLACKWOOD));
         BLACKWOOD_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("blackwood_sign", () -> BlockRegistry.sign(SoundType.NETHER_WOOD, RuWoodTypes.BLACKWOOD));
         BLACKWOOD_WALL_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("blackwood_wall_sign", () -> BlockRegistry.wallSign(SoundType.NETHER_WOOD, BLACKWOOD_SIGN.get(), RuWoodTypes.BLACKWOOD));
+        BLACKWOOD_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("blackwood_hanging_sign", () -> BlockRegistry.hangingSign(MapColor.TERRACOTTA_BLACK, SoundType.NETHER_WOOD, RuWoodTypes.BLACKWOOD));
+        BLACKWOOD_WALL_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("blackwood_wall_hanging_sign", () -> BlockRegistry.wallHangingSign(MapColor.TERRACOTTA_BLACK, SoundType.NETHER_WOOD, BLACKWOOD_HANGING_SIGN.get(), RuWoodTypes.BLACKWOOD));
+        //BLUE_BIOSHROOM_BLOCKS
+        BLUE_BIOSHROOM_STEM = BlockRegistry.registerDefaultBlock("blue_bioshroom_stem", () -> BlockRegistry.log(MapColor.COLOR_LIGHT_BLUE, MapColor.COLOR_LIGHT_BLUE, SoundType.CHERRY_WOOD));
+        STRIPPED_BLUE_BIOSHROOM_STEM = BlockRegistry.registerDefaultBlock("stripped_blue_bioshroom_stem", () -> BlockRegistry.log(MapColor.COLOR_LIGHT_BLUE, MapColor.COLOR_LIGHT_BLUE, SoundType.CHERRY_WOOD));
+        BLUE_BIOSHROOM_HYPHAE = BlockRegistry.registerDefaultBlock("blue_bioshroom_hyphae", () -> BlockRegistry.woodBlock(MapColor.COLOR_LIGHT_BLUE, SoundType.CHERRY_WOOD));
+        STRIPPED_BLUE_BIOSHROOM_HYPHAE = BlockRegistry.registerDefaultBlock("stripped_blue_bioshroom_hyphae", () -> BlockRegistry.woodBlock(MapColor.COLOR_LIGHT_BLUE, SoundType.CHERRY_WOOD));
+        BLUE_BIOSHROOM_PLANKS = BlockRegistry.registerDefaultBlock("blue_bioshroom_planks", () -> BlockRegistry.woodPlanks(MapColor.COLOR_LIGHT_BLUE, SoundType.CHERRY_WOOD));
+        BLUE_BIOSHROOM_STAIRS = BlockRegistry.registerDefaultBlock("blue_bioshroom_stairs", () -> BlockRegistry.woodStairs(MapColor.COLOR_LIGHT_BLUE, SoundType.CHERRY_WOOD));
+        BLUE_BIOSHROOM_SLAB = BlockRegistry.registerDefaultBlock("blue_bioshroom_slab", () -> BlockRegistry.woodSlab(MapColor.COLOR_LIGHT_BLUE, SoundType.CHERRY_WOOD));
+        BLUE_BIOSHROOM_FENCE = BlockRegistry.registerDefaultBlock("blue_bioshroom_fence", () -> BlockRegistry.woodFence(MapColor.COLOR_LIGHT_BLUE, SoundType.CHERRY_WOOD));
+        BLUE_BIOSHROOM_DOOR = BlockRegistry.registerDefaultBlock("blue_bioshroom_door", () -> BlockRegistry.woodDoor(MapColor.COLOR_LIGHT_BLUE, SoundType.CHERRY_WOOD, RuBlockSetType.BLUE_BIOSHROOM));
+        BLUE_BIOSHROOM_FENCE_GATE = BlockRegistry.registerDefaultBlock("blue_bioshroom_fence_gate", () -> BlockRegistry.woodFenceGate(MapColor.COLOR_LIGHT_BLUE, RuWoodTypes.BLUE_BIOSHROOM, SoundType.CHERRY_WOOD));
+        BLUE_BIOSHROOM_TRAPDOOR = BlockRegistry.registerDefaultBlock("blue_bioshroom_trapdoor", () -> BlockRegistry.woodTrapDoor(MapColor.COLOR_LIGHT_BLUE, SoundType.CHERRY_WOOD, RuBlockSetType.BLUE_BIOSHROOM));
+        BLUE_BIOSHROOM_PRESSURE_PLATE = BlockRegistry.registerDefaultBlock("blue_bioshroom_pressure_plate", () -> BlockRegistry.woodPressurePlate(MapColor.COLOR_LIGHT_BLUE, SoundType.CHERRY_WOOD, RuBlockSetType.BLUE_BIOSHROOM));
+        BLUE_BIOSHROOM_BUTTON = BlockRegistry.registerDefaultBlock("blue_bioshroom_button", () -> BlockRegistry.woodButton(SoundType.CHERRY_WOOD, RuBlockSetType.BLUE_BIOSHROOM));
+        BLUE_BIOSHROOM_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("blue_bioshroom_sign", () -> BlockRegistry.sign(SoundType.CHERRY_WOOD, RuWoodTypes.BLUE_BIOSHROOM));
+        BLUE_BIOSHROOM_WALL_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("blue_bioshroom_wall_sign", () -> BlockRegistry.wallSign(SoundType.CHERRY_WOOD, BLUE_BIOSHROOM_SIGN.get(), RuWoodTypes.BLUE_BIOSHROOM));
+        BLUE_BIOSHROOM_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("blue_bioshroom_hanging_sign", () -> BlockRegistry.hangingSign(MapColor.COLOR_LIGHT_BLUE, SoundType.CHERRY_WOOD, RuWoodTypes.BLUE_BIOSHROOM));
+        BLUE_BIOSHROOM_WALL_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("blue_bioshroom_wall_hanging_sign", () -> BlockRegistry.wallHangingSign(MapColor.COLOR_LIGHT_BLUE, SoundType.CHERRY_WOOD, BLUE_BIOSHROOM_HANGING_SIGN.get(), RuWoodTypes.BLUE_BIOSHROOM));
         //BRIMWOOD_BLOCKS
-        BRIMWOOD_LOG = BlockRegistry.registerDefaultBlock("brimwood_log", () -> BlockRegistry.fireproofLog(MapColor.COLOR_BROWN, MapColor.COLOR_BROWN, SoundType.NETHER_WOOD));
-        BRIMWOOD_LOG_MAGMA = BlockRegistry.registerDefaultBlock("brimwood_log_magma", () -> BlockRegistry.fireproofMagmaLog(MapColor.COLOR_ORANGE, MapColor.COLOR_BROWN, SoundType.NETHER_WOOD));
-        STRIPPED_BRIMWOOD_LOG = BlockRegistry.registerDefaultBlock("stripped_brimwood_log", () -> BlockRegistry.fireproofLog(MapColor.COLOR_BROWN, MapColor.COLOR_BROWN, SoundType.NETHER_WOOD));
+        BRIMWOOD_LOG = BlockRegistry.registerDefaultBlock("brimwood_log", () -> BlockRegistry.fireproofLog(MapColor.COLOR_ORANGE, MapColor.COLOR_BROWN, SoundType.NETHER_WOOD));
+        BRIMWOOD_LOG_MAGMA = BlockRegistry.registerDefaultBlock("brimwood_log_magma", () -> BlockRegistry.fireproofMagmaLog(MapColor.COLOR_ORANGE, SoundType.NETHER_WOOD));
+        STRIPPED_BRIMWOOD_LOG = BlockRegistry.registerDefaultBlock("stripped_brimwood_log", () -> BlockRegistry.fireproofLog(MapColor.COLOR_ORANGE, MapColor.COLOR_BROWN, SoundType.NETHER_WOOD));
         BRIMWOOD_WOOD = BlockRegistry.registerDefaultBlock("brimwood_wood", () -> BlockRegistry.fireproofWoodBlock(MapColor.COLOR_BROWN, SoundType.NETHER_WOOD));
         STRIPPED_BRIMWOOD_WOOD = BlockRegistry.registerDefaultBlock("stripped_brimwood_wood", () -> BlockRegistry.fireproofWoodBlock(MapColor.COLOR_BROWN, SoundType.NETHER_WOOD));
         BRIMWOOD_PLANKS = BlockRegistry.registerDefaultBlock("brimwood_planks", () -> BlockRegistry.fireproofWoodPlanks(MapColor.COLOR_BROWN, SoundType.NETHER_WOOD));
         BRIMWOOD_STAIRS = BlockRegistry.registerDefaultBlock("brimwood_stairs", () -> BlockRegistry.fireproofWoodStairs(MapColor.COLOR_BROWN, SoundType.NETHER_WOOD));
         BRIMWOOD_SLAB = BlockRegistry.registerDefaultBlock("brimwood_slab", () -> BlockRegistry.fireproofWoodSlab(MapColor.COLOR_BROWN, SoundType.NETHER_WOOD));
         BRIMWOOD_FENCE = BlockRegistry.registerDefaultBlock("brimwood_fence", () -> BlockRegistry.fireproofWoodFence(MapColor.COLOR_BROWN, SoundType.NETHER_WOOD));
-        BRIMWOOD_DOOR = BlockRegistry.registerDefaultBlock("brimwood_door", () -> BlockRegistry.fireproofWoodDoor(MapColor.COLOR_ORANGE, SoundType.NETHER_WOOD, RuBlockSetType.BRIMWOOD));
-        BRIMWOOD_FENCE_GATE = BlockRegistry.registerDefaultBlock("brimwood_fence_gate", () -> BlockRegistry.woodFenceGate(MapColor.COLOR_ORANGE, RuWoodTypes.BRIMWOOD, SoundType.NETHER_WOOD));
-        BRIMWOOD_TRAPDOOR = BlockRegistry.registerDefaultBlock("brimwood_trapdoor", () -> BlockRegistry.fireproofWoodTrapDoor(MapColor.COLOR_ORANGE, SoundType.NETHER_WOOD, RuBlockSetType.BRIMWOOD));
-        BRIMWOOD_PRESSURE_PLATE = BlockRegistry.registerDefaultBlock("brimwood_pressure_plate", () -> BlockRegistry.fireproofWoodPressurePlate(MapColor.COLOR_ORANGE, SoundType.NETHER_WOOD, RuBlockSetType.BRIMWOOD));
+        BRIMWOOD_DOOR = BlockRegistry.registerDefaultBlock("brimwood_door", () -> BlockRegistry.fireproofWoodDoor(MapColor.COLOR_BROWN, SoundType.NETHER_WOOD, RuBlockSetType.BRIMWOOD));
+        BRIMWOOD_FENCE_GATE = BlockRegistry.registerDefaultBlock("brimwood_fence_gate", () -> BlockRegistry.woodFenceGate(MapColor.COLOR_BROWN, RuWoodTypes.BRIMWOOD, SoundType.NETHER_WOOD));
+        BRIMWOOD_TRAPDOOR = BlockRegistry.registerDefaultBlock("brimwood_trapdoor", () -> BlockRegistry.fireproofWoodTrapDoor(MapColor.COLOR_BROWN, SoundType.NETHER_WOOD, RuBlockSetType.BRIMWOOD));
+        BRIMWOOD_PRESSURE_PLATE = BlockRegistry.registerDefaultBlock("brimwood_pressure_plate", () -> BlockRegistry.fireproofWoodPressurePlate(MapColor.COLOR_BROWN, SoundType.NETHER_WOOD, RuBlockSetType.BRIMWOOD));
         BRIMWOOD_BUTTON = BlockRegistry.registerDefaultBlock("brimwood_button", () -> BlockRegistry.fireproofWoodButton(SoundType.NETHER_WOOD, RuBlockSetType.BRIMWOOD));
         BRIMWOOD_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("brimwood_sign", () -> BlockRegistry.fireproofSign(SoundType.NETHER_WOOD, RuWoodTypes.BRIMWOOD));
         BRIMWOOD_WALL_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("brimwood_wall_sign", () -> BlockRegistry.fireproofWallSign(SoundType.NETHER_WOOD, BRIMWOOD_SIGN.get(), RuWoodTypes.BRIMWOOD));
-        //MAGNOLIA_BLOCKS
-        MAGNOLIA_LOG = BlockRegistry.registerDefaultBlock("magnolia_log", () -> BlockRegistry.log(MapColor.TERRACOTTA_PINK, MapColor.STONE, SoundType.CHERRY_WOOD));
-        STRIPPED_MAGNOLIA_LOG = BlockRegistry.registerDefaultBlock("stripped_magnolia_log", () -> BlockRegistry.log(MapColor.TERRACOTTA_PINK, MapColor.TERRACOTTA_PINK, SoundType.CHERRY_WOOD));
-        MAGNOLIA_WOOD = BlockRegistry.registerDefaultBlock("magnolia_wood", () -> BlockRegistry.woodBlock(MapColor.STONE, SoundType.CHERRY_WOOD));
-        STRIPPED_MAGNOLIA_WOOD = BlockRegistry.registerDefaultBlock("stripped_magnolia_wood", () -> BlockRegistry.woodBlock(MapColor.TERRACOTTA_PINK, SoundType.CHERRY_WOOD));
-        MAGNOLIA_PLANKS = BlockRegistry.registerDefaultBlock("magnolia_planks", () -> BlockRegistry.woodPlanks(MapColor.TERRACOTTA_PINK, SoundType.CHERRY_WOOD));
-        MAGNOLIA_STAIRS = BlockRegistry.registerDefaultBlock("magnolia_stairs", () -> BlockRegistry.woodStairs(MapColor.TERRACOTTA_PINK, SoundType.CHERRY_WOOD));
-        MAGNOLIA_SLAB = BlockRegistry.registerDefaultBlock("magnolia_slab", () -> BlockRegistry.woodSlab(MapColor.TERRACOTTA_PINK, SoundType.CHERRY_WOOD));
-        MAGNOLIA_FENCE = BlockRegistry.registerDefaultBlock("magnolia_fence", () -> BlockRegistry.woodFence(MapColor.TERRACOTTA_PINK, SoundType.CHERRY_WOOD));
-        MAGNOLIA_DOOR = BlockRegistry.registerDefaultBlock("magnolia_door", () -> BlockRegistry.woodDoor(MapColor.TERRACOTTA_PINK, SoundType.CHERRY_WOOD, RuBlockSetType.MAGNOLIA));
-        MAGNOLIA_FENCE_GATE = BlockRegistry.registerDefaultBlock("magnolia_fence_gate", () -> BlockRegistry.woodFenceGate(MapColor.TERRACOTTA_PINK, RuWoodTypes.MAGNOLIA, SoundType.CHERRY_WOOD));
-        MAGNOLIA_TRAPDOOR = BlockRegistry.registerDefaultBlock("magnolia_trapdoor", () -> BlockRegistry.woodTrapDoor(MapColor.TERRACOTTA_PINK, SoundType.CHERRY_WOOD, RuBlockSetType.MAGNOLIA));
-        MAGNOLIA_PRESSURE_PLATE = BlockRegistry.registerDefaultBlock("magnolia_pressure_plate", () -> BlockRegistry.woodPressurePlate(MapColor.TERRACOTTA_PINK, SoundType.CHERRY_WOOD, RuBlockSetType.MAGNOLIA));
-        MAGNOLIA_BUTTON = BlockRegistry.registerDefaultBlock("magnolia_button", () -> BlockRegistry.woodButton(SoundType.CHERRY_WOOD, RuBlockSetType.MAGNOLIA));
-        MAGNOLIA_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("magnolia_sign", () -> new RuStandingSignBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).sound(SoundType.CHERRY_WOOD).ignitedByLava(), RuWoodTypes.MAGNOLIA));
-        MAGNOLIA_WALL_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("magnolia_wall_sign", () -> new RuWallSignBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).sound(SoundType.CHERRY_WOOD).ignitedByLava().dropsLike(MAGNOLIA_SIGN.get()), RuWoodTypes.MAGNOLIA));
+        BRIMWOOD_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("brimwood_hanging_sign", () -> BlockRegistry.fireproofHangingSign(MapColor.COLOR_BROWN, SoundType.NETHER_WOOD, RuWoodTypes.BRIMWOOD));
+        BRIMWOOD_WALL_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("brimwood_wall_hanging_sign", () -> BlockRegistry.fireproofWallHangingSign(MapColor.COLOR_BROWN, SoundType.NETHER_WOOD, BRIMWOOD_HANGING_SIGN.get(), RuWoodTypes.BRIMWOOD));
+        //COBALT_BLOCKS
+        COBALT_LOG = BlockRegistry.registerDefaultBlock("cobalt_log", () -> BlockRegistry.fireproofLog(MapColor.COLOR_BLUE, MapColor.COLOR_BLACK, SoundType.NETHER_WOOD));
+        STRIPPED_COBALT_LOG = BlockRegistry.registerDefaultBlock("stripped_cobalt_log", () -> BlockRegistry.fireproofLog(MapColor.COLOR_BLUE, MapColor.COLOR_BLUE, SoundType.NETHER_WOOD));
+        COBALT_WOOD = BlockRegistry.registerDefaultBlock("cobalt_wood", () -> BlockRegistry.fireproofWoodBlock(MapColor.COLOR_BLACK, SoundType.NETHER_WOOD));
+        STRIPPED_COBALT_WOOD = BlockRegistry.registerDefaultBlock("stripped_cobalt_wood", () -> BlockRegistry.fireproofWoodBlock(MapColor.COLOR_BLUE, SoundType.NETHER_WOOD));
+        COBALT_PLANKS = BlockRegistry.registerDefaultBlock("cobalt_planks", () -> BlockRegistry.fireproofWoodPlanks(MapColor.COLOR_BLUE, SoundType.NETHER_WOOD));
+        COBALT_STAIRS = BlockRegistry.registerDefaultBlock("cobalt_stairs", () -> BlockRegistry.fireproofWoodStairs(MapColor.COLOR_BLUE, SoundType.NETHER_WOOD));
+        COBALT_SLAB = BlockRegistry.registerDefaultBlock("cobalt_slab", () -> BlockRegistry.fireproofWoodSlab(MapColor.COLOR_BLUE, SoundType.NETHER_WOOD));
+        COBALT_FENCE = BlockRegistry.registerDefaultBlock("cobalt_fence", () -> BlockRegistry.fireproofWoodFence(MapColor.COLOR_BLUE, SoundType.NETHER_WOOD));
+        COBALT_DOOR = BlockRegistry.registerDefaultBlock("cobalt_door", () -> BlockRegistry.fireproofWoodDoor(MapColor.COLOR_BLUE, SoundType.NETHER_WOOD, RuBlockSetType.COBALT));
+        COBALT_FENCE_GATE = BlockRegistry.registerDefaultBlock("cobalt_fence_gate", () -> BlockRegistry.woodFenceGate(MapColor.COLOR_BLUE, RuWoodTypes.COBALT, SoundType.NETHER_WOOD));
+        COBALT_TRAPDOOR = BlockRegistry.registerDefaultBlock("cobalt_trapdoor", () -> BlockRegistry.fireproofWoodTrapDoor(MapColor.COLOR_BLUE, SoundType.NETHER_WOOD, RuBlockSetType.COBALT));
+        COBALT_PRESSURE_PLATE = BlockRegistry.registerDefaultBlock("cobalt_pressure_plate", () -> BlockRegistry.fireproofWoodPressurePlate(MapColor.COLOR_BLUE, SoundType.NETHER_WOOD, RuBlockSetType.COBALT));
+        COBALT_BUTTON = BlockRegistry.registerDefaultBlock("cobalt_button", () -> BlockRegistry.fireproofWoodButton(SoundType.NETHER_WOOD, RuBlockSetType.COBALT));
+        COBALT_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("cobalt_sign", () -> BlockRegistry.fireproofSign(SoundType.NETHER_WOOD, RuWoodTypes.COBALT));
+        COBALT_WALL_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("cobalt_wall_sign", () -> BlockRegistry.fireproofWallSign(SoundType.NETHER_WOOD, COBALT_SIGN.get(), RuWoodTypes.COBALT));
+        COBALT_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("cobalt_hanging_sign", () -> BlockRegistry.fireproofHangingSign(MapColor.COLOR_BLUE, SoundType.NETHER_WOOD, RuWoodTypes.COBALT));
+        COBALT_WALL_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("cobalt_wall_hanging_sign", () -> BlockRegistry.fireproofWallHangingSign(MapColor.COLOR_BLUE, SoundType.NETHER_WOOD, COBALT_HANGING_SIGN.get(), RuWoodTypes.COBALT));
         //CYPRESS_BLOCKS
         CYPRESS_LOG = BlockRegistry.registerDefaultBlock("cypress_log", () -> BlockRegistry.log(MapColor.WOOD, MapColor.WOOD, SoundType.BAMBOO_WOOD));
         STRIPPED_CYPRESS_LOG = BlockRegistry.registerDefaultBlock("stripped_cypress_log", () -> BlockRegistry.log(MapColor.WOOD, MapColor.WOOD, SoundType.BAMBOO_WOOD));
@@ -1256,6 +1417,8 @@ public class RuBlocks {
         CYPRESS_BUTTON = BlockRegistry.registerDefaultBlock("cypress_button", () -> BlockRegistry.woodButton(SoundType.BAMBOO_WOOD, RuBlockSetType.CYPRESS));
         CYPRESS_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("cypress_sign", () -> BlockRegistry.sign(SoundType.BAMBOO_WOOD, RuWoodTypes.CYPRESS));
         CYPRESS_WALL_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("cypress_wall_sign", () -> BlockRegistry.wallSign(SoundType.BAMBOO_WOOD, CYPRESS_SIGN.get(), RuWoodTypes.CYPRESS));
+        CYPRESS_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("cypress_hanging_sign", () -> BlockRegistry.hangingSign(MapColor.WOOD, SoundType.NETHER_WOOD, RuWoodTypes.CYPRESS));
+        CYPRESS_WALL_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("cypress_wall_hanging_sign", () -> BlockRegistry.wallHangingSign(MapColor.WOOD, SoundType.NETHER_WOOD, CYPRESS_HANGING_SIGN.get(), RuWoodTypes.CYPRESS));
         //DEAD_BLOCKS
         DEAD_LOG = BlockRegistry.registerDefaultBlock("dead_log", () -> BlockRegistry.fireproofLog(MapColor.WOOD, MapColor.WOOD, SoundType.WOOD));
         STRIPPED_DEAD_LOG = BlockRegistry.registerDefaultBlock("stripped_dead_log", () -> BlockRegistry.fireproofLog(MapColor.WOOD, MapColor.WOOD, SoundType.WOOD));
@@ -1272,6 +1435,8 @@ public class RuBlocks {
         DEAD_BUTTON = BlockRegistry.registerDefaultBlock("dead_button", () -> BlockRegistry.fireproofWoodButton(SoundType.WOOD, RuBlockSetType.DEAD));
         DEAD_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("dead_sign", () -> BlockRegistry.fireproofSign(SoundType.WOOD, RuWoodTypes.DEAD));
         DEAD_WALL_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("dead_wall_sign", () -> BlockRegistry.fireproofWallSign(SoundType.WOOD, DEAD_SIGN.get(), RuWoodTypes.DEAD));
+        DEAD_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("dead_hanging_sign", () -> BlockRegistry.fireproofHangingSign(MapColor.WOOD, SoundType.NETHER_WOOD, RuWoodTypes.DEAD));
+        DEAD_WALL_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("dead_wall_hanging_sign", () -> BlockRegistry.fireproofWallHangingSign(MapColor.WOOD, SoundType.NETHER_WOOD, DEAD_HANGING_SIGN.get(), RuWoodTypes.DEAD));
         //EUCALYPTUS_BLOCKS
         EUCALYPTUS_LOG = BlockRegistry.registerDefaultBlock("eucalyptus_log", () -> BlockRegistry.log(MapColor.WOOD, MapColor.WOOD, SoundType.WOOD));
         STRIPPED_EUCALYPTUS_LOG = BlockRegistry.registerDefaultBlock("stripped_eucalyptus_log", () -> BlockRegistry.log(MapColor.WOOD, MapColor.WOOD, SoundType.WOOD));
@@ -1288,6 +1453,26 @@ public class RuBlocks {
         EUCALYPTUS_BUTTON = BlockRegistry.registerDefaultBlock("eucalyptus_button", () -> BlockRegistry.woodButton(SoundType.WOOD, RuBlockSetType.EUCALYPTUS));
         EUCALYPTUS_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("eucalyptus_sign", () -> BlockRegistry.sign(SoundType.WOOD, RuWoodTypes.EUCALYPTUS));
         EUCALYPTUS_WALL_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("eucalyptus_wall_sign", () -> BlockRegistry.wallSign(SoundType.WOOD, EUCALYPTUS_SIGN.get(), RuWoodTypes.EUCALYPTUS));
+        EUCALYPTUS_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("eucalyptus_hanging_sign", () -> BlockRegistry.hangingSign(MapColor.WOOD, SoundType.NETHER_WOOD, RuWoodTypes.EUCALYPTUS));
+        EUCALYPTUS_WALL_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("eucalyptus_wall_hanging_sign", () -> BlockRegistry.wallHangingSign(MapColor.WOOD, SoundType.NETHER_WOOD, EUCALYPTUS_HANGING_SIGN.get(), RuWoodTypes.EUCALYPTUS));
+        //GREEN_BIOSHROOM_BLOCKS
+        GREEN_BIOSHROOM_STEM = BlockRegistry.registerDefaultBlock("green_bioshroom_stem", () -> BlockRegistry.log(MapColor.COLOR_LIGHT_GREEN, MapColor.COLOR_LIGHT_GREEN, SoundType.NETHER_WOOD));
+        STRIPPED_GREEN_BIOSHROOM_STEM = BlockRegistry.registerDefaultBlock("stripped_green_bioshroom_stem", () -> BlockRegistry.log(MapColor.COLOR_LIGHT_GREEN, MapColor.COLOR_LIGHT_GREEN, SoundType.NETHER_WOOD));
+        GREEN_BIOSHROOM_HYPHAE = BlockRegistry.registerDefaultBlock("green_bioshroom_hyphae", () -> BlockRegistry.woodBlock(MapColor.COLOR_LIGHT_GREEN, SoundType.NETHER_WOOD));
+        STRIPPED_GREEN_BIOSHROOM_HYPHAE = BlockRegistry.registerDefaultBlock("stripped_green_bioshroom_hyphae", () -> BlockRegistry.woodBlock(MapColor.COLOR_LIGHT_GREEN, SoundType.NETHER_WOOD));
+        GREEN_BIOSHROOM_PLANKS = BlockRegistry.registerDefaultBlock("green_bioshroom_planks", () -> BlockRegistry.woodPlanks(MapColor.COLOR_LIGHT_GREEN, SoundType.NETHER_WOOD));
+        GREEN_BIOSHROOM_STAIRS = BlockRegistry.registerDefaultBlock("green_bioshroom_stairs", () -> BlockRegistry.woodStairs(MapColor.COLOR_LIGHT_GREEN, SoundType.NETHER_WOOD));
+        GREEN_BIOSHROOM_SLAB = BlockRegistry.registerDefaultBlock("green_bioshroom_slab", () -> BlockRegistry.woodSlab(MapColor.COLOR_LIGHT_GREEN, SoundType.NETHER_WOOD));
+        GREEN_BIOSHROOM_FENCE = BlockRegistry.registerDefaultBlock("green_bioshroom_fence", () -> BlockRegistry.woodFence(MapColor.COLOR_LIGHT_GREEN, SoundType.NETHER_WOOD));
+        GREEN_BIOSHROOM_DOOR = BlockRegistry.registerDefaultBlock("green_bioshroom_door", () -> BlockRegistry.woodDoor(MapColor.COLOR_LIGHT_GREEN, SoundType.NETHER_WOOD, RuBlockSetType.GREEN_BIOSHROOM));
+        GREEN_BIOSHROOM_FENCE_GATE = BlockRegistry.registerDefaultBlock("green_bioshroom_fence_gate", () -> BlockRegistry.woodFenceGate(MapColor.COLOR_LIGHT_GREEN, RuWoodTypes.GREEN_BIOSHROOM, SoundType.NETHER_WOOD));
+        GREEN_BIOSHROOM_TRAPDOOR = BlockRegistry.registerDefaultBlock("green_bioshroom_trapdoor", () -> BlockRegistry.woodTrapDoor(MapColor.COLOR_LIGHT_GREEN, SoundType.NETHER_WOOD, RuBlockSetType.GREEN_BIOSHROOM));
+        GREEN_BIOSHROOM_PRESSURE_PLATE = BlockRegistry.registerDefaultBlock("green_bioshroom_pressure_plate", () -> BlockRegistry.woodPressurePlate(MapColor.COLOR_LIGHT_GREEN, SoundType.NETHER_WOOD, RuBlockSetType.GREEN_BIOSHROOM));
+        GREEN_BIOSHROOM_BUTTON = BlockRegistry.registerDefaultBlock("green_bioshroom_button", () -> BlockRegistry.woodButton(SoundType.NETHER_WOOD, RuBlockSetType.GREEN_BIOSHROOM));
+        GREEN_BIOSHROOM_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("green_bioshroom_sign", () -> BlockRegistry.sign(SoundType.NETHER_WOOD, RuWoodTypes.GREEN_BIOSHROOM));
+        GREEN_BIOSHROOM_WALL_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("green_bioshroom_wall_sign", () -> BlockRegistry.wallSign(SoundType.NETHER_WOOD, GREEN_BIOSHROOM_SIGN.get(), RuWoodTypes.GREEN_BIOSHROOM));
+        GREEN_BIOSHROOM_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("green_bioshroom_hanging_sign", () -> BlockRegistry.hangingSign(MapColor.COLOR_LIGHT_GREEN, SoundType.NETHER_WOOD, RuWoodTypes.GREEN_BIOSHROOM));
+        GREEN_BIOSHROOM_WALL_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("green_bioshroom_wall_hanging_sign", () -> BlockRegistry.wallHangingSign(MapColor.COLOR_LIGHT_GREEN, SoundType.NETHER_WOOD, GREEN_BIOSHROOM_HANGING_SIGN.get(), RuWoodTypes.GREEN_BIOSHROOM));
         //JOSHUA_BLOCKS
         JOSHUA_LOG = BlockRegistry.registerDefaultBlock("joshua_log", () -> BlockRegistry.log(MapColor.WOOD, MapColor.WOOD, SoundType.WOOD));
         STRIPPED_JOSHUA_LOG = BlockRegistry.registerDefaultBlock("stripped_joshua_log", () -> BlockRegistry.log(MapColor.WOOD, MapColor.WOOD, SoundType.WOOD));
@@ -1304,6 +1489,8 @@ public class RuBlocks {
         JOSHUA_BUTTON = BlockRegistry.registerDefaultBlock("joshua_button", () -> BlockRegistry.woodButton(SoundType.WOOD, RuBlockSetType.JOSHUA));
         JOSHUA_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("joshua_sign", () -> BlockRegistry.sign(SoundType.WOOD, RuWoodTypes.JOSHUA));
         JOSHUA_WALL_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("joshua_wall_sign", () -> BlockRegistry.wallSign(SoundType.WOOD, JOSHUA_SIGN.get(), RuWoodTypes.JOSHUA));
+        JOSHUA_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("joshua_hanging_sign", () -> BlockRegistry.hangingSign(MapColor.WOOD, SoundType.NETHER_WOOD, RuWoodTypes.JOSHUA));
+        JOSHUA_WALL_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("joshua_wall_hanging_sign", () -> BlockRegistry.wallHangingSign(MapColor.WOOD, SoundType.NETHER_WOOD, JOSHUA_HANGING_SIGN.get(), RuWoodTypes.JOSHUA));
         //LARCH_BLOCKS
         LARCH_LOG = BlockRegistry.registerDefaultBlock("larch_log", () -> BlockRegistry.log(MapColor.WOOD, MapColor.WOOD, SoundType.WOOD));
         STRIPPED_LARCH_LOG = BlockRegistry.registerDefaultBlock("stripped_larch_log", () -> BlockRegistry.log(MapColor.WOOD, MapColor.WOOD, SoundType.WOOD));
@@ -1320,6 +1507,26 @@ public class RuBlocks {
         LARCH_BUTTON = BlockRegistry.registerDefaultBlock("larch_button", () -> BlockRegistry.woodButton(SoundType.WOOD, RuBlockSetType.LARCH));
         LARCH_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("larch_sign", () -> BlockRegistry.sign(SoundType.WOOD, RuWoodTypes.LARCH));
         LARCH_WALL_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("larch_wall_sign", () -> BlockRegistry.wallSign(SoundType.WOOD, LARCH_SIGN.get(), RuWoodTypes.LARCH));
+        LARCH_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("larch_hanging_sign", () -> BlockRegistry.hangingSign(MapColor.WOOD, SoundType.NETHER_WOOD, RuWoodTypes.LARCH));
+        LARCH_WALL_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("larch_wall_hanging_sign", () -> BlockRegistry.wallHangingSign(MapColor.WOOD, SoundType.NETHER_WOOD, LARCH_HANGING_SIGN.get(), RuWoodTypes.LARCH));
+        //MAGNOLIA_BLOCKS
+        MAGNOLIA_LOG = BlockRegistry.registerDefaultBlock("magnolia_log", () -> BlockRegistry.log(MapColor.TERRACOTTA_PINK, MapColor.STONE, SoundType.CHERRY_WOOD));
+        STRIPPED_MAGNOLIA_LOG = BlockRegistry.registerDefaultBlock("stripped_magnolia_log", () -> BlockRegistry.log(MapColor.TERRACOTTA_PINK, MapColor.TERRACOTTA_PINK, SoundType.CHERRY_WOOD));
+        MAGNOLIA_WOOD = BlockRegistry.registerDefaultBlock("magnolia_wood", () -> BlockRegistry.woodBlock(MapColor.STONE, SoundType.CHERRY_WOOD));
+        STRIPPED_MAGNOLIA_WOOD = BlockRegistry.registerDefaultBlock("stripped_magnolia_wood", () -> BlockRegistry.woodBlock(MapColor.TERRACOTTA_PINK, SoundType.CHERRY_WOOD));
+        MAGNOLIA_PLANKS = BlockRegistry.registerDefaultBlock("magnolia_planks", () -> BlockRegistry.woodPlanks(MapColor.TERRACOTTA_PINK, SoundType.CHERRY_WOOD));
+        MAGNOLIA_STAIRS = BlockRegistry.registerDefaultBlock("magnolia_stairs", () -> BlockRegistry.woodStairs(MapColor.TERRACOTTA_PINK, SoundType.CHERRY_WOOD));
+        MAGNOLIA_SLAB = BlockRegistry.registerDefaultBlock("magnolia_slab", () -> BlockRegistry.woodSlab(MapColor.TERRACOTTA_PINK, SoundType.CHERRY_WOOD));
+        MAGNOLIA_FENCE = BlockRegistry.registerDefaultBlock("magnolia_fence", () -> BlockRegistry.woodFence(MapColor.TERRACOTTA_PINK, SoundType.CHERRY_WOOD));
+        MAGNOLIA_DOOR = BlockRegistry.registerDefaultBlock("magnolia_door", () -> BlockRegistry.woodDoor(MapColor.TERRACOTTA_PINK, SoundType.CHERRY_WOOD, RuBlockSetType.MAGNOLIA));
+        MAGNOLIA_FENCE_GATE = BlockRegistry.registerDefaultBlock("magnolia_fence_gate", () -> BlockRegistry.woodFenceGate(MapColor.TERRACOTTA_PINK, RuWoodTypes.MAGNOLIA, SoundType.CHERRY_WOOD));
+        MAGNOLIA_TRAPDOOR = BlockRegistry.registerDefaultBlock("magnolia_trapdoor", () -> BlockRegistry.woodTrapDoor(MapColor.TERRACOTTA_PINK, SoundType.CHERRY_WOOD, RuBlockSetType.MAGNOLIA));
+        MAGNOLIA_PRESSURE_PLATE = BlockRegistry.registerDefaultBlock("magnolia_pressure_plate", () -> BlockRegistry.woodPressurePlate(MapColor.TERRACOTTA_PINK, SoundType.CHERRY_WOOD, RuBlockSetType.MAGNOLIA));
+        MAGNOLIA_BUTTON = BlockRegistry.registerDefaultBlock("magnolia_button", () -> BlockRegistry.woodButton(SoundType.CHERRY_WOOD, RuBlockSetType.MAGNOLIA));
+        MAGNOLIA_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("magnolia_sign", () -> BlockRegistry.sign(SoundType.CHERRY_WOOD, RuWoodTypes.MAGNOLIA));
+        MAGNOLIA_WALL_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("magnolia_wall_sign", () -> BlockRegistry.wallSign(SoundType.CHERRY_WOOD, MAGNOLIA_SIGN.get(), RuWoodTypes.MAGNOLIA));
+        MAGNOLIA_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("magnolia_hanging_sign", () -> BlockRegistry.hangingSign(MapColor.TERRACOTTA_PINK, SoundType.NETHER_WOOD, RuWoodTypes.MAGNOLIA));
+        MAGNOLIA_WALL_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("magnolia_wall_hanging_sign", () -> BlockRegistry.wallHangingSign(MapColor.TERRACOTTA_PINK, SoundType.NETHER_WOOD, MAGNOLIA_HANGING_SIGN.get(), RuWoodTypes.MAGNOLIA));
         //MAPLE_BLOCKS
         MAPLE_LOG = BlockRegistry.registerDefaultBlock("maple_log", () -> BlockRegistry.log(MapColor.WOOD, MapColor.WOOD, SoundType.WOOD));
         STRIPPED_MAPLE_LOG = BlockRegistry.registerDefaultBlock("stripped_maple_log", () -> BlockRegistry.log(MapColor.WOOD, MapColor.WOOD, SoundType.WOOD));
@@ -1336,6 +1543,8 @@ public class RuBlocks {
         MAPLE_BUTTON = BlockRegistry.registerDefaultBlock("maple_button", () -> BlockRegistry.woodButton(SoundType.WOOD, RuBlockSetType.MAPLE));
         MAPLE_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("maple_sign", () -> BlockRegistry.sign(SoundType.WOOD, RuWoodTypes.MAPLE));
         MAPLE_WALL_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("maple_wall_sign", () -> BlockRegistry.wallSign(SoundType.WOOD, MAPLE_SIGN.get(), RuWoodTypes.MAPLE));
+        MAPLE_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("maple_hanging_sign", () -> BlockRegistry.hangingSign(MapColor.WOOD, SoundType.NETHER_WOOD, RuWoodTypes.MAPLE));
+        MAPLE_WALL_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("maple_wall_hanging_sign", () -> BlockRegistry.wallHangingSign(MapColor.WOOD, SoundType.NETHER_WOOD, MAPLE_HANGING_SIGN.get(), RuWoodTypes.MAPLE));
         //MAUVE_BLOCKS
         MAUVE_LOG = BlockRegistry.registerDefaultBlock("mauve_log", () -> BlockRegistry.log(MapColor.TERRACOTTA_PURPLE, MapColor.PODZOL, SoundType.CHERRY_WOOD));
         STRIPPED_MAUVE_LOG = BlockRegistry.registerDefaultBlock("stripped_mauve_log", () -> BlockRegistry.log(MapColor.TERRACOTTA_PURPLE, MapColor.TERRACOTTA_PURPLE, SoundType.CHERRY_WOOD));
@@ -1352,6 +1561,8 @@ public class RuBlocks {
         MAUVE_BUTTON = BlockRegistry.registerDefaultBlock("mauve_button", () -> BlockRegistry.woodButton(SoundType.CHERRY_WOOD, RuBlockSetType.MAUVE));
         MAUVE_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("mauve_sign", () -> BlockRegistry.sign(SoundType.CHERRY_WOOD, RuWoodTypes.MAUVE));
         MAUVE_WALL_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("mauve_wall_sign", () -> BlockRegistry.wallSign(SoundType.CHERRY_WOOD, MAUVE_SIGN.get(), RuWoodTypes.MAUVE));
+        MAUVE_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("mauve_hanging_sign", () -> BlockRegistry.hangingSign(MapColor.TERRACOTTA_PURPLE, SoundType.NETHER_WOOD, RuWoodTypes.MAUVE));
+        MAUVE_WALL_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("mauve_wall_hanging_sign", () -> BlockRegistry.wallHangingSign(MapColor.TERRACOTTA_PURPLE, SoundType.NETHER_WOOD, MAUVE_HANGING_SIGN.get(), RuWoodTypes.MAUVE));
         //PALM_BLOCKS
         PALM_LOG = BlockRegistry.registerDefaultBlock("palm_log", () -> BlockRegistry.log(MapColor.WOOD, MapColor.WOOD, SoundType.BAMBOO_WOOD));
         STRIPPED_PALM_LOG = BlockRegistry.registerDefaultBlock("stripped_palm_log", () -> BlockRegistry.log(MapColor.WOOD, MapColor.WOOD, SoundType.BAMBOO_WOOD));
@@ -1368,6 +1579,8 @@ public class RuBlocks {
         PALM_BUTTON = BlockRegistry.registerDefaultBlock("palm_button", () -> BlockRegistry.woodButton(SoundType.BAMBOO_WOOD, RuBlockSetType.PALM));
         PALM_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("palm_sign", () -> BlockRegistry.sign(SoundType.BAMBOO_WOOD, RuWoodTypes.PALM));
         PALM_WALL_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("palm_wall_sign", () -> BlockRegistry.wallSign(SoundType.BAMBOO_WOOD, PALM_SIGN.get(), RuWoodTypes.PALM));
+        PALM_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("palm_hanging_sign", () -> BlockRegistry.hangingSign(MapColor.WOOD, SoundType.NETHER_WOOD, RuWoodTypes.PALM));
+        PALM_WALL_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("palm_wall_hanging_sign", () -> BlockRegistry.wallHangingSign(MapColor.WOOD, SoundType.NETHER_WOOD, PALM_HANGING_SIGN.get(), RuWoodTypes.PALM));
         //PINE_BLOCKS
         PINE_LOG = BlockRegistry.registerDefaultBlock("pine_log", () -> BlockRegistry.pineLog(MapColor.WOOD, MapColor.WOOD, SoundType.BAMBOO_WOOD));
         STRIPPED_PINE_LOG = BlockRegistry.registerDefaultBlock("stripped_pine_log", () -> BlockRegistry.log(MapColor.WOOD, MapColor.WOOD, SoundType.BAMBOO_WOOD));
@@ -1384,25 +1597,65 @@ public class RuBlocks {
         PINE_BUTTON = BlockRegistry.registerDefaultBlock("pine_button", () -> BlockRegistry.woodButton(SoundType.BAMBOO_WOOD, RuBlockSetType.PINE));
         PINE_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("pine_sign", () -> BlockRegistry.sign(SoundType.BAMBOO_WOOD, RuWoodTypes.PINE));
         PINE_WALL_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("pine_wall_sign", () -> BlockRegistry.wallSign(SoundType.BAMBOO_WOOD, PINE_SIGN.get(), RuWoodTypes.PINE));
+        PINE_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("pine_hanging_sign", () -> BlockRegistry.hangingSign(MapColor.WOOD, SoundType.NETHER_WOOD, RuWoodTypes.PINE));
+        PINE_WALL_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("pine_wall_hanging_sign", () -> BlockRegistry.wallHangingSign(MapColor.WOOD, SoundType.NETHER_WOOD, PINE_HANGING_SIGN.get(), RuWoodTypes.PINE));
+        //PINK_BIOSHROOM_BLOCKS
+        PINK_BIOSHROOM_STEM = BlockRegistry.registerDefaultBlock("pink_bioshroom_stem", () -> BlockRegistry.log(MapColor.COLOR_PINK, MapColor.COLOR_PINK, SoundType.NETHER_WOOD));
+        STRIPPED_PINK_BIOSHROOM_STEM = BlockRegistry.registerDefaultBlock("stripped_pink_bioshroom_stem", () -> BlockRegistry.log(MapColor.COLOR_PINK, MapColor.COLOR_PINK, SoundType.NETHER_WOOD));
+        PINK_BIOSHROOM_HYPHAE = BlockRegistry.registerDefaultBlock("pink_bioshroom_hyphae", () -> BlockRegistry.woodBlock(MapColor.COLOR_PINK, SoundType.NETHER_WOOD));
+        STRIPPED_PINK_BIOSHROOM_HYPHAE = BlockRegistry.registerDefaultBlock("stripped_pink_bioshroom_hyphae", () -> BlockRegistry.woodBlock(MapColor.COLOR_PINK, SoundType.NETHER_WOOD));
+        PINK_BIOSHROOM_PLANKS = BlockRegistry.registerDefaultBlock("pink_bioshroom_planks", () -> BlockRegistry.woodPlanks(MapColor.COLOR_PINK, SoundType.NETHER_WOOD));
+        PINK_BIOSHROOM_STAIRS = BlockRegistry.registerDefaultBlock("pink_bioshroom_stairs", () -> BlockRegistry.woodStairs(MapColor.COLOR_PINK, SoundType.NETHER_WOOD));
+        PINK_BIOSHROOM_SLAB = BlockRegistry.registerDefaultBlock("pink_bioshroom_slab", () -> BlockRegistry.woodSlab(MapColor.COLOR_PINK, SoundType.NETHER_WOOD));
+        PINK_BIOSHROOM_FENCE = BlockRegistry.registerDefaultBlock("pink_bioshroom_fence", () -> BlockRegistry.woodFence(MapColor.COLOR_PINK, SoundType.NETHER_WOOD));
+        PINK_BIOSHROOM_DOOR = BlockRegistry.registerDefaultBlock("pink_bioshroom_door", () -> BlockRegistry.woodDoor(MapColor.COLOR_PINK, SoundType.NETHER_WOOD, RuBlockSetType.PINK_BIOSHROOM));
+        PINK_BIOSHROOM_FENCE_GATE = BlockRegistry.registerDefaultBlock("pink_bioshroom_fence_gate", () -> BlockRegistry.woodFenceGate(MapColor.COLOR_PINK, RuWoodTypes.PINK_BIOSHROOM, SoundType.NETHER_WOOD));
+        PINK_BIOSHROOM_TRAPDOOR = BlockRegistry.registerDefaultBlock("pink_bioshroom_trapdoor", () -> BlockRegistry.woodTrapDoor(MapColor.COLOR_PINK, SoundType.NETHER_WOOD, RuBlockSetType.PINK_BIOSHROOM));
+        PINK_BIOSHROOM_PRESSURE_PLATE = BlockRegistry.registerDefaultBlock("pink_bioshroom_pressure_plate", () -> BlockRegistry.woodPressurePlate(MapColor.COLOR_PINK, SoundType.NETHER_WOOD, RuBlockSetType.PINK_BIOSHROOM));
+        PINK_BIOSHROOM_BUTTON = BlockRegistry.registerDefaultBlock("pink_bioshroom_button", () -> BlockRegistry.woodButton(SoundType.NETHER_WOOD, RuBlockSetType.PINK_BIOSHROOM));
+        PINK_BIOSHROOM_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("pink_bioshroom_sign", () -> BlockRegistry.sign(SoundType.NETHER_WOOD, RuWoodTypes.PINK_BIOSHROOM));
+        PINK_BIOSHROOM_WALL_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("pink_bioshroom_wall_sign", () -> BlockRegistry.wallSign(SoundType.NETHER_WOOD, PINK_BIOSHROOM_SIGN.get(), RuWoodTypes.PINK_BIOSHROOM));
+        PINK_BIOSHROOM_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("pink_bioshroom_hanging_sign", () -> BlockRegistry.hangingSign(MapColor.COLOR_PINK, SoundType.NETHER_WOOD, RuWoodTypes.PINK_BIOSHROOM));
+        PINK_BIOSHROOM_WALL_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("pink_bioshroom_wall_hanging_sign", () -> BlockRegistry.wallHangingSign(MapColor.COLOR_PINK, SoundType.NETHER_WOOD, PINK_BIOSHROOM_HANGING_SIGN.get(), RuWoodTypes.PINK_BIOSHROOM));
         //REDWOOD_BLOCKS
-        REDWOOD_LOG = BlockRegistry.registerDefaultBlock("redwood_log", () -> BlockRegistry.log(MapColor.WOOD, MapColor.WOOD, SoundType.CHERRY_WOOD));
-        STRIPPED_REDWOOD_LOG = BlockRegistry.registerDefaultBlock("stripped_redwood_log", () -> BlockRegistry.log(MapColor.WOOD, MapColor.WOOD, SoundType.CHERRY_WOOD));
-        REDWOOD_WOOD = BlockRegistry.registerDefaultBlock("redwood_wood", () -> BlockRegistry.woodBlock(MapColor.WOOD, SoundType.CHERRY_WOOD));
-        STRIPPED_REDWOOD_WOOD = BlockRegistry.registerDefaultBlock("stripped_redwood_wood", () -> BlockRegistry.woodBlock(MapColor.WOOD, SoundType.CHERRY_WOOD));
-        REDWOOD_PLANKS = BlockRegistry.registerDefaultBlock("redwood_planks", () -> BlockRegistry.woodPlanks(MapColor.WOOD, SoundType.CHERRY_WOOD));
-        REDWOOD_STAIRS = BlockRegistry.registerDefaultBlock("redwood_stairs", () -> BlockRegistry.woodStairs(MapColor.WOOD, SoundType.CHERRY_WOOD));
-        REDWOOD_SLAB = BlockRegistry.registerDefaultBlock("redwood_slab", () -> BlockRegistry.woodSlab(MapColor.WOOD, SoundType.CHERRY_WOOD));
-        REDWOOD_FENCE = BlockRegistry.registerDefaultBlock("redwood_fence", () -> BlockRegistry.woodFence(MapColor.WOOD, SoundType.CHERRY_WOOD));
-        REDWOOD_DOOR = BlockRegistry.registerDefaultBlock("redwood_door", () -> BlockRegistry.woodDoor(MapColor.WOOD, SoundType.CHERRY_WOOD, RuBlockSetType.REDWOOD));
-        REDWOOD_FENCE_GATE = BlockRegistry.registerDefaultBlock("redwood_fence_gate", () -> BlockRegistry.woodFenceGate(MapColor.WOOD, RuWoodTypes.REDWOOD, SoundType.CHERRY_WOOD));
-        REDWOOD_TRAPDOOR = BlockRegistry.registerDefaultBlock("redwood_trapdoor", () -> BlockRegistry.woodTrapDoor(MapColor.WOOD, SoundType.CHERRY_WOOD, RuBlockSetType.REDWOOD));
-        REDWOOD_PRESSURE_PLATE = BlockRegistry.registerDefaultBlock("redwood_pressure_plate", () -> BlockRegistry.woodPressurePlate(MapColor.WOOD, SoundType.CHERRY_WOOD, RuBlockSetType.REDWOOD));
+        REDWOOD_LOG = BlockRegistry.registerDefaultBlock("redwood_log", () -> BlockRegistry.log(MapColor.TERRACOTTA_RED, MapColor.TERRACOTTA_RED, SoundType.CHERRY_WOOD));
+        STRIPPED_REDWOOD_LOG = BlockRegistry.registerDefaultBlock("stripped_redwood_log", () -> BlockRegistry.log(MapColor.TERRACOTTA_RED, MapColor.TERRACOTTA_RED, SoundType.CHERRY_WOOD));
+        REDWOOD_WOOD = BlockRegistry.registerDefaultBlock("redwood_wood", () -> BlockRegistry.woodBlock(MapColor.TERRACOTTA_RED, SoundType.CHERRY_WOOD));
+        STRIPPED_REDWOOD_WOOD = BlockRegistry.registerDefaultBlock("stripped_redwood_wood", () -> BlockRegistry.woodBlock(MapColor.TERRACOTTA_RED, SoundType.CHERRY_WOOD));
+        REDWOOD_PLANKS = BlockRegistry.registerDefaultBlock("redwood_planks", () -> BlockRegistry.woodPlanks(MapColor.TERRACOTTA_RED, SoundType.CHERRY_WOOD));
+        REDWOOD_STAIRS = BlockRegistry.registerDefaultBlock("redwood_stairs", () -> BlockRegistry.woodStairs(MapColor.TERRACOTTA_RED, SoundType.CHERRY_WOOD));
+        REDWOOD_SLAB = BlockRegistry.registerDefaultBlock("redwood_slab", () -> BlockRegistry.woodSlab(MapColor.TERRACOTTA_RED, SoundType.CHERRY_WOOD));
+        REDWOOD_FENCE = BlockRegistry.registerDefaultBlock("redwood_fence", () -> BlockRegistry.woodFence(MapColor.TERRACOTTA_RED, SoundType.CHERRY_WOOD));
+        REDWOOD_DOOR = BlockRegistry.registerDefaultBlock("redwood_door", () -> BlockRegistry.woodDoor(MapColor.TERRACOTTA_RED, SoundType.CHERRY_WOOD, RuBlockSetType.REDWOOD));
+        REDWOOD_FENCE_GATE = BlockRegistry.registerDefaultBlock("redwood_fence_gate", () -> BlockRegistry.woodFenceGate(MapColor.TERRACOTTA_RED, RuWoodTypes.REDWOOD, SoundType.CHERRY_WOOD));
+        REDWOOD_TRAPDOOR = BlockRegistry.registerDefaultBlock("redwood_trapdoor", () -> BlockRegistry.woodTrapDoor(MapColor.TERRACOTTA_RED, SoundType.CHERRY_WOOD, RuBlockSetType.REDWOOD));
+        REDWOOD_PRESSURE_PLATE = BlockRegistry.registerDefaultBlock("redwood_pressure_plate", () -> BlockRegistry.woodPressurePlate(MapColor.TERRACOTTA_RED, SoundType.CHERRY_WOOD, RuBlockSetType.REDWOOD));
         REDWOOD_BUTTON = BlockRegistry.registerDefaultBlock("redwood_button", () -> BlockRegistry.woodButton(SoundType.CHERRY_WOOD, RuBlockSetType.REDWOOD));
         REDWOOD_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("redwood_sign", () -> BlockRegistry.sign(SoundType.CHERRY_WOOD, RuWoodTypes.REDWOOD));
         REDWOOD_WALL_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("redwood_wall_sign", () -> BlockRegistry.wallSign(SoundType.CHERRY_WOOD, REDWOOD_SIGN.get(), RuWoodTypes.REDWOOD));
+        REDWOOD_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("redwood_hanging_sign", () -> BlockRegistry.hangingSign(MapColor.TERRACOTTA_RED, SoundType.NETHER_WOOD, RuWoodTypes.REDWOOD));
+        REDWOOD_WALL_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("redwood_wall_hanging_sign", () -> BlockRegistry.wallHangingSign(MapColor.TERRACOTTA_RED, SoundType.NETHER_WOOD, REDWOOD_HANGING_SIGN.get(), RuWoodTypes.REDWOOD));
         //SILVER_BIRCH
         SILVER_BIRCH_LOG = BlockRegistry.registerDefaultBlock("silver_birch_log", () -> BlockRegistry.aspenLogBlock(MapColor.SAND, MapColor.QUARTZ, SoundType.BAMBOO_WOOD));
         SILVER_BIRCH_WOOD = BlockRegistry.registerDefaultBlock("silver_birch_wood", () -> BlockRegistry.log(MapColor.QUARTZ, MapColor.QUARTZ, SoundType.BAMBOO_WOOD));
+        //SOCOTRA_BLOCKS
+        SOCOTRA_LOG = BlockRegistry.registerDefaultBlock("socotra_log", () -> BlockRegistry.log(MapColor.TERRACOTTA_ORANGE, MapColor.TERRACOTTA_ORANGE, SoundType.CHERRY_WOOD));
+        STRIPPED_SOCOTRA_LOG = BlockRegistry.registerDefaultBlock("stripped_socotra_log", () -> BlockRegistry.log(MapColor.TERRACOTTA_ORANGE, MapColor.TERRACOTTA_ORANGE, SoundType.CHERRY_WOOD));
+        SOCOTRA_WOOD = BlockRegistry.registerDefaultBlock("socotra_wood", () -> BlockRegistry.woodBlock(MapColor.TERRACOTTA_ORANGE, SoundType.CHERRY_WOOD));
+        STRIPPED_SOCOTRA_WOOD = BlockRegistry.registerDefaultBlock("stripped_socotra_wood", () -> BlockRegistry.woodBlock(MapColor.TERRACOTTA_ORANGE, SoundType.CHERRY_WOOD));
+        SOCOTRA_PLANKS = BlockRegistry.registerDefaultBlock("socotra_planks", () -> BlockRegistry.woodPlanks(MapColor.TERRACOTTA_ORANGE, SoundType.CHERRY_WOOD));
+        SOCOTRA_STAIRS = BlockRegistry.registerDefaultBlock("socotra_stairs", () -> BlockRegistry.woodStairs(MapColor.TERRACOTTA_ORANGE, SoundType.CHERRY_WOOD));
+        SOCOTRA_SLAB = BlockRegistry.registerDefaultBlock("socotra_slab", () -> BlockRegistry.woodSlab(MapColor.TERRACOTTA_ORANGE, SoundType.CHERRY_WOOD));
+        SOCOTRA_FENCE = BlockRegistry.registerDefaultBlock("socotra_fence", () -> BlockRegistry.woodFence(MapColor.TERRACOTTA_ORANGE, SoundType.CHERRY_WOOD));
+        SOCOTRA_DOOR = BlockRegistry.registerDefaultBlock("socotra_door", () -> BlockRegistry.woodDoor(MapColor.TERRACOTTA_ORANGE, SoundType.CHERRY_WOOD, RuBlockSetType.SOCOTRA));
+        SOCOTRA_FENCE_GATE = BlockRegistry.registerDefaultBlock("socotra_fence_gate", () -> BlockRegistry.woodFenceGate(MapColor.TERRACOTTA_ORANGE, RuWoodTypes.SOCOTRA, SoundType.CHERRY_WOOD));
+        SOCOTRA_TRAPDOOR = BlockRegistry.registerDefaultBlock("socotra_trapdoor", () -> BlockRegistry.woodTrapDoor(MapColor.TERRACOTTA_ORANGE, SoundType.CHERRY_WOOD, RuBlockSetType.SOCOTRA));
+        SOCOTRA_PRESSURE_PLATE = BlockRegistry.registerDefaultBlock("socotra_pressure_plate", () -> BlockRegistry.woodPressurePlate(MapColor.TERRACOTTA_ORANGE, SoundType.CHERRY_WOOD, RuBlockSetType.SOCOTRA));
+        SOCOTRA_BUTTON = BlockRegistry.registerDefaultBlock("socotra_button", () -> BlockRegistry.woodButton(SoundType.CHERRY_WOOD, RuBlockSetType.SOCOTRA));
+        SOCOTRA_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("socotra_sign", () -> BlockRegistry.sign(SoundType.CHERRY_WOOD, RuWoodTypes.SOCOTRA));
+        SOCOTRA_WALL_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("socotra_wall_sign", () -> BlockRegistry.wallSign(SoundType.CHERRY_WOOD, SOCOTRA_SIGN.get(), RuWoodTypes.SOCOTRA));
+        SOCOTRA_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("socotra_hanging_sign", () -> BlockRegistry.hangingSign(MapColor.TERRACOTTA_ORANGE, SoundType.NETHER_WOOD, RuWoodTypes.SOCOTRA));
+        SOCOTRA_WALL_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("socotra_wall_hanging_sign", () -> BlockRegistry.wallHangingSign(MapColor.TERRACOTTA_ORANGE, SoundType.NETHER_WOOD, SOCOTRA_HANGING_SIGN.get(), RuWoodTypes.SOCOTRA));
         //WILLOW_BLOCKS
         WILLOW_LOG = BlockRegistry.registerDefaultBlock("willow_log", () -> BlockRegistry.log(MapColor.WOOD, MapColor.WOOD, SoundType.WOOD));
         STRIPPED_WILLOW_LOG = BlockRegistry.registerDefaultBlock("stripped_willow_log", () -> BlockRegistry.log(MapColor.WOOD, MapColor.WOOD, SoundType.WOOD));
@@ -1419,6 +1672,26 @@ public class RuBlocks {
         WILLOW_BUTTON = BlockRegistry.registerDefaultBlock("willow_button", () -> BlockRegistry.woodButton(SoundType.WOOD, RuBlockSetType.WILLOW));
         WILLOW_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("willow_sign", () -> BlockRegistry.sign(SoundType.WOOD, RuWoodTypes.WILLOW));
         WILLOW_WALL_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("willow_wall_sign", () -> BlockRegistry.wallSign(SoundType.WOOD, WILLOW_SIGN.get(), RuWoodTypes.WILLOW));
+        WILLOW_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("willow_hanging_sign", () -> BlockRegistry.hangingSign(MapColor.WOOD, SoundType.NETHER_WOOD, RuWoodTypes.WILLOW));
+        WILLOW_WALL_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("willow_wall_hanging_sign", () -> BlockRegistry.wallHangingSign(MapColor.WOOD, SoundType.NETHER_WOOD, WILLOW_HANGING_SIGN.get(), RuWoodTypes.WILLOW));
+        //YELLOW_BIOSHROOM_BLOCKS
+        YELLOW_BIOSHROOM_STEM = BlockRegistry.registerDefaultBlock("yellow_bioshroom_stem", () -> BlockRegistry.fireproofLog(MapColor.COLOR_YELLOW, MapColor.COLOR_YELLOW, SoundType.NETHER_WOOD));
+        STRIPPED_YELLOW_BIOSHROOM_STEM = BlockRegistry.registerDefaultBlock("stripped_yellow_bioshroom_stem", () -> BlockRegistry.fireproofLog(MapColor.COLOR_YELLOW, MapColor.COLOR_YELLOW, SoundType.NETHER_WOOD));
+        YELLOW_BIOSHROOM_HYPHAE = BlockRegistry.registerDefaultBlock("yellow_bioshroom_hyphae", () -> BlockRegistry.fireproofWoodBlock(MapColor.COLOR_YELLOW, SoundType.NETHER_WOOD));
+        STRIPPED_YELLOW_BIOSHROOM_HYPHAE = BlockRegistry.registerDefaultBlock("stripped_yellow_bioshroom_hyphae", () -> BlockRegistry.fireproofWoodBlock(MapColor.COLOR_YELLOW, SoundType.NETHER_WOOD));
+        YELLOW_BIOSHROOM_PLANKS = BlockRegistry.registerDefaultBlock("yellow_bioshroom_planks", () -> BlockRegistry.fireproofWoodPlanks(MapColor.COLOR_YELLOW, SoundType.NETHER_WOOD));
+        YELLOW_BIOSHROOM_STAIRS = BlockRegistry.registerDefaultBlock("yellow_bioshroom_stairs", () -> BlockRegistry.fireproofWoodStairs(MapColor.COLOR_YELLOW, SoundType.NETHER_WOOD));
+        YELLOW_BIOSHROOM_SLAB = BlockRegistry.registerDefaultBlock("yellow_bioshroom_slab", () -> BlockRegistry.fireproofWoodSlab(MapColor.COLOR_YELLOW, SoundType.NETHER_WOOD));
+        YELLOW_BIOSHROOM_FENCE = BlockRegistry.registerDefaultBlock("yellow_bioshroom_fence", () -> BlockRegistry.fireproofWoodFence(MapColor.COLOR_YELLOW, SoundType.NETHER_WOOD));
+        YELLOW_BIOSHROOM_DOOR = BlockRegistry.registerDefaultBlock("yellow_bioshroom_door", () -> BlockRegistry.fireproofWoodDoor(MapColor.COLOR_YELLOW, SoundType.NETHER_WOOD, RuBlockSetType.YELLOW_BIOSHROOM));
+        YELLOW_BIOSHROOM_FENCE_GATE = BlockRegistry.registerDefaultBlock("yellow_bioshroom_fence_gate", () -> BlockRegistry.fireproofWoodFenceGate(MapColor.COLOR_YELLOW, RuWoodTypes.YELLOW_BIOSHROOM, SoundType.NETHER_WOOD));
+        YELLOW_BIOSHROOM_TRAPDOOR = BlockRegistry.registerDefaultBlock("yellow_bioshroom_trapdoor", () -> BlockRegistry.fireproofWoodTrapDoor(MapColor.COLOR_YELLOW, SoundType.NETHER_WOOD, RuBlockSetType.YELLOW_BIOSHROOM));
+        YELLOW_BIOSHROOM_PRESSURE_PLATE = BlockRegistry.registerDefaultBlock("yellow_bioshroom_pressure_plate", () -> BlockRegistry.fireproofWoodPressurePlate(MapColor.COLOR_YELLOW, SoundType.NETHER_WOOD, RuBlockSetType.YELLOW_BIOSHROOM));
+        YELLOW_BIOSHROOM_BUTTON = BlockRegistry.registerDefaultBlock("yellow_bioshroom_button", () -> BlockRegistry.fireproofWoodButton(SoundType.NETHER_WOOD, RuBlockSetType.YELLOW_BIOSHROOM));
+        YELLOW_BIOSHROOM_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("yellow_bioshroom_sign", () -> BlockRegistry.fireproofSign(SoundType.NETHER_WOOD, RuWoodTypes.YELLOW_BIOSHROOM));
+        YELLOW_BIOSHROOM_WALL_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("yellow_bioshroom_wall_sign", () -> BlockRegistry.fireproofWallSign(SoundType.NETHER_WOOD, YELLOW_BIOSHROOM_SIGN.get(), RuWoodTypes.YELLOW_BIOSHROOM));
+        YELLOW_BIOSHROOM_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("yellow_bioshroom_hanging_sign", () -> BlockRegistry.fireproofHangingSign(MapColor.COLOR_YELLOW, SoundType.NETHER_WOOD, RuWoodTypes.YELLOW_BIOSHROOM));
+        YELLOW_BIOSHROOM_WALL_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("yellow_bioshroom_wall_hanging_sign", () -> BlockRegistry.fireproofWallHangingSign(MapColor.COLOR_YELLOW, SoundType.NETHER_WOOD, YELLOW_BIOSHROOM_HANGING_SIGN.get(), RuWoodTypes.YELLOW_BIOSHROOM));
 
         /*-----------------PAINTED PLANKS-----------------*/
         //PLANKS
@@ -1476,15 +1749,16 @@ public class RuBlocks {
         /*-----------------NETHER_BLOCKS-----------------*/
         //NETHER_STONES
         BLACKSTONE_CLUSTER = BlockRegistry.registerDefaultBlock("blackstone_cluster", () -> new RockPileBlock(BlockBehaviour.Properties.of().strength(0.6F).sound(SoundType.NETHERRACK)));
-        MARROWSTONE = BlockRegistry.registerDefaultBlock("marrowstone", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).requiresCorrectToolForDrops().strength(0.4F).sound(SoundType.NETHERRACK)));
+        OVERGROWN_BONE_BLOCK = BlockRegistry.registerDefaultBlock("overgrown_bone_block", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).requiresCorrectToolForDrops().strength(0.4F).sound(SoundType.NETHERRACK)));
         //BRIMSPROUT_BLOCKS
         BRIMSPROUT_NYLIUM = BlockRegistry.registerDefaultBlock("brimsprout_nylium", () -> new RuNyliumBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).requiresCorrectToolForDrops().strength(0.4F).sound(SoundType.SCULK_SENSOR)));
         BRIMSPROUT = BlockRegistry.registerDefaultBlock("brimsprout", () -> new BrimPlantBlock(BlockBehaviour.Properties.of().replaceable().noCollission().instabreak().sound(SoundType.SCULK).offsetType(BlockBehaviour.OffsetType.XYZ)));
         //COBALT_BLOCKS
-        COBALT_EARLIGHT = BlockRegistry.registerDefaultBlock("cobalt_earlight", () -> new RuNetherDoublePlantBlock(BlockBehaviour.Properties.of().noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 13)));
+        COBALT_EARLIGHT = BlockRegistry.registerDefaultBlock("cobalt_earlight", () -> new RuNetherPlantBlock(BlockBehaviour.Properties.of().replaceable().noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(BlockBehaviour.OffsetType.XZ).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 9)));
+        TALL_COBALT_EARLIGHT = BlockRegistry.registerDefaultBlock("tall_cobalt_earlight", () -> new RuNetherDoublePlantBlock(BlockBehaviour.Properties.of().noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 13)));
         COBALT_NYLIUM = BlockRegistry.registerDefaultBlock("cobalt_nylium", () -> new RuNyliumBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLUE).requiresCorrectToolForDrops().strength(0.4F).sound(SoundType.NYLIUM)));
         COBALT_OBSIDIAN = BlockRegistry.registerDefaultBlock("cobalt_obsidian", () -> new CobaltObsidianBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).requiresCorrectToolForDrops().strength(50.0F, 1200.0F)));
-        COBALT_ROOTS = BlockRegistry.registerDefaultBlock("cobalt_roots", () -> new RuNetherPlantBlock(BlockBehaviour.Properties.of().replaceable().noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(BlockBehaviour.OffsetType.XZ)));
+        COBALT_ROOTS = BlockRegistry.registerDefaultBlock("cobalt_roots", () -> new RuCobaltPlantBlock(BlockBehaviour.Properties.of().replaceable().noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(BlockBehaviour.OffsetType.XYZ)));
         HANGING_EARLIGHT = BlockRegistry.registerDefaultBlock("hanging_earlight", () -> new HangingEarlightBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLUE).randomTicks().noCollission().instabreak().sound(SoundType.WEEPING_VINES).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 14)));
         HANGING_EARLIGHT_PLANT = RegionsUnexploredMod.BLOCK_REGISTRY.register("hanging_earlight_plant", () -> new HangingEarlightPlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLUE).noCollission().instabreak().sound(SoundType.WEEPING_VINES)));
         //GLISTERING_BLOCKS

@@ -1,10 +1,12 @@
 {
-  "parent": "regions_unexplored:block/log_with_overlay",
+  "parent": "block/cube",
   "textures": {
-    "0": "regions_unexplored:block/eucalyptus_log",
-    "1": "regions_unexplored:block/eucalyptus_log_overlay",
-    "3": "regions_unexplored:block/eucalyptus_log_top",
-    "particle": "regions_unexplored:block/eucalyptus_log"
-  },
-  "render_type": "translucent"
+    "down": "regions_unexplored:block/eucalyptus_log_top",
+    "up": "regions_unexplored:block/eucalyptus_log_top",
+    "north": "regions_unexplored:block/eucalyptus_log",
+    "east": "regions_unexplored:block/eucalyptus_log",
+    "south": "regions_unexplored:block/eucalyptus_log",
+    "west": "regions_unexplored:block/eucalyptus_log",
+    "particle": "regions_unexplored:block/eucalyptus_log_top"
+  }
 }

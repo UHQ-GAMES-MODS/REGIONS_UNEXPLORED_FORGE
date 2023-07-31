@@ -83,7 +83,14 @@
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin"
+      "minecraft:patch_pumpkin",
+      "regions_unexplored:mega_baobab_tree",
+      "regions_unexplored:ultra_baobab_tree",
+      "regions_unexplored:acacia_tree_shrub",
+      "regions_unexplored:oak_bush_sparse",
+      "regions_unexplored:grass",
+      "regions_unexplored:stone_bud_dense",
+      "regions_unexplored:baobab_acacia_shrub_mix"
     ],
     [
       "minecraft:freeze_top_layer"

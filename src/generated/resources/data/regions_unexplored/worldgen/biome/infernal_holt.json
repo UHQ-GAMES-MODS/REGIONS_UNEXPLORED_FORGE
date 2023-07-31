@@ -1,0 +1,107 @@
+{
+  "carvers": {
+    "air": "minecraft:nether_cave"
+  },
+  "downfall": 0.0,
+  "effects": {
+    "additions_sound": {
+      "sound": "minecraft:ambient.soul_sand_valley.additions",
+      "tick_chance": 0.0111
+    },
+    "ambient_sound": "minecraft:ambient.basalt_deltas.loop",
+    "fog_color": 3479565,
+    "foliage_color": 7295817,
+    "grass_color": 7295817,
+    "mood_sound": {
+      "block_search_extent": 8,
+      "offset": 2.0,
+      "sound": "minecraft:ambient.warped_forest.mood",
+      "tick_delay": 6000
+    },
+    "music": {
+      "max_delay": 24000,
+      "min_delay": 12000,
+      "replace_current_music": false,
+      "sound": "minecraft:music.nether.basalt_deltas"
+    },
+    "particle": {
+      "options": {
+        "type": "minecraft:white_ash"
+      },
+      "probability": 0.03
+    },
+    "sky_color": 3479565,
+    "water_color": 3479565,
+    "water_fog_color": 3479565
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "minecraft:spring_open",
+      "minecraft:blackstone_blobs",
+      "minecraft:patch_fire",
+      "minecraft:glowstone",
+      "minecraft:brown_mushroom_nether",
+      "minecraft:red_mushroom_nether",
+      "minecraft:ore_magma",
+      "minecraft:spring_closed",
+      "minecraft:ore_gravel_nether",
+      "minecraft:ore_blackstone",
+      "minecraft:ore_gold_nether",
+      "minecraft:ore_quartz_nether",
+      "minecraft:ore_ancient_debris_large",
+      "minecraft:ore_debris_small",
+      "regions_unexplored:brim_willow_tree",
+      "regions_unexplored:tall_brim_willow_tree",
+      "regions_unexplored:brimsprout",
+      "regions_unexplored:dorcel",
+      "regions_unexplored:brim_flames",
+      "regions_unexplored:brimwood_shrub"
+    ]
+  ],
+  "has_precipitation": false,
+  "spawn_costs": {},
+  "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [
+      {
+        "type": "minecraft:strider",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 60
+      }
+    ],
+    "misc": [],
+    "monster": [
+      {
+        "type": "minecraft:zombified_piglin",
+        "maxCount": 4,
+        "minCount": 2,
+        "weight": 1
+      },
+      {
+        "type": "minecraft:hoglin",
+        "maxCount": 4,
+        "minCount": 3,
+        "weight": 9
+      },
+      {
+        "type": "minecraft:piglin",
+        "maxCount": 4,
+        "minCount": 3,
+        "weight": 5
+      }
+    ],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  },
+  "temperature": 2.0
+}

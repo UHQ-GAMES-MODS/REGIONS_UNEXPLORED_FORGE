@@ -75,6 +75,9 @@ public class RuMiscOverworldFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> ASH_VENT = ConfiguredFeatureRegistry.createKey("ash_vent");
     public static final ResourceKey<ConfiguredFeature<?, ?>> BASALT_BLOB = ConfiguredFeatureRegistry.createKey("basalt_blob");
     //OTHER_FEATURES
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MOSS_PATCH_WITH_WATER = ConfiguredFeatureRegistry.createKey("moss_patch_with_water");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MARSH = ConfiguredFeatureRegistry.createKey("marsh");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> WATER_EDGE = ConfiguredFeatureRegistry.createKey("water_edge");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ICICLE_UP = ConfiguredFeatureRegistry.createKey("icicle_up");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SMOULDERING_DIRT = ConfiguredFeatureRegistry.createKey("smouldering_dirt");
     public static final ResourceKey<ConfiguredFeature<?, ?>> MEADOW_ROCK = ConfiguredFeatureRegistry.createKey("meadow_rock");
@@ -123,6 +126,9 @@ public class RuMiscOverworldFeatures {
         register(context, ASH_VENT, FeatureRegistry.ASH_VENT.get(), FeatureConfiguration.NONE);
         register(context, BASALT_BLOB, FeatureRegistry.BASALT_BLOB.get(), new ColumnFeatureConfiguration(ConstantInt.of(1), UniformInt.of(1, 4)));
         //OTHER_FEATURES
+        register(context, MOSS_PATCH_WITH_WATER, Feature.WATERLOGGED_VEGETATION_PATCH, new VegetationPatchConfiguration(BlockTags.LUSH_GROUND_REPLACEABLE, BlockStateProvider.simple(Blocks.MOSS_BLOCK), PlacementUtils.inlinePlaced(holderGetter.getOrThrow(RuVegetationFeatures.PATCH_GRASS)), CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 5, 0.1F, UniformInt.of(4, 7), 0.7F));
+        register(context, MARSH, FeatureRegistry.MARSH.get(), FeatureConfiguration.NONE);
+        register(context, WATER_EDGE, FeatureRegistry.WATER_EDGE.get(), FeatureConfiguration.NONE);
         register(context, ICICLE_UP, FeatureRegistry.ICICLE_UP.get(), FeatureConfiguration.NONE);
         register(context, SMOULDERING_DIRT, FeatureRegistry.SMOULDERING_DIRT.get(), FeatureConfiguration.NONE);
         register(context, MEADOW_ROCK, FeatureRegistry.MEADOW_ROCK.get(), FeatureConfiguration.NONE);
