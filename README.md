@@ -25,7 +25,7 @@ We have a LTS and latest policy and all other versions will be unsupported and/o
 
 ### Dropped / Lifeline support
 
-- 1.19.4 (will be dropped after 0.5.0)
+- 1.19.4
 - 1.19.3
 
 
