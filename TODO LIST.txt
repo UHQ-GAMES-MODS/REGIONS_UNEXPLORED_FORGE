@@ -2,15 +2,11 @@
 //TODO:COMPLETE LIST
 
 -complete biomes
-    //re-think
-    -fungal_fen
-
     //EASIER
     -mycotoxic_undergrowth(nether)
 
     //HARDER
-    -blackstone_basin(nether)
-    -redstone_(nether)
+    -redstone_abyss(nether)
     -fen
     -old_growth_rainforest
     -rainforest
@@ -19,7 +15,7 @@
     -dry_bushland
     -tropics
 
-    -TOTAL LEFT:9
+    -TOTAL LEFT:7
 
 -finish tree growers
 -finish retextures

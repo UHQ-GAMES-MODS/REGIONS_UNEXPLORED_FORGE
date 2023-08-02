@@ -1,6 +1,7 @@
 package net.regions_unexplored.world.level.block.plant.sapling;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelReader;
@@ -12,8 +13,8 @@ import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.regions_unexplored.data.tags.RuTags;
 
-public class BrimSaplingBlock extends SaplingBlock {
-    public BrimSaplingBlock(AbstractTreeGrower tree) {
+public class NetherSaplingBlock extends SaplingBlock {
+    public NetherSaplingBlock(AbstractTreeGrower tree) {
         super(tree, Properties.of().pushReaction(PushReaction.DESTROY).noCollission().instabreak().sound(SoundType.SCULK_VEIN).randomTicks().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true));
     }
 
@@ -30,6 +31,6 @@ public class BrimSaplingBlock extends SaplingBlock {
     }
 
     protected boolean mayPlaceOn(BlockState state, BlockGetter getter, BlockPos pos) {
-        return state.is(RuTags.BRIM_PLANT_CAN_SURVIVE_ON);
+        return state.is(BlockTags.NYLIUM);
     }
 }

@@ -22,6 +22,7 @@ import net.regions_unexplored.world.level.block.plant.flower.GroundCoverBlock;
 import net.regions_unexplored.world.level.block.plant.flower.RuSnowFlowerBlock;
 import net.regions_unexplored.world.level.block.plant.food.DuskmelonBlock;
 import net.regions_unexplored.world.level.block.plant.food.SalmonBerryBushBlock;
+import net.regions_unexplored.world.level.block.plant.sapling.NetherSaplingBlock;
 import net.regions_unexplored.world.level.block.saplinggrowers.*;
 import net.regions_unexplored.world.level.block.sign.RuStandingSignBlock;
 import net.regions_unexplored.world.level.block.sign.RuWallSignBlock;
@@ -156,8 +157,9 @@ public class RuBlocks {
     public static RegistryObject<Block> BAMBOO_SAPLING;
     public static RegistryObject<Block> BAOBAB_SAPLING;
     public static RegistryObject<Block> BLACKWOOD_SAPLING;
+    public static RegistryObject<Block> BRIMWOOD_SAPLING;
+    public static RegistryObject<Block> COBALT_SAPLING;
     public static RegistryObject<Block> CACTUS_FLOWER;
-    public static RegistryObject<Block> MAGNOLIA_SAPLING;
     public static RegistryObject<Block> CYPRESS_SAPLING;
     public static RegistryObject<Block> DEAD_PINE_SAPLING;
     public static RegistryObject<Block> DEAD_SAPLING;
@@ -166,6 +168,7 @@ public class RuBlocks {
     public static RegistryObject<Block> GOLDEN_LARCH_SAPLING;
     public static RegistryObject<Block> JOSHUA_SAPLING;
     public static RegistryObject<Block> LARCH_SAPLING;
+    public static RegistryObject<Block> MAGNOLIA_SAPLING;
     public static RegistryObject<Block> MAPLE_SAPLING;
     public static RegistryObject<Block> MAUVE_SAPLING;
     public static RegistryObject<Block> ORANGE_MAPLE_SAPLING;
@@ -175,7 +178,6 @@ public class RuBlocks {
     public static RegistryObject<Block> PINK_MAGNOLIA_SAPLING;
     public static RegistryObject<Block> REDWOOD_SAPLING;
     public static RegistryObject<Block> RED_MAPLE_SAPLING;
-    public static RegistryObject<Block> BRIMWOOD_SAPLING;
     public static RegistryObject<Block> ENCHANTED_BIRCH_SAPLING;
     public static RegistryObject<Block> SILVER_BIRCH_SAPLING;
     public static RegistryObject<Block> WHITE_MAGNOLIA_SAPLING;
@@ -186,7 +188,6 @@ public class RuBlocks {
     public static RegistryObject<Block> BIRCH_SHRUB;
     public static RegistryObject<Block> BLACKWOOD_SHRUB;
     public static RegistryObject<Block> BRIMWOOD_SHRUB;
-    public static RegistryObject<Block> MAGNOLIA_SHRUB;
     public static RegistryObject<Block> CHERRY_SHRUB;
     public static RegistryObject<Block> CYPRESS_SHRUB;
     public static RegistryObject<Block> DARK_OAK_SHRUB;
@@ -198,6 +199,7 @@ public class RuBlocks {
     public static RegistryObject<Block> JOSHUA_SHRUB;
     public static RegistryObject<Block> JUNGLE_SHRUB;
     public static RegistryObject<Block> LARCH_SHRUB;
+    public static RegistryObject<Block> MAGNOLIA_SHRUB;
     public static RegistryObject<Block> MANGROVE_SHRUB;
     public static RegistryObject<Block> MAPLE_SHRUB;
     public static RegistryObject<Block> MAUVE_SHRUB;
@@ -262,6 +264,8 @@ public class RuBlocks {
     public static RegistryObject<Block> POTTED_BAMBOO_SAPLING;
     public static RegistryObject<Block> POTTED_BAOBAB_SAPLING;
     public static RegistryObject<Block> POTTED_BLACKWOOD_SAPLING;
+    public static RegistryObject<Block> POTTED_BRIMWOOD_SAPLING;
+    public static RegistryObject<Block> POTTED_COBALT_SAPLING;
     public static RegistryObject<Block> POTTED_CACTUS_FLOWER;
     public static RegistryObject<Block> POTTED_MAGNOLIA_SAPLING;
     public static RegistryObject<Block> POTTED_CYPRESS_SAPLING;
@@ -281,7 +285,6 @@ public class RuBlocks {
     public static RegistryObject<Block> POTTED_PINK_MAGNOLIA_SAPLING;
     public static RegistryObject<Block> POTTED_REDWOOD_SAPLING;
     public static RegistryObject<Block> POTTED_RED_MAPLE_SAPLING;
-    public static RegistryObject<Block> POTTED_BRIMWOOD_SAPLING;
     public static RegistryObject<Block> POTTED_ENCHANTED_BIRCH_SAPLING;
     public static RegistryObject<Block> POTTED_SILVER_BIRCH_SAPLING;
     public static RegistryObject<Block> POTTED_WHITE_MAGNOLIA_SAPLING;
@@ -334,6 +337,8 @@ public class RuBlocks {
     public static RegistryObject<Block> BAMBOO_LEAVES;
     public static RegistryObject<Block> BAOBAB_LEAVES;
     public static RegistryObject<Block> BLACKWOOD_LEAVES;
+    public static RegistryObject<Block> BRIMWOOD_LEAVES;
+    public static RegistryObject<Block> COBALT_WEBBING;
     public static RegistryObject<Block> MAGNOLIA_LEAVES;
     public static RegistryObject<Block> CYPRESS_LEAVES;
     public static RegistryObject<Block> DEAD_LEAVES;
@@ -352,7 +357,6 @@ public class RuBlocks {
     public static RegistryObject<Block> PINK_MAGNOLIA_LEAVES;
     public static RegistryObject<Block> REDWOOD_LEAVES;
     public static RegistryObject<Block> RED_MAPLE_LEAVES;
-    public static RegistryObject<Block> BRIMWOOD_LEAVES;
     public static RegistryObject<Block> SILVER_BIRCH_LEAVES;
     public static RegistryObject<Block> ENCHANTED_BIRCH_LEAVES;
     public static RegistryObject<Block> WHITE_MAGNOLIA_LEAVES;
@@ -1039,6 +1043,7 @@ public class RuBlocks {
         REDWOOD_SAPLING = BlockRegistry.registerDefaultBlock("redwood_sapling", () -> new RuSaplingBlock(new RedwoodTreeGrower()));
         RED_MAPLE_SAPLING = BlockRegistry.registerDefaultBlock("red_maple_sapling", () -> new RuSaplingBlock(new RedMapleTreeGrower()));
         BRIMWOOD_SAPLING = BlockRegistry.registerDefaultBlock("brimwood_sapling", () -> new BrimSaplingBlock(new BrimwoodGrower()));
+        COBALT_SAPLING = BlockRegistry.registerDefaultBlock("cobalt_sapling", () -> new NetherSaplingBlock(new CobaltTreeGrower()));
         ENCHANTED_BIRCH_SAPLING = BlockRegistry.registerDefaultBlock("enchanted_birch_sapling", () -> new RuSaplingBlock(new EnchantedBirchTreeGrower()));
         SILVER_BIRCH_SAPLING = BlockRegistry.registerDefaultBlock("silver_birch_sapling", () -> new RuSaplingBlock(new SilverBirchTreeGrower()));
         WHITE_MAGNOLIA_SAPLING = BlockRegistry.registerDefaultBlock("white_magnolia_sapling", () -> new RuSaplingBlock(new WhiteMagnoliaTreeGrower()));
@@ -1146,6 +1151,7 @@ public class RuBlocks {
         POTTED_REDWOOD_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_redwood_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, REDWOOD_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         POTTED_RED_MAPLE_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_red_maple_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, RED_MAPLE_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         POTTED_BRIMWOOD_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_brimwood_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, BRIMWOOD_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
+        POTTED_COBALT_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_cobalt_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, COBALT_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         POTTED_ENCHANTED_BIRCH_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_enchanted_birch_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, ENCHANTED_BIRCH_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         POTTED_SILVER_BIRCH_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_silver_birch_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, SILVER_BIRCH_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         POTTED_WHITE_MAGNOLIA_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_white_magnolia_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, WHITE_MAGNOLIA_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
@@ -1216,6 +1222,7 @@ public class RuBlocks {
         REDWOOD_LEAVES = BlockRegistry.registerDefaultBlock("redwood_leaves", () -> BlockRegistry.leaves(MapColor.PLANT));
         RED_MAPLE_LEAVES = BlockRegistry.registerDefaultBlock("red_maple_leaves", () -> BlockRegistry.redMapleLeaves(MapColor.COLOR_RED));
         BRIMWOOD_LEAVES = BlockRegistry.registerDefaultBlock("brimwood_leaves", () -> BlockRegistry.brimLeaves(MapColor.COLOR_BROWN));
+        COBALT_WEBBING = BlockRegistry.registerDefaultBlock("cobalt_webbing", () -> BlockRegistry.fireproofLeaves(MapColor.COLOR_BLUE));
         ENCHANTED_BIRCH_LEAVES = BlockRegistry.registerDefaultBlock("enchanted_birch_leaves", () -> BlockRegistry.enchantedBirchLeaves(MapColor.COLOR_LIGHT_BLUE));
         SILVER_BIRCH_LEAVES = BlockRegistry.registerDefaultBlock("silver_birch_leaves", () -> BlockRegistry.silverBirchLeaves(MapColor.COLOR_YELLOW));
         WHITE_MAGNOLIA_LEAVES = BlockRegistry.registerDefaultBlock("white_magnolia_leaves", () -> BlockRegistry.whiteMagnoliaLeaves(MapColor.TERRACOTTA_WHITE));

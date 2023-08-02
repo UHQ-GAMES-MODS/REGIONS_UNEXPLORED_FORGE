@@ -77,7 +77,8 @@ public class RuColorHandler {
                 RuBlocks.WILLOW_LEAVES.get(),
                 RuBlocks.MAPLE_LEAVES.get(),
                 RuBlocks.MAPLE_LEAF_PILE.get(),
-                RuBlocks.WINDSWEPT_GRASS.get()
+                RuBlocks.WINDSWEPT_GRASS.get(),
+                RuBlocks.COBALT_WEBBING.get()
         );
     }
     @SubscribeEvent
@@ -100,7 +101,8 @@ public class RuColorHandler {
                 RuBlocks.WILLOW_LEAVES.get(),
                 RuBlocks.MAPLE_LEAVES.get(),
                 RuBlocks.MAPLE_LEAF_PILE.get(),
-                RuBlocks.WINDSWEPT_GRASS.get()
+                RuBlocks.WINDSWEPT_GRASS.get(),
+                RuBlocks.COBALT_WEBBING.get()
         );
     }
     @SubscribeEvent

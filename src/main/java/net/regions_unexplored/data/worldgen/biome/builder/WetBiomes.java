@@ -225,11 +225,11 @@ public class WetBiomes {
     public static Biome fungalFen(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(2.0F))
-                .fogColor(12638463)
-                .waterColor(-435307641)
-                .waterFogColor(-435242116)
-                .foliageColorOverride(-433341681)
-                .grassColorOverride(-430585537)
+                .fogColor(12640721)
+                .waterColor(6338444)
+                .waterFogColor(25674)
+                .foliageColorOverride(10667597)
+                .grassColorOverride(8173383)
                 .ambientParticle(new AmbientParticleSettings(ParticleTypes.WARPED_SPORE, 0.01F))
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_SWAMP));
@@ -246,6 +246,7 @@ public class WetBiomes {
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.LUSH_PINE_TREE);
 
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.PINK_BIOSHROOM_DENSE);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.GRASS);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.FERNS);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.PINE_SHRUB);
 

@@ -8,9 +8,9 @@
   },
   "downfall": 1.0,
   "effects": {
-    "fog_color": 12638463,
-    "foliage_color": -433341681,
-    "grass_color": -430585537,
+    "fog_color": 12640721,
+    "foliage_color": 10667597,
+    "grass_color": 8173383,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -30,8 +30,8 @@
       "probability": 0.01
     },
     "sky_color": 7254527,
-    "water_color": -435307641,
-    "water_fog_color": -435242116
+    "water_color": 6338444,
+    "water_fog_color": 25674
   },
   "features": [
     [],
@@ -100,6 +100,7 @@
       "regions_unexplored:giant_red_mushroom",
       "regions_unexplored:lush_pine_tree",
       "regions_unexplored:pink_bioshroom_dense",
+      "regions_unexplored:grass",
       "regions_unexplored:ferns",
       "regions_unexplored:pine_shrub"
     ],

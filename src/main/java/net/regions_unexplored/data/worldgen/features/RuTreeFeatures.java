@@ -80,6 +80,8 @@ public class RuTreeFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> BIRCH_TREE_ASPEN = ConfiguredFeatureRegistry.createKey("birch_tree_aspen");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> COBALT_TREE = ConfiguredFeatureRegistry.createKey("cobalt_tree");
+
     public static final ResourceKey<ConfiguredFeature<?, ?>> TALL_DARK_OAK = ConfiguredFeatureRegistry.createKey("tall_dark_oak");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> MAGNOLIA_TREE = ConfiguredFeatureRegistry.createKey("magnolia_tree");
@@ -205,6 +207,8 @@ public class RuTreeFeatures {
         register(context, GIANT_BLACKWOOD_TREE, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(RuBlocks.BLACKWOOD_LOG.get().defaultBlockState()), new GiantTrunkPlacer(22, 4, 5), BlockStateProvider.simple(RuBlocks.BLACKWOOD_LEAVES.get().defaultBlockState()), new MegaPineFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0), UniformInt.of(13, 17)), new TwoLayersFeatureSize(1, 1, 2)).build());
 
         register(context, BIRCH_TREE_ASPEN, FeatureRegistry.ASPEN_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(Blocks.BIRCH_LOG.defaultBlockState()), BlockStateProvider.simple(Blocks.BIRCH_LEAVES.defaultBlockState()), BlockStateProvider.simple(RuBlocks.BIRCH_BRANCH.get().defaultBlockState()), 4, 3));
+
+        register(context, COBALT_TREE, FeatureRegistry.COBALT_TREE.get(), FeatureConfiguration.NONE);
 
         register(context, TALL_DARK_OAK, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.DARK_OAK_LOG), new DarkOakTrunkPlacer(8, 4, 1), BlockStateProvider.simple(Blocks.DARK_OAK_LEAVES), new DarkOakFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)), new ThreeLayersFeatureSize(1, 1, 0, 1, 2, OptionalInt.empty())).ignoreVines().build());
 

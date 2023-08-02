@@ -27,6 +27,7 @@ public class FeatureRegistry {
     public static RegistryObject<Feature> MEGA_BAOBAB_TREE;
     public static RegistryObject<Feature> ULTRA_BAOBAB_TREE;
     public static RegistryObject<Feature> BLACKWOOD_TREE;
+    public static RegistryObject<Feature> COBALT_TREE;
     public static RegistryObject<Feature> CYPRESS_TREE;
     public static RegistryObject<Feature> SMALL_EUCALYPTUS_TREE;
     public static RegistryObject<Feature> EUCALYPTUS_TREE;
@@ -95,6 +96,7 @@ public class FeatureRegistry {
         ASPEN_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("aspen_tree", () -> new AspenTreeFeature(RuTreeConfiguration.CODEC));
         BAMBOO_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("bamboo_tree", () -> new BambooTreeFeature(RuTreeConfiguration.CODEC));
         BLACKWOOD_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("blackwood_tree", () -> new BlackwoodTreeFeature(RuTreeConfiguration.CODEC));
+        COBALT_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("cobalt_tree", () -> new CobaltShrubFeature(NoneFeatureConfiguration.CODEC));
         CYPRESS_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("cypress_tree", () -> new CypressTreeFeature(RuTreeConfiguration.CODEC));
         SMALL_EUCALYPTUS_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("small_eucalyptus_tree", () -> new SmallEucalyptusTreeFeature(RuTreeConfiguration.CODEC));
         EUCALYPTUS_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("eucalyptus_tree", () -> new EucalyptusTreeFeature(RuTreeConfiguration.CODEC));

@@ -131,14 +131,15 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.BLACKWOOD_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.BRIMWOOD_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.CACTUS_FLOWER.get()));
+                            output.accept(new ItemStack(RuBlocks.COBALT_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.CYPRESS_SAPLING.get()));
-                            output.accept(new ItemStack(RuBlocks.DEAD_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.DEAD_PINE_SAPLING.get()));
+                            output.accept(new ItemStack(RuBlocks.DEAD_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.EUCALYPTUS_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.FLOWERING_SAPLING.get()));
+                            output.accept(new ItemStack(RuBlocks.GOLDEN_LARCH_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.JOSHUA_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.LARCH_SAPLING.get()));
-                            output.accept(new ItemStack(RuBlocks.GOLDEN_LARCH_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.MAGNOLIA_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.BLUE_MAGNOLIA_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.PINK_MAGNOLIA_SAPLING.get()));
@@ -228,6 +229,7 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.BAOBAB_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.BLACKWOOD_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.BRIMWOOD_LEAVES.get()));
+                            output.accept(new ItemStack(RuBlocks.COBALT_WEBBING.get()));
                             output.accept(new ItemStack(RuBlocks.CYPRESS_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.DEAD_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.DEAD_PINE_LEAVES.get()));
