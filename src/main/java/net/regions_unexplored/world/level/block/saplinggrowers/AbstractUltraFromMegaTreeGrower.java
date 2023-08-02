@@ -9,13 +9,14 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.grower.AbstractMegaTreeGrower;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 
 import javax.annotation.Nullable;
 
-public abstract class AbstractUltraFromMegaTreeGrower extends AbstractSuperTreeGrower {
+public abstract class AbstractUltraFromMegaTreeGrower extends AbstractMegaTreeGrower {
         public boolean growTree(ServerLevel level, ChunkGenerator generator, BlockPos pos, BlockState state, RandomSource random) {
             for(int i = 1; i >= -1; --i) {
                 for(int j = 1; j >= -1; --j) {

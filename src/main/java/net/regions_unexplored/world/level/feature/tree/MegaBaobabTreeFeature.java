@@ -29,7 +29,7 @@ public class MegaBaobabTreeFeature extends Feature<RuTreeConfiguration> {
 
     public boolean place(FeaturePlaceContext<RuTreeConfiguration> context) {
         RuTreeConfiguration treeConfiguration = context.config();
-        BlockPos pos = context.origin();
+        BlockPos pos = context.origin().south();
         RandomSource randomSource = context.random();
         WorldGenLevel level = context.level();
         int height_main = context.random().nextInt(treeConfiguration.sizeVariation) + treeConfiguration.minimumSize;

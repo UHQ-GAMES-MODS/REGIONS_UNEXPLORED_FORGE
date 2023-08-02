@@ -26,5 +26,6 @@ public class RuBlockModelProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+
     }
 }
