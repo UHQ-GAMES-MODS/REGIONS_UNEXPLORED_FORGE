@@ -75,6 +75,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.BAMBOO_LEAVES.getKey())
                 .add(RuBlocks.BAOBAB_LEAVES.getKey())
                 .add(RuBlocks.BLACKWOOD_LEAVES.getKey())
+                .add(RuBlocks.COBALT_WEBBING.getKey())
                 .add(RuBlocks.BLUE_BIOSHROOM_BLOCK.getKey())
                 .add(RuBlocks.BRIMWOOD_LEAVES.getKey())
                 .add(RuBlocks.CYPRESS_LEAVES.getKey())
@@ -110,6 +111,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.ORANGE_CONEFLOWER.getKey())
                 .add(RuBlocks.PURPLE_CONEFLOWER.getKey())
                 .add(RuBlocks.CLOVER.getKey())
+                .add(RuBlocks.MYCOTOXIC_MUSHROOMS.getKey())
         ;
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(RuBlocks.ICICLE.getKey())
@@ -374,6 +376,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.POTTED_BAOBAB_SAPLING.getKey())
                 .add(RuBlocks.POTTED_BARREL_CACTUS.getKey())
                 .add(RuBlocks.POTTED_BLACKWOOD_SAPLING.getKey())
+                .add(RuBlocks.POTTED_COBALT_SAPLING.getKey())
                 .add(RuBlocks.POTTED_BLUE_BIOSHROOM.getKey())
                 .add(RuBlocks.POTTED_BLEEDING_HEART.getKey())
                 .add(RuBlocks.POTTED_BLUE_LUPINE.getKey())
@@ -508,6 +511,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.LARGE_PRISMARITE_CLUSTER.getKey())
                 .add(RuBlocks.FLOWERING_LILY_PAD.getKey())
                 .add(RuBlocks.GIANT_LILY_PAD.getKey())
+                .add(RuBlocks.MYCOTOXIC_MUSHROOMS.getKey())
         ;
         //this.tag(BlockTags.INVALID_SPAWN_INSIDE);
         //this.tag(BlockTags.IRON_ORES);
@@ -521,6 +525,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.BAMBOO_LEAVES.getKey())
                 .add(RuBlocks.BAOBAB_LEAVES.getKey())
                 .add(RuBlocks.BLACKWOOD_LEAVES.getKey())
+                .add(RuBlocks.COBALT_WEBBING.getKey())
                 .add(RuBlocks.BRIMWOOD_LEAVES.getKey())
                 .add(RuBlocks.CYPRESS_LEAVES.getKey())
                 .add(RuBlocks.DEAD_LEAVES.getKey())
@@ -769,6 +774,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.BLACKWOOD_SAPLING.getKey())
                 .add(RuBlocks.BRIMWOOD_SAPLING.getKey())
                 .add(RuBlocks.CACTUS_FLOWER.getKey())
+                .add(RuBlocks.COBALT_SAPLING.getKey())
                 .add(RuBlocks.CYPRESS_SAPLING.getKey())
                 .add(RuBlocks.DEAD_PINE_SAPLING.getKey())
                 .add(RuBlocks.DEAD_SAPLING.getKey())
@@ -1518,6 +1524,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.ORANGE_CONEFLOWER.getKey())
                 .add(RuBlocks.PURPLE_CONEFLOWER.getKey())
                 .add(RuBlocks.CLOVER.getKey())
+                .add(RuBlocks.MYCOTOXIC_MUSHROOMS.getKey())
                 .add(RuBlocks.FLOWERING_LILY_PAD.getKey())
                 .add(RuBlocks.GIANT_LILY_PAD.getKey())
                 .addTags(BlockTags.FLOWERS)

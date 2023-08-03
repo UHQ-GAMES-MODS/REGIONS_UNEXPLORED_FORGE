@@ -124,6 +124,7 @@ public class RuVegetationFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_BLUE_BIOSHROOM = ConfiguredFeatureRegistry.createKey("patch_blue_bioshroom");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_GREEN_BIOSHROOM = ConfiguredFeatureRegistry.createKey("patch_green_bioshroom");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_PINK_BIOSHROOM = ConfiguredFeatureRegistry.createKey("patch_pink_bioshroom");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_YELLOW_BIOSHROOM = ConfiguredFeatureRegistry.createKey("patch_yellow_bioshroom");
     //OTHER
     public static final ResourceKey<ConfiguredFeature<?, ?>> BAMBOO = ConfiguredFeatureRegistry.createKey("bamboo");
     public static final ResourceKey<ConfiguredFeature<?, ?>> FLOWERING_LILY = ConfiguredFeatureRegistry.createKey("flowering_lily");
@@ -299,6 +300,7 @@ public class RuVegetationFeatures {
         register(context, PATCH_BLUE_BIOSHROOM, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(RuBlocks.TALL_BLUE_BIOSHROOM.get().defaultBlockState(), 1).add(RuBlocks.BLUE_BIOSHROOM.get().defaultBlockState(), 10)), 16));
         register(context, PATCH_GREEN_BIOSHROOM, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(RuBlocks.TALL_GREEN_BIOSHROOM.get().defaultBlockState(), 1).add(RuBlocks.GREEN_BIOSHROOM.get().defaultBlockState(), 10)), 16));
         register(context, PATCH_PINK_BIOSHROOM, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(RuBlocks.TALL_PINK_BIOSHROOM.get().defaultBlockState(), 1).add(RuBlocks.PINK_BIOSHROOM.get().defaultBlockState(), 8)), 16));
+        register(context, PATCH_YELLOW_BIOSHROOM, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(RuBlocks.TALL_YELLOW_BIOSHROOM.get().defaultBlockState(), 1).add(RuBlocks.YELLOW_BIOSHROOM.get().defaultBlockState(), 6)), 6));
         //OTHER
         register(context, BAMBOO, Feature.BAMBOO, new ProbabilityFeatureConfiguration(0.25F));
         register(context, FLOWERING_LILY, Feature.RANDOM_PATCH, new RandomPatchConfiguration(10, 7, 3, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(RuBlocks.FLOWERING_LILY_PAD.get())))));

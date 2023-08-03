@@ -118,7 +118,7 @@ public class BiomeRegistry {
         register(context, RuBiomes.INFERNAL_HOLT, NetherBiomes.infernalHolt(featuresGetter, carversGetter));
         register(context, RuBiomes.GLISTERING_MEADOW, NetherBiomes.glisteringMeadow(featuresGetter, carversGetter));
         register(context, RuBiomes.MYCOTOXIC_UNDERGROWTH, NetherBiomes.mycotoxicUndergrowth(featuresGetter, carversGetter));
-        register(context, RuBiomes.REDSTONE_HELL, NetherBiomes.redstoneHell(featuresGetter, carversGetter));
+        register(context, RuBiomes.REDSTONE_ABYSS, NetherBiomes.redstoneAbyss(featuresGetter, carversGetter));
 
 
 
@@ -209,7 +209,7 @@ public class BiomeRegistry {
         registerVillagers(RuBiomes.INFERNAL_HOLT, VillagerType.PLAINS);
         registerVillagers(RuBiomes.GLISTERING_MEADOW, VillagerType.PLAINS);
         registerVillagers(RuBiomes.MYCOTOXIC_UNDERGROWTH, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.REDSTONE_HELL, VillagerType.PLAINS);
+        registerVillagers(RuBiomes.REDSTONE_ABYSS, VillagerType.PLAINS);
 
     }
 

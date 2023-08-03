@@ -1,4 +1,4 @@
-package net.regions_unexplored.world.level.feature;
+package net.regions_unexplored.world.level.feature.tree;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
@@ -10,19 +10,19 @@ import net.minecraft.world.level.LevelSimulatedReader;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.data.tags.RuTags;
-import net.regions_unexplored.world.level.feature.configuration.RuTreeConfiguration;
 
 import java.util.Random;
 
-public class CobaltShrubFeature extends Feature<NoneFeatureConfiguration> {
+public class YellowBioshroomShrubFeature extends Feature<NoneFeatureConfiguration> {
 
-    public CobaltShrubFeature(Codec<NoneFeatureConfiguration> codec) {
+    public YellowBioshroomShrubFeature(Codec<NoneFeatureConfiguration> codec) {
         super(codec);
     }
 
@@ -39,31 +39,40 @@ public class CobaltShrubFeature extends Feature<NoneFeatureConfiguration> {
     }
 
     public void placeShrub(LevelAccessor level, BlockPos pos, RandomSource randomSource) {
-            placeLogBlock(level, pos, randomSource);
-        placeLogBlock(level, pos.north(), randomSource);
-        placeLogBlock(level, pos.south(), randomSource);
-        placeLogBlock(level, pos.east(), randomSource);
-        placeLogBlock(level, pos.west(), randomSource);
-        placeLogBlock(level, pos.north().east(), randomSource);
-        placeLogBlock(level, pos.north().west(), randomSource);
-        placeLogBlock(level, pos.south().east(), randomSource);
-        placeLogBlock(level, pos.south().west(), randomSource);
-
-        placeLogBlock(level, pos.above(), randomSource);
-        placeLogBlock(level, pos.north().above(), randomSource);
-        placeLogBlock(level, pos.south().above(), randomSource);
-        placeLogBlock(level, pos.east().above(), randomSource);
-        placeLogBlock(level, pos.west().above(), randomSource);
+        BlockPos.MutableBlockPos placePos = pos.mutable();
+        placeLogBlock(level, placePos, randomSource, Direction.Axis.Y);
+        placePos.move(Direction.UP);
+        placeLogBlock(level, placePos, randomSource, Direction.Axis.Y);
+        placePos.move(Direction.UP);
+        if(randomSource.nextInt(3)==0){
+            placeLogBlock(level, placePos, randomSource, Direction.Axis.Y);
+            placePos.move(Direction.UP);
+        }
+        placeTop(level, placePos, randomSource);
     }
 
-    public boolean placeLogBlock(LevelAccessor level, BlockPos pos, RandomSource randomSource) {
+
+    public void placeTop(LevelAccessor level, BlockPos pos, RandomSource randomSource) {
+        placeLeavesBlock(level, pos, randomSource);
+        placeLeavesBlock(level, pos.north(), randomSource);
+        placeLeavesBlock(level, pos.south(), randomSource);
+        placeLeavesBlock(level, pos.east(), randomSource);
+        placeLeavesBlock(level, pos.west(), randomSource);
+        placeLeavesBlock(level, pos.north().east(), randomSource);
+        placeLeavesBlock(level, pos.north().west(), randomSource);
+        placeLeavesBlock(level, pos.south().east(), randomSource);
+        placeLeavesBlock(level, pos.south().west(), randomSource);
+    }
+
+
+    public void placeLogBlock(LevelAccessor level, BlockPos pos, RandomSource randomSource, Direction.Axis axis) {
         boolean isBase = false;
         if(level.getBlockState(pos.below()).is(BlockTags.DIRT)){
             isBase = true;
         }
         Random random = new Random();
         if(level.isOutsideBuildHeight(pos)){
-            return true;
+            return;
         }
         if(level.getBlockState(pos).is(RuBlocks.GLISTERING_NYLIUM.get())||level.getBlockState(pos).is(RuBlocks.MYCOTOXIC_NYLIUM.get())||level.getBlockState(pos).is(RuBlocks.BRIMSPROUT_NYLIUM.get())){
             level.setBlock(pos, Blocks.NETHERRACK.defaultBlockState(), 2);
@@ -72,10 +81,10 @@ public class CobaltShrubFeature extends Feature<NoneFeatureConfiguration> {
             level.setBlock(pos, Blocks.BLACKSTONE.defaultBlockState(), 2);
         }
         else if(isReplaceable(level, pos)) {
-                level.setBlock(pos, RuBlocks.COBALT_LOG.get().defaultBlockState(), 2);
+                level.setBlock(pos, RuBlocks.YELLOW_BIOSHROOM_STEM.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, axis), 2);
         }
         else{
-            return true;
+            return;
         }
 
 
@@ -86,20 +95,18 @@ public class CobaltShrubFeature extends Feature<NoneFeatureConfiguration> {
             level.setBlock(pos.below(), Blocks.BLACKSTONE.defaultBlockState(), 2);
         }
         else if(isReplaceable(level, pos.below())) {
-            level.setBlock(pos.below(), RuBlocks.COBALT_LOG.get().defaultBlockState(), 2);
+            level.setBlock(pos.below(), RuBlocks.YELLOW_BIOSHROOM_STEM.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, axis), 2);
         }
-        return true;
     }
 
-    public boolean placeLeavesBlock(LevelAccessor level, BlockPos pos, RandomSource randomSource) {
+    public void placeLeavesBlock(LevelAccessor level, BlockPos pos, RandomSource randomSource) {
         Random random = new Random();
         if(level.isOutsideBuildHeight(pos)){
-            return true;
+            return;
         }
         if(level.getBlockState(pos).canBeReplaced()) {
-            level.setBlock(pos, RuBlocks.COBALT_WEBBING.get().defaultBlockState().setValue(LeavesBlock.DISTANCE, 1), 2);
+            level.setBlock(pos, RuBlocks.YELLOW_BIOSHROOM_BLOCK.get().defaultBlockState(), 2);
         }
-        return true;
     }
 
     public boolean checkReplaceable(LevelAccessor level, BlockPos pos) {
@@ -118,7 +125,7 @@ public class CobaltShrubFeature extends Feature<NoneFeatureConfiguration> {
 
 
     public static boolean isReplaceableDirt(LevelSimulatedReader reader, BlockPos pos) {
-        return reader.isStateAtPosition(pos, CobaltShrubFeature::isReplaceableDirtBlock);
+        return reader.isStateAtPosition(pos, YellowBioshroomShrubFeature::isReplaceableDirtBlock);
     }
 
     public static boolean isReplaceableBlock(BlockState state) {
@@ -126,6 +133,6 @@ public class CobaltShrubFeature extends Feature<NoneFeatureConfiguration> {
     }
 
     public static boolean isReplaceable(LevelSimulatedReader reader, BlockPos pos) {
-        return reader.isStateAtPosition(pos, CobaltShrubFeature::isReplaceableBlock);
+        return reader.isStateAtPosition(pos, YellowBioshroomShrubFeature::isReplaceableBlock);
     }
 }

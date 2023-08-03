@@ -7,7 +7,7 @@
       "tick_chance": 0.0111
     },
     "ambient_sound": "minecraft:ambient.nether_wastes.loop",
-    "fog_color": 8853780,
+    "fog_color": 5439488,
     "foliage_color": 10623252,
     "grass_color": 10623252,
     "mood_sound": {
@@ -28,7 +28,7 @@
       },
       "probability": 0.025
     },
-    "sky_color": 8853780,
+    "sky_color": 5439488,
     "water_color": 10623252,
     "water_fog_color": 10623252
   },
@@ -54,6 +54,14 @@
       "minecraft:ore_quartz_nether",
       "minecraft:ore_ancient_debris_large",
       "minecraft:ore_debris_small"
+    ],
+    [],
+    [
+      "regions_unexplored:pointed_redstone_nether",
+      "regions_unexplored:large_pointed_redstone_nether",
+      "regions_unexplored:pointed_redstone_cluster_nether",
+      "regions_unexplored:redstone_bud",
+      "regions_unexplored:redstone_bulb"
     ]
   ],
   "has_precipitation": false,

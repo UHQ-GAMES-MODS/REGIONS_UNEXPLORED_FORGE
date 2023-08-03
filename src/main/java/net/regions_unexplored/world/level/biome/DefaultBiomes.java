@@ -1324,7 +1324,7 @@ public class DefaultBiomes {
         if(biome== RuBiomes.REDSTONE_CAVES){
             return RuCommonConfig.TOGGLE_REDSTONE_CAVES.get();
         }
-        if(biome== RuBiomes.REDSTONE_HELL){
+        if(biome== RuBiomes.REDSTONE_ABYSS){
             return RuCommonConfig.TOGGLE_REDSTONE_HELL.get();
         }
         if(biome== RuBiomes.REDWOODS){

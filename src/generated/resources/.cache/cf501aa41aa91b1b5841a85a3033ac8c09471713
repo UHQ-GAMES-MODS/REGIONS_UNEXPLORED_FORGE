@@ -1,4 +1,4 @@
-// 1.20.1	2023-07-27T02:15:09.5671743	Tags for minecraft:worldgen/biome mod id regions_unexplored
+// 1.20.1	2023-08-03T00:47:51.7409571	Tags for minecraft:worldgen/biome mod id regions_unexplored
 36649860d25a60634c9747c746e4a7f41282eab1 data/forge/tags/worldgen/biome/is_cave.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/worldgen/biome/is_cold.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/worldgen/biome/is_cold/end.json
@@ -12,11 +12,11 @@ d05df651842961fbfde2ff84d9ad1b716c274eac data/forge/tags/worldgen/biome/is_conif
 b776a40e464619060050d54e9a97f0c56763d712 data/forge/tags/worldgen/biome/is_desert.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/worldgen/biome/is_dry.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/worldgen/biome/is_dry/end.json
-497eb8190df84ae71c675ab58f69465f83c21a27 data/forge/tags/worldgen/biome/is_dry/nether.json
+6e671e478234b87218ede11c1008e7087a6f22d4 data/forge/tags/worldgen/biome/is_dry/nether.json
 e3602de74065b1087709645b552536298e936ef2 data/forge/tags/worldgen/biome/is_dry/overworld.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/worldgen/biome/is_hot.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/worldgen/biome/is_hot/end.json
-497eb8190df84ae71c675ab58f69465f83c21a27 data/forge/tags/worldgen/biome/is_hot/nether.json
+6e671e478234b87218ede11c1008e7087a6f22d4 data/forge/tags/worldgen/biome/is_hot/nether.json
 ee386b0bd8a1f72aac38eb25c42cab7ad9d0a237 data/forge/tags/worldgen/biome/is_hot/overworld.json
 3bcd5daf01f658ecea234fb7181018fa3b82e26c data/forge/tags/worldgen/biome/is_lush.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/worldgen/biome/is_mountain.json
@@ -75,7 +75,7 @@ f7c3bdfa620f5703d2422a59eedb5f1bbc4ad725 data/minecraft/tags/worldgen/biome/is_f
 1bf93ed4c6e5c9f99edd1539542886592eb113c6 data/minecraft/tags/worldgen/biome/is_hill.json
 800f927fa1632f3b44a560bbf2724bede0c51451 data/minecraft/tags/worldgen/biome/is_jungle.json
 10383c863938ba78f58c75cb0c04c157f385260e data/minecraft/tags/worldgen/biome/is_mountain.json
-497eb8190df84ae71c675ab58f69465f83c21a27 data/minecraft/tags/worldgen/biome/is_nether.json
+6e671e478234b87218ede11c1008e7087a6f22d4 data/minecraft/tags/worldgen/biome/is_nether.json
 2a35e3f4c5a43275344195dd4ab27cf264dd8a6f data/minecraft/tags/worldgen/biome/is_ocean.json
 50d6f0df61febc47683dbd86142e5dae408bc2eb data/minecraft/tags/worldgen/biome/is_overworld.json
 d79aa902b7a47a1988e66c9288e3af57352def85 data/minecraft/tags/worldgen/biome/is_river.json

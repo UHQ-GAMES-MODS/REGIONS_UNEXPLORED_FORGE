@@ -150,6 +150,7 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         dropSelf(RuBlocks.BAOBAB_SAPLING.get());
         dropSelf(RuBlocks.BLACKWOOD_SAPLING.get());
         dropSelf(RuBlocks.CACTUS_FLOWER.get());
+        dropSelf(RuBlocks.COBALT_SAPLING.get());
         dropSelf(RuBlocks.MAGNOLIA_SAPLING.get());
         dropSelf(RuBlocks.CYPRESS_SAPLING.get());
         dropSelf(RuBlocks.DEAD_PINE_SAPLING.get());
@@ -256,6 +257,7 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         add(RuBlocks.POTTED_BAMBOO_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_BAOBAB_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_BLACKWOOD_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_COBALT_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_CACTUS_FLOWER.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_MAGNOLIA_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_CYPRESS_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
@@ -329,6 +331,7 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         add(RuBlocks.BAMBOO_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.BAMBOO_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.BAOBAB_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.BAOBAB_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.BLACKWOOD_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.BLACKWOOD_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        add(RuBlocks.COBALT_WEBBING.get(), (block) -> createLeavesDrops(block, RuBlocks.COBALT_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.MAGNOLIA_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.MAGNOLIA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.CYPRESS_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.CYPRESS_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.DEAD_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.DEAD_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
@@ -898,6 +901,7 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         add(RuBlocks.GLISTER_BULB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         add(RuBlocks.GLISTER_SPIRE.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         //MYCOTOXIC_BLOCKS
+        add(RuBlocks.MYCOTOXIC_MUSHROOMS.get(), (block) -> createPetalsDrops(block));
         add(RuBlocks.MYCOTOXIC_DAISY.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         dropSelf(RuBlocks.MYCOTOXIC_GRASS.get());
         add(RuBlocks.MYCOTOXIC_NYLIUM.get(), (block) -> createSingleItemTableWithSilkTouch(block, Blocks.NETHERRACK));

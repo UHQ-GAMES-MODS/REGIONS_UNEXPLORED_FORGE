@@ -4,11 +4,11 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraftforge.registries.RegistryObject;
 import net.regions_unexplored.RegionsUnexploredMod;
-import net.regions_unexplored.data.worldgen.features.RuTreeFeatures;
 import net.regions_unexplored.world.level.feature.*;
 import net.regions_unexplored.world.level.feature.bioshroom.GiantBlueBioshroomFeature;
 import net.regions_unexplored.world.level.feature.bioshroom.GiantGreenBioshroomFeature;
 import net.regions_unexplored.world.level.feature.bioshroom.GiantPinkBioshroomFeature;
+import net.regions_unexplored.world.level.feature.bioshroom.GiantYellowBioshroomFeature;
 import net.regions_unexplored.world.level.feature.configuration.*;
 import net.regions_unexplored.world.level.feature.tree.*;
 import net.regions_unexplored.world.level.feature.tree.nether.BrimWillowFeature;
@@ -19,7 +19,8 @@ public class FeatureRegistry {
     public static RegistryObject<Feature> GIANT_BLUE_BIOSHROOM;
     public static RegistryObject<Feature> GIANT_GREEN_BIOSHROOM;
     public static RegistryObject<Feature> GIANT_PINK_BIOSHROOM;
-    //public static RegistryObject<Feature> GIANT_YELLOW_BIOSHROOM;
+    public static RegistryObject<Feature> GIANT_YELLOW_BIOSHROOM;
+    public static RegistryObject<Feature> SMALL_YELLOW_BIOSHROOM;
     //TREES
     public static RegistryObject<Feature> ASHEN_TREE;
     public static RegistryObject<Feature> ASPEN_TREE;
@@ -91,6 +92,8 @@ public class FeatureRegistry {
         GIANT_BLUE_BIOSHROOM = RegionsUnexploredMod.FEATURE_REGISTRY.register("giant_blue_bioshroom", () -> new GiantBlueBioshroomFeature(GiantBioshroomConfiguration.CODEC));
         GIANT_GREEN_BIOSHROOM = RegionsUnexploredMod.FEATURE_REGISTRY.register("giant_green_bioshroom", () -> new GiantGreenBioshroomFeature(GiantBioshroomConfiguration.CODEC));
         GIANT_PINK_BIOSHROOM = RegionsUnexploredMod.FEATURE_REGISTRY.register("giant_pink_bioshroom", () -> new GiantPinkBioshroomFeature(GiantBioshroomConfiguration.CODEC));
+        GIANT_YELLOW_BIOSHROOM = RegionsUnexploredMod.FEATURE_REGISTRY.register("giant_yellow_bioshroom", () -> new GiantYellowBioshroomFeature(GiantBioshroomConfiguration.CODEC));
+        SMALL_YELLOW_BIOSHROOM = RegionsUnexploredMod.FEATURE_REGISTRY.register("small_yellow_bioshroom", () -> new YellowBioshroomShrubFeature(NoneFeatureConfiguration.CODEC));
         //TREES
         ASHEN_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("ashen_tree", () -> new AshenTreeFeature(RuTreeConfiguration.CODEC));
         ASPEN_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("aspen_tree", () -> new AspenTreeFeature(RuTreeConfiguration.CODEC));

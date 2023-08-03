@@ -54,7 +54,13 @@
       "minecraft:ore_gold_nether",
       "minecraft:ore_quartz_nether",
       "minecraft:ore_ancient_debris_large",
-      "minecraft:ore_debris_small"
+      "minecraft:ore_debris_small",
+      "regions_unexplored:giant_yellow_bioshroom",
+      "regions_unexplored:small_yellow_bioshroom",
+      "regions_unexplored:mycotoxic_mushrooms",
+      "regions_unexplored:mycotoxic_grass",
+      "regions_unexplored:mycotoxic_daisy",
+      "regions_unexplored:mycotoxic_bioshroom"
     ]
   ],
   "has_precipitation": false,

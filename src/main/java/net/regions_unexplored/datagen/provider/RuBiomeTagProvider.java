@@ -100,7 +100,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.BLACKSTONE_BASIN.location())
                 .addOptional(RuBiomes.INFERNAL_HOLT.location())
                 .addOptional(RuBiomes.GLISTERING_MEADOW.location())
-                .addOptional(RuBiomes.REDSTONE_HELL.location())
+                .addOptional(RuBiomes.REDSTONE_ABYSS.location())
         ;
         this.tag(BiomeTags.IS_OCEAN)
                 .addOptional(RuBiomes.ROCKY_REEF.location())
@@ -582,7 +582,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.BLACKSTONE_BASIN.location())
                 .addOptional(RuBiomes.INFERNAL_HOLT.location())
                 .addOptional(RuBiomes.GLISTERING_MEADOW.location())
-                .addOptional(RuBiomes.REDSTONE_HELL.location())
+                .addOptional(RuBiomes.REDSTONE_ABYSS.location())
         ;
         this.tag(TagKey.create(Registries.BIOME, new ResourceLocation("forge", "is_dry/overworld")))
                 .addOptional(RuBiomes.JOSHUA_DESERT.location())
@@ -601,7 +601,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.BLACKSTONE_BASIN.location())
                 .addOptional(RuBiomes.INFERNAL_HOLT.location())
                 .addOptional(RuBiomes.GLISTERING_MEADOW.location())
-                .addOptional(RuBiomes.REDSTONE_HELL.location())
+                .addOptional(RuBiomes.REDSTONE_ABYSS.location())
         ;
         this.tag(TagKey.create(Registries.BIOME, new ResourceLocation("forge", "is_hot/overworld")))
                 .addOptional(RuBiomes.JOSHUA_DESERT.location())

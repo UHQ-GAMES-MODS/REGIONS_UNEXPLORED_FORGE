@@ -17,6 +17,7 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.regions_unexplored.client.particle.RuParticleTypes;
+import net.regions_unexplored.data.worldgen.RuBiomeDefaultFeatures;
 import net.regions_unexplored.data.worldgen.placement.RuNetherPlacements;
 import net.regions_unexplored.data.worldgen.placement.RuTreePlacements;
 
@@ -51,7 +52,8 @@ public class NetherBiomes {
 
         //add RU features
 
-        TODO:biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.OBSIDIAN_SPIRE);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.OBSIDIAN_SPIRE);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuTreePlacements.COBALT_TREE);
         biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.COBALT_ROOTS);
         biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.COBALT_EARLIGHT);
         biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.TALL_COBALT_EARLIGHT);
@@ -184,7 +186,6 @@ public class NetherBiomes {
     }
 
     public static Biome mycotoxicUndergrowth(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
-        //TODO:Complete Biome
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(10717988)
                 .fogColor(10717988)
@@ -210,6 +211,13 @@ public class NetherBiomes {
         BiomeDefaultFeatures.addNetherDefaultOres(biomeBuilder);
 
         //add RU features
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuTreePlacements.GIANT_YELLOW_BIOSHROOM);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.SMALL_YELLOW_BIOSHROOM);
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.MYCOTOXIC_MUSHROOMS);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.MYCOTOXIC_GRASS);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.MYCOTOXIC_DAISY);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.MYCOTOXIC_BIOSHROOM);
 
 
         //add mob spawns
@@ -228,11 +236,10 @@ public class NetherBiomes {
                 .build();
     }
 
-    public static Biome redstoneHell(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
-        //TODO:Complete Biome
+    public static Biome redstoneAbyss(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
-                .skyColor(8853780)
-                .fogColor(8853780)
+                .skyColor(5439488)
+                .fogColor(5439488)
                 .waterColor(10623252)
                 .waterFogColor(10623252)
                 .foliageColorOverride(10623252)
@@ -255,6 +262,7 @@ public class NetherBiomes {
         BiomeDefaultFeatures.addNetherDefaultOres(biomeBuilder);
 
         //add RU features
+        RuBiomeDefaultFeatures.netherPointedRedstone(biomeBuilder);
 
 
         //add mob spawns

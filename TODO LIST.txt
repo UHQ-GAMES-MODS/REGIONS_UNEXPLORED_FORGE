@@ -3,11 +3,9 @@
 
 -complete biomes
     //EASIER
-    -mycotoxic_undergrowth(nether)
+    -fen
 
     //HARDER
-    -redstone_abyss(nether)
-    -fen
     -old_growth_rainforest
     -rainforest
 
@@ -15,7 +13,7 @@
     -dry_bushland
     -tropics
 
-    -TOTAL LEFT:7
+    -TOTAL LEFT:5
 
 -finish tree growers
 -finish retextures
@@ -30,10 +28,7 @@
 -finish hanging sign art
 -add red sandy tall grass
 -add hyacinth lamp
--add small mushrooms to myc undergrowth
 -redo spire feature
 -do lang file
--add bioshroom woodsets
 -fix magma brimwood loot table
 -add bamboo recipes
--fix baobab log tex

@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "facing=north,flower_amount=1": {
+      "model": "regions_unexplored:block/mycotoxic_mushrooms_1"
+    },
+    "facing=east,flower_amount=1": {
+      "model": "regions_unexplored:block/mycotoxic_mushrooms_1",
+      "y": 90
+    },
+    "facing=south,flower_amount=1": {
+      "model": "regions_unexplored:block/mycotoxic_mushrooms_1",
+      "y": 180
+    },
+    "facing=west,flower_amount=1": {
+      "model": "regions_unexplored:block/mycotoxic_mushrooms_1",
+      "y": 270
+    },
+    "facing=north,flower_amount=2": {
+      "model": "regions_unexplored:block/mycotoxic_mushrooms_2"
+    },
+    "facing=east,flower_amount=2": {
+      "model": "regions_unexplored:block/mycotoxic_mushrooms_2",
+      "y": 90
+    },
+    "facing=south,flower_amount=2": {
+      "model": "regions_unexplored:block/mycotoxic_mushrooms_2",
+      "y": 180
+    },
+    "facing=west,flower_amount=2": {
+      "model": "regions_unexplored:block/mycotoxic_mushrooms_2",
+      "y": 270
+    },
+    "facing=north,flower_amount=3": {
+      "model": "regions_unexplored:block/mycotoxic_mushrooms_3"
+    },
+    "facing=east,flower_amount=3": {
+      "model": "regions_unexplored:block/mycotoxic_mushrooms_3",
+      "y": 90
+    },
+    "facing=south,flower_amount=3": {
+      "model": "regions_unexplored:block/mycotoxic_mushrooms_3",
+      "y": 180
+    },
+    "facing=west,flower_amount=3": {
+      "model": "regions_unexplored:block/mycotoxic_mushrooms_3",
+      "y": 270
+    },
+    "facing=north,flower_amount=4": {
+      "model": "regions_unexplored:block/mycotoxic_mushrooms_4"
+    },
+    "facing=east,flower_amount=4": {
+      "model": "regions_unexplored:block/mycotoxic_mushrooms_4",
+      "y": 90
+    },
+    "facing=south,flower_amount=4": {
+      "model": "regions_unexplored:block/mycotoxic_mushrooms_4",
+      "y": 180
+    },
+    "facing=west,flower_amount=4": {
+      "model": "regions_unexplored:block/mycotoxic_mushrooms_4",
+      "y": 270
+    }
+  }
+}

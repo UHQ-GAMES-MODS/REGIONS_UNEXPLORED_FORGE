@@ -747,6 +747,7 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.BRIMSPROUT.get()));
                             //COBALT_BLOCKS
                             output.accept(new ItemStack(RuBlocks.COBALT_EARLIGHT.get()));
+                            output.accept(new ItemStack(RuBlocks.TALL_COBALT_EARLIGHT.get()));
                             output.accept(new ItemStack(RuBlocks.COBALT_NYLIUM.get()));
                             output.accept(new ItemStack(RuBlocks.COBALT_OBSIDIAN.get()));
                             output.accept(new ItemStack(RuBlocks.COBALT_ROOTS.get()));
