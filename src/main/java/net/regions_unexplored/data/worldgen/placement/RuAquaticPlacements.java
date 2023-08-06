@@ -7,6 +7,7 @@ import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;
 import net.regions_unexplored.data.worldgen.features.RuAquaticFeatures;
@@ -16,6 +17,8 @@ import net.regions_unexplored.registry.PlacedFeatureRegistry;
 import java.util.List;
 
 public class RuAquaticPlacements {
+
+    public static final ResourceKey<PlacedFeature> CATTAIL_FEN = PlacedFeatureRegistry.createKey("cattail_fen");
     public static final ResourceKey<PlacedFeature> CATTAIL_RIVER = PlacedFeatureRegistry.createKey("cattail_river");
 
     public static final ResourceKey<PlacedFeature> TALL_HYACINTH_STOCK = PlacedFeatureRegistry.createKey("tall_hyacinth_stock");
@@ -35,6 +38,7 @@ public class RuAquaticPlacements {
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> featureGetter = context.lookup(Registries.CONFIGURED_FEATURE);
 
+        final Holder<ConfiguredFeature<?, ?>> FEN_CATTAIL = featureGetter.getOrThrow(RuAquaticFeatures.FEN_CATTAIL);
         final Holder<ConfiguredFeature<?, ?>> WATER_CATTAIL = featureGetter.getOrThrow(RuAquaticFeatures.WATER_CATTAIL);
 
         final Holder<ConfiguredFeature<?, ?>> TALL_HYACINTH_STOCK = featureGetter.getOrThrow(RuAquaticFeatures.TALL_HYACINTH_STOCK);
@@ -52,7 +56,8 @@ public class RuAquaticPlacements {
         final Holder<ConfiguredFeature<?, ?>> PALM_SAPLING_AQUATIC = featureGetter.getOrThrow(RuVegetationFeatures.PALM_SHRUB);
 
 
-        register(context, RuAquaticPlacements.CATTAIL_RIVER, WATER_CATTAIL, List.of(NoiseThresholdCountPlacement.of(-0.8D, 5, 24), SurfaceWaterDepthFilter.forMaxDepth(3), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome()));
+        register(context, RuAquaticPlacements.CATTAIL_FEN, FEN_CATTAIL, List.of(NoiseThresholdCountPlacement.of(-0.8D, 5, 24), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(3), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome()));
+        register(context, RuAquaticPlacements.CATTAIL_RIVER, WATER_CATTAIL, List.of(NoiseThresholdCountPlacement.of(-0.8D, 5, 32), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(3), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome()));
 
         register(context, RuAquaticPlacements.TALL_HYACINTH_STOCK, TALL_HYACINTH_STOCK, NoiseBasedCountPlacement.of(20, 80.0D, 0.3D), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome());
         register(context, RuAquaticPlacements.HYACINTH_PLANTS, HYACINTH_PLANTS, seagrassPlacement(80));

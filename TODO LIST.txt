@@ -1,20 +1,6 @@
 
 //TODO:COMPLETE LIST
 
--complete biomes
-    //EASIER
-    -fen
-
-    //HARDER
-    -old_growth_rainforest
-    -rainforest
-
-    //HARDEST
-    -dry_bushland
-    -tropics
-
-    -TOTAL LEFT:5
-
 -finish tree growers
 -finish retextures
 -add functionality to some extra blocks
@@ -32,3 +18,10 @@
 -do lang file
 -fix magma brimwood loot table
 -add bamboo recipes
+-remove hyacinth seagrass and rock
+-add hibiscus types(and respective crops for them)
+-add ashen sapling
+-add hyacinth lamp
+-fix cattail generation
+-revert boreal taiga and muddy river water colours
+-"sparsify" rocky meadow flowers

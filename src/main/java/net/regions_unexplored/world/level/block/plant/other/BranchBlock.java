@@ -34,10 +34,10 @@ public class BranchBlock extends BushBlock {
         }
         else{
         return switch (state.getValue(FACING)) {
-            default -> box(7, 3, 0, 9, 13, 16);
-            case NORTH -> box(7, 3, 0, 9, 13, 16);
-            case EAST -> box(0, 3, 7, 16, 13, 9);
-            case WEST -> box(0, 3, 7, 16, 13, 9);
+            default -> box(6, 2, 0, 10, 7, 16);
+            case NORTH -> box(6, 2, 0, 10, 7, 16);
+            case EAST -> box(0, 2, 6, 16, 7, 10);
+            case WEST -> box(0, 2, 6, 16, 7, 10);
         };
         }
     }

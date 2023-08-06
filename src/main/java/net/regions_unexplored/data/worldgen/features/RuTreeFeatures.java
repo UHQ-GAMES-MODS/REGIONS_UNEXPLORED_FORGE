@@ -4,8 +4,6 @@ import com.google.common.collect.ImmutableList;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
-import net.minecraft.data.worldgen.features.FeatureUtils;
-import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.ConstantInt;
@@ -98,7 +96,9 @@ public class RuTreeFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> CHERRY_TREE = ConfiguredFeatureRegistry.createKey("cherry_tree");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> DEAD_BOG_TREE = ConfiguredFeatureRegistry.createKey("dead_bog_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> DEAD_TREE = ConfiguredFeatureRegistry.createKey("dead_tree");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BIG_DEAD_TREE = ConfiguredFeatureRegistry.createKey("big_dead_tree");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> DEAD_PINE_TREE = ConfiguredFeatureRegistry.createKey("dead_pine_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> DEAD_PINE_TREE_TALL = ConfiguredFeatureRegistry.createKey("dead_pine_tree_tall");
@@ -112,6 +112,11 @@ public class RuTreeFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> LARGE_JOSHUA_TREE = ConfiguredFeatureRegistry.createKey("large_joshua_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> MEDIUM_JOSHUA_TREE = ConfiguredFeatureRegistry.createKey("medium_joshua_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> JOSHUA_TREE_SHRUB = ConfiguredFeatureRegistry.createKey("joshua_tree_shrub");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> JUNGLE_TREE = ConfiguredFeatureRegistry.createKey("jungle_tree");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BIG_JUNGLE_TREE = ConfiguredFeatureRegistry.createKey("big_jungle_tree");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> KAPOK_TREE = ConfiguredFeatureRegistry.createKey("kapok_tree");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> LARCH_TREE = ConfiguredFeatureRegistry.createKey("larch_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> BIG_LARCH_TREE = ConfiguredFeatureRegistry.createKey("big_larch_tree");
@@ -140,6 +145,7 @@ public class RuTreeFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> PALM_TREE = ConfiguredFeatureRegistry.createKey("palm_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> TALL_PALM_TREE = ConfiguredFeatureRegistry.createKey("tall_palm_tree");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PALM_TREE_SHRUB = ConfiguredFeatureRegistry.createKey("palm_tree_shrub");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> PINE_TREE = ConfiguredFeatureRegistry.createKey("pine_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PINE_TREE_TALL = ConfiguredFeatureRegistry.createKey("pine_tree_tall");
@@ -163,6 +169,8 @@ public class RuTreeFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> SPRUCE_TREE_TALL = ConfiguredFeatureRegistry.createKey("spruce_tree_tall");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SPRUCE_TREE_SHRUB = ConfiguredFeatureRegistry.createKey("spruce_tree_shrub");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> LARGE_SOCOTRA_TREE = ConfiguredFeatureRegistry.createKey("large_socotra_tree");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SMALL_SOCOTRA_TREE = ConfiguredFeatureRegistry.createKey("small_socotra_tree");
     //DONE
     public static final ResourceKey<ConfiguredFeature<?, ?>> REDWOOD_TREE = ConfiguredFeatureRegistry.createKey("redwood_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> GIANT_REDWOOD_TREE = ConfiguredFeatureRegistry.createKey("giant_redwood_tree");
@@ -227,7 +235,10 @@ public class RuTreeFeatures {
 
         register(context, CHERRY_TREE, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.CHERRY_LOG), new CherryTrunkPlacer(7, 1, 0, new WeightedListInt(SimpleWeightedRandomList.<IntProvider>builder().add(ConstantInt.of(1), 1).add(ConstantInt.of(2), 1).add(ConstantInt.of(3), 1).build()), UniformInt.of(2, 4), UniformInt.of(-4, -3), UniformInt.of(-1, 0)), BlockStateProvider.simple(Blocks.CHERRY_LEAVES), new CherryFoliagePlacer(ConstantInt.of(4), ConstantInt.of(0), ConstantInt.of(5), 0.25F, 0.5F, 0.16666667F, 0.33333334F), new TwoLayersFeatureSize(1, 0, 2)).ignoreVines().build());
 
+        register(context, DEAD_BOG_TREE, FeatureRegistry.DEAD_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.DEAD_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.DEAD_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.DEAD_BRANCH.get().defaultBlockState()), 6, 2));
+
         register(context, DEAD_TREE, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(RuBlocks.DEAD_LOG.get().defaultBlockState()), new StraightTrunkPlacer(6, 2, 0),BlockStateProvider.simple(RuBlocks.DEAD_LEAVES.get().defaultBlockState()), new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3), new TwoLayersFeatureSize(1, 0, 1)).ignoreVines().build());
+        register(context, BIG_DEAD_TREE, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(RuBlocks.DEAD_LOG.get().defaultBlockState()),new FancyTrunkPlacer(12, 3, 0),BlockStateProvider.simple(RuBlocks.DEAD_LEAVES.get().defaultBlockState()),new FancyFoliagePlacer(ConstantInt.of(1), ConstantInt.of(2), 3), new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4))).ignoreVines().build());
 
         register(context, DEAD_PINE_TREE, FeatureRegistry.PINE_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.PINE_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.DEAD_PINE_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.PINE_BRANCH.get().defaultBlockState()), 10, 4));
         register(context, DEAD_PINE_TREE_TALL, FeatureRegistry.PINE_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.PINE_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.DEAD_PINE_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.PINE_BRANCH.get().defaultBlockState()), 14, 5));
@@ -241,6 +252,11 @@ public class RuTreeFeatures {
         register(context, MEDIUM_JOSHUA_TREE, FeatureRegistry.MEDIUM_JOSHUA_TREE.get(), FeatureConfiguration.NONE);
         register(context, LARGE_JOSHUA_TREE, FeatureRegistry.LARGE_JOSHUA_TREE.get(), FeatureConfiguration.NONE);
         register(context, JOSHUA_TREE_SHRUB, FeatureRegistry.SMALL_JOSHUA_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.JOSHUA_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.JOSHUA_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.JOSHUA_BEARD.get().defaultBlockState()), 1, 1));
+
+        register(context, JUNGLE_TREE, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.JUNGLE_LOG.defaultBlockState()), new StraightTrunkPlacer(6, 5, 0), BlockStateProvider.simple(Blocks.JUNGLE_LEAVES.defaultBlockState()), new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3), new TwoLayersFeatureSize(1, 0, 1)).decorators(ImmutableList.of(new LeaveVineDecorator(0.25f))).build());
+        register(context, BIG_JUNGLE_TREE, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.JUNGLE_LOG.defaultBlockState()), new FancyTrunkPlacer(9, 11, 0), BlockStateProvider.simple(Blocks.JUNGLE_LEAVES.defaultBlockState()), new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(4), 4), new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4))).ignoreVines().decorators(ImmutableList.of(new LeaveVineDecorator(0.25f))).build());
+
+        register(context, KAPOK_TREE, FeatureRegistry.KAPOK_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.KAPOK_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.KAPOK_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.KAPOK_BRANCH.get().defaultBlockState()), 20, 7));
 
         register(context, LARCH_TREE, FeatureRegistry.LARCH_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.LARCH_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.LARCH_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.LARCH_BRANCH.get().defaultBlockState()), 18, 5));
         register(context, BIG_LARCH_TREE, FeatureRegistry.LARCH_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.LARCH_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.LARCH_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.LARCH_BRANCH.get().defaultBlockState()), 23, 7));
@@ -270,6 +286,7 @@ public class RuTreeFeatures {
 
         register(context, PALM_TREE, FeatureRegistry.PALM_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.PALM_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.PALM_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.PALM_BEARD.get().defaultBlockState()), 8, 5));
         register(context, TALL_PALM_TREE, FeatureRegistry.PALM_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.PALM_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.PALM_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.PALM_BEARD.get().defaultBlockState()), 12, 5));
+        register(context, PALM_TREE_SHRUB, FeatureRegistry.PALM_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.PALM_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.PALM_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.PALM_BEARD.get().defaultBlockState()), 2, 1));
 
         register(context, PINE_TREE, FeatureRegistry.PINE_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.PINE_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.PINE_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.PINE_BRANCH.get().defaultBlockState()), 10, 4));
         register(context, PINE_TREE_TALL, FeatureRegistry.PINE_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.PINE_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.PINE_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.PINE_BRANCH.get().defaultBlockState()), 14, 5));
@@ -292,6 +309,9 @@ public class RuTreeFeatures {
 
         register(context, SPRUCE_TREE_TALL, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.SPRUCE_LOG.defaultBlockState()), new StraightTrunkPlacer(13, 2, 2), BlockStateProvider.simple(Blocks.SPRUCE_LEAVES.defaultBlockState()), new SpruceFoliagePlacer(UniformInt.of(2, 3), UniformInt.of(2, 2), UniformInt.of(5, 5)), new TwoLayersFeatureSize(2, 0, 2)).ignoreVines().build());
         register(context, SPRUCE_TREE_SHRUB, FeatureRegistry.TREE_SHRUB.get(), new RuTreeConfiguration(BlockStateProvider.simple(Blocks.SPRUCE_LOG.defaultBlockState()), BlockStateProvider.simple(Blocks.SPRUCE_LEAVES.defaultBlockState()), BlockStateProvider.simple(RuBlocks.OAK_BRANCH.get().defaultBlockState()), 1, 0));
+
+        register(context, LARGE_SOCOTRA_TREE, FeatureRegistry.LARGE_SOCOTRA_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.SOCOTRA_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.SOCOTRA_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.SOCOTRA_BRANCH.get()), 8, 5));
+        register(context, SMALL_SOCOTRA_TREE, FeatureRegistry.SMALL_SOCOTRA_TREE.get(), FeatureConfiguration.NONE);
 
         register(context, REDWOOD_TREE, FeatureRegistry.REDWOOD_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.REDWOOD_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.REDWOOD_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.REDWOOD_BRANCH.get()), 21, 9));
         register(context, GIANT_REDWOOD_TREE, FeatureRegistry.SUPER_REDWOOD_TREE.get(), new RuTreeConfiguration(BlockStateProvider.simple(RuBlocks.REDWOOD_LOG.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.REDWOOD_LEAVES.get().defaultBlockState()), BlockStateProvider.simple(RuBlocks.REDWOOD_BRANCH.get()), 30, 14));

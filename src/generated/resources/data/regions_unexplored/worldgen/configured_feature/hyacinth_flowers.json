@@ -5,8 +5,7 @@
     "can_be_placed_on": [
       "minecraft:stone",
       "minecraft:prismarine",
-      "minecraft:prismarine_bricks",
-      "regions_unexplored:hyacinth_stone"
+      "minecraft:prismarine_bricks"
     ],
     "can_place_on_ceiling": true,
     "can_place_on_floor": true,

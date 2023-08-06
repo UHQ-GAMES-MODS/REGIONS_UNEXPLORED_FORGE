@@ -38,6 +38,7 @@ public class RuTags {
     public static final TagKey<Block> EUCALYPTUS_LOGS = createBlock("eucalyptus_logs");
     public static final TagKey<Block> GREEN_BIOSHROOM_LOGS = createBlock("green_bioshroom_logs");
     public static final TagKey<Block> JOSHUA_LOGS = createBlock("joshua_logs");
+    public static final TagKey<Block> KAPOK_LOGS = createBlock("kapok_logs");
     public static final TagKey<Block> LARCH_LOGS = createBlock("larch_logs");
     public static final TagKey<Block> MAGNOLIA_LOGS = createBlock("magnolia_logs");
     public static final TagKey<Block> MAPLE_LOGS = createBlock("maple_logs");
@@ -68,6 +69,7 @@ public class RuTags {
     public static final TagKey<Item> EUCALYPTUS_LOGS_ITEM = createItem("eucalyptus_logs");
     public static final TagKey<Item> GREEN_BIOSHROOM_LOGS_ITEM = createItem("green_bioshroom_logs");
     public static final TagKey<Item> JOSHUA_LOGS_ITEM = createItem("joshua_logs");
+    public static final TagKey<Item> KAPOK_LOGS_ITEM = createItem("kapok_logs");
     public static final TagKey<Item> LARCH_LOGS_ITEM = createItem("larch_logs");
     public static final TagKey<Item> MAGNOLIA_LOGS_ITEM = createItem("magnolia_logs_item");
     public static final TagKey<Item> MAPLE_LOGS_ITEM = createItem("maple_logs");

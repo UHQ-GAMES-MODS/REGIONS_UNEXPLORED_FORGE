@@ -21,6 +21,7 @@ public record RuBlockSetType(String name, SoundType soundType, SoundEvent doorCl
     public static final BlockSetType EUCALYPTUS = register(new BlockSetType(RegionsUnexploredMod.MOD_ID + ":eucalyptus"));
     public static final BlockSetType GREEN_BIOSHROOM = register(new BlockSetType(RegionsUnexploredMod.MOD_ID + ":green_bioshroom"));
     public static final BlockSetType JOSHUA = register(new BlockSetType(RegionsUnexploredMod.MOD_ID + ":joshua"));
+    public static final BlockSetType KAPOK = register(new BlockSetType(RegionsUnexploredMod.MOD_ID + ":kapok"));
     public static final BlockSetType LARCH = register(new BlockSetType(RegionsUnexploredMod.MOD_ID + ":larch"));
     public static final BlockSetType MAGNOLIA = register(new BlockSetType(RegionsUnexploredMod.MOD_ID + ":magnolia"));
     public static final BlockSetType MAPLE = register(new BlockSetType(RegionsUnexploredMod.MOD_ID + ":maple"));

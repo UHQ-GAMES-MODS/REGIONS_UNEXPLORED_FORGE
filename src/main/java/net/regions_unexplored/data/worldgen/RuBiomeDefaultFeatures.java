@@ -1,6 +1,7 @@
 package net.regions_unexplored.data.worldgen;
 
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
+import net.minecraft.data.worldgen.placement.MiscOverworldPlacements;
 import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.regions_unexplored.data.worldgen.placement.RuMiscOverworldPlacements;
@@ -9,6 +10,13 @@ import net.regions_unexplored.data.worldgen.placement.RuTreePlacements;
 import net.regions_unexplored.data.worldgen.placement.RuVegetationPlacements;
 
 public class RuBiomeDefaultFeatures {
+
+    public static void addDefaultSoftDisks(BiomeGenerationSettings.Builder biomeBuilder) {
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, RuMiscOverworldPlacements.DISK_SAND);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, RuMiscOverworldPlacements.DISK_CLAY);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, RuMiscOverworldPlacements.DISK_GRAVEL);
+    }
+
     public static void mediumGrass(BiomeGenerationSettings.Builder biomeBuilder) {
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.MEDIUM_GRASS);
     }
@@ -37,6 +45,14 @@ public class RuBiomeDefaultFeatures {
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.MAUVE_TREE_DENSE);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.ENCHANTED_BIRCH);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.ENCHANTED_BIRCH_TALL);
+    }
+
+    public static void addHibiscus(BiomeGenerationSettings.Builder p_194721_) {
+        p_194721_.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.HIBISCUS);
+    }
+
+    public static void addMallow(BiomeGenerationSettings.Builder p_194721_) {
+        p_194721_.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.MALLOW);
     }
 
     public static void addWaratah(BiomeGenerationSettings.Builder p_194721_) {

@@ -49,7 +49,7 @@ public class LarchTreeFeature extends Feature<RuTreeConfiguration> {
         BlockPos.MutableBlockPos placePos = pos.mutable();
         while (placeCheck <= height_main) {
             placeLog(level, placePos, randomSource, treeConfiguration, Direction.Axis.Y);
-            if(placeCheck>1){
+            if(placeCheck>2){
                 placeBranchDecorator(level, placePos, randomSource, treeConfiguration);
             }
             if(placeCheck == 0){

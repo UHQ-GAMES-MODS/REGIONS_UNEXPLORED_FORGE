@@ -68,9 +68,9 @@
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
       "minecraft:underwater_magma",
-      "minecraft:disk_sand",
-      "minecraft:disk_clay",
-      "minecraft:disk_gravel"
+      "regions_unexplored:disk_sand",
+      "regions_unexplored:disk_clay",
+      "regions_unexplored:disk_gravel"
     ],
     [],
     [
@@ -82,7 +82,13 @@
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin"
+      "minecraft:patch_pumpkin",
+      "regions_unexplored:large_socotra_tree",
+      "regions_unexplored:small_socotra_tree",
+      "regions_unexplored:oak_tree_shrub_sparse",
+      "regions_unexplored:mallow",
+      "regions_unexplored:socotra_vegetation",
+      "regions_unexplored:socotra_shrub"
     ],
     [
       "minecraft:freeze_top_layer"

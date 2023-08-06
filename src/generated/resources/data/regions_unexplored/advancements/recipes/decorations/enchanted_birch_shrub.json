@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_silver_birch_sapling": {
+    "has_enchanted_birch_sapling": {
       "conditions": {
         "items": [
           {
             "items": [
-              "regions_unexplored:silver_birch_sapling"
+              "regions_unexplored:enchanted_birch_sapling"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_silver_birch_sapling",
+      "has_enchanted_birch_sapling",
       "has_the_recipe"
     ]
   ],

@@ -42,7 +42,7 @@ public class RuBiomes {
     public static ResourceKey<Biome> MARSH = createKey("marsh");
     public static ResourceKey<Biome> FUNGAL_FEN = createKey("fungal_fen");
     public static ResourceKey<Biome> OLD_GROWTH_BAYOU = createKey("old_growth_bayou");
-    public static ResourceKey<Biome> OLD_GROWTH_RAINFOREST = createKey("old_growth_rainforest");
+    public static ResourceKey<Biome> SPARSE_RAINFOREST = createKey("sparse_rainforest");
     public static ResourceKey<Biome> RAINFOREST = createKey("rainforest");
     //ARID
     public static ResourceKey<Biome> BAOBAB_SAVANNA = createKey("baobab_savanna");

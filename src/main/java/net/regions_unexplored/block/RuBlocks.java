@@ -103,7 +103,9 @@ public class RuBlocks {
     public static RegistryObject<Block> DORCEL;
     public static RegistryObject<Block> FELICIA_DAISY;
     public static RegistryObject<Block> FIREWEED;
+    public static RegistryObject<Block> HIBISCUS;
     public static RegistryObject<Block> HYSSOP;
+    public static RegistryObject<Block> MALLOW;
     public static RegistryObject<Block> PINK_LUPINE;
     public static RegistryObject<Block> POPPY_BUSH;
     public static RegistryObject<Block> SALMON_POPPY_BUSH;
@@ -167,6 +169,7 @@ public class RuBlocks {
     public static RegistryObject<Block> FLOWERING_SAPLING;
     public static RegistryObject<Block> GOLDEN_LARCH_SAPLING;
     public static RegistryObject<Block> JOSHUA_SAPLING;
+    public static RegistryObject<Block> KAPOK_SAPLING;
     public static RegistryObject<Block> LARCH_SAPLING;
     public static RegistryObject<Block> MAGNOLIA_SAPLING;
     public static RegistryObject<Block> MAPLE_SAPLING;
@@ -180,6 +183,7 @@ public class RuBlocks {
     public static RegistryObject<Block> RED_MAPLE_SAPLING;
     public static RegistryObject<Block> ENCHANTED_BIRCH_SAPLING;
     public static RegistryObject<Block> SILVER_BIRCH_SAPLING;
+    public static RegistryObject<Block> SOCOTRA_SAPLING;
     public static RegistryObject<Block> WHITE_MAGNOLIA_SAPLING;
     public static RegistryObject<Block> WILLOW_SAPLING;
     //SHRUBS
@@ -198,6 +202,7 @@ public class RuBlocks {
     public static RegistryObject<Block> GOLDEN_LARCH_SHRUB;
     public static RegistryObject<Block> JOSHUA_SHRUB;
     public static RegistryObject<Block> JUNGLE_SHRUB;
+    public static RegistryObject<Block> KAPOK_SHRUB;
     public static RegistryObject<Block> LARCH_SHRUB;
     public static RegistryObject<Block> MAGNOLIA_SHRUB;
     public static RegistryObject<Block> MANGROVE_SHRUB;
@@ -213,6 +218,7 @@ public class RuBlocks {
     public static RegistryObject<Block> RED_MAPLE_SHRUB;
     public static RegistryObject<Block> ENCHANTED_BIRCH_SHRUB;
     public static RegistryObject<Block> SILVER_BIRCH_SHRUB;
+    public static RegistryObject<Block> SOCOTRA_SHRUB;
     public static RegistryObject<Block> SPRUCE_SHRUB;
     public static RegistryObject<Block> WHITE_MAGNOLIA_SHRUB;
     public static RegistryObject<Block> WILLOW_SHRUB;
@@ -232,6 +238,8 @@ public class RuBlocks {
     public static RegistryObject<Block> DUCKWEED;
     public static RegistryObject<Block> SPANISH_MOSS;
     public static RegistryObject<Block> SPANISH_MOSS_PLANT;
+    public static RegistryObject<Block> KAPOK_VINES;
+    public static RegistryObject<Block> KAPOK_VINES_PLANT;
     public static RegistryObject<Block> FLOWERING_LILY_PAD;
     public static RegistryObject<Block> GIANT_LILY_PAD;
     //FOOD_PLANT_BLOCKS
@@ -275,6 +283,7 @@ public class RuBlocks {
     public static RegistryObject<Block> POTTED_FLOWERING_SAPLING;
     public static RegistryObject<Block> POTTED_GOLDEN_LARCH_SAPLING;
     public static RegistryObject<Block> POTTED_JOSHUA_SAPLING;
+    public static RegistryObject<Block> POTTED_KAPOK_SAPLING;
     public static RegistryObject<Block> POTTED_LARCH_SAPLING;
     public static RegistryObject<Block> POTTED_MAPLE_SAPLING;
     public static RegistryObject<Block> POTTED_MAUVE_SAPLING;
@@ -287,6 +296,7 @@ public class RuBlocks {
     public static RegistryObject<Block> POTTED_RED_MAPLE_SAPLING;
     public static RegistryObject<Block> POTTED_ENCHANTED_BIRCH_SAPLING;
     public static RegistryObject<Block> POTTED_SILVER_BIRCH_SAPLING;
+    public static RegistryObject<Block> POTTED_SOCOTRA_SAPLING;
     public static RegistryObject<Block> POTTED_WHITE_MAGNOLIA_SAPLING;
     public static RegistryObject<Block> POTTED_WILLOW_SAPLING;
     //POTTED_MUSHROOMS
@@ -347,6 +357,7 @@ public class RuBlocks {
     public static RegistryObject<Block> FLOWERING_LEAVES;
     public static RegistryObject<Block> GOLDEN_LARCH_LEAVES;
     public static RegistryObject<Block> JOSHUA_LEAVES;
+    public static RegistryObject<Block> KAPOK_LEAVES;
     public static RegistryObject<Block> LARCH_LEAVES;
     public static RegistryObject<Block> MAPLE_LEAVES;
     public static RegistryObject<Block> MAUVE_LEAVES;
@@ -358,6 +369,7 @@ public class RuBlocks {
     public static RegistryObject<Block> REDWOOD_LEAVES;
     public static RegistryObject<Block> RED_MAPLE_LEAVES;
     public static RegistryObject<Block> SILVER_BIRCH_LEAVES;
+    public static RegistryObject<Block> SOCOTRA_LEAVES;
     public static RegistryObject<Block> ENCHANTED_BIRCH_LEAVES;
     public static RegistryObject<Block> WHITE_MAGNOLIA_LEAVES;
     public static RegistryObject<Block> WILLOW_LEAVES;
@@ -374,6 +386,7 @@ public class RuBlocks {
     public static RegistryObject<Block> EUCALYPTUS_BRANCH;
     public static RegistryObject<Block> JOSHUA_BEARD;
     public static RegistryObject<Block> JUNGLE_BRANCH;
+    public static RegistryObject<Block> KAPOK_BRANCH;
     public static RegistryObject<Block> LARCH_BRANCH;
     public static RegistryObject<Block> MANGROVE_BRANCH;
     public static RegistryObject<Block> MAPLE_BRANCH;
@@ -383,6 +396,7 @@ public class RuBlocks {
     public static RegistryObject<Block> PINE_BRANCH;
     public static RegistryObject<Block> REDWOOD_BRANCH;
     public static RegistryObject<Block> SILVER_BIRCH_BRANCH;
+    public static RegistryObject<Block> SOCOTRA_BRANCH;
     public static RegistryObject<Block> SPRUCE_BRANCH;
     public static RegistryObject<Block> WILLOW_BRANCH;
 
@@ -427,8 +441,6 @@ public class RuBlocks {
     //HYACINTH_BLOCKS
     public static RegistryObject<Block> HYACINTH_BLOOM;
     public static RegistryObject<Block> HYACINTH_FLOWERS;
-    public static RegistryObject<Block> HYACINTH_SEAGRASS;
-    public static RegistryObject<Block> HYACINTH_STONE;
     public static RegistryObject<Block> TALL_HYACINTH_STOCK;
     //ASHEN_BLOCKS
     public static RegistryObject<Block> ASHEN_DIRT;
@@ -635,6 +647,24 @@ public class RuBlocks {
     public static RegistryObject<Block> JOSHUA_WALL_SIGN;
     public static RegistryObject<Block> JOSHUA_HANGING_SIGN;
     public static RegistryObject<Block> JOSHUA_WALL_HANGING_SIGN;
+    //KAPOK_BLOCKS
+    public static RegistryObject<Block> KAPOK_LOG;
+    public static RegistryObject<Block> STRIPPED_KAPOK_LOG;
+    public static RegistryObject<Block> KAPOK_WOOD;
+    public static RegistryObject<Block> STRIPPED_KAPOK_WOOD;
+    public static RegistryObject<Block> KAPOK_PLANKS;
+    public static RegistryObject<Block> KAPOK_STAIRS;
+    public static RegistryObject<Block> KAPOK_SLAB;
+    public static RegistryObject<Block> KAPOK_FENCE;
+    public static RegistryObject<Block> KAPOK_DOOR;
+    public static RegistryObject<Block> KAPOK_FENCE_GATE;
+    public static RegistryObject<Block> KAPOK_TRAPDOOR;
+    public static RegistryObject<Block> KAPOK_PRESSURE_PLATE;
+    public static RegistryObject<Block> KAPOK_BUTTON;
+    public static RegistryObject<Block> KAPOK_SIGN;
+    public static RegistryObject<Block> KAPOK_WALL_SIGN;
+    public static RegistryObject<Block> KAPOK_HANGING_SIGN;
+    public static RegistryObject<Block> KAPOK_WALL_HANGING_SIGN;
     //LARCH_BLOCKS
     public static RegistryObject<Block> LARCH_LOG;
     public static RegistryObject<Block> STRIPPED_LARCH_LOG;
@@ -970,7 +1000,9 @@ public class RuBlocks {
         DORCEL = BlockRegistry.registerDefaultBlock("dorcel", () -> new DorcelPlantBlock(MobEffects.WITHER, 20, BlockBehaviour.Properties.copy(Blocks.DANDELION).speedFactor(0.5F)));
         FELICIA_DAISY = BlockRegistry.registerDefaultBlock("felicia_daisy", () -> new RuFlowerBlock(MobEffects.MOVEMENT_SPEED, 8, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
         FIREWEED = BlockRegistry.registerDefaultBlock("fireweed", () -> new RuFlowerBlock(MobEffects.GLOWING, 2, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+        HIBISCUS = BlockRegistry.registerDefaultBlock("hibiscus", () -> new RuFlowerBlock(MobEffects.JUMP, 6, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
         HYSSOP = BlockRegistry.registerDefaultBlock("hyssop", () -> new RuFlowerBlock(MobEffects.LUCK, 10, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+        MALLOW = BlockRegistry.registerDefaultBlock("mallow", () -> new RuFlowerBlock(MobEffects.DIG_SLOWDOWN, 4, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
         PINK_LUPINE = BlockRegistry.registerDefaultBlock("pink_lupine", () -> new RuFlowerBlock(MobEffects.SATURATION, 4, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
         POPPY_BUSH = BlockRegistry.registerDefaultBlock("poppy_bush", () -> new RuFlowerBlock(MobEffects.WEAKNESS, 3, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XYZ).ignitedByLava().pushReaction(PushReaction.DESTROY)));
         SALMON_POPPY_BUSH = BlockRegistry.registerDefaultBlock("salmon_poppy_bush", () -> new RuFlowerBlock(MobEffects.WEAKNESS, 3, BlockBehaviour.Properties.copy(POPPY_BUSH.get())));
@@ -979,7 +1011,7 @@ public class RuBlocks {
         WARATAH = BlockRegistry.registerDefaultBlock("waratah", () -> new RuFlowerBlock(MobEffects.JUMP, 5, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
         TSUBAKI = BlockRegistry.registerDefaultBlock("tsubaki", () -> new RuFlowerBlock(MobEffects.HEAL, 3, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
         WHITE_TRILLIUM = BlockRegistry.registerDefaultBlock("white_trillium", () -> new RuFlowerBlock(MobEffects.DIG_SPEED, 7, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
-        WILTING_TRILLIUM = BlockRegistry.registerDefaultBlock("wilting_trillium", () -> new RuFlowerBlock(MobEffects.DIG_SLOWDOWN, 4, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
+        WILTING_TRILLIUM = BlockRegistry.registerDefaultBlock("wilting_trillium", () -> new RuFlowerBlock(MobEffects.DIG_SLOWDOWN, 10, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
         YELLOW_LUPINE = BlockRegistry.registerDefaultBlock("yellow_lupine", () -> new RuFlowerBlock(MobEffects.SATURATION, 4, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
 
         ORANGE_CONEFLOWER = BlockRegistry.registerDefaultBlock("orange_coneflower", () -> new GroundCoverBlock(BlockBehaviour.Properties.of().pushReaction(PushReaction.DESTROY).ignitedByLava().noCollission().sound(SoundType.PINK_PETALS)));
@@ -1033,6 +1065,7 @@ public class RuBlocks {
         FLOWERING_SAPLING = BlockRegistry.registerDefaultBlock("flowering_sapling", () -> new RuSaplingBlock(new FloweringTreeGrower()));
         GOLDEN_LARCH_SAPLING = BlockRegistry.registerDefaultBlock("golden_larch_sapling", () -> new RuSaplingBlock(new GoldenLarchTreeGrower()));
         JOSHUA_SAPLING = BlockRegistry.registerDefaultBlock("joshua_sapling", () -> new RuSaplingBlock(new JoshuaTreeGrower()));
+        KAPOK_SAPLING = BlockRegistry.registerDefaultBlock("kapok_sapling", () -> new RuSaplingBlock(new KapokTreeGrower()));
         LARCH_SAPLING = BlockRegistry.registerDefaultBlock("larch_sapling", () -> new RuSaplingBlock(new LarchTreeGrower()));
         MAPLE_SAPLING = BlockRegistry.registerDefaultBlock("maple_sapling", () -> new RuSaplingBlock(new MapleTreeGrower()));
         MAUVE_SAPLING = BlockRegistry.registerDefaultBlock("mauve_sapling", () -> new RuSaplingBlock(new MauveOakGrower()));
@@ -1047,6 +1080,7 @@ public class RuBlocks {
         COBALT_SAPLING = BlockRegistry.registerDefaultBlock("cobalt_sapling", () -> new NetherSaplingBlock(new CobaltTreeGrower()));
         ENCHANTED_BIRCH_SAPLING = BlockRegistry.registerDefaultBlock("enchanted_birch_sapling", () -> new RuSaplingBlock(new EnchantedBirchTreeGrower()));
         SILVER_BIRCH_SAPLING = BlockRegistry.registerDefaultBlock("silver_birch_sapling", () -> new RuSaplingBlock(new SilverBirchTreeGrower()));
+        SOCOTRA_SAPLING = BlockRegistry.registerDefaultBlock("socotra_sapling", () -> new RuSaplingBlock(new SocotraTreeGrower()));
         WHITE_MAGNOLIA_SAPLING = BlockRegistry.registerDefaultBlock("white_magnolia_sapling", () -> new RuSaplingBlock(new WhiteMagnoliaTreeGrower()));
         WILLOW_SAPLING = BlockRegistry.registerDefaultBlock("willow_sapling", () -> new RuSaplingBlock(new WillowTreeGrower()));
         //SHRUBS
@@ -1066,6 +1100,7 @@ public class RuBlocks {
         GOLDEN_LARCH_SHRUB = BlockRegistry.registerDefaultBlock("golden_larch_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
         JOSHUA_SHRUB = BlockRegistry.registerDefaultBlock("joshua_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
         JUNGLE_SHRUB = BlockRegistry.registerDefaultBlock("jungle_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
+        KAPOK_SHRUB = BlockRegistry.registerDefaultBlock("kapok_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
         LARCH_SHRUB = BlockRegistry.registerDefaultBlock("larch_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
         MANGROVE_SHRUB = BlockRegistry.registerDefaultBlock("mangrove_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
         MAPLE_SHRUB = BlockRegistry.registerDefaultBlock("maple_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
@@ -1080,6 +1115,7 @@ public class RuBlocks {
         RED_MAPLE_SHRUB = BlockRegistry.registerDefaultBlock("red_maple_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
         ENCHANTED_BIRCH_SHRUB = BlockRegistry.registerDefaultBlock("enchanted_birch_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
         SILVER_BIRCH_SHRUB = BlockRegistry.registerDefaultBlock("silver_birch_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
+        SOCOTRA_SHRUB = BlockRegistry.registerDefaultBlock("socotra_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
         SPRUCE_SHRUB = BlockRegistry.registerDefaultBlock("spruce_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
         WHITE_MAGNOLIA_SHRUB = BlockRegistry.registerDefaultBlock("white_magnolia_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
         WILLOW_SHRUB = BlockRegistry.registerDefaultBlock("willow_shrub", () -> new ShrubBlock(BlockBehaviour.Properties.copy(ACACIA_SHRUB.get())));
@@ -1099,6 +1135,8 @@ public class RuBlocks {
         DUCKWEED = BlockRegistry.registerDuckweedBlock("duckweed", () -> new DuckweedBlock());
         SPANISH_MOSS = BlockRegistry.registerDefaultBlock("spanish_moss", () -> new SpanishMossBlock(BlockBehaviour.Properties.of().pushReaction(PushReaction.DESTROY).ignitedByLava().randomTicks().noCollission().instabreak().sound(SoundType.LILY_PAD)));
         SPANISH_MOSS_PLANT = RegionsUnexploredMod.BLOCK_REGISTRY.register("spanish_moss_plant", () -> new SpanishMossPlantBlock(BlockBehaviour.Properties.copy(SPANISH_MOSS.get())));
+        KAPOK_VINES = BlockRegistry.registerDefaultBlock("kapok_vines", () -> new KapokVinesBlock(BlockBehaviour.Properties.of().pushReaction(PushReaction.DESTROY).ignitedByLava().randomTicks().noCollission().instabreak().sound(SoundType.LILY_PAD)));
+        KAPOK_VINES_PLANT = RegionsUnexploredMod.BLOCK_REGISTRY.register("kapok_vines_plant", () -> new KapokVinesPlantBlock(BlockBehaviour.Properties.copy(KAPOK_VINES.get())));
 
         FLOWERING_LILY_PAD = BlockRegistry.registerLilyBlock("flowering_lily_pad", () -> new FloweringLilyBlock(BlockBehaviour.Properties.copy(Blocks.LILY_PAD)));
         GIANT_LILY_PAD = RegionsUnexploredMod.BLOCK_REGISTRY.register("giant_lily_pad", () -> new GiantLilyBlock(BlockBehaviour.Properties.copy(FLOWERING_LILY_PAD.get())));
@@ -1141,6 +1179,7 @@ public class RuBlocks {
         POTTED_FLOWERING_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_flowering_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, FLOWERING_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         POTTED_GOLDEN_LARCH_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_golden_larch_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, GOLDEN_LARCH_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         POTTED_JOSHUA_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_joshua_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, JOSHUA_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
+        POTTED_KAPOK_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_kapok_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, KAPOK_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         POTTED_LARCH_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_larch_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, LARCH_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         POTTED_MAPLE_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_maple_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, MAPLE_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         POTTED_MAUVE_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_mauve_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, MAUVE_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
@@ -1155,6 +1194,7 @@ public class RuBlocks {
         POTTED_COBALT_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_cobalt_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, COBALT_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         POTTED_ENCHANTED_BIRCH_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_enchanted_birch_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, ENCHANTED_BIRCH_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         POTTED_SILVER_BIRCH_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_silver_birch_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, SILVER_BIRCH_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
+        POTTED_SOCOTRA_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_socotra_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, SOCOTRA_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         POTTED_WHITE_MAGNOLIA_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_white_magnolia_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, WHITE_MAGNOLIA_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         POTTED_WILLOW_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_willow_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, WILLOW_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         //POTTED_MUSHROOMS
@@ -1212,6 +1252,7 @@ public class RuBlocks {
         FLOWERING_LEAVES = BlockRegistry.registerDefaultBlock("flowering_leaves", () -> BlockRegistry.leaves(MapColor.PLANT));
         GOLDEN_LARCH_LEAVES = BlockRegistry.registerDefaultBlock("golden_larch_leaves", () -> BlockRegistry.leaves(MapColor.COLOR_YELLOW));
         JOSHUA_LEAVES = BlockRegistry.registerDefaultBlock("joshua_leaves", () -> BlockRegistry.joshuaLeaves(MapColor.PLANT));
+        KAPOK_LEAVES = BlockRegistry.registerDefaultBlock("kapok_leaves", () -> BlockRegistry.leaves(MapColor.PLANT));
         LARCH_LEAVES = BlockRegistry.registerDefaultBlock("larch_leaves", () -> BlockRegistry.leaves(MapColor.PLANT));
         MAPLE_LEAVES = BlockRegistry.registerDefaultBlock("maple_leaves", () -> BlockRegistry.leaves(MapColor.PLANT));
         MAUVE_LEAVES = BlockRegistry.registerDefaultBlock("mauve_leaves", () -> BlockRegistry.mauveLeaves(MapColor.COLOR_PURPLE));
@@ -1226,6 +1267,7 @@ public class RuBlocks {
         COBALT_WEBBING = BlockRegistry.registerDefaultBlock("cobalt_webbing", () -> BlockRegistry.fireproofLeaves(MapColor.COLOR_BLUE));
         ENCHANTED_BIRCH_LEAVES = BlockRegistry.registerDefaultBlock("enchanted_birch_leaves", () -> BlockRegistry.enchantedBirchLeaves(MapColor.COLOR_LIGHT_BLUE));
         SILVER_BIRCH_LEAVES = BlockRegistry.registerDefaultBlock("silver_birch_leaves", () -> BlockRegistry.silverBirchLeaves(MapColor.COLOR_YELLOW));
+        SOCOTRA_LEAVES = BlockRegistry.registerDefaultBlock("socotra_leaves", () -> BlockRegistry.leaves(MapColor.PLANT));
         WHITE_MAGNOLIA_LEAVES = BlockRegistry.registerDefaultBlock("white_magnolia_leaves", () -> BlockRegistry.whiteMagnoliaLeaves(MapColor.TERRACOTTA_WHITE));
         WILLOW_LEAVES = BlockRegistry.registerDefaultBlock("willow_leaves", () -> BlockRegistry.leaves(MapColor.PLANT));
 
@@ -1241,6 +1283,7 @@ public class RuBlocks {
         EUCALYPTUS_BRANCH = BlockRegistry.registerDefaultBlock("eucalyptus_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())));
         JOSHUA_BEARD = BlockRegistry.registerDefaultBlock("joshua_beard", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())));
         JUNGLE_BRANCH = BlockRegistry.registerDefaultBlock("jungle_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())));
+        KAPOK_BRANCH = BlockRegistry.registerDefaultBlock("kapok_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())));
         LARCH_BRANCH = BlockRegistry.registerDefaultBlock("larch_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())));
         MANGROVE_BRANCH = BlockRegistry.registerDefaultBlock("mangrove_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())));
         MAPLE_BRANCH = BlockRegistry.registerDefaultBlock("maple_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())));
@@ -1250,6 +1293,7 @@ public class RuBlocks {
         PINE_BRANCH = BlockRegistry.registerDefaultBlock("pine_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())));
         REDWOOD_BRANCH = BlockRegistry.registerDefaultBlock("redwood_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())));
         SILVER_BIRCH_BRANCH = BlockRegistry.registerDefaultBlock("silver_birch_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())));
+        SOCOTRA_BRANCH = BlockRegistry.registerDefaultBlock("socotra_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())));
         SPRUCE_BRANCH = BlockRegistry.registerDefaultBlock("spruce_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())));
         WILLOW_BRANCH = BlockRegistry.registerDefaultBlock("willow_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())));
 
@@ -1294,8 +1338,6 @@ public class RuBlocks {
         //HYACINTH_BLOCKS
         HYACINTH_BLOOM = BlockRegistry.registerDefaultBlock("hyacinth_bloom", () -> new SeagrassBlock(BlockBehaviour.Properties.of().replaceable().noCollission().instabreak().sound(SoundType.WET_GRASS).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 9)));
         HYACINTH_FLOWERS = BlockRegistry.registerDefaultBlock("hyacinth_flowers", () -> new GlowLichenBlock(BlockBehaviour.Properties.of().replaceable().mapColor(MapColor.GLOW_LICHEN).noCollission().strength(0.2F).sound(SoundType.GLOW_LICHEN).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 8)));
-        HYACINTH_SEAGRASS = BlockRegistry.registerDefaultBlock("hyacinth_seagrass", () -> new SeagrassBlock(BlockBehaviour.Properties.of().replaceable().noCollission().instabreak().sound(SoundType.WET_GRASS)));
-        HYACINTH_STONE = BlockRegistry.registerDefaultBlock("hyacinth_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
         TALL_HYACINTH_STOCK = BlockRegistry.registerDefaultBlock("tall_hyacinth_stock", () -> new TallHyacinthStockBlock(BlockBehaviour.Properties.of().noCollission().instabreak().sound(SoundType.WET_GRASS).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 12)));
         //SMOULDERING_WOODLAND_BLOCKS
         ASHEN_DIRT = BlockRegistry.registerDefaultBlock("ashen_dirt", () -> new AshenDirtBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).strength(0.5F).sound(SoundType.GRAVEL).randomTicks().lightLevel((bs) -> AshenDirtBlock.isSmouldering(bs) ? 7 : 0)));
@@ -1499,6 +1541,24 @@ public class RuBlocks {
         JOSHUA_WALL_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("joshua_wall_sign", () -> BlockRegistry.wallSign(SoundType.WOOD, JOSHUA_SIGN.get(), RuWoodTypes.JOSHUA));
         JOSHUA_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("joshua_hanging_sign", () -> BlockRegistry.hangingSign(MapColor.WOOD, SoundType.NETHER_WOOD, RuWoodTypes.JOSHUA));
         JOSHUA_WALL_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("joshua_wall_hanging_sign", () -> BlockRegistry.wallHangingSign(MapColor.WOOD, SoundType.NETHER_WOOD, JOSHUA_HANGING_SIGN.get(), RuWoodTypes.JOSHUA));
+        //KAPOK_BLOCKS
+        KAPOK_LOG = BlockRegistry.registerDefaultBlock("kapok_log", () -> BlockRegistry.log(MapColor.TERRACOTTA_GREEN, MapColor.WOOD, SoundType.NETHER_WOOD));
+        STRIPPED_KAPOK_LOG = BlockRegistry.registerDefaultBlock("stripped_kapok_log", () -> BlockRegistry.log(MapColor.TERRACOTTA_GREEN, MapColor.TERRACOTTA_GREEN, SoundType.NETHER_WOOD));
+        KAPOK_WOOD = BlockRegistry.registerDefaultBlock("kapok_wood", () -> BlockRegistry.woodBlock(MapColor.WOOD, SoundType.NETHER_WOOD));
+        STRIPPED_KAPOK_WOOD = BlockRegistry.registerDefaultBlock("stripped_kapok_wood", () -> BlockRegistry.woodBlock(MapColor.TERRACOTTA_GREEN, SoundType.NETHER_WOOD));
+        KAPOK_PLANKS = BlockRegistry.registerDefaultBlock("kapok_planks", () -> BlockRegistry.woodPlanks(MapColor.TERRACOTTA_GREEN, SoundType.NETHER_WOOD));
+        KAPOK_STAIRS = BlockRegistry.registerDefaultBlock("kapok_stairs", () -> BlockRegistry.woodStairs(MapColor.TERRACOTTA_GREEN, SoundType.NETHER_WOOD));
+        KAPOK_SLAB = BlockRegistry.registerDefaultBlock("kapok_slab", () -> BlockRegistry.woodSlab(MapColor.TERRACOTTA_GREEN, SoundType.NETHER_WOOD));
+        KAPOK_FENCE = BlockRegistry.registerDefaultBlock("kapok_fence", () -> BlockRegistry.woodFence(MapColor.TERRACOTTA_GREEN, SoundType.NETHER_WOOD));
+        KAPOK_DOOR = BlockRegistry.registerDefaultBlock("kapok_door", () -> BlockRegistry.woodDoor(MapColor.TERRACOTTA_GREEN, SoundType.NETHER_WOOD, RuBlockSetType.KAPOK));
+        KAPOK_FENCE_GATE = BlockRegistry.registerDefaultBlock("kapok_fence_gate", () -> BlockRegistry.woodFenceGate(MapColor.TERRACOTTA_GREEN, RuWoodTypes.KAPOK, SoundType.NETHER_WOOD));
+        KAPOK_TRAPDOOR = BlockRegistry.registerDefaultBlock("kapok_trapdoor", () -> BlockRegistry.woodTrapDoor(MapColor.TERRACOTTA_GREEN, SoundType.NETHER_WOOD, RuBlockSetType.KAPOK));
+        KAPOK_PRESSURE_PLATE = BlockRegistry.registerDefaultBlock("kapok_pressure_plate", () -> BlockRegistry.woodPressurePlate(MapColor.TERRACOTTA_GREEN, SoundType.NETHER_WOOD, RuBlockSetType.KAPOK));
+        KAPOK_BUTTON = BlockRegistry.registerDefaultBlock("kapok_button", () -> BlockRegistry.woodButton(SoundType.NETHER_WOOD, RuBlockSetType.KAPOK));
+        KAPOK_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("kapok_sign", () -> BlockRegistry.sign(SoundType.NETHER_WOOD, RuWoodTypes.KAPOK));
+        KAPOK_WALL_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("kapok_wall_sign", () -> BlockRegistry.wallSign(SoundType.NETHER_WOOD, KAPOK_SIGN.get(), RuWoodTypes.KAPOK));
+        KAPOK_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("kapok_hanging_sign", () -> BlockRegistry.hangingSign(MapColor.TERRACOTTA_GREEN, SoundType.NETHER_WOOD, RuWoodTypes.KAPOK));
+        KAPOK_WALL_HANGING_SIGN = RegionsUnexploredMod.BLOCK_REGISTRY.register("kapok_wall_hanging_sign", () -> BlockRegistry.wallHangingSign(MapColor.TERRACOTTA_GREEN, SoundType.NETHER_WOOD, KAPOK_HANGING_SIGN.get(), RuWoodTypes.KAPOK));
         //LARCH_BLOCKS
         LARCH_LOG = BlockRegistry.registerDefaultBlock("larch_log", () -> BlockRegistry.log(MapColor.WOOD, MapColor.WOOD, SoundType.WOOD));
         STRIPPED_LARCH_LOG = BlockRegistry.registerDefaultBlock("stripped_larch_log", () -> BlockRegistry.log(MapColor.WOOD, MapColor.WOOD, SoundType.WOOD));

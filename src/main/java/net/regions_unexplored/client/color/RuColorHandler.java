@@ -21,7 +21,8 @@ public class RuColorHandler {
     public static void grassBlockColorLoad(RegisterColorHandlersEvent.Block event) {
         event.getBlockColors().register((bs, world, pos, index) -> {
                     return world != null && pos != null ? BiomeColors.getAverageGrassColor(world, pos) : GrassColor.get(0.5D, 1.0D);
-                },      RuBlocks.PEAT_GRASS_BLOCK.get(),
+                },
+                RuBlocks.PEAT_GRASS_BLOCK.get(),
                 RuBlocks.SILT_GRASS_BLOCK.get(),
                 RuBlocks.STONE_GRASS_BLOCK.get(),
                 RuBlocks.ARGILLITE_GRASS_BLOCK.get(),
@@ -42,7 +43,8 @@ public class RuColorHandler {
     public static void grassItemColorLoad(RegisterColorHandlersEvent.Item event) {
         event.getItemColors().register((stack, index) -> {
                     return GrassColor.get(0.5D, 1.0D);
-                },      RuBlocks.PEAT_GRASS_BLOCK.get(),
+                },
+                RuBlocks.PEAT_GRASS_BLOCK.get(),
                 RuBlocks.SILT_GRASS_BLOCK.get(),
                 RuBlocks.STONE_GRASS_BLOCK.get(),
                 RuBlocks.ARGILLITE_GRASS_BLOCK.get(),
@@ -61,7 +63,8 @@ public class RuColorHandler {
     public static void foliageBlockColorLoad(RegisterColorHandlersEvent.Block event) {
         event.getBlockColors().register((bs, world, pos, index) -> {
                     return world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : FoliageColor.get(0.5D, 1.0D);
-                },          RuBlocks.STEPPE_SHRUB.get(),
+                },
+                RuBlocks.STEPPE_SHRUB.get(),
                 RuBlocks.STEPPE_TALL_GRASS.get(),
                 RuBlocks.ELEPHANT_EAR.get(),
                 RuBlocks.BAOBAB_LEAVES.get(),
@@ -78,14 +81,19 @@ public class RuColorHandler {
                 RuBlocks.MAPLE_LEAVES.get(),
                 RuBlocks.MAPLE_LEAF_PILE.get(),
                 RuBlocks.WINDSWEPT_GRASS.get(),
-                RuBlocks.COBALT_WEBBING.get()
+                RuBlocks.COBALT_WEBBING.get(),
+                RuBlocks.SOCOTRA_LEAVES.get(),
+                RuBlocks.KAPOK_LEAVES.get(),
+                RuBlocks.KAPOK_VINES.get(),
+                RuBlocks.KAPOK_VINES_PLANT.get()
         );
     }
     @SubscribeEvent
     public static void foliageItemColorLoad(RegisterColorHandlersEvent.Item event) {
         event.getItemColors().register((stack, index) -> {
                     return FoliageColor.get(0.5D, 1.0D);
-                },          RuBlocks.STEPPE_SHRUB.get(),
+                },
+                RuBlocks.STEPPE_SHRUB.get(),
                 RuBlocks.STEPPE_TALL_GRASS.get(),
                 RuBlocks.ELEPHANT_EAR.get(),
                 RuBlocks.BAOBAB_LEAVES.get(),
@@ -102,7 +110,11 @@ public class RuColorHandler {
                 RuBlocks.MAPLE_LEAVES.get(),
                 RuBlocks.MAPLE_LEAF_PILE.get(),
                 RuBlocks.WINDSWEPT_GRASS.get(),
-                RuBlocks.COBALT_WEBBING.get()
+                RuBlocks.COBALT_WEBBING.get(),
+                RuBlocks.SOCOTRA_LEAVES.get(),
+                RuBlocks.KAPOK_LEAVES.get(),
+                RuBlocks.KAPOK_VINES.get(),
+                RuBlocks.KAPOK_VINES_PLANT.get()
         );
     }
     @SubscribeEvent

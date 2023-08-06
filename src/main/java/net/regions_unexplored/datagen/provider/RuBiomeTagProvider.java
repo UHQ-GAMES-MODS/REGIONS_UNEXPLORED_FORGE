@@ -50,7 +50,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.SPARSE_REDWOODS.location())
                 .addOptional(RuBiomes.BAMBOO_FOREST.location())
                 .addOptional(RuBiomes.RAINFOREST.location())
-                .addOptional(RuBiomes.OLD_GROWTH_RAINFOREST.location())
+                .addOptional(RuBiomes.SPARSE_RAINFOREST.location())
                 .addOptional(RuBiomes.EUCALYPTUS_FOREST.location())
                 .addOptional(RuBiomes.ROCKY_REEF.location())
         ;
@@ -85,7 +85,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
         ;
         this.tag(BiomeTags.IS_JUNGLE)
                 .addOptional(RuBiomes.RAINFOREST.location())
-                .addOptional(RuBiomes.OLD_GROWTH_RAINFOREST.location())
+                .addOptional(RuBiomes.SPARSE_RAINFOREST.location())
                 .addOptional(RuBiomes.EUCALYPTUS_FOREST.location())
         ;
         this.tag(BiomeTags.IS_MOUNTAIN)
@@ -140,7 +140,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.MARSH.location())
                 .addOptional(RuBiomes.FUNGAL_FEN.location())
                 .addOptional(RuBiomes.OLD_GROWTH_BAYOU.location())
-                .addOptional(RuBiomes.OLD_GROWTH_RAINFOREST.location())
+                .addOptional(RuBiomes.SPARSE_RAINFOREST.location())
                 .addOptional(RuBiomes.RAINFOREST.location())
                 //ARID
                 .addOptional(RuBiomes.BAOBAB_SAVANNA.location())
@@ -295,7 +295,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 //WET
                 .addOptional(RuBiomes.EUCALYPTUS_FOREST.location())
                 .addOptional(RuBiomes.FUNGAL_FEN.location())
-                .addOptional(RuBiomes.OLD_GROWTH_RAINFOREST.location())
+                .addOptional(RuBiomes.SPARSE_RAINFOREST.location())
                 .addOptional(RuBiomes.RAINFOREST.location())
                 //ARID
                 .addOptional(RuBiomes.BAOBAB_SAVANNA.location())
@@ -373,7 +373,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
         ;
         this.tag(BiomeTags.HAS_JUNGLE_TEMPLE)
                 .addOptional(RuBiomes.RAINFOREST.location())
-                .addOptional(RuBiomes.OLD_GROWTH_RAINFOREST.location())
+                .addOptional(RuBiomes.SPARSE_RAINFOREST.location())
                 .addOptional(RuBiomes.EUCALYPTUS_FOREST.location())
                 .addOptional(RuBiomes.BAMBOO_FOREST.location())
         ;
@@ -393,7 +393,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.PUMPKIN_FIELDS.location())
                 .addOptional(RuBiomes.WILLOW_FOREST.location())
                 .addOptional(RuBiomes.RAINFOREST.location())
-                .addOptional(RuBiomes.OLD_GROWTH_RAINFOREST.location())
+                .addOptional(RuBiomes.SPARSE_RAINFOREST.location())
                 .addOptional(RuBiomes.FEN.location())
                 .addOptional(RuBiomes.ALPHA_GROVE.location())
                 .addOptional(RuBiomes.JOSHUA_DESERT.location())
@@ -570,7 +570,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.BAMBOO_FOREST.location())
                 .addOptional(RuBiomes.DECIDUOUS_FOREST.location())
                 .addOptional(RuBiomes.RAINFOREST.location())
-                .addOptional(RuBiomes.OLD_GROWTH_RAINFOREST.location())
+                .addOptional(RuBiomes.SPARSE_RAINFOREST.location())
                 .addOptional(RuBiomes.BAYOU.location())
                 .addOptional(RuBiomes.OLD_GROWTH_BAYOU.location())
         ;
@@ -612,7 +612,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.BAOBAB_SAVANNA.location())
                 .addOptional(RuBiomes.DRY_BUSHLAND.location())
                 .addOptional(RuBiomes.RAINFOREST.location())
-                .addOptional(RuBiomes.OLD_GROWTH_RAINFOREST.location())
+                .addOptional(RuBiomes.SPARSE_RAINFOREST.location())
                 .addOptional(RuBiomes.GRASSLAND.location())
                 .addOptional(RuBiomes.EUCALYPTUS_FOREST.location())
         ;
@@ -635,7 +635,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
         ;
         this.tag(TagKey.create(Registries.BIOME, new ResourceLocation("forge", "is_wet/overworld")))
                 .addOptional(RuBiomes.RAINFOREST.location())
-                .addOptional(RuBiomes.OLD_GROWTH_RAINFOREST.location())
+                .addOptional(RuBiomes.SPARSE_RAINFOREST.location())
                 .addOptional(RuBiomes.REDWOODS.location())
                 .addOptional(RuBiomes.SPARSE_REDWOODS.location())
                 .addOptional(RuBiomes.EUCALYPTUS_FOREST.location())

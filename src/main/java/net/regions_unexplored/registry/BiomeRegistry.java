@@ -73,8 +73,8 @@ public class BiomeRegistry {
         register(context, RuBiomes.MARSH, WetBiomes.marsh(featuresGetter, carversGetter));
         register(context, RuBiomes.FUNGAL_FEN, WetBiomes.fungalFen(featuresGetter, carversGetter));
         register(context, RuBiomes.OLD_GROWTH_BAYOU, WetBiomes.oldGrowthBayou(featuresGetter, carversGetter));
-        register(context, RuBiomes.OLD_GROWTH_RAINFOREST, WetBiomes.oldGrowthRainforest(featuresGetter, carversGetter));
-        register(context, RuBiomes.RAINFOREST, WetBiomes.rainforest(featuresGetter, carversGetter));
+        register(context, RuBiomes.SPARSE_RAINFOREST, WetBiomes.rainforest(featuresGetter, carversGetter, false));
+        register(context, RuBiomes.RAINFOREST, WetBiomes.rainforest(featuresGetter, carversGetter, true));
         //ARID
         register(context, RuBiomes.BAOBAB_SAVANNA, AridBiomes.baobabSavanna(featuresGetter, carversGetter));
         register(context, RuBiomes.DRY_BUSHLAND, AridBiomes.dryBushland(featuresGetter, carversGetter));
@@ -128,23 +128,22 @@ public class BiomeRegistry {
     }
 
     private static void registerVillagerTypes() {
-        //TODO:set villager types
         //FOREST
         registerVillagers(RuBiomes.AUTUMNAL_MAPLE_FOREST, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.BAMBOO_FOREST, VillagerType.PLAINS);
+        registerVillagers(RuBiomes.BAMBOO_FOREST, VillagerType.JUNGLE);
         registerVillagers(RuBiomes.MAGNOLIA_HIGHLANDS, VillagerType.PLAINS);
         registerVillagers(RuBiomes.DECIDUOUS_FOREST, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.MAPLE_FOREST, VillagerType.PLAINS);
+        registerVillagers(RuBiomes.MAPLE_FOREST, VillagerType.TAIGA);
         registerVillagers(RuBiomes.MAUVE_HILLS, VillagerType.PLAINS);
         registerVillagers(RuBiomes.ORCHARD, VillagerType.PLAINS);
         registerVillagers(RuBiomes.SILVER_BIRCH_FOREST, VillagerType.PLAINS);
         registerVillagers(RuBiomes.TEMPERATE_GROVE, VillagerType.PLAINS);
         registerVillagers(RuBiomes.WILLOW_FOREST, VillagerType.PLAINS);
         //TAIGA
-        registerVillagers(RuBiomes.BLACKWOOD_TAIGA, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.BOREAL_TAIGA, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.GOLDEN_BOREAL_TAIGA, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.PINE_TAIGA, VillagerType.PLAINS);
+        registerVillagers(RuBiomes.BLACKWOOD_TAIGA, VillagerType.TAIGA);
+        registerVillagers(RuBiomes.BOREAL_TAIGA, VillagerType.TAIGA);
+        registerVillagers(RuBiomes.GOLDEN_BOREAL_TAIGA, VillagerType.TAIGA);
+        registerVillagers(RuBiomes.PINE_TAIGA, VillagerType.TAIGA);
         registerVillagers(RuBiomes.REDWOODS, VillagerType.PLAINS);
         registerVillagers(RuBiomes.SPARSE_REDWOODS, VillagerType.PLAINS);
         //PLAINS
@@ -156,48 +155,48 @@ public class BiomeRegistry {
         registerVillagers(RuBiomes.POPPY_FIELDS, VillagerType.PLAINS);
         registerVillagers(RuBiomes.PRAIRIE, VillagerType.PLAINS);
         registerVillagers(RuBiomes.PUMPKIN_FIELDS, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.SHRUBLAND, VillagerType.PLAINS);
+        registerVillagers(RuBiomes.SHRUBLAND, VillagerType.TAIGA);
         //WET
-        registerVillagers(RuBiomes.BAYOU, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.EUCALYPTUS_FOREST, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.FEN, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.MARSH, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.FUNGAL_FEN, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.OLD_GROWTH_BAYOU, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.OLD_GROWTH_RAINFOREST, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.RAINFOREST, VillagerType.PLAINS);
+        registerVillagers(RuBiomes.BAYOU, VillagerType.SWAMP);
+        registerVillagers(RuBiomes.EUCALYPTUS_FOREST, VillagerType.JUNGLE);
+        registerVillagers(RuBiomes.FEN, VillagerType.SWAMP);
+        registerVillagers(RuBiomes.MARSH, VillagerType.SWAMP);
+        registerVillagers(RuBiomes.FUNGAL_FEN, VillagerType.SWAMP);
+        registerVillagers(RuBiomes.OLD_GROWTH_BAYOU, VillagerType.SWAMP);
+        registerVillagers(RuBiomes.SPARSE_RAINFOREST, VillagerType.JUNGLE);
+        registerVillagers(RuBiomes.RAINFOREST, VillagerType.JUNGLE);
         //ARID
-        registerVillagers(RuBiomes.BAOBAB_SAVANNA, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.DRY_BUSHLAND, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.JOSHUA_DESERT, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.OUTBACK, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.SAGUARO_DESERT, VillagerType.PLAINS);
+        registerVillagers(RuBiomes.BAOBAB_SAVANNA, VillagerType.SAVANNA);
+        registerVillagers(RuBiomes.DRY_BUSHLAND, VillagerType.SAVANNA);
+        registerVillagers(RuBiomes.JOSHUA_DESERT, VillagerType.DESERT);
+        registerVillagers(RuBiomes.OUTBACK, VillagerType.SAVANNA);
+        registerVillagers(RuBiomes.SAGUARO_DESERT, VillagerType.DESERT);
         registerVillagers(RuBiomes.STEPPE, VillagerType.PLAINS);
         //MOUNTAIN
-        registerVillagers(RuBiomes.ARID_MOUNTAINS, VillagerType.PLAINS);
+        registerVillagers(RuBiomes.ARID_MOUNTAINS, VillagerType.SAVANNA);
         registerVillagers(RuBiomes.HIGHLAND_FIELDS, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.MOUNTAINS, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.PINE_SLOPES, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.TOWERING_CLIFFS, VillagerType.PLAINS);
+        registerVillagers(RuBiomes.MOUNTAINS, VillagerType.TAIGA);
+        registerVillagers(RuBiomes.PINE_SLOPES, VillagerType.TAIGA);
+        registerVillagers(RuBiomes.TOWERING_CLIFFS, VillagerType.TAIGA);
         //COASTAL
         registerVillagers(RuBiomes.CHALK_CLIFFS, VillagerType.PLAINS);
         registerVillagers(RuBiomes.GRASSY_BEACH, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.GRAVEL_BEACH, VillagerType.PLAINS);
+        registerVillagers(RuBiomes.GRAVEL_BEACH, VillagerType.TAIGA);
         //AQUATIC
         registerVillagers(RuBiomes.ALPHA_GROVE, VillagerType.PLAINS);
         registerVillagers(RuBiomes.COLD_RIVER, VillagerType.PLAINS);
         registerVillagers(RuBiomes.HYACINTH_DEEPS, VillagerType.PLAINS);
         registerVillagers(RuBiomes.MUDDY_RIVER, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.ROCKY_REEF, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.ASHEN_WOODLAND, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.TROPICS, VillagerType.PLAINS);
+        registerVillagers(RuBiomes.ROCKY_REEF, VillagerType.JUNGLE);
+        registerVillagers(RuBiomes.ASHEN_WOODLAND, VillagerType.TAIGA);
+        registerVillagers(RuBiomes.TROPICS, VillagerType.JUNGLE);
         //FROZEN
-        registerVillagers(RuBiomes.COLD_BOREAL_TAIGA, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.COLD_DECIDUOUS_FOREST, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.FROZEN_PINE_TAIGA, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.FROZEN_TUNDRA, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.ICY_HEIGHTS, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.SPIRES, VillagerType.PLAINS);
+        registerVillagers(RuBiomes.COLD_BOREAL_TAIGA, VillagerType.SNOW);
+        registerVillagers(RuBiomes.COLD_DECIDUOUS_FOREST, VillagerType.SNOW);
+        registerVillagers(RuBiomes.FROZEN_PINE_TAIGA, VillagerType.SNOW);
+        registerVillagers(RuBiomes.FROZEN_TUNDRA, VillagerType.SNOW);
+        registerVillagers(RuBiomes.ICY_HEIGHTS, VillagerType.SNOW);
+        registerVillagers(RuBiomes.SPIRES, VillagerType.SNOW);
         //CAVE
         registerVillagers(RuBiomes.BIOSHROOM_CAVES, VillagerType.PLAINS);
         registerVillagers(RuBiomes.ANCIENT_DELTA, VillagerType.PLAINS);

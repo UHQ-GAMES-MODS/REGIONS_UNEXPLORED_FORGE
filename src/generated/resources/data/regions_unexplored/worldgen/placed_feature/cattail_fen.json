@@ -1,0 +1,25 @@
+{
+  "feature": "regions_unexplored:fen_cattail",
+  "placement": [
+    {
+      "type": "minecraft:noise_threshold_count",
+      "above_noise": 24,
+      "below_noise": 5,
+      "noise_level": -0.8
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:surface_water_depth_filter",
+      "max_water_depth": 3
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR"
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

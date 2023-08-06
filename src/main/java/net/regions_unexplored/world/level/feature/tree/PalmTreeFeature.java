@@ -81,11 +81,11 @@ public class PalmTreeFeature extends Feature<RuTreeConfiguration> {
                 placeTop(level, placePos, randomSource, treeConfiguration);
             }
             placePos.move(Direction.UP);
-            if(placeCheck % 3==0){
-                if(bendChance!=0) {
-                    placePos.move(direction);
+                if(placeCheck != 0 && placeCheck != 3 && placeCheck % 3==0){
+                    if(bendChance!=0) {
+                        placePos.move(direction);
+                    }
                 }
-            }
             placeCheck = placeCheck + 1;
         }
         return true;

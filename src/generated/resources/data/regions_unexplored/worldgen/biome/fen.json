@@ -28,7 +28,9 @@
     "water_fog_color": -12884349
   },
   "features": [
-    [],
+    [
+      "regions_unexplored:water_edge"
+    ],
     [
       "minecraft:lake_lava_underground",
       "minecraft:lake_lava_surface"
@@ -81,14 +83,21 @@
       "minecraft:glow_lichen",
       "minecraft:flower_swamp",
       "minecraft:patch_dead_bush",
-      "minecraft:patch_waterlily",
       "minecraft:brown_mushroom_swamp",
       "minecraft:red_mushroom_swamp",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane_swamp",
       "minecraft:patch_pumpkin",
-      "minecraft:seagrass_swamp"
+      "minecraft:seagrass_swamp",
+      "regions_unexplored:duckweed",
+      "regions_unexplored:cattail_fen",
+      "regions_unexplored:pine_tree",
+      "regions_unexplored:dead_scotts_pine_tree",
+      "regions_unexplored:dead_bog_tree",
+      "regions_unexplored:fallen_oak_tree_dense",
+      "regions_unexplored:fen_vegetation",
+      "regions_unexplored:pine_dead_shrub_mix"
     ],
     [
       "minecraft:freeze_top_layer"

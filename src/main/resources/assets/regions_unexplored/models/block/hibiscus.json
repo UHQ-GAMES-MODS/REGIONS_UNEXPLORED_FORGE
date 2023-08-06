@@ -1,0 +1,8 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "regions_unexplored:block/hibiscus",
+    "particle": "regions_unexplored:block/hibiscus"
+  },
+  "render_type": "cutout"
+}

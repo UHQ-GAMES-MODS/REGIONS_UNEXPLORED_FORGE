@@ -48,6 +48,8 @@ public class RuBoat extends Boat {
                 item = RuItems.EUCALYPTUS_BOAT.get();
             case JOSHUA:
                 item = RuItems.JOSHUA_BOAT.get();
+            case KAPOK:
+                item = RuItems.KAPOK_BOAT.get();
             case LARCH:
                 item = RuItems.LARCH_BOAT.get();
             case MAPLE:
@@ -145,6 +147,7 @@ public class RuBoat extends Boat {
         DEAD("dead", RuBlocks.DEAD_PLANKS.get()),
         EUCALYPTUS("eucalyptus", RuBlocks.EUCALYPTUS_PLANKS.get()),
         JOSHUA("joshua", RuBlocks.JOSHUA_PLANKS.get()),
+        KAPOK("kapok", RuBlocks.KAPOK_PLANKS.get()),
         LARCH("larch", RuBlocks.LARCH_PLANKS.get()),
         MAPLE("maple", RuBlocks.MAPLE_PLANKS.get()),
         MAUVE("mauve", RuBlocks.MAUVE_PLANKS.get()),

@@ -374,7 +374,7 @@ public class RuPrimaryRegionConfig {
         MID_VAR_HOT_DRY = BUILDER.define("hot_dry", RuBiomes.BAOBAB_SAVANNA.location().toString());
         MID_VAR_HOT_NEUTRAL = BUILDER.define("hot_neutral", RuBiomes.JOSHUA_DESERT.location().toString());
         MID_VAR_HOT_WET = BUILDER.define("hot_wet", RuBiomes.JOSHUA_DESERT.location().toString());
-        MID_VAR_HOT_HUMID = BUILDER.define("hot_humid", RuBiomes.OLD_GROWTH_RAINFOREST.location().toString());
+        MID_VAR_HOT_HUMID = BUILDER.define("hot_humid", RuBiomes.SPARSE_RAINFOREST.location().toString());
         BUILDER.pop();
 
         BUILDER.push("-----------------PLATEAU_BIOMES--------------------");
@@ -438,7 +438,7 @@ public class RuPrimaryRegionConfig {
         PLT_VAR_HOT_ARID = BUILDER.define("hot_arid", RuBiomes.STEPPE.location().toString());
         PLT_VAR_HOT_DRY = BUILDER.define("hot_dry", RuBiomes.STEPPE.location().toString());
         PLT_VAR_HOT_NEUTRAL = BUILDER.define("hot_neutral", RuBiomes.STEPPE.location().toString());
-        PLT_VAR_HOT_WET = BUILDER.define("hot_wet", RuBiomes.OLD_GROWTH_RAINFOREST.location().toString());
+        PLT_VAR_HOT_WET = BUILDER.define("hot_wet", RuBiomes.SPARSE_RAINFOREST.location().toString());
         PLT_VAR_HOT_HUMID = BUILDER.define("hot_humid", RuBiomes.RAINFOREST.location().toString());
         BUILDER.pop();
 

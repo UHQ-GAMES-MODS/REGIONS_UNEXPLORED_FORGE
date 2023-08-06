@@ -72,9 +72,9 @@
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
       "minecraft:underwater_magma",
-      "minecraft:disk_sand",
-      "minecraft:disk_clay",
-      "minecraft:disk_gravel"
+      "regions_unexplored:disk_sand",
+      "regions_unexplored:disk_clay",
+      "regions_unexplored:disk_gravel"
     ],
     [],
     [
@@ -90,6 +90,7 @@
       "minecraft:patch_pumpkin",
       "regions_unexplored:cactus_dense",
       "regions_unexplored:acacia_tree_shrub",
+      "regions_unexplored:mallow",
       "regions_unexplored:outback_vegetation",
       "regions_unexplored:acacia_shrub"
     ],

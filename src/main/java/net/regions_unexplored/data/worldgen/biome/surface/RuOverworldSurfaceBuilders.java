@@ -95,7 +95,7 @@ public class RuOverworldSurfaceBuilders {
                                     SurfaceRules.ifTrue(surfaceNoiseAbove(-1.75D), SILT_PODZOL)),
 
                             //PODZOL/COARSE_DIRT SURFACE
-                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.DECIDUOUS_FOREST, RuBiomes.RAINFOREST, RuBiomes.OLD_GROWTH_RAINFOREST),
+                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.DECIDUOUS_FOREST),
                                     SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(1.75D), COARSE_DIRT), SurfaceRules.ifTrue(surfaceNoiseAbove(-0.95D), PODZOL))),
 
                             //PODZOL/COARSE_DIRT SURFACE

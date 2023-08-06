@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "regions_unexplored:block/kapok_vines_plant_1"
+      },
+      {
+        "model": "regions_unexplored:block/kapok_vines_plant_2"
+      }
+    ]
+  }
+}

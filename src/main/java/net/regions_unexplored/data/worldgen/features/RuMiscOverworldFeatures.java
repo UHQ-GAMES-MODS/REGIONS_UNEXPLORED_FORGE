@@ -24,9 +24,11 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.stateproviders.RuleBasedBlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
 import net.minecraft.world.level.levelgen.placement.EnvironmentScanPlacement;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.RandomOffsetPlacement;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
@@ -45,6 +47,9 @@ import java.util.List;
 
 public class RuMiscOverworldFeatures {
     //-----------------------KEYS-----------------------//
+    public static final ResourceKey<ConfiguredFeature<?, ?>> DISK_CLAY = ConfiguredFeatureRegistry.createKey("disk_clay");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> DISK_GRAVEL = ConfiguredFeatureRegistry.createKey("disk_gravel");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> DISK_SAND = ConfiguredFeatureRegistry.createKey("disk_sand");
     //ROCKS
     public static final ResourceKey<ConfiguredFeature<?, ?>> REDWOODS_ROCK = ConfiguredFeatureRegistry.createKey("redwoods_rock");
     //FALLEN_TREES
@@ -93,6 +98,9 @@ public class RuMiscOverworldFeatures {
         List<OreConfiguration.TargetBlockState> STONE_GRASS_TARGET_LIST = List.of(OreConfiguration.target(stoneOreTest, RuBlocks.STONE_GRASS_BLOCK.get().defaultBlockState()), OreConfiguration.target(deepslateOreTest, RuBlocks.DEEPSLATE_GRASS_BLOCK.get().defaultBlockState()));
 
         //---------------------FEATURES---------------------//
+        register(context, DISK_CLAY, Feature.DISK, new DiskConfiguration(RuleBasedBlockStateProvider.simple(Blocks.CLAY), BlockPredicate.matchesBlocks(List.of(Blocks.DIRT, RuBlocks.PEAT_DIRT.get(), RuBlocks.SILT_DIRT.get(), RuBlocks.SILT_MUD.get(), RuBlocks.PEAT_MUD.get(), Blocks.CLAY)), UniformInt.of(2, 3), 1));
+        register(context, DISK_GRAVEL, Feature.DISK, new DiskConfiguration(RuleBasedBlockStateProvider.simple(Blocks.GRAVEL), BlockPredicate.matchesBlocks(List.of(Blocks.DIRT, RuBlocks.PEAT_DIRT.get(), RuBlocks.SILT_DIRT.get(), RuBlocks.SILT_MUD.get(), RuBlocks.PEAT_MUD.get(), RuBlocks.SILT_GRASS_BLOCK.get(), RuBlocks.PEAT_GRASS_BLOCK.get(),  Blocks.GRASS_BLOCK)), UniformInt.of(2, 5), 2));
+        register(context, DISK_SAND, Feature.DISK, new DiskConfiguration(new RuleBasedBlockStateProvider(BlockStateProvider.simple(Blocks.SAND), List.of(new RuleBasedBlockStateProvider.Rule(BlockPredicate.matchesBlocks(Direction.DOWN.getNormal(), Blocks.AIR), BlockStateProvider.simple(Blocks.SANDSTONE)))), BlockPredicate.matchesBlocks(List.of(Blocks.DIRT, RuBlocks.PEAT_DIRT.get(), RuBlocks.SILT_DIRT.get(), RuBlocks.SILT_MUD.get(), RuBlocks.PEAT_MUD.get(), RuBlocks.SILT_GRASS_BLOCK.get(), RuBlocks.PEAT_GRASS_BLOCK.get(),  Blocks.GRASS_BLOCK)), UniformInt.of(2, 6), 2));
         //ROCKS
         register(context, REDWOODS_ROCK, Feature.FOREST_ROCK, new BlockStateConfiguration(Blocks.MOSSY_COBBLESTONE.defaultBlockState()));
         //FALLEN_TREES

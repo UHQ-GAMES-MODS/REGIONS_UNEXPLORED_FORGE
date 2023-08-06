@@ -14,6 +14,7 @@ public class RuWoodTypes {
     public static WoodType EUCALYPTUS = WoodType.register(new WoodType(RegionsUnexploredMod.MOD_ID + ":eucalyptus", RuBlockSetType.EUCALYPTUS));
     public static WoodType GREEN_BIOSHROOM = WoodType.register(new WoodType(RegionsUnexploredMod.MOD_ID + ":green_bioshroom", RuBlockSetType.GREEN_BIOSHROOM));
     public static WoodType JOSHUA = WoodType.register(new WoodType(RegionsUnexploredMod.MOD_ID + ":joshua", RuBlockSetType.JOSHUA));
+    public static WoodType KAPOK = WoodType.register(new WoodType(RegionsUnexploredMod.MOD_ID + ":kapok", RuBlockSetType.KAPOK));
     public static WoodType LARCH = WoodType.register(new WoodType(RegionsUnexploredMod.MOD_ID + ":larch", RuBlockSetType.LARCH));
     public static WoodType MAGNOLIA = WoodType.register(new WoodType(RegionsUnexploredMod.MOD_ID + ":magnolia", RuBlockSetType.MAGNOLIA));
     public static WoodType MAPLE = WoodType.register(new WoodType(RegionsUnexploredMod.MOD_ID + ":maple", RuBlockSetType.MAPLE));

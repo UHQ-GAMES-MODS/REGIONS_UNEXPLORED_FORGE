@@ -5,8 +5,6 @@ import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
-import net.minecraft.data.worldgen.placement.TreePlacements;
-import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -55,6 +53,9 @@ public class RuTreePlacements {
 
     public static final ResourceKey<PlacedFeature> CHERRY_TREE = PlacedFeatureRegistry.createKey("cherry_tree");
 
+    public static final ResourceKey<PlacedFeature> DEAD_BOG_TREE = PlacedFeatureRegistry.createKey("dead_bog_tree");
+
+    public static final ResourceKey<PlacedFeature> DEAD_SCOTTS_PINE_TREE = PlacedFeatureRegistry.createKey("dead_scotts_pine_tree");
     public static final ResourceKey<PlacedFeature> DEAD_SCOTTS_PINE_TREE_MOUNTAIN = PlacedFeatureRegistry.createKey("dead_scotts_pine_tree_mountain");
     public static final ResourceKey<PlacedFeature> DEAD_SCOTTS_PINE_TREE_MOUNTAIN_ON_SNOW = PlacedFeatureRegistry.createKey("dead_scotts_pine_tree_mountain_on_snow");
 
@@ -68,6 +69,14 @@ public class RuTreePlacements {
     public static final ResourceKey<PlacedFeature> LARGE_JOSHUA_TREE = PlacedFeatureRegistry.createKey("large_joshua_tree");
     public static final ResourceKey<PlacedFeature> MEDIUM_JOSHUA_TREE = PlacedFeatureRegistry.createKey("medium_joshua_tree");
     public static final ResourceKey<PlacedFeature> JOSHUA_TREE_SHRUB = PlacedFeatureRegistry.createKey("joshua_tree_shrub");
+
+    public static final ResourceKey<PlacedFeature> JUNGLE_TREE_SPARSE = PlacedFeatureRegistry.createKey("jungle_tree_sparse");
+    public static final ResourceKey<PlacedFeature> BIG_JUNGLE_TREE_SPARSE = PlacedFeatureRegistry.createKey("big_jungle_tree_sparse");
+    public static final ResourceKey<PlacedFeature> JUNGLE_TREE_DENSE = PlacedFeatureRegistry.createKey("jungle_tree_dense");
+    public static final ResourceKey<PlacedFeature> BIG_JUNGLE_TREE_DENSE = PlacedFeatureRegistry.createKey("big_jungle_tree_dense");
+
+    public static final ResourceKey<PlacedFeature> KAPOK_TREE_SPARSE = PlacedFeatureRegistry.createKey("kapok_tree_sparse");
+    public static final ResourceKey<PlacedFeature> KAPOK_TREE_DENSE = PlacedFeatureRegistry.createKey("kapok_tree_dense");
 
     public static final ResourceKey<PlacedFeature> LARCH_TREE_SPARSE = PlacedFeatureRegistry.createKey("larch_tree_sparse");
     public static final ResourceKey<PlacedFeature> LARCH_TREE_DENSE = PlacedFeatureRegistry.createKey("larch_tree_dense");
@@ -103,8 +112,15 @@ public class RuTreePlacements {
     public static final ResourceKey<PlacedFeature> OAK_BUSH_SINGLE = PlacedFeatureRegistry.createKey("oak_bush_single");
     public static final ResourceKey<PlacedFeature> OAK_BUSH_SPARSE = PlacedFeatureRegistry.createKey("oak_bush_sparse");
     public static final ResourceKey<PlacedFeature> OAK_BUSH_DENSE = PlacedFeatureRegistry.createKey("oak_bush_dense");
-    public static final ResourceKey<PlacedFeature> OAK_BUSH_WITH_FLOWERS = PlacedFeatureRegistry.createKey("oak_bush_with_flowers");
+    public static final ResourceKey<PlacedFeature> OAK_BUSH_WITH_FLOWERS_SPARSE = PlacedFeatureRegistry.createKey("oak_bush_with_flowers_sparse");
+    public static final ResourceKey<PlacedFeature> OAK_BUSH_WITH_FLOWERS_DENSE = PlacedFeatureRegistry.createKey("oak_bush_with_flowers_dense");
 
+    public static final ResourceKey<PlacedFeature> PALM_TREE_SPARSE = PlacedFeatureRegistry.createKey("palm_tree_sparse");
+    public static final ResourceKey<PlacedFeature> PALM_TREE_DENSE = PlacedFeatureRegistry.createKey("palm_tree_dense");
+    public static final ResourceKey<PlacedFeature> PALM_TREE_DENSE_TALL = PlacedFeatureRegistry.createKey("palm_tree_dense_tall");
+    public static final ResourceKey<PlacedFeature> PALM_TREE_SHRUB = PlacedFeatureRegistry.createKey("palm_tree_shrub");
+
+    public static final ResourceKey<PlacedFeature> PINE_TREE = PlacedFeatureRegistry.createKey("pine_tree");
     public static final ResourceKey<PlacedFeature> PINE_TREE_ON_DIRT = PlacedFeatureRegistry.createKey("pine_tree_on_dirt");
     public static final ResourceKey<PlacedFeature> PINE_TREE_TALL_ON_DIRT = PlacedFeatureRegistry.createKey("pine_tree_tall_on_dirt");
     public static final ResourceKey<PlacedFeature> PINE_TREE_SHRUB_ON_GRASS = PlacedFeatureRegistry.createKey("pine_tree_shrub_on_grass");
@@ -138,6 +154,9 @@ public class RuTreePlacements {
     public static final ResourceKey<PlacedFeature> SILVER_BIRCH_ON_DIRT = PlacedFeatureRegistry.createKey("silver_birch_on_dirt");
     public static final ResourceKey<PlacedFeature> SILVER_BIRCH_ON_GRASS = PlacedFeatureRegistry.createKey("silver_birch_on_grass");
     public static final ResourceKey<PlacedFeature> SILVER_BIRCH_TALL = PlacedFeatureRegistry.createKey("silver_birch_tall");
+
+    public static final ResourceKey<PlacedFeature> LARGE_SOCOTRA_TREE = PlacedFeatureRegistry.createKey("large_socotra_tree");
+    public static final ResourceKey<PlacedFeature> SMALL_SOCOTRA_TREE = PlacedFeatureRegistry.createKey("small_socotra_tree");
 
     public static final ResourceKey<PlacedFeature> ENCHANTED_BIRCH = PlacedFeatureRegistry.createKey("enchanted_birch");
     public static final ResourceKey<PlacedFeature> ENCHANTED_BIRCH_TALL = PlacedFeatureRegistry.createKey("enchanted_birch_tall");
@@ -194,6 +213,9 @@ public class RuTreePlacements {
 
         final Holder<ConfiguredFeature<?, ?>> CHERRY_TREE = featureGetter.getOrThrow(RuTreeFeatures.CHERRY_TREE);
 
+        final Holder<ConfiguredFeature<?, ?>> DEAD_BOG_TREE = featureGetter.getOrThrow(RuTreeFeatures.DEAD_BOG_TREE);
+
+        final Holder<ConfiguredFeature<?, ?>> DEAD_SCOTTS_PINE_TREE = featureGetter.getOrThrow(RuTreeFeatures.DEAD_STRIPPED_PINE_TREE);
         final Holder<ConfiguredFeature<?, ?>> DEAD_SCOTTS_PINE_TREE_MOUNTAIN = featureGetter.getOrThrow(RuTreeFeatures.DEAD_STRIPPED_PINE_TREE_MOUNTAIN);
 
         final Holder<ConfiguredFeature<?, ?>> TALL_DARK_OAK = featureGetter.getOrThrow(RuTreeFeatures.TALL_DARK_OAK);
@@ -204,6 +226,11 @@ public class RuTreePlacements {
         final Holder<ConfiguredFeature<?, ?>> LARGE_JOSHUA_TREE = featureGetter.getOrThrow(RuTreeFeatures.LARGE_JOSHUA_TREE);
         final Holder<ConfiguredFeature<?, ?>> MEDIUM_JOSHUA_TREE = featureGetter.getOrThrow(RuTreeFeatures.MEDIUM_JOSHUA_TREE);
         final Holder<ConfiguredFeature<?, ?>> JOSHUA_TREE_SHRUB = featureGetter.getOrThrow(RuTreeFeatures.JOSHUA_TREE_SHRUB);
+
+        final Holder<ConfiguredFeature<?, ?>> JUNGLE_TREE = featureGetter.getOrThrow(RuTreeFeatures.JUNGLE_TREE);
+        final Holder<ConfiguredFeature<?, ?>> BIG_JUNGLE_TREE = featureGetter.getOrThrow(RuTreeFeatures.BIG_JUNGLE_TREE);
+
+        final Holder<ConfiguredFeature<?, ?>> KAPOK_TREE = featureGetter.getOrThrow(RuTreeFeatures.KAPOK_TREE);
 
         final Holder<ConfiguredFeature<?, ?>> LARCH_TREE = featureGetter.getOrThrow(RuTreeFeatures.LARCH_TREE);
         final Holder<ConfiguredFeature<?, ?>> GOLDEN_LARCH_TREE = featureGetter.getOrThrow(RuTreeFeatures.GOLDEN_LARCH_TREE);
@@ -225,6 +252,10 @@ public class RuTreePlacements {
         final Holder<ConfiguredFeature<?, ?>> OAK_TREE_SHRUB = featureGetter.getOrThrow(RuTreeFeatures.OAK_TREE_SHRUB);
         final Holder<ConfiguredFeature<?, ?>> OAK_BUSH_WITH_FLOWERS = featureGetter.getOrThrow(RuTreeFeatures.OAK_BUSH_WITH_FLOWERS);
         final Holder<ConfiguredFeature<?, ?>> OAK_BUSH = featureGetter.getOrThrow(RuTreeFeatures.OAK_BUSH);
+
+        final Holder<ConfiguredFeature<?, ?>> PALM_TREE = featureGetter.getOrThrow(RuTreeFeatures.PALM_TREE);
+        final Holder<ConfiguredFeature<?, ?>> PALM_TREE_TALL = featureGetter.getOrThrow(RuTreeFeatures.TALL_PALM_TREE);
+        final Holder<ConfiguredFeature<?, ?>> PALM_TREE_SHRUB = featureGetter.getOrThrow(RuTreeFeatures.PALM_TREE_SHRUB);
 
         final Holder<ConfiguredFeature<?, ?>> PINE_TREE = featureGetter.getOrThrow(RuTreeFeatures.PINE_TREE);
         final Holder<ConfiguredFeature<?, ?>> PINE_TREE_TALL = featureGetter.getOrThrow(RuTreeFeatures.PINE_TREE_TALL);
@@ -251,6 +282,9 @@ public class RuTreePlacements {
 
         final Holder<ConfiguredFeature<?, ?>> SPRUCE_TREE_TALL = featureGetter.getOrThrow(RuTreeFeatures.SPRUCE_TREE_TALL);
         final Holder<ConfiguredFeature<?, ?>> SPRUCE_TREE_SHRUB = featureGetter.getOrThrow(RuTreeFeatures.SPRUCE_TREE_SHRUB);
+
+        final Holder<ConfiguredFeature<?, ?>> LARGE_SOCOTRA_TREE = featureGetter.getOrThrow(RuTreeFeatures.LARGE_SOCOTRA_TREE);
+        final Holder<ConfiguredFeature<?, ?>> SMALL_SOCOTRA_TREE = featureGetter.getOrThrow(RuTreeFeatures.SMALL_SOCOTRA_TREE);
 
         final Holder<ConfiguredFeature<?, ?>> ICE_SPIRE = featureGetter.getOrThrow(RuTreeFeatures.ICE_SPIRE);
 
@@ -302,6 +336,9 @@ public class RuTreePlacements {
 
         register(context, RuTreePlacements.CHERRY_TREE, CHERRY_TREE, List.of(CountPlacement.of(1), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(3), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
 
+        register(context, RuTreePlacements.DEAD_BOG_TREE, DEAD_BOG_TREE, List.of(CountPlacement.of(1), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(2), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
+
+        register(context, RuTreePlacements.DEAD_SCOTTS_PINE_TREE, DEAD_SCOTTS_PINE_TREE, List.of(CountPlacement.of(2), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
         register(context, RuTreePlacements.DEAD_SCOTTS_PINE_TREE_MOUNTAIN, DEAD_SCOTTS_PINE_TREE_MOUNTAIN, List.of(PlacementUtils.countExtra(0, 0.1F, 1), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
         register(context, RuTreePlacements.DEAD_SCOTTS_PINE_TREE_MOUNTAIN_ON_SNOW, DEAD_SCOTTS_PINE_TREE_MOUNTAIN, List.of(PlacementUtils.countExtra(0, 0.1F, 1), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(PlacedFeatureRegistry.onSnowPredicate), BiomeFilter.biome()));
 
@@ -313,6 +350,14 @@ public class RuTreePlacements {
         register(context, RuTreePlacements.LARGE_JOSHUA_TREE, LARGE_JOSHUA_TREE, List.of(PlacementUtils.countExtra(0, 0.1F, 3), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(RuBlocks.SMALL_DESERT_SHRUB.get()), BiomeFilter.biome()));
         register(context, RuTreePlacements.MEDIUM_JOSHUA_TREE, MEDIUM_JOSHUA_TREE, List.of(CountPlacement.of(1), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(RuBlocks.SMALL_DESERT_SHRUB.get()), BiomeFilter.biome()));
         register(context, RuTreePlacements.JOSHUA_TREE_SHRUB, JOSHUA_TREE_SHRUB, List.of(CountPlacement.of(1), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(RuBlocks.SMALL_DESERT_SHRUB.get()), BiomeFilter.biome()));
+
+        register(context, RuTreePlacements.JUNGLE_TREE_SPARSE, JUNGLE_TREE, List.of(NoiseBasedCountPlacement.of(2, 55.0D, 0.0D), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
+        register(context, RuTreePlacements.BIG_JUNGLE_TREE_SPARSE, BIG_JUNGLE_TREE, List.of(NoiseBasedCountPlacement.of(2, 50.0D, 0.0D), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
+        register(context, RuTreePlacements.JUNGLE_TREE_DENSE, JUNGLE_TREE, List.of(CountPlacement.of(12), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
+        register(context, RuTreePlacements.BIG_JUNGLE_TREE_DENSE, BIG_JUNGLE_TREE, List.of(CountPlacement.of(4), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
+
+        register(context, RuTreePlacements.KAPOK_TREE_SPARSE, KAPOK_TREE, List.of(CountPlacement.of(2), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
+        register(context, RuTreePlacements.KAPOK_TREE_DENSE, KAPOK_TREE, List.of(CountPlacement.of(4), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
 
         register(context, RuTreePlacements.LARCH_TREE_DENSE, LARCH_TREE, List.of(CountPlacement.of(7), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
         register(context, RuTreePlacements.LARCH_TREE_SPARSE, LARCH_TREE, List.of(CountPlacement.of(1), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
@@ -350,8 +395,15 @@ public class RuTreePlacements {
         register(context, RuTreePlacements.OAK_BUSH_SINGLE, OAK_BUSH, List.of(CountPlacement.of(1), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
         register(context, RuTreePlacements.OAK_BUSH_SPARSE, OAK_BUSH, List.of(CountPlacement.of(4), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
         register(context, RuTreePlacements.OAK_BUSH_DENSE, OAK_BUSH, List.of(CountPlacement.of(8), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
-        register(context, RuTreePlacements.OAK_BUSH_WITH_FLOWERS, OAK_BUSH_WITH_FLOWERS, List.of(CountPlacement.of(3), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
+        register(context, RuTreePlacements.OAK_BUSH_WITH_FLOWERS_SPARSE, OAK_BUSH_WITH_FLOWERS, List.of(CountPlacement.of(3), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
+        register(context, RuTreePlacements.OAK_BUSH_WITH_FLOWERS_DENSE, OAK_BUSH_WITH_FLOWERS, List.of(CountPlacement.of(7), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
 
+        register(context, RuTreePlacements.PALM_TREE_SPARSE, PALM_TREE, List.of(CountPlacement.of(2), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
+        register(context, RuTreePlacements.PALM_TREE_DENSE, PALM_TREE, List.of(CountPlacement.of(4), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
+        register(context, RuTreePlacements.PALM_TREE_DENSE_TALL, PALM_TREE_TALL, List.of(CountPlacement.of(4), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
+        register(context, RuTreePlacements.PALM_TREE_SHRUB, PALM_TREE_SHRUB, List.of(CountPlacement.of(1), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
+
+        register(context, RuTreePlacements.PINE_TREE, PINE_TREE, List.of(CountPlacement.of(6), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
         register(context, RuTreePlacements.PINE_TREE_ON_DIRT, PINE_TREE, List.of(CountPlacement.of(13), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(PlacedFeatureRegistry.onDirtPredicate), BiomeFilter.biome()));
         register(context, RuTreePlacements.PINE_TREE_TALL_ON_DIRT, PINE_TREE_TALL, List.of(CountPlacement.of(5), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(PlacedFeatureRegistry.onDirtPredicate), BiomeFilter.biome()));
         register(context, RuTreePlacements.SCOTTS_PINE_TREE_ON_DIRT, SCOTTS_PINE_TREE, List.of(CountPlacement.of(11), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(PlacedFeatureRegistry.onDirtPredicate), BiomeFilter.biome()));
@@ -393,6 +445,9 @@ public class RuTreePlacements {
         register(context, RuTreePlacements.SILVER_BIRCH_ON_DIRT, SILVER_BIRCH, List.of(CountPlacement.of(2), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(PlacedFeatureRegistry.onDirtPredicate), BiomeFilter.biome()));
         register(context, RuTreePlacements.SILVER_BIRCH_ON_GRASS, SILVER_BIRCH, List.of(CountPlacement.of(2), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(PlacedFeatureRegistry.onGrassBlockPredicate), BiomeFilter.biome()));
         register(context, RuTreePlacements.SILVER_BIRCH_TALL, SILVER_BIRCH_TALL, List.of(CountPlacement.of(2), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
+
+        register(context, RuTreePlacements.LARGE_SOCOTRA_TREE, LARGE_SOCOTRA_TREE, List.of(NoiseBasedCountPlacement.of(1, 70.0D, 0.0D), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
+        register(context, RuTreePlacements.SMALL_SOCOTRA_TREE, SMALL_SOCOTRA_TREE, List.of(PlacementUtils.countExtra(1, 0.1F, 1), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
 
         register(context, RuTreePlacements.ENCHANTED_BIRCH, ENCHANTED_BIRCH, List.of(CountPlacement.of(2), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
         register(context, RuTreePlacements.ENCHANTED_BIRCH_TALL, ENCHANTED_BIRCH_TALL, List.of(CountPlacement.of(2), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));

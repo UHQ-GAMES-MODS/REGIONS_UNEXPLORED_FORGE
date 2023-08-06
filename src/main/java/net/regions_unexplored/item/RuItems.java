@@ -23,6 +23,7 @@ public class RuItems {
     public static RegistryObject<Item> EUCALYPTUS_HANGING_SIGN;
     public static RegistryObject<Item> GREEN_BIOSHROOM_HANGING_SIGN;
     public static RegistryObject<Item> JOSHUA_HANGING_SIGN;
+    public static RegistryObject<Item> KAPOK_HANGING_SIGN;
     public static RegistryObject<Item> LARCH_HANGING_SIGN;
     public static RegistryObject<Item> MAGNOLIA_HANGING_SIGN;
     public static RegistryObject<Item> MAPLE_HANGING_SIGN;
@@ -45,6 +46,7 @@ public class RuItems {
     public static RegistryObject<Item> EUCALYPTUS_SIGN;
     public static RegistryObject<Item> GREEN_BIOSHROOM_SIGN;
     public static RegistryObject<Item> JOSHUA_SIGN;
+    public static RegistryObject<Item> KAPOK_SIGN;
     public static RegistryObject<Item> LARCH_SIGN;
     public static RegistryObject<Item> MAGNOLIA_SIGN;
     public static RegistryObject<Item> MAPLE_SIGN;
@@ -71,6 +73,8 @@ public class RuItems {
     public static RegistryObject<Item> EUCALYPTUS_CHEST_BOAT;
     public static RegistryObject<Item> JOSHUA_BOAT;
     public static RegistryObject<Item> JOSHUA_CHEST_BOAT;
+    public static RegistryObject<Item> KAPOK_BOAT;
+    public static RegistryObject<Item> KAPOK_CHEST_BOAT;
     public static RegistryObject<Item> LARCH_BOAT;
     public static RegistryObject<Item> LARCH_CHEST_BOAT;
     public static RegistryObject<Item> MAPLE_BOAT;
@@ -103,6 +107,7 @@ public class RuItems {
         EUCALYPTUS_HANGING_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("eucalyptus_hanging_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.EUCALYPTUS_HANGING_SIGN.get(), RuBlocks.EUCALYPTUS_WALL_HANGING_SIGN.get()));
         GREEN_BIOSHROOM_HANGING_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("green_bioshroom_hanging_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.GREEN_BIOSHROOM_HANGING_SIGN.get(), RuBlocks.GREEN_BIOSHROOM_WALL_HANGING_SIGN.get()));
         JOSHUA_HANGING_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("joshua_hanging_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.JOSHUA_HANGING_SIGN.get(), RuBlocks.JOSHUA_WALL_HANGING_SIGN.get()));
+        KAPOK_HANGING_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("kapok_hanging_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.KAPOK_HANGING_SIGN.get(), RuBlocks.KAPOK_WALL_HANGING_SIGN.get()));
         LARCH_HANGING_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("larch_hanging_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.LARCH_HANGING_SIGN.get(), RuBlocks.LARCH_WALL_HANGING_SIGN.get()));
         MAGNOLIA_HANGING_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("magnolia_hanging_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.MAGNOLIA_HANGING_SIGN.get(), RuBlocks.MAGNOLIA_WALL_HANGING_SIGN.get()));
         MAPLE_HANGING_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("maple_hanging_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.MAPLE_HANGING_SIGN.get(), RuBlocks.MAPLE_WALL_HANGING_SIGN.get()));
@@ -125,6 +130,7 @@ public class RuItems {
         EUCALYPTUS_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("eucalyptus_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.EUCALYPTUS_SIGN.get(), RuBlocks.EUCALYPTUS_WALL_SIGN.get()));
         GREEN_BIOSHROOM_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("green_bioshroom_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.GREEN_BIOSHROOM_SIGN.get(), RuBlocks.GREEN_BIOSHROOM_WALL_SIGN.get()));
         JOSHUA_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("joshua_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.JOSHUA_SIGN.get(), RuBlocks.JOSHUA_WALL_SIGN.get()));
+        KAPOK_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("kapok_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.KAPOK_SIGN.get(), RuBlocks.KAPOK_WALL_SIGN.get()));
         LARCH_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("larch_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.LARCH_SIGN.get(), RuBlocks.LARCH_WALL_SIGN.get()));
         MAGNOLIA_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("magnolia_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.MAGNOLIA_SIGN.get(), RuBlocks.MAGNOLIA_WALL_SIGN.get()));
         MAPLE_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("maple_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.MAPLE_SIGN.get(), RuBlocks.MAPLE_WALL_SIGN.get()));
@@ -151,6 +157,8 @@ public class RuItems {
         EUCALYPTUS_CHEST_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("eucalyptus_chest_boat", () -> new RuBoatItem(true, RuBoat.ModelType.EUCALYPTUS, (new Item.Properties()).stacksTo(1)));
         JOSHUA_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("joshua_boat", () -> new RuBoatItem(false, RuBoat.ModelType.JOSHUA, (new Item.Properties()).stacksTo(1)));
         JOSHUA_CHEST_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("joshua_chest_boat", () -> new RuBoatItem(true, RuBoat.ModelType.JOSHUA, (new Item.Properties()).stacksTo(1)));
+        KAPOK_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("kapok_boat", () -> new RuBoatItem(false, RuBoat.ModelType.KAPOK, (new Item.Properties()).stacksTo(1)));
+        KAPOK_CHEST_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("kapok_chest_boat", () -> new RuBoatItem(true, RuBoat.ModelType.KAPOK, (new Item.Properties()).stacksTo(1)));
         LARCH_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("larch_boat", () -> new RuBoatItem(false, RuBoat.ModelType.LARCH, (new Item.Properties()).stacksTo(1)));
         LARCH_CHEST_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("larch_chest_boat", () -> new RuBoatItem(true, RuBoat.ModelType.LARCH, (new Item.Properties()).stacksTo(1)));
         MAPLE_BOAT = RegionsUnexploredMod.ITEM_REGISTRY.register("maple_boat", () -> new RuBoatItem(false, RuBoat.ModelType.MAPLE, (new Item.Properties()).stacksTo(1)));

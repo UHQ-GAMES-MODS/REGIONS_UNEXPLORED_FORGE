@@ -34,7 +34,7 @@ public class DefaultBiomes {
             /*COOL*/    {RuBiomes.PUMPKIN_FIELDS, RuBiomes.AUTUMNAL_MAPLE_FOREST, RuBiomes.MAPLE_FOREST, RuBiomes.BOREAL_TAIGA, RuBiomes.BOREAL_TAIGA},
             /*NEUTRAL*/ {RuBiomes.ORCHARD, RuBiomes.SHRUBLAND, RuBiomes.TEMPERATE_GROVE, RuBiomes.PINE_TAIGA, RuBiomes.BLACKWOOD_TAIGA},
             /*WARM*/    {RuBiomes.DECIDUOUS_FOREST, RuBiomes.DECIDUOUS_FOREST, RuBiomes.BARLEY_FIELDS, RuBiomes.REDWOODS, RuBiomes.REDWOODS},
-            /*HOT*/     {RuBiomes.BAOBAB_SAVANNA, RuBiomes.BAOBAB_SAVANNA, RuBiomes.SAGUARO_DESERT, RuBiomes.SAGUARO_DESERT, RuBiomes.OLD_GROWTH_RAINFOREST}};
+            /*HOT*/     {RuBiomes.BAOBAB_SAVANNA, RuBiomes.BAOBAB_SAVANNA, RuBiomes.SAGUARO_DESERT, RuBiomes.SAGUARO_DESERT, RuBiomes.SPARSE_RAINFOREST}};
 
     public static ResourceKey<Biome>[][] PRIMARY_MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{
             //-----------ARID,DRY,NEUTRAL,WET,HUMID
@@ -58,7 +58,7 @@ public class DefaultBiomes {
             /*COOL*/    {RuBiomes.AUTUMNAL_MAPLE_FOREST, RuBiomes.SILVER_BIRCH_FOREST, RuBiomes.MAPLE_FOREST, RuBiomes.BOREAL_TAIGA, RuBiomes.GOLDEN_BOREAL_TAIGA},
             /*NEUTRAL*/ {RuBiomes.HIGHLAND_FIELDS, RuBiomes.HIGHLAND_FIELDS, RuBiomes.DECIDUOUS_FOREST, RuBiomes.PINE_TAIGA, RuBiomes.BLACKWOOD_TAIGA},
             /*WARM*/    {RuBiomes.DECIDUOUS_FOREST, RuBiomes.DECIDUOUS_FOREST, RuBiomes.DECIDUOUS_FOREST, RuBiomes.REDWOODS, RuBiomes.SPARSE_REDWOODS},
-            /*HOT*/     {RuBiomes.STEPPE, RuBiomes.STEPPE, RuBiomes.STEPPE, RuBiomes.OLD_GROWTH_RAINFOREST, RuBiomes.RAINFOREST}};
+            /*HOT*/     {RuBiomes.STEPPE, RuBiomes.STEPPE, RuBiomes.STEPPE, RuBiomes.SPARSE_RAINFOREST, RuBiomes.RAINFOREST}};
 
     public static ResourceKey<Biome>[][] PRIMARY_SHATTERED_BIOMES = new ResourceKey[][]{
             //-----------ARID,DRY,NEUTRAL,WET,HUMID
@@ -1291,7 +1291,7 @@ public class DefaultBiomes {
         if(biome== RuBiomes.MYCOTOXIC_UNDERGROWTH){
             return RuCommonConfig.TOGGLE_MYCOTOXIC_UNDERGROWTH.get();
         }
-        if(biome== RuBiomes.OLD_GROWTH_RAINFOREST){
+        if(biome== RuBiomes.SPARSE_RAINFOREST){
             return RuCommonConfig.TOGGLE_OLD_GROWTH_RAINFOREST.get();
         }
         if(biome== RuBiomes.ORCHARD){

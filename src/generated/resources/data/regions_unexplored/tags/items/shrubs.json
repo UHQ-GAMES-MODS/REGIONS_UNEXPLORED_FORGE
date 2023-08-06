@@ -17,6 +17,7 @@
     "regions_unexplored:eucalyptus_shrub",
     "regions_unexplored:flowering_shrub",
     "regions_unexplored:joshua_shrub",
+    "regions_unexplored:kapok_shrub",
     "regions_unexplored:jungle_shrub",
     "regions_unexplored:golden_larch_shrub",
     "regions_unexplored:larch_shrub",
@@ -31,6 +32,7 @@
     "regions_unexplored:redwood_shrub",
     "regions_unexplored:enchanted_birch_shrub",
     "regions_unexplored:silver_birch_shrub",
+    "regions_unexplored:socotra_shrub",
     "regions_unexplored:spruce_shrub",
     "regions_unexplored:willow_shrub"
   ]

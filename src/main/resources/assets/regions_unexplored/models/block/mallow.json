@@ -1,0 +1,8 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "regions_unexplored:block/mallow",
+    "particle": "regions_unexplored:block/mallow"
+  },
+  "render_type": "cutout"
+}
