@@ -8,8 +8,12 @@ import net.regions_unexplored.data.worldgen.features.RuTreeFeatures;
 
 public class GoldenLarchTreeGrower extends AbstractTreeGrower {
    protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource random, boolean bool) {
-      if(random.nextInt(7)==0){return RuTreeFeatures.BIG_GOLDEN_LARCH_TREE;}
-      else{return RuTreeFeatures.GOLDEN_LARCH_TREE;}
+      if(random.nextInt(7)==0){
+         return RuTreeFeatures.BIG_GOLDEN_LARCH_TREE;
+      }
+      else{
+         return RuTreeFeatures.GOLDEN_LARCH_TREE;
+      }
    }
 }
 

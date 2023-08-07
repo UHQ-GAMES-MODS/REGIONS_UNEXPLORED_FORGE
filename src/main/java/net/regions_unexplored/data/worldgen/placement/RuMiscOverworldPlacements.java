@@ -51,7 +51,6 @@ public class RuMiscOverworldPlacements {
     public static final ResourceKey<PlacedFeature>  ASH_VENT = PlacedFeatureRegistry.createKey("ash_vent");
     public static final ResourceKey<PlacedFeature>  BASALT_BLOB = PlacedFeatureRegistry.createKey("basalt_blob");
     //OTHER_FEATURES
-    public static final ResourceKey<PlacedFeature>  QUICKSAND = PlacedFeatureRegistry.createKey("quicksand");
     public static final ResourceKey<PlacedFeature>  MINERAL_POOL = PlacedFeatureRegistry.createKey("mineral_pool");
 
     public static final ResourceKey<PlacedFeature> MOSS_PATCH_WITH_WATER = PlacedFeatureRegistry.createKey("moss_patch_with_water");
@@ -94,7 +93,6 @@ public class RuMiscOverworldPlacements {
         final Holder<ConfiguredFeature<?, ?>>  PRISMARITE_CLUSTERS = featureGetter.getOrThrow(RuMiscOverworldFeatures.PRISMARITE_CLUSTERS);
         final Holder<ConfiguredFeature<?, ?>>  HANGING_PRISMARITE_CLUSTER = featureGetter.getOrThrow(RuMiscOverworldFeatures.HANGING_PRISMARITE_CLUSTER);
 
-        final Holder<ConfiguredFeature<?, ?>>  QUICKSAND = featureGetter.getOrThrow(RuMiscOverworldFeatures.QUICKSAND);
         final Holder<ConfiguredFeature<?, ?>>  MINERAL_POOL = featureGetter.getOrThrow(RuMiscOverworldFeatures.MINERAL_POOL);
 
         final Holder<ConfiguredFeature<?, ?>>  LAVA_FALL = featureGetter.getOrThrow(RuMiscOverworldFeatures.LAVA_FALL);
@@ -137,7 +135,6 @@ public class RuMiscOverworldPlacements {
         register(context, RuMiscOverworldPlacements.PRISMARITE_CLUSTERS, PRISMARITE_CLUSTERS, List.of(CountOnEveryLayerPlacement.of(8), BiomeFilter.biome()));
         register(context, RuMiscOverworldPlacements.HANGING_PRISMARITE_CLUSTER, HANGING_PRISMARITE_CLUSTER, CountPlacement.of(UniformInt.of(78, 126)), InSquarePlacement.spread(), PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT, BiomeFilter.biome());
 
-        register(context, RuMiscOverworldPlacements.QUICKSAND, QUICKSAND, commonOrePlacement(4, HeightRangePlacement.uniform(VerticalAnchor.absolute(50), VerticalAnchor.absolute(85))));
         register(context, RuMiscOverworldPlacements.MINERAL_POOL, MINERAL_POOL, CountPlacement.of(70), InSquarePlacement.spread(), PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
 
         register(context, RuMiscOverworldPlacements.LAVA_FALL, LAVA_FALL, List.of(CountOnEveryLayerPlacement.of(6), InSquarePlacement.spread(), BiomeFilter.biome()));

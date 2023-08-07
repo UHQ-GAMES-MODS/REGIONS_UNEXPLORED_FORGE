@@ -56,10 +56,11 @@ public class MarshFeature extends Feature<NoneFeatureConfiguration> {
         }
     }
 
-    public boolean placeBlocks(LevelAccessor level, BlockPos pos) {
+    public void placeBlocks(LevelAccessor level, BlockPos pos) {
         Random random = new Random();
         int chance = random.nextInt(5);
         int chance_grass = random.nextInt(4);
+        if (!level.isEmptyBlock(pos.below(5))&&!level.isEmptyBlock(pos.below(4))&&!level.isEmptyBlock(pos.below(3))&&!level.isEmptyBlock(pos.below(2))&&!level.isEmptyBlock(pos.below())){
         if(chance== 0){
             if (!level.getFluidState(pos.below(5)).is(FluidTags.WATER)&&level.isWaterAt(pos)) {
                 level.setBlock(pos, Blocks.GRASS_BLOCK.defaultBlockState(), 2);
@@ -93,9 +94,6 @@ public class MarshFeature extends Feature<NoneFeatureConfiguration> {
         }
         else if(chance==1){
             if (!level.getFluidState(pos.below(5)).is(FluidTags.WATER)&&level.isWaterAt(pos)) {
-                if(level.getBlockState(pos).is(Blocks.AIR)||level.getBlockState(pos).is(Blocks.WATER)) {
-                    level.setBlock(pos, Blocks.WATER.defaultBlockState(), 2);
-                }
                 if(level.isWaterAt(pos.below())) {
                     level.setBlock(pos.below(), Blocks.DIRT.defaultBlockState(), 2);
                 }
@@ -112,9 +110,6 @@ public class MarshFeature extends Feature<NoneFeatureConfiguration> {
         }
         else if(chance==2){
             if (!level.getFluidState(pos.below(5)).is(FluidTags.WATER)&&level.isWaterAt(pos)) {
-                if(level.getBlockState(pos).is(Blocks.AIR)||level.getBlockState(pos).is(Blocks.WATER)) {
-                    level.setBlock(pos, Blocks.WATER.defaultBlockState(), 2);
-                }
                 if(level.getBlockState(pos.below()).is(Blocks.AIR)) {
                     level.setBlock(pos.below(), Blocks.WATER.defaultBlockState(), 2);
                 }
@@ -131,9 +126,6 @@ public class MarshFeature extends Feature<NoneFeatureConfiguration> {
         }
         else if(chance==3){
             if (!level.getFluidState(pos.below(5)).is(FluidTags.WATER)&&level.isWaterAt(pos)) {
-                if(level.getBlockState(pos).is(Blocks.AIR)||level.getBlockState(pos).is(Blocks.WATER)) {
-                    level.setBlock(pos, Blocks.WATER.defaultBlockState(), 2);
-                }
                 if(level.getBlockState(pos.below()).is(Blocks.AIR)) {
                     level.setBlock(pos.below(), Blocks.WATER.defaultBlockState(), 2);
                 }
@@ -148,11 +140,6 @@ public class MarshFeature extends Feature<NoneFeatureConfiguration> {
                 }
             }
         }
-        else{
-            if(level.getBlockState(pos).is(Blocks.AIR)||level.getBlockState(pos).is(Blocks.WATER)) {
-                level.setBlock(pos, Blocks.WATER.defaultBlockState(), 2);
-            }
         }
-        return true;
     }
 }

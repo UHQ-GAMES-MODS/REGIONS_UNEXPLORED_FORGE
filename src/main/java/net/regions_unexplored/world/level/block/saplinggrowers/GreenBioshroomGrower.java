@@ -8,7 +8,6 @@ import net.regions_unexplored.data.worldgen.features.RuTreeFeatures;
 
 public class GreenBioshroomGrower extends AbstractTreeGrower {
     protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource random, boolean bool) {
-         //return RuTreeFeatures.GIANT_GREEN_BIOSHROOM;
-        return RuTreeFeatures.ALPHA_OAK_TREE;
+        return RuTreeFeatures.GIANT_GREEN_BIOSHROOM;
    }
 }

@@ -43,6 +43,7 @@ public class FeatureRegistry {
     public static RegistryObject<Feature> LUSH_PINE_TREE;
     public static RegistryObject<Feature> PINE_TREE;
     public static RegistryObject<Feature> SMALL_JOSHUA_TREE;
+    public static RegistryObject<Feature> SMALL_OAK_TREE;
     public static RegistryObject<Feature> STRIPPED_PINE_TREE;
     public static RegistryObject<Feature> REDWOOD_TREE;
     public static RegistryObject<Feature> SAGUARO_CACTUS;
@@ -119,6 +120,7 @@ public class FeatureRegistry {
         LUSH_PINE_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("lush_pine_tree", () -> new LushPineTreeFeature(RuTreeConfiguration.CODEC));
         PINE_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("pine_tree", () -> new PineTreeFeature(RuTreeConfiguration.CODEC));
         SMALL_JOSHUA_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("small_joshua_tree", () -> new SmallJoshuaTreeFeature(RuTreeConfiguration.CODEC));
+        SMALL_OAK_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("small_oak_tree", () -> new SmallOakTreeFeature(RuTreeConfiguration.CODEC));
         STRIPPED_PINE_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("stripped_pine_tree", () -> new StrippedPineTreeFeature(RuTreeConfiguration.CODEC));
         REDWOOD_TREE = RegionsUnexploredMod.FEATURE_REGISTRY.register("redwood_tree", () -> new RedwoodTreeFeature(RuTreeConfiguration.CODEC));
         SAGUARO_CACTUS = RegionsUnexploredMod.FEATURE_REGISTRY.register("saguaro_cactus", () -> new SaguaroCactusFeature(RuTreeConfiguration.CODEC));

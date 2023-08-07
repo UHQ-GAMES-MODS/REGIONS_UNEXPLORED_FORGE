@@ -85,7 +85,8 @@ public class RuColorHandler {
                 RuBlocks.SOCOTRA_LEAVES.get(),
                 RuBlocks.KAPOK_LEAVES.get(),
                 RuBlocks.KAPOK_VINES.get(),
-                RuBlocks.KAPOK_VINES_PLANT.get()
+                RuBlocks.KAPOK_VINES_PLANT.get(),
+                RuBlocks.SMALL_OAK_LEAVES.get()
         );
     }
     @SubscribeEvent
@@ -114,7 +115,8 @@ public class RuColorHandler {
                 RuBlocks.SOCOTRA_LEAVES.get(),
                 RuBlocks.KAPOK_LEAVES.get(),
                 RuBlocks.KAPOK_VINES.get(),
-                RuBlocks.KAPOK_VINES_PLANT.get()
+                RuBlocks.KAPOK_VINES_PLANT.get(),
+                RuBlocks.SMALL_OAK_LEAVES.get()
         );
     }
     @SubscribeEvent

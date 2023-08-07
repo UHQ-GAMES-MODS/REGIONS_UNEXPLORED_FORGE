@@ -37,8 +37,7 @@ public class BarrelCactusBlock extends BushBlock implements net.minecraftforge.c
     public boolean mayPlaceOn(BlockState state, BlockGetter getter, BlockPos pos) {
         return state.is(BlockTags.SAND)
                 || state.is(Blocks.SANDSTONE)
-                || state.is(Blocks.RED_SANDSTONE)
-                || state.is(RuBlocks.QUICKSAND.get());
+                || state.is(Blocks.RED_SANDSTONE);
     }
 
     @Override

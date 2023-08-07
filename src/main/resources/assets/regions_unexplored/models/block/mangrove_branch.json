@@ -1,9 +1,9 @@
 {
   "parent": "regions_unexplored:block/branch",
   "textures": {
-    "cross": "regions_unexplored:block/mangrove_branch",
-    "cross2": "regions_unexplored:block/mangrove_branch_2",
-    "particle": "regions_unexplored:block/mangrove_branch"
+    "log": "block/mangrove_log",
+    "branch": "regions_unexplored:block/mangrove_branch",
+    "particle": "block/mangrove_log"
   },
   "render_type": "cutout"
 }

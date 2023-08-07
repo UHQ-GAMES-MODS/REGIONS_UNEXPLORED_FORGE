@@ -24,8 +24,8 @@
       "sound": "minecraft:music.overworld.jungle"
     },
     "sky_color": 7776511,
-    "water_color": -13392941,
-    "water_fog_color": -11558718
+    "water_color": 2202835,
+    "water_fog_color": 677798
   },
   "features": [
     [],

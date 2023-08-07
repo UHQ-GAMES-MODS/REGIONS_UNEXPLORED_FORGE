@@ -1,9 +1,9 @@
 {
   "parent": "regions_unexplored:block/branch",
   "textures": {
-    "cross": "regions_unexplored:block/acacia_branch",
-    "cross2": "regions_unexplored:block/acacia_branch_2",
-    "particle": "regions_unexplored:block/acacia_branch"
+    "log": "block/acacia_log",
+    "branch": "regions_unexplored:block/acacia_branch",
+    "particle": "block/acacia_log"
   },
   "render_type": "cutout"
 }

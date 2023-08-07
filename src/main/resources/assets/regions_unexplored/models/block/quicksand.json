@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "regions_unexplored:block/quicksand",
-    "particle": "regions_unexplored:block/quicksand"
-  }
-}

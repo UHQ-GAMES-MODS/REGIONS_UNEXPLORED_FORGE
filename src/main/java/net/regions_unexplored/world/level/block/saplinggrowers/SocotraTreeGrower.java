@@ -9,12 +9,11 @@ import net.regions_unexplored.data.worldgen.features.RuTreeFeatures;
 public class SocotraTreeGrower extends AbstractTreeGrower {
     protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource random, boolean bool) {
         if(random.nextInt(5)==0){
-         //return RuTreeFeatures.LARGE_SOCOTRA_TREE;
+         return RuTreeFeatures.SMALL_SOCOTRA_TREE;
         }
         else{
-            //return RuTreeFeatures.MEDIUM_SOCOTRA_TREE;
+            return RuTreeFeatures.LARGE_SOCOTRA_TREE;
         }
-        return null;
    }
 }
 

@@ -6,6 +6,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
@@ -187,6 +188,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.RED_MAPLE_LEAVES.get().asItem())
                 .add(RuBlocks.MAGNOLIA_LEAVES.get().asItem())
                 .add(RuBlocks.SILVER_BIRCH_LEAVES.get().asItem())
+                .add(RuBlocks.SMALL_OAK_LEAVES.get().asItem())
                 .add(RuBlocks.SOCOTRA_LEAVES.get().asItem())
                 .add(RuBlocks.ENCHANTED_BIRCH_LEAVES.get().asItem())
                 .add(RuBlocks.SPANISH_MOSS.get().asItem())
@@ -276,7 +278,10 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuItems.YELLOW_BIOSHROOM_SIGN.get().asItem())
                 .add(RuItems.YELLOW_BIOSHROOM_HANGING_SIGN.get().asItem())
         ;
-        //this.tag(ItemTags.OAK_LOGS);
+        this.tag(ItemTags.OAK_LOGS)
+                .add(RuBlocks.SMALL_OAK_LOG.get().asItem())
+                .add(RuBlocks.STRIPPED_SMALL_OAK_LOG.get().asItem())
+        ;
         //this.tag(ItemTags.PICKAXES);
         //this.tag(ItemTags.PIGLIN_FOOD);
         //this.tag(ItemTags.PIGLIN_LOVED);
@@ -324,10 +329,9 @@ public class RuItemTagProvider extends ItemTagsProvider {
         this.tag(ItemTags.REDSTONE_ORES)
                 .add(RuBlocks.RAW_REDSTONE_BLOCK.get().asItem())
         ;
-        this.tag(ItemTags.SAND)
-                .add(RuBlocks.QUICKSAND.get().asItem())
-        ;
+        //this.tag(ItemTags.SAND);
         this.tag(ItemTags.SAPLINGS)
+                .add(RuBlocks.ASHEN_SAPLING.get().asItem())
                 .add(RuBlocks.ALPHA_SAPLING.get().asItem())
                 .add(RuBlocks.APPLE_OAK_SAPLING.get().asItem())
                 .add(RuBlocks.BAMBOO_SAPLING.get().asItem())
@@ -357,6 +361,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.MAGNOLIA_SAPLING.get().asItem())
                 .add(RuBlocks.ENCHANTED_BIRCH_SAPLING.get().asItem())
                 .add(RuBlocks.SILVER_BIRCH_SAPLING.get().asItem())
+                .add(RuBlocks.SMALL_OAK_SAPLING.get().asItem())
                 .add(RuBlocks.SOCOTRA_SAPLING.get().asItem())
                 .add(RuBlocks.WHITE_MAGNOLIA_SAPLING.get().asItem())
                 .add(RuBlocks.WILLOW_SAPLING.get().asItem())
@@ -453,9 +458,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
         ;
         //this.tag(ItemTags.SOUL_FIRE_BASE_BLOCKS);
         //this.tag(ItemTags.SPRUCE_LOGS);
-        this.tag(ItemTags.SMELTS_TO_GLASS)
-                .add(RuBlocks.QUICKSAND.get().asItem())
-        ;
+        //this.tag(ItemTags.SMELTS_TO_GLASS);
         this.tag(ItemTags.STAIRS)
                 .add(RuBlocks.CHALK_STAIRS.get().asItem())
                 .add(RuBlocks.CHALK_BRICK_STAIRS.get().asItem())
@@ -704,6 +707,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.BIRCH_BRANCH.get().asItem())
                 .add(RuBlocks.BLACKWOOD_BRANCH.get().asItem())
                 .add(RuBlocks.CYPRESS_BRANCH.get().asItem())
+                .add(RuBlocks.CHERRY_BRANCH.get().asItem())
                 .add(RuBlocks.DARK_OAK_BRANCH.get().asItem())
                 .add(RuBlocks.DEAD_BRANCH.get().asItem())
                 .add(RuBlocks.EUCALYPTUS_BRANCH.get().asItem())
@@ -1004,9 +1008,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
         //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "ores_in_ground/deepslate")));
         //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "ores_in_ground/netherrack")));
         //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "ores_in_ground/stone")));
-        this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "sand/colorless")))
-                .add(RuBlocks.QUICKSAND.get().asItem())
-        ;
+        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "sand/colorless")));
         //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "sand/red")));
         //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "seeds/beetroot")));
         //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "seeds/melon")));

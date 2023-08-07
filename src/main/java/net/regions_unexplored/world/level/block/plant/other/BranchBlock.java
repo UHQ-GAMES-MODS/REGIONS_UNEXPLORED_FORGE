@@ -34,10 +34,10 @@ public class BranchBlock extends BushBlock {
         }
         else{
         return switch (state.getValue(FACING)) {
-            default -> box(6, 2, 0, 10, 7, 16);
-            case NORTH -> box(6, 2, 0, 10, 7, 16);
-            case EAST -> box(0, 2, 6, 16, 7, 10);
-            case WEST -> box(0, 2, 6, 16, 7, 10);
+            default -> box(6, 4, 0, 10, 9, 16);
+            case NORTH -> box(6, 4, 0, 10, 9, 16);
+            case EAST -> box(0, 4, 6, 16, 9, 10);
+            case WEST -> box(0, 4, 6, 16, 9, 10);
         };
         }
     }
@@ -59,7 +59,7 @@ public class BranchBlock extends BushBlock {
 
             if(!state.is(RuBlocks.JOSHUA_BEARD.get())&&!state.is(RuBlocks.PALM_BEARD.get())){
             if(!level.getBlockState(blockposn).isFaceSturdy(level, blockposn, Direction.SOUTH)){
-                return false;
+                //return false;
             }
             }
             if(mayPlaceOn(level.getBlockState(blockposn), level, blockposn)){
@@ -73,7 +73,7 @@ public class BranchBlock extends BushBlock {
         if (direction==Direction.NORTH) {
             if(!state.is(RuBlocks.JOSHUA_BEARD.get())&&!state.is(RuBlocks.PALM_BEARD.get())){
             if(!level.getBlockState(blockposs).isFaceSturdy(level, blockposs, Direction.NORTH)){
-                return false;
+                //return false;
             }
             }
             if(mayPlaceOn(level.getBlockState(blockposs), level, blockposs)){
@@ -87,7 +87,7 @@ public class BranchBlock extends BushBlock {
         if (direction==Direction.WEST) {
             if(!state.is(RuBlocks.JOSHUA_BEARD.get())&&!state.is(RuBlocks.PALM_BEARD.get())){
             if(!level.getBlockState(blockpose).isFaceSturdy(level, blockpose, Direction.WEST)){
-                return false;
+                //return false;
             }
             }
             if(mayPlaceOn(level.getBlockState(blockpose), level, blockpose)){
@@ -101,7 +101,7 @@ public class BranchBlock extends BushBlock {
         if (direction==Direction.EAST) {
             if(!state.is(RuBlocks.JOSHUA_BEARD.get())&&!state.is(RuBlocks.PALM_BEARD.get())){
             if(!level.getBlockState(blockposw).isFaceSturdy(level, blockposw, Direction.EAST)){
-                return false;
+                //return false;
             }
             }
             if(mayPlaceOn(level.getBlockState(blockposw), level, blockposw)){

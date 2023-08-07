@@ -9,8 +9,11 @@ import net.regions_unexplored.data.worldgen.features.RuTreeFeatures;
 public class FloweringTreeGrower extends AbstractTreeGrower {
    protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource random, boolean bool) {
       if (random.nextInt(10) == 0) {
-         return RuTreeFeatures.BIG_FLOWERING_OAK_TREE;
+         return RuTreeFeatures.OAK_TREE_WITH_FLOWERS;
       } else {
+         if (random.nextInt(10) == 0) {
+            return RuTreeFeatures.BIG_FLOWERING_OAK_TREE;
+         }
          return RuTreeFeatures.FLOWERING_OAK_TREE;
       }
    }

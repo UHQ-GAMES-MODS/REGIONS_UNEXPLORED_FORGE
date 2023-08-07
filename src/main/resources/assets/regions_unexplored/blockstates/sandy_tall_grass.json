@@ -1,10 +1,16 @@
 {
   "variants": {
-    "half=upper": {
+    "half=upper,is_red=false": {
       "model": "regions_unexplored:block/sandy_tall_grass"
     },
-    "half=lower": {
+    "half=lower,is_red=false": {
       "model": "regions_unexplored:block/sandy_tall_grass_bottom"
+    },
+    "half=upper,is_red=true": {
+      "model": "regions_unexplored:block/red_sandy_tall_grass"
+    },
+    "half=lower,is_red=true": {
+      "model": "regions_unexplored:block/red_sandy_tall_grass_bottom"
     }
   }
 }

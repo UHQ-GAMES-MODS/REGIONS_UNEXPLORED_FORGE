@@ -8,7 +8,7 @@ import net.regions_unexplored.data.worldgen.features.RuTreeFeatures;
 
 public class BlueMagnoliaTreeGrower extends AbstractTreeGrower {
    protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource random, boolean bool) {
-      if (random.nextInt(10) == 0) {
+      if (random.nextInt(15) == 0) {
          return RuTreeFeatures.BIG_BLUE_MAGNOLIA_TREE;
       } else {
          return RuTreeFeatures.BLUE_MAGNOLIA_TREE;

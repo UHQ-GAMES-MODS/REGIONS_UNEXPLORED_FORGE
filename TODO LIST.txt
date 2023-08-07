@@ -1,27 +1,32 @@
 
 //TODO:COMPLETE LIST
 
--finish tree growers
+//longer
 -finish retextures
 -add functionality to some extra blocks
--complete potted plants
+-polish recipes
+-polish block classes
+-do lang file
+-add hibiscus types(and respective crops for them)
+-add some advancements(O)
+-redo sign textures
+-finish hanging sign art
 -add furnace burn times
 -add flammability to blocks
 -add minor functionality, eg. composting, stripping, tilling, flattening
+
+-redo biome tags
 -fix tree roots
--polish recipes
--polish block classes
--finish hanging sign art
--add red sandy tall grass
+-complete potted plants
 -add hyacinth lamp
 -redo spire feature
--do lang file
--fix magma brimwood loot table
--add bamboo recipes
--remove hyacinth seagrass and rock
--add hibiscus types(and respective crops for them)
--add ashen sapling
--add hyacinth lamp
--fix cattail generation
--revert boreal taiga and muddy river water colours
--"sparsify" rocky meadow flowers
+-add second socotra branch structure(O)
+-make small oak log connectable(O)
+-fix marsh and water edge features floating
+-add tropical river tags
+-finish new biome placement config
+
+-retexture hanging earlight
+-add earlight fruit(O)
+
+-redo flowering sapling and shrub with new colour

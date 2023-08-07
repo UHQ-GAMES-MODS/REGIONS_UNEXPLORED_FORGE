@@ -206,7 +206,7 @@ public class AquaticBiomes {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(0.7F))
                 .fogColor(OVERWORLD_FOG_COLOR)
-                .waterColor(6391957)
+                .waterColor(-12619852)
                 .waterFogColor(7436392)
                 .foliageColorOverride(-7159980)
                 .grassColorOverride(-6044317)
@@ -225,6 +225,42 @@ public class AquaticBiomes {
 
         //add mob spawns
         MobSpawnSettings.Builder spawnBuilder = baseRiverSpawning(true);
+
+        return (new Biome.BiomeBuilder())
+                .hasPrecipitation(true)
+                .temperature(0.75F)
+                .downfall(0.7f)
+                .specialEffects(effectBuilder.build())
+                .mobSpawnSettings(spawnBuilder.build())
+                .generationSettings(biomeBuilder.build())
+                .build();
+    }
+
+    public static Biome tropicalRiver(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+        BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
+                .skyColor               (calculateSkyColor(1F))
+                .fogColor               (OVERWORLD_FOG_COLOR)
+                .waterColor             (2202835)
+                .waterFogColor          (677798)
+                .foliageColorOverride   (4237620)
+                .grassColorOverride     (6798388)
+                .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST));
+
+        //add features
+        BiomeGenerationSettings.Builder biomeBuilder = baseRiverGeneration(featureGetter, carverGetter);
+        BiomeDefaultFeatures.addLukeWarmKelp(biomeBuilder);
+
+        //add RU features
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.PALM_TREE_ON_SAND);
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.FERNS);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.TALL_GRASS);
+
+        //add mob spawns
+        MobSpawnSettings.Builder spawnBuilder = baseRiverSpawning(false);
+        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.TURTLE, 5, 1, 1));
+        spawnBuilder.addSpawn(MobCategory.WATER_AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.TROPICAL_FISH, 25, 8, 8));
 
         return (new Biome.BiomeBuilder())
                 .hasPrecipitation(true)

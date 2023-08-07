@@ -21,7 +21,8 @@
                 "data": {
                   "Name": "regions_unexplored:sandy_tall_grass",
                   "Properties": {
-                    "half": "lower"
+                    "half": "lower",
+                    "is_red": "false"
                   }
                 },
                 "weight": 1

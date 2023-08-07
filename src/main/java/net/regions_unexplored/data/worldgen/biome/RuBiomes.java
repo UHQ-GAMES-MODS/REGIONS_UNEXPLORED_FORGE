@@ -68,6 +68,7 @@ public class RuBiomes {
     public static ResourceKey<Biome> HYACINTH_DEEPS = createKey("hyacinth_deeps");
     public static ResourceKey<Biome> MUDDY_RIVER = createKey("muddy_river");
     public static ResourceKey<Biome> ROCKY_REEF = createKey("rocky_reef");
+    public static ResourceKey<Biome> TROPICAL_RIVER = createKey("tropical_river");
     public static ResourceKey<Biome> TROPICS = createKey("tropics");
     //FROZEN
     public static ResourceKey<Biome> COLD_BOREAL_TAIGA = createKey("cold_boreal_taiga");

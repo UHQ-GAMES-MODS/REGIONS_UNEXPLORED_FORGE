@@ -80,7 +80,7 @@ public class RuOverworldSurfaceBuilders {
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.HYACINTH_DEEPS),
                                     SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, RuleWeight.getPercent(30)), MOSSY_STONE), GRAVEL)),
 
-                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.ROCKY_REEF), SurfaceRules.sequence(SAND))
+                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.ROCKY_REEF, RuBiomes.TROPICAL_RIVER), SurfaceRules.sequence(SAND))
                     ))),
                     SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(),SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, false, 0, CaveSurface.FLOOR),SurfaceRules.ifTrue(SurfaceRules.waterBlockCheck(-1, 0),SurfaceRules.sequence(
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.ICY_HEIGHTS, RuBiomes.SPIRES, RuBiomes.FROZEN_PINE_TAIGA), SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.POWDER_SNOW, 0.45D, 0.58D), POWDER_SNOW)),
@@ -174,7 +174,7 @@ public class RuOverworldSurfaceBuilders {
 
                     SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(),SurfaceRules.sequence(
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.ICY_HEIGHTS, RuBiomes.SPIRES), SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR),SurfaceRules.ifTrue(SurfaceRules.waterBlockCheck(-1, 0),SNOW_BLOCK)), SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 30, CaveSurface.FLOOR),PACKED_ICE))),
-                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.SAGUARO_DESERT, RuBiomes.GRASSY_BEACH, RuBiomes.ROCKY_REEF), SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR),SANDSTONE)),
+                            SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.SAGUARO_DESERT, RuBiomes.GRASSY_BEACH, RuBiomes.TROPICAL_RIVER, RuBiomes.ROCKY_REEF), SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR),SANDSTONE)),
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.GRAVEL_BEACH, RuBiomes.COLD_RIVER), SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 0, CaveSurface.FLOOR),GRAVEL)),
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.CHALK_CLIFFS), SurfaceRules.sequence(SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, false, 0, CaveSurface.FLOOR),SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.waterBlockCheck(-1, 0),CHALK_GRASS_BLOCK), CHALK)),SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, true, 30, CaveSurface.FLOOR),CHALK)))),
 

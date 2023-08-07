@@ -8,6 +8,10 @@ import net.regions_unexplored.data.worldgen.features.RuTreeFeatures;
 
 public class PalmTreeGrower extends AbstractTreeGrower {
     protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource random, boolean bool) {
-         return RuTreeFeatures.PALM_TREE;
+        if (random.nextInt(10) == 0) {
+            return RuTreeFeatures.TALL_PALM_TREE;
+        } else {
+            return RuTreeFeatures.PALM_TREE;
+        }
    }
 }

@@ -253,6 +253,9 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         branchFromLog(consumer, RuBlocks.CYPRESS_BRANCH.get(), RuBlocks.CYPRESS_LOG.get());
         oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.CYPRESS_BRANCH.get(), "stick", 4);
 
+        branchFromLog(consumer, RuBlocks.CHERRY_BRANCH.get(), Blocks.CHERRY_LOG);
+        oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.CHERRY_BRANCH.get(), "stick", 4);
+
         branchFromLog(consumer, RuBlocks.DARK_OAK_BRANCH.get(), Blocks.DARK_OAK_LOG);
         oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.DARK_OAK_BRANCH.get(), "stick", 4);
 
@@ -371,6 +374,8 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.ASH.get(), 1).define('#', Items.GUNPOWDER).pattern("##").pattern("##").group("ash").unlockedBy("has_gunpowder", has(Items.GUNPOWDER)).save(consumer);
 
         /*-----------------WOOD_TYPES-----------------*/
+        //planksFromLogs(consumer, Blocks.BAMBOO_PLANKS, RuTags.BAMBOO_LOGS_ITEM, 4);
+        //ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.BAMBOO, 1).define('#', RuTags.BAMBOO_LOGS_ITEM).pattern("#").pattern("#").group("bamboo").unlockedBy("has_bamboo_log", has(RuTags.BAMBOO_LOGS_ITEM)).save(consumer);
         //ASHEN_BLOCKS
         woodFromLogs(consumer, RuBlocks.ASHEN_WOOD.get(), RuBlocks.ASHEN_LOG.get());
         //SILVER_BIRCH_BLOCKS

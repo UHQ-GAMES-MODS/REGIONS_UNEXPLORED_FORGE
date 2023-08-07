@@ -8,14 +8,21 @@ import net.regions_unexplored.data.worldgen.features.RuTreeFeatures;
 
 public class DeadPineTreeGrower extends AbstractTreeGrower {
    protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource random, boolean bool) {
-      
       if(random.nextInt(7)==0){
-      if(random.nextInt(3)==0){return RuTreeFeatures.DEAD_STRIPPED_PINE_TREE_TALL;}
-      else{return RuTreeFeatures.DEAD_PINE_TREE_TALL;}
+         if(random.nextInt(3)==0){
+            return RuTreeFeatures.DEAD_STRIPPED_PINE_TREE_TALL;
+         }
+         else{
+            return RuTreeFeatures.DEAD_PINE_TREE_TALL;
+         }
       }
       else{
-      if(random.nextInt(3)==0){return RuTreeFeatures.DEAD_STRIPPED_PINE_TREE;}
-      else{return RuTreeFeatures.DEAD_PINE_TREE;}
+         if(random.nextInt(3)==0){
+            return RuTreeFeatures.DEAD_STRIPPED_PINE_TREE;
+         }
+         else{
+            return RuTreeFeatures.DEAD_PINE_TREE;
+         }
       }
    }
 }

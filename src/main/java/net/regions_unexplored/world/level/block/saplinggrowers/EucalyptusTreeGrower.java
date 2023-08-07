@@ -8,6 +8,11 @@ import net.regions_unexplored.data.worldgen.features.RuTreeFeatures;
 
 public class EucalyptusTreeGrower extends AbstractTreeGrower {
     protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource random, boolean bool) {
-         return RuTreeFeatures.EUCALYPTUS_TREE;
+        if(random.nextInt(3)==0){
+            return RuTreeFeatures.SMALL_EUCALYPTUS_TREE;
+        }
+        else{
+            return RuTreeFeatures.EUCALYPTUS_TREE;
+        }
    }
 }

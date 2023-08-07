@@ -99,6 +99,7 @@ public class BiomeRegistry {
         register(context, RuBiomes.MUDDY_RIVER, AquaticBiomes.muddyRiver(featuresGetter, carversGetter));
         register(context, RuBiomes.ROCKY_REEF, AquaticBiomes.rockyReef(featuresGetter, carversGetter));
         register(context, RuBiomes.ASHEN_WOODLAND, AquaticBiomes.ashenWoodland(featuresGetter, carversGetter));
+        register(context, RuBiomes.TROPICAL_RIVER, AquaticBiomes.tropicalRiver(featuresGetter, carversGetter));
         register(context, RuBiomes.TROPICS, AquaticBiomes.tropics(featuresGetter, carversGetter));
         //FROZEN
         register(context, RuBiomes.COLD_BOREAL_TAIGA, FrozenBiomes.coldBorealTaiga(featuresGetter, carversGetter));
@@ -189,6 +190,7 @@ public class BiomeRegistry {
         registerVillagers(RuBiomes.MUDDY_RIVER, VillagerType.PLAINS);
         registerVillagers(RuBiomes.ROCKY_REEF, VillagerType.JUNGLE);
         registerVillagers(RuBiomes.ASHEN_WOODLAND, VillagerType.TAIGA);
+        registerVillagers(RuBiomes.TROPICAL_RIVER, VillagerType.JUNGLE);
         registerVillagers(RuBiomes.TROPICS, VillagerType.JUNGLE);
         //FROZEN
         registerVillagers(RuBiomes.COLD_BOREAL_TAIGA, VillagerType.SNOW);

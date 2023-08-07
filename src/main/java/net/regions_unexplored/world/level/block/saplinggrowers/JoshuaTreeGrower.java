@@ -12,6 +12,9 @@ public class JoshuaTreeGrower extends AbstractTreeGrower {
          return RuTreeFeatures.LARGE_JOSHUA_TREE;
         }
         else{
+            if(random.nextInt(10)==0){
+                return RuTreeFeatures.JOSHUA_TREE_SHRUB;
+            }
             return RuTreeFeatures.MEDIUM_JOSHUA_TREE;
         }
    }

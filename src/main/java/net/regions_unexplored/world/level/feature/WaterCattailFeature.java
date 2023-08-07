@@ -48,7 +48,7 @@ public class WaterCattailFeature extends Feature<NoneFeatureConfiguration> {
                     if (blockpos1.distSqr(pos) <= (double)(f * f)) {
                         if(level.getBlockState(blockpos1.below()).isFaceSturdy(level, pos.below(), Direction.DOWN)){
                             if(blockpos1.getY()==62||blockpos1.getY()==63){
-                                if(random.nextInt(25)== 0){
+                                if(random.nextInt(5)== 0){
                                     placeCattail(level,blockpos1);
                                 }
                             }

@@ -73,7 +73,7 @@ public class PalmTreeFeature extends Feature<RuTreeConfiguration> {
                 placeRoot(level, placePos, randomSource, treeConfiguration);
                 if(bendChance!=0){
                     if(randomSource.nextInt(2)==0) {
-                        placeRoot(level, placePos.relative(direction.getOpposite()), randomSource, treeConfiguration);
+                        //placeRoot(level, placePos.relative(direction.getOpposite()), randomSource, treeConfiguration);
                     }
                 }
             }
@@ -81,7 +81,7 @@ public class PalmTreeFeature extends Feature<RuTreeConfiguration> {
                 placeTop(level, placePos, randomSource, treeConfiguration);
             }
             placePos.move(Direction.UP);
-                if(placeCheck != 0 && placeCheck != 3 && placeCheck % 3==0){
+                if(placeCheck != 0 && placeCheck % 3==0){
                     if(bendChance!=0) {
                         placePos.move(direction);
                     }

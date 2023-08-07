@@ -9,10 +9,10 @@ import net.regions_unexplored.data.worldgen.features.RuTreeFeatures;
 public class CypressTreeGrower extends AbstractTreeGrower {
     protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource random, boolean bool) {
       if (random.nextInt(10) == 0) {
-         return RuTreeFeatures.CYPRESS_TREE;
+         return RuTreeFeatures.GIANT_CYPRESS_TREE;
       }
       else{
-         return RuTreeFeatures.GIANT_CYPRESS_TREE;
+         return RuTreeFeatures.CYPRESS_TREE;
       }
    }
 }

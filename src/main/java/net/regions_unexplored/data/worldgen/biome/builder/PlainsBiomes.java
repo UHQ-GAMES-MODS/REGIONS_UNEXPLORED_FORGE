@@ -195,6 +195,7 @@ public class PlainsBiomes {
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.MAUVE_TREE_SPARSE);
         RuBiomeDefaultFeatures.addMeadowRocks(biomeBuilder);
         RuBiomeDefaultFeatures.addMeadowVegetation(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.GRASS);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.MEADOW_SAGE);
 
 

@@ -8,8 +8,12 @@ import net.regions_unexplored.data.worldgen.features.RuTreeFeatures;
 
 public class BlackwoodTreeGrower extends AbstractMegaTreeGrower {
     protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource random, boolean bool) {
-        if(random.nextInt(7)==0){return RuTreeFeatures.BIG_BLACKWOOD_TREE;}
-        else{return RuTreeFeatures.BLACKWOOD_TREE;}
+        if(random.nextInt(5)==0){
+            return RuTreeFeatures.BLACKWOOD_TREE;
+        }
+        else{
+            return RuTreeFeatures.BIG_BLACKWOOD_TREE;
+        }
     }
 
     protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredMegaFeature(RandomSource random) {

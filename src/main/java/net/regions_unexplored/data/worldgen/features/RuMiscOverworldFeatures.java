@@ -69,7 +69,6 @@ public class RuMiscOverworldFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> PRISMARITE_CLUSTERS = ConfiguredFeatureRegistry.createKey("prismarite_clusters");
     public static final ResourceKey<ConfiguredFeature<?, ?>> HANGING_PRISMARITE_CLUSTER = ConfiguredFeatureRegistry.createKey("hanging_prismarite_cluster");
 
-    public static final ResourceKey<ConfiguredFeature<?, ?>> QUICKSAND = ConfiguredFeatureRegistry.createKey("quicksand");
     public static final ResourceKey<ConfiguredFeature<?, ?>> MINERAL_POOL = ConfiguredFeatureRegistry.createKey("mineral_pool");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> LAVA_FALL = ConfiguredFeatureRegistry.createKey("lava_fall");
@@ -120,7 +119,6 @@ public class RuMiscOverworldFeatures {
         register(context, PRISMARITE_CLUSTERS, Feature.RANDOM_PATCH, grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(RuBlocks.LARGE_PRISMARITE_CLUSTER.get().defaultBlockState(), 1).add(RuBlocks.PRISMARITE_CLUSTER.get().defaultBlockState(), 5)), 32));
         register(context, HANGING_PRISMARITE_CLUSTER, FeatureRegistry.HANGING_PRISMARITE.get(), FeatureConfiguration.NONE);
 
-        register(context, QUICKSAND, Feature.ORE, new OreConfiguration(sandTest, RuBlocks.QUICKSAND.get().defaultBlockState(), 32));
         register(context, MINERAL_POOL, Feature.WATERLOGGED_VEGETATION_PATCH, new VegetationPatchConfiguration(BlockTags.LUSH_GROUND_REPLACEABLE, BlockStateProvider.simple(Blocks.CALCITE), PlacementUtils.inlinePlaced(holderGetter.getOrThrow(CaveFeatures.POINTED_DRIPSTONE)), CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 5, 0.1F, UniformInt.of(4, 7), 0.7F));
 
         register(context, LAVA_FALL, FeatureRegistry.LAVA_FALL.get(), FeatureConfiguration.NONE);

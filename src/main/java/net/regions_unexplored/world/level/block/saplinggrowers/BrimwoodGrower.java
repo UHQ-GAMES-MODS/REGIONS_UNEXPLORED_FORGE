@@ -8,8 +8,12 @@ import net.regions_unexplored.data.worldgen.features.RuTreeFeatures;
 
 public class BrimwoodGrower extends AbstractTreeGrower {
    protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource random, boolean bool) {
-      if(random.nextInt(7)==0){return RuTreeFeatures.TALL_BRIM_WILLOW_TREE;}
-      else{return RuTreeFeatures.BRIM_WILLOW_TREE;}
+      if(random.nextInt(10)==0){
+         return RuTreeFeatures.TALL_BRIM_WILLOW_TREE;
+      }
+      else{
+         return RuTreeFeatures.BRIM_WILLOW_TREE;
+      }
    }
 }
 

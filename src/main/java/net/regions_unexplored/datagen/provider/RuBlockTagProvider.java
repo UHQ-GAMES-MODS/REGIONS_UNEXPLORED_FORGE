@@ -105,6 +105,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.RED_MAPLE_LEAVES.getKey())
                 .add(RuBlocks.MAGNOLIA_LEAVES.getKey())
                 .add(RuBlocks.SILVER_BIRCH_LEAVES.getKey())
+                .add(RuBlocks.SMALL_OAK_LEAVES.getKey())
                 .add(RuBlocks.SOCOTRA_LEAVES.getKey())
                 .add(RuBlocks.ENCHANTED_BIRCH_LEAVES.getKey())
                 .add(RuBlocks.WHITE_MAGNOLIA_LEAVES.getKey())
@@ -170,7 +171,6 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.SILT_FARMLAND.getKey())
                 .add(RuBlocks.SILT_GRASS_BLOCK.getKey())
                 .add(RuBlocks.SILT_MUD.getKey())
-                .add(RuBlocks.QUICKSAND.getKey())
                 .add(RuBlocks.VOLCANIC_ASH.getKey())
         ;
         //main_tags
@@ -375,6 +375,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
         this.tag(BlockTags.FLOWER_POTS)
                 .add(RuBlocks.POTTED_ALPHA_DANDELION.getKey())
                 .add(RuBlocks.POTTED_ALPHA_ROSE.getKey())
+                .add(RuBlocks.POTTED_ASHEN_SAPLING.getKey())
                 .add(RuBlocks.POTTED_ALPHA_SAPLING.getKey())
                 .add(RuBlocks.POTTED_ASTER.getKey())
                 .add(RuBlocks.POTTED_APPLE_OAK_SAPLING.getKey())
@@ -423,6 +424,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.ENCHANTED_BIRCH_SAPLING.getKey())
                 .add(RuBlocks.POTTED_ENCHANTED_BIRCH_SAPLING.getKey())
                 .add(RuBlocks.POTTED_SILVER_BIRCH_SAPLING.getKey())
+                .add(RuBlocks.POTTED_SMALL_OAK_SAPLING.getKey())
                 .add(RuBlocks.POTTED_SOCOTRA_SAPLING.getKey())
                 .add(RuBlocks.POTTED_WARATAH.getKey())
                 .add(RuBlocks.POTTED_WHITE_MAGNOLIA_SAPLING.getKey())
@@ -555,6 +557,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.RED_MAPLE_LEAVES.getKey())
                 .add(RuBlocks.MAGNOLIA_LEAVES.getKey())
                 .add(RuBlocks.SILVER_BIRCH_LEAVES.getKey())
+                .add(RuBlocks.SMALL_OAK_LEAVES.getKey())
                 .add(RuBlocks.SOCOTRA_LEAVES.getKey())
                 .add(RuBlocks.ENCHANTED_BIRCH_LEAVES.getKey())
                 .add(RuBlocks.SPANISH_MOSS.getKey())
@@ -591,9 +594,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .addTags(RuTags.WILLOW_LOGS)
                 .add(RuBlocks.ALPHA_LOG.getKey())
         ;
-        this.tag(BlockTags.LUSH_GROUND_REPLACEABLE)
-                .add(RuBlocks.QUICKSAND.getKey())
-        ;
+        //this.tag(BlockTags.LUSH_GROUND_REPLACEABLE);
         //this.tag(BlockTags.MANGROVE_LOGS);
         this.tag(BlockTags.MANGROVE_LOGS_CAN_GROW_THROUGH)
                 .add(RuBlocks.PEAT_MUD.getKey())
@@ -638,7 +639,10 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.OVERGROWN_BONE_BLOCK.getKey())
                 .add(RuBlocks.MYCOTOXIC_NYLIUM.getKey())
         ;
-        //this.tag(BlockTags.OAK_LOGS);
+        this.tag(BlockTags.OAK_LOGS)
+                .add(RuBlocks.SMALL_OAK_LOG.getKey())
+                .add(RuBlocks.STRIPPED_SMALL_OAK_LOG.getKey())
+        ;
         //this.tag(BlockTags.OCCLUDES_VIBRATION_SIGNALS);
         this.tag(BlockTags.OVERWORLD_CARVER_REPLACEABLES)
                 .addTags(RuTags.ASH)
@@ -648,6 +652,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
         this.tag(BlockTags.OVERWORLD_NATURAL_LOGS)
                 .add(RuBlocks.ASHEN_LOG.getKey())
                 .add(RuBlocks.ALPHA_LOG.getKey())
+                .add(RuBlocks.SMALL_OAK_LOG.getKey())
                 .add(RuBlocks.BAMBOO_LOG.getKey())
                 .add(RuBlocks.BAOBAB_LOG.getKey())
                 .add(RuBlocks.BLACKWOOD_LOG.getKey())
@@ -713,9 +718,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
         //this.tag(BlockTags.POLAR_BEARS_SPAWNABLE_ON_ALTERNATE);
         //this.tag(BlockTags.PORTALS);
         //this.tag(BlockTags.PRESSURE_PLATES);
-        this.tag(BlockTags.PREVENT_MOB_SPAWNING_INSIDE)
-                .add(RuBlocks.QUICKSAND.getKey())
-        ;
+        //this.tag(BlockTags.PREVENT_MOB_SPAWNING_INSIDE);
         this.tag(BlockTags.RABBITS_SPAWNABLE_ON)
                 .add(RuBlocks.ALPHA_GRASS_BLOCK.getKey())
                 .add(RuBlocks.PEAT_COARSE_DIRT.getKey())
@@ -785,10 +788,9 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.PRISMOSS_SPROUT.getKey())
                 .add(RuBlocks.REDSTONE_BUD.getKey())
         ;
-        this.tag(BlockTags.SAND)
-                .add(RuBlocks.QUICKSAND.getKey())
-        ;
+        //this.tag(BlockTags.SAND);
         this.tag(BlockTags.SAPLINGS)
+                .add(RuBlocks.ASHEN_SAPLING.getKey())
                 .add(RuBlocks.ALPHA_SAPLING.getKey())
                 .add(RuBlocks.APPLE_OAK_SAPLING.getKey())
                 .add(RuBlocks.BAMBOO_SAPLING.getKey())
@@ -818,6 +820,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.MAGNOLIA_SAPLING.getKey())
                 .add(RuBlocks.ENCHANTED_BIRCH_SAPLING.getKey())
                 .add(RuBlocks.SILVER_BIRCH_SAPLING.getKey())
+                .add(RuBlocks.SMALL_OAK_SAPLING.getKey())
                 .add(RuBlocks.SOCOTRA_SAPLING.getKey())
                 .add(RuBlocks.WHITE_MAGNOLIA_SAPLING.getKey())
                 .add(RuBlocks.WILLOW_SAPLING.getKey())
@@ -875,9 +878,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.GRAY_SNOWBELLE.getKey())
                 .add(RuBlocks.BLACK_SNOWBELLE.getKey())
         ;
-        this.tag(BlockTags.SMELTS_TO_GLASS)
-                .add(RuBlocks.QUICKSAND.getKey())
-        ;
+        //this.tag(BlockTags.SMELTS_TO_GLASS);
         this.tag(BlockTags.SNAPS_GOAT_HORN)
                 .add(RuBlocks.CHALK.getKey())
         ;
@@ -1214,8 +1215,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
         //this.tag(BlockTags.WOOL_CARPETS);
 
         this.tag(RuTags.QUICKSAND_REPLACEABLES)
-                .addTags(BlockTags.SAND)
-                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "sandstone")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "sand")))
         ;
         this.tag(RuTags.ASH)
                 .add(RuBlocks.ASH.getKey())
@@ -1227,6 +1227,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.BIRCH_BRANCH.getKey())
                 .add(RuBlocks.BLACKWOOD_BRANCH.getKey())
                 .add(RuBlocks.CYPRESS_BRANCH.getKey())
+                .add(RuBlocks.CHERRY_BRANCH.getKey())
                 .add(RuBlocks.DARK_OAK_BRANCH.getKey())
                 .add(RuBlocks.DEAD_BRANCH.getKey())
                 .add(RuBlocks.EUCALYPTUS_BRANCH.getKey())
@@ -1667,9 +1668,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
         //this.tag(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "ores_in_ground/deepslate")));
         //this.tag(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "ores_in_ground/netherrack")));
         //this.tag(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "ores_in_ground/stone")));
-        this.tag(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "sand/colorless")))
-                .add(RuBlocks.QUICKSAND.getKey())
-        ;
+        //this.tag(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "sand/colorless")));
         //this.tag(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "sand/red")));
         //this.tag(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "storage_blocks/redstone")));
         //this.tag(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "barrels")));

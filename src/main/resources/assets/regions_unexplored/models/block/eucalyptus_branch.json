@@ -1,9 +1,9 @@
 {
   "parent": "regions_unexplored:block/branch",
   "textures": {
-    "log": "regions_unexplored:block/eucalyptus_log",
+    "log": "regions_unexplored:block/eucalyptus_log_branch",
     "branch": "regions_unexplored:block/eucalyptus_branch",
-    "particle": "regions_unexplored:block/eucalyptus_log"
+    "particle": "regions_unexplored:block/eucalyptus_log_branch"
   },
   "render_type": "cutout"
 }

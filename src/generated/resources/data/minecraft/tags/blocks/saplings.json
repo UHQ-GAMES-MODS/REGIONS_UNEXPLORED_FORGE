@@ -1,5 +1,6 @@
 {
   "values": [
+    "regions_unexplored:ashen_sapling",
     "regions_unexplored:alpha_sapling",
     "regions_unexplored:apple_oak_sapling",
     "regions_unexplored:bamboo_sapling",
@@ -29,6 +30,7 @@
     "regions_unexplored:magnolia_sapling",
     "regions_unexplored:enchanted_birch_sapling",
     "regions_unexplored:silver_birch_sapling",
+    "regions_unexplored:small_oak_sapling",
     "regions_unexplored:socotra_sapling",
     "regions_unexplored:white_magnolia_sapling",
     "regions_unexplored:willow_sapling"

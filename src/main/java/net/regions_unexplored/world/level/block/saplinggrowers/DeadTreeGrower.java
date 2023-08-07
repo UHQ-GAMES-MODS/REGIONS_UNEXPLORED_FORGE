@@ -8,6 +8,14 @@ import net.regions_unexplored.data.worldgen.features.RuTreeFeatures;
 
 public class DeadTreeGrower extends AbstractTreeGrower {
    protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource random, boolean bool) {
-         return RuTreeFeatures.DEAD_TREE;
+       if(random.nextInt(7)==0){
+           return RuTreeFeatures.DEAD_BOG_TREE;
+       }
+       else{
+           if(random.nextInt(10)==0){
+               return RuTreeFeatures.BIG_DEAD_TREE;
+           }
+           return RuTreeFeatures.DEAD_TREE;
+       }
    }
 }

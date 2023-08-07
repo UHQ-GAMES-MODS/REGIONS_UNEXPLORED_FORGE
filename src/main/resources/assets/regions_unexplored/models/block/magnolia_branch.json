@@ -1,9 +1,9 @@
 {
   "parent": "regions_unexplored:block/branch",
   "textures": {
-    "cross": "regions_unexplored:block/magnolia_branch",
-    "cross2": "regions_unexplored:block/magnolia_branch_2",
-    "particle": "regions_unexplored:block/magnolia_branch"
+    "log": "regions_unexplored:block/magnolia_log",
+    "branch": "regions_unexplored:block/magnolia_branch",
+    "particle": "regions_unexplored:block/magnolia_log"
   },
   "render_type": "cutout"
 }

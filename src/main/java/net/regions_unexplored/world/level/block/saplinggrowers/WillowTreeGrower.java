@@ -8,6 +8,11 @@ import net.regions_unexplored.data.worldgen.features.RuTreeFeatures;
 
 public class WillowTreeGrower extends AbstractTreeGrower {
     protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource random, boolean bool) {
-         return RuTreeFeatures.WILLOW_TREE;
+        if(random.nextInt(5)==0){
+            return RuTreeFeatures.BIG_WILLOW_TREE;
+        }
+        else{
+            return RuTreeFeatures.WILLOW_TREE;
+        }
    }
 }

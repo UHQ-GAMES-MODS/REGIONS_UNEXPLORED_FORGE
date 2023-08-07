@@ -2,6 +2,7 @@
   "values": [
     "regions_unexplored:potted_alpha_dandelion",
     "regions_unexplored:potted_alpha_rose",
+    "regions_unexplored:potted_ashen_sapling",
     "regions_unexplored:potted_alpha_sapling",
     "regions_unexplored:potted_aster",
     "regions_unexplored:potted_apple_oak_sapling",
@@ -50,6 +51,7 @@
     "regions_unexplored:enchanted_birch_sapling",
     "regions_unexplored:potted_enchanted_birch_sapling",
     "regions_unexplored:potted_silver_birch_sapling",
+    "regions_unexplored:potted_small_oak_sapling",
     "regions_unexplored:potted_socotra_sapling",
     "regions_unexplored:potted_waratah",
     "regions_unexplored:potted_white_magnolia_sapling",
