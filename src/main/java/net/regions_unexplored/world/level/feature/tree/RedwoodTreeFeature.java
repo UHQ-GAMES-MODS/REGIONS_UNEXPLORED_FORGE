@@ -286,7 +286,12 @@ public class RedwoodTreeFeature extends Feature<RuTreeConfiguration> {
                 level.setBlock(placePos, Blocks.HANGING_ROOTS.defaultBlockState(), 2);
                 break;
             }
-            placeLog(level, placePos, randomSource, treeConfiguration, Direction.Axis.Y);
+            else if(level.getBlockState(placePos).is(BlockTags.DIRT)||level.getBlockState(placePos).is(BlockTags.REPLACEABLE_BY_TREES)){
+                placeLog(level, placePos, randomSource, treeConfiguration, Direction.Axis.Y);
+            }
+            else{
+                break;
+            }
             placePos.move(Direction.DOWN);
             i++;
         }

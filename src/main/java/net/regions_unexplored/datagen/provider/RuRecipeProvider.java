@@ -131,6 +131,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         oneToOneConversionRecipe(consumer, Items.LIGHT_GRAY_DYE, RuBlocks.TASSEL.get(), "light_gray_dye");
         oneToOneConversionRecipe(consumer, Items.ORANGE_DYE, RuBlocks.DAY_LILY.get(), "orange_dye");
 
+        oneToOneConversionRecipe(consumer, RuBlocks.ASHEN_SAPLING.get(), RuBlocks.ASHEN_SHRUB.get(), "saplings", 2);
         oneToOneConversionRecipe(consumer, Blocks.ACACIA_SAPLING, RuBlocks.ACACIA_SHRUB.get(), "saplings", 2);
         oneToOneConversionRecipe(consumer, Blocks.BIRCH_SAPLING, RuBlocks.BIRCH_SHRUB.get(), "saplings", 2);
         oneToOneConversionRecipe(consumer, RuBlocks.BAOBAB_SAPLING.get(), RuBlocks.BAOBAB_SHRUB.get(), "saplings", 2);
@@ -168,6 +169,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         oneToOneConversionRecipe(consumer, RuBlocks.WHITE_MAGNOLIA_SAPLING.get(), RuBlocks.WHITE_MAGNOLIA_SHRUB.get(), "saplings", 2);
         oneToOneConversionRecipe(consumer, RuBlocks.WILLOW_SAPLING.get(), RuBlocks.WILLOW_SHRUB.get(), "saplings", 2);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.ASHEN_SHRUB.get(), 1).define('#', RuBlocks.ASHEN_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_ashen_sapling", has(RuBlocks.ASHEN_SAPLING.get())).save(consumer);
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.ACACIA_SHRUB.get(), 1).define('#', Blocks.ACACIA_SAPLING).pattern("#").pattern("#").group("shrubs").unlockedBy("has_acacia_sapling", has(Blocks.ACACIA_SAPLING)).save(consumer);
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.BAOBAB_SHRUB.get(), 1).define('#', RuBlocks.BAOBAB_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_baobab_sapling", has(RuBlocks.BAOBAB_SAPLING.get())).save(consumer);
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.BIRCH_SHRUB.get(), 1).define('#', Blocks.BIRCH_SAPLING).pattern("#").pattern("#").group("shrubs").unlockedBy("has_birch_sapling", has(Blocks.BIRCH_SAPLING)).save(consumer);
@@ -224,13 +226,16 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
 
         /*-----------------PLANT_BLOCKS-----------------*/
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.BLUE_BIOSHROOM_BLOCK.get(), 1).define('#', RuBlocks.BLUE_BIOSHROOM.get()).pattern("##").pattern("##").group("bioshroom_blocks").unlockedBy("has_blue_bioshroom", has(RuBlocks.BLUE_BIOSHROOM.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.GLOWING_BLUE_BIOSHROOM_BLOCK.get(), 1).define('#', RuBlocks.BLUE_BIOSHROOM_BLOCK.get()).define('X', Blocks.GLOWSTONE).pattern(" # ").pattern("#X#").pattern(" # ").group("bioshroom_blocks").unlockedBy("has_blue_bioshroom_block", has(RuBlocks.BLUE_BIOSHROOM_BLOCK.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.GLOWING_BLUE_BIOSHROOM_BLOCK.get(), 4).define('#', RuBlocks.BLUE_BIOSHROOM_BLOCK.get()).define('X', Blocks.GLOWSTONE).pattern(" # ").pattern("#X#").pattern(" # ").group("bioshroom_blocks").unlockedBy("has_blue_bioshroom_block", has(RuBlocks.BLUE_BIOSHROOM_BLOCK.get())).save(consumer);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.GREEN_BIOSHROOM_BLOCK.get(), 1).define('#', RuBlocks.GREEN_BIOSHROOM.get()).pattern("##").pattern("##").group("bioshroom_blocks").unlockedBy("has_green_bioshroom", has(RuBlocks.GREEN_BIOSHROOM.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.GLOWING_GREEN_BIOSHROOM_BLOCK.get(), 1).define('#', RuBlocks.GREEN_BIOSHROOM_BLOCK.get()).define('X', Blocks.GLOWSTONE).pattern(" # ").pattern("#X#").pattern(" # ").group("bioshroom_blocks").unlockedBy("has_green_bioshroom_block", has(RuBlocks.GREEN_BIOSHROOM_BLOCK.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.GLOWING_GREEN_BIOSHROOM_BLOCK.get(), 4).define('#', RuBlocks.GREEN_BIOSHROOM_BLOCK.get()).define('X', Blocks.GLOWSTONE).pattern(" # ").pattern("#X#").pattern(" # ").group("bioshroom_blocks").unlockedBy("has_green_bioshroom_block", has(RuBlocks.GREEN_BIOSHROOM_BLOCK.get())).save(consumer);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.PINK_BIOSHROOM_BLOCK.get(), 1).define('#', RuBlocks.PINK_BIOSHROOM.get()).pattern("##").pattern("##").group("bioshroom_blocks").unlockedBy("has_pink_bioshroom", has(RuBlocks.PINK_BIOSHROOM.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.GLOWING_PINK_BIOSHROOM_BLOCK.get(), 1).define('#', RuBlocks.PINK_BIOSHROOM_BLOCK.get()).define('X', Blocks.GLOWSTONE).pattern(" # ").pattern("#X#").pattern(" # ").group("bioshroom_blocks").unlockedBy("has_pink_bioshroom_block", has(RuBlocks.PINK_BIOSHROOM_BLOCK.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.GLOWING_PINK_BIOSHROOM_BLOCK.get(), 4).define('#', RuBlocks.PINK_BIOSHROOM_BLOCK.get()).define('X', Blocks.GLOWSTONE).pattern(" # ").pattern("#X#").pattern(" # ").group("bioshroom_blocks").unlockedBy("has_pink_bioshroom_block", has(RuBlocks.PINK_BIOSHROOM_BLOCK.get())).save(consumer);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.YELLOW_BIOSHROOM_BLOCK.get(), 1).define('#', RuBlocks.YELLOW_BIOSHROOM.get()).pattern("##").pattern("##").group("bioshroom_blocks").unlockedBy("has_yellow_bioshroom", has(RuBlocks.YELLOW_BIOSHROOM.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.GLOWING_YELLOW_BIOSHROOM_BLOCK.get(), 1).define('#', RuBlocks.YELLOW_BIOSHROOM_BLOCK.get()).define('X', Blocks.GLOWSTONE).pattern(" # ").pattern("#X#").pattern(" # ").group("bioshroom_blocks").unlockedBy("has_yellow_bioshroom_block", has(RuBlocks.YELLOW_BIOSHROOM_BLOCK.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.GLOWING_YELLOW_BIOSHROOM_BLOCK.get(), 4).define('#', RuBlocks.YELLOW_BIOSHROOM_BLOCK.get()).define('X', Blocks.GLOWSTONE).pattern(" # ").pattern("#X#").pattern(" # ").group("bioshroom_blocks").unlockedBy("has_yellow_bioshroom_block", has(RuBlocks.YELLOW_BIOSHROOM_BLOCK.get())).save(consumer);
 
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(RuBlocks.SAGUARO_CACTUS.get()), RecipeCategory.MISC, Items.GREEN_DYE, 1.0F, 200).group("cactus").unlockedBy("has_saguaro_cactus", has(RuBlocks.SAGUARO_CACTUS.get())).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getConversionRecipeName(Items.GREEN_DYE, RuBlocks.SAGUARO_CACTUS.get())));
 
@@ -362,13 +367,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         oreBlasting(consumer, MOSSY_STONE_SMELTABLES, RecipeCategory.BUILDING_BLOCKS, RuBlocks.MOSSY_STONE.get(), 0.1F, 100, "mossy");
 
         /*-----------------OCEAN_BLOCKS-----------------*/
-        //TODO:ADD HYACINTH_LANTERN BEFORE RECIPES
-        //-----------HYACINTH_BLOOM;
-        //-----------HYACINTH_FLOWERS;
-        //-----------TALL_HYACINTH_STOCK;
-
-        //TODO: ADD ASHEN_SAPLING BEFORE RECIPE
-        //-----------ASHEN_SHRUB;
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.HYACINTH_LAMP.get()).define('#', Items.PRISMARINE_SLAB).define('X', RuTags.HYACINTH_BLOOMS_ITEM).pattern("X").pattern("#").group("hyacinth").unlockedBy("has_prismarine_slab", has(Items.PRISMARINE_SLAB)).unlockedBy("has_hyacinth", has(RuTags.HYACINTH_BLOOMS_ITEM)).save(consumer);
 
         /*-----------------OTHER_BLOCKS-----------------*/
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.ASH.get(), 1).define('#', Items.GUNPOWDER).pattern("##").pattern("##").group("ash").unlockedBy("has_gunpowder", has(Items.GUNPOWDER)).save(consumer);

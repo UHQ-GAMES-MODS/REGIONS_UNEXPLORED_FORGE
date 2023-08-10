@@ -54,9 +54,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.EUCALYPTUS_FOREST.location())
                 .addOptional(RuBiomes.ROCKY_REEF.location())
         ;
-        this.tag(BiomeTags.IS_BADLANDS)
-                .addOptional(RuBiomes.ARID_MOUNTAINS.location())
-        ;
+        //this.tag(BiomeTags.IS_BADLANDS);
         this.tag(BiomeTags.IS_BEACH)
                 .addOptional(RuBiomes.GRAVEL_BEACH.location())
                 .addOptional(RuBiomes.GRASSY_BEACH.location())
@@ -164,6 +162,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.COLD_RIVER.location())
                 .addOptional(RuBiomes.HYACINTH_DEEPS.location())
                 .addOptional(RuBiomes.MUDDY_RIVER.location())
+                .addOptional(RuBiomes.TROPICAL_RIVER.location())
                 .addOptional(RuBiomes.ROCKY_REEF.location())
                 .addOptional(RuBiomes.ASHEN_WOODLAND.location())
                 .addOptional(RuBiomes.TROPICS.location())
@@ -184,6 +183,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
         this.tag(BiomeTags.IS_RIVER)
                 .addOptional(RuBiomes.COLD_RIVER.location())
                 .addOptional(RuBiomes.MUDDY_RIVER.location())
+                .addOptional(RuBiomes.TROPICAL_RIVER.location())
         ;
         this.tag(BiomeTags.IS_SAVANNA)
                 .addOptional(RuBiomes.STEPPE.location())
@@ -313,6 +313,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 //AQUATIC
                 .addOptional(RuBiomes.COLD_RIVER.location())
                 .addOptional(RuBiomes.MUDDY_RIVER.location())
+                .addOptional(RuBiomes.TROPICAL_RIVER.location())
                 //FROZEN
                 .addOptional(RuBiomes.COLD_BOREAL_TAIGA.location())
                 .addOptional(RuBiomes.COLD_DECIDUOUS_FOREST.location())

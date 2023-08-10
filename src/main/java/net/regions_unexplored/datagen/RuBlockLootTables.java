@@ -241,33 +241,71 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         add(RuBlocks.SALMONBERRY_BUSH.get(), (block) -> applyExplosionDecay(block, LootTable.lootTable().withPool(LootPool.lootPool().when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(RuBlocks.SALMONBERRY_BUSH.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(SalmonBerryBushBlock.AGE, 3))).add(LootItem.lootTableItem(RuItems.SALMONBERRY.get())).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F))).apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE))).withPool(LootPool.lootPool().when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(RuBlocks.SALMONBERRY_BUSH.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(SweetBerryBushBlock.AGE, 2))).add(LootItem.lootTableItem(RuItems.SALMONBERRY.get())).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))).apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)))));
 
         /*-----------------POTTED_PLANTS-----------------*/
-        //POTTED_FLOWERS
         add(RuBlocks.POTTED_ALPHA_DANDELION.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_ALPHA_ROSE.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_ASTER.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_BLEEDING_HEART.get(), (block) -> createPotFlowerItemTable(block));
-        add(RuBlocks.POTTED_BLUE_LUPINE.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_DAISY.get(), (block) -> createPotFlowerItemTable(block));
-        add(RuBlocks.POTTED_DORCEL.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_FELICIA_DAISY.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_DORCEL.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_FIREWEED.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_HIBISCUS.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_HYSSOP.get(), (block) -> createPotFlowerItemTable(block));
-        add(RuBlocks.POTTED_PINK_LUPINE.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_MALLOW.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_POPPY_BUSH.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_SALMON_POPPY_BUSH.get(), (block) -> createPotFlowerItemTable(block));
-        add(RuBlocks.POTTED_PURPLE_LUPINE.get(), (block) -> createPotFlowerItemTable(block));
-        add(RuBlocks.POTTED_RED_LUPINE.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_TSUBAKI.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_WARATAH.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_WHITE_TRILLIUM.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_WILTING_TRILLIUM.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_BLUE_LUPINE.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_PINK_LUPINE.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_PURPLE_LUPINE.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_RED_LUPINE.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_YELLOW_LUPINE.get(), (block) -> createPotFlowerItemTable(block));
-        //POTTED_SAPLINGS
+        add(RuBlocks.POTTED_ORANGE_CONEFLOWER.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_PURPLE_CONEFLOWER.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_WHITE_SNOWBELLE.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_LIGHT_GRAY_SNOWBELLE.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_GRAY_SNOWBELLE.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_RED_SNOWBELLE.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_ORANGE_SNOWBELLE.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_YELLOW_SNOWBELLE.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_LIME_SNOWBELLE.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_GREEN_SNOWBELLE.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_CYAN_SNOWBELLE.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_LIGHT_BLUE_SNOWBELLE.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_BLUE_SNOWBELLE.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_PURPLE_SNOWBELLE.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_MAGENTA_SNOWBELLE.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_PINK_SNOWBELLE.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_BROWN_SNOWBELLE.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_BLACK_SNOWBELLE.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_DAY_LILY.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_MEADOW_SAGE.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_CAVE_HYSSOP.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_BARREL_CACTUS.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_DUSKTRAP.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_CORPSE_FLOWER.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_COBALT_EARLIGHT.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_TALL_COBALT_EARLIGHT.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_MYCOTOXIC_DAISY.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_GLISTER_SPIRE.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_BLUE_BIOSHROOM.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_GREEN_BIOSHROOM.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_PINK_BIOSHROOM.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_YELLOW_BIOSHROOM.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_TALL_BLUE_BIOSHROOM.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_TALL_GREEN_BIOSHROOM.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_TALL_PINK_BIOSHROOM.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_TALL_YELLOW_BIOSHROOM.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_ASHEN_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_ALPHA_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_APPLE_OAK_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_BAMBOO_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_BAOBAB_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_BLACKWOOD_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_BRIMWOOD_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_COBALT_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_CACTUS_FLOWER.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_MAGNOLIA_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
@@ -289,38 +327,12 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         add(RuBlocks.POTTED_PINK_MAGNOLIA_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_REDWOOD_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_RED_MAPLE_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
-        add(RuBlocks.POTTED_BRIMWOOD_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_ENCHANTED_BIRCH_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_SILVER_BIRCH_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_SMALL_OAK_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_SOCOTRA_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_WHITE_MAGNOLIA_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_WILLOW_SAPLING.get(), (block) -> createPotFlowerItemTable(block));
-        //POTTED_MUSHROOMS
-        add(RuBlocks.POTTED_BLUE_BIOSHROOM.get(), (block) -> createPotFlowerItemTable(block));
-        add(RuBlocks.POTTED_GREEN_BIOSHROOM.get(), (block) -> createPotFlowerItemTable(block));
-        add(RuBlocks.POTTED_PINK_BIOSHROOM.get(), (block) -> createPotFlowerItemTable(block));
-        add(RuBlocks.POTTED_YELLOW_BIOSHROOM.get(), (block) -> createPotFlowerItemTable(block));
-        //OTHER_POTTED_PLANTS
-        add(RuBlocks.POTTED_BARREL_CACTUS.get(), (block) -> createPotFlowerItemTable(block));
-        add(RuBlocks.POTTED_CAVE_HYSSOP.get(), (block) -> createPotFlowerItemTable(block));
-        //SNOWBELLE
-        add(RuBlocks.POTTED_RED_SNOWBELLE.get(), (block) -> createPotFlowerItemTable(block));
-        add(RuBlocks.POTTED_ORANGE_SNOWBELLE.get(), (block) -> createPotFlowerItemTable(block));
-        add(RuBlocks.POTTED_YELLOW_SNOWBELLE.get(), (block) -> createPotFlowerItemTable(block));
-        add(RuBlocks.POTTED_LIME_SNOWBELLE.get(), (block) -> createPotFlowerItemTable(block));
-        add(RuBlocks.POTTED_GREEN_SNOWBELLE.get(), (block) -> createPotFlowerItemTable(block));
-        add(RuBlocks.POTTED_CYAN_SNOWBELLE.get(), (block) -> createPotFlowerItemTable(block));
-        add(RuBlocks.POTTED_LIGHT_BLUE_SNOWBELLE.get(), (block) -> createPotFlowerItemTable(block));
-        add(RuBlocks.POTTED_BLUE_SNOWBELLE.get(), (block) -> createPotFlowerItemTable(block));
-        add(RuBlocks.POTTED_PURPLE_SNOWBELLE.get(), (block) -> createPotFlowerItemTable(block));
-        add(RuBlocks.POTTED_MAGENTA_SNOWBELLE.get(), (block) -> createPotFlowerItemTable(block));
-        add(RuBlocks.POTTED_PINK_SNOWBELLE.get(), (block) -> createPotFlowerItemTable(block));
-        add(RuBlocks.POTTED_BROWN_SNOWBELLE.get(), (block) -> createPotFlowerItemTable(block));
-        add(RuBlocks.POTTED_WHITE_SNOWBELLE.get(), (block) -> createPotFlowerItemTable(block));
-        add(RuBlocks.POTTED_LIGHT_GRAY_SNOWBELLE.get(), (block) -> createPotFlowerItemTable(block));
-        add(RuBlocks.POTTED_GRAY_SNOWBELLE.get(), (block) -> createPotFlowerItemTable(block));
-        add(RuBlocks.POTTED_BLACK_SNOWBELLE.get(), (block) -> createPotFlowerItemTable(block));
 
         /*-----------------PLANT_BLOCKS-----------------*/
         //MUSHROOMS
@@ -443,6 +455,7 @@ public class RuBlockLootTables extends BlockLootSubProvider {
 
         /*-----------------OCEAN_BLOCKS-----------------*/
         //HYACINTH_BLOCKS
+        dropSelf(RuBlocks.HYACINTH_LAMP.get());
         dropSelf(RuBlocks.HYACINTH_BLOOM.get());
         add(RuBlocks.HYACINTH_FLOWERS.get(), (block) -> createMultifaceBlockDrops(block, HAS_SHEARS));
         dropSelf(RuBlocks.TALL_HYACINTH_STOCK.get());

@@ -20,13 +20,13 @@ public class RuTags {
     public static final TagKey<Block> REPLACEABLE_BLOCKS = createBlock("replaceable_blocks");
     public static final TagKey<Block> PRISMARITE_CRYSTALS = createBlock("prismarite_crystals");
     public static final TagKey<Block> SNOWBELLE = createBlock("snowbelle");
-    public static final TagKey<Block> QUICKSAND_REPLACEABLES = createBlock("quicksand_replaceables");
     public static final TagKey<Block> GRASS = createBlock("grass");
     public static final TagKey<Block> SHRUBS = createBlock("shrubs");
     public static final TagKey<Block> TREE_GRASS_REPLACEABLES = createBlock("tree_grass_replaceables");
     public static final TagKey<Block> ASH = createBlock("ash");
     public static final TagKey<Block> BRANCHES = createBlock("branches");
 
+    public static final TagKey<Block> HYACINTH_BLOOMS = createBlock("hyacinth_blooms");
     public static final TagKey<Block> BAMBOO_LOGS = createBlock("bamboo_logs");
     public static final TagKey<Block> BAOBAB_LOGS = createBlock("baobab_logs");
     public static final TagKey<Block> BLACKWOOD_LOGS = createBlock("blackwood_logs");
@@ -52,12 +52,15 @@ public class RuTags {
     public static final TagKey<Block> YELLOW_BIOSHROOM_LOGS = createBlock("yellow_bioshroom_logs");
     //items
     public static final TagKey<Item> PRISMARITE_CRYSTALS_ITEM = createItem("prismarite_crystals");
+    public static final TagKey<Item> BIOSHROOMS_ITEM = createItem("bioshrooms");
+    public static final TagKey<Item> LOGS_ITEM = createItem("logs");
     public static final TagKey<Item> SNOWBELLE_ITEM = createItem("snowbelle");
     public static final TagKey<Item> GRASS_ITEM = createItem("grass");
     public static final TagKey<Item> SHRUBS_ITEM = createItem("shrubs");
     public static final TagKey<Item> ASH_ITEM = createItem("ash");
     public static final TagKey<Item> BRANCHES_ITEM = createItem("branches");
 
+    public static final TagKey<Item> HYACINTH_BLOOMS_ITEM = createItem("hyacinth_blooms");
     public static final TagKey<Item> BAMBOO_LOGS_ITEM = createItem("bamboo_logs");
     public static final TagKey<Item> BAOBAB_LOGS_ITEM = createItem("baobab_logs");
     public static final TagKey<Item> BLACKWOOD_LOGS_ITEM = createItem("blackwood_logs");

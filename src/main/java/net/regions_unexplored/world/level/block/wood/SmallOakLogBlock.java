@@ -35,7 +35,7 @@ public class SmallOakLogBlock extends Block implements SimpleWaterloggedBlock{
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
     public SmallOakLogBlock() {
-        super(Properties.of().mapColor(MapColor.WOOD).instrument(NoteBlockInstrument.BASS).sound(SoundType.BAMBOO).strength(2f, 3f).noOcclusion()
+        super(Properties.of().mapColor(MapColor.WOOD).instrument(NoteBlockInstrument.BASS).sound(SoundType.WOOD).strength(2f, 3f).noOcclusion()
                 .isRedstoneConductor((bs, br, bp) -> false));
         this.registerDefaultState(this.stateDefinition.any().setValue(AXIS, Direction.Axis.Y).setValue(WATERLOGGED, Boolean.valueOf(false)));
     }
@@ -92,6 +92,18 @@ public class SmallOakLogBlock extends Block implements SimpleWaterloggedBlock{
             }
         }
         return state;
+    }
+    
+    @Override
+    @Nullable
+    public BlockState getToolModifiedState(BlockState state, UseOnContext context, ToolAction action, boolean simulate) {
+        Direction.Axis axis = state.getValue(AXIS);
+        boolean water = state.getValue(WATERLOGGED);
+
+        if (ToolActions.AXE_STRIP == action && context.getItemInHand().canPerformAction(ToolActions.AXE_STRIP)) {
+            return RuBlocks.STRIPPED_SMALL_OAK_LOG.get().defaultBlockState().setValue(AXIS, axis).setValue(WATERLOGGED, water);
+        }
+        return null;
     }
 }
 

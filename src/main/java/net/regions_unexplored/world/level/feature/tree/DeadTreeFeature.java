@@ -189,7 +189,7 @@ public class DeadTreeFeature extends Feature<RuTreeConfiguration> {
 
     public void placeRoot(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
         Random random = new Random();
-        int rd = 0;
+        int rd = random.nextInt(2)+2;
         int i = 0;
         BlockPos.MutableBlockPos placePos = pos.mutable();
         while(i<=rd){
@@ -197,7 +197,12 @@ public class DeadTreeFeature extends Feature<RuTreeConfiguration> {
                 level.setBlock(placePos, Blocks.HANGING_ROOTS.defaultBlockState(), 2);
                 break;
             }
-            placeLog(level, placePos, randomSource, treeConfiguration, Direction.Axis.Y);
+            else if(level.getBlockState(placePos).is(BlockTags.DIRT)||level.getBlockState(placePos).is(BlockTags.REPLACEABLE_BY_TREES)){
+                placeLog(level, placePos, randomSource, treeConfiguration, Direction.Axis.Y);
+            }
+            else{
+                break;
+            }
             placePos.move(Direction.DOWN);
             i++;
         }

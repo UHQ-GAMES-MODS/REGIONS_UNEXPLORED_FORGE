@@ -24,7 +24,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.regions_unexplored.block.RuBlocks;
+import net.regions_unexplored.block.*;
 import net.regions_unexplored.block.entity.RuBlockEntities;
 import net.regions_unexplored.client.particle.RuParticleTypes;
 import net.regions_unexplored.config.RuCommonConfig;
@@ -114,6 +114,10 @@ public class RegionsUnexploredMod {
     //set up non-client side features
     private void commonSetup(final FMLCommonSetupEvent event) {
         BiomeRegistry.setupTerrablender();
+        PottedPlants.setup();
+        CompostableBlocks.setup();
+        FlammableBlocks.setup();
+        BlockToolCompat.setup();
     }
 
     private static void registerFoliagePlacers(){

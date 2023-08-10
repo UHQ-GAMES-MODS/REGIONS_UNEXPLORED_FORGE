@@ -33,6 +33,8 @@ public class RuColorHandler {
                 RuBlocks.STONE_BUD.get(),
                 RuBlocks.ORANGE_CONEFLOWER.get(),
                 RuBlocks.PURPLE_CONEFLOWER.get(),
+                RuBlocks.POTTED_ORANGE_CONEFLOWER.get(),
+                RuBlocks.POTTED_PURPLE_CONEFLOWER.get(),
                 RuBlocks.TASSEL.get(),
                 RuBlocks.CLOVER.get(),
                 RuBlocks.BLADED_GRASS.get(),

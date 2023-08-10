@@ -1,0 +1,7 @@
+{
+  "parent": "regions_unexplored:block/coneflower_pot",
+  "textures": {
+    "plant": "regions_unexplored:block/purple_coneflower"
+  },
+  "render_type": "cutout"
+}

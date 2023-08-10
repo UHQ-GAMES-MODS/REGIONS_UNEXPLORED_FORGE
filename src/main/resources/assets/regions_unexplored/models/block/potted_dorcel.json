@@ -1,7 +1,7 @@
 {
   "parent": "block/flower_pot_cross",
   "textures": {
-    "plant": "regions_unexplored:block/potted_dorcel"
+    "plant": "regions_unexplored:block/dorcel"
   },
   "render_type": "cutout"
 }

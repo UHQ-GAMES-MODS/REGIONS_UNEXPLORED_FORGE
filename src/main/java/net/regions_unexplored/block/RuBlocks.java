@@ -257,16 +257,30 @@ public class RuBlocks {
     public static RegistryObject<Block> POTTED_DORCEL;
     public static RegistryObject<Block> POTTED_FELICIA_DAISY;
     public static RegistryObject<Block> POTTED_FIREWEED;
+    public static RegistryObject<Block> POTTED_HIBISCUS;
     public static RegistryObject<Block> POTTED_HYSSOP;
+    public static RegistryObject<Block> POTTED_MALLOW;
     public static RegistryObject<Block> POTTED_PINK_LUPINE;
     public static RegistryObject<Block> POTTED_POPPY_BUSH;
     public static RegistryObject<Block> POTTED_SALMON_POPPY_BUSH;
     public static RegistryObject<Block> POTTED_PURPLE_LUPINE;
     public static RegistryObject<Block> POTTED_RED_LUPINE;
+    public static RegistryObject<Block> POTTED_TSUBAKI;
+    public static RegistryObject<Block> POTTED_ORANGE_CONEFLOWER;
+    public static RegistryObject<Block> POTTED_PURPLE_CONEFLOWER;
     public static RegistryObject<Block> POTTED_WARATAH;
     public static RegistryObject<Block> POTTED_WHITE_TRILLIUM;
     public static RegistryObject<Block> POTTED_WILTING_TRILLIUM;
     public static RegistryObject<Block> POTTED_YELLOW_LUPINE;
+    //OTHER_POTS
+    public static RegistryObject<Block> POTTED_DAY_LILY;
+    public static RegistryObject<Block> POTTED_MEADOW_SAGE;
+    public static RegistryObject<Block> POTTED_DUSKTRAP;
+    public static RegistryObject<Block> POTTED_CORPSE_FLOWER;
+    public static RegistryObject<Block> POTTED_COBALT_EARLIGHT;
+    public static RegistryObject<Block> POTTED_TALL_COBALT_EARLIGHT;
+    public static RegistryObject<Block> POTTED_MYCOTOXIC_DAISY;
+    public static RegistryObject<Block> POTTED_GLISTER_SPIRE;
     //POTTED_SAPLINGS
     public static RegistryObject<Block> POTTED_ASHEN_SAPLING;
     public static RegistryObject<Block> POTTED_ALPHA_SAPLING;
@@ -307,6 +321,10 @@ public class RuBlocks {
     public static RegistryObject<Block> POTTED_GREEN_BIOSHROOM;
     public static RegistryObject<Block> POTTED_PINK_BIOSHROOM;
     public static RegistryObject<Block> POTTED_YELLOW_BIOSHROOM;
+    public static RegistryObject<Block> POTTED_TALL_BLUE_BIOSHROOM;
+    public static RegistryObject<Block> POTTED_TALL_GREEN_BIOSHROOM;
+    public static RegistryObject<Block> POTTED_TALL_PINK_BIOSHROOM;
+    public static RegistryObject<Block> POTTED_TALL_YELLOW_BIOSHROOM;
     //OTHER_POTTED_PLANTS
     public static RegistryObject<Block> POTTED_BARREL_CACTUS;
     public static RegistryObject<Block> POTTED_CAVE_HYSSOP;
@@ -447,6 +465,7 @@ public class RuBlocks {
 
     /*-----------------OCEAN_BLOCKS-----------------*/
     //HYACINTH_BLOCKS
+    public static RegistryObject<Block> HYACINTH_LAMP;
     public static RegistryObject<Block> HYACINTH_BLOOM;
     public static RegistryObject<Block> HYACINTH_FLOWERS;
     public static RegistryObject<Block> TALL_HYACINTH_STOCK;
@@ -1163,16 +1182,30 @@ public class RuBlocks {
         POTTED_DORCEL = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_dorcel", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, DORCEL, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
         POTTED_FELICIA_DAISY = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_felicia_daisy", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, FELICIA_DAISY, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
         POTTED_FIREWEED = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_fireweed", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, FIREWEED, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
+        POTTED_HIBISCUS = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_hibiscus", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, HIBISCUS, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
         POTTED_HYSSOP = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_hyssop", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, HYSSOP, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
+        POTTED_MALLOW = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_mallow", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, MALLOW, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
         POTTED_PINK_LUPINE = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_pink_lupine", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, PINK_LUPINE, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
         POTTED_POPPY_BUSH = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_poppy_bush", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, POPPY_BUSH, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
         POTTED_SALMON_POPPY_BUSH = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_salmon_poppy_bush", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, SALMON_POPPY_BUSH, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
         POTTED_PURPLE_LUPINE = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_purple_lupine", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, PURPLE_LUPINE, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
         POTTED_RED_LUPINE = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_red_lupine", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, RED_LUPINE, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
+        POTTED_TSUBAKI = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_tsubaki", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, TSUBAKI, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
+        POTTED_ORANGE_CONEFLOWER = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_orange_coneflower", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, ORANGE_CONEFLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
+        POTTED_PURPLE_CONEFLOWER = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_purple_coneflower", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, PURPLE_CONEFLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
         POTTED_WARATAH = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_waratah", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, WARATAH, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
         POTTED_WHITE_TRILLIUM = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_white_trillium", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, WHITE_TRILLIUM, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
         POTTED_WILTING_TRILLIUM = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_wilting_trillium", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, WILTING_TRILLIUM, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
         POTTED_YELLOW_LUPINE = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_yellow_lupine", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, YELLOW_LUPINE, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
+        //OTHER_POTS
+        POTTED_DAY_LILY = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_day_lily", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, DAY_LILY, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
+        POTTED_MEADOW_SAGE = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_meadow_sage", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, MEADOW_SAGE, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
+        POTTED_DUSKTRAP = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_dusktrap", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, DUSKTRAP, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
+        POTTED_CORPSE_FLOWER = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_corpse_flower", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, CORPSE_FLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
+        POTTED_COBALT_EARLIGHT = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_cobalt_earlight", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, COBALT_EARLIGHT, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).lightLevel(s -> 8)));
+        POTTED_TALL_COBALT_EARLIGHT = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_tall_cobalt_earlight", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, TALL_COBALT_EARLIGHT, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).lightLevel(s -> 8)));
+        POTTED_MYCOTOXIC_DAISY = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_mycotoxic_daisy", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, MYCOTOXIC_DAISY, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).lightLevel(s -> 8)));
+        POTTED_GLISTER_SPIRE = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_glister_spire", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, GLISTER_SPIRE, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).lightLevel(s -> 8)));
         //POTTED_SAPLINGS
         POTTED_ASHEN_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_ashen_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, ASHEN_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
         POTTED_ALPHA_SAPLING = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_alpha_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, ALPHA_SAPLING, BlockBehaviour.Properties.copy(Blocks.POTTED_OAK_SAPLING)));
@@ -1213,6 +1246,10 @@ public class RuBlocks {
         POTTED_GREEN_BIOSHROOM = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_green_bioshroom", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, GREEN_BIOSHROOM, BlockBehaviour.Properties.copy(Blocks.POTTED_BROWN_MUSHROOM).lightLevel(s -> 10)));
         POTTED_PINK_BIOSHROOM = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_pink_bioshroom", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, PINK_BIOSHROOM, BlockBehaviour.Properties.copy(Blocks.POTTED_BROWN_MUSHROOM).lightLevel(s -> 10)));
         POTTED_YELLOW_BIOSHROOM = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_yellow_bioshroom", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, YELLOW_BIOSHROOM, BlockBehaviour.Properties.copy(Blocks.POTTED_BROWN_MUSHROOM).lightLevel(s -> 10)));
+        POTTED_TALL_BLUE_BIOSHROOM = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_tall_blue_bioshroom", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, TALL_BLUE_BIOSHROOM, BlockBehaviour.Properties.copy(Blocks.POTTED_BROWN_MUSHROOM).lightLevel(s -> 10)));
+        POTTED_TALL_GREEN_BIOSHROOM = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_tall_green_bioshroom", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, TALL_GREEN_BIOSHROOM, BlockBehaviour.Properties.copy(Blocks.POTTED_BROWN_MUSHROOM).lightLevel(s -> 10)));
+        POTTED_TALL_PINK_BIOSHROOM = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_tall_pink_bioshroom", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, TALL_PINK_BIOSHROOM, BlockBehaviour.Properties.copy(Blocks.POTTED_BROWN_MUSHROOM).lightLevel(s -> 10)));
+        POTTED_TALL_YELLOW_BIOSHROOM = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_tall_yellow_bioshroom", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, TALL_YELLOW_BIOSHROOM, BlockBehaviour.Properties.copy(Blocks.POTTED_BROWN_MUSHROOM).lightLevel(s -> 10)));
         //OTHER_POTTED_PLANTS
         POTTED_BARREL_CACTUS = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_barrel_cactus", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, BARREL_CACTUS, BlockBehaviour.Properties.copy(Blocks.POTTED_CACTUS)));
         POTTED_CAVE_HYSSOP = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_cave_hyssop", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, CAVE_HYSSOP, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
@@ -1352,6 +1389,7 @@ public class RuBlocks {
 
         /*-----------------OCEAN_BLOCKS-----------------*/
         //HYACINTH_BLOCKS
+        HYACINTH_LAMP = BlockRegistry.registerDefaultBlock("hyacinth_lamp", () -> new HyacinthLampBlock(BlockBehaviour.Properties.of().noOcclusion().instabreak().sound(SoundType.DECORATED_POT).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 14)));
         HYACINTH_BLOOM = BlockRegistry.registerDefaultBlock("hyacinth_bloom", () -> new SeagrassBlock(BlockBehaviour.Properties.of().replaceable().noCollission().instabreak().sound(SoundType.WET_GRASS).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 9)));
         HYACINTH_FLOWERS = BlockRegistry.registerDefaultBlock("hyacinth_flowers", () -> new GlowLichenBlock(BlockBehaviour.Properties.of().replaceable().mapColor(MapColor.GLOW_LICHEN).noCollission().strength(0.2F).sound(SoundType.GLOW_LICHEN).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 8)));
         TALL_HYACINTH_STOCK = BlockRegistry.registerDefaultBlock("tall_hyacinth_stock", () -> new TallHyacinthStockBlock(BlockBehaviour.Properties.of().noCollission().instabreak().sound(SoundType.WET_GRASS).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 12)));

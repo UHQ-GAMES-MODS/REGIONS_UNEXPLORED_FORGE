@@ -23,6 +23,7 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.common.IForgeShearable;
 import net.minecraftforge.common.ToolAction;
 import net.minecraftforge.common.ToolActions;
 import net.regions_unexplored.block.RuBlocks;
@@ -30,7 +31,7 @@ import net.regions_unexplored.world.level.block.state.properties.RuBlockStatePro
 
 import javax.annotation.Nullable;
 
-public class BambooLogBlock extends Block implements BonemealableBlock,SimpleWaterloggedBlock{
+public class BambooLogBlock extends Block implements BonemealableBlock,SimpleWaterloggedBlock {
     public static final BooleanProperty LEAVES = RuBlockStateProperties.LEAVES;
     public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.AXIS;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
@@ -110,72 +111,18 @@ public class BambooLogBlock extends Block implements BonemealableBlock,SimpleWat
     @Override
     @Nullable
     public BlockState getToolModifiedState(BlockState state, UseOnContext context, ToolAction action, boolean simulate) {
+        Direction.Axis axis = state.getValue(AXIS);
+        boolean water = state.getValue(WATERLOGGED);
+        boolean leaves = state.getValue(LEAVES);
 
         if (ToolActions.HOE_TILL == action && context.getItemInHand().canPerformAction(ToolActions.HOE_TILL)) {
-            if (state == this.stateDefinition.any().setValue(AXIS, Direction.Axis.X).setValue(LEAVES,true).setValue(WATERLOGGED, true)) {
+            if(leaves) {
                 popResourceFromFace(context.getLevel(), context.getClickedPos(), context.getClickedFace(), new ItemStack(RuBlocks.BAMBOO_SAPLING.get().asItem(), 1));
-                return this.stateDefinition.any().setValue(AXIS, Direction.Axis.X).setValue(LEAVES,false).setValue(WATERLOGGED, true);
-            }
-            if (state == this.stateDefinition.any().setValue(AXIS, Direction.Axis.Y).setValue(LEAVES,true).setValue(WATERLOGGED, true)) {
-                popResourceFromFace(context.getLevel(), context.getClickedPos(), context.getClickedFace(), new ItemStack(RuBlocks.BAMBOO_SAPLING.get().asItem(), 1));
-                return this.stateDefinition.any().setValue(AXIS, Direction.Axis.Y).setValue(LEAVES,false).setValue(WATERLOGGED, true);
-            }
-            if (state == this.stateDefinition.any().setValue(AXIS, Direction.Axis.Z).setValue(LEAVES,true).setValue(WATERLOGGED, true)) {
-                popResourceFromFace(context.getLevel(), context.getClickedPos(), context.getClickedFace(), new ItemStack(RuBlocks.BAMBOO_SAPLING.get().asItem(), 1));
-                return this.stateDefinition.any().setValue(AXIS, Direction.Axis.Z).setValue(LEAVES,false).setValue(WATERLOGGED, true);
-            }
-
-            if (state == this.stateDefinition.any().setValue(AXIS, Direction.Axis.X).setValue(LEAVES,true).setValue(WATERLOGGED, false)) {
-                popResourceFromFace(context.getLevel(), context.getClickedPos(), context.getClickedFace(), new ItemStack(RuBlocks.BAMBOO_SAPLING.get().asItem(), 1));
-                return this.stateDefinition.any().setValue(AXIS, Direction.Axis.X).setValue(LEAVES,false).setValue(WATERLOGGED, false);
-            }
-            if (state == this.stateDefinition.any().setValue(AXIS, Direction.Axis.Y).setValue(LEAVES,true).setValue(WATERLOGGED, false)) {
-                popResourceFromFace(context.getLevel(), context.getClickedPos(), context.getClickedFace(), new ItemStack(RuBlocks.BAMBOO_SAPLING.get().asItem(), 1));
-                return this.stateDefinition.any().setValue(AXIS, Direction.Axis.Y).setValue(LEAVES,false).setValue(WATERLOGGED, false);
-            }
-            if (state == this.stateDefinition.any().setValue(AXIS, Direction.Axis.Z).setValue(LEAVES,true).setValue(WATERLOGGED, false)) {
-                popResourceFromFace(context.getLevel(), context.getClickedPos(), context.getClickedFace(), new ItemStack(RuBlocks.BAMBOO_SAPLING.get().asItem(), 1));
-                return this.stateDefinition.any().setValue(AXIS, Direction.Axis.Z).setValue(LEAVES,false).setValue(WATERLOGGED, false);
+                return this.stateDefinition.any().setValue(AXIS, axis).setValue(LEAVES, false).setValue(WATERLOGGED, water);
             }
         }
         if (ToolActions.AXE_STRIP == action && context.getItemInHand().canPerformAction(ToolActions.AXE_STRIP)) {
-            if (state == this.stateDefinition.any().setValue(AXIS, Direction.Axis.X).setValue(LEAVES,true).setValue(WATERLOGGED, true)) {
-                return RuBlocks.STRIPPED_BAMBOO_LOG.get().defaultBlockState().setValue(AXIS, Direction.Axis.X).setValue(WATERLOGGED, true);
-            }
-            if (state == this.stateDefinition.any().setValue(AXIS, Direction.Axis.Y).setValue(LEAVES,true).setValue(WATERLOGGED, true)) {
-                return RuBlocks.STRIPPED_BAMBOO_LOG.get().defaultBlockState().setValue(AXIS, Direction.Axis.Y).setValue(WATERLOGGED, true);
-            }
-            if (state == this.stateDefinition.any().setValue(AXIS, Direction.Axis.Z).setValue(LEAVES,true).setValue(WATERLOGGED, true)) {
-                return RuBlocks.STRIPPED_BAMBOO_LOG.get().defaultBlockState().setValue(AXIS, Direction.Axis.Z).setValue(WATERLOGGED, true);
-            }
-            if (state == this.stateDefinition.any().setValue(AXIS, Direction.Axis.X).setValue(LEAVES,false).setValue(WATERLOGGED, true)) {
-                return RuBlocks.STRIPPED_BAMBOO_LOG.get().defaultBlockState().setValue(AXIS, Direction.Axis.X).setValue(WATERLOGGED, true);
-            }
-            if (state == this.stateDefinition.any().setValue(AXIS, Direction.Axis.Y).setValue(LEAVES,false).setValue(WATERLOGGED, true)) {
-                return RuBlocks.STRIPPED_BAMBOO_LOG.get().defaultBlockState().setValue(AXIS, Direction.Axis.Y).setValue(WATERLOGGED, true);
-            }
-            if (state == this.stateDefinition.any().setValue(AXIS, Direction.Axis.Z).setValue(LEAVES,false).setValue(WATERLOGGED, true)) {
-                return RuBlocks.STRIPPED_BAMBOO_LOG.get().defaultBlockState().setValue(AXIS, Direction.Axis.Z).setValue(WATERLOGGED, true);
-            }
-
-            if (state == this.stateDefinition.any().setValue(AXIS, Direction.Axis.X).setValue(LEAVES,true).setValue(WATERLOGGED, false)) {
-                return RuBlocks.STRIPPED_BAMBOO_LOG.get().defaultBlockState().setValue(AXIS, Direction.Axis.X).setValue(WATERLOGGED, false);
-            }
-            if (state == this.stateDefinition.any().setValue(AXIS, Direction.Axis.Y).setValue(LEAVES,true).setValue(WATERLOGGED, false)) {
-                return RuBlocks.STRIPPED_BAMBOO_LOG.get().defaultBlockState().setValue(AXIS, Direction.Axis.Y).setValue(WATERLOGGED, false);
-            }
-            if (state == this.stateDefinition.any().setValue(AXIS, Direction.Axis.Z).setValue(LEAVES,true).setValue(WATERLOGGED, false)) {
-                return RuBlocks.STRIPPED_BAMBOO_LOG.get().defaultBlockState().setValue(AXIS, Direction.Axis.Z).setValue(WATERLOGGED, false);
-            }
-            if (state == this.stateDefinition.any().setValue(AXIS, Direction.Axis.X).setValue(LEAVES,false).setValue(WATERLOGGED, false)) {
-                return RuBlocks.STRIPPED_BAMBOO_LOG.get().defaultBlockState().setValue(AXIS, Direction.Axis.X).setValue(WATERLOGGED, false);
-            }
-            if (state == this.stateDefinition.any().setValue(AXIS, Direction.Axis.Y).setValue(LEAVES,false).setValue(WATERLOGGED, false)) {
-                return RuBlocks.STRIPPED_BAMBOO_LOG.get().defaultBlockState().setValue(AXIS, Direction.Axis.Y).setValue(WATERLOGGED, false);
-            }
-            if (state == this.stateDefinition.any().setValue(AXIS, Direction.Axis.Z).setValue(LEAVES,false).setValue(WATERLOGGED, false)) {
-                return RuBlocks.STRIPPED_BAMBOO_LOG.get().defaultBlockState().setValue(AXIS, Direction.Axis.Z).setValue(WATERLOGGED, false);
-            }
+            return RuBlocks.STRIPPED_BAMBOO_LOG.get().defaultBlockState().setValue(AXIS, axis).setValue(WATERLOGGED, water);
         }
         return null;
     }

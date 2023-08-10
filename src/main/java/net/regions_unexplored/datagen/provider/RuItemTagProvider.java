@@ -6,7 +6,6 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
@@ -682,6 +681,11 @@ public class RuItemTagProvider extends ItemTagsProvider {
         //this.tag(ItemTags.WOOL_CARPETS);
 
 
+
+        this.tag(RuTags.HYACINTH_BLOOMS_ITEM)
+                .add(RuBlocks.HYACINTH_BLOOM.get().asItem())
+                .add(RuBlocks.TALL_HYACINTH_STOCK.get().asItem())
+        ;
         this.tag(RuTags.PRISMARITE_CRYSTALS_ITEM)
                 .add(RuBlocks.PRISMARITE_CLUSTER.get().asItem())
                 .add(RuBlocks.LARGE_PRISMARITE_CLUSTER.get().asItem())
@@ -727,6 +731,45 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.SOCOTRA_BRANCH.get().asItem())
                 .add(RuBlocks.SPRUCE_BRANCH.get().asItem())
                 .add(RuBlocks.WILLOW_BRANCH.get().asItem())
+        ;
+        this.tag(RuTags.BIOSHROOMS_ITEM)
+                .add(RuBlocks.BLUE_BIOSHROOM.get().asItem())
+                .add(RuBlocks.GREEN_BIOSHROOM.get().asItem())
+                .add(RuBlocks.PINK_BIOSHROOM.get().asItem())
+                .add(RuBlocks.YELLOW_BIOSHROOM.get().asItem())
+                .add(RuBlocks.TALL_BLUE_BIOSHROOM.get().asItem())
+                .add(RuBlocks.TALL_GREEN_BIOSHROOM.get().asItem())
+                .add(RuBlocks.TALL_PINK_BIOSHROOM.get().asItem())
+                .add(RuBlocks.TALL_YELLOW_BIOSHROOM.get().asItem())
+        ;
+        this.tag(RuTags.LOGS_ITEM)
+                .add(RuBlocks.BAMBOO_LOG.get().asItem())
+                .add(RuBlocks.SMALL_OAK_LOG.get().asItem())
+                .add(RuBlocks.ASHEN_LOG.get().asItem())
+                .add(RuBlocks.SILVER_BIRCH_LOG.get().asItem())
+                .add(RuBlocks.ALPHA_LOG.get().asItem())
+                .add(RuBlocks.BAOBAB_LOG.get().asItem())
+                .add(RuBlocks.BLACKWOOD_LOG.get().asItem())
+                .add(RuBlocks.BRIMWOOD_LOG.get().asItem())
+                .add(RuBlocks.COBALT_LOG.get().asItem())
+                .add(RuBlocks.CYPRESS_LOG.get().asItem())
+                .add(RuBlocks.DEAD_LOG.get().asItem())
+                .add(RuBlocks.EUCALYPTUS_LOG.get().asItem())
+                .add(RuBlocks.JOSHUA_LOG.get().asItem())
+                .add(RuBlocks.KAPOK_LOG.get().asItem())
+                .add(RuBlocks.LARCH_LOG.get().asItem())
+                .add(RuBlocks.MAGNOLIA_LOG.get().asItem())
+                .add(RuBlocks.MAPLE_LOG.get().asItem())
+                .add(RuBlocks.MAUVE_LOG.get().asItem())
+                .add(RuBlocks.PALM_LOG.get().asItem())
+                .add(RuBlocks.PINE_LOG.get().asItem())
+                .add(RuBlocks.REDWOOD_LOG.get().asItem())
+                .add(RuBlocks.SOCOTRA_LOG.get().asItem())
+                .add(RuBlocks.WILLOW_LOG.get().asItem())
+                .add(RuBlocks.BLUE_BIOSHROOM_STEM.get().asItem())
+                .add(RuBlocks.GREEN_BIOSHROOM_STEM.get().asItem())
+                .add(RuBlocks.PINK_BIOSHROOM_STEM.get().asItem())
+                .add(RuBlocks.YELLOW_BIOSHROOM_STEM.get().asItem())
         ;
         this.tag(RuTags.SNOWBELLE_ITEM)
                 .add(RuBlocks.RED_SNOWBELLE.get().asItem())

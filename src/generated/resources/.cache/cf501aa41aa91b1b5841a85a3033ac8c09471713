@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-05T20:44:52.847489	Tags for minecraft:worldgen/biome mod id regions_unexplored
+// 1.20.1	2023-08-07T07:24:45.1973814	Tags for minecraft:worldgen/biome mod id regions_unexplored
 36649860d25a60634c9747c746e4a7f41282eab1 data/forge/tags/worldgen/biome/is_cave.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/worldgen/biome/is_cold.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/worldgen/biome/is_cold/end.json
@@ -67,7 +67,6 @@ f4609dff9aee1e1747c27ebad771340b2f7f3333 data/minecraft/tags/worldgen/biome/has_
 79169b4b328301bd5470d2b07130015eb20cfda7 data/minecraft/tags/worldgen/biome/has_structure/village_taiga.json
 7882d4dbc8205bdbdf9f022193957a8448395257 data/minecraft/tags/worldgen/biome/has_structure/woodland_mansion.json
 241ffb40b589d391deae784ba0eadaaf3cd2210d data/minecraft/tags/worldgen/biome/increased_fire_burnout.json
-deb5ef60a0d71455d4f16b31f0eb42e5256f7bca data/minecraft/tags/worldgen/biome/is_badlands.json
 f3d2a874b85873d3a146e6474cf63dba8b222ea4 data/minecraft/tags/worldgen/biome/is_beach.json
 679aaf558b87b382b692ca1dba27785cb8c9dbd7 data/minecraft/tags/worldgen/biome/is_deep_ocean.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/worldgen/biome/is_end.json
@@ -77,8 +76,8 @@ f7c3bdfa620f5703d2422a59eedb5f1bbc4ad725 data/minecraft/tags/worldgen/biome/is_f
 10383c863938ba78f58c75cb0c04c157f385260e data/minecraft/tags/worldgen/biome/is_mountain.json
 6e671e478234b87218ede11c1008e7087a6f22d4 data/minecraft/tags/worldgen/biome/is_nether.json
 2a35e3f4c5a43275344195dd4ab27cf264dd8a6f data/minecraft/tags/worldgen/biome/is_ocean.json
-8e85dd6bad723a6fe63d6accdfff5ee36e79534b data/minecraft/tags/worldgen/biome/is_overworld.json
-d79aa902b7a47a1988e66c9288e3af57352def85 data/minecraft/tags/worldgen/biome/is_river.json
+e16db3c2fe00dc51b779a7da84747ad8efdf0b37 data/minecraft/tags/worldgen/biome/is_overworld.json
+2cd464ccc0be670a374108b90eb2b1ac851d126e data/minecraft/tags/worldgen/biome/is_river.json
 47c10ffe0e62c0f6956328a394255576e53e64f8 data/minecraft/tags/worldgen/biome/is_savanna.json
 d05df651842961fbfde2ff84d9ad1b716c274eac data/minecraft/tags/worldgen/biome/is_taiga.json
 cfd2102a597ed9fe359ad34d0344e25d9d98d87a data/minecraft/tags/worldgen/biome/mineshaft_blocking.json
@@ -94,7 +93,7 @@ b776a40e464619060050d54e9a97f0c56763d712 data/minecraft/tags/worldgen/biome/spaw
 0831321464a6cce590aff724b4abd3c1145f14df data/minecraft/tags/worldgen/biome/spawns_snow_foxes.json
 b9623a63e23431fd25b7d20d11884ba7453d87dc data/minecraft/tags/worldgen/biome/spawns_warm_variant_frogs.json
 0831321464a6cce590aff724b4abd3c1145f14df data/minecraft/tags/worldgen/biome/spawns_white_rabbits.json
-3a3ac96f2ea1ec95a590070047a7f9deafc4eee2 data/minecraft/tags/worldgen/biome/stronghold_biased_to.json
+2060b80f19adf5c633b6219b5eee153e788e42c1 data/minecraft/tags/worldgen/biome/stronghold_biased_to.json
 13bda1b4bd23aad88838e757b3f65b60f30b82b7 data/minecraft/tags/worldgen/biome/water_on_map_outlines.json
 440485c95ff0181b95d2cd45a7d8d7cb1b2b6b65 data/minecraft/tags/worldgen/biome/without_patrol_spawns.json
 440485c95ff0181b95d2cd45a7d8d7cb1b2b6b65 data/minecraft/tags/worldgen/biome/without_wandering_trader_spawns.json

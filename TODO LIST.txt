@@ -1,32 +1,16 @@
-
-//TODO:COMPLETE LIST
-
-//longer
 -finish retextures
--add functionality to some extra blocks
--polish recipes
--polish block classes
--do lang file
--add hibiscus types(and respective crops for them)
--add some advancements(O)
--redo sign textures
--finish hanging sign art
--add furnace burn times
--add flammability to blocks
--add minor functionality, eg. composting, stripping, tilling, flattening
-
--redo biome tags
--fix tree roots
--complete potted plants
--add hyacinth lamp
--redo spire feature
--add second socotra branch structure(O)
--make small oak log connectable(O)
--fix marsh and water edge features floating
--add tropical river tags
+-do item retextures
+-redo boat textures
+-redo biome placement
 -finish new biome placement config
+-add acacia to dry brushland
 
--retexture hanging earlight
--add earlight fruit(O)
 
--redo flowering sapling and shrub with new colour
++advancements:
+    -Regions Explored: find all biomes from Regions Unexplored
+    -Bat Vision: Receive blindness from a Duskmelon
+    -Every Bit of the Rainbow: Collect or craft every colour of the Snowbelle Flower
+    -Got Wood?: Collect every log from Regions Unexplored
+    -Downer: Walk through and take damage from a Dorcel Flower
+    -Light as a Frog: Save yourself from fall damage with a Giant Lily Pad
+    -Mycologist: Collect every Bioshroom type

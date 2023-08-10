@@ -101,7 +101,7 @@ public class BlockRegistry {
     }
     //Configure wooden button
     public static ButtonBlock woodButton(SoundType sound, BlockSetType blockSetType) {
-        return new ButtonBlock(BlockBehaviour.Properties.of().noCollission().strength(0.5F).sound(sound).ignitedByLava(), blockSetType, 30, true);
+        return new ButtonBlock(BlockBehaviour.Properties.of().noCollission().strength(0.5F).sound(sound), blockSetType, 30, true);
     }
     //Configure sign
     public static RuStandingSignBlock sign(SoundType sound, WoodType woodType) {

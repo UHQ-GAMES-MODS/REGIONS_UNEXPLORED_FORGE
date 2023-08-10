@@ -3,6 +3,5 @@
   "textures": {
     "all": "regions_unexplored:block/silver_birch_leaves",
     "particle": "regions_unexplored:block/silver_birch_leaves"
-  },
-  "render_type": "cutout_mipped"
+  }
 }

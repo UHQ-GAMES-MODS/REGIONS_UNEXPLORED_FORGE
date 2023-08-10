@@ -3,6 +3,7 @@ package net.regions_unexplored.world.level.feature.tree;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelSimulatedReader;
@@ -151,17 +152,25 @@ public class SaguaroCactusFeature extends Feature<RuTreeConfiguration> {
         return true;
     }
 
-    public boolean placeRoot(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
+    public void placeRoot(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
         Random random = new Random();
-        int rd = 2;
+        int rd = random.nextInt(2)+4;
         int i = 0;
         BlockPos.MutableBlockPos placePos = pos.mutable();
         while(i<=rd){
-            placeCactusBlock(level, placePos, randomSource, treeConfiguration, SaguaroCactusShape.UP_DOWN);
+            if(level.getBlockState(placePos).canBeReplaced()&&level.getBlockState(placePos.above()).is(BlockTags.DIRT)){
+                level.setBlock(placePos, Blocks.HANGING_ROOTS.defaultBlockState(), 2);
+                break;
+            }
+            else if(level.getBlockState(placePos).is(BlockTags.DIRT)||level.getBlockState(placePos).is(BlockTags.REPLACEABLE_BY_TREES)){
+                placeCactusBlock(level, placePos, randomSource, treeConfiguration, SaguaroCactusShape.UP_DOWN);
+            }
+            else{
+                break;
+            }
             placePos.move(Direction.DOWN);
             i++;
         }
-        return true;
     }
     public boolean placeChanceFlowerBlock(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
         if(level.isOutsideBuildHeight(pos)){

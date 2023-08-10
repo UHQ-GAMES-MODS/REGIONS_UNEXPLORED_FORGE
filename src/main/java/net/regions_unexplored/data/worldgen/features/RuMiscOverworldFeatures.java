@@ -89,7 +89,6 @@ public class RuMiscOverworldFeatures {
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         HolderGetter<ConfiguredFeature<?, ?>> holderGetter = context.lookup(Registries.CONFIGURED_FEATURE);
-        RuleTest sandTest = new TagMatchTest(RuTags.QUICKSAND_REPLACEABLES);
         RuleTest baseStoneTest = new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD);
         RuleTest stoneOreTest = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
         RuleTest deepslateOreTest = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);

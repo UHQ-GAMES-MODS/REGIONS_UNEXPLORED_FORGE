@@ -205,6 +205,10 @@
       "required": false
     },
     {
+      "id": "regions_unexplored:tropical_river",
+      "required": false
+    },
+    {
       "id": "regions_unexplored:rocky_reef",
       "required": false
     },

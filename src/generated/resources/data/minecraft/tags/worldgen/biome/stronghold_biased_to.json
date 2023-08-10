@@ -169,6 +169,10 @@
       "required": false
     },
     {
+      "id": "regions_unexplored:tropical_river",
+      "required": false
+    },
+    {
       "id": "regions_unexplored:cold_boreal_taiga",
       "required": false
     },

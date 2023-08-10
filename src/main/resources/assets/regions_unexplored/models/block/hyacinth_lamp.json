@@ -1,0 +1,59 @@
+{
+	"parent": "block/block",
+	"ambientocclusion": false,
+	"render_type": "cutout",
+	"textures": {
+		"0": "regions_unexplored:block/hyacinth_lamp_base",
+		"1": "regions_unexplored:block/hyacinth_stock",
+		"particle": "regions_unexplored:block/hyacinth_lamp_base"
+	},
+	"elements": [
+		{
+			"from": [4, 0, 4],
+			"to": [12, 4, 12],
+			"shade": false,
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, -4, 0]},
+			"faces": {
+				"north": {"uv": [16, 0, 8, 4], "texture": "#0", "cullface": "north"},
+				"east": {"uv": [8, 8, 16, 12], "texture": "#0", "cullface": "east"},
+				"south": {"uv": [16, 0, 8, 4], "texture": "#0", "cullface": "south"},
+				"west": {"uv": [8, 8, 16, 12], "texture": "#0", "cullface": "west"},
+				"up": {"uv": [0, 8, 8, 16], "texture": "#0", "cullface": "up"},
+				"down": {"uv": [0, 0, 8, 8], "texture": "#0", "cullface": "down"}
+			}
+		},
+		{
+			"from": [5, 3, 5],
+			"to": [11, 5, 11],
+			"shade": false,
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, -4, 0]},
+			"faces": {
+				"north": {"uv": [9, 0, 15, 2], "texture": "#0", "cullface": "north"},
+				"east": {"uv": [15, 8, 9, 10], "texture": "#0", "cullface": "east"},
+				"south": {"uv": [9, 0, 15, 2], "texture": "#0", "cullface": "south"},
+				"west": {"uv": [15, 8, 9, 10], "texture": "#0", "cullface": "west"},
+				"up": {"uv": [1, 9, 7, 15], "texture": "#0", "cullface": "up"}
+			}
+		},
+		{
+			"from": [1, 4, 8],
+			"to": [15, 17, 8],
+			"shade": false,
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, 15, 8], "rescale": true},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#1"}
+			}
+		},
+		{
+			"from": [1, 4, 8],
+			"to": [15, 17, 8],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 11, 8], "rescale": true},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#1"}
+			}
+		}
+	]
+}

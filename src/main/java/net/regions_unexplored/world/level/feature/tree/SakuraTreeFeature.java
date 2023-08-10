@@ -5,6 +5,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.LevelAccessor;
@@ -412,17 +413,25 @@ public class SakuraTreeFeature extends Feature<RuTreeConfiguration> {
         return true;
     }
 
-    public boolean placeRoot(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
+    public void placeRoot(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
         Random random = new Random();
-        int rd = 2;
+        int rd = random.nextInt(2)+4;
         int i = 0;
         BlockPos.MutableBlockPos placePos = pos.mutable();
         while(i<=rd){
-            placeLog(level, placePos, randomSource, treeConfiguration);
+            if(level.getBlockState(placePos).canBeReplaced()&&level.getBlockState(placePos.above()).is(BlockTags.DIRT)){
+                level.setBlock(placePos, Blocks.HANGING_ROOTS.defaultBlockState(), 2);
+                break;
+            }
+            else if(level.getBlockState(placePos).is(BlockTags.DIRT)||level.getBlockState(placePos).is(BlockTags.REPLACEABLE_BY_TREES)){
+                placeLog(level, placePos, randomSource, treeConfiguration);
+            }
+            else{
+                break;
+            }
             placePos.move(Direction.DOWN);
             i++;
         }
-        return true;
     }
 
     public boolean placeLeavesBlobLeft(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {

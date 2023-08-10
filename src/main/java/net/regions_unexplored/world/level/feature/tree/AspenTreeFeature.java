@@ -188,21 +188,27 @@ public class AspenTreeFeature extends Feature<RuTreeConfiguration> {
         return true;
     }
 
-    public boolean placeRoot(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
+    public void placeRoot(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
         Random random = new Random();
-        int rd = 2;
+        int rd = random.nextInt(2)+2;
         int i = 0;
         BlockPos.MutableBlockPos placePos = pos.mutable();
         while(i<=rd){
-            if(level.getBlockState(placePos).canBeReplaced()&&level.getBlockState(placePos.above()).is(BlockTags.LOGS)){
+            if(level.getBlockState(placePos).canBeReplaced()&&level.getBlockState(placePos.above()).is(BlockTags.DIRT)){
                 level.setBlock(placePos, Blocks.HANGING_ROOTS.defaultBlockState(), 2);
+                break;
             }
-            placeLog(level, placePos, randomSource, treeConfiguration, Direction.Axis.Y);
+            else if(level.getBlockState(placePos).is(BlockTags.DIRT)||level.getBlockState(placePos).is(BlockTags.REPLACEABLE_BY_TREES)){
+                placeLog(level, placePos, randomSource, treeConfiguration, Direction.Axis.Y);
+            }
+            else{
+                break;
+            }
             placePos.move(Direction.DOWN);
             i++;
         }
-        return true;
     }
+
     public boolean placeLeavesBlob(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
         Random random = new Random();
         placeLeavesBlock(level, pos, randomSource, treeConfiguration);

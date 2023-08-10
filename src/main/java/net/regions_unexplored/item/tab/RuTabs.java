@@ -20,7 +20,6 @@ public class RuTabs {
                         .hideTitle()
                         .withBackgroundLocation(new ResourceLocation(RegionsUnexploredMod.MOD_ID, "textures/gui/container/creative_inventory/tab_item_search.png"))
                         .withSearchBar(58)
-                        .withTabsImage(new ResourceLocation(RegionsUnexploredMod.MOD_ID, "textures/gui/container/creative_inventory/tabs.png"))
                         .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
                         .displayItems((featureFlags, output) -> {
 
@@ -338,8 +337,9 @@ public class RuTabs {
                             /*-----------------OCEAN_BLOCKS-----------------*/
                             //HYACINTH_BLOCKS
                             output.accept(new ItemStack(RuBlocks.HYACINTH_BLOOM.get()));
-                            output.accept(new ItemStack(RuBlocks.HYACINTH_FLOWERS.get()));
                             output.accept(new ItemStack(RuBlocks.TALL_HYACINTH_STOCK.get()));
+                            output.accept(new ItemStack(RuBlocks.HYACINTH_LAMP.get()));
+                            output.accept(new ItemStack(RuBlocks.HYACINTH_FLOWERS.get()));
                             //ASHEN_BLOCKS
                             output.accept(new ItemStack(RuBlocks.ASHEN_DIRT.get()));
                             output.accept(new ItemStack(RuBlocks.ASHEN_GRASS.get()));
