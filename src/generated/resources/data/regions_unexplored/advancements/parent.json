@@ -1,0 +1,42 @@
+{
+  "criteria": {
+    "load_in_world": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "text": "Discover the many biomes and explore the world!"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "regions_unexplored:eucalyptus_sapling"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "Regions Unexplored"
+    }
+  },
+  "requirements": [
+    [
+      "load_in_world"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

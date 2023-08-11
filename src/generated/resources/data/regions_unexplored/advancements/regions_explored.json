@@ -1,0 +1,157 @@
+{
+  "parent": "regions_unexplored:parent",
+  "criteria": {
+    "alpha_grove": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "regions_unexplored:alpha_grove"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
+    "ancient_delta": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "regions_unexplored:ancient_delta"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
+    "arid_mountains": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "regions_unexplored:arid_mountains"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
+    "ashen_woodland": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "regions_unexplored:ashen_woodland"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
+    "autumnal_maple_forest": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "regions_unexplored:autumnal_maple_forest"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
+    "bamboo_forest": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "regions_unexplored:bamboo_forest"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
+    "bayou": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "regions_unexplored:bayou"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "text": "You've explored all the biomes from Regions Unexplored"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "regions_unexplored:eucalyptus_sapling"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "Regions Explored"
+    }
+  },
+  "requirements": [
+    [
+      "alpha_grove"
+    ],
+    [
+      "ancient_delta"
+    ],
+    [
+      "arid_mountains"
+    ],
+    [
+      "ashen_woodland"
+    ],
+    [
+      "autumnal_maple_forest"
+    ],
+    [
+      "bayou"
+    ],
+    [
+      "bamboo_forest"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,169 @@
+{
+  "parent": "regions_unexplored:parent",
+  "criteria": {
+    "getting_wood": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "regions_unexplored:bamboo_log"
+            ]
+          },
+          {
+            "items": [
+              "regions_unexplored:small_oak_log"
+            ]
+          },
+          {
+            "items": [
+              "regions_unexplored:ashen_log"
+            ]
+          },
+          {
+            "items": [
+              "regions_unexplored:silver_birch_log"
+            ]
+          },
+          {
+            "items": [
+              "regions_unexplored:alpha_log"
+            ]
+          },
+          {
+            "items": [
+              "regions_unexplored:baobab_log"
+            ]
+          },
+          {
+            "items": [
+              "regions_unexplored:blackwood_log"
+            ]
+          },
+          {
+            "items": [
+              "regions_unexplored:brimwood_log"
+            ]
+          },
+          {
+            "items": [
+              "regions_unexplored:cobalt_log"
+            ]
+          },
+          {
+            "items": [
+              "regions_unexplored:cypress_log"
+            ]
+          },
+          {
+            "items": [
+              "regions_unexplored:dead_log"
+            ]
+          },
+          {
+            "items": [
+              "regions_unexplored:eucalyptus_log"
+            ]
+          },
+          {
+            "items": [
+              "regions_unexplored:joshua_log"
+            ]
+          },
+          {
+            "items": [
+              "regions_unexplored:kapok_log"
+            ]
+          },
+          {
+            "items": [
+              "regions_unexplored:larch_log"
+            ]
+          },
+          {
+            "items": [
+              "regions_unexplored:magnolia_log"
+            ]
+          },
+          {
+            "items": [
+              "regions_unexplored:maple_log"
+            ]
+          },
+          {
+            "items": [
+              "regions_unexplored:mauve_log"
+            ]
+          },
+          {
+            "items": [
+              "regions_unexplored:palm_log"
+            ]
+          },
+          {
+            "items": [
+              "regions_unexplored:pine_log"
+            ]
+          },
+          {
+            "items": [
+              "regions_unexplored:redwood_log"
+            ]
+          },
+          {
+            "items": [
+              "regions_unexplored:socotra_log"
+            ]
+          },
+          {
+            "items": [
+              "regions_unexplored:willow_log"
+            ]
+          },
+          {
+            "items": [
+              "regions_unexplored:blue_bioshroom_stem"
+            ]
+          },
+          {
+            "items": [
+              "regions_unexplored:green_bioshroom_stem"
+            ]
+          },
+          {
+            "items": [
+              "regions_unexplored:pink_bioshroom_stem"
+            ]
+          },
+          {
+            "items": [
+              "regions_unexplored:yellow_bioshroom_stem"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "text": "Collect every log from Regions Unexplored"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "regions_unexplored:redwood_log"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "Got Wood?"
+    }
+  },
+  "requirements": [
+    [
+      "getting_wood"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
