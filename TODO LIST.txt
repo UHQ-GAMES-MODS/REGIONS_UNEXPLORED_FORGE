@@ -1,16 +1,7 @@
--finish retextures
+-do block retextures
 -do item retextures
--redo boat textures
+-do boat textures
 -redo biome placement
 -finish new biome placement config
 -add acacia to dry brushland
-
-
-+advancements:
-    -Regions Explored: find all biomes from Regions Unexplored
-    -Bat Vision: Receive blindness from a Duskmelon
-    -Every Bit of the Rainbow: Collect or craft every colour of the Snowbelle Flower
-    -Got Wood?: Collect every log from Regions Unexplored
-    -Downer: Walk through and take damage from a Dorcel Flower
-    -Light as a Frog: Save yourself from fall damage with a Giant Lily Pad
-    -Mycologist: Collect every Bioshroom type
+-add oak to willow forest

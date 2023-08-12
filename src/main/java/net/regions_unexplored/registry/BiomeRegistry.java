@@ -9,6 +9,7 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.regions_unexplored.RegionsUnexploredMod;
+import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.config.RuCommonConfig;
 import net.regions_unexplored.data.worldgen.biome.RuBiomes;
 import net.regions_unexplored.data.worldgen.biome.builder.*;
@@ -216,6 +217,7 @@ public class BiomeRegistry {
 
     private static void register(BootstapContext<Biome> context, ResourceKey<Biome> key, Biome biome) {
         context.register(key, biome);
+
     }
 
     private static void registerVillagers(ResourceKey<Biome> key, VillagerType type) {
