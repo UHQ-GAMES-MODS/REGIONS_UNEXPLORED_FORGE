@@ -21,6 +21,7 @@ import net.regions_unexplored.registry.BiomeRegistry;
 import net.regions_unexplored.registry.ConfiguredFeatureRegistry;
 import net.regions_unexplored.registry.PlacedFeatureRegistry;
 
+import java.util.List;
 import java.util.Set;
 
 @Mod.EventBusSubscriber( modid = RegionsUnexploredMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -46,8 +47,9 @@ public class DataGeneration {
         TagsProvider<Block> blockTagsProvider = generator.addProvider(event.includeServer(), new RuBlockTagProvider(packOutput, event.getLookupProvider(), RegionsUnexploredMod.MOD_ID, existingFileHelper));
         TagsProvider<Item> itemTagsProvider = generator.addProvider(event.includeServer(), new RuItemTagProvider(packOutput, event.getLookupProvider(), blockTagsProvider.contentsGetter(),  RegionsUnexploredMod.MOD_ID, existingFileHelper));
         TagsProvider<Biome> biomeTagsProvider = generator.addProvider(event.includeServer(), new RuBiomeTagProvider(packOutput, event.getLookupProvider(), RegionsUnexploredMod.MOD_ID, existingFileHelper));
-
+        generator.addProvider(true, new RuAdvancementProvider(packOutput, event.getLookupProvider(), existingFileHelper));
         generator.addProvider(true, RuLootTableProvider.create(packOutput));
         generator.addProvider(true, new RuRecipeProvider(packOutput));
+        generator.addProvider(true, new RuLanguageProvider(packOutput));
     }
 }

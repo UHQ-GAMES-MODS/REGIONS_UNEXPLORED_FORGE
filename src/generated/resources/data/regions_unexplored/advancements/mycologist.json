@@ -1,0 +1,84 @@
+{
+  "parent": "regions_unexplored:parent",
+  "criteria": {
+    "blue_bioshroom": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "regions_unexplored:blue_bioshroom"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "green_bioshroom": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "regions_unexplored:green_bioshroom"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "pink_bioshroom": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "regions_unexplored:pink_bioshroom"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "yellow_bioshroom": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "regions_unexplored:yellow_bioshroom"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "text": "Collect every Bioshroom type."
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "regions_unexplored:blue_bioshroom"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "Mycologist"
+    }
+  },
+  "requirements": [
+    [
+      "blue_bioshroom"
+    ],
+    [
+      "pink_bioshroom"
+    ],
+    [
+      "yellow_bioshroom"
+    ],
+    [
+      "green_bioshroom"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
