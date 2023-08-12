@@ -1,0 +1,119 @@
+{
+  "parent": "regions_unexplored:parent",
+  "criteria": {
+    "ancient_delta": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "regions_unexplored:ancient_delta"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
+    "bioshroom_caves": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "regions_unexplored:bioshroom_caves"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
+    "prismachasm": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "regions_unexplored:prismachasm"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
+    "redstone_caves": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "regions_unexplored:redstone_caves"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
+    "scorching_caves": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "regions_unexplored:scorching_caves"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "text": "Find all Cave biomes from Regions Unexplored!"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "regions_unexplored:dropleaf"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "Spelunker"
+    }
+  },
+  "requirements": [
+    [
+      "bioshroom_caves"
+    ],
+    [
+      "ancient_delta"
+    ],
+    [
+      "prismachasm"
+    ],
+    [
+      "redstone_caves"
+    ],
+    [
+      "scorching_caves"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,5 +1,5 @@
 {
-  "parent": "regions_unexplored:exploring_the_world",
+  "parent": "regions_unexplored:parent",
   "criteria": {
     "alpha_grove": {
       "conditions": {
@@ -10,22 +10,6 @@
             "predicate": {
               "location": {
                 "biome": "regions_unexplored:alpha_grove"
-              }
-            }
-          }
-        ]
-      },
-      "trigger": "minecraft:location"
-    },
-    "ancient_delta": {
-      "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biome": "regions_unexplored:ancient_delta"
               }
             }
           }
@@ -138,38 +122,6 @@
             "predicate": {
               "location": {
                 "biome": "regions_unexplored:bayou"
-              }
-            }
-          }
-        ]
-      },
-      "trigger": "minecraft:location"
-    },
-    "bioshroom_caves": {
-      "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biome": "regions_unexplored:bioshroom_caves"
-              }
-            }
-          }
-        ]
-      },
-      "trigger": "minecraft:location"
-    },
-    "blackstone_basin": {
-      "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biome": "regions_unexplored:blackstone_basin"
               }
             }
           }
@@ -401,22 +353,6 @@
       },
       "trigger": "minecraft:location"
     },
-    "glistering_meadow": {
-      "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biome": "regions_unexplored:glistering_meadow"
-              }
-            }
-          }
-        ]
-      },
-      "trigger": "minecraft:location"
-    },
     "golden_boreal_taiga": {
       "conditions": {
         "player": [
@@ -522,22 +458,6 @@
             "predicate": {
               "location": {
                 "biome": "regions_unexplored:icy_heights"
-              }
-            }
-          }
-        ]
-      },
-      "trigger": "minecraft:location"
-    },
-    "infernal_holt": {
-      "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biome": "regions_unexplored:infernal_holt"
               }
             }
           }
@@ -673,22 +593,6 @@
       },
       "trigger": "minecraft:location"
     },
-    "mycotoxic_undergrowth": {
-      "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biome": "regions_unexplored:mycotoxic_undergrowth"
-              }
-            }
-          }
-        ]
-      },
-      "trigger": "minecraft:location"
-    },
     "ochard": {
       "conditions": {
         "player": [
@@ -801,22 +705,6 @@
       },
       "trigger": "minecraft:location"
     },
-    "prismachasm": {
-      "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biome": "regions_unexplored:prismachasm"
-              }
-            }
-          }
-        ]
-      },
-      "trigger": "minecraft:location"
-    },
     "pumpkin_fields": {
       "conditions": {
         "player": [
@@ -842,38 +730,6 @@
             "predicate": {
               "location": {
                 "biome": "regions_unexplored:rainforest"
-              }
-            }
-          }
-        ]
-      },
-      "trigger": "minecraft:location"
-    },
-    "redstone_abyss": {
-      "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biome": "regions_unexplored:redstone_abyss"
-              }
-            }
-          }
-        ]
-      },
-      "trigger": "minecraft:location"
-    },
-    "redstone_caves": {
-      "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biome": "regions_unexplored:redstone_caves"
               }
             }
           }
@@ -938,22 +794,6 @@
             "predicate": {
               "location": {
                 "biome": "regions_unexplored:saguaro_desert"
-              }
-            }
-          }
-        ]
-      },
-      "trigger": "minecraft:location"
-    },
-    "scorching_caves": {
-      "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biome": "regions_unexplored:scorching_caves"
               }
             }
           }
@@ -1142,25 +982,21 @@
     "announce_to_chat": true,
     "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
     "description": {
-      "text": "You've explored all the biomes from Regions Unexplored"
+      "text": "Explore all Surface biomes from Regions Unexplored!"
     },
-    "frame": "challenge",
-    "hidden": true,
+    "frame": "task",
+    "hidden": false,
     "icon": {
-      "item": "minecraft:leather_boots",
-      "nbt": "{Damage:0}"
+      "item": "regions_unexplored:hibiscus"
     },
     "show_toast": true,
     "title": {
-      "text": "Regions Explored"
+      "text": "Pioneer"
     }
   },
   "requirements": [
     [
       "alpha_grove"
-    ],
-    [
-      "ancient_delta"
     ],
     [
       "arid_mountains"
@@ -1182,12 +1018,6 @@
     ],
     [
       "barley_fields"
-    ],
-    [
-      "bioshroom_caves"
-    ],
-    [
-      "blackstone_basin"
     ],
     [
       "blackwood_taiga"
@@ -1232,9 +1062,6 @@
       "fungal_fen"
     ],
     [
-      "glistering_meadow"
-    ],
-    [
       "golden_boreal_taiga"
     ],
     [
@@ -1254,9 +1081,6 @@
     ],
     [
       "icy_heights"
-    ],
-    [
-      "infernal_holt"
     ],
     [
       "joshua_desert"
@@ -1283,9 +1107,6 @@
       "muddy_river"
     ],
     [
-      "mycotoxic_undergrowth"
-    ],
-    [
       "old_growth_bayou"
     ],
     [
@@ -1307,19 +1128,10 @@
       "prairie"
     ],
     [
-      "prismachasm"
-    ],
-    [
       "pumpkin_fields"
     ],
     [
       "rainforest"
-    ],
-    [
-      "redstone_abyss"
-    ],
-    [
-      "redstone_caves"
     ],
     [
       "redwoods"
@@ -1332,9 +1144,6 @@
     ],
     [
       "saguaro_desert"
-    ],
-    [
-      "scorching_caves"
     ],
     [
       "shrubland"
