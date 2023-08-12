@@ -122,12 +122,22 @@ public class RuLanguageProvider extends LanguageProvider {
         return String.valueOf(chars);
     }
 
+    /**
+     * Filters the block to get the name of the block.
+     * @param key The block.
+     * @return The name of the block
+     */
     private static @NotNull String filterBlockLang(@NotNull Block key) {
         return key.getDescriptionId()
                 .replace("block.regions_unexplored.", "")
                 .replace("_", " ");
     }
 
+    /**
+     * Filters the biome resourcekey to get the name.
+     * @param key The biome resourcekey
+     * @return The name of the biome.
+     */
     private static String filterBiomeLang(ResourceKey<Biome> key) {
         return key.location().toLanguageKey()
                 .replace("regions_unexplored.", "")
