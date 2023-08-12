@@ -50,5 +50,6 @@ public class DataGeneration {
         generator.addProvider(true, new RuAdvancementProvider(packOutput, event.getLookupProvider(), existingFileHelper));
         generator.addProvider(true, RuLootTableProvider.create(packOutput));
         generator.addProvider(true, new RuRecipeProvider(packOutput));
+        generator.addProvider(true, new RuLanguageProvider(packOutput));
     }
 }
