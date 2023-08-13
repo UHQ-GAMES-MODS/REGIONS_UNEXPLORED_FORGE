@@ -1,0 +1,37 @@
+{
+  "parent": "regions_unexplored:spelunker",
+  "criteria": {
+    "duskmelon": {
+      "conditions": {
+        "item": {
+          "items": [
+            "regions_unexplored:duskmelon_slice"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
+    "description": {
+      "text": "Consume a Duskmelon."
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "regions_unexplored:duskmelon_slice"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "Blind as a Bat"
+    }
+  },
+  "requirements": [
+    [
+      "duskmelon"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

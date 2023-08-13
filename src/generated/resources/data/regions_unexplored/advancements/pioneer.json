@@ -980,7 +980,7 @@
   },
   "display": {
     "announce_to_chat": true,
-    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
     "description": {
       "text": "Explore all Surface biomes from Regions Unexplored!"
     },

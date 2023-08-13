@@ -91,6 +91,8 @@
       "minecraft:patch_sugar_cane_swamp",
       "minecraft:patch_pumpkin",
       "minecraft:seagrass_swamp",
+      "regions_unexplored:duckweed",
+      "regions_unexplored:dead_bog_tree_rare",
       "regions_unexplored:grass",
       "regions_unexplored:tall_grass",
       "regions_unexplored:moss_patch_with_water"

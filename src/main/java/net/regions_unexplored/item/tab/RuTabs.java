@@ -378,6 +378,8 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.BAOBAB_BUTTON.get()));
                             output.accept(new ItemStack(RuBlocks.BAOBAB_SIGN.get()));
                             output.accept(new ItemStack(RuBlocks.BAOBAB_HANGING_SIGN.get()));
+                            output.accept(new ItemStack(RuItems.BAOBAB_BOAT.get()));
+                            output.accept(new ItemStack(RuItems.BAOBAB_CHEST_BOAT.get()));
                             //BLACKWOOD_BLOCKS
                             output.accept(new ItemStack(RuBlocks.BLACKWOOD_LOG.get()));
                             output.accept(new ItemStack(RuBlocks.STRIPPED_BLACKWOOD_LOG.get()));
@@ -394,6 +396,8 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.BLACKWOOD_BUTTON.get()));
                             output.accept(new ItemStack(RuBlocks.BLACKWOOD_SIGN.get()));
                             output.accept(new ItemStack(RuBlocks.BLACKWOOD_HANGING_SIGN.get()));
+                            output.accept(new ItemStack(RuItems.BLACKWOOD_BOAT.get()));
+                            output.accept(new ItemStack(RuItems.BLACKWOOD_CHEST_BOAT.get()));
                             //BLUE_BIOSHROOM_BLOCKS
                             output.accept(new ItemStack(RuBlocks.BLUE_BIOSHROOM_STEM.get()));
                             output.accept(new ItemStack(RuBlocks.STRIPPED_BLUE_BIOSHROOM_STEM.get()));
@@ -459,6 +463,8 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.CYPRESS_BUTTON.get()));
                             output.accept(new ItemStack(RuBlocks.CYPRESS_SIGN.get()));
                             output.accept(new ItemStack(RuBlocks.CYPRESS_HANGING_SIGN.get()));
+                            output.accept(new ItemStack(RuItems.CYPRESS_BOAT.get()));
+                            output.accept(new ItemStack(RuItems.CYPRESS_CHEST_BOAT.get()));
                             //DEAD_BLOCKS
                             output.accept(new ItemStack(RuBlocks.DEAD_LOG.get()));
                             output.accept(new ItemStack(RuBlocks.STRIPPED_DEAD_LOG.get()));
@@ -475,6 +481,8 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.DEAD_BUTTON.get()));
                             output.accept(new ItemStack(RuBlocks.DEAD_SIGN.get()));
                             output.accept(new ItemStack(RuBlocks.DEAD_HANGING_SIGN.get()));
+                            output.accept(new ItemStack(RuItems.DEAD_BOAT.get()));
+                            output.accept(new ItemStack(RuItems.DEAD_CHEST_BOAT.get()));
                             //EUCALYPTUS_BLOCKS
                             output.accept(new ItemStack(RuBlocks.EUCALYPTUS_LOG.get()));
                             output.accept(new ItemStack(RuBlocks.STRIPPED_EUCALYPTUS_LOG.get()));
@@ -491,6 +499,8 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.EUCALYPTUS_BUTTON.get()));
                             output.accept(new ItemStack(RuBlocks.EUCALYPTUS_SIGN.get()));
                             output.accept(new ItemStack(RuBlocks.EUCALYPTUS_HANGING_SIGN.get()));
+                            output.accept(new ItemStack(RuItems.EUCALYPTUS_BOAT.get()));
+                            output.accept(new ItemStack(RuItems.EUCALYPTUS_CHEST_BOAT.get()));
                             //GREEN_BIOSHROOM_BLOCKS
                             output.accept(new ItemStack(RuBlocks.GREEN_BIOSHROOM_STEM.get()));
                             output.accept(new ItemStack(RuBlocks.STRIPPED_GREEN_BIOSHROOM_STEM.get()));
@@ -523,6 +533,8 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.JOSHUA_BUTTON.get()));
                             output.accept(new ItemStack(RuBlocks.JOSHUA_SIGN.get()));
                             output.accept(new ItemStack(RuBlocks.JOSHUA_HANGING_SIGN.get()));
+                            output.accept(new ItemStack(RuItems.JOSHUA_BOAT.get()));
+                            output.accept(new ItemStack(RuItems.JOSHUA_CHEST_BOAT.get()));
                             //KAPOK_BLOCKS
                             output.accept(new ItemStack(RuBlocks.KAPOK_LOG.get()));
                             output.accept(new ItemStack(RuBlocks.STRIPPED_KAPOK_LOG.get()));
@@ -539,6 +551,8 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.KAPOK_BUTTON.get()));
                             output.accept(new ItemStack(RuBlocks.KAPOK_SIGN.get()));
                             output.accept(new ItemStack(RuBlocks.KAPOK_HANGING_SIGN.get()));
+                            output.accept(new ItemStack(RuItems.KAPOK_BOAT.get()));
+                            output.accept(new ItemStack(RuItems.KAPOK_CHEST_BOAT.get()));
                             //LARCH_BLOCKS
                             output.accept(new ItemStack(RuBlocks.LARCH_LOG.get()));
                             output.accept(new ItemStack(RuBlocks.STRIPPED_LARCH_LOG.get()));
@@ -555,6 +569,8 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.LARCH_BUTTON.get()));
                             output.accept(new ItemStack(RuBlocks.LARCH_SIGN.get()));
                             output.accept(new ItemStack(RuBlocks.LARCH_HANGING_SIGN.get()));
+                            output.accept(new ItemStack(RuItems.LARCH_BOAT.get()));
+                            output.accept(new ItemStack(RuItems.LARCH_CHEST_BOAT.get()));
                             //MAGNOLIA_BLOCKS
                             output.accept(new ItemStack(RuBlocks.MAGNOLIA_LOG.get()));
                             output.accept(new ItemStack(RuBlocks.STRIPPED_MAGNOLIA_LOG.get()));
@@ -571,6 +587,8 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.MAGNOLIA_BUTTON.get()));
                             output.accept(new ItemStack(RuBlocks.MAGNOLIA_SIGN.get()));
                             output.accept(new ItemStack(RuBlocks.MAGNOLIA_HANGING_SIGN.get()));
+                            output.accept(new ItemStack(RuItems.MAGNOLIA_BOAT.get()));
+                            output.accept(new ItemStack(RuItems.MAGNOLIA_CHEST_BOAT.get()));
                             //MAPLE_BLOCKS
                             output.accept(new ItemStack(RuBlocks.MAPLE_LOG.get()));
                             output.accept(new ItemStack(RuBlocks.STRIPPED_MAPLE_LOG.get()));
@@ -587,6 +605,8 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.MAPLE_BUTTON.get()));
                             output.accept(new ItemStack(RuBlocks.MAPLE_SIGN.get()));
                             output.accept(new ItemStack(RuBlocks.MAPLE_HANGING_SIGN.get()));
+                            output.accept(new ItemStack(RuItems.MAPLE_BOAT.get()));
+                            output.accept(new ItemStack(RuItems.MAPLE_CHEST_BOAT.get()));
                             //MAUVE_BLOCKS
                             output.accept(new ItemStack(RuBlocks.MAUVE_LOG.get()));
                             output.accept(new ItemStack(RuBlocks.STRIPPED_MAUVE_LOG.get()));
@@ -603,6 +623,8 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.MAUVE_BUTTON.get()));
                             output.accept(new ItemStack(RuBlocks.MAUVE_SIGN.get()));
                             output.accept(new ItemStack(RuBlocks.MAUVE_HANGING_SIGN.get()));
+                            output.accept(new ItemStack(RuItems.MAUVE_BOAT.get()));
+                            output.accept(new ItemStack(RuItems.MAUVE_CHEST_BOAT.get()));
                             //PALM_BLOCKS
                             output.accept(new ItemStack(RuBlocks.PALM_LOG.get()));
                             output.accept(new ItemStack(RuBlocks.STRIPPED_PALM_LOG.get()));
@@ -619,6 +641,8 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.PALM_BUTTON.get()));
                             output.accept(new ItemStack(RuBlocks.PALM_SIGN.get()));
                             output.accept(new ItemStack(RuBlocks.PALM_HANGING_SIGN.get()));
+                            output.accept(new ItemStack(RuItems.PALM_BOAT.get()));
+                            output.accept(new ItemStack(RuItems.PALM_CHEST_BOAT.get()));
                             //PINE_BLOCKS
                             output.accept(new ItemStack(RuBlocks.PINE_LOG.get()));
                             output.accept(new ItemStack(RuBlocks.STRIPPED_PINE_LOG.get()));
@@ -635,6 +659,8 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.PINE_BUTTON.get()));
                             output.accept(new ItemStack(RuBlocks.PINE_SIGN.get()));
                             output.accept(new ItemStack(RuBlocks.PINE_HANGING_SIGN.get()));
+                            output.accept(new ItemStack(RuItems.PINE_BOAT.get()));
+                            output.accept(new ItemStack(RuItems.PINE_CHEST_BOAT.get()));
                             //PINK_BIOSHROOM_BLOCKS
                             output.accept(new ItemStack(RuBlocks.PINK_BIOSHROOM_STEM.get()));
                             output.accept(new ItemStack(RuBlocks.STRIPPED_PINK_BIOSHROOM_STEM.get()));
@@ -667,6 +693,8 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.REDWOOD_BUTTON.get()));
                             output.accept(new ItemStack(RuBlocks.REDWOOD_SIGN.get()));
                             output.accept(new ItemStack(RuBlocks.REDWOOD_HANGING_SIGN.get()));
+                            output.accept(new ItemStack(RuItems.REDWOOD_BOAT.get()));
+                            output.accept(new ItemStack(RuItems.REDWOOD_CHEST_BOAT.get()));
                             //SOCOTRA_BLOCKS
                             output.accept(new ItemStack(RuBlocks.SOCOTRA_LOG.get()));
                             output.accept(new ItemStack(RuBlocks.STRIPPED_SOCOTRA_LOG.get()));
@@ -683,6 +711,8 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.SOCOTRA_BUTTON.get()));
                             output.accept(new ItemStack(RuBlocks.SOCOTRA_SIGN.get()));
                             output.accept(new ItemStack(RuBlocks.SOCOTRA_HANGING_SIGN.get()));
+                            output.accept(new ItemStack(RuItems.SOCOTRA_BOAT.get()));
+                            output.accept(new ItemStack(RuItems.SOCOTRA_CHEST_BOAT.get()));
                             //WILLOW_BLOCKS
                             output.accept(new ItemStack(RuBlocks.WILLOW_LOG.get()));
                             output.accept(new ItemStack(RuBlocks.STRIPPED_WILLOW_LOG.get()));
@@ -699,6 +729,8 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.WILLOW_BUTTON.get()));
                             output.accept(new ItemStack(RuBlocks.WILLOW_SIGN.get()));
                             output.accept(new ItemStack(RuBlocks.WILLOW_HANGING_SIGN.get()));
+                            output.accept(new ItemStack(RuItems.WILLOW_BOAT.get()));
+                            output.accept(new ItemStack(RuItems.WILLOW_CHEST_BOAT.get()));
                             //YELLOW_BIOSHROOM_BLOCKS
                             output.accept(new ItemStack(RuBlocks.YELLOW_BIOSHROOM_STEM.get()));
                             output.accept(new ItemStack(RuBlocks.STRIPPED_YELLOW_BIOSHROOM_STEM.get()));

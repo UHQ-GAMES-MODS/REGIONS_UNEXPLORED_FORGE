@@ -162,7 +162,7 @@ public class SaguaroCactusFeature extends Feature<RuTreeConfiguration> {
                 level.setBlock(placePos, Blocks.HANGING_ROOTS.defaultBlockState(), 2);
                 break;
             }
-            else if(level.getBlockState(placePos).is(BlockTags.DIRT)||level.getBlockState(placePos).is(BlockTags.REPLACEABLE_BY_TREES)){
+            else if(level.getBlockState(placePos).is(BlockTags.DIRT)||level.getBlockState(placePos).is(BlockTags.REPLACEABLE_BY_TREES)||level.isEmptyBlock(placePos)){
                 placeCactusBlock(level, placePos, randomSource, treeConfiguration, SaguaroCactusShape.UP_DOWN);
             }
             else{

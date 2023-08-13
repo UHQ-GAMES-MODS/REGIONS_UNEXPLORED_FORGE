@@ -1,5 +1,5 @@
 {
-  "parent": "regions_unexplored:parent",
+  "parent": "regions_unexplored:pioneer",
   "criteria": {
     "black_snowbelle": {
       "conditions": {
@@ -169,7 +169,7 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "snowbelle": {
+    "white_snowbelle": {
       "conditions": {
         "items": [
           {
@@ -196,7 +196,7 @@
   },
   "display": {
     "announce_to_chat": true,
-    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
     "description": {
       "text": "Collect or craft every colour of the Snowbelle Flower."
     },
@@ -212,7 +212,7 @@
   },
   "requirements": [
     [
-      "snowbelle"
+      "white_snowbelle"
     ],
     [
       "black_snowbelle"

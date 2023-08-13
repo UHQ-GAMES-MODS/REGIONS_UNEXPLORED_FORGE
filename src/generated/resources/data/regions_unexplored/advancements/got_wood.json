@@ -1,5 +1,5 @@
 {
-  "parent": "regions_unexplored:parent",
+  "parent": "regions_unexplored:this_tree_bleeds_red",
   "criteria": {
     "alpha_log": {
       "conditions": {
@@ -328,7 +328,7 @@
   },
   "display": {
     "announce_to_chat": true,
-    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
     "description": {
       "text": "Collect every log from Regions Unexplored"
     },

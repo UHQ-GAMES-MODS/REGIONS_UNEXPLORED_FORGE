@@ -1,5 +1,5 @@
 {
-  "parent": "regions_unexplored:exploring_the_world",
+  "parent": "regions_unexplored:pioneer",
   "criteria": {
     "alpha_grove": {
       "conditions": {
@@ -1140,7 +1140,7 @@
   },
   "display": {
     "announce_to_chat": true,
-    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
     "description": {
       "text": "You've explored all the biomes from Regions Unexplored"
     },

@@ -1,0 +1,33 @@
+{
+  "parent": "regions_unexplored:pioneer",
+  "criteria": {
+    "lily_pad": {
+      "conditions": {
+        "block": "regions_unexplored:giant_lily_pad"
+      },
+      "trigger": "minecraft:enter_block"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
+    "description": {
+      "text": "Walk or bounce on a Giant Lily Pad."
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "regions_unexplored:flowering_lily_pad"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "Light as a Frog"
+    }
+  },
+  "requirements": [
+    [
+      "lily_pad"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

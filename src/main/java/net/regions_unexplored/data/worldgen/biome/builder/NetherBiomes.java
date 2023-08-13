@@ -51,7 +51,6 @@ public class NetherBiomes {
         BiomeDefaultFeatures.addNetherDefaultOres(biomeBuilder);
 
         //add RU features
-
         biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.OBSIDIAN_SPIRE);
         biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuTreePlacements.COBALT_TREE);
         biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.COBALT_ROOTS);

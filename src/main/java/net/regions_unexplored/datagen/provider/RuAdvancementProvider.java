@@ -1,10 +1,10 @@
 package net.regions_unexplored.datagen.provider;
 
 import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.AdvancementList;
+import net.minecraft.advancements.Criterion;
 import net.minecraft.advancements.FrameType;
-import net.minecraft.advancements.critereon.InventoryChangeTrigger;
-import net.minecraft.advancements.critereon.LocationPredicate;
-import net.minecraft.advancements.critereon.PlayerTrigger;
+import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.network.chat.Component;
@@ -16,6 +16,7 @@ import net.minecraftforge.common.data.ForgeAdvancementProvider;
 import net.regions_unexplored.RegionsUnexploredMod;
 import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.data.worldgen.biome.RuBiomes;
+import net.regions_unexplored.item.RuItems;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -38,27 +39,28 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
     private static class AdvancementBuilder implements ForgeAdvancementProvider.AdvancementGenerator {
         @Override
         public void generate(HolderLookup.Provider registries, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
-            Advancement parent = Advancement.Builder.advancement()
+            Advancement PARENT = Advancement.Builder.advancement()
                     .display(
                             RuBlocks.EUCALYPTUS_SAPLING.get(),
                             Component.literal("Regions Unexplored"),
                             Component.literal("Discover the many biomes and explore the world!"),
-                            new ResourceLocation("textures/gui/advancements/backgrounds/adventure.png"),
+                            new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
                             FrameType.TASK,
                             true,
-                            true,
+                            false,
                             false
                     )
                     .addCriterion("load_in_world", PlayerTrigger.TriggerInstance.located(LocationPredicate.inDimension(Level.OVERWORLD)))
                     .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "parent"), existingFileHelper);
 
-            Advancement exploring_the_world = Advancement.Builder.advancement()
-                    .parent(parent)
+            //SURFACE
+            Advancement PIONEER = Advancement.Builder.advancement()
+                    .parent(PARENT)
                     .display(
                             RuBlocks.HIBISCUS.get(),
                             Component.literal("Pioneer"),
                             Component.literal("Explore all Surface biomes from Regions Unexplored!"),
-                            new ResourceLocation("textures/gui/advancements/backgrounds/adventure.png"),
+                            new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
                             FrameType.TASK,
                             true,
                             true,
@@ -125,15 +127,15 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                     .addCriterion("tropical_river", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.TROPICAL_RIVER)))
                     .addCriterion("tropics", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.TROPICS)))
                     .addCriterion("willow_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.WILLOW_FOREST)))
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "exploring_the_world"), existingFileHelper);
+                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "pioneer"), existingFileHelper);
 
-            Advancement regions_explored = Advancement.Builder.advancement()
-                    .parent(exploring_the_world)
+            Advancement REGIONS_EXPLORED = Advancement.Builder.advancement()
+                    .parent(PIONEER)
                     .display(
                             Items.LEATHER_BOOTS,
                             Component.literal("Regions Explored"),
                             Component.literal("You've explored all the biomes from Regions Unexplored"),
-                            new ResourceLocation("textures/gui/advancements/backgrounds/adventure.png"),
+                            new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
                             FrameType.CHALLENGE,
                             true,
                             true,
@@ -212,13 +214,76 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                     .addCriterion("willow_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.WILLOW_FOREST)))
                     .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "regions_explored"), existingFileHelper);
 
-            Advancement nethery_explorer = Advancement.Builder.advancement()
-                    .parent(parent)
+            Advancement EVERY_BIT_OF_THE_RAINBOW = Advancement.Builder.advancement()
+                    .parent(PIONEER)
+                    .display(
+                            RuBlocks.WHITE_SNOWBELLE.get(),
+                            Component.literal("Every Bit of the Rainbow"),
+                            Component.literal("Collect or craft every colour of the Snowbelle Flower."),
+                            new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
+                            FrameType.TASK,
+                            true,
+                            true,
+                            false
+                    )
+                    .addCriterion("white_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.WHITE_SNOWBELLE.get().asItem()))
+                    .addCriterion("black_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.BLACK_SNOWBELLE.get().asItem()))
+                    .addCriterion("blue_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.BLUE_SNOWBELLE.get().asItem()))
+                    .addCriterion("green_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.GREEN_SNOWBELLE.get().asItem()))
+                    .addCriterion("pink_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.PINK_SNOWBELLE.get().asItem()))
+                    .addCriterion("brown_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.BROWN_SNOWBELLE.get().asItem()))
+                    .addCriterion("cyan_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.CYAN_SNOWBELLE.get().asItem()))
+                    .addCriterion("gray_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.GRAY_SNOWBELLE.get().asItem()))
+                    .addCriterion("magenta_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.MAGENTA_SNOWBELLE.get().asItem()))
+                    .addCriterion("red_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.RED_SNOWBELLE.get().asItem()))
+                    .addCriterion("orange_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.ORANGE_SNOWBELLE.get().asItem()))
+                    .addCriterion("yellow_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.YELLOW_SNOWBELLE.get().asItem()))
+                    .addCriterion("purple_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.PURPLE_SNOWBELLE.get().asItem()))
+                    .addCriterion("lime_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.LIME_SNOWBELLE.get().asItem()))
+                    .addCriterion("light_gray_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.LIGHT_GRAY_SNOWBELLE.get().asItem()))
+                    .addCriterion("light_blue_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.LIGHT_BLUE_SNOWBELLE.get().asItem()))
+                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "every_bit_of_the_rainbow"), existingFileHelper);
+
+
+            Advancement FROM_THE_TREE_TOPS = Advancement.Builder.advancement()
+                    .parent(PIONEER)
+                    .display(
+                            RuBlocks.KAPOK_VINES.get(),
+                            Component.literal("From the Tree Tops"),
+                            Component.literal("Hang from a Kapok tree's vines."),
+                            new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
+                            FrameType.TASK,
+                            true,
+                            true,
+                            false
+                    )
+                    .addCriterion("kapok_vines", EnterBlockTrigger.TriggerInstance.entersBlock(RuBlocks.KAPOK_VINES_PLANT.get()))
+                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "from_the_tree_tops"), existingFileHelper);
+
+
+            Advancement LIGHT_AS_A_FROG = Advancement.Builder.advancement()
+                    .parent(PIONEER)
+                    .display(
+                            RuBlocks.FLOWERING_LILY_PAD.get(),
+                            Component.literal("Light as a Frog"),
+                            Component.literal("Walk or bounce on a Giant Lily Pad."),
+                            new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
+                            FrameType.TASK,
+                            true,
+                            true,
+                            false
+                    )
+                    .addCriterion("lily_pad", EnterBlockTrigger.TriggerInstance.entersBlock(RuBlocks.GIANT_LILY_PAD.get()))
+                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "light_as_a_frog"), existingFileHelper);
+
+            //NETHER
+            Advancement ETERNAL_EXPEDITION = Advancement.Builder.advancement()
+                    .parent(PARENT)
                     .display(
                             RuBlocks.BRIMWOOD_SAPLING.get(),
                             Component.literal("Eternal Expedition"),
                             Component.literal("Venture into all Nether biomes from Regions Unexplored!"),
-                            new ResourceLocation("textures/gui/advancements/backgrounds/adventure.png"),
+                            new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
                             FrameType.TASK,
                             true,
                             true,
@@ -229,15 +294,31 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                     .addCriterion("glistering_meadow", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.GLISTERING_MEADOW)))
                     .addCriterion("infernal_holt", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.INFERNAL_HOLT)))
                     .addCriterion("redstone_abyss", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.REDSTONE_ABYSS)))
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "nethery_explorer"), existingFileHelper);
+                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "eternal_expedition"), existingFileHelper);
 
-            Advancement deep_cave_explorer = Advancement.Builder.advancement()
-                    .parent(parent)
+            Advancement DOWNER = Advancement.Builder.advancement()
+                    .parent(ETERNAL_EXPEDITION)
+                    .display(
+                            RuBlocks.DORCEL.get(),
+                            Component.literal("Downer"),
+                            Component.literal("Walk through and take damage from a Dorcel Flower."),
+                            new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
+                            FrameType.TASK,
+                            true,
+                            true,
+                            false
+                    )
+                    .addCriterion("dorcel", EnterBlockTrigger.TriggerInstance.entersBlock(RuBlocks.DORCEL.get()))
+                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "downer"), existingFileHelper);
+
+            //CAVE
+            Advancement SPELUNKER = Advancement.Builder.advancement()
+                    .parent(PARENT)
                     .display(
                             RuBlocks.DROPLEAF.get(),
                             Component.literal("Spelunker"),
                             Component.literal("Find all Cave biomes from Regions Unexplored!"),
-                            new ResourceLocation("textures/gui/advancements/backgrounds/adventure.png"),
+                            new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
                             FrameType.TASK,
                             true,
                             true,
@@ -248,15 +329,45 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                     .addCriterion("prismachasm", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.PRISMACHASM)))
                     .addCriterion("redstone_caves", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.REDSTONE_CAVES)))
                     .addCriterion("scorching_caves", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.SCORCHING_CAVES)))
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "deep_cave_explorer"), existingFileHelper);
+                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "spelunker"), existingFileHelper);
 
-            Advancement gotWood = Advancement.Builder.advancement()
-                    .parent(parent)
+            Advancement BLIND_AS_A_BAT = Advancement.Builder.advancement()
+                    .parent(SPELUNKER)
+                    .display(
+                            RuBlocks.DUSKMELON.get(),
+                            Component.literal("Blind as a Bat"),
+                            Component.literal("Consume a Duskmelon."),
+                            new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
+                            FrameType.TASK,
+                            true,
+                            true,
+                            false
+                    )
+                    .addCriterion("duskmelon", ConsumeItemTrigger.TriggerInstance.usedItem(RuItems.DUSKMELON_SLICE.get()))
+                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "blind_as_a_bat"), existingFileHelper);
+
+            Advancement THIS_TREE_BLEEDS_RED = Advancement.Builder.advancement()
+                    .parent(PARENT)
+                    .display(
+                            RuBlocks.SOCOTRA_LOG.get(),
+                            Component.literal("This Tree Bleeds Red"),
+                            Component.literal("Chop down a Socotra tree."),
+                            new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
+                            FrameType.TASK,
+                            true,
+                            true,
+                            false
+                    )
+                    .addCriterion("socotra_log", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.SOCOTRA_LOG.get()))
+                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "this_tree_bleeds_red"), existingFileHelper);
+
+            Advancement GOT_WOOD = Advancement.Builder.advancement()
+                    .parent(THIS_TREE_BLEEDS_RED)
                     .display(
                             RuBlocks.REDWOOD_LOG.get(),
                             Component.literal("Got Wood?"),
                             Component.literal("Collect every log from Regions Unexplored"),
-                            new ResourceLocation("textures/gui/advancements/backgrounds/adventure.png"),
+                            new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
                             FrameType.CHALLENGE,
                             true,
                             true,
@@ -292,13 +403,13 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
 
                     .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "got_wood"), existingFileHelper);
 
-            Advancement mycologist = Advancement.Builder.advancement()
-                    .parent(parent)
+            Advancement MYCOLOGIST = Advancement.Builder.advancement()
+                    .parent(PARENT)
                     .display(
                             RuBlocks.BLUE_BIOSHROOM.get(),
                             Component.literal("Mycologist"),
                             Component.literal("Collect every Bioshroom type."),
-                            new ResourceLocation("textures/gui/advancements/backgrounds/adventure.png"),
+                            new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
                             FrameType.TASK,
                             true,
                             true,
@@ -310,35 +421,23 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                     .addCriterion("green_bioshroom", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.GREEN_BIOSHROOM.get().asItem()))
                     .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "mycologist"), existingFileHelper);
 
-            Advancement every_bit_of_the_rainbow = Advancement.Builder.advancement()
-                    .parent(parent)
+            Advancement ANCIENT_SPECIMENS = Advancement.Builder.advancement()
+                    .parent(MYCOLOGIST)
                     .display(
-                            RuBlocks.WHITE_SNOWBELLE.get(),
-                            Component.literal("Every Bit of the Rainbow"),
-                            Component.literal("Collect or craft every colour of the Snowbelle Flower."),
-                            new ResourceLocation("textures/gui/advancements/backgrounds/adventure.png"),
-                            FrameType.TASK,
+                            RuBlocks.BLUE_BIOSHROOM_STEM.get(),
+                            Component.literal("Ancient Specimens"),
+                            Component.literal("Collect every Bioshroom Stem type."),
+                            new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
+                            FrameType.CHALLENGE,
                             true,
                             true,
                             false
                     )
-                    .addCriterion("snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.WHITE_SNOWBELLE.get().asItem()))
-                    .addCriterion("black_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.BLACK_SNOWBELLE.get().asItem()))
-                    .addCriterion("blue_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.BLUE_SNOWBELLE.get().asItem()))
-                    .addCriterion("green_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.GREEN_SNOWBELLE.get().asItem()))
-                    .addCriterion("pink_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.PINK_SNOWBELLE.get().asItem()))
-                    .addCriterion("brown_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.BROWN_SNOWBELLE.get().asItem()))
-                    .addCriterion("cyan_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.CYAN_SNOWBELLE.get().asItem()))
-                    .addCriterion("gray_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.GRAY_SNOWBELLE.get().asItem()))
-                    .addCriterion("magenta_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.MAGENTA_SNOWBELLE.get().asItem()))
-                    .addCriterion("red_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.RED_SNOWBELLE.get().asItem()))
-                    .addCriterion("orange_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.ORANGE_SNOWBELLE.get().asItem()))
-                    .addCriterion("yellow_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.YELLOW_SNOWBELLE.get().asItem()))
-                    .addCriterion("purple_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.PURPLE_SNOWBELLE.get().asItem()))
-                    .addCriterion("lime_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.LIME_SNOWBELLE.get().asItem()))
-                    .addCriterion("light_gray_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.LIGHT_GRAY_SNOWBELLE.get().asItem()))
-                    .addCriterion("light_blue_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.LIGHT_BLUE_SNOWBELLE.get().asItem()))
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "every_bit_of_the_rainbow"), existingFileHelper);
+                    .addCriterion("blue_bioshroom_stem", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.BLUE_BIOSHROOM_STEM.get().asItem()))
+                    .addCriterion("pink_bioshroom_stem", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.PINK_BIOSHROOM_STEM.get().asItem()))
+                    .addCriterion("yellow_bioshroom_stem", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.YELLOW_BIOSHROOM_STEM.get().asItem()))
+                    .addCriterion("green_bioshroom_stem", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.GREEN_BIOSHROOM_STEM.get().asItem()))
+                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "ancient_specimens"), existingFileHelper);
         }
     }
 }

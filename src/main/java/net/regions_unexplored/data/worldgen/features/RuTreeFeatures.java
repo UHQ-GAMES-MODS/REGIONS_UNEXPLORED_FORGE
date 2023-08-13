@@ -4,6 +4,8 @@ import com.google.common.collect.ImmutableList;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.features.FeatureUtils;
+import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.ConstantInt;
@@ -54,6 +56,7 @@ public class RuTreeFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> BRIM_WILLOW_TREE = ConfiguredFeatureRegistry.createKey("brim_willow_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> TALL_BRIM_WILLOW_TREE = ConfiguredFeatureRegistry.createKey("tall_brim_willow_tree");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ACACIA_TREE = ConfiguredFeatureRegistry.createKey("acacia_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ACACIA_TREE_SHRUB = ConfiguredFeatureRegistry.createKey("acacia_tree_shrub");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> ALPHA_OAK_TREE = ConfiguredFeatureRegistry.createKey("alpha_oak_tree");
@@ -199,6 +202,7 @@ public class RuTreeFeatures {
         register(context, BRIM_WILLOW_TREE, FeatureRegistry.BRIM_WILLOW.get(), FeatureConfiguration.NONE);
         register(context, TALL_BRIM_WILLOW_TREE, FeatureRegistry.TALL_BRIM_WILLOW.get(), FeatureConfiguration.NONE);
 
+        register(context, ACACIA_TREE, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.ACACIA_LOG), new ForkingTrunkPlacer(5, 2, 2), BlockStateProvider.simple(Blocks.ACACIA_LEAVES), new AcaciaFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0)), new TwoLayersFeatureSize(1, 0, 2)).ignoreVines().build());
         register(context, ACACIA_TREE_SHRUB, FeatureRegistry.TREE_SHRUB.get(), new RuTreeConfiguration(BlockStateProvider.simple(Blocks.ACACIA_LOG.defaultBlockState()), BlockStateProvider.simple(Blocks.ACACIA_LEAVES.defaultBlockState()), BlockStateProvider.simple(RuBlocks.ACACIA_BRANCH.get().defaultBlockState()), 1, 3));
 
         register(context, ALPHA_OAK_TREE, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(RuBlocks.ALPHA_LOG.get().defaultBlockState()), new StraightTrunkPlacer(4, 2, 0),BlockStateProvider.simple(RuBlocks.ALPHA_LEAVES.get().defaultBlockState()), new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3), new TwoLayersFeatureSize(1, 0, 1)).ignoreVines().build());

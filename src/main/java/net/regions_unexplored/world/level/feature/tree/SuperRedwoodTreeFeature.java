@@ -428,7 +428,7 @@ public class SuperRedwoodTreeFeature extends Feature<RuTreeConfiguration> {
                 level.setBlock(placePos, Blocks.HANGING_ROOTS.defaultBlockState(), 2);
                 break;
             }
-            else if(level.getBlockState(placePos).is(BlockTags.DIRT)||level.getBlockState(placePos).is(BlockTags.REPLACEABLE_BY_TREES)){
+            else if(level.getBlockState(placePos).is(BlockTags.DIRT)||level.getBlockState(placePos).is(BlockTags.REPLACEABLE_BY_TREES)||level.isEmptyBlock(placePos)){
                 placeLog(level, placePos, randomSource, treeConfiguration, Direction.Axis.Y);
             }
             else{

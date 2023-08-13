@@ -1,0 +1,39 @@
+{
+  "parent": "regions_unexplored:parent",
+  "criteria": {
+    "socotra_log": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "regions_unexplored:socotra_log"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
+    "description": {
+      "text": "Chop down a Socotra tree."
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "regions_unexplored:socotra_log"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "This Tree Bleeds Red"
+    }
+  },
+  "requirements": [
+    [
+      "socotra_log"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

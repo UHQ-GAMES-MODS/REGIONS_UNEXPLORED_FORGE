@@ -220,6 +220,10 @@ public class WetBiomes {
         //add RU features
         biomeBuilder.addFeature(GenerationStep.Decoration.RAW_GENERATION, RuMiscOverworldPlacements.MARSH);
 
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.DUCKWEED);
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.DEAD_BOG_TREE_RARE);
+
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.GRASS);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.TALL_GRASS);
 

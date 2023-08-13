@@ -1,0 +1,33 @@
+{
+  "parent": "regions_unexplored:eternal_expedition",
+  "criteria": {
+    "dorcel": {
+      "conditions": {
+        "block": "regions_unexplored:dorcel"
+      },
+      "trigger": "minecraft:enter_block"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
+    "description": {
+      "text": "Walk through and take damage from a Dorcel Flower."
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "regions_unexplored:dorcel"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "Downer"
+    }
+  },
+  "requirements": [
+    [
+      "dorcel"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
