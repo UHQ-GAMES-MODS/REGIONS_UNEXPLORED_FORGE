@@ -311,6 +311,21 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                     .addCriterion("dorcel", EnterBlockTrigger.TriggerInstance.entersBlock(RuBlocks.DORCEL.get()))
                     .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "downer"), existingFileHelper);
 
+            Advancement LIGHT_SNACK = Advancement.Builder.advancement()
+                    .parent(ETERNAL_EXPEDITION)
+                    .display(
+                            RuBlocks.HANGING_EARLIGHT.get(),
+                            Component.literal("Light Snack"),
+                            Component.literal("Consume a Hanging Earlight Fruit."),
+                            new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
+                            FrameType.TASK,
+                            true,
+                            true,
+                            false
+                    )
+                    .addCriterion("earlight", ConsumeItemTrigger.TriggerInstance.usedItem(RuItems.HANGING_EARLIGHT_FRUIT.get()))
+                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "light_snack"), existingFileHelper);
+
             //CAVE
             Advancement SPELUNKER = Advancement.Builder.advancement()
                     .parent(PARENT)

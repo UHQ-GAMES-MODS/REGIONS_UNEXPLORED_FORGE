@@ -37,7 +37,7 @@
                   ]
                 }
               ],
-              "name": "regions_unexplored:hanging_earlight"
+              "name": "regions_unexplored:hanging_earlight_fruit"
             },
             {
               "type": "minecraft:item",
@@ -53,7 +53,7 @@
                   "enchantment": "minecraft:fortune"
                 }
               ],
-              "name": "regions_unexplored:hanging_earlight"
+              "name": "regions_unexplored:hanging_earlight_fruit"
             }
           ]
         }

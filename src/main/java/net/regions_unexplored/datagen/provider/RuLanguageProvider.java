@@ -2,11 +2,14 @@ package net.regions_unexplored.datagen.provider;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.regions_unexplored.RegionsUnexploredMod;
+import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.data.worldgen.biome.RuBiomes;
+import net.regions_unexplored.entity.RuEntities;
 import org.jetbrains.annotations.NotNull;
 
 public class RuLanguageProvider extends LanguageProvider {
@@ -20,9 +23,32 @@ public class RuLanguageProvider extends LanguageProvider {
         RegionsUnexploredMod.BLOCK_REGISTRY.getEntries().forEach(blockRegistryObject -> {
             if(!blockRegistryObject.get().toString().contains("potted_")&&
                     !blockRegistryObject.get().toString().contains("_plant")&&
+                    !blockRegistryObject.get().toString().contains("hanging_earlight")&&
+                    !blockRegistryObject.get().toString().contains("duskmelon")&&
+                    !blockRegistryObject.get().toString().contains("salmonberry")&&
                     !blockRegistryObject.get().toString().contains("_wall_sign")&&
                     !blockRegistryObject.get().toString().contains("_wall_hanging_sign")){
                 this.add(blockRegistryObject.get(), capitalizeString(filterBlockLang(blockRegistryObject.get())));
+            }
+        });
+        //Misc block translations
+        this.add(RuBlocks.DUSKMELON.get(), "Duskmelon Slice");
+        this.add(RuBlocks.SALMONBERRY_BUSH.get(), "Salmonberry");
+        this.add(RuBlocks.HANGING_EARLIGHT.get(), "Hanging Earlight Fruit");
+
+        //Entity translations
+        this.add(RuEntities.BOAT.get(), "Boat");
+        this.add(RuEntities.CHEST_BOAT.get(), "Boat With Chest");
+
+        // Item translations
+        RegionsUnexploredMod.ITEM_REGISTRY.getEntries().forEach(itemRegistryObject -> {
+            if(itemRegistryObject.get().toString().contains("boat")){
+                if(itemRegistryObject.get().toString().contains("chest_boat")){
+                    this.add(itemRegistryObject.get(), filterChestBoatLang(itemRegistryObject.get()));
+                }
+                else{
+                    this.add(itemRegistryObject.get(), capitalizeString(filterItemLang(itemRegistryObject.get())));
+                }
             }
         });
 
@@ -116,6 +142,9 @@ public class RuLanguageProvider extends LanguageProvider {
                 chars[i] = Character.toUpperCase(chars[i]);
                 found = true;
             } else if (Character.isWhitespace(chars[i]) || chars[i] == '.' || chars[i] == '_') {
+                /*small change to fix chest boat lang
+                if(string.contains("with")&&chars[i+1]!='w'){
+                }*/
                 found = false;
             }
         }
@@ -133,11 +162,24 @@ public class RuLanguageProvider extends LanguageProvider {
                 .replace("_", " ");
     }
 
-    /**
-     * Filters the biome resourcekey to get the name.
-     * @param key The biome resourcekey
-     * @return The name of the biome.
-     */
+    private static @NotNull String filterItemLang(@NotNull ItemLike key) {
+        return key.asItem().getDescriptionId()
+                .replace("item.regions_unexplored.", "")
+                .replace("_", " ");
+    }
+
+    private static @NotNull String filterChestBoatLang(@NotNull ItemLike key) {
+        String type = key.asItem().getDescriptionId()
+                .replace("item.regions_unexplored.", "")
+                .replace("chest_boat", "")
+                .replace("_", "");
+
+        String name = capitalizeString(type)+" Boat with Chest";
+
+        return name;
+    }
+
+
     private static String filterBiomeLang(ResourceKey<Biome> key) {
         return key.location().toLanguageKey()
                 .replace("regions_unexplored.", "")

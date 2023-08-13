@@ -1,0 +1,37 @@
+{
+  "parent": "regions_unexplored:eternal_expedition",
+  "criteria": {
+    "earlight": {
+      "conditions": {
+        "item": {
+          "items": [
+            "regions_unexplored:hanging_earlight_fruit"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
+    "description": {
+      "text": "Consume a Hanging Earlight Fruit."
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "regions_unexplored:hanging_earlight_fruit"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "Light Snack"
+    }
+  },
+  "requirements": [
+    [
+      "earlight"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

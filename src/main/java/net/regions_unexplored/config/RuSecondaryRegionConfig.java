@@ -626,8 +626,8 @@ public class RuSecondaryRegionConfig {
         WARM_BEACH = BUILDER.define("warm_beach_biome", DefaultBiomes.SECONDARY_BEACH_BIOMES[3].location().toString());
         HOT_BEACH = BUILDER.define("hot_beach_biome", DefaultBiomes.SECONDARY_BEACH_BIOMES[4].location().toString());
         BUILDER.comment("stone_beach_biomes");
-        COLD_STONE_BEACH = BUILDER.define("cold_stone_beach_biome", DefaultBiomes.SECONDARY_STONE_SHORE_BIOMES[1].location().toString());
-        HOT_STONE_BEACH = BUILDER.define("hot_stone_beach_biome", DefaultBiomes.SECONDARY_STONE_SHORE_BIOMES[4].location().toString());
+        COLD_STONE_BEACH = BUILDER.define("cold_stone_beach_biome", DefaultBiomes.SECONDARY_STONE_SHORE_BIOMES[0].location().toString());
+        HOT_STONE_BEACH = BUILDER.define("hot_stone_beach_biome", DefaultBiomes.SECONDARY_STONE_SHORE_BIOMES[1].location().toString());
         BUILDER.pop();
 
         BUILDER.push("-----------------UNDERGROUND_BIOMES--------------------");

@@ -1,4 +1,4 @@
-package net.regions_unexplored.block;
+package net.regions_unexplored.block.compat;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;

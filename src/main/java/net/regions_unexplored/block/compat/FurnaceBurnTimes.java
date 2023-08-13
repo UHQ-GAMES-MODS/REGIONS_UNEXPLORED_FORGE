@@ -1,4 +1,4 @@
-package net.regions_unexplored.block;
+package net.regions_unexplored.block.compat;
 
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -6,6 +6,7 @@ import net.minecraftforge.event.furnace.FurnaceFuelBurnTimeEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.regions_unexplored.RegionsUnexploredMod;
+import net.regions_unexplored.block.RuBlocks;
 
 @Mod.EventBusSubscriber(modid = RegionsUnexploredMod.MOD_ID)
 public class FurnaceBurnTimes {

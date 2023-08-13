@@ -1,4 +1,4 @@
-package net.regions_unexplored.block;
+package net.regions_unexplored.block.compat;
 
 import com.google.common.collect.Maps;
 import net.minecraft.world.item.AxeItem;

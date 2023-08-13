@@ -94,6 +94,7 @@ public class RuItems {
 
     public static RegistryObject<Item> SALMONBERRY;
     public static RegistryObject<Item> DUSKMELON_SLICE;
+    public static RegistryObject<Item> HANGING_EARLIGHT_FRUIT;
     public static RegistryObject<Item> MEADOW_SAGE;
     
     public static void addItems(){
@@ -178,6 +179,7 @@ public class RuItems {
 
     SALMONBERRY = RegionsUnexploredMod.ITEM_REGISTRY.register("salmonberry", () -> new FoodItemWithBlock(RuBlocks.SALMONBERRY_BUSH.get(), new Item.Properties(), new Food(3, 0.3f)));
     DUSKMELON_SLICE = RegionsUnexploredMod.ITEM_REGISTRY.register("duskmelon_slice", () -> new FoodItemWithBlock(RuBlocks.DUSKMELON.get(), new Item.Properties(), new Food(5, 1.1f).addEffect(MobEffects.BLINDNESS, 240, 1)));
+    HANGING_EARLIGHT_FRUIT = RegionsUnexploredMod.ITEM_REGISTRY.register("hanging_earlight_fruit", () -> new FoodItemWithBlock(RuBlocks.HANGING_EARLIGHT.get(), new Item.Properties(), new Food(6, 0.4f).addEffect(MobEffects.GLOWING, 200, 0.1F)));
     MEADOW_SAGE = RegionsUnexploredMod.ITEM_REGISTRY.register("meadow_sage", () -> new FoodItemWithBlock(RuBlocks.MEADOW_SAGE.get(), new Item.Properties(), new Food(2, 0.15f).addEffect(MobEffects.HEAL, 20, 0.5f)));
     }
 }

@@ -1,4 +1,4 @@
-package net.regions_unexplored.block;
+package net.regions_unexplored.block.compat;
 
 import com.google.common.collect.Maps;
 import net.minecraft.world.item.AxeItem;
@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.FireBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.registries.RegistryObject;
+import net.regions_unexplored.block.RuBlocks;
 
 public class CompostableBlocks {
 
