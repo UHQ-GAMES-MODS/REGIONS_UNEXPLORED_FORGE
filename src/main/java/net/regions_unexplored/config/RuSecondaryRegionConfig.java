@@ -3,6 +3,7 @@ package net.regions_unexplored.config;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.regions_unexplored.data.worldgen.biome.RuBiomes;
+import net.regions_unexplored.world.level.biome.DefaultBiomes;
 
 public class RuSecondaryRegionConfig {
     public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
@@ -604,48 +605,48 @@ public class RuSecondaryRegionConfig {
 
         BUILDER.push("-----------------OCEAN_BIOMES--------------------");
         BUILDER.comment("deep_oceans");
-        OCA_DEP_ICY = BUILDER.define("deep_icy", RuBiomes.HYACINTH_DEEPS.location().toString());
-        OCA_DEP_COOL = BUILDER.define("deep_cool", Biomes.DEEP_COLD_OCEAN.location().toString());
-        OCA_DEP_NEUTRAL = BUILDER.define("deep_neutral", Biomes.DEEP_OCEAN.location().toString());
-        OCA_DEP_WARM = BUILDER.define("deep_warm", Biomes.DEEP_LUKEWARM_OCEAN.location().toString());
-        OCA_DEP_HOT = BUILDER.define("deep_hot", Biomes.WARM_OCEAN.location().toString());
+        OCA_DEP_ICY = BUILDER.define("deep_icy", DefaultBiomes.SECONDARY_OCEAN_BIOMES[0][0].location().toString());
+        OCA_DEP_COOL = BUILDER.define("deep_cool", DefaultBiomes.SECONDARY_OCEAN_BIOMES[0][1].location().toString());
+        OCA_DEP_NEUTRAL = BUILDER.define("deep_neutral", DefaultBiomes.SECONDARY_OCEAN_BIOMES[0][2].location().toString());
+        OCA_DEP_WARM = BUILDER.define("deep_warm", DefaultBiomes.SECONDARY_OCEAN_BIOMES[0][3].location().toString());
+        OCA_DEP_HOT = BUILDER.define("deep_hot", DefaultBiomes.SECONDARY_OCEAN_BIOMES[0][4].location().toString());
         BUILDER.comment("oceans");
-        OCA_ICY = BUILDER.define("icy", Biomes.FROZEN_OCEAN.location().toString());
-        OCA_COOL = BUILDER.define("cool", Biomes.COLD_OCEAN.location().toString());
-        OCA_NEUTRAL = BUILDER.define("neutral", Biomes.OCEAN.location().toString());
-        OCA_WARM = BUILDER.define("warm", Biomes.LUKEWARM_OCEAN.location().toString());
-        OCA_HOT = BUILDER.define("hot", RuBiomes.ROCKY_REEF.location().toString());
+        OCA_ICY = BUILDER.define("icy", DefaultBiomes.SECONDARY_OCEAN_BIOMES[1][0].location().toString());
+        OCA_COOL = BUILDER.define("cool", DefaultBiomes.SECONDARY_OCEAN_BIOMES[1][1].location().toString());
+        OCA_NEUTRAL = BUILDER.define("neutral", DefaultBiomes.SECONDARY_OCEAN_BIOMES[1][2].location().toString());
+        OCA_WARM = BUILDER.define("warm", DefaultBiomes.SECONDARY_OCEAN_BIOMES[1][3].location().toString());
+        OCA_HOT = BUILDER.define("hot", DefaultBiomes.SECONDARY_OCEAN_BIOMES[1][4].location().toString());
         BUILDER.pop();
 
         BUILDER.push("-----------------SHORE_BIOMES--------------------");
         BUILDER.comment("beach_biomes");
-        ICY_BEACH = BUILDER.define("icy_beach_biome", Biomes.SNOWY_BEACH.location().toString());
-        COOL_BEACH = BUILDER.define("cold_beach_biome", RuBiomes.GRAVEL_BEACH.location().toString());
-        NEUTRAL_BEACH = BUILDER.define("neutral_beach_biome", RuBiomes.GRASSY_BEACH.location().toString());
-        WARM_BEACH = BUILDER.define("warm_beach_biome", RuBiomes.GRASSY_BEACH.location().toString());
-        HOT_BEACH = BUILDER.define("hot_beach_biome", Biomes.BEACH.location().toString());
+        ICY_BEACH = BUILDER.define("icy_beach_biome", DefaultBiomes.SECONDARY_BEACH_BIOMES[0].location().toString());
+        COOL_BEACH = BUILDER.define("cold_beach_biome", DefaultBiomes.SECONDARY_BEACH_BIOMES[1].location().toString());
+        NEUTRAL_BEACH = BUILDER.define("neutral_beach_biome", DefaultBiomes.SECONDARY_BEACH_BIOMES[2].location().toString());
+        WARM_BEACH = BUILDER.define("warm_beach_biome", DefaultBiomes.SECONDARY_BEACH_BIOMES[3].location().toString());
+        HOT_BEACH = BUILDER.define("hot_beach_biome", DefaultBiomes.SECONDARY_BEACH_BIOMES[4].location().toString());
         BUILDER.comment("stone_beach_biomes");
-        COLD_STONE_BEACH = BUILDER.define("cold_stone_beach_biome", Biomes.STONY_SHORE .location().toString());
-        HOT_STONE_BEACH = BUILDER.define("hot_stone_beach_biome", RuBiomes.CHALK_CLIFFS.location().toString());
+        COLD_STONE_BEACH = BUILDER.define("cold_stone_beach_biome", DefaultBiomes.SECONDARY_STONE_SHORE_BIOMES[1].location().toString());
+        HOT_STONE_BEACH = BUILDER.define("hot_stone_beach_biome", DefaultBiomes.SECONDARY_STONE_SHORE_BIOMES[4].location().toString());
         BUILDER.pop();
 
         BUILDER.push("-----------------UNDERGROUND_BIOMES--------------------");
-        CAVE_1 = BUILDER.define("cave_1_biome", Biomes.LUSH_CAVES.location().toString());
-        CAVE_2 = BUILDER.define("cave_2_biome", Biomes.DRIPSTONE_CAVES.location().toString());
-        CAVE_3 = BUILDER.define("cave_3_biome", Biomes.DEEP_DARK.location().toString());
-        CAVE_4 = BUILDER.define("cave_4_biome", RuBiomes.BIOSHROOM_CAVES.location().toString());
-        CAVE_5 = BUILDER.define("cave_5_biome", RuBiomes.ANCIENT_DELTA.location().toString());
-        CAVE_6 = BUILDER.define("cave_6_biome", RuBiomes.PRISMACHASM.location().toString());
-        CAVE_7 = BUILDER.define("cave_7_biome", RuBiomes.REDSTONE_CAVES.location().toString());
-        CAVE_8 = BUILDER.define("cave_8_biome", RuBiomes.SCORCHING_CAVES.location().toString());
+        CAVE_1 = BUILDER.define("cave_1_biome", DefaultBiomes.SECONDARY_CAVE_BIOMES[0].location().toString());
+        CAVE_2 = BUILDER.define("cave_2_biome", DefaultBiomes.SECONDARY_CAVE_BIOMES[1].location().toString());
+        CAVE_3 = BUILDER.define("cave_3_biome", DefaultBiomes.SECONDARY_CAVE_BIOMES[2].location().toString());
+        CAVE_4 = BUILDER.define("cave_4_biome", DefaultBiomes.SECONDARY_CAVE_BIOMES[3].location().toString());
+        CAVE_5 = BUILDER.define("cave_5_biome", DefaultBiomes.SECONDARY_CAVE_BIOMES[4].location().toString());
+        CAVE_6 = BUILDER.define("cave_6_biome", DefaultBiomes.SECONDARY_CAVE_BIOMES[5].location().toString());
+        CAVE_7 = BUILDER.define("cave_7_biome", DefaultBiomes.SECONDARY_CAVE_BIOMES[6].location().toString());
+        CAVE_8 = BUILDER.define("cave_8_biome", DefaultBiomes.SECONDARY_CAVE_BIOMES[7].location().toString());
         BUILDER.pop();
 
         BUILDER.push("-----------------ISLAND_BIOMES--------------------");
-        ICY_ISLAND = BUILDER.define("icy_island_biome", RuBiomes.ALPHA_GROVE.location().toString());
-        COOL_ISLAND = BUILDER.define("cool_island_biome", RuBiomes.ASHEN_WOODLAND.location().toString());
-        NEUTRAL_ISLAND = BUILDER.define("neutral_island_biome", RuBiomes.ASHEN_WOODLAND.location().toString());
-        WARM_ISLAND = BUILDER.define("warm_island_biome", RuBiomes.TROPICS.location().toString());
-        HOT_ISLAND = BUILDER.define("hot_island_biome", RuBiomes.TROPICS.location().toString());
+        ICY_ISLAND = BUILDER.define("icy_island_biome", DefaultBiomes.SECONDARY_ISLAND_BIOMES[0].location().toString());
+        COOL_ISLAND = BUILDER.define("cool_island_biome", DefaultBiomes.SECONDARY_ISLAND_BIOMES[1].location().toString());
+        NEUTRAL_ISLAND = BUILDER.define("neutral_island_biome", DefaultBiomes.SECONDARY_ISLAND_BIOMES[2].location().toString());
+        WARM_ISLAND = BUILDER.define("warm_island_biome", DefaultBiomes.SECONDARY_ISLAND_BIOMES[3].location().toString());
+        HOT_ISLAND = BUILDER.define("hot_island_biome", DefaultBiomes.SECONDARY_ISLAND_BIOMES[4].location().toString());
         BUILDER.pop();
 
         BUILDER.push("-----------------OTHER_BIOMES--------------------");
