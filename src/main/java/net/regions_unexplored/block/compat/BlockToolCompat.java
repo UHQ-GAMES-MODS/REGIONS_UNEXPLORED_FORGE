@@ -90,6 +90,9 @@ public class BlockToolCompat {
         registerStrippableBlock(RuBlocks.YELLOW_BIOSHROOM_HYPHAE.get(), RuBlocks.STRIPPED_YELLOW_BIOSHROOM_HYPHAE.get());
 
         //ShovelBlocks
+        registerShovelled(RuBlocks.PEAT_PODZOL.get(), RuBlocks.PEAT_DIRT_PATH.get().defaultBlockState());
+        registerShovelled(RuBlocks.SILT_PODZOL.get(), RuBlocks.SILT_DIRT_PATH.get().defaultBlockState());
+
         registerShovelled(RuBlocks.CHALK_GRASS_BLOCK.get(), RuBlocks.CHALK.get().defaultBlockState());
         registerShovelled(RuBlocks.ARGILLITE_GRASS_BLOCK.get(), RuBlocks.ARGILLITE.get().defaultBlockState());
 

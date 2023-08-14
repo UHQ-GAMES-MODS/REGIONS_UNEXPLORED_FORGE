@@ -17,6 +17,9 @@
             "seed": 2345,
             "states": [
               {
+                "Name": "regions_unexplored:mallow"
+              },
+              {
                 "Name": "regions_unexplored:yellow_lupine"
               },
               {
@@ -38,10 +41,19 @@
                 "Name": "regions_unexplored:pink_lupine"
               },
               {
+                "Name": "regions_unexplored:tassel",
+                "Properties": {
+                  "half": "lower"
+                }
+              },
+              {
                 "Name": "minecraft:orange_tulip"
               },
               {
                 "Name": "regions_unexplored:waratah"
+              },
+              {
+                "Name": "regions_unexplored:hibiscus"
               },
               {
                 "Name": "minecraft:white_tulip"
@@ -50,10 +62,19 @@
                 "Name": "regions_unexplored:hyssop"
               },
               {
+                "Name": "regions_unexplored:white_snowbelle"
+              },
+              {
                 "Name": "minecraft:allium"
               },
               {
                 "Name": "regions_unexplored:blue_lupine"
+              },
+              {
+                "Name": "regions_unexplored:bleeding_heart"
+              },
+              {
+                "Name": "regions_unexplored:salmon_poppy_bush"
               },
               {
                 "Name": "regions_unexplored:white_trillium"

@@ -9,6 +9,7 @@ import net.minecraftforge.common.data.LanguageProvider;
 import net.regions_unexplored.RegionsUnexploredMod;
 import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.data.worldgen.biome.RuBiomes;
+import net.regions_unexplored.entity.RuDamageTypes;
 import net.regions_unexplored.entity.RuEntities;
 import org.jetbrains.annotations.NotNull;
 
@@ -39,6 +40,12 @@ public class RuLanguageProvider extends LanguageProvider {
         //Entity translations
         this.add(RuEntities.BOAT.get(), "Boat");
         this.add(RuEntities.CHEST_BOAT.get(), "Boat With Chest");
+
+        this.add("death.attack.dorcel", "%s was dragged underground by Dorcel");
+        this.add("death.attack.dorcel.player", "%s was dragged underground by Dorcel");
+
+        this.add("death.attack.dusk_trap", "%s was eaten by a Dusktrap");
+        this.add("death.attack.dusk_trap.player", "%s was eaten by a Dusktrap");
 
         // Item translations
         RegionsUnexploredMod.ITEM_REGISTRY.getEntries().forEach(itemRegistryObject -> {

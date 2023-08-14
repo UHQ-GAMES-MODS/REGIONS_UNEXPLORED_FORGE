@@ -47,6 +47,7 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.DEEPSLATE_VIRIDESCENT_NYLIUM.get()));
                             /*-----------------PLANTS-----------------*/
                             //GRASS_BLOCKS
+                            output.accept(new ItemStack(RuBlocks.ASHEN_GRASS.get()));
                             output.accept(new ItemStack(RuBlocks.BLADED_GRASS.get()));
                             output.accept(new ItemStack(RuBlocks.DEAD_STEPPE_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.FROZEN_GRASS.get()));
@@ -56,7 +57,12 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.STEPPE_GRASS.get()));
                             output.accept(new ItemStack(RuBlocks.STEPPE_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.STONE_BUD.get()));
-                            //TALL_GRASS_BLOCKS
+
+                            output.accept(new ItemStack(RuBlocks.BRIMSPROUT.get()));
+                            output.accept(new ItemStack(RuBlocks.COBALT_ROOTS.get()));
+                            output.accept(new ItemStack(RuBlocks.GLISTERING_SPROUT.get()));
+                            output.accept(new ItemStack(RuBlocks.MYCOTOXIC_GRASS.get()));
+
                             output.accept(new ItemStack(RuBlocks.BLADED_TALL_GRASS.get()));
                             output.accept(new ItemStack(RuBlocks.ELEPHANT_EAR.get()));
                             output.accept(new ItemStack(RuBlocks.SANDY_TALL_GRASS.get()));
@@ -70,8 +76,8 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.ASTER.get()));
                             output.accept(new ItemStack(RuBlocks.BLEEDING_HEART.get()));
                             output.accept(new ItemStack(RuBlocks.DAISY.get()));
-                            output.accept(new ItemStack(RuBlocks.FELICIA_DAISY.get()));
                             output.accept(new ItemStack(RuBlocks.DORCEL.get()));
+                            output.accept(new ItemStack(RuBlocks.FELICIA_DAISY.get()));
                             output.accept(new ItemStack(RuBlocks.FIREWEED.get()));
                             output.accept(new ItemStack(RuBlocks.HIBISCUS.get()));
                             output.accept(new ItemStack(RuBlocks.HYSSOP.get()));
@@ -87,6 +93,7 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.PURPLE_LUPINE.get()));
                             output.accept(new ItemStack(RuBlocks.RED_LUPINE.get()));
                             output.accept(new ItemStack(RuBlocks.YELLOW_LUPINE.get()));
+                            output.accept(new ItemStack(RuBlocks.COBALT_EARLIGHT.get()));
 
                             output.accept(new ItemStack(RuBlocks.ORANGE_CONEFLOWER.get()));
                             output.accept(new ItemStack(RuBlocks.PURPLE_CONEFLOWER.get()));
@@ -108,6 +115,7 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.BROWN_SNOWBELLE.get()));
                             output.accept(new ItemStack(RuBlocks.BLACK_SNOWBELLE.get()));
 
+                            output.accept(new ItemStack(RuBlocks.HYACINTH_FLOWERS.get()));
                             output.accept(new ItemStack(RuBlocks.BLUE_MAGNOLIA_FLOWERS.get()));
                             output.accept(new ItemStack(RuBlocks.PINK_MAGNOLIA_FLOWERS.get()));
                             output.accept(new ItemStack(RuBlocks.WHITE_MAGNOLIA_FLOWERS.get()));
@@ -124,10 +132,18 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.DAY_LILY.get()));
                             output.accept(new ItemStack(RuBlocks.MEADOW_SAGE.get()));
                             output.accept(new ItemStack(RuBlocks.TASSEL.get()));
+                            output.accept(new ItemStack(RuBlocks.GLISTER_BULB.get()));
+                            output.accept(new ItemStack(RuBlocks.GLISTER_SPIRE.get()));
+                            output.accept(new ItemStack(RuBlocks.MYCOTOXIC_DAISY.get()));
+                            output.accept(new ItemStack(RuBlocks.TALL_COBALT_EARLIGHT.get()));
+                            //HYACINTH_BLOCKS
+                            output.accept(new ItemStack(RuBlocks.HYACINTH_BLOOM.get()));
+                            output.accept(new ItemStack(RuBlocks.TALL_HYACINTH_STOCK.get()));
+                            output.accept(new ItemStack(RuBlocks.HYACINTH_LAMP.get()));
                             //SAPLINGS
-                            output.accept(new ItemStack(RuBlocks.ASHEN_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.ALPHA_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.APPLE_OAK_SAPLING.get()));
+                            output.accept(new ItemStack(RuBlocks.ASHEN_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.BAMBOO_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.BAOBAB_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.BLACKWOOD_SAPLING.get()));
@@ -139,10 +155,10 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.DEAD_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.EUCALYPTUS_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.FLOWERING_SAPLING.get()));
-                            output.accept(new ItemStack(RuBlocks.GOLDEN_LARCH_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.JOSHUA_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.KAPOK_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.LARCH_SAPLING.get()));
+                            output.accept(new ItemStack(RuBlocks.GOLDEN_LARCH_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.MAGNOLIA_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.BLUE_MAGNOLIA_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.PINK_MAGNOLIA_SAPLING.get()));
@@ -155,21 +171,22 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.PINE_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.REDWOOD_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.SILVER_BIRCH_SAPLING.get()));
+                            output.accept(new ItemStack(RuBlocks.ENCHANTED_BIRCH_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.SMALL_OAK_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.SOCOTRA_SAPLING.get()));
-                            output.accept(new ItemStack(RuBlocks.ENCHANTED_BIRCH_SAPLING.get()));
                             output.accept(new ItemStack(RuBlocks.WILLOW_SAPLING.get()));
                             //SHRUBS
-                            output.accept(new ItemStack(RuBlocks.ASHEN_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.ACACIA_SHRUB.get()));
+                            output.accept(new ItemStack(RuBlocks.ASHEN_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.BAOBAB_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.BIRCH_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.BLACKWOOD_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.BRIMWOOD_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.CHERRY_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.CYPRESS_SHRUB.get()));
-                            output.accept(new ItemStack(RuBlocks.DEAD_SHRUB.get()));
+                            output.accept(new ItemStack(RuBlocks.DARK_OAK_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.DEAD_PINE_SHRUB.get()));
+                            output.accept(new ItemStack(RuBlocks.DEAD_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.EUCALYPTUS_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.FLOWERING_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.JOSHUA_SHRUB.get()));
@@ -187,13 +204,12 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.RED_MAPLE_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.MAUVE_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.OAK_SHRUB.get()));
-                            output.accept(new ItemStack(RuBlocks.DARK_OAK_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.PALM_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.PINE_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.REDWOOD_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.SILVER_BIRCH_SHRUB.get()));
-                            output.accept(new ItemStack(RuBlocks.SOCOTRA_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.ENCHANTED_BIRCH_SHRUB.get()));
+                            output.accept(new ItemStack(RuBlocks.SOCOTRA_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.SPRUCE_SHRUB.get()));
                             output.accept(new ItemStack(RuBlocks.WILLOW_SHRUB.get()));
                             //MUSHROOMS
@@ -210,11 +226,12 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.CAVE_HYSSOP.get()));
                             output.accept(new ItemStack(RuBlocks.DUCKWEED.get()));
                             output.accept(new ItemStack(RuBlocks.FLOWERING_LILY_PAD.get()));
-                            output.accept(new ItemStack(RuBlocks.SPANISH_MOSS.get()));
                             output.accept(new ItemStack(RuBlocks.KAPOK_VINES.get()));
+                            output.accept(new ItemStack(RuBlocks.SPANISH_MOSS.get()));
+                            output.accept(new ItemStack(RuBlocks.GLISTERING_IVY.get()));
                             //FOOD_PLANT_BLOCKS
                             output.accept(new ItemStack(RuItems.SALMONBERRY.get()));
-
+                            output.accept(new ItemStack(RuBlocks.HANGING_EARLIGHT.get()));
                             /*-----------------PLANT_BLOCKS-----------------*/
                             //MUSHROOMS
                             output.accept(new ItemStack(RuBlocks.BLUE_BIOSHROOM_BLOCK.get()));
@@ -225,19 +242,13 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.GLOWING_PINK_BIOSHROOM_BLOCK.get()));
                             output.accept(new ItemStack(RuBlocks.YELLOW_BIOSHROOM_BLOCK.get()));
                             output.accept(new ItemStack(RuBlocks.GLOWING_YELLOW_BIOSHROOM_BLOCK.get()));
-                            //BAMBOO
-                            output.accept(new ItemStack(RuBlocks.BAMBOO_LOG.get()));
-                            output.accept(new ItemStack(RuBlocks.STRIPPED_BAMBOO_LOG.get()));
-                            //BAMBOO
-                            output.accept(new ItemStack(RuBlocks.SMALL_OAK_LOG.get()));
-                            output.accept(new ItemStack(RuBlocks.STRIPPED_SMALL_OAK_LOG.get()));
                             //CACTUS
                             output.accept(new ItemStack(RuBlocks.SAGUARO_CACTUS.get()));
 
                             /*-----------------LEAVES-----------------*/
-                            output.accept(new ItemStack(RuBlocks.ASHEN_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.ALPHA_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.APPLE_OAK_LEAVES.get()));
+                            output.accept(new ItemStack(RuBlocks.ASHEN_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.BAMBOO_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.BAOBAB_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.BLACKWOOD_LEAVES.get()));
@@ -264,9 +275,9 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.PINE_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.REDWOOD_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.SILVER_BIRCH_LEAVES.get()));
+                            output.accept(new ItemStack(RuBlocks.ENCHANTED_BIRCH_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.SMALL_OAK_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.SOCOTRA_LEAVES.get()));
-                            output.accept(new ItemStack(RuBlocks.ENCHANTED_BIRCH_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.WILLOW_LEAVES.get()));
 
                             /*-----------------BRANCHES-----------------*/
@@ -274,9 +285,8 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.BAOBAB_BRANCH.get()));
                             output.accept(new ItemStack(RuBlocks.BIRCH_BRANCH.get()));
                             output.accept(new ItemStack(RuBlocks.BLACKWOOD_BRANCH.get()));
-                            output.accept(new ItemStack(RuBlocks.MAGNOLIA_BRANCH.get()));
-                            output.accept(new ItemStack(RuBlocks.CYPRESS_BRANCH.get()));
                             output.accept(new ItemStack(RuBlocks.CHERRY_BRANCH.get()));
+                            output.accept(new ItemStack(RuBlocks.CYPRESS_BRANCH.get()));
                             output.accept(new ItemStack(RuBlocks.DARK_OAK_BRANCH.get()));
                             output.accept(new ItemStack(RuBlocks.DEAD_BRANCH.get()));
                             output.accept(new ItemStack(RuBlocks.EUCALYPTUS_BRANCH.get()));
@@ -284,6 +294,7 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.JUNGLE_BRANCH.get()));
                             output.accept(new ItemStack(RuBlocks.KAPOK_BRANCH.get()));
                             output.accept(new ItemStack(RuBlocks.LARCH_BRANCH.get()));
+                            output.accept(new ItemStack(RuBlocks.MAGNOLIA_BRANCH.get()));
                             output.accept(new ItemStack(RuBlocks.MANGROVE_BRANCH.get()));
                             output.accept(new ItemStack(RuBlocks.MAPLE_BRANCH.get()));
                             output.accept(new ItemStack(RuBlocks.MAUVE_BRANCH.get()));
@@ -297,6 +308,10 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.WILLOW_BRANCH.get()));
 
                             /*-----------------DIRT_BLOCKS-----------------*/
+                            //OTHER_DIRT_BLOCKS
+                            output.accept(new ItemStack(RuBlocks.ALPHA_GRASS_BLOCK.get()));
+                            //ASHEN_BLOCKS
+                            output.accept(new ItemStack(RuBlocks.ASHEN_DIRT.get()));
                             //FOREST_DIRT_BLOCKS
                             output.accept(new ItemStack(RuBlocks.PEAT_GRASS_BLOCK.get()));
                             output.accept(new ItemStack(RuBlocks.PEAT_DIRT.get()));
@@ -313,13 +328,17 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.SILT_PODZOL.get()));
                             output.accept(new ItemStack(RuBlocks.SILT_MUD.get()));
                             output.accept(new ItemStack(RuBlocks.SILT_FARMLAND.get()));
-                            //OTHER_DIRT_BLOCKS
-                            output.accept(new ItemStack(RuBlocks.ALPHA_GRASS_BLOCK.get()));
-
+                            //NETHER
+                            output.accept(new ItemStack(RuBlocks.BRIMSPROUT_NYLIUM.get()));
+                            output.accept(new ItemStack(RuBlocks.COBALT_NYLIUM.get()));
+                            output.accept(new ItemStack(RuBlocks.GLISTERING_NYLIUM.get()));
+                            output.accept(new ItemStack(RuBlocks.GLISTERING_WART.get()));
+                            output.accept(new ItemStack(RuBlocks.OVERGROWN_BONE_BLOCK.get()));
+                            output.accept(new ItemStack(RuBlocks.MYCOTOXIC_NYLIUM.get()));
                             /*-----------------STONE_BLOCKS-----------------*/
                             //CHALKS
-                            output.accept(new ItemStack(RuBlocks.CHALK.get()));
                             output.accept(new ItemStack(RuBlocks.CHALK_GRASS_BLOCK.get()));
+                            output.accept(new ItemStack(RuBlocks.CHALK.get()));
                             output.accept(new ItemStack(RuBlocks.CHALK_BRICKS.get()));
                             output.accept(new ItemStack(RuBlocks.CHALK_BRICK_SLAB.get()));
                             output.accept(new ItemStack(RuBlocks.CHALK_BRICK_STAIRS.get()));
@@ -332,36 +351,37 @@ public class RuTabs {
                             //STONES
                             output.accept(new ItemStack(RuBlocks.ARGILLITE_GRASS_BLOCK.get()));
                             output.accept(new ItemStack(RuBlocks.ARGILLITE.get()));
+
+                            output.accept(new ItemStack(RuBlocks.BLACKSTONE_CLUSTER.get()));
+
+                            output.accept(new ItemStack(RuBlocks.COBALT_OBSIDIAN.get()));
+
                             output.accept(new ItemStack(RuBlocks.MOSSY_STONE.get()));
 
-                            /*-----------------OCEAN_BLOCKS-----------------*/
-                            //HYACINTH_BLOCKS
-                            output.accept(new ItemStack(RuBlocks.HYACINTH_BLOOM.get()));
-                            output.accept(new ItemStack(RuBlocks.TALL_HYACINTH_STOCK.get()));
-                            output.accept(new ItemStack(RuBlocks.HYACINTH_LAMP.get()));
-                            output.accept(new ItemStack(RuBlocks.HYACINTH_FLOWERS.get()));
-                            //ASHEN_BLOCKS
-                            output.accept(new ItemStack(RuBlocks.ASHEN_DIRT.get()));
-                            output.accept(new ItemStack(RuBlocks.ASHEN_GRASS.get()));
-
                             /*-----------------OTHER_BLOCKS-----------------*/
-                            output.accept(new ItemStack(RuBlocks.ICICLE.get()));
                             output.accept(new ItemStack(RuBlocks.ASH.get()));
                             output.accept(new ItemStack(RuBlocks.VOLCANIC_ASH.get()));
                             output.accept(new ItemStack(RuBlocks.ASH_VENT.get()));
+                            output.accept(new ItemStack(RuBlocks.ICICLE.get()));
 
                             /*-----------------WOOD_TYPES-----------------*/
-                            //ASHEN_BLOCKS
-                            output.accept(new ItemStack(RuBlocks.ASHEN_LOG.get()));
-                            output.accept(new ItemStack(RuBlocks.ASHEN_WOOD.get()));
-                            //SILVER_BIRCH_BLOCKS
-                            output.accept(new ItemStack(RuBlocks.SILVER_BIRCH_LOG.get()));
-                            output.accept(new ItemStack(RuBlocks.SILVER_BIRCH_WOOD.get()));
                             //ALPHA_BLOCKS
                             output.accept(new ItemStack(RuBlocks.ALPHA_LOG.get()));
                             output.accept(new ItemStack(RuBlocks.ALPHA_PLANKS.get()));
                             output.accept(new ItemStack(RuBlocks.ALPHA_STAIRS.get()));
                             output.accept(new ItemStack(RuBlocks.ALPHA_SLAB.get()));
+                            //ASHEN_BLOCKS
+                            output.accept(new ItemStack(RuBlocks.ASHEN_LOG.get()));
+                            output.accept(new ItemStack(RuBlocks.ASHEN_WOOD.get()));
+                            //BAMBOO
+                            output.accept(new ItemStack(RuBlocks.BAMBOO_LOG.get()));
+                            output.accept(new ItemStack(RuBlocks.STRIPPED_BAMBOO_LOG.get()));
+                            //SILVER_BIRCH_BLOCKS
+                            output.accept(new ItemStack(RuBlocks.SILVER_BIRCH_LOG.get()));
+                            output.accept(new ItemStack(RuBlocks.SILVER_BIRCH_WOOD.get()));
+                            //OAK
+                            output.accept(new ItemStack(RuBlocks.SMALL_OAK_LOG.get()));
+                            output.accept(new ItemStack(RuBlocks.STRIPPED_SMALL_OAK_LOG.get()));
                             //BAOBAB_BLOCKS
                             output.accept(new ItemStack(RuBlocks.BAOBAB_LOG.get()));
                             output.accept(new ItemStack(RuBlocks.STRIPPED_BAOBAB_LOG.get()));
@@ -801,31 +821,6 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.GRAY_PAINTED_SLAB.get()));
                             output.accept(new ItemStack(RuBlocks.BLACK_PAINTED_SLAB.get()));
 
-                            /*-----------------NETHER_BLOCKS-----------------*/
-                            //NETHER_STONES
-                            output.accept(new ItemStack(RuBlocks.BLACKSTONE_CLUSTER.get()));
-                            output.accept(new ItemStack(RuBlocks.OVERGROWN_BONE_BLOCK.get()));
-                            //BRIMSPROUT_BLOCKS
-                            output.accept(new ItemStack(RuBlocks.BRIMSPROUT_NYLIUM.get()));
-                            output.accept(new ItemStack(RuBlocks.BRIMSPROUT.get()));
-                            //COBALT_BLOCKS
-                            output.accept(new ItemStack(RuBlocks.COBALT_EARLIGHT.get()));
-                            output.accept(new ItemStack(RuBlocks.TALL_COBALT_EARLIGHT.get()));
-                            output.accept(new ItemStack(RuBlocks.COBALT_NYLIUM.get()));
-                            output.accept(new ItemStack(RuBlocks.COBALT_OBSIDIAN.get()));
-                            output.accept(new ItemStack(RuBlocks.COBALT_ROOTS.get()));
-                            output.accept(new ItemStack(RuBlocks.HANGING_EARLIGHT.get()));
-                            //GLISTERING_BLOCKS
-                            output.accept(new ItemStack(RuBlocks.GLISTERING_IVY.get()));
-                            output.accept(new ItemStack(RuBlocks.GLISTERING_NYLIUM.get()));
-                            output.accept(new ItemStack(RuBlocks.GLISTERING_SPROUT.get()));
-                            output.accept(new ItemStack(RuBlocks.GLISTERING_WART.get()));
-                            output.accept(new ItemStack(RuBlocks.GLISTER_BULB.get()));
-                            output.accept(new ItemStack(RuBlocks.GLISTER_SPIRE.get()));
-                            //MYCOTOXIC_BLOCKS
-                            output.accept(new ItemStack(RuBlocks.MYCOTOXIC_DAISY.get()));
-                            output.accept(new ItemStack(RuBlocks.MYCOTOXIC_GRASS.get()));
-                            output.accept(new ItemStack(RuBlocks.MYCOTOXIC_NYLIUM.get()));
                         }).build());
     }
 }

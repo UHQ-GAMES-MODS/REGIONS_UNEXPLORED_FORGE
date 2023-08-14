@@ -92,6 +92,7 @@ public class PlainsBiomes {
 
         //add RU features
         RuBiomeDefaultFeatures.flowerFieldsFlowers(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.ASTER);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.GRASS);
 
 
