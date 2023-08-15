@@ -1,8 +1,6 @@
 package net.regions_unexplored.datagen.provider;
 
 import net.minecraft.advancements.Advancement;
-import net.minecraft.advancements.AdvancementList;
-import net.minecraft.advancements.Criterion;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.HolderLookup;
@@ -96,8 +94,8 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                     .addCriterion("hyacinth_deeps", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.HYACINTH_DEEPS)))
                     .addCriterion("icy_heights", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.ICY_HEIGHTS)))
                     .addCriterion("joshua_desert", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.JOSHUA_DESERT)))
-                    .addCriterion("lupine_plains", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.LUPINE_PLAINS)))
-                    .addCriterion("magnolia_highlands", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.MAGNOLIA_HIGHLANDS)))
+                    .addCriterion("lupine_plains", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.CLOVER_PLAINS)))
+                    .addCriterion("magnolia_highlands", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.MAGNOLIA_WOODLAND)))
                     .addCriterion("maple_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.MAPLE_FOREST)))
                     .addCriterion("marsh", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.MARSH)))
                     .addCriterion("mauve_hills", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.MAUVE_HILLS)))
@@ -176,8 +174,8 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                     .addCriterion("icy_heights", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.ICY_HEIGHTS)))
                     .addCriterion("infernal_holt", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.INFERNAL_HOLT)))
                     .addCriterion("joshua_desert", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.JOSHUA_DESERT)))
-                    .addCriterion("lupine_plains", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.LUPINE_PLAINS)))
-                    .addCriterion("magnolia_highlands", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.MAGNOLIA_HIGHLANDS)))
+                    .addCriterion("lupine_plains", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.CLOVER_PLAINS)))
+                    .addCriterion("magnolia_highlands", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.MAGNOLIA_WOODLAND)))
                     .addCriterion("maple_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.MAPLE_FOREST)))
                     .addCriterion("marsh", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.MARSH)))
                     .addCriterion("mauve_hills", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.MAUVE_HILLS)))

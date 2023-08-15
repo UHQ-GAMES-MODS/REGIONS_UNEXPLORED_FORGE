@@ -9,7 +9,6 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.regions_unexplored.RegionsUnexploredMod;
-import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.config.RuCommonConfig;
 import net.regions_unexplored.data.worldgen.biome.RuBiomes;
 import net.regions_unexplored.data.worldgen.biome.builder.*;
@@ -42,7 +41,7 @@ public class BiomeRegistry {
         //FOREST
         register(context, RuBiomes.AUTUMNAL_MAPLE_FOREST, ForestBiomes.autumnalMapleForest(featuresGetter, carversGetter));
         register(context, RuBiomes.BAMBOO_FOREST, ForestBiomes.bambooForest(featuresGetter, carversGetter));
-        register(context, RuBiomes.MAGNOLIA_HIGHLANDS, ForestBiomes.magnoliaHighlands(featuresGetter, carversGetter));
+        register(context, RuBiomes.MAGNOLIA_WOODLAND, ForestBiomes.magnoliaHighlands(featuresGetter, carversGetter));
         register(context, RuBiomes.DECIDUOUS_FOREST, ForestBiomes.deciduousForest(featuresGetter, carversGetter));
         register(context, RuBiomes.MAPLE_FOREST, ForestBiomes.mapleForest(featuresGetter, carversGetter));
         register(context, RuBiomes.MAUVE_HILLS, ForestBiomes.mauveHills(featuresGetter, carversGetter));
@@ -61,7 +60,7 @@ public class BiomeRegistry {
         register(context, RuBiomes.BARLEY_FIELDS, PlainsBiomes.barleyFields(featuresGetter, carversGetter));
         register(context, RuBiomes.FLOWER_FIELDS, PlainsBiomes.flowerFields(featuresGetter, carversGetter));
         register(context, RuBiomes.GRASSLAND, PlainsBiomes.grassland(featuresGetter, carversGetter));
-        register(context, RuBiomes.LUPINE_PLAINS, PlainsBiomes.lupinePlains(featuresGetter, carversGetter));
+        register(context, RuBiomes.CLOVER_PLAINS, PlainsBiomes.lupinePlains(featuresGetter, carversGetter));
         register(context, RuBiomes.ROCKY_MEADOW, PlainsBiomes.rockyMeadow(featuresGetter, carversGetter));
         register(context, RuBiomes.POPPY_FIELDS, PlainsBiomes.poppyFields(featuresGetter, carversGetter));
         register(context, RuBiomes.PRAIRIE, PlainsBiomes.prairie(featuresGetter, carversGetter));
@@ -133,7 +132,7 @@ public class BiomeRegistry {
         //FOREST
         registerVillagers(RuBiomes.AUTUMNAL_MAPLE_FOREST, VillagerType.PLAINS);
         registerVillagers(RuBiomes.BAMBOO_FOREST, VillagerType.JUNGLE);
-        registerVillagers(RuBiomes.MAGNOLIA_HIGHLANDS, VillagerType.PLAINS);
+        registerVillagers(RuBiomes.MAGNOLIA_WOODLAND, VillagerType.PLAINS);
         registerVillagers(RuBiomes.DECIDUOUS_FOREST, VillagerType.PLAINS);
         registerVillagers(RuBiomes.MAPLE_FOREST, VillagerType.TAIGA);
         registerVillagers(RuBiomes.MAUVE_HILLS, VillagerType.PLAINS);
@@ -152,7 +151,7 @@ public class BiomeRegistry {
         registerVillagers(RuBiomes.BARLEY_FIELDS, VillagerType.PLAINS);
         registerVillagers(RuBiomes.FLOWER_FIELDS, VillagerType.PLAINS);
         registerVillagers(RuBiomes.GRASSLAND, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.LUPINE_PLAINS, VillagerType.PLAINS);
+        registerVillagers(RuBiomes.CLOVER_PLAINS, VillagerType.PLAINS);
         registerVillagers(RuBiomes.ROCKY_MEADOW, VillagerType.PLAINS);
         registerVillagers(RuBiomes.POPPY_FIELDS, VillagerType.PLAINS);
         registerVillagers(RuBiomes.PRAIRIE, VillagerType.PLAINS);

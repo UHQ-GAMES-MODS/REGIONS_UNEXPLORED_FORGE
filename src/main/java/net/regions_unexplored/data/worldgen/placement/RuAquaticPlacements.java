@@ -57,7 +57,7 @@ public class RuAquaticPlacements {
 
 
         register(context, RuAquaticPlacements.CATTAIL_FEN, FEN_CATTAIL, List.of(NoiseThresholdCountPlacement.of(-0.8D, 5, 24), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(3), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome()));
-        register(context, RuAquaticPlacements.CATTAIL_RIVER, WATER_CATTAIL, List.of(NoiseThresholdCountPlacement.of(-0.8D, 5, 32), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(3), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome()));
+        register(context, RuAquaticPlacements.CATTAIL_RIVER, WATER_CATTAIL, List.of(NoiseThresholdCountPlacement.of(-0.8D, 5, 6), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(3), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome()));
 
         register(context, RuAquaticPlacements.TALL_HYACINTH_STOCK, TALL_HYACINTH_STOCK, NoiseBasedCountPlacement.of(20, 80.0D, 0.3D), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome());
         register(context, RuAquaticPlacements.HYACINTH_PLANTS, HYACINTH_PLANTS, seagrassPlacement(80));

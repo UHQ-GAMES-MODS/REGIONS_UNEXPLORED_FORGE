@@ -9,7 +9,6 @@ import net.minecraftforge.common.data.LanguageProvider;
 import net.regions_unexplored.RegionsUnexploredMod;
 import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.data.worldgen.biome.RuBiomes;
-import net.regions_unexplored.entity.RuDamageTypes;
 import net.regions_unexplored.entity.RuEntities;
 import org.jetbrains.annotations.NotNull;
 
@@ -95,7 +94,7 @@ public class RuLanguageProvider extends LanguageProvider {
         this.add(RuBiomes.ICY_HEIGHTS, capitalizeString(filterBiomeLang(RuBiomes.ICY_HEIGHTS)));
         this.add(RuBiomes.INFERNAL_HOLT, capitalizeString(filterBiomeLang(RuBiomes.INFERNAL_HOLT)));
         this.add(RuBiomes.JOSHUA_DESERT, capitalizeString(filterBiomeLang(RuBiomes.JOSHUA_DESERT)));
-        this.add(RuBiomes.MAGNOLIA_HIGHLANDS, capitalizeString(filterBiomeLang(RuBiomes.MAGNOLIA_HIGHLANDS)));
+        this.add(RuBiomes.MAGNOLIA_WOODLAND, capitalizeString(filterBiomeLang(RuBiomes.MAGNOLIA_WOODLAND)));
         this.add(RuBiomes.MARSH, capitalizeString(filterBiomeLang(RuBiomes.MARSH)));
         this.add(RuBiomes.MAPLE_FOREST, capitalizeString(filterBiomeLang(RuBiomes.MAPLE_FOREST)));
         this.add(RuBiomes.MOUNTAINS, capitalizeString(filterBiomeLang(RuBiomes.MOUNTAINS)));
@@ -130,7 +129,7 @@ public class RuLanguageProvider extends LanguageProvider {
         this.add(RuBiomes.TROPICAL_RIVER, capitalizeString(filterBiomeLang(RuBiomes.TROPICAL_RIVER)));
         this.add(RuBiomes.TOWERING_CLIFFS, capitalizeString(filterBiomeLang(RuBiomes.TOWERING_CLIFFS)));
         this.add(RuBiomes.WILLOW_FOREST, capitalizeString(filterBiomeLang(RuBiomes.WILLOW_FOREST)));
-        this.add(RuBiomes.LUPINE_PLAINS, capitalizeString(filterBiomeLang(RuBiomes.LUPINE_PLAINS)));
+        this.add(RuBiomes.CLOVER_PLAINS, capitalizeString(filterBiomeLang(RuBiomes.CLOVER_PLAINS)));
 
         this.add("itemGroup.regions_unexplored_main", "Regions Unexplored");
     }

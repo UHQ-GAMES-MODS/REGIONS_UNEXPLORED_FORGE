@@ -11,106 +11,70 @@ import net.regions_unexplored.config.RuSecondaryRegionConfig;
 import net.regions_unexplored.data.worldgen.biome.RuBiomes;
 
 public class DefaultBiomes {
-    //RARE(not used)
-    public static ResourceKey<Biome>[][] RARE_MIDDLE_BIOMES = new ResourceKey[][]{
-            //-----------ARID,DRY,NEUTRAL,WET,HUMID
-            /*ICY*/     {null, null,                    null,                   null,                         null                         },
-            /*COOL*/    {null, RuBiomes.PUMPKIN_FIELDS, null,                   RuBiomes.GOLDEN_BOREAL_TAIGA, RuBiomes.GOLDEN_BOREAL_TAIGA },
-            /*NEUTRAL*/ {null, null,                    RuBiomes.GRASSLAND,     RuBiomes.GRASSLAND,           RuBiomes.SPARSE_REDWOODS     },
-            /*WARM*/    {null, RuBiomes.BARLEY_FIELDS,  RuBiomes.MAUVE_HILLS,   null,                         null                         },
-            /*HOT*/     {null, null,                    null,                   null,                         null                         }};
-    public static ResourceKey<Biome>[][] RARE_PLATEAU_BIOMES = new ResourceKey[][]{
-            //-----------ARID,DRY,NEUTRAL,WET,HUMID
-            /*ICY*/     {null, null,                    null,                   null,                         null                         },
-            /*COOL*/    {null, null,                    null,                   RuBiomes.GOLDEN_BOREAL_TAIGA, RuBiomes.GOLDEN_BOREAL_TAIGA },
-            /*NEUTRAL*/ {null, null,                    RuBiomes.GRASSLAND,     RuBiomes.GRASSLAND,           RuBiomes.SPARSE_REDWOODS     },
-            /*WARM*/    {null, null,                    RuBiomes.MAUVE_HILLS,   null,                         null                         },
-            /*HOT*/     {null, null,                    null,                   null,                         null                         }};
-
     //PRIMARY
     public static ResourceKey<Biome>[][] PRIMARY_MIDDLE_BIOMES = new ResourceKey[][]{
-            //-----------ARID,                    DRY,                            NEUTRAL,                    WET,                        HUMID
-            /*ICY*/     {RuBiomes.FROZEN_TUNDRA,  RuBiomes.FROZEN_TUNDRA,         RuBiomes.FROZEN_PINE_TAIGA, RuBiomes.COLD_BOREAL_TAIGA, RuBiomes.COLD_BOREAL_TAIGA},
-
-            /*COOL*/    {RuBiomes.PUMPKIN_FIELDS, RuBiomes.AUTUMNAL_MAPLE_FOREST, RuBiomes.MAPLE_FOREST,      RuBiomes.BOREAL_TAIGA,      RuBiomes.BOREAL_TAIGA},
-
-            /*NEUTRAL*/ {RuBiomes.GRASSLAND,      RuBiomes.SHRUBLAND,             RuBiomes.TEMPERATE_GROVE,   RuBiomes.PINE_TAIGA,        RuBiomes.BLACKWOOD_TAIGA},
-
-            /*WARM*/    {RuBiomes.ORCHARD,        RuBiomes.PRAIRIE,               RuBiomes.DECIDUOUS_FOREST,  RuBiomes.RAINFOREST,        RuBiomes.RAINFOREST},
-
-            /*HOT*/     {RuBiomes.BAOBAB_SAVANNA, RuBiomes.BAOBAB_SAVANNA,        RuBiomes.SAGUARO_DESERT,    RuBiomes.JOSHUA_DESERT,     RuBiomes.JOSHUA_DESERT}};
+            //-----------ARID,DRY,NEUTRAL,WET,HUMID
+            /*ICY*/     {RuBiomes.FROZEN_TUNDRA,    RuBiomes.FROZEN_TUNDRA,         RuBiomes.FROZEN_PINE_TAIGA, RuBiomes.COLD_BOREAL_TAIGA, RuBiomes.COLD_BOREAL_TAIGA},
+            /*COOL*/    {RuBiomes.PUMPKIN_FIELDS,   RuBiomes.AUTUMNAL_MAPLE_FOREST, RuBiomes.MAPLE_FOREST,      RuBiomes.BOREAL_TAIGA,      RuBiomes.BOREAL_TAIGA},
+            /*NEUTRAL*/ {RuBiomes.ORCHARD,          RuBiomes.SHRUBLAND,             RuBiomes.TEMPERATE_GROVE,   RuBiomes.PINE_TAIGA,        RuBiomes.BLACKWOOD_TAIGA},
+            /*WARM*/    {RuBiomes.BARLEY_FIELDS,    RuBiomes.PRAIRIE,               RuBiomes.GRASSLAND,         RuBiomes.REDWOODS,          RuBiomes.REDWOODS},
+            /*HOT*/     {RuBiomes.BAOBAB_SAVANNA,   RuBiomes.BAOBAB_SAVANNA,        RuBiomes.SAGUARO_DESERT,    RuBiomes.OUTBACK,           RuBiomes.EUCALYPTUS_FOREST}};
 
     public static ResourceKey<Biome>[][] PRIMARY_MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{
-            //-----------ARID,                           DRY,                          NEUTRAL,                   WET,                        HUMID
-            /*ICY*/     {RuBiomes.FROZEN_PINE_TAIGA,     RuBiomes.FROZEN_TUNDRA,       RuBiomes.FROZEN_TUNDRA,    RuBiomes.COLD_BOREAL_TAIGA, RuBiomes.COLD_BOREAL_TAIGA},
-
-            /*COOL*/    {RuBiomes.AUTUMNAL_MAPLE_FOREST, RuBiomes.SILVER_BIRCH_FOREST, RuBiomes.MAPLE_FOREST,     RuBiomes.BOREAL_TAIGA,      RuBiomes.GOLDEN_BOREAL_TAIGA},
-
-            /*NEUTRAL*/ {RuBiomes.GRASSLAND,             RuBiomes.SHRUBLAND,           RuBiomes.TEMPERATE_GROVE,  RuBiomes.PINE_TAIGA,        RuBiomes.BLACKWOOD_TAIGA},
-
-            /*WARM*/    {RuBiomes.BARLEY_FIELDS,         RuBiomes.PRAIRIE,             RuBiomes.DECIDUOUS_FOREST, RuBiomes.RAINFOREST,        RuBiomes.SPARSE_RAINFOREST},
-
-            /*HOT*/     {RuBiomes.BAOBAB_SAVANNA,        RuBiomes.BAOBAB_SAVANNA,      RuBiomes.SAGUARO_DESERT,   RuBiomes.JOSHUA_DESERT,     RuBiomes.JOSHUA_DESERT}};
+            //-----------ARID,DRY,NEUTRAL,WET,HUMID
+            /*ICY*/     {RuBiomes.FROZEN_PINE_TAIGA,     RuBiomes.FROZEN_TUNDRA,         RuBiomes.FROZEN_TUNDRA,    RuBiomes.COLD_BOREAL_TAIGA, RuBiomes.SPIRES},
+            /*COOL*/    {RuBiomes.AUTUMNAL_MAPLE_FOREST, RuBiomes.AUTUMNAL_MAPLE_FOREST, RuBiomes.MAPLE_FOREST,     RuBiomes.BOREAL_TAIGA,      RuBiomes.GOLDEN_BOREAL_TAIGA},
+            /*NEUTRAL*/ {RuBiomes.ORCHARD,               RuBiomes.SHRUBLAND,             RuBiomes.TEMPERATE_GROVE,  RuBiomes.PINE_TAIGA,        RuBiomes.BLACKWOOD_TAIGA},
+            /*WARM*/    {RuBiomes.PRAIRIE,               RuBiomes.DECIDUOUS_FOREST,      RuBiomes.GRASSLAND,        RuBiomes.REDWOODS,          RuBiomes.SPARSE_REDWOODS},
+            /*HOT*/     {RuBiomes.BAOBAB_SAVANNA,        RuBiomes.BAOBAB_SAVANNA,        RuBiomes.SAGUARO_DESERT,   RuBiomes.OUTBACK,           RuBiomes.EUCALYPTUS_FOREST}};
 
     public static ResourceKey<Biome>[][] PRIMARY_PLATEAU_BIOMES = new ResourceKey[][]{
-            //-----------ARID,                           DRY,                            NEUTRAL,                   WET,                    HUMID
-            /*ICY*/     {RuBiomes.ICY_HEIGHTS,           RuBiomes.ICY_HEIGHTS,           RuBiomes.ICY_HEIGHTS,      RuBiomes.ICY_HEIGHTS,   RuBiomes.COLD_BOREAL_TAIGA},
-
-            /*COOL*/    {RuBiomes.AUTUMNAL_MAPLE_FOREST, RuBiomes.AUTUMNAL_MAPLE_FOREST, RuBiomes.MAPLE_FOREST,     RuBiomes.BOREAL_TAIGA,  RuBiomes.BOREAL_TAIGA},
-
-            /*NEUTRAL*/ {RuBiomes.HIGHLAND_FIELDS,       RuBiomes.HIGHLAND_FIELDS,       RuBiomes.HIGHLAND_FIELDS,  RuBiomes.PINE_TAIGA,    RuBiomes.BLACKWOOD_TAIGA},
-
-            /*WARM*/    {RuBiomes.ORCHARD,               RuBiomes.DECIDUOUS_FOREST,      RuBiomes.DECIDUOUS_FOREST, RuBiomes.RAINFOREST,    RuBiomes.RAINFOREST},
-
-            /*HOT*/     {RuBiomes.STEPPE,                RuBiomes.STEPPE,                RuBiomes.SAGUARO_DESERT,   RuBiomes.JOSHUA_DESERT, RuBiomes.RAINFOREST}};
+            //-----------ARID,DRY,NEUTRAL,WET,HUMID
+            /*ICY*/     {RuBiomes.ICY_HEIGHTS,           RuBiomes.ICY_HEIGHTS,           RuBiomes.ICY_HEIGHTS,      RuBiomes.ICY_HEIGHTS,       RuBiomes.COLD_BOREAL_TAIGA},
+            /*COOL*/    {RuBiomes.AUTUMNAL_MAPLE_FOREST, RuBiomes.AUTUMNAL_MAPLE_FOREST, RuBiomes.MAPLE_FOREST,     RuBiomes.BOREAL_TAIGA,      RuBiomes.BOREAL_TAIGA},
+            /*NEUTRAL*/ {RuBiomes.HIGHLAND_FIELDS,       RuBiomes.HIGHLAND_FIELDS,       RuBiomes.HIGHLAND_FIELDS,  RuBiomes.HIGHLAND_FIELDS,   RuBiomes.BLACKWOOD_TAIGA},
+            /*WARM*/    {RuBiomes.BARLEY_FIELDS,         RuBiomes.DECIDUOUS_FOREST,      RuBiomes.DECIDUOUS_FOREST, RuBiomes.REDWOODS,          RuBiomes.REDWOODS},
+            /*HOT*/     {RuBiomes.STEPPE,                RuBiomes.STEPPE,                RuBiomes.SAGUARO_DESERT,   RuBiomes.EUCALYPTUS_FOREST, RuBiomes.EUCALYPTUS_FOREST}};
 
     public static ResourceKey<Biome>[][] PRIMARY_PLATEAU_BIOMES_VARIANT = new ResourceKey[][]{
-            //-----------ARID,                           DRY,                          NEUTRAL,                   WET,                        HUMID
-            /*ICY*/     {RuBiomes.ICY_HEIGHTS,           RuBiomes.ICY_HEIGHTS,         RuBiomes.ICY_HEIGHTS,      RuBiomes.COLD_BOREAL_TAIGA, RuBiomes.COLD_BOREAL_TAIGA},
-
-            /*COOL*/    {RuBiomes.AUTUMNAL_MAPLE_FOREST, RuBiomes.SILVER_BIRCH_FOREST, RuBiomes.MAPLE_FOREST,     RuBiomes.BOREAL_TAIGA,      RuBiomes.GOLDEN_BOREAL_TAIGA},
-
-            /*NEUTRAL*/ {RuBiomes.HIGHLAND_FIELDS,       RuBiomes.TEMPERATE_GROVE,     RuBiomes.TEMPERATE_GROVE,  RuBiomes.PINE_TAIGA,        RuBiomes.BLACKWOOD_TAIGA},
-
-            /*WARM*/    {RuBiomes.DECIDUOUS_FOREST,      RuBiomes.DECIDUOUS_FOREST,    RuBiomes.DECIDUOUS_FOREST, RuBiomes.RAINFOREST,        RuBiomes.SPARSE_RAINFOREST},
-
-            /*HOT*/     {RuBiomes.STEPPE,                RuBiomes.STEPPE,              RuBiomes.SAGUARO_DESERT,   RuBiomes.JOSHUA_DESERT,     RuBiomes.RAINFOREST}};
+            //-----------ARID,DRY,NEUTRAL,WET,HUMID
+            /*ICY*/     {RuBiomes.ICY_HEIGHTS,           RuBiomes.ICY_HEIGHTS,           RuBiomes.ICY_HEIGHTS,      RuBiomes.ICY_HEIGHTS,       RuBiomes.SPIRES},
+            /*COOL*/    {RuBiomes.AUTUMNAL_MAPLE_FOREST, RuBiomes.AUTUMNAL_MAPLE_FOREST, RuBiomes.MAPLE_FOREST,     RuBiomes.BOREAL_TAIGA,      RuBiomes.GOLDEN_BOREAL_TAIGA},
+            /*NEUTRAL*/ {RuBiomes.ORCHARD,               RuBiomes.HIGHLAND_FIELDS,       RuBiomes.TEMPERATE_GROVE,  RuBiomes.PINE_TAIGA,        RuBiomes.BLACKWOOD_TAIGA},
+            /*WARM*/    {RuBiomes.DECIDUOUS_FOREST,      RuBiomes.DECIDUOUS_FOREST,      RuBiomes.DECIDUOUS_FOREST, RuBiomes.REDWOODS,          RuBiomes.SPARSE_REDWOODS},
+            /*HOT*/     {RuBiomes.STEPPE,                RuBiomes.STEPPE,                RuBiomes.SAGUARO_DESERT,   RuBiomes.EUCALYPTUS_FOREST, RuBiomes.EUCALYPTUS_FOREST}};
 
     public static ResourceKey<Biome>[][] PRIMARY_SHATTERED_BIOMES = new ResourceKey[][]{
-            //-----------ARID,                      DRY,                       NEUTRAL,                   WET,                        HUMID
+            //-----------ARID,DRY,NEUTRAL,WET,HUMID
             /*ICY*/     {RuBiomes.ICY_HEIGHTS,      RuBiomes.ICY_HEIGHTS,      RuBiomes.ICY_HEIGHTS,      RuBiomes.ICY_HEIGHTS,       RuBiomes.ICY_HEIGHTS},
-
             /*COOL*/    {RuBiomes.TOWERING_CLIFFS,  RuBiomes.TOWERING_CLIFFS,  RuBiomes.TOWERING_CLIFFS,  RuBiomes.TOWERING_CLIFFS,   RuBiomes.TOWERING_CLIFFS},
-
             /*NEUTRAL*/ {RuBiomes.TOWERING_CLIFFS,  RuBiomes.TOWERING_CLIFFS,  RuBiomes.TOWERING_CLIFFS,  RuBiomes.TOWERING_CLIFFS,   RuBiomes.TOWERING_CLIFFS},
-
-            /*WARM*/    {RuBiomes.DECIDUOUS_FOREST, RuBiomes.DECIDUOUS_FOREST, RuBiomes.DECIDUOUS_FOREST, RuBiomes.SPARSE_RAINFOREST, RuBiomes.SPARSE_RAINFOREST},
-
-            /*HOT*/     {RuBiomes.STEPPE,           RuBiomes.STEPPE,           RuBiomes.SAGUARO_DESERT,   RuBiomes.JOSHUA_DESERT,     RuBiomes.RAINFOREST}};
+            /*WARM*/    {RuBiomes.BARLEY_FIELDS,    RuBiomes.DECIDUOUS_FOREST, RuBiomes.DECIDUOUS_FOREST, RuBiomes.SPARSE_REDWOODS,   RuBiomes.SPARSE_REDWOODS},
+            /*HOT*/     {RuBiomes.STEPPE,           RuBiomes.STEPPE,           RuBiomes.SAGUARO_DESERT,   RuBiomes.EUCALYPTUS_FOREST, RuBiomes.EUCALYPTUS_FOREST}};
 
     public static ResourceKey<Biome>[][] PRIMARY_RIVER_BIOMES = new ResourceKey[][]{
             //-----------ARID,                DRY,                 NEUTRAL,                 WET,                     HUMID
-            /*ICY*/     {Biomes.FROZEN_RIVER, Biomes.FROZEN_RIVER, Biomes.FROZEN_RIVER,     Biomes.FROZEN_RIVER,     Biomes.FROZEN_RIVER},
-            /*COOL*/    {RuBiomes.COLD_RIVER, RuBiomes.COLD_RIVER, RuBiomes.COLD_RIVER,     RuBiomes.MUDDY_RIVER,    RuBiomes.MUDDY_RIVER},
+            /*ICY*/     {Biomes.FROZEN_RIVER, Biomes.FROZEN_RIVER, Biomes.FROZEN_RIVER,     Biomes.FROZEN_RIVER,     RuBiomes.COLD_RIVER},
+            /*COOL*/    {RuBiomes.COLD_RIVER, RuBiomes.COLD_RIVER, RuBiomes.MUDDY_RIVER,    RuBiomes.MUDDY_RIVER,    RuBiomes.MUDDY_RIVER},
             /*NEUTRAL*/ {Biomes.RIVER,        Biomes.RIVER,        Biomes.RIVER,            Biomes.RIVER,            RuBiomes.BLACKWOOD_TAIGA},
-            /*WARM*/    {Biomes.RIVER,        Biomes.RIVER,        Biomes.RIVER,            RuBiomes.TROPICAL_RIVER, RuBiomes.TROPICAL_RIVER},
-            /*HOT*/     {Biomes.RIVER,        Biomes.RIVER,        Biomes.RIVER,            RuBiomes.TROPICAL_RIVER, RuBiomes.TROPICAL_RIVER}};
+            /*WARM*/    {Biomes.RIVER,        Biomes.RIVER,        Biomes.RIVER,            Biomes.RIVER,            Biomes.RIVER},
+            /*HOT*/     {Biomes.RIVER,        Biomes.RIVER,        RuBiomes.TROPICAL_RIVER, RuBiomes.TROPICAL_RIVER, RuBiomes.TROPICAL_RIVER}};
 
     public static ResourceKey<Biome>[][] PRIMARY_RIVER_BIOMES_VARIANT = new ResourceKey[][]{
             //-----------ARID,                DRY,                 NEUTRAL,                 WET,                     HUMID
-            /*ICY*/     {Biomes.FROZEN_RIVER, Biomes.FROZEN_RIVER, Biomes.FROZEN_RIVER,     Biomes.FROZEN_RIVER,     Biomes.FROZEN_RIVER},
-            /*COOL*/    {RuBiomes.COLD_RIVER, RuBiomes.COLD_RIVER, RuBiomes.COLD_RIVER,     RuBiomes.MUDDY_RIVER,    RuBiomes.MUDDY_RIVER},
+            /*ICY*/     {Biomes.FROZEN_RIVER, Biomes.FROZEN_RIVER, Biomes.FROZEN_RIVER,     Biomes.FROZEN_RIVER,     RuBiomes.COLD_RIVER},
+            /*COOL*/    {RuBiomes.COLD_RIVER, RuBiomes.COLD_RIVER, RuBiomes.MUDDY_RIVER,    RuBiomes.MUDDY_RIVER,    RuBiomes.MUDDY_RIVER},
             /*NEUTRAL*/ {Biomes.RIVER,        Biomes.RIVER,        Biomes.RIVER,            Biomes.RIVER,            RuBiomes.BLACKWOOD_TAIGA},
-            /*WARM*/    {Biomes.RIVER,        Biomes.RIVER,        Biomes.RIVER,            RuBiomes.TROPICAL_RIVER, RuBiomes.TROPICAL_RIVER},
-            /*HOT*/     {Biomes.RIVER,        Biomes.RIVER,        Biomes.RIVER,            RuBiomes.TROPICAL_RIVER, RuBiomes.TROPICAL_RIVER}};
+            /*WARM*/    {Biomes.RIVER,        Biomes.RIVER,        Biomes.RIVER,            Biomes.RIVER,            Biomes.RIVER},
+            /*HOT*/     {Biomes.RIVER,        Biomes.RIVER,        RuBiomes.TROPICAL_RIVER, RuBiomes.TROPICAL_RIVER, RuBiomes.TROPICAL_RIVER}};
 
     public static ResourceKey<Biome>[][] PRIMARY_SWAMP_BIOMES = new ResourceKey[][]{
             //-----------ARID,                      DRY,                 NEUTRAL,             WET,                 HUMID
             /*ICY*/     {RuBiomes.SPIRES,           RuBiomes.SPIRES,     RuBiomes.SPIRES,     RuBiomes.SPIRES,     RuBiomes.SPIRES},
             /*COOL*/    {RuBiomes.FEN,              RuBiomes.FEN,        RuBiomes.FEN,        RuBiomes.FEN,        RuBiomes.FEN},
             /*NEUTRAL*/ {RuBiomes.OLD_GROWTH_BAYOU, RuBiomes.BAYOU,      RuBiomes.BAYOU,      RuBiomes.BAYOU,      RuBiomes.OLD_GROWTH_BAYOU},
-            /*WARM*/    {RuBiomes.MARSH,            RuBiomes.MARSH,      RuBiomes.MARSH,      RuBiomes.FUNGAL_FEN, RuBiomes.FUNGAL_FEN},
-            /*HOT*/     {RuBiomes.MARSH,            RuBiomes.MARSH,      RuBiomes.MARSH,      RuBiomes.FUNGAL_FEN, RuBiomes.FUNGAL_FEN}};
+            /*WARM*/    {RuBiomes.MARSH,            RuBiomes.MARSH,      RuBiomes.MARSH,      RuBiomes.MARSH,      RuBiomes.MARSH},
+            /*HOT*/     {RuBiomes.FUNGAL_FEN,       RuBiomes.FUNGAL_FEN, RuBiomes.FUNGAL_FEN, RuBiomes.FUNGAL_FEN, RuBiomes.FUNGAL_FEN}};
 
 
     public static ResourceKey<Biome>[][] PRIMARY_OCEAN_BIOMES = new ResourceKey[][]{
@@ -132,92 +96,101 @@ public class DefaultBiomes {
 
     public static ResourceKey<Biome>[] PRIMARY_PEAK_BIOMES_VARIANT = new ResourceKey[] {Biomes.JAGGED_PEAKS, RuBiomes.MOUNTAINS, RuBiomes.MOUNTAINS, Biomes.STONY_PEAKS, RuBiomes.ARID_MOUNTAINS};
 
-    public static ResourceKey<Biome>[] PRIMARY_SLOPE_BIOMES = new ResourceKey[]        {Biomes.SNOWY_SLOPES, Biomes.GROVE, RuBiomes.PINE_SLOPES, RuBiomes.MAGNOLIA_HIGHLANDS, RuBiomes.RAINFOREST};
+    public static ResourceKey<Biome>[] PRIMARY_SLOPE_BIOMES = new ResourceKey[]        {Biomes.SNOWY_SLOPES, Biomes.GROVE, RuBiomes.PINE_SLOPES, RuBiomes.DECIDUOUS_FOREST, RuBiomes.EUCALYPTUS_FOREST};
 
-    public static ResourceKey<Biome>[] PRIMARY_SLOPE_BIOMES_VARIANT = new ResourceKey[]{RuBiomes.COLD_DECIDUOUS_FOREST, RuBiomes.PINE_SLOPES, RuBiomes.PINE_SLOPES, RuBiomes.MAGNOLIA_HIGHLANDS, RuBiomes.RAINFOREST};
+    public static ResourceKey<Biome>[] PRIMARY_SLOPE_BIOMES_VARIANT = new ResourceKey[]{RuBiomes.COLD_DECIDUOUS_FOREST, RuBiomes.PINE_SLOPES, RuBiomes.PINE_SLOPES, RuBiomes.DECIDUOUS_FOREST, RuBiomes.EUCALYPTUS_FOREST};
+
 
 
 
     //SECONDARY
     public static ResourceKey<Biome>[][] SECONDARY_MIDDLE_BIOMES = new ResourceKey[][]{
-            //-----------ARID,                    DRY,                            NEUTRAL,                    WET,                        HUMID
-            /*ICY*/     {RuBiomes.FROZEN_TUNDRA,  RuBiomes.FROZEN_TUNDRA,         RuBiomes.FROZEN_PINE_TAIGA, RuBiomes.COLD_BOREAL_TAIGA, RuBiomes.COLD_BOREAL_TAIGA},
-
-            /*COOL*/    {RuBiomes.POPPY_FIELDS,   RuBiomes.AUTUMNAL_MAPLE_FOREST, RuBiomes.MAPLE_FOREST,      RuBiomes.BOREAL_TAIGA,      RuBiomes.BOREAL_TAIGA},
-
-            /*NEUTRAL*/ {RuBiomes.FLOWER_FIELDS,  RuBiomes.LUPINE_PLAINS,         RuBiomes.WILLOW_FOREST,     RuBiomes.REDWOODS,          RuBiomes.SPARSE_REDWOODS},
-
-            /*WARM*/    {RuBiomes.MAUVE_HILLS,    RuBiomes.ROCKY_MEADOW,          RuBiomes.BAMBOO_FOREST,     RuBiomes.EUCALYPTUS_FOREST, RuBiomes.EUCALYPTUS_FOREST},
-
-            /*HOT*/     {RuBiomes.DRY_BUSHLAND,   RuBiomes.DRY_BUSHLAND,          RuBiomes.OUTBACK,           RuBiomes.OUTBACK,           RuBiomes.EUCALYPTUS_FOREST}};
+            //-----------ARID,DRY,NEUTRAL,WET,HUMID
+            /*ICY*/     {RuBiomes.FROZEN_TUNDRA, RuBiomes.FROZEN_TUNDRA,       RuBiomes.FROZEN_PINE_TAIGA, RuBiomes.COLD_BOREAL_TAIGA, RuBiomes.COLD_BOREAL_TAIGA},
+            /*COOL*/    {RuBiomes.POPPY_FIELDS,  RuBiomes.SILVER_BIRCH_FOREST, RuBiomes.MAPLE_FOREST,      RuBiomes.BOREAL_TAIGA,      RuBiomes.BOREAL_TAIGA},
+            /*NEUTRAL*/ {RuBiomes.FLOWER_FIELDS, RuBiomes.SHRUBLAND,           RuBiomes.WILLOW_FOREST,     RuBiomes.CLOVER_PLAINS,     RuBiomes.BLACKWOOD_TAIGA},
+            /*WARM*/    {RuBiomes.MAUVE_HILLS,   RuBiomes.ROCKY_MEADOW,        RuBiomes.BAMBOO_FOREST,     RuBiomes.REDWOODS,          RuBiomes.REDWOODS},
+            /*HOT*/     {RuBiomes.DRY_BUSHLAND,  RuBiomes.DRY_BUSHLAND,        RuBiomes.JOSHUA_DESERT,     RuBiomes.RAINFOREST,        RuBiomes.RAINFOREST}};
 
     public static ResourceKey<Biome>[][] SECONDARY_MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{
-            //-----------ARID,                       DRY,                            NEUTRAL,                WET,                        HUMID
-            /*ICY*/     {RuBiomes.FROZEN_PINE_TAIGA, RuBiomes.FROZEN_TUNDRA,         RuBiomes.FROZEN_TUNDRA, RuBiomes.COLD_BOREAL_TAIGA, RuBiomes.COLD_BOREAL_TAIGA},
-
-            /*COOL*/    {RuBiomes.POPPY_FIELDS,      RuBiomes.AUTUMNAL_MAPLE_FOREST, RuBiomes.MAPLE_FOREST,  RuBiomes.BOREAL_TAIGA,      RuBiomes.GOLDEN_BOREAL_TAIGA},
-
-            /*NEUTRAL*/ {RuBiomes.FLOWER_FIELDS,     RuBiomes.LUPINE_PLAINS,         RuBiomes.WILLOW_FOREST, RuBiomes.REDWOODS,          RuBiomes.SPARSE_REDWOODS},
-
-            /*WARM*/    {RuBiomes.MAUVE_HILLS,       RuBiomes.ROCKY_MEADOW,          RuBiomes.BAMBOO_FOREST, RuBiomes.EUCALYPTUS_FOREST, RuBiomes.EUCALYPTUS_FOREST},
-
-            /*HOT*/     {RuBiomes.DRY_BUSHLAND,      RuBiomes.DRY_BUSHLAND,          RuBiomes.OUTBACK,       RuBiomes.OUTBACK,           RuBiomes.EUCALYPTUS_FOREST}};
+            //-----------ARID,DRY,NEUTRAL,WET,HUMID
+            /*ICY*/     {RuBiomes.FROZEN_PINE_TAIGA, RuBiomes.FROZEN_TUNDRA,       RuBiomes.FROZEN_TUNDRA,     RuBiomes.COLD_BOREAL_TAIGA, RuBiomes.SPIRES},
+            /*COOL*/    {RuBiomes.POPPY_FIELDS,      RuBiomes.SILVER_BIRCH_FOREST, RuBiomes.MAPLE_FOREST,      RuBiomes.BOREAL_TAIGA,      RuBiomes.GOLDEN_BOREAL_TAIGA},
+            /*NEUTRAL*/ {RuBiomes.FLOWER_FIELDS,     RuBiomes.SHRUBLAND,           RuBiomes.WILLOW_FOREST,     RuBiomes.CLOVER_PLAINS,     RuBiomes.BLACKWOOD_TAIGA},
+            /*WARM*/    {RuBiomes.MAUVE_HILLS,       RuBiomes.ROCKY_MEADOW,        RuBiomes.BAMBOO_FOREST,     RuBiomes.MAGNOLIA_WOODLAND, RuBiomes.SPARSE_REDWOODS},
+            /*HOT*/     {RuBiomes.DRY_BUSHLAND,      RuBiomes.DRY_BUSHLAND,        RuBiomes.JOSHUA_DESERT,     RuBiomes.RAINFOREST,        RuBiomes.SPARSE_RAINFOREST}};
 
     public static ResourceKey<Biome>[][] SECONDARY_PLATEAU_BIOMES = new ResourceKey[][]{
             //-----------ARID,DRY,NEUTRAL,WET,HUMID
-            /*ICY*/     {RuBiomes.ICY_HEIGHTS, RuBiomes.ICY_HEIGHTS, RuBiomes.ICY_HEIGHTS, RuBiomes.ICY_HEIGHTS, RuBiomes.COLD_BOREAL_TAIGA},
-            /*COOL*/    {RuBiomes.POPPY_FIELDS, RuBiomes.AUTUMNAL_MAPLE_FOREST, RuBiomes.MAPLE_FOREST, RuBiomes.BOREAL_TAIGA, RuBiomes.BOREAL_TAIGA},
-            /*NEUTRAL*/ {RuBiomes.HIGHLAND_FIELDS, RuBiomes.HIGHLAND_FIELDS, RuBiomes.HIGHLAND_FIELDS, RuBiomes.HIGHLAND_FIELDS, RuBiomes.BLACKWOOD_TAIGA},
-            /*WARM*/    {RuBiomes.MAGNOLIA_HIGHLANDS, RuBiomes.MAGNOLIA_HIGHLANDS, RuBiomes.MAGNOLIA_HIGHLANDS, RuBiomes.MAGNOLIA_HIGHLANDS, RuBiomes.REDWOODS},
-            /*HOT*/     {RuBiomes.STEPPE, RuBiomes.STEPPE, RuBiomes.STEPPE, RuBiomes.EUCALYPTUS_FOREST, RuBiomes.EUCALYPTUS_FOREST}};
+            /*ICY*/     {RuBiomes.ICY_HEIGHTS,     RuBiomes.ICY_HEIGHTS,         RuBiomes.ICY_HEIGHTS,       RuBiomes.ICY_HEIGHTS,       RuBiomes.COLD_BOREAL_TAIGA},
+            /*COOL*/    {RuBiomes.POPPY_FIELDS,    RuBiomes.SILVER_BIRCH_FOREST, RuBiomes.MAPLE_FOREST,      RuBiomes.BOREAL_TAIGA,      RuBiomes.BOREAL_TAIGA},
+            /*NEUTRAL*/ {RuBiomes.HIGHLAND_FIELDS, RuBiomes.HIGHLAND_FIELDS,     RuBiomes.HIGHLAND_FIELDS,   RuBiomes.HIGHLAND_FIELDS,   RuBiomes.BLACKWOOD_TAIGA},
+            /*WARM*/    {RuBiomes.MAUVE_HILLS,     RuBiomes.MAGNOLIA_WOODLAND,   RuBiomes.MAGNOLIA_WOODLAND, RuBiomes.MAGNOLIA_WOODLAND, RuBiomes.REDWOODS},
+            /*HOT*/     {RuBiomes.STEPPE,          RuBiomes.STEPPE,              RuBiomes.JOSHUA_DESERT,     RuBiomes.RAINFOREST,        RuBiomes.RAINFOREST}};
 
     public static ResourceKey<Biome>[][] SECONDARY_PLATEAU_BIOMES_VARIANT = new ResourceKey[][]{
             //-----------ARID,DRY,NEUTRAL,WET,HUMID
-            /*ICY*/     {RuBiomes.ICY_HEIGHTS, RuBiomes.ICY_HEIGHTS, RuBiomes.ICY_HEIGHTS, RuBiomes.ICY_HEIGHTS, RuBiomes.SPIRES},
-            /*COOL*/    {RuBiomes.AUTUMNAL_MAPLE_FOREST, RuBiomes.AUTUMNAL_MAPLE_FOREST, RuBiomes.MAPLE_FOREST, RuBiomes.BOREAL_TAIGA, RuBiomes.GOLDEN_BOREAL_TAIGA},
-            /*NEUTRAL*/ {RuBiomes.HIGHLAND_FIELDS, RuBiomes.MAGNOLIA_HIGHLANDS, RuBiomes.MAGNOLIA_HIGHLANDS, RuBiomes.MAGNOLIA_HIGHLANDS, RuBiomes.BLACKWOOD_TAIGA},
-            /*WARM*/    {RuBiomes.MAGNOLIA_HIGHLANDS, RuBiomes.MAGNOLIA_HIGHLANDS, RuBiomes.MAGNOLIA_HIGHLANDS, RuBiomes.FLOWER_FIELDS, RuBiomes.SPARSE_REDWOODS},
-            /*HOT*/     {RuBiomes.STEPPE, RuBiomes.STEPPE, RuBiomes.STEPPE, RuBiomes.EUCALYPTUS_FOREST, RuBiomes.EUCALYPTUS_FOREST}};
+            /*ICY*/     {RuBiomes.ICY_HEIGHTS,     RuBiomes.ICY_HEIGHTS,         RuBiomes.ICY_HEIGHTS,       RuBiomes.ICY_HEIGHTS,       RuBiomes.SPIRES},
+            /*COOL*/    {RuBiomes.POPPY_FIELDS,    RuBiomes.SILVER_BIRCH_FOREST, RuBiomes.MAPLE_FOREST,      RuBiomes.BOREAL_TAIGA,      RuBiomes.GOLDEN_BOREAL_TAIGA},
+            /*NEUTRAL*/ {RuBiomes.HIGHLAND_FIELDS, RuBiomes.HIGHLAND_FIELDS,     RuBiomes.WILLOW_FOREST,     RuBiomes.CLOVER_PLAINS,     RuBiomes.BLACKWOOD_TAIGA},
+            /*WARM*/    {RuBiomes.MAUVE_HILLS,     RuBiomes.MAGNOLIA_WOODLAND,   RuBiomes.MAGNOLIA_WOODLAND, RuBiomes.MAGNOLIA_WOODLAND, RuBiomes.SPARSE_REDWOODS},
+            /*HOT*/     {RuBiomes.STEPPE,          RuBiomes.STEPPE,              RuBiomes.JOSHUA_DESERT,     RuBiomes.RAINFOREST,        RuBiomes.SPARSE_RAINFOREST}};
+
+    public static ResourceKey<Biome>[][] SECONDARY_SHATTERED_BIOMES = new ResourceKey[][]{
+            //-----------ARID,                        DRY,                         NEUTRAL,                     WET,                        HUMID
+            /*ICY*/     {RuBiomes.ICY_HEIGHTS,        RuBiomes.ICY_HEIGHTS,        RuBiomes.ICY_HEIGHTS,        RuBiomes.ICY_HEIGHTS,        RuBiomes.ICY_HEIGHTS},
+            /*COOL*/    {RuBiomes.TOWERING_CLIFFS,    RuBiomes.TOWERING_CLIFFS,    RuBiomes.TOWERING_CLIFFS,    RuBiomes.TOWERING_CLIFFS,    RuBiomes.TOWERING_CLIFFS},
+            /*NEUTRAL*/ {RuBiomes.TOWERING_CLIFFS,    RuBiomes.TOWERING_CLIFFS,    RuBiomes.TOWERING_CLIFFS,    RuBiomes.TOWERING_CLIFFS,    RuBiomes.TOWERING_CLIFFS},
+            /*WARM*/    {RuBiomes.MAGNOLIA_WOODLAND,  RuBiomes.MAGNOLIA_WOODLAND,  RuBiomes.MAGNOLIA_WOODLAND,  RuBiomes.MAGNOLIA_WOODLAND,  RuBiomes.SPARSE_REDWOODS},
+            /*HOT*/     {RuBiomes.STEPPE,             RuBiomes.STEPPE,             RuBiomes.JOSHUA_DESERT,      RuBiomes.SPARSE_RAINFOREST,  RuBiomes.SPARSE_RAINFOREST}};
 
     public static ResourceKey<Biome>[][] SECONDARY_RIVER_BIOMES = new ResourceKey[][]{
-            //-----------ARID,DRY,NEUTRAL,WET,HUMID
-            /*ICY*/     {Biomes.FROZEN_RIVER, Biomes.FROZEN_RIVER, Biomes.FROZEN_RIVER, Biomes.FROZEN_RIVER,  Biomes.FROZEN_RIVER},
-            /*COOL*/    {RuBiomes.COLD_RIVER, RuBiomes.COLD_RIVER, RuBiomes.COLD_RIVER, RuBiomes.MUDDY_RIVER, RuBiomes.MUDDY_RIVER},
-            /*NEUTRAL*/ {Biomes.RIVER, Biomes.RIVER, Biomes.RIVER, Biomes.RIVER, RuBiomes.BLACKWOOD_TAIGA},
-            /*WARM*/    {Biomes.RIVER, Biomes.RIVER, Biomes.RIVER, Biomes.RIVER, Biomes.RIVER},
-            /*HOT*/     {Biomes.RIVER, Biomes.RIVER, RuBiomes.TROPICAL_RIVER, RuBiomes.TROPICAL_RIVER, RuBiomes.TROPICAL_RIVER}};
+            //-----------ARID,                DRY,                 NEUTRAL,                 WET,                     HUMID
+            /*ICY*/     {Biomes.FROZEN_RIVER, Biomes.FROZEN_RIVER, Biomes.FROZEN_RIVER,     Biomes.FROZEN_RIVER,     Biomes.FROZEN_RIVER},
+            /*COOL*/    {RuBiomes.COLD_RIVER, RuBiomes.COLD_RIVER, RuBiomes.COLD_RIVER,     RuBiomes.MUDDY_RIVER,    RuBiomes.MUDDY_RIVER},
+            /*NEUTRAL*/ {Biomes.RIVER,        Biomes.RIVER,        Biomes.RIVER,            Biomes.RIVER,            Biomes.RIVER},
+            /*WARM*/    {Biomes.RIVER,        Biomes.RIVER,        Biomes.RIVER,            Biomes.RIVER,            RuBiomes.TROPICAL_RIVER},
+            /*HOT*/     {Biomes.RIVER,        Biomes.RIVER,        RuBiomes.TROPICAL_RIVER, RuBiomes.TROPICAL_RIVER, RuBiomes.TROPICAL_RIVER}};
 
     public static ResourceKey<Biome>[][] SECONDARY_RIVER_BIOMES_VARIANT = new ResourceKey[][]{
-            //-----------ARID,DRY,NEUTRAL,WET,HUMID
-            /*ICY*/     {Biomes.FROZEN_RIVER, Biomes.FROZEN_RIVER, Biomes.FROZEN_RIVER, Biomes.FROZEN_RIVER,  Biomes.FROZEN_RIVER},
-            /*COOL*/    {RuBiomes.COLD_RIVER, RuBiomes.COLD_RIVER, RuBiomes.COLD_RIVER, RuBiomes.MUDDY_RIVER, RuBiomes.MUDDY_RIVER},
-            /*NEUTRAL*/ {Biomes.RIVER, Biomes.RIVER, Biomes.RIVER, Biomes.RIVER, RuBiomes.BLACKWOOD_TAIGA},
-            /*WARM*/    {Biomes.RIVER, Biomes.RIVER, Biomes.RIVER, Biomes.RIVER, Biomes.RIVER},
-            /*HOT*/     {Biomes.RIVER, Biomes.RIVER, RuBiomes.TROPICAL_RIVER, RuBiomes.TROPICAL_RIVER, RuBiomes.TROPICAL_RIVER}};
+            //-----------ARID,                DRY,                 NEUTRAL,                 WET,                     HUMID
+            /*ICY*/     {Biomes.FROZEN_RIVER, Biomes.FROZEN_RIVER, Biomes.FROZEN_RIVER,     Biomes.FROZEN_RIVER,     Biomes.FROZEN_RIVER},
+            /*COOL*/    {RuBiomes.COLD_RIVER, RuBiomes.COLD_RIVER, RuBiomes.COLD_RIVER,     RuBiomes.MUDDY_RIVER,    RuBiomes.MUDDY_RIVER},
+            /*NEUTRAL*/ {Biomes.RIVER,        Biomes.RIVER,        Biomes.RIVER,            Biomes.RIVER,            Biomes.RIVER},
+            /*WARM*/    {Biomes.RIVER,        Biomes.RIVER,        Biomes.RIVER,            Biomes.RIVER,            RuBiomes.TROPICAL_RIVER},
+            /*HOT*/     {Biomes.RIVER,        Biomes.RIVER,        RuBiomes.TROPICAL_RIVER, RuBiomes.TROPICAL_RIVER, RuBiomes.TROPICAL_RIVER}};
 
     public static ResourceKey<Biome>[][] SECONDARY_SWAMP_BIOMES = new ResourceKey[][]{
-            //-----------ARID,DRY,NEUTRAL,WET,HUMID
-            /*ICY*/     {RuBiomes.SPIRES,           RuBiomes.SPIRES,         RuBiomes.SPIRES,         RuBiomes.SPIRES,         RuBiomes.SPIRES},
-            /*COOL*/    {RuBiomes.FEN,              RuBiomes.FEN,            RuBiomes.FEN,            RuBiomes.FEN,            RuBiomes.FEN},
-            /*NEUTRAL*/ {RuBiomes.OLD_GROWTH_BAYOU, RuBiomes.BAYOU,          RuBiomes.BAYOU,          RuBiomes.BAYOU,          RuBiomes.OLD_GROWTH_BAYOU},
-            /*WARM*/    {RuBiomes.MARSH,   RuBiomes.MARSH, RuBiomes.MARSH, RuBiomes.MARSH, RuBiomes.MARSH},
-            /*HOT*/     {RuBiomes.FUNGAL_FEN,       RuBiomes.FUNGAL_FEN,     RuBiomes.FUNGAL_FEN,     RuBiomes.FUNGAL_FEN,     RuBiomes.FUNGAL_FEN}};
+            //-----------ARID,                      DRY,                 NEUTRAL,             WET,                 HUMID
+            /*ICY*/     {RuBiomes.SPIRES,           RuBiomes.SPIRES,     RuBiomes.SPIRES,     RuBiomes.SPIRES,     RuBiomes.SPIRES},
+            /*COOL*/    {RuBiomes.FEN,              RuBiomes.FEN,        RuBiomes.FEN,        RuBiomes.FEN,        RuBiomes.FEN},
+            /*NEUTRAL*/ {RuBiomes.OLD_GROWTH_BAYOU, RuBiomes.BAYOU,      RuBiomes.BAYOU,      RuBiomes.MARSH,      RuBiomes.MARSH},
+            /*WARM*/    {RuBiomes.MARSH,            RuBiomes.MARSH,      RuBiomes.MARSH,      RuBiomes.FUNGAL_FEN, RuBiomes.FUNGAL_FEN},
+            /*HOT*/     {RuBiomes.FUNGAL_FEN,       RuBiomes.FUNGAL_FEN, RuBiomes.FUNGAL_FEN, RuBiomes.FUNGAL_FEN, RuBiomes.FUNGAL_FEN}};
 
 
     public static ResourceKey<Biome>[][] SECONDARY_OCEAN_BIOMES = new ResourceKey[][]{
-            //-----------ARID,DRY,NEUTRAL,WET,HUMID
+            //-----------ARID,                     DRY,                    NEUTRAL,           WET,                        HUMID
             /*DEEP*/     {RuBiomes.HYACINTH_DEEPS, Biomes.DEEP_COLD_OCEAN, Biomes.DEEP_OCEAN, Biomes.DEEP_LUKEWARM_OCEAN, Biomes.WARM_OCEAN},
             /*NORM*/     {Biomes.FROZEN_OCEAN,     Biomes.COLD_OCEAN,      Biomes.OCEAN,      Biomes.LUKEWARM_OCEAN,      RuBiomes.ROCKY_REEF}};
 
-    public static ResourceKey<Biome>[] SECONDARY_ISLAND_BIOMES = new ResourceKey[]{RuBiomes.ALPHA_GROVE, RuBiomes.ASHEN_WOODLAND, RuBiomes.ASHEN_WOODLAND, RuBiomes.TROPICS, RuBiomes.TROPICS};
-    public static ResourceKey<Biome>[] SECONDARY_BEACH_BIOMES = new ResourceKey[]{Biomes.SNOWY_BEACH, RuBiomes.GRAVEL_BEACH, RuBiomes.GRASSY_BEACH, RuBiomes.GRASSY_BEACH, Biomes.BEACH};
-    public static ResourceKey<Biome>[] SECONDARY_STONE_SHORE_BIOMES = new ResourceKey[]{Biomes.STONY_SHORE, RuBiomes.CHALK_CLIFFS};
-    public static ResourceKey<Biome>   SECONDARY_SHATTERED_CLIFF_BIOME = RuBiomes.TOWERING_CLIFFS;
-    public static ResourceKey<Biome>[] SECONDARY_CAVE_BIOMES = new ResourceKey[]{Biomes.LUSH_CAVES, Biomes.DRIPSTONE_CAVES, Biomes.DEEP_DARK, RuBiomes.BIOSHROOM_CAVES, RuBiomes.ANCIENT_DELTA, RuBiomes.PRISMACHASM, RuBiomes.REDSTONE_CAVES, RuBiomes.SCORCHING_CAVES};
-    public static ResourceKey<Biome>[] SECONDARY_PEAK_BIOMES = new ResourceKey[]{Biomes.FROZEN_PEAKS, Biomes.JAGGED_PEAKS, RuBiomes.MOUNTAINS, Biomes.STONY_PEAKS, RuBiomes.ARID_MOUNTAINS};
-    public static ResourceKey<Biome>[] SECONDARY_PEAK_BIOMES_VARIANT = new ResourceKey[]{Biomes.JAGGED_PEAKS, RuBiomes.MOUNTAINS, RuBiomes.MOUNTAINS, Biomes.STONY_PEAKS, RuBiomes.ARID_MOUNTAINS};
-    public static ResourceKey<Biome>[] SECONDARY_SLOPE_BIOMES = new ResourceKey[]{Biomes.SNOWY_SLOPES, Biomes.GROVE, RuBiomes.PINE_SLOPES, RuBiomes.MAGNOLIA_HIGHLANDS, RuBiomes.EUCALYPTUS_FOREST};
-    public static ResourceKey<Biome>[] SECONDARY_SLOPE_BIOMES_VARIANT = new ResourceKey[]{RuBiomes.COLD_DECIDUOUS_FOREST, RuBiomes.PINE_SLOPES, RuBiomes.PINE_SLOPES, RuBiomes.MAGNOLIA_HIGHLANDS, RuBiomes.EUCALYPTUS_FOREST};
+    public static ResourceKey<Biome>[] SECONDARY_ISLAND_BIOMES = new ResourceKey[]       {RuBiomes.ALPHA_GROVE, RuBiomes.ASHEN_WOODLAND, RuBiomes.ASHEN_WOODLAND, RuBiomes.TROPICS, RuBiomes.TROPICS};
+
+    public static ResourceKey<Biome>[] SECONDARY_BEACH_BIOMES = new ResourceKey[]        {Biomes.SNOWY_BEACH, RuBiomes.GRAVEL_BEACH, RuBiomes.GRASSY_BEACH, RuBiomes.GRASSY_BEACH, Biomes.BEACH};
+
+    public static ResourceKey<Biome>[] SECONDARY_STONE_SHORE_BIOMES = new ResourceKey[]  {Biomes.STONY_SHORE, RuBiomes.CHALK_CLIFFS};
+
+    public static ResourceKey<Biome>   SECONDARY_SHATTERED_CLIFF_BIOME =                    RuBiomes.TOWERING_CLIFFS;
+
+    public static ResourceKey<Biome>[] SECONDARY_CAVE_BIOMES = new ResourceKey[]         {Biomes.LUSH_CAVES, Biomes.DRIPSTONE_CAVES, Biomes.DEEP_DARK, RuBiomes.BIOSHROOM_CAVES, RuBiomes.ANCIENT_DELTA, RuBiomes.PRISMACHASM, RuBiomes.REDSTONE_CAVES, RuBiomes.SCORCHING_CAVES};
+
+    public static ResourceKey<Biome>[] SECONDARY_PEAK_BIOMES = new ResourceKey[]         {Biomes.FROZEN_PEAKS, Biomes.JAGGED_PEAKS, RuBiomes.MOUNTAINS, Biomes.STONY_PEAKS, RuBiomes.ARID_MOUNTAINS};
+
+    public static ResourceKey<Biome>[] SECONDARY_PEAK_BIOMES_VARIANT = new ResourceKey[] {Biomes.JAGGED_PEAKS, RuBiomes.MOUNTAINS, RuBiomes.MOUNTAINS, Biomes.STONY_PEAKS, RuBiomes.ARID_MOUNTAINS};
+
+    public static ResourceKey<Biome>[] SECONDARY_SLOPE_BIOMES = new ResourceKey[]        {Biomes.SNOWY_SLOPES, Biomes.GROVE, RuBiomes.PINE_SLOPES, RuBiomes.MAGNOLIA_WOODLAND, RuBiomes.RAINFOREST};
+
+    public static ResourceKey<Biome>[] SECONDARY_SLOPE_BIOMES_VARIANT = new ResourceKey[]{RuBiomes.COLD_DECIDUOUS_FOREST, RuBiomes.PINE_SLOPES, RuBiomes.PINE_SLOPES, RuBiomes.MAGNOLIA_WOODLAND, RuBiomes.RAINFOREST};
 
     public static ResourceKey<Biome>[][] getPrimaryMiddleBiome(){
         ResourceKey<Biome>[][] PRIMARY_MIDDLE_BIOMES_CUSTOM = new ResourceKey[][]{
@@ -781,7 +754,7 @@ public class DefaultBiomes {
             return SECONDARY_SHATTERED_BIOMES_CUSTOM;
         }
         else{
-            return PRIMARY_SHATTERED_BIOMES;
+            return SECONDARY_SHATTERED_BIOMES;
         }
     }
     public static ResourceKey<Biome>[][] getSecondaryRiverBiome(){
@@ -1226,7 +1199,7 @@ public class DefaultBiomes {
         if(biome== RuBiomes.CHALK_CLIFFS){
             return RuCommonConfig.TOGGLE_CHALK_CLIFFS.get();
         }
-        if(biome== RuBiomes.MAGNOLIA_HIGHLANDS){
+        if(biome== RuBiomes.MAGNOLIA_WOODLAND){
             return RuCommonConfig.TOGGLE_DARK_SAKURA_GROVE.get();
         }
         if(biome== RuBiomes.COLD_BOREAL_TAIGA){
@@ -1295,7 +1268,7 @@ public class DefaultBiomes {
         if(biome== RuBiomes.JOSHUA_DESERT){
             return RuCommonConfig.TOGGLE_JOSHUA_DESERT.get();
         }
-        if(biome== RuBiomes.LUPINE_PLAINS){
+        if(biome== RuBiomes.CLOVER_PLAINS){
             return RuCommonConfig.TOGGLE_LUPINE_PLAINS.get();
         }
         if(biome== RuBiomes.ANCIENT_DELTA){

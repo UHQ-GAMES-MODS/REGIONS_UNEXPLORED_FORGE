@@ -569,7 +569,7 @@
             "entity": "this",
             "predicate": {
               "location": {
-                "biome": "regions_unexplored:lupine_plains"
+                "biome": "regions_unexplored:clover_plains"
               }
             }
           }
@@ -585,7 +585,7 @@
             "entity": "this",
             "predicate": {
               "location": {
-                "biome": "regions_unexplored:magnolia_highlands"
+                "biome": "regions_unexplored:magnolia_woodland"
               }
             }
           }

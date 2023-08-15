@@ -9,7 +9,7 @@ import net.regions_unexplored.RegionsUnexploredMod;
 public class RuBiomes {
     public static ResourceKey<Biome> AUTUMNAL_MAPLE_FOREST = createKey("autumnal_maple_forest");
     public static ResourceKey<Biome> BAMBOO_FOREST = createKey("bamboo_forest");
-    public static ResourceKey<Biome> MAGNOLIA_HIGHLANDS = createKey("magnolia_highlands");
+    public static ResourceKey<Biome> MAGNOLIA_WOODLAND = createKey("magnolia_woodland");
     public static ResourceKey<Biome> DECIDUOUS_FOREST = createKey("deciduous_forest");
     public static ResourceKey<Biome> MAPLE_FOREST = createKey("maple_forest");
     public static ResourceKey<Biome> MAUVE_HILLS = createKey("mauve_hills");
@@ -26,7 +26,7 @@ public class RuBiomes {
     public static ResourceKey<Biome> BARLEY_FIELDS = createKey("barley_fields");
     public static ResourceKey<Biome> FLOWER_FIELDS = createKey("flower_fields");
     public static ResourceKey<Biome> GRASSLAND = createKey("grassland");
-    public static ResourceKey<Biome> LUPINE_PLAINS = createKey("lupine_plains");
+    public static ResourceKey<Biome> CLOVER_PLAINS = createKey("clover_plains");
     public static ResourceKey<Biome> ROCKY_MEADOW = createKey("rocky_meadow");
     public static ResourceKey<Biome> POPPY_FIELDS = createKey("poppy_fields");
     public static ResourceKey<Biome> PRAIRIE = createKey("prairie");

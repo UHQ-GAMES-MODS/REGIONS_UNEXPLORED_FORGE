@@ -9,7 +9,7 @@
       "required": false
     },
     {
-      "id": "regions_unexplored:magnolia_highlands",
+      "id": "regions_unexplored:magnolia_woodland",
       "required": false
     },
     {
@@ -77,7 +77,7 @@
       "required": false
     },
     {
-      "id": "regions_unexplored:lupine_plains",
+      "id": "regions_unexplored:clover_plains",
       "required": false
     },
     {

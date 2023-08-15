@@ -41,10 +41,7 @@
                 "Name": "regions_unexplored:pink_lupine"
               },
               {
-                "Name": "regions_unexplored:tassel",
-                "Properties": {
-                  "half": "lower"
-                }
+                "Name": "regions_unexplored:tsubaki"
               },
               {
                 "Name": "minecraft:orange_tulip"
@@ -53,16 +50,10 @@
                 "Name": "regions_unexplored:waratah"
               },
               {
-                "Name": "regions_unexplored:hibiscus"
-              },
-              {
                 "Name": "minecraft:white_tulip"
               },
               {
                 "Name": "regions_unexplored:hyssop"
-              },
-              {
-                "Name": "regions_unexplored:white_snowbelle"
               },
               {
                 "Name": "minecraft:allium"
