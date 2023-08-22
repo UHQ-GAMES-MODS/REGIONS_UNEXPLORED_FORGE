@@ -3,5 +3,6 @@
   "textures": {
     "all": "regions_unexplored:block/eucalyptus_log",
     "particle": "regions_unexplored:block/eucalyptus_log"
-  }
+  },
+  "render_type": "cutout"
 }

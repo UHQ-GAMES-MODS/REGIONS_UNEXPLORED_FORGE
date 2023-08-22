@@ -8,5 +8,6 @@
     "south": "regions_unexplored:block/eucalyptus_log",
     "west": "regions_unexplored:block/eucalyptus_log",
     "particle": "regions_unexplored:block/eucalyptus_log_top"
-  }
+  },
+  "render_type": "cutout"
 }
