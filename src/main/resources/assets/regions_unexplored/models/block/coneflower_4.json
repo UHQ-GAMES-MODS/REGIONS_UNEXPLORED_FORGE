@@ -1,17 +1,18 @@
 {
 	"ambientocclusion": false,
+	"render_type": "cutout",
 	"textures": {
 		"particle": "regions_unexplored:block/orange_coneflower",
 		"flowerbed": "regions_unexplored:block/orange_coneflower"
 	},
 	"elements": [
 		{
-			"from": [1, 2, -1],
-			"to": [7, 2, 5],
+			"from": [1.5, 2, -0.5],
+			"to": [6.5, 2, 4.5],
 			"rotation": {"angle": 0, "axis": "y", "origin": [-1, 0, -8]},
 			"faces": {
-				"up": {"uv": [9, 9, 15, 15], "texture": "#flowerbed"},
-				"down": {"uv": [9, 15, 15, 9], "texture": "#flowerbed"}
+				"up": {"uv": [10, 9, 15, 14], "texture": "#flowerbed"},
+				"down": {"uv": [10, 14, 15, 9], "texture": "#flowerbed"}
 			}
 		},
 		{

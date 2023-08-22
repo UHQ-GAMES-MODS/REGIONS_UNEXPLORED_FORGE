@@ -337,13 +337,13 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         /*-----------------PLANT_BLOCKS-----------------*/
         //MUSHROOMS
         dropSelf(RuBlocks.BLUE_BIOSHROOM_BLOCK.get());
-        dropSelf(RuBlocks.GLOWING_BLUE_BIOSHROOM_BLOCK.get());
+        add(RuBlocks.GLOWING_BLUE_BIOSHROOM_BLOCK.get(), (block) -> createSingleItemTableWithSilkTouch(block, RuBlocks.BLUE_BIOSHROOM_BLOCK.get()));
         dropSelf(RuBlocks.GREEN_BIOSHROOM_BLOCK.get());
-        dropSelf(RuBlocks.GLOWING_GREEN_BIOSHROOM_BLOCK.get());
+        add(RuBlocks.GLOWING_GREEN_BIOSHROOM_BLOCK.get(), (block) -> createSingleItemTableWithSilkTouch(block, RuBlocks.GREEN_BIOSHROOM_BLOCK.get()));
         dropSelf(RuBlocks.PINK_BIOSHROOM_BLOCK.get());
-        dropSelf(RuBlocks.GLOWING_PINK_BIOSHROOM_BLOCK.get());
+        add(RuBlocks.GLOWING_PINK_BIOSHROOM_BLOCK.get(), (block) -> createSingleItemTableWithSilkTouch(block, RuBlocks.PINK_BIOSHROOM_BLOCK.get()));
         dropSelf(RuBlocks.YELLOW_BIOSHROOM_BLOCK.get());
-        dropSelf(RuBlocks.GLOWING_YELLOW_BIOSHROOM_BLOCK.get());
+        add(RuBlocks.GLOWING_YELLOW_BIOSHROOM_BLOCK.get(), (block) -> createSingleItemTableWithSilkTouch(block, RuBlocks.YELLOW_BIOSHROOM_BLOCK.get()));
         //BAMBOO
         dropSelf(RuBlocks.BAMBOO_LOG.get());
         dropSelf(RuBlocks.STRIPPED_BAMBOO_LOG.get());

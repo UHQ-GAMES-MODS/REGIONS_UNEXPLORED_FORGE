@@ -126,7 +126,7 @@ public class AquaticBiomes {
 
         return (new Biome.BiomeBuilder())
                 .hasPrecipitation(true)
-                .temperature(0.0f)
+                .temperature(0.6f)
                 .downfall(0.6f)
                 .specialEffects(effectBuilder.build())
                 .mobSpawnSettings(spawnBuilder.build())

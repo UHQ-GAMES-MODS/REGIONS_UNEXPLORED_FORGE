@@ -115,8 +115,10 @@ dependencies {
     //implementation fg.deobf("com.github.glitchfiend:TerraBlender-forge:${project.minecraft_version}-${project.terrablender_version}")
     implementation fg.deobf("curse.maven:terrablender-563928:4573003")
 
-    //implementation fg.deobf("curse.maven:oculus-581495:4578741")
-    //implementation fg.deobf("curse.maven:rubidium-574856:4573226")
+    implementation fg.deobf("curse.maven:oculus-581495:4578741")
+    implementation fg.deobf("curse.maven:rubidium-574856:4573226")
+    implementation fg.deobf("curse.maven:creativecore-257814:4690991")
+    implementation fg.deobf("curse.maven:cmdcam-251244:4577587")
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
     testAnnotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
