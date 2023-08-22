@@ -6,9 +6,9 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.regions_unexplored.client.particle.LeafParticle;
 import net.regions_unexplored.client.particle.MycotoxicSporeParticle;
 import net.regions_unexplored.client.particle.RuParticleTypes;
-import net.regions_unexplored.client.particle.LeafParticle;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ParticleRegistry {

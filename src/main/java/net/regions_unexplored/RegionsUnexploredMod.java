@@ -24,7 +24,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.regions_unexplored.block.*;
+import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.block.compat.BlockToolCompat;
 import net.regions_unexplored.block.compat.CompostableBlocks;
 import net.regions_unexplored.block.compat.FlammableBlocks;

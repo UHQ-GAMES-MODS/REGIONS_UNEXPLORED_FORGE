@@ -1,7 +1,6 @@
 package net.regions_unexplored.data.worldgen;
 
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
-import net.minecraft.data.worldgen.placement.MiscOverworldPlacements;
 import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.regions_unexplored.data.worldgen.placement.RuMiscOverworldPlacements;

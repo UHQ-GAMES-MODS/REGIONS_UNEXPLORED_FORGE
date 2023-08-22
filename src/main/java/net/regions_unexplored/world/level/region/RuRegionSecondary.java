@@ -14,7 +14,6 @@ import terrablender.api.RegionType;
 import java.util.function.Consumer;
 
 public class RuRegionSecondary extends Region {
-    //TODO:Complete Class
 
     public static final ResourceLocation LOCATION = new ResourceLocation(RegionsUnexploredMod.MOD_ID, "secondary");
 

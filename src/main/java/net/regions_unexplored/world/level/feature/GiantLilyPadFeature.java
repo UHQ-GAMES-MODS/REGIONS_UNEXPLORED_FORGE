@@ -3,22 +3,13 @@ package net.regions_unexplored.world.level.feature;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.util.RandomSource;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.LevelSimulatedReader;
 import net.minecraft.world.level.WorldGenLevel;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.material.Fluids;
 import net.regions_unexplored.block.RuBlocks;
-import net.regions_unexplored.data.tags.RuTags;
 import net.regions_unexplored.world.level.block.plant.aquatic.GiantLilyBlock;
-
-import java.util.Random;
 
 public class GiantLilyPadFeature extends Feature<NoneFeatureConfiguration> {
 

@@ -20,7 +20,6 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 public class RuBoatRenderer extends BoatRenderer {
-    //TODO:Complete Class
     private final Map<RuBoat.ModelType, Pair<ResourceLocation, ListModel<Boat>>> boatResources;
 
     public RuBoatRenderer(EntityRendererProvider.Context context, boolean chest) {

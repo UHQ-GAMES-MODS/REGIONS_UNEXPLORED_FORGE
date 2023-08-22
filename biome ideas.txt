@@ -1,0 +1,17 @@
++SWAMPS
+    -Lush Marsh:greener variant of the Marsh
+    -Mire: brown muddy bog biome with decaying trees
++BEACH
+    -White Beach: Beach with white sand and palm trees
++OCEAN
+    -Red Kelp Forest: cold ocean with giant red kelp creating a thick underwater forest
+    -Glowing Tides: Glowing deep blue plants and bioluminescent bacteria on the surface
+    -Hydrothermal Depths: deep ocean hydrothermal vents with small plant life
+    -Paddle Kelp Reef: tall kelp like plants with solid platforms for players to stand on
+    -Cambrial Ocean: ocean from ancient times with primitive plants and life
+    -Bone Grove: fairly empty biome with giant skeletons lining the seafloor
++RIVER
+    -Rocky River: semi-lush river littered with rocks and boulders
++OTHER
+    -Hot Springs: was in 1.16.5, reinvent for new versions
+

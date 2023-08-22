@@ -1,4 +1,13 @@
--redo biome placement
-
 (fabric)
 -check flowering leaves block model
+
+-change glowing bioshroom block to silk touch
+-remove snow from alpha grove
+-FORGOT TO DO MYCOTOXIC NYLIUM TEXTURES (WHYYYYYYAHHHHHH)
+-fix tropical river placement
+-fix tropical swamp placement
+-fix yellow bioshroom fire decay
+-fix dorcel fire decay
+-fix ashen sapling/leaves fire decay
+-fix ashen leaves fire decay
+-revamp eucalyptus log to increase shader compat

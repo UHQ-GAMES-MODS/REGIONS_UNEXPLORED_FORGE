@@ -1,72 +1,172 @@
+------------------------------------------------------------------------------------------------------------------------
 -0.5.0
+NOTICE: DUE TO THE SIZE OF THIS UPDATE AND THE AMOUNT OF CHANGES THINGS MAY NOT FUNCTION CORRECTLY IN OLD RU WORLDS (ie. Blocks that were removed/renamed disappearing, removed/renamed biomes reverting to plains).
++BLOCKS/ITEMS
     +BLOCK ADDITIONS:
-        +AQUATIC BLOCKS
-            -Hyacinth Bloom
-            -Hyacinth Flowers
-            -Tall Hyacinth Stock
         +CAVE BLOCKS
-            -Bladed Grass
-            -Bladed Tall Grass
             -Corpse Flower
             -Dropleaf
             -Duskmelon
             -Dusktrap
-        +PLANT BLOCKS
+        +GRASS BLOCKS
             -Ashen Grass
-            -Clover
-            -Flowering Lily Pad(can be bone-mealed into Giant Lily Pad)
-            -Giant Lily Pad
+            -Bladed Grass
+            -Brimsprout
+            -Bladed Tall Grass
             -Windswept Grass
         +FLOWER BLOCKS
             -Aster
             -Bleeding Heart
-            -Blue, Pink, and White Magnolia Flowers
-            -Day Lily
             -Dyeable Snowbelle Flower(all colours)
+            -Hibiscus
+            -Mallow
             -Meadow Sage
-            -Orange and Purple Coneflower
             -Salmon Poppy Bush
+            -Orange and Purple Coneflower
+            -Day Lily
+            -Blue, Pink, and White Magnolia Flowers
+            -Hyacinth Flowers
+        +PLANT BLOCKS
+            -Clover
+            -Flowering Lily Pad(can be bone-mealed into Giant Lily Pad)
+            -Giant Lily Pad(does not have item, bonemeal flowering lily to obtain)
+            -Hyacinth Bloom
+            -Kapok Vines
+            -Salmonberry Bush
+            -Tall Cobalt Earlight
+            -Tall Hyacinth Stock
         +SAPLING BLOCKS
-            -Ashen Sapling*
-            -Blue Magnolia Sapling
+            -Ashen Sapling
+            -Cobalt Sapling
             -Enchanted Sapling
+            -Kapok Sapling
+            -Blue Magnolia Sapling
+            -Small Oak Sapling
+            -Socotra Sapling
         +SHRUB BLOCKS
             -Ashen Shrub
-            -Blue Magnolia Shrub
-            -Cherry Shrub*
+            -Cherry Shrub
             -Enchanted Shrub
+            -Kapok Shrub
+            -Blue Magnolia Shrub
+            -Socotra Shrub
         +LEAVES BLOCKS
             -Ashen Leaves
-            -Blue Magnolia Leaves
+            -Cobalt Webbing
             -Enchanted Leaves
+            -Kapok Leaves
+            -Blue Magnolia Leaves
+            -Small Oak Leaves
+            -Socotra Leaves
         +BRANCH BLOCKS
-            -Cherry Branch*
+            -Cherry Branch
+            -Kapok Branch
+            -Socotra Branch
+            -Silver Birch Branch
         +DIRT BLOCKS
             -Ashen Dirt
-            -Peat Podzol
-            -Silt Podzol
+            -Peat Podzol(Peat formerly Forest)
+            -Silt Podzol(Silt formerly Plains)
+            -Brimsprout Nylium
         +STONE BLOCKS
-            -Argillite Stone Type(Grass, Bricks, Polished)
+            -Argillite Grass Block
+            -Argillite(bricks, polished coming in minor update)
+            -Overgrown Bone Block
         +WOOD BLOCKS
-            -Ashen Log and Wood(Dead woodset)
-            -Hanging Signs for all wood sets*
+            -Hanging Signs for all woodsets*
             -Silver Birch Log and Wood(Birch woodset)
+            -Ashen Log and Wood(Dead woodset)
+            -Small Oak Log and Stripped Small Oak Log(Oak woodset)
+            -All Bioshroom woodsets(blue, green, pink, yellow)
+            -Brimwood woodset
+            -Cobalt woodset
+            -Kapok woodset
+            -Socotra woodset
         +OTHER BLOCKS
             -Enchanted and Silver Birch Leaf Pile
             -Red, Orange, and Green Maple Leaf Pile
-            -Salmonberry Bush
+            -Hyacinth Lamp
+            -Icicle
 
     +BLOCK CHANGES:
         -Retextured almost every block
+        -Joshua Leaves will no longer clip textures and can only survive on solid blocks
+        -Made more plants "pottable"
         -Made Tsubaki one block tall
-        -Potted Saplings now have a separate "Bonsai" texture
+        -Hanging Earlight is now edible(has 10% chance to grant glowing effect)
         -Renamed Cherry woodset to Magnolia
         -Renamed Forest Dirts to Peat
         -Renamed Plains Dirts to Silt
-        -Renamed Sculkwood woodset to Brimwood and gave it a different look
-        -Renamed Tall Saplings to Shrubs
+        -Renamed Tall Saplings to Shrubs and now have a smaller block model
+        -branches now have 3d models
+        -Block classes have been cleaned up under the hood
 
+    +BLOCK REMOVED:
+        -Sculkwood woodset
+        -all sculk themed nether blocks
+        -Seeded grass and tall grass
+        -Quicksand
 
-  -Made Repository Public
-  +TBD
-  -test
++BIOMES/WORLDGEN
+    +BIOMES ADDED:
+        -Ancient Delta
+        -Hyacinth Deeps
+        -Infernal Holt
+        -Rocky Reef
+        -Tropical River
+
+    +BIOMES RENAMED:
+        -Blackwood Forest -> Blackwood Taiga
+        -Boreal Forest -> Boreal Taiga
+        -Cherry Hills -> Magnolia Woodland
+        -Cold Boreal Forest -> Cold Boreal Taiga
+        -Flooded Plains -> Marsh
+        -Flower Field -> Flower Fields
+        -Frozen Forest -> Frozen Pine Taiga
+        -Giant Bayou -> Old Growth Bayou
+        -Golden Boreal Forest -> Golden Boreal Taiga
+        -Lupine Plains -> Clover Plains
+        -Old Growth Rainforest -> Sparse Rainforest
+        -Pine Forest -> Pine Taiga
+        -Redstone Hell -> Redstone Abyss
+        -Smouldering Woodland -> Ashen Woodland
+
+    +BIOMES REMOVED:
+        -Lush Hills
+        -Lush Delta
+        -Corrupted Holt
+
+    +WORLDGEN CHANGES:
+        -Redesigned ALL biomes from the ground up
+        -Gave many more trees custom shapes
+        -Made most biomes have exclusive items to encourage exploration
+        -Tweaked biome placement
+        -Made cave biomes slightly rarer
+        -Redid biome tags to stop most feature order cycle crashes
+
++ADVANCEMENTS:
+    -Pioneer:Explore all surface biomes
+    -Spelunker:Explore all cave biomes
+    -Eternal Expedition:Explore all Nether biomes
+    -Regions Explored:Explore all biomes
+    -Got Wood?:Obtain every log type from Regions Unexplored
+    -This Tree Bleeds Red:Obtain a Socotra Log
+    -Ancient Specimens:Obtain every Bioshroom stem
+    -Mycologist:Obtain every Bioshroom type
+    -Downer: Take damage from a Dorcel Flower
+    -Light Snack: Consume a Hanging Earlight Fruit
+    -Blind as a Bat: receive blindness from consuming a Duskmelon
+    -Light as a frog: Walk or bounce on a Giant Lily Pad
+    -From the Tree Tops: Hang from a Kapok tree's vines
+    -Every Bit of the Rainbow:Obtain or Craft every colour of the Snowbelle Flower
+
++GUI:
+    -Added custom creative tab GUI
+
++OTHER CHANGES/FIXES:
+    -(Back end)Completely recoded the mod from the ground up
+    this means issues may arise, be sure to post issues to our discord for quick response!
+    -(Back end)made everything datagen to make future additions easier
+    -Made Repository Public
+    -Optimized surface rules
+    -Misc small fixes to blocks, loot tables, tags, and recipes

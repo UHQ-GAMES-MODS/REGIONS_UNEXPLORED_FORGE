@@ -2,7 +2,6 @@ package net.regions_unexplored.data.worldgen.biome.surface;
 
 
 import com.google.common.collect.ImmutableList;
-import net.minecraft.data.worldgen.SurfaceRuleData;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;

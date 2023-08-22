@@ -1,8 +1,6 @@
 package net.regions_unexplored.config;
 
-import net.minecraft.world.level.biome.Biomes;
 import net.minecraftforge.common.ForgeConfigSpec;
-import net.regions_unexplored.data.worldgen.biome.RuBiomes;
 import net.regions_unexplored.world.level.biome.DefaultBiomes;
 
 public class RuPrimaryRegionConfig {
@@ -650,7 +648,7 @@ public class RuPrimaryRegionConfig {
         BUILDER.pop();
 
         BUILDER.push("-----------------OTHER_BIOMES--------------------");
-        SHA_CLI = BUILDER.define("shattered_cliff_biome", RuBiomes.TOWERING_CLIFFS.location().toString());
+        SHA_CLI = BUILDER.define("shattered_cliff_biome", DefaultBiomes.PRIMARY_SHATTERED_CLIFF_BIOME.location().toString());
         BUILDER.pop();
 
         SPEC = BUILDER.build();

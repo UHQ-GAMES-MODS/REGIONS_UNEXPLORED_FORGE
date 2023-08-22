@@ -1,9 +1,7 @@
 package net.regions_unexplored.block.compat;
 
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
-import net.minecraftforge.registries.RegistryObject;
 import net.regions_unexplored.block.RuBlocks;
 
 public class PottedPlants {

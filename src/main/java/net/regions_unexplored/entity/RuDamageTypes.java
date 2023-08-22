@@ -3,7 +3,6 @@ package net.regions_unexplored.entity;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.damagesource.DamageType;
-import net.minecraft.world.damagesource.DeathMessageType;
 import net.regions_unexplored.registry.DamageTypeRegistry;
 
 public class RuDamageTypes {

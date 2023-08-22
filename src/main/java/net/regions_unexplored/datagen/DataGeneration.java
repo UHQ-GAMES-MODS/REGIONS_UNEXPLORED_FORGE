@@ -21,7 +21,6 @@ import net.regions_unexplored.registry.BiomeRegistry;
 import net.regions_unexplored.registry.ConfiguredFeatureRegistry;
 import net.regions_unexplored.registry.PlacedFeatureRegistry;
 
-import java.util.List;
 import java.util.Set;
 
 @Mod.EventBusSubscriber( modid = RegionsUnexploredMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
