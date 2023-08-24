@@ -931,7 +931,7 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         /*-----------------NETHER_BLOCKS-----------------*/
         //NETHER_STONES
         dropSelf(RuBlocks.BLACKSTONE_CLUSTER.get());
-        add(RuBlocks.OVERGROWN_BONE_BLOCK.get(), (block) -> createSingleItemTableWithSilkTouch(block, Items.BONE_MEAL));
+        add(RuBlocks.OVERGROWN_BONE_BLOCK.get(), (block) -> createSingleItemTableWithSilkTouch(block, Items.BONE_BLOCK));
         //BRIMSPROUT_BLOCKS
         add(RuBlocks.BRIMSPROUT_NYLIUM.get(), (block) -> createSingleItemTableWithSilkTouch(block, Blocks.NETHERRACK));
         dropSelf(RuBlocks.BRIMSPROUT.get());

@@ -10,24 +10,7 @@ public class FlammableBlocks {
     public static void setup() {
         /*-----------------CAVE_BLOCKS-----------------*/
         //PRISMA_BLOCKS
-        registerFlammableBlock(RuBlocks.PRISMOSS.get(), 60, 100);
-        registerFlammableBlock(RuBlocks.DEEPSLATE_PRISMOSS.get(), 60, 100);
-        registerFlammableBlock(RuBlocks.HANGING_PRISMARITE.get(), 60, 100);
-        registerFlammableBlock(RuBlocks.LARGE_PRISMARITE_CLUSTER.get(), 60, 100);
-        registerFlammableBlock(RuBlocks.PRISMAGLASS.get(), 60, 100);
-        registerFlammableBlock(RuBlocks.PRISMARITE_CLUSTER.get(), 60, 100);
         registerFlammableBlock(RuBlocks.PRISMOSS_SPROUT.get(), 60, 100);
-        //REDSTONE_BLOCKS
-        registerFlammableBlock(RuBlocks.POINTED_REDSTONE.get(), 60, 100);
-        registerFlammableBlock(RuBlocks.RAW_REDSTONE_BLOCK.get(), 60, 100);
-        registerFlammableBlock(RuBlocks.REDSTONE_BUD.get(), 60, 100);
-        registerFlammableBlock(RuBlocks.REDSTONE_BULB.get(), 60, 100);
-        //OTHER_CAVE_BLOCKS
-        registerFlammableBlock(RuBlocks.ARGILLITE_GRASS_BLOCK.get(), 60, 100);
-        registerFlammableBlock(RuBlocks.STONE_GRASS_BLOCK.get(), 60, 100);
-        registerFlammableBlock(RuBlocks.DEEPSLATE_GRASS_BLOCK.get(), 60, 100);
-        registerFlammableBlock(RuBlocks.VIRIDESCENT_NYLIUM.get(), 60, 100);
-        registerFlammableBlock(RuBlocks.DEEPSLATE_VIRIDESCENT_NYLIUM.get(), 60, 100);
 
         registerFlammableBlock(RuBlocks.CORPSE_FLOWER.get(), 60, 100);
         registerFlammableBlock(RuBlocks.BLADED_GRASS.get(), 60, 100);
@@ -58,7 +41,6 @@ public class FlammableBlocks {
         registerFlammableBlock(RuBlocks.BLEEDING_HEART.get(), 60, 100);
         registerFlammableBlock(RuBlocks.BLUE_LUPINE.get(), 60, 100);
         registerFlammableBlock(RuBlocks.DAISY.get(), 60, 100);
-        registerFlammableBlock(RuBlocks.DORCEL.get(), 60, 100);
         registerFlammableBlock(RuBlocks.FELICIA_DAISY.get(), 60, 100);
         registerFlammableBlock(RuBlocks.FIREWEED.get(), 60, 100);
         registerFlammableBlock(RuBlocks.HIBISCUS.get(), 60, 100);
@@ -119,8 +101,6 @@ public class FlammableBlocks {
         registerFlammableBlock(RuBlocks.BLACKWOOD_SAPLING.get(), 60, 100);
         registerFlammableBlock(RuBlocks.CACTUS_FLOWER.get(), 60, 100);
         registerFlammableBlock(RuBlocks.CYPRESS_SAPLING.get(), 60, 100);
-        registerFlammableBlock(RuBlocks.DEAD_PINE_SAPLING.get(), 60, 100);
-        registerFlammableBlock(RuBlocks.DEAD_SAPLING.get(), 60, 100);
         registerFlammableBlock(RuBlocks.EUCALYPTUS_SAPLING.get(), 60, 100);
         registerFlammableBlock(RuBlocks.FLOWERING_SAPLING.get(), 60, 100);
         registerFlammableBlock(RuBlocks.GOLDEN_LARCH_SAPLING.get(), 60, 100);
@@ -151,8 +131,6 @@ public class FlammableBlocks {
         registerFlammableBlock(RuBlocks.CHERRY_SHRUB.get(), 60, 100);
         registerFlammableBlock(RuBlocks.CYPRESS_SHRUB.get(), 60, 100);
         registerFlammableBlock(RuBlocks.DARK_OAK_SHRUB.get(), 60, 100);
-        registerFlammableBlock(RuBlocks.DEAD_PINE_SHRUB.get(), 60, 100);
-        registerFlammableBlock(RuBlocks.DEAD_SHRUB.get(), 60, 100);
         registerFlammableBlock(RuBlocks.EUCALYPTUS_SHRUB.get(), 60, 100);
         registerFlammableBlock(RuBlocks.FLOWERING_SHRUB.get(), 60, 100);
         registerFlammableBlock(RuBlocks.GOLDEN_LARCH_SHRUB.get(), 60, 100);
@@ -182,11 +160,9 @@ public class FlammableBlocks {
         registerFlammableBlock(RuBlocks.BLUE_BIOSHROOM.get(), 30, 60);
         registerFlammableBlock(RuBlocks.GREEN_BIOSHROOM.get(), 30, 60);
         registerFlammableBlock(RuBlocks.PINK_BIOSHROOM.get(), 30, 60);
-        registerFlammableBlock(RuBlocks.YELLOW_BIOSHROOM.get(), 30, 60);
         registerFlammableBlock(RuBlocks.TALL_BLUE_BIOSHROOM.get(), 30, 60);
         registerFlammableBlock(RuBlocks.TALL_GREEN_BIOSHROOM.get(), 30, 60);
         registerFlammableBlock(RuBlocks.TALL_PINK_BIOSHROOM.get(), 30, 60);
-        registerFlammableBlock(RuBlocks.TALL_YELLOW_BIOSHROOM.get(), 30, 60);
 
         registerFlammableBlock(RuBlocks.BARREL_CACTUS.get(), 60, 100);
         registerFlammableBlock(RuBlocks.CAVE_HYSSOP.get(), 60, 100);
@@ -207,8 +183,6 @@ public class FlammableBlocks {
         registerFlammableBlock(RuBlocks.GLOWING_GREEN_BIOSHROOM_BLOCK.get(), 30, 60);
         registerFlammableBlock(RuBlocks.PINK_BIOSHROOM_BLOCK.get(), 30, 60);
         registerFlammableBlock(RuBlocks.GLOWING_PINK_BIOSHROOM_BLOCK.get(), 30, 60);
-        registerFlammableBlock(RuBlocks.YELLOW_BIOSHROOM_BLOCK.get(), 30, 60);
-        registerFlammableBlock(RuBlocks.GLOWING_YELLOW_BIOSHROOM_BLOCK.get(), 30, 60);
         //BAMBOO
         registerFlammableBlock(RuBlocks.BAMBOO_LOG.get(), 5, 5);
         registerFlammableBlock(RuBlocks.STRIPPED_BAMBOO_LOG.get(), 5, 5);
@@ -226,8 +200,6 @@ public class FlammableBlocks {
         registerFlammableBlock(RuBlocks.BLACKWOOD_LEAVES.get(), 30, 60);
         registerFlammableBlock(RuBlocks.MAGNOLIA_LEAVES.get(), 30, 60);
         registerFlammableBlock(RuBlocks.CYPRESS_LEAVES.get(), 30, 60);
-        registerFlammableBlock(RuBlocks.DEAD_LEAVES.get(), 30, 60);
-        registerFlammableBlock(RuBlocks.DEAD_PINE_LEAVES.get(), 30, 60);
         registerFlammableBlock(RuBlocks.EUCALYPTUS_LEAVES.get(), 30, 60);
         registerFlammableBlock(RuBlocks.FLOWERING_LEAVES.get(), 30, 60);
         registerFlammableBlock(RuBlocks.GOLDEN_LARCH_LEAVES.get(), 30, 60);
@@ -259,7 +231,6 @@ public class FlammableBlocks {
         registerFlammableBlock(RuBlocks.CYPRESS_BRANCH.get(), 30, 100);
         registerFlammableBlock(RuBlocks.CHERRY_BRANCH.get(), 30, 100);
         registerFlammableBlock(RuBlocks.DARK_OAK_BRANCH.get(), 30, 100);
-        registerFlammableBlock(RuBlocks.DEAD_BRANCH.get(), 30, 100);
         registerFlammableBlock(RuBlocks.EUCALYPTUS_BRANCH.get(), 30, 100);
         registerFlammableBlock(RuBlocks.JOSHUA_BEARD.get(), 30, 100);
         registerFlammableBlock(RuBlocks.JUNGLE_BRANCH.get(), 30, 100);

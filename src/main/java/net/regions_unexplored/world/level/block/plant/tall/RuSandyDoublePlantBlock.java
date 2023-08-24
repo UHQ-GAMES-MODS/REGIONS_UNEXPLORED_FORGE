@@ -1,6 +1,9 @@
 package net.regions_unexplored.world.level.block.plant.tall;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -58,7 +61,7 @@ public class RuSandyDoublePlantBlock extends DoublePlantBlock {
         BlockPos blockpos = context.getClickedPos();
         FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
         Level level = context.getLevel();
-        boolean isRed = level.getBlockState(blockpos.below()).is(Blocks.RED_SAND);
+        boolean isRed = context.getLevel().getBlockState(context.getClickedPos().below()).is(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "sand/red")));
         if(blockpos.getY() < level.getMaxBuildHeight() - 1) {
             if(level.getBlockState(blockpos.above()).canBeReplaced(context)) {
                 return this.stateDefinition.any().setValue(HALF, DoubleBlockHalf.LOWER).setValue(IS_RED, isRed);
