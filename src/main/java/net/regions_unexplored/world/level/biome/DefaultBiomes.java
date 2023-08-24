@@ -1184,35 +1184,26 @@ public class DefaultBiomes {
         if(biome== RuBiomes.BAYOU){
             return RuCommonConfig.TOGGLE_BAYOU.get();
         }
-        if(biome== RuBiomes.BIOSHROOM_CAVES){
-            return RuCommonConfig.TOGGLE_BIOSHROOM_CAVES.get();
-        }
         if(biome== RuBiomes.BLACKSTONE_BASIN){
             return RuCommonConfig.TOGGLE_BLACKSTONE_BASIN.get();
         }
         if(biome== RuBiomes.BLACKWOOD_TAIGA){
-            return RuCommonConfig.TOGGLE_BLACKWOOD_FOREST.get();
+            return RuCommonConfig.TOGGLE_BLACKWOOD_TAIGA.get();
         }
         if(biome== RuBiomes.BOREAL_TAIGA){
-            return RuCommonConfig.TOGGLE_BOREAL_FOREST.get();
+            return RuCommonConfig.TOGGLE_BOREAL_TAIGA.get();
         }
         if(biome== RuBiomes.CHALK_CLIFFS){
             return RuCommonConfig.TOGGLE_CHALK_CLIFFS.get();
         }
-        if(biome== RuBiomes.MAGNOLIA_WOODLAND){
-            return RuCommonConfig.TOGGLE_DARK_SAKURA_GROVE.get();
-        }
         if(biome== RuBiomes.COLD_BOREAL_TAIGA){
-            return RuCommonConfig.TOGGLE_COLD_BOREAL_FOREST.get();
+            return RuCommonConfig.TOGGLE_COLD_BOREAL_TAIGA.get();
         }
         if(biome== RuBiomes.COLD_DECIDUOUS_FOREST){
             return RuCommonConfig.TOGGLE_COLD_DECIDUOUS_FOREST.get();
         }
         if(biome== RuBiomes.COLD_RIVER){
             return RuCommonConfig.TOGGLE_COLD_RIVER.get();
-        }
-        if(biome== RuBiomes.INFERNAL_HOLT){
-            return RuCommonConfig.TOGGLE_CORRUPTED_HOLT.get();
         }
         if(biome== RuBiomes.DECIDUOUS_FOREST){
             return RuCommonConfig.TOGGLE_DECIDUOUS_FOREST.get();
@@ -1227,13 +1218,13 @@ public class DefaultBiomes {
             return RuCommonConfig.TOGGLE_FEN.get();
         }
         if(biome== RuBiomes.MARSH){
-            return RuCommonConfig.TOGGLE_FLOODED_PLAINS.get();
+            return RuCommonConfig.TOGGLE_MARSH.get();
         }
         if(biome== RuBiomes.FLOWER_FIELDS){
-            return RuCommonConfig.TOGGLE_FLOWER_FIELD.get();
+            return RuCommonConfig.TOGGLE_FLOWER_FIELDS.get();
         }
         if(biome== RuBiomes.FROZEN_PINE_TAIGA){
-            return RuCommonConfig.TOGGLE_FROZEN_FOREST.get();
+            return RuCommonConfig.TOGGLE_FROZEN_PINE_TAIGA.get();
         }
         if(biome== RuBiomes.FROZEN_TUNDRA){
             return RuCommonConfig.TOGGLE_FROZEN_TUNDRA.get();
@@ -1242,13 +1233,10 @@ public class DefaultBiomes {
             return RuCommonConfig.TOGGLE_FUNGAL_FEN.get();
         }
         if(biome== RuBiomes.OLD_GROWTH_BAYOU){
-            return RuCommonConfig.TOGGLE_GIANT_BAYOU.get();
-        }
-        if(biome== RuBiomes.GLISTERING_MEADOW){
-            return RuCommonConfig.TOGGLE_GLISTERING_MEADOW.get();
+            return RuCommonConfig.TOGGLE_OLD_GROWTH_BAYOU.get();
         }
         if(biome== RuBiomes.GOLDEN_BOREAL_TAIGA){
-            return RuCommonConfig.TOGGLE_GOLDEN_BOREAL_FOREST.get();
+            return RuCommonConfig.TOGGLE_GOLDEN_BOREAL_TAIGA.get();
         }
         if(biome== RuBiomes.GRASSLAND){
             return RuCommonConfig.TOGGLE_GRASSLAND.get();
@@ -1262,6 +1250,9 @@ public class DefaultBiomes {
         if(biome== RuBiomes.HIGHLAND_FIELDS){
             return RuCommonConfig.TOGGLE_HIGHLAND_FIELDS.get();
         }
+        if(biome== RuBiomes.HYACINTH_DEEPS){
+            return RuCommonConfig.TOGGLE_HYACINTH_DEEPS.get();
+        }
         if(biome== RuBiomes.ICY_HEIGHTS){
             return RuCommonConfig.TOGGLE_ICY_HEIGHTS.get();
         }
@@ -1269,10 +1260,7 @@ public class DefaultBiomes {
             return RuCommonConfig.TOGGLE_JOSHUA_DESERT.get();
         }
         if(biome== RuBiomes.CLOVER_PLAINS){
-            return RuCommonConfig.TOGGLE_LUPINE_PLAINS.get();
-        }
-        if(biome== RuBiomes.ANCIENT_DELTA){
-            return RuCommonConfig.TOGGLE_LUSH_DELTA.get();
+            return RuCommonConfig.TOGGLE_CLOVER_PLAINS.get();
         }
         if(biome== RuBiomes.MAPLE_FOREST){
             return RuCommonConfig.TOGGLE_MAPLE_FOREST.get();
@@ -1289,11 +1277,8 @@ public class DefaultBiomes {
         if(biome== RuBiomes.MUDDY_RIVER){
             return RuCommonConfig.TOGGLE_MUDDY_RIVER.get();
         }
-        if(biome== RuBiomes.MYCOTOXIC_UNDERGROWTH){
-            return RuCommonConfig.TOGGLE_MYCOTOXIC_UNDERGROWTH.get();
-        }
         if(biome== RuBiomes.SPARSE_RAINFOREST){
-            return RuCommonConfig.TOGGLE_OLD_GROWTH_RAINFOREST.get();
+            return RuCommonConfig.TOGGLE_SPARSE_RAINFOREST.get();
         }
         if(biome== RuBiomes.ORCHARD){
             return RuCommonConfig.TOGGLE_ORCHARD.get();
@@ -1302,7 +1287,7 @@ public class DefaultBiomes {
             return RuCommonConfig.TOGGLE_OUTBACK.get();
         }
         if(biome== RuBiomes.PINE_TAIGA){
-            return RuCommonConfig.TOGGLE_PINE_FOREST.get();
+            return RuCommonConfig.TOGGLE_PINE_TAIGA.get();
         }
         if(biome== RuBiomes.PINE_SLOPES){
             return RuCommonConfig.TOGGLE_PINE_SLOPES.get();
@@ -1313,29 +1298,20 @@ public class DefaultBiomes {
         if(biome== RuBiomes.PRAIRIE){
             return RuCommonConfig.TOGGLE_PRAIRIE.get();
         }
-        if(biome== RuBiomes.PRISMACHASM){
-            return RuCommonConfig.TOGGLE_PRISMACHASM.get();
-        }
         if(biome== RuBiomes.PUMPKIN_FIELDS){
             return RuCommonConfig.TOGGLE_PUMPKIN_FIELDS.get();
         }
         if(biome== RuBiomes.RAINFOREST){
             return RuCommonConfig.TOGGLE_RAINFOREST.get();
         }
-        if(biome== RuBiomes.REDSTONE_CAVES){
-            return RuCommonConfig.TOGGLE_REDSTONE_CAVES.get();
-        }
-        if(biome== RuBiomes.REDSTONE_ABYSS){
-            return RuCommonConfig.TOGGLE_REDSTONE_HELL.get();
-        }
         if(biome== RuBiomes.REDWOODS){
             return RuCommonConfig.TOGGLE_REDWOODS.get();
         }
+        if(biome== RuBiomes.ROCKY_REEF){
+            return RuCommonConfig.TOGGLE_ROCKY_REEF.get();
+        }
         if(biome== RuBiomes.SAGUARO_DESERT){
             return RuCommonConfig.TOGGLE_SAGUARO_DESERT.get();
-        }
-        if(biome== RuBiomes.SCORCHING_CAVES){
-            return RuCommonConfig.TOGGLE_SCORCHING_CAVES.get();
         }
         if(biome== RuBiomes.SHRUBLAND){
             return RuCommonConfig.TOGGLE_SHRUBLAND.get();
@@ -1344,7 +1320,7 @@ public class DefaultBiomes {
             return RuCommonConfig.TOGGLE_SILVER_BIRCH_FOREST.get();
         }
         if(biome== RuBiomes.ASHEN_WOODLAND){
-            return RuCommonConfig.TOGGLE_SMOULDERING_WOODLAND.get();
+            return RuCommonConfig.TOGGLE_ASHEN_WOODLAND.get();
         }
         if(biome== RuBiomes.SPARSE_REDWOODS){
             return RuCommonConfig.TOGGLE_SPARSE_REDWOODS.get();
@@ -1364,9 +1340,47 @@ public class DefaultBiomes {
         if(biome== RuBiomes.TROPICS){
             return RuCommonConfig.TOGGLE_TROPICS.get();
         }
+        if(biome== RuBiomes.TROPICAL_RIVER){
+            return RuCommonConfig.TOGGLE_TROPICAL_RIVER.get();
+        }
         if(biome== RuBiomes.WILLOW_FOREST){
             return RuCommonConfig.TOGGLE_WILLOW_FOREST.get();
         }
+
+        // Nether
+        if (biome==RuBiomes.BLACKSTONE_BASIN) {
+            return RuCommonConfig.TOGGLE_BLACKSTONE_BASIN.get();
+        }
+        if (biome==RuBiomes.INFERNAL_HOLT) {
+            return RuCommonConfig.TOGGLE_INFERNAL_HOLT.get();
+        }
+        if (biome==RuBiomes.GLISTERING_MEADOW) {
+            return RuCommonConfig.TOGGLE_GLISTERING_MEADOW.get();
+        }
+        if (biome==RuBiomes.MYCOTOXIC_UNDERGROWTH) {
+            return RuCommonConfig.TOGGLE_MYCOTOXIC_UNDERGROWTH.get();
+        }
+        if (biome==RuBiomes.REDSTONE_ABYSS) {
+            return RuCommonConfig.TOGGLE_REDSTONE_ABYSS.get();
+        }
+
+        // Caves
+        if(biome== RuBiomes.ANCIENT_DELTA){
+            return RuCommonConfig.TOGGLE_ANCIENT_DELTA.get();
+        }
+        if(biome== RuBiomes.BIOSHROOM_CAVES){
+            return RuCommonConfig.TOGGLE_BIOSHROOM_CAVES.get();
+        }
+        if(biome== RuBiomes.PRISMACHASM){
+            return RuCommonConfig.TOGGLE_PRISMACHASM.get();
+        }
+        if(biome== RuBiomes.REDSTONE_CAVES){
+            return RuCommonConfig.TOGGLE_REDSTONE_CAVES.get();
+        }
+        if(biome== RuBiomes.SCORCHING_CAVES){
+            return RuCommonConfig.TOGGLE_SCORCHING_CAVES.get();
+        }
+
         return true;
     }
 

@@ -35,10 +35,10 @@ public class RuRegionNether extends Region {
         if (RuCommonConfig.TOGGLE_BLACKSTONE_BASIN.get()) {
             this.addBiome(mapper, Climate.Parameter.point(0.4F), Climate.Parameter.point(0.0F), Climate.Parameter.point(0.0F), Climate.Parameter.point(0.0F), Climate.Parameter.point(0.0F), Climate.Parameter.point(0.0F), 0.0F, RuBiomes.BLACKSTONE_BASIN);
         }
-        if (RuCommonConfig.TOGGLE_CORRUPTED_HOLT.get()){
+        if (RuCommonConfig.TOGGLE_INFERNAL_HOLT.get()){
             this.addBiome(mapper, Climate.Parameter.point(0.0F), Climate.Parameter.point(-0.5F), Climate.Parameter.point(0.0F), Climate.Parameter.point(0.0F), Climate.Parameter.point(0.0F), Climate.Parameter.point(0.0F), 0.0F, RuBiomes.INFERNAL_HOLT);
         }
-        if(RuCommonConfig.TOGGLE_REDSTONE_HELL.get()) {
+        if(RuCommonConfig.TOGGLE_REDSTONE_ABYSS.get()) {
             this.addBiome(mapper, Climate.Parameter.point(0.0F), Climate.Parameter.point(0.5F), Climate.Parameter.point(0.0F), Climate.Parameter.point(0.0F), Climate.Parameter.point(0.0F), Climate.Parameter.point(0.0F), 0.375F, RuBiomes.REDSTONE_ABYSS);
         }
     }
