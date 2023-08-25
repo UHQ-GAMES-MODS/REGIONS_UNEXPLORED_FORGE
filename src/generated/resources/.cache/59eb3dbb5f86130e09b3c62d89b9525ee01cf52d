@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-15T11:38:32.9123579	Loot Tables
+// 1.20.1	2023-08-24T19:50:50.6770113	Loot Tables
 fb95ad5062001d6c0fb329989fda986801ec5444 data/regions_unexplored/loot_tables/blocks/acacia_branch.json
 9a9c5fbba217f07ec7cb6067e42dba80d311e355 data/regions_unexplored/loot_tables/blocks/acacia_shrub.json
 db69029ed53dd57ea783ac8375ab18767e9fa5a0 data/regions_unexplored/loot_tables/blocks/alpha_dandelion.json
@@ -430,7 +430,7 @@ d40e983cb798e6a91daaf0a06e5f079dfa14d90a data/regions_unexplored/loot_tables/blo
 d3a7b1970fa50a909df23ebb61db70712b400c39 data/regions_unexplored/loot_tables/blocks/orange_painted_slab.json
 147d6f353fb10ce91031ab466875d47cbadd6b01 data/regions_unexplored/loot_tables/blocks/orange_painted_stairs.json
 e2f5a1c87934030d2dfdded26f5f6922f9ddd7ce data/regions_unexplored/loot_tables/blocks/orange_snowbelle.json
-369a11920a806a22c9e3d69f7173e550746a3f22 data/regions_unexplored/loot_tables/blocks/overgrown_bone_block.json
+628e1a6fb7c7ae595b67838399228b4d048d2292 data/regions_unexplored/loot_tables/blocks/overgrown_bone_block.json
 40eff7675ebbe335d23dc6aa74005d3273096d4c data/regions_unexplored/loot_tables/blocks/palm_beard.json
 0bf7576e34c23374c0c7ef7860cf7ad9ee6e8395 data/regions_unexplored/loot_tables/blocks/palm_button.json
 869b6dca667b7f7bfbd13c6af6a0abd1d6b46371 data/regions_unexplored/loot_tables/blocks/palm_door.json

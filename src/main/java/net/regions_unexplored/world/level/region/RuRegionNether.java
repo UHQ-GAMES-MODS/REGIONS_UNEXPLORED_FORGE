@@ -16,7 +16,6 @@ import terrablender.api.RegionType;
 import java.util.function.Consumer;
 
 public class RuRegionNether extends Region {
-    //TODO:Complete Class
     public static final ResourceLocation LOCATION = new ResourceLocation(RegionsUnexploredMod.MOD_ID, "nether");
 
     public RuRegionNether(int weight)

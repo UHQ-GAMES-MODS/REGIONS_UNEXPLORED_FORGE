@@ -33,7 +33,7 @@
                   "condition": "minecraft:survives_explosion"
                 }
               ],
-              "name": "minecraft:bone_meal"
+              "name": "minecraft:bone_block"
             }
           ]
         }
