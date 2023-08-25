@@ -12,7 +12,7 @@
     "announce_to_chat": true,
     "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
     "description": {
-      "text": "Hang from a Kapok tree's vines."
+      "translate": "advancements.regions_unexplored.from_the_tree_tops.description"
     },
     "frame": "task",
     "hidden": false,
@@ -21,7 +21,7 @@
     },
     "show_toast": true,
     "title": {
-      "text": "From the Tree Tops"
+      "translate": "advancements.regions_unexplored.from_the_tree_tops.title"
     }
   },
   "requirements": [

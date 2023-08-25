@@ -1142,7 +1142,7 @@
     "announce_to_chat": true,
     "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
     "description": {
-      "text": "You've explored all the biomes from Regions Unexplored"
+      "translate": "advancements.regions_unexplored.regions_explored.description"
     },
     "frame": "challenge",
     "hidden": true,
@@ -1152,7 +1152,7 @@
     },
     "show_toast": true,
     "title": {
-      "text": "Regions Explored"
+      "translate": "advancements.regions_unexplored.regions_explored.title"
     }
   },
   "requirements": [

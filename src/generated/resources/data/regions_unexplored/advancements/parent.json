@@ -21,7 +21,7 @@
     "announce_to_chat": false,
     "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
     "description": {
-      "text": "Discover the many biomes and explore the world!"
+      "translate": "advancements.regions_unexplored.description"
     },
     "frame": "task",
     "hidden": false,
@@ -30,7 +30,7 @@
     },
     "show_toast": true,
     "title": {
-      "text": "Regions Unexplored"
+      "translate": "advancements.regions_unexplored.title"
     }
   },
   "requirements": [

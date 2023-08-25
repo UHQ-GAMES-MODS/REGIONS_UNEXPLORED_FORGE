@@ -330,7 +330,7 @@
     "announce_to_chat": true,
     "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
     "description": {
-      "text": "Collect every log from Regions Unexplored"
+      "translate": "advancements.regions_unexplored.got_wood.description"
     },
     "frame": "challenge",
     "hidden": false,
@@ -339,7 +339,7 @@
     },
     "show_toast": true,
     "title": {
-      "text": "Got Wood?"
+      "translate": "advancements.regions_unexplored.got_wood.title"
     }
   },
   "requirements": [

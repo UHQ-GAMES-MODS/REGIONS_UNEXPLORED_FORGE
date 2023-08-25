@@ -23,14 +23,6 @@ import java.util.function.Consumer;
 
 public class RuAdvancementProvider extends ForgeAdvancementProvider {
 
-    /**
-     * Constructs an advancement provider using the generators to write the
-     * advancements to a file.
-     *
-     * @param output             the target directory of the data generator
-     * @param registries         a future of a lookup for registries and their objects
-     * @param existingFileHelper a helper used to find whether a file exists
-     */
     public RuAdvancementProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries, ExistingFileHelper existingFileHelper) {
         super(output, registries, existingFileHelper, List.of(new AdvancementBuilder()));
     }
@@ -41,8 +33,8 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
             Advancement PARENT = Advancement.Builder.advancement()
                     .display(
                             RuBlocks.EUCALYPTUS_SAPLING.get(),
-                            Component.literal("Regions Unexplored"),
-                            Component.literal("Discover the many biomes and explore the world!"),
+                            Component.translatable("advancements.regions_unexplored.title"),
+                            Component.translatable("advancements.regions_unexplored.description"),
                             new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
                             FrameType.TASK,
                             true,
@@ -57,8 +49,8 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                     .parent(PARENT)
                     .display(
                             RuBlocks.HIBISCUS.get(),
-                            Component.literal("Pioneer"),
-                            Component.literal("Explore all Surface biomes from Regions Unexplored!"),
+                            Component.translatable("advancements.regions_unexplored.pioneer.title"),
+                            Component.translatable("advancements.regions_unexplored.pioneer.description"),
                             new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
                             FrameType.TASK,
                             true,
@@ -132,8 +124,8 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                     .parent(PIONEER)
                     .display(
                             Items.LEATHER_BOOTS,
-                            Component.literal("Regions Explored"),
-                            Component.literal("You've explored all the biomes from Regions Unexplored"),
+                            Component.translatable("advancements.regions_unexplored.regions_explored.title"),
+                            Component.translatable("advancements.regions_unexplored.regions_explored.description"),
                             new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
                             FrameType.CHALLENGE,
                             true,
@@ -217,8 +209,8 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                     .parent(PIONEER)
                     .display(
                             RuBlocks.WHITE_SNOWBELLE.get(),
-                            Component.literal("Every Bit of the Rainbow"),
-                            Component.literal("Collect or craft every colour of the Snowbelle Flower."),
+                            Component.translatable("advancements.regions_unexplored.every_bit_of_the_rainbow.title"),
+                            Component.translatable("advancements.regions_unexplored.every_bit_of_the_rainbow.description"),
                             new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
                             FrameType.TASK,
                             true,
@@ -248,8 +240,8 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                     .parent(PIONEER)
                     .display(
                             RuBlocks.KAPOK_VINES.get(),
-                            Component.literal("From the Tree Tops"),
-                            Component.literal("Hang from a Kapok tree's vines."),
+                            Component.translatable("advancements.regions_unexplored.from_the_tree_tops.title"),
+                            Component.translatable("advancements.regions_unexplored.from_the_tree_tops.description"),
                             new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
                             FrameType.TASK,
                             true,
@@ -264,8 +256,8 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                     .parent(PIONEER)
                     .display(
                             RuBlocks.FLOWERING_LILY_PAD.get(),
-                            Component.literal("Light as a Frog"),
-                            Component.literal("Walk or bounce on a Giant Lily Pad."),
+                            Component.translatable("advancements.regions_unexplored.light_as_a_frog.title"),
+                            Component.translatable("advancements.regions_unexplored.light_as_a_frog.description"),
                             new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
                             FrameType.TASK,
                             true,
@@ -280,8 +272,8 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                     .parent(PARENT)
                     .display(
                             RuBlocks.BRIMWOOD_SAPLING.get(),
-                            Component.literal("Eternal Expedition"),
-                            Component.literal("Venture into all Nether biomes from Regions Unexplored!"),
+                            Component.translatable("advancements.regions_unexplored.eternal_expedition.title"),
+                            Component.translatable("advancements.regions_unexplored.eternal_expedition.description"),
                             new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
                             FrameType.TASK,
                             true,
@@ -299,8 +291,8 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                     .parent(ETERNAL_EXPEDITION)
                     .display(
                             RuBlocks.DORCEL.get(),
-                            Component.literal("Downer"),
-                            Component.literal("Walk through and take damage from a Dorcel Flower."),
+                            Component.translatable("advancements.regions_unexplored.downer.title"),
+                            Component.translatable("advancements.regions_unexplored.downer.description"),
                             new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
                             FrameType.TASK,
                             true,
@@ -314,8 +306,8 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                     .parent(ETERNAL_EXPEDITION)
                     .display(
                             RuBlocks.HANGING_EARLIGHT.get(),
-                            Component.literal("Light Snack"),
-                            Component.literal("Consume a Hanging Earlight Fruit."),
+                            Component.translatable("advancements.regions_unexplored.light_snack.title"),
+                            Component.translatable("advancements.regions_unexplored.light_snack.description"),
                             new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
                             FrameType.TASK,
                             true,
@@ -330,8 +322,8 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                     .parent(PARENT)
                     .display(
                             RuBlocks.DROPLEAF.get(),
-                            Component.literal("Spelunker"),
-                            Component.literal("Find all Cave biomes from Regions Unexplored!"),
+                            Component.translatable("advancements.regions_unexplored.spelunker.title"),
+                            Component.translatable("advancements.regions_unexplored.spelunker.description"),
                             new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
                             FrameType.TASK,
                             true,
@@ -349,8 +341,8 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                     .parent(SPELUNKER)
                     .display(
                             RuBlocks.DUSKMELON.get(),
-                            Component.literal("Blind as a Bat"),
-                            Component.literal("Consume a Duskmelon."),
+                            Component.translatable("advancements.regions_unexplored.blind_as_a_bat.title"),
+                            Component.translatable("advancements.regions_unexplored.blind_as_a_bat.description"),
                             new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
                             FrameType.TASK,
                             true,
@@ -364,8 +356,8 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                     .parent(PARENT)
                     .display(
                             RuBlocks.SOCOTRA_LOG.get(),
-                            Component.literal("This Tree Bleeds Red"),
-                            Component.literal("Chop down a Socotra tree."),
+                            Component.translatable("advancements.regions_unexplored.this_tree_bleeds_red.title"),
+                            Component.translatable("advancements.regions_unexplored.this_tree_bleeds_red.description"),
                             new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
                             FrameType.TASK,
                             true,
@@ -379,8 +371,8 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                     .parent(THIS_TREE_BLEEDS_RED)
                     .display(
                             RuBlocks.REDWOOD_LOG.get(),
-                            Component.literal("Got Wood?"),
-                            Component.literal("Collect every log from Regions Unexplored"),
+                            Component.translatable("advancements.regions_unexplored.got_wood.title"),
+                            Component.translatable("advancements.regions_unexplored.got_wood.description"),
                             new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
                             FrameType.CHALLENGE,
                             true,
@@ -421,8 +413,8 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                     .parent(PARENT)
                     .display(
                             RuBlocks.BLUE_BIOSHROOM.get(),
-                            Component.literal("Mycologist"),
-                            Component.literal("Collect every Bioshroom type."),
+                            Component.translatable("advancements.regions_unexplored.mycologist.title"),
+                            Component.translatable("advancements.regions_unexplored.mycologist.description"),
                             new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
                             FrameType.TASK,
                             true,

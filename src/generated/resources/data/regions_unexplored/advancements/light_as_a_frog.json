@@ -12,7 +12,7 @@
     "announce_to_chat": true,
     "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
     "description": {
-      "text": "Walk or bounce on a Giant Lily Pad."
+      "translate": "advancements.regions_unexplored.light_as_a_frog.description"
     },
     "frame": "task",
     "hidden": false,
@@ -21,7 +21,7 @@
     },
     "show_toast": true,
     "title": {
-      "text": "Light as a Frog"
+      "translate": "advancements.regions_unexplored.light_as_a_frog.title"
     }
   },
   "requirements": [

@@ -18,7 +18,7 @@
     "announce_to_chat": true,
     "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
     "description": {
-      "text": "Chop down a Socotra tree."
+      "translate": "advancements.regions_unexplored.this_tree_bleeds_red.description"
     },
     "frame": "task",
     "hidden": false,
@@ -27,7 +27,7 @@
     },
     "show_toast": true,
     "title": {
-      "text": "This Tree Bleeds Red"
+      "translate": "advancements.regions_unexplored.this_tree_bleeds_red.title"
     }
   },
   "requirements": [

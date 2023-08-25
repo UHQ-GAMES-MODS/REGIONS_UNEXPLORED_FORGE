@@ -16,7 +16,7 @@
     "announce_to_chat": true,
     "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
     "description": {
-      "text": "Consume a Hanging Earlight Fruit."
+      "translate": "advancements.regions_unexplored.light_snack.description"
     },
     "frame": "task",
     "hidden": false,
@@ -25,7 +25,7 @@
     },
     "show_toast": true,
     "title": {
-      "text": "Light Snack"
+      "translate": "advancements.regions_unexplored.light_snack.title"
     }
   },
   "requirements": [

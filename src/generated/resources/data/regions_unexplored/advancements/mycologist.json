@@ -54,7 +54,7 @@
     "announce_to_chat": true,
     "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
     "description": {
-      "text": "Collect every Bioshroom type."
+      "translate": "advancements.regions_unexplored.mycologist.description"
     },
     "frame": "task",
     "hidden": false,
@@ -63,7 +63,7 @@
     },
     "show_toast": true,
     "title": {
-      "text": "Mycologist"
+      "translate": "advancements.regions_unexplored.mycologist.title"
     }
   },
   "requirements": [

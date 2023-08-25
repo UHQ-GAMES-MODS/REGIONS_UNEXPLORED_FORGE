@@ -16,7 +16,7 @@
     "announce_to_chat": true,
     "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
     "description": {
-      "text": "Consume a Duskmelon."
+      "translate": "advancements.regions_unexplored.blind_as_a_bat.description"
     },
     "frame": "task",
     "hidden": false,
@@ -25,7 +25,7 @@
     },
     "show_toast": true,
     "title": {
-      "text": "Blind as a Bat"
+      "translate": "advancements.regions_unexplored.blind_as_a_bat.title"
     }
   },
   "requirements": [

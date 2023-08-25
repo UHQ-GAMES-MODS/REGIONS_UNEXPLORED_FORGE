@@ -19,6 +19,52 @@ public class RuLanguageProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
+        // Advancement translations
+        this.add("advancements.regions_unexplored.title", "Regions Unexplored");
+        this.add("advancements.regions_unexplored.description", "Discover the many biomes and explore the world!");
+
+        this.add("advancements.regions_unexplored.pioneer.title", "Pioneer");
+        this.add("advancements.regions_unexplored.pioneer.description", "Explore all Surface biomes from Regions Unexplored!");
+
+        this.add("advancements.regions_unexplored.regions_explored.title", "Regions Explored");
+        this.add("advancements.regions_unexplored.regions_explored.description", "You've explored all the biomes from Regions Unexplored");
+
+        this.add("advancements.regions_unexplored.every_bit_of_the_rainbow.title", "Every Bit of the Rainbow");
+        this.add("advancements.regions_unexplored.every_bit_of_the_rainbow.description", "Collect or craft every colour of the Snowbelle Flower.");
+
+        this.add("advancements.regions_unexplored.from_the_tree_tops.title", "From the Tree Tops");
+        this.add("advancements.regions_unexplored.from_the_tree_tops.description", "Hang from a Kapok tree's vines.");
+
+        this.add("advancements.regions_unexplored.light_as_a_frog.title", "Light as a Frog");
+        this.add("advancements.regions_unexplored.light_as_a_frog.description", "Walk or bounce on a Giant Lily Pad.");
+
+        this.add("advancements.regions_unexplored.eternal_expedition.title", "Eternal Expedition");
+        this.add("advancements.regions_unexplored.eternal_expedition.description", "Venture into all Nether biomes from Regions Unexplored!");
+
+        this.add("advancements.regions_unexplored.downer.title", "Downer");
+        this.add("advancements.regions_unexplored.downer.description", "Walk through and take damage from a Dorcel Flower.");
+
+        this.add("advancements.regions_unexplored.light_snack.title", "Light Snack");
+        this.add("advancements.regions_unexplored.light_snack.description", "Consume a Hanging Earlight Fruit.");
+
+        this.add("advancements.regions_unexplored.spelunker.title", "Spelunker");
+        this.add("advancements.regions_unexplored.spelunker.description", "Find all Cave biomes from Regions Unexplored!");
+
+        this.add("advancements.regions_unexplored.blind_as_a_bat.title", "Blind as a Bat");
+        this.add("advancements.regions_unexplored.blind_as_a_bat.description", "Consume a Duskmelon.");
+
+        this.add("advancements.regions_unexplored.this_tree_bleeds_red.title", "This Tree Bleeds Red");
+        this.add("advancements.regions_unexplored.this_tree_bleeds_red.description", "Chop down a Socotra tree.");
+
+        this.add("advancements.regions_unexplored.got_wood.title", "Got Wood?");
+        this.add("advancements.regions_unexplored.got_wood.description", "Collect every log from Regions Unexplored.");
+
+        this.add("advancements.regions_unexplored.mycologist.title", "Mycologist");
+        this.add("advancements.regions_unexplored.mycologist.description", "Collect every Bioshroom type.");
+
+        this.add("advancements.regions_unexplored.ancient_specimens.title", "Ancient Specimens");
+        this.add("advancements.regions_unexplored.ancient_specimens.description", "Collect every Bioshroom Stem type.");
+
         // Block translations
         RegionsUnexploredMod.BLOCK_REGISTRY.getEntries().forEach(blockRegistryObject -> {
             if(!blockRegistryObject.get().toString().contains("potted_")&&

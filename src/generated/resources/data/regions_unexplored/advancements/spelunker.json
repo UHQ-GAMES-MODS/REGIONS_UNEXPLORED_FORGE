@@ -86,7 +86,7 @@
     "announce_to_chat": true,
     "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
     "description": {
-      "text": "Find all Cave biomes from Regions Unexplored!"
+      "translate": "advancements.regions_unexplored.spelunker.description"
     },
     "frame": "task",
     "hidden": false,
@@ -95,7 +95,7 @@
     },
     "show_toast": true,
     "title": {
-      "text": "Spelunker"
+      "translate": "advancements.regions_unexplored.spelunker.title"
     }
   },
   "requirements": [

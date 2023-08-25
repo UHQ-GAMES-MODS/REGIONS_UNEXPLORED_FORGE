@@ -12,7 +12,7 @@
     "announce_to_chat": true,
     "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
     "description": {
-      "text": "Walk through and take damage from a Dorcel Flower."
+      "translate": "advancements.regions_unexplored.downer.description"
     },
     "frame": "task",
     "hidden": false,
@@ -21,7 +21,7 @@
     },
     "show_toast": true,
     "title": {
-      "text": "Downer"
+      "translate": "advancements.regions_unexplored.downer.title"
     }
   },
   "requirements": [

@@ -982,7 +982,7 @@
     "announce_to_chat": true,
     "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
     "description": {
-      "text": "Explore all Surface biomes from Regions Unexplored!"
+      "translate": "advancements.regions_unexplored.pioneer.description"
     },
     "frame": "task",
     "hidden": false,
@@ -991,7 +991,7 @@
     },
     "show_toast": true,
     "title": {
-      "text": "Pioneer"
+      "translate": "advancements.regions_unexplored.pioneer.title"
     }
   },
   "requirements": [

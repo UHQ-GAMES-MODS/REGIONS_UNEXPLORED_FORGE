@@ -198,7 +198,7 @@
     "announce_to_chat": true,
     "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
     "description": {
-      "text": "Collect or craft every colour of the Snowbelle Flower."
+      "translate": "advancements.regions_unexplored.every_bit_of_the_rainbow.description"
     },
     "frame": "task",
     "hidden": false,
@@ -207,7 +207,7 @@
     },
     "show_toast": true,
     "title": {
-      "text": "Every Bit of the Rainbow"
+      "translate": "advancements.regions_unexplored.every_bit_of_the_rainbow.title"
     }
   },
   "requirements": [

@@ -86,7 +86,7 @@
     "announce_to_chat": true,
     "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
     "description": {
-      "text": "Venture into all Nether biomes from Regions Unexplored!"
+      "translate": "advancements.regions_unexplored.eternal_expedition.description"
     },
     "frame": "task",
     "hidden": false,
@@ -95,7 +95,7 @@
     },
     "show_toast": true,
     "title": {
-      "text": "Eternal Expedition"
+      "translate": "advancements.regions_unexplored.eternal_expedition.title"
     }
   },
   "requirements": [
