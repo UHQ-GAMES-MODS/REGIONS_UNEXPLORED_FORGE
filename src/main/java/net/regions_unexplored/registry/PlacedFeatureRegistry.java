@@ -11,13 +11,9 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.regions_unexplored.RegionsUnexploredMod;
 import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.data.worldgen.placement.*;
-import net.regions_unexplored.data.worldgen.placement.biome.RuNetherBiomePlacements;
-import net.regions_unexplored.data.worldgen.placement.biome.RuOverworldBiomePlacements;
 
 public class PlacedFeatureRegistry {
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
-        RuNetherBiomePlacements.bootstrap(context);
-        RuOverworldBiomePlacements.bootstrap(context);
         RuAquaticPlacements.bootstrap(context);
         RuMiscOverworldPlacements.bootstrap(context);
         RuNetherPlacements.bootstrap(context);

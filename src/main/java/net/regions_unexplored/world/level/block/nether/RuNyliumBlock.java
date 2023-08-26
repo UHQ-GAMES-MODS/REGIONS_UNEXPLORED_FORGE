@@ -17,6 +17,7 @@ import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.lighting.LightEngine;
 import net.regions_unexplored.block.RuBlocks;
+import net.regions_unexplored.data.worldgen.features.RuNetherFeatures;
 
 public class RuNyliumBlock extends Block implements BonemealableBlock {
     public RuNyliumBlock(Properties properties) {
@@ -50,17 +51,20 @@ public class RuNyliumBlock extends Block implements BonemealableBlock {
         BlockPos blockPos = pos.above();
         ChunkGenerator chunkgenerator = level.getChunkSource().getGenerator();
         Registry<ConfiguredFeature<?, ?>> registry = level.registryAccess().registryOrThrow(Registries.CONFIGURED_FEATURE);
-        //TODO: bonemeal features
         if (blockState.is(RuBlocks.MYCOTOXIC_NYLIUM.get())) {
-           // this.place(registry, RuVegetationFeatures.MYCOTOXIC_NYLIUM_BONEMEAL, level, chunkgenerator, random, blockPos);
+           this.place(registry, RuNetherFeatures.MYCOTOXIC_NYLIUM_BONEMEAL, level, chunkgenerator, random, blockPos);
         }
 
         else if (blockState.is(RuBlocks.GLISTERING_NYLIUM.get())) {
-           // this.place(registry, RuVegetationFeatures.GLISTERING_NYLIUM_BONEMEAL, level, chunkgenerator, random, blockPos);
+           this.place(registry, RuNetherFeatures.GLISTERING_NYLIUM_BONEMEAL, level, chunkgenerator, random, blockPos);
+        }
+
+        else if (blockState.is(RuBlocks.BRIMSPROUT_NYLIUM.get())) {
+            this.place(registry, RuNetherFeatures.BRIMSPROUT_NYLIUM_BONEMEAL, level, chunkgenerator, random, blockPos);
         }
 
         else if (blockState.is(RuBlocks.COBALT_NYLIUM.get())) {
-           // this.place(registry, RuVegetationFeatures.GLISTERING_NYLIUM_BONEMEAL, level, chunkgenerator, random, blockPos);
+           this.place(registry, RuNetherFeatures.GLISTERING_NYLIUM_BONEMEAL, level, chunkgenerator, random, blockPos);
         }
 
     }

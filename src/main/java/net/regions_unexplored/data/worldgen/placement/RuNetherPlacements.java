@@ -84,7 +84,7 @@ public class RuNetherPlacements {
         register(context, RuNetherPlacements.MYCOTOXIC_MUSHROOMS, MYCOTOXIC_MUSHROOMS, List.of(CountOnEveryLayerPlacement.of(1),  NoiseThresholdCountPlacement.of(-0.8D, 5, 12), BiomeFilter.biome()));
         register(context, RuNetherPlacements.MYCOTOXIC_GRASS, MYCOTOXIC_GRASS, List.of(CountOnEveryLayerPlacement.of(30), BiomeFilter.biome()));
         register(context, RuNetherPlacements.MYCOTOXIC_DAISY, MYCOTOXIC_DAISY, List.of(CountOnEveryLayerPlacement.of(5), BiomeFilter.biome()));
-        register(context, RuNetherPlacements.MYCOTOXIC_BIOSHROOM, MYCOTOXIC_BIOSHROOM, List.of(CountOnEveryLayerPlacement.of(7), BiomeFilter.biome()));
+        register(context, RuNetherPlacements.MYCOTOXIC_BIOSHROOM, MYCOTOXIC_BIOSHROOM, List.of(CountOnEveryLayerPlacement.of(7), PlacementUtils.filteredByBlockSurvival(RuBlocks.STONE_BUD.get()), BiomeFilter.biome()));
 
         register(context, RuNetherPlacements.BRIMSPROUT, BRIMSPROUT, List.of(CountOnEveryLayerPlacement.of(30), BiomeFilter.biome()));
         register(context, RuNetherPlacements.BRIM_FLAMES, BRIM_FLAMES, List.of(CountOnEveryLayerPlacement.of(5), PlacementUtils.filteredByBlockSurvival(RuBlocks.BRIMSPROUT.get()), BiomeFilter.biome()));

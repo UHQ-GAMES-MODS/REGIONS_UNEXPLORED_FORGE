@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:nether_forest_vegetation",
+  "config": {
+    "spread_height": 1,
+    "spread_width": 3,
+    "state_provider": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "data": {
+            "Name": "regions_unexplored:cobalt_roots"
+          },
+          "weight": 100
+        },
+        {
+          "data": {
+            "Name": "regions_unexplored:cobalt_earlight"
+          },
+          "weight": 2
+        }
+      ]
+    }
+  }
+}

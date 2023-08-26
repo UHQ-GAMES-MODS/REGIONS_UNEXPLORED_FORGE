@@ -6,6 +6,15 @@
       "count": 7
     },
     {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:would_survive",
+        "state": {
+          "Name": "regions_unexplored:stone_bud"
+        }
+      }
+    },
+    {
       "type": "minecraft:biome"
     }
   ]
