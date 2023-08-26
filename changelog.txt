@@ -1,4 +1,28 @@
 ------------------------------------------------------------------------------------------------------------------------
+-0.5.2
++BLOCKS/ITEMS
+    +BLOCK ADDITIONS:
+        -Glistering Fern
+        -Glistering Bloom(Pottable)
+    +BLOCK CHANGES:
+        -Improved Dusktrap Functionality
+        -Split Glistering Sprout Blockstates into new separate blocks
++BIOMES
+    +BIOME CHANGES:
+        -Made Yellow Bioshrooms in Mycotoxic Undergrowth mainly spawn on Netherrack
+        -Made Glistering Meadow generate the two new Glistering plants
++OTHER CHANGES:
+    -Fixed RU Nyliums Bonemeal Feature
+    -Fixed Dusktrap staying closed when eating an item
+
+------------------------------------------------------------------------------------------------------------------------
+-0.5.1
++CHANGES:
+    - Fixed Jungle and Mangrove Shrub textures being one pixel off
+    - Fixed Giant Lily breaking after bone mealing Flowering Lily
+    - Fixed advancements not being translatable
+
+------------------------------------------------------------------------------------------------------------------------
 -0.5.0
 NOTICE: DUE TO THE SIZE OF THIS UPDATE AND THE AMOUNT OF CHANGES THINGS MAY NOT FUNCTION CORRECTLY IN OLD RU WORLDS (ie. Blocks that were removed/renamed disappearing, removed/renamed biomes reverting to plains).
 +BLOCKS/ITEMS
