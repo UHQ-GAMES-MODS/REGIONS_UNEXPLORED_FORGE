@@ -1,38 +1,7 @@
 {
   "variants": {
-  "": [
-    {
-      "model": "regions_unexplored:block/glistering_sprout_1"
-    },
-    {
-      "model": "regions_unexplored:block/glistering_sprout_1"
-    },
-    {
-      "model": "regions_unexplored:block/glistering_sprout_1"
-    },
-    {
-      "model": "regions_unexplored:block/glistering_sprout_1"
-    },
-    {
-      "model": "regions_unexplored:block/glistering_sprout_1"
-    },
-    {
-      "model": "regions_unexplored:block/glistering_sprout_1"
-    },
-    {
-      "model": "regions_unexplored:block/glistering_sprout_1"
-    },
-    {
-      "model": "regions_unexplored:block/glistering_sprout_1"
-    },
-    {
-      "model": "regions_unexplored:block/glistering_sprout_1"
-    },
-    {
-      "model": "regions_unexplored:block/glistering_sprout_2"
-    },
-    {
-      "model": "regions_unexplored:block/glistering_fern"
+    "": {
+      "model": "regions_unexplored:block/glistering_sprout"
     }
-  ]}
+  }
 }

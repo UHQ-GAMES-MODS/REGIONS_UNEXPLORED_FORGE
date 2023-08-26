@@ -249,6 +249,7 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         add(RuBlocks.POTTED_FELICIA_DAISY.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_DORCEL.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_FIREWEED.get(), (block) -> createPotFlowerItemTable(block));
+        add(RuBlocks.POTTED_GLISTERING_BLOOM.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_HIBISCUS.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_HYSSOP.get(), (block) -> createPotFlowerItemTable(block));
         add(RuBlocks.POTTED_MALLOW.get(), (block) -> createPotFlowerItemTable(block));
@@ -948,6 +949,8 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         add(RuBlocks.GLISTERING_IVY_PLANT.get(), (block) -> createSilkTouchOrShearsDispatchTable(block, LootItem.lootTableItem(block).when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, 0.33F, 0.55F, 0.77F, 1.0F))));
         add(RuBlocks.GLISTERING_NYLIUM.get(), (block) -> createSingleItemTableWithSilkTouch(block, Blocks.NETHERRACK));
         dropSelf(RuBlocks.GLISTERING_SPROUT.get());
+        dropSelf(RuBlocks.GLISTERING_BLOOM.get());
+        dropSelf(RuBlocks.GLISTERING_FERN.get());
         dropSelf(RuBlocks.GLISTERING_WART.get());
         add(RuBlocks.GLISTER_BULB.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         add(RuBlocks.GLISTER_SPIRE.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));

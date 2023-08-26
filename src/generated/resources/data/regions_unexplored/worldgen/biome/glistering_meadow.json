@@ -57,10 +57,12 @@
       "minecraft:ore_ancient_debris_large",
       "minecraft:ore_debris_small",
       "regions_unexplored:glistering_meadow_rock",
-      "regions_unexplored:glistering_meadow_bulb",
-      "regions_unexplored:glistering_meadow_grass",
-      "regions_unexplored:glistering_meadow_spire",
-      "regions_unexplored:glistering_meadow_ivy"
+      "regions_unexplored:glister_bulb",
+      "regions_unexplored:glistering_sprout",
+      "regions_unexplored:glistering_fern",
+      "regions_unexplored:glistering_bloom",
+      "regions_unexplored:glister_spire",
+      "regions_unexplored:glistering_ivy"
     ]
   ],
   "has_precipitation": false,

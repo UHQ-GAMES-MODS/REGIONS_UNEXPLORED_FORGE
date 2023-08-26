@@ -3,6 +3,7 @@ package net.regions_unexplored.world.level.block.plant.aquatic;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -54,7 +55,7 @@ public class FloweringLilyBlock extends WaterlilyBlock implements BonemealableBl
     protected boolean mayPlaceOn(BlockState state, BlockGetter getter, BlockPos pos) {
         FluidState fluidState = getter.getFluidState(pos);
         FluidState fluidState1 = getter.getFluidState(pos.above());
-        return (fluidState.getType() == Fluids.WATER || state.getBlock() instanceof IceBlock) && fluidState1.getType() == Fluids.EMPTY;
+        return (fluidState.getType() == Fluids.WATER || state.getBlock() instanceof IceBlock) && fluidState1.getType() == Fluids.EMPTY || fluidState.is(FluidTags.WATER);
     }
 
     @Override

@@ -16,6 +16,7 @@ public class PottedPlants {
         ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(RuBlocks.FELICIA_DAISY.getId(), RuBlocks.POTTED_FELICIA_DAISY);
         ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(RuBlocks.DORCEL.getId(), RuBlocks.POTTED_DORCEL);
         ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(RuBlocks.FIREWEED.getId(), RuBlocks.POTTED_FIREWEED);
+        ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(RuBlocks.GLISTERING_BLOOM.getId(), RuBlocks.POTTED_GLISTERING_BLOOM);
         ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(RuBlocks.HIBISCUS.getId(), RuBlocks.POTTED_HIBISCUS);
         ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(RuBlocks.HYSSOP.getId(), RuBlocks.POTTED_HYSSOP);
         ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(RuBlocks.MALLOW.getId(), RuBlocks.POTTED_MALLOW);

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "regions_unexplored:block/glistering_sprout"
+    "layer0": "regions_unexplored:block/glistering_bloom"
   }
 }

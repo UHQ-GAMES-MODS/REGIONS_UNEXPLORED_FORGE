@@ -1,0 +1,12 @@
+{
+  "feature": "regions_unexplored:patch_glistering_bloom",
+  "placement": [
+    {
+      "type": "minecraft:count_on_every_layer",
+      "count": 7
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

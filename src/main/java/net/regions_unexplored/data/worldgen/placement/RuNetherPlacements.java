@@ -30,10 +30,12 @@ public class RuNetherPlacements {
     public static final ResourceKey<PlacedFeature> BRIMWOOD_SHRUB = PlacedFeatureRegistry.createKey("brimwood_shrub");
 
     public static final ResourceKey<PlacedFeature> GLISTERING_MEADOW_ROCK = PlacedFeatureRegistry.createKey("glistering_meadow_rock");
-    public static final ResourceKey<PlacedFeature> GLISTERING_MEADOW_IVY = PlacedFeatureRegistry.createKey("glistering_meadow_ivy");
-    public static final ResourceKey<PlacedFeature> GLISTERING_MEADOW_GRASS = PlacedFeatureRegistry.createKey("glistering_meadow_grass");
-    public static final ResourceKey<PlacedFeature> GLISTERING_MEADOW_SPIRE = PlacedFeatureRegistry.createKey("glistering_meadow_spire");
-    public static final ResourceKey<PlacedFeature> GLISTERING_MEADOW_BULB = PlacedFeatureRegistry.createKey("glistering_meadow_bulb");
+    public static final ResourceKey<PlacedFeature> GLISTERING_IVY = PlacedFeatureRegistry.createKey("glistering_ivy");
+    public static final ResourceKey<PlacedFeature> GLISTERING_SPROUT = PlacedFeatureRegistry.createKey("glistering_sprout");
+    public static final ResourceKey<PlacedFeature> GLISTERING_FERN = PlacedFeatureRegistry.createKey("glistering_fern");
+    public static final ResourceKey<PlacedFeature> GLISTERING_BLOOM = PlacedFeatureRegistry.createKey("glistering_bloom");
+    public static final ResourceKey<PlacedFeature> GLISTER_SPIRE = PlacedFeatureRegistry.createKey("glister_spire");
+    public static final ResourceKey<PlacedFeature> GLISTER_BULB = PlacedFeatureRegistry.createKey("glister_bulb");
 
     public static final ResourceKey<PlacedFeature> HANGING_EARLIGHT = PlacedFeatureRegistry.createKey("hanging_earlight");
     public static final ResourceKey<PlacedFeature> COBALT_ROOTS = PlacedFeatureRegistry.createKey("cobalt_roots");
@@ -60,10 +62,12 @@ public class RuNetherPlacements {
         final Holder<ConfiguredFeature<?, ?>> BRIMWOOD_SHRUB = featureGetter.getOrThrow(RuNetherFeatures.BRIMWOOD_SHRUB);
 
         final Holder<ConfiguredFeature<?, ?>> GLISTERING_MEADOW_ROCK = featureGetter.getOrThrow(RuNetherFeatures.NETHER_ROCK);
-        final Holder<ConfiguredFeature<?, ?>> GLISTERING_MEADOW_IVY = featureGetter.getOrThrow(RuNetherFeatures.PATCH_GLISTERING_IVY);
-        final Holder<ConfiguredFeature<?, ?>> GLISTERING_MEADOW_GRASS = featureGetter.getOrThrow(RuNetherFeatures.PATCH_GLISTERING_SPROUT);
-        final Holder<ConfiguredFeature<?, ?>> GLISTERING_MEADOW_SPIRE = featureGetter.getOrThrow(RuNetherFeatures.PATCH_GLISTER_SPIRE);
-        final Holder<ConfiguredFeature<?, ?>> GLISTERING_MEADOW_BULB = featureGetter.getOrThrow(RuNetherFeatures.PATCH_GLISTER_BULB);
+        final Holder<ConfiguredFeature<?, ?>> GLISTERING_IVY = featureGetter.getOrThrow(RuNetherFeatures.PATCH_GLISTERING_IVY);
+        final Holder<ConfiguredFeature<?, ?>> GLISTERING_SPROUT = featureGetter.getOrThrow(RuNetherFeatures.PATCH_GLISTERING_SPROUT);
+        final Holder<ConfiguredFeature<?, ?>> GLISTERING_FERN = featureGetter.getOrThrow(RuNetherFeatures.PATCH_GLISTERING_FERN);
+        final Holder<ConfiguredFeature<?, ?>> GLISTERING_BLOOM = featureGetter.getOrThrow(RuNetherFeatures.PATCH_GLISTERING_BLOOM);
+        final Holder<ConfiguredFeature<?, ?>> GLISTER_SPIRE = featureGetter.getOrThrow(RuNetherFeatures.PATCH_GLISTER_SPIRE);
+        final Holder<ConfiguredFeature<?, ?>> GLISTER_BULB = featureGetter.getOrThrow(RuNetherFeatures.PATCH_GLISTER_BULB);
 
         final Holder<ConfiguredFeature<?, ?>> HANGING_EARLIGHT = featureGetter.getOrThrow(RuNetherFeatures.PATCH_HANGING_EARLIGHT);
         final Holder<ConfiguredFeature<?, ?>> COBALT_ROOTS = featureGetter.getOrThrow(RuNetherFeatures.PATCH_COBALT_ROOTS);
@@ -88,10 +92,12 @@ public class RuNetherPlacements {
         register(context, RuNetherPlacements.BRIMWOOD_SHRUB, BRIMWOOD_SHRUB, List.of(CountOnEveryLayerPlacement.of(1), PlacementUtils.filteredByBlockSurvival(RuBlocks.BRIMSPROUT.get()), BiomeFilter.biome()));
 
         register(context, RuNetherPlacements.GLISTERING_MEADOW_ROCK, GLISTERING_MEADOW_ROCK, CountOnEveryLayerPlacement.of(1), PlacementUtils.filteredByBlockSurvival(RuBlocks.GLISTERING_NYLIUM.get()), BiomeFilter.biome());
-        register(context, RuNetherPlacements.GLISTERING_MEADOW_IVY, GLISTERING_MEADOW_IVY, CountPlacement.of(155), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome());
-        register(context, RuNetherPlacements.GLISTERING_MEADOW_GRASS, GLISTERING_MEADOW_GRASS, List.of(CountOnEveryLayerPlacement.of(30), BiomeFilter.biome()));
-        register(context, RuNetherPlacements.GLISTERING_MEADOW_SPIRE, GLISTERING_MEADOW_SPIRE, List.of(CountOnEveryLayerPlacement.of(3), BiomeFilter.biome()));
-        register(context, RuNetherPlacements.GLISTERING_MEADOW_BULB, GLISTERING_MEADOW_BULB, List.of(CountOnEveryLayerPlacement.of(2), BiomeFilter.biome()));
+        register(context, RuNetherPlacements.GLISTERING_IVY, GLISTERING_IVY, CountPlacement.of(155), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome());
+        register(context, RuNetherPlacements.GLISTERING_SPROUT, GLISTERING_SPROUT, List.of(CountOnEveryLayerPlacement.of(30), BiomeFilter.biome()));
+        register(context, RuNetherPlacements.GLISTERING_FERN, GLISTERING_FERN, List.of(CountOnEveryLayerPlacement.of(15), BiomeFilter.biome()));
+        register(context, RuNetherPlacements.GLISTERING_BLOOM, GLISTERING_BLOOM, List.of(CountOnEveryLayerPlacement.of(7), BiomeFilter.biome()));
+        register(context, RuNetherPlacements.GLISTER_SPIRE, GLISTER_SPIRE, List.of(CountOnEveryLayerPlacement.of(3), BiomeFilter.biome()));
+        register(context, RuNetherPlacements.GLISTER_BULB, GLISTER_BULB, List.of(CountOnEveryLayerPlacement.of(2), BiomeFilter.biome()));
 
         register(context, RuNetherPlacements.HANGING_EARLIGHT, HANGING_EARLIGHT, CountPlacement.of(225), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome());
         register(context, RuNetherPlacements.COBALT_ROOTS, COBALT_ROOTS, List.of(CountOnEveryLayerPlacement.of(8), BiomeFilter.biome()));

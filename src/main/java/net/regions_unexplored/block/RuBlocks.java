@@ -255,6 +255,7 @@ public class RuBlocks {
     public static RegistryObject<Block> POTTED_DORCEL;
     public static RegistryObject<Block> POTTED_FELICIA_DAISY;
     public static RegistryObject<Block> POTTED_FIREWEED;
+    public static RegistryObject<Block> POTTED_GLISTERING_BLOOM;
     public static RegistryObject<Block> POTTED_HIBISCUS;
     public static RegistryObject<Block> POTTED_HYSSOP;
     public static RegistryObject<Block> POTTED_MALLOW;
@@ -961,6 +962,8 @@ public class RuBlocks {
     public static RegistryObject<Block> GLISTERING_IVY_PLANT;
     public static RegistryObject<Block> GLISTERING_NYLIUM;
     public static RegistryObject<Block> GLISTERING_SPROUT;
+    public static RegistryObject<Block> GLISTERING_FERN;
+    public static RegistryObject<Block> GLISTERING_BLOOM;
     public static RegistryObject<Block> GLISTERING_WART;
     public static RegistryObject<Block> GLISTER_BULB;
     public static RegistryObject<Block> GLISTER_SPIRE;
@@ -1180,6 +1183,7 @@ public class RuBlocks {
         POTTED_DORCEL = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_dorcel", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, DORCEL, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
         POTTED_FELICIA_DAISY = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_felicia_daisy", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, FELICIA_DAISY, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
         POTTED_FIREWEED = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_fireweed", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, FIREWEED, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
+        POTTED_GLISTERING_BLOOM = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_glistering_bloom", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, GLISTERING_BLOOM, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
         POTTED_HIBISCUS = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_hibiscus", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, HIBISCUS, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
         POTTED_HYSSOP = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_hyssop", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, HYSSOP, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
         POTTED_MALLOW = RegionsUnexploredMod.BLOCK_REGISTRY.register("potted_mallow", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, MALLOW, BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM)));
@@ -1885,6 +1889,8 @@ public class RuBlocks {
         GLISTERING_IVY_PLANT = RegionsUnexploredMod.BLOCK_REGISTRY.register("glistering_ivy_plant", () -> new GlisteringIvyPlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_BLUE).noCollission().instabreak().sound(SoundType.WEEPING_VINES)));
         GLISTERING_NYLIUM = BlockRegistry.registerDefaultBlock("glistering_nylium", () -> new RuNyliumBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).requiresCorrectToolForDrops().strength(0.4F).sound(SoundType.NYLIUM)));
         GLISTERING_SPROUT = BlockRegistry.registerDefaultBlock("glistering_sprout", () -> new RuNetherPlantBlock(BlockBehaviour.Properties.of().replaceable().noCollission().instabreak().sound(SoundType.TWISTING_VINES).offsetType(BlockBehaviour.OffsetType.XZ)));
+        GLISTERING_FERN = BlockRegistry.registerDefaultBlock("glistering_fern", () -> new RuNetherPlantBlock(BlockBehaviour.Properties.copy(GLISTERING_SPROUT.get())));
+        GLISTERING_BLOOM = BlockRegistry.registerDefaultBlock("glistering_bloom", () -> new RuNetherPlantBlock(BlockBehaviour.Properties.copy(GLISTERING_SPROUT.get())));
         GLISTERING_WART = BlockRegistry.registerDefaultBlock("glistering_wart", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).requiresCorrectToolForDrops().strength(0.4F).sound(SoundType.NYLIUM)));
         GLISTER_BULB = BlockRegistry.registerDefaultBlock("glister_bulb", () -> new RuNetherDoublePlantBlock(BlockBehaviour.Properties.of().replaceable().noCollission().instabreak().sound(SoundType.NETHER_WART).offsetType(BlockBehaviour.OffsetType.XZ).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 13)));
         GLISTER_SPIRE = BlockRegistry.registerDefaultBlock("glister_spire", () -> new RuNetherDoublePlantBlock(BlockBehaviour.Properties.of().replaceable().noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(BlockBehaviour.OffsetType.XZ).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 5)));

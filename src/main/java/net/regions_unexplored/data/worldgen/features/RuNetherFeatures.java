@@ -48,6 +48,8 @@ public class RuNetherFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> NETHER_ROCK = ConfiguredFeatureRegistry.createKey("nether_rock");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_GLISTERING_IVY = ConfiguredFeatureRegistry.createKey("patch_glistering_ivy");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_GLISTERING_SPROUT = ConfiguredFeatureRegistry.createKey("patch_glistering_sprout");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_GLISTERING_FERN = ConfiguredFeatureRegistry.createKey("patch_glistering_fern");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_GLISTERING_BLOOM = ConfiguredFeatureRegistry.createKey("patch_glistering_bloom");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_GLISTER_SPIRE = ConfiguredFeatureRegistry.createKey("patch_glister_spire");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_GLISTER_BULB = ConfiguredFeatureRegistry.createKey("patch_glister_bulb");
 
@@ -85,6 +87,8 @@ public class RuNetherFeatures {
         register(context, NETHER_ROCK, FeatureRegistry.NETHER_ROCK.get(), FeatureConfiguration.NONE);
         register(context, PATCH_GLISTERING_IVY, FeatureRegistry.GLISTERING_IVY.get(), FeatureConfiguration.NONE);
         register(context, PATCH_GLISTERING_SPROUT, Feature.RANDOM_PATCH, grassPatch(BlockStateProvider.simple(RuBlocks.GLISTERING_SPROUT.get().defaultBlockState()), 32));
+        register(context, PATCH_GLISTERING_FERN, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(RuBlocks.GLISTERING_FERN.get().defaultBlockState())));
+        register(context, PATCH_GLISTERING_BLOOM, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(RuBlocks.GLISTERING_BLOOM.get().defaultBlockState())));
         register(context, PATCH_GLISTER_SPIRE, Feature.RANDOM_PATCH, grassPatch(BlockStateProvider.simple(RuBlocks.GLISTER_SPIRE.get().defaultBlockState()), 16));
         register(context, PATCH_GLISTER_BULB, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(RuBlocks.GLISTER_BULB.get().defaultBlockState())));
 

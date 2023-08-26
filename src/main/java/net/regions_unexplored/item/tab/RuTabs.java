@@ -61,6 +61,7 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.BRIMSPROUT.get()));
                             output.accept(new ItemStack(RuBlocks.COBALT_ROOTS.get()));
                             output.accept(new ItemStack(RuBlocks.GLISTERING_SPROUT.get()));
+                            output.accept(new ItemStack(RuBlocks.GLISTERING_FERN.get()));
                             output.accept(new ItemStack(RuBlocks.MYCOTOXIC_GRASS.get()));
 
                             output.accept(new ItemStack(RuBlocks.BLADED_TALL_GRASS.get()));
@@ -79,6 +80,7 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.DORCEL.get()));
                             output.accept(new ItemStack(RuBlocks.FELICIA_DAISY.get()));
                             output.accept(new ItemStack(RuBlocks.FIREWEED.get()));
+                            output.accept(new ItemStack(RuBlocks.GLISTERING_BLOOM.get()));
                             output.accept(new ItemStack(RuBlocks.HIBISCUS.get()));
                             output.accept(new ItemStack(RuBlocks.HYSSOP.get()));
                             output.accept(new ItemStack(RuBlocks.MALLOW.get()));

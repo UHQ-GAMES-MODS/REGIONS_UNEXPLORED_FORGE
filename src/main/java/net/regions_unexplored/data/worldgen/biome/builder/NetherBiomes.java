@@ -161,10 +161,12 @@ public class NetherBiomes {
 
         //add RU features
         biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.GLISTERING_MEADOW_ROCK);
-        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.GLISTERING_MEADOW_BULB);
-        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.GLISTERING_MEADOW_GRASS);
-        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.GLISTERING_MEADOW_SPIRE);
-        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.GLISTERING_MEADOW_IVY);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.GLISTER_BULB);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.GLISTERING_SPROUT);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.GLISTERING_FERN);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.GLISTERING_BLOOM);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.GLISTER_SPIRE);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, RuNetherPlacements.GLISTERING_IVY);
 
 
         //add mob spawns
