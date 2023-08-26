@@ -26,6 +26,7 @@ import net.regions_unexplored.world.level.block.plant.aquatic.DuckweedBlock;
 import net.regions_unexplored.world.level.block.plant.aquatic.FloweringLilyBlock;
 import net.regions_unexplored.world.level.block.plant.aquatic.GiantLilyBlock;
 import net.regions_unexplored.world.level.block.plant.aquatic.TallHyacinthStockBlock;
+import net.regions_unexplored.world.level.block.plant.dusktrap.DuskTrapBlocks;
 import net.regions_unexplored.world.level.block.plant.flower.CaveFlowerBlock;
 import net.regions_unexplored.world.level.block.plant.flower.GroundCoverBlock;
 import net.regions_unexplored.world.level.block.plant.flower.RuFlowerBlock;
@@ -997,7 +998,7 @@ public class RuBlocks {
         DROPLEAF = BlockRegistry.registerDefaultBlock("dropleaf", () -> new DropleafBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_CYAN).randomTicks().noCollission().instabreak().sound(SoundType.WEEPING_VINES).offsetType(BlockBehaviour.OffsetType.XZ).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 14)));
         DROPLEAF_PLANT = RegionsUnexploredMod.BLOCK_REGISTRY.register("dropleaf_plant", () -> new DropleafPlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_CYAN).noCollission().instabreak().sound(SoundType.WEEPING_VINES).offsetType(BlockBehaviour.OffsetType.XZ)));
         DUSKMELON = RegionsUnexploredMod.BLOCK_REGISTRY.register("duskmelon", () -> new DuskmelonBlock(BlockBehaviour.Properties.of().noCollission().instabreak().sound(SoundType.AZALEA)));
-        DUSKTRAP = BlockRegistry.registerDefaultBlock("dusktrap", () -> new DuskTrapBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_CYAN).noCollission().instabreak().sound(SoundType.TWISTING_VINES)));
+        DUSKTRAP = BlockRegistry.registerDefaultBlock("dusktrap", () -> new DuskTrapBlocks(DuskTrapBlocks.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_CYAN).noCollission().instabreak().sound(SoundType.TWISTING_VINES)));
         /*-----------------PLANTS-----------------*/
         //GRASS_BLOCKS
         DEAD_STEPPE_SHRUB = BlockRegistry.registerDefaultBlock("dead_steppe_shrub", () -> new DeadShrubBlock(BlockBehaviour.Properties.of().pushReaction(PushReaction.DESTROY).ignitedByLava().replaceable().mapColor(MapColor.WOOD).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ)));
