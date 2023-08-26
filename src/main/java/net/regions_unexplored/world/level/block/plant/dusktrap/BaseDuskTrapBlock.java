@@ -29,7 +29,7 @@ import javax.annotation.Nullable;
 public abstract class BaseDuskTrapBlock extends DoublePlantBlock {
    protected static final VoxelShape CLOSED_AABB = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 16.0D, 14.0D);
    protected static final VoxelShape AABB = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 16.0D, 15.0D);
-   protected static final AABB TOUCH_AABB = new AABB(0.0625D, 0.0D, 0.0625D, 0.9375D, 16.0D, 0.9375D);
+   protected static final AABB TOUCH_AABB = new AABB(0.3D, 0.0D, 0.3D, 0.7D, 16.0D, 0.7D);
 
    protected BaseDuskTrapBlock(Properties p_273450_) {
       super(p_273450_);
@@ -57,8 +57,8 @@ public abstract class BaseDuskTrapBlock extends DoublePlantBlock {
 
    public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
       Vec3 entityPos = entity.position();
-      Vec3 inPos = new Vec3(pos.getX()+0.05D, pos.getY(), pos.getZ()+0.05D);
-      Vec3 outPos = new Vec3(pos.getX()+0.95D, pos.getY(), pos.getZ()+0.95D);
+      Vec3 inPos = new Vec3(pos.getX()+0.002D, pos.getY(), pos.getZ()+0.002D);
+      Vec3 outPos = new Vec3(pos.getX()+0.998D, pos.getY(), pos.getZ()+0.998D);
       boolean isInside = entityPos.x>inPos.x&&entityPos.z>inPos.z&&entityPos.x<outPos.x&&entityPos.z<outPos.z;
       boolean isItem = entity instanceof ItemEntity;
       if(!isItem){

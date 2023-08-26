@@ -1022,6 +1022,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
         this.tag(BlockTags.TALL_FLOWERS)
                 .add(RuBlocks.TASSEL.getKey())
                 .add(RuBlocks.DAY_LILY.getKey())
+                .add(RuBlocks.MEADOW_SAGE.getKey())
         ;
         //this.tag(BlockTags.TERRACOTTA);
         //this.tag(BlockTags.TRAPDOORS);
