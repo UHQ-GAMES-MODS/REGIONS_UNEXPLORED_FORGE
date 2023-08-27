@@ -6,7 +6,8 @@
         -Glistering Bloom(Pottable)
     +BLOCK CHANGES:
         -Improved Dusktrap Functionality
-        -Split Glistering Sprout Blockstates into new separate blocks
+        -Mycotoxic Mushrooms now increase light level based on amount blockstate
+        -Split Glistering Sprout blockstates into new separate blocks
 +BIOMES
     +BIOME CHANGES:
         -Made Yellow Bioshrooms in Mycotoxic Undergrowth mainly spawn on Netherrack

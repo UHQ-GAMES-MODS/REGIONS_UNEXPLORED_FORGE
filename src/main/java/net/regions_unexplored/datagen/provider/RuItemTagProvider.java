@@ -425,6 +425,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.DORCEL.get().asItem())
                 .add(RuBlocks.FELICIA_DAISY.get().asItem())
                 .add(RuBlocks.FIREWEED.get().asItem())
+                .add(RuBlocks.GLISTERING_BLOOM.get().asItem())
                 .add(RuBlocks.HIBISCUS.get().asItem())
                 .add(RuBlocks.MALLOW.get().asItem())
                 .add(RuBlocks.HYSSOP.get().asItem())
