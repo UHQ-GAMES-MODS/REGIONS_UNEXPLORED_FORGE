@@ -380,7 +380,7 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         add(RuBlocks.BLUE_MAGNOLIA_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.BLUE_MAGNOLIA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.PINK_MAGNOLIA_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.PINK_MAGNOLIA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.REDWOOD_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.REDWOOD_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
-        add(RuBlocks.RED_MAPLE_LEAVES.get(), (block) -> createOakLeavesDrops(block, RuBlocks.RED_MAPLE_SHRUB.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        add(RuBlocks.RED_MAPLE_LEAVES.get(), (block) -> createOakLeavesDrops(block, RuBlocks.RED_MAPLE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.BRIMWOOD_LEAVES.get(), (block) -> createSilkTouchOrShearsDispatchTable(block, this.applyExplosionCondition(block, LootItem.lootTableItem(RuBlocks.BRIMWOOD_SAPLING.get())).when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, NORMAL_LEAVES_SAPLING_CHANCES))).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).when(HAS_NO_SHEARS_OR_SILK_TOUCH)));
         add(RuBlocks.SILVER_BIRCH_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.SILVER_BIRCH_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.SMALL_OAK_LEAVES.get(), (block) -> createOakLeavesDrops(block, RuBlocks.SMALL_OAK_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));

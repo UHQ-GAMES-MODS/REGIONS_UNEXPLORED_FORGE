@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-26T19:17:45.3699099	Loot Tables
+// 1.20.1	2023-08-30T20:35:10.7831333	Loot Tables
 fb95ad5062001d6c0fb329989fda986801ec5444 data/regions_unexplored/loot_tables/blocks/acacia_branch.json
 9a9c5fbba217f07ec7cb6067e42dba80d311e355 data/regions_unexplored/loot_tables/blocks/acacia_shrub.json
 db69029ed53dd57ea783ac8375ab18767e9fa5a0 data/regions_unexplored/loot_tables/blocks/alpha_dandelion.json
@@ -628,7 +628,7 @@ fda45d9566d06f18a5a9870d8a6bf2d1f379be95 data/regions_unexplored/loot_tables/blo
 030877d0d82adf92f8322cdb4b3518e1a3504dd4 data/regions_unexplored/loot_tables/blocks/redwood_wood.json
 22eb25eac14cba73f7443305484d8a2c073e8e39 data/regions_unexplored/loot_tables/blocks/red_lupine.json
 f86da1660fc275524081784e426db9a288bb6e4f data/regions_unexplored/loot_tables/blocks/red_maple_leaf_pile.json
-4d1609a09869160c85353a775d4e0b88ecf10917 data/regions_unexplored/loot_tables/blocks/red_maple_leaves.json
+5ca720c2d31527eae10acec89f1ccb9e86c4371c data/regions_unexplored/loot_tables/blocks/red_maple_leaves.json
 574bf11c7899ba444c188491b39fd487901357c6 data/regions_unexplored/loot_tables/blocks/red_maple_sapling.json
 7e43a4b6e5b8e44d94807a92b0cd280d9e58f204 data/regions_unexplored/loot_tables/blocks/red_maple_shrub.json
 82e8c4e9a03cada3d2e06e2e5864a7c99c0398e0 data/regions_unexplored/loot_tables/blocks/red_painted_planks.json

@@ -1190,6 +1190,9 @@ public class DefaultBiomes {
         if(biome== RuBiomes.BLACKWOOD_TAIGA){
             return RuCommonConfig.TOGGLE_BLACKWOOD_TAIGA.get();
         }
+        if(biome== RuBiomes.MAGNOLIA_WOODLAND){
+            return RuCommonConfig.TOGGLE_MAGNOLIA_WOODLAND.get();
+        }
         if(biome== RuBiomes.BOREAL_TAIGA){
             return RuCommonConfig.TOGGLE_BOREAL_TAIGA.get();
         }

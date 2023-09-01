@@ -581,8 +581,6 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.SMALL_OAK_LEAVES.getKey())
                 .add(RuBlocks.SOCOTRA_LEAVES.getKey())
                 .add(RuBlocks.ENCHANTED_BIRCH_LEAVES.getKey())
-                .add(RuBlocks.SPANISH_MOSS.getKey())
-                .add(RuBlocks.SPANISH_MOSS_PLANT.getKey())
                 .add(RuBlocks.WHITE_MAGNOLIA_LEAVES.getKey())
                 .add(RuBlocks.WILLOW_LEAVES.getKey())
         ;

@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-26T20:11:16.5009092	Tags for minecraft:item mod id regions_unexplored
+// 1.20.1	2023-08-30T20:35:10.8001466	Tags for minecraft:item mod id regions_unexplored
 60233909d57d03866332adae481b21d2782d9846 data/forge/tags/items/doors/wooden.json
 456818a12b44efd829292aeb30fd53df6a050d3d data/forge/tags/items/fences/wooden.json
 05bdd6251a8d8fbe4e0eb378a3abfc9ac7394b53 data/forge/tags/items/fence_gates/wooden.json
@@ -27,7 +27,7 @@ ef1636bcd026e93e76e76d31be2a612e3d5a9d7e data/minecraft/tags/items/dirt.json
 65945806b8f44e7eccaee9563f552129feb46faa data/minecraft/tags/items/flowers.json
 ee8f3bcae046cef41ea1e6c6a42314d291c303b2 data/minecraft/tags/items/fox_food.json
 a68b14717f1536387a374ba548616ff64d12b7b0 data/minecraft/tags/items/hanging_signs.json
-9439f6c40ba7863e688e7bf0de4164efe284b802 data/minecraft/tags/items/leaves.json
+8fb623a2159807558efeccef882efe63601d7b68 data/minecraft/tags/items/leaves.json
 6b80c8cafb5644b8a9aa2d2ac1381a6830454450 data/minecraft/tags/items/logs.json
 c014dd78566afa3acb26fc4c17986f9ab4fe9f1a data/minecraft/tags/items/logs_that_burn.json
 76558a6fcf34f9bdc0e6ecfb47c8e49d0ca93ac4 data/minecraft/tags/items/non_flammable_wood.json

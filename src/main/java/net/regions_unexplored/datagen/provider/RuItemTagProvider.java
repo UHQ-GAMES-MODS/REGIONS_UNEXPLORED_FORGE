@@ -190,8 +190,6 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.SMALL_OAK_LEAVES.get().asItem())
                 .add(RuBlocks.SOCOTRA_LEAVES.get().asItem())
                 .add(RuBlocks.ENCHANTED_BIRCH_LEAVES.get().asItem())
-                .add(RuBlocks.SPANISH_MOSS.get().asItem())
-                .add(RuBlocks.SPANISH_MOSS_PLANT.get().asItem())
                 .add(RuBlocks.WHITE_MAGNOLIA_LEAVES.get().asItem())
                 .add(RuBlocks.WILLOW_LEAVES.get().asItem())
         ;
