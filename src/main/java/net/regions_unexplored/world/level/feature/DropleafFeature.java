@@ -68,6 +68,12 @@ public class DropleafFeature extends Feature<NoneFeatureConfiguration> {
         while (level.isEmptyBlock(pos1)) {
             pos1.move(Direction.DOWN);
             size=size+1;
+            if(level.isOutsideBuildHeight(pos1)){
+                break;
+            }
+            if(pos1.getY() <= level.getMinBuildHeight()+5||pos1.getY() >= level.getMaxBuildHeight()-5){
+                break;
+            }
         }
         if(size<3){
             return true;

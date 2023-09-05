@@ -13,6 +13,8 @@
         -Made Yellow Bioshrooms in Mycotoxic Undergrowth mainly spawn on Netherrack
         -Made Glistering Meadow generate the two new Glistering plants
 +OTHER CHANGES:
+    -Fixed crash related to Dropleaf generation
+    -Fixed crash related to Brimwood Tree generation
     -Fixed Datagen adding air to leaves item tag
     -Fixed Red Maple Leaves dropping shrubs rather than saplings
     -Fixed Magnolia Woodland not disabling

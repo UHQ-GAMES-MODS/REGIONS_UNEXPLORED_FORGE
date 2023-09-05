@@ -28,65 +28,68 @@ public class TallBrimWillowFeature extends Feature<NoneFeatureConfiguration> {
 
     public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> context) {
         BlockPos pos = context.origin();
-        WorldGenLevel worldgenlevel = context.level();
+        WorldGenLevel level = context.level();
         int height = context.random().nextInt(3)+13;
 
-        if(worldgenlevel.getBlockState(pos.north()).getBlock() == RuBlocks.BRIMWOOD_LOG_MAGMA.get()){
+        if(level.getBlockState(pos.north()).getBlock() == RuBlocks.BRIMWOOD_LOG_MAGMA.get()){
             return false;
         }
-        if(worldgenlevel.getBlockState(pos.west()).getBlock() == RuBlocks.BRIMWOOD_LOG_MAGMA.get()){
+        if(level.getBlockState(pos.west()).getBlock() == RuBlocks.BRIMWOOD_LOG_MAGMA.get()){
             return false;
         }
-        if(worldgenlevel.getBlockState(pos.east()).getBlock() == RuBlocks.BRIMWOOD_LOG_MAGMA.get()){
+        if(level.getBlockState(pos.east()).getBlock() == RuBlocks.BRIMWOOD_LOG_MAGMA.get()){
             return false;
         }
-        if(worldgenlevel.getBlockState(pos.south()).getBlock() == RuBlocks.BRIMWOOD_LOG_MAGMA.get()){
+        if(level.getBlockState(pos.south()).getBlock() == RuBlocks.BRIMWOOD_LOG_MAGMA.get()){
             return false;
         }
-        if(worldgenlevel.getBlockState(pos.south().west()).getBlock() == RuBlocks.BRIMWOOD_LOG_MAGMA.get()){
+        if(level.getBlockState(pos.south().west()).getBlock() == RuBlocks.BRIMWOOD_LOG_MAGMA.get()){
             return false;
         }
-        if(worldgenlevel.getBlockState(pos.south().east()).getBlock() == RuBlocks.BRIMWOOD_LOG_MAGMA.get()){
+        if(level.getBlockState(pos.south().east()).getBlock() == RuBlocks.BRIMWOOD_LOG_MAGMA.get()){
             return false;
         }
-        if(worldgenlevel.getBlockState(pos.north().west()).getBlock() == RuBlocks.BRIMWOOD_LOG_MAGMA.get()){
+        if(level.getBlockState(pos.north().west()).getBlock() == RuBlocks.BRIMWOOD_LOG_MAGMA.get()){
             return false;
         }
-        if(worldgenlevel.getBlockState(pos.north().east()).getBlock() == RuBlocks.BRIMWOOD_LOG_MAGMA.get()){
+        if(level.getBlockState(pos.north().east()).getBlock() == RuBlocks.BRIMWOOD_LOG_MAGMA.get()){
             return false;
         }
-        if(worldgenlevel.getBlockState(pos.below()).getBlock()== RuBlocks.BRIMSPROUT_NYLIUM.get()||worldgenlevel.getBlockState(pos.below()).getBlock()== Blocks.SCULK||worldgenlevel.getBlockState(pos.below()).is(BlockTags.NYLIUM)||worldgenlevel.getBlockState(pos.below()).is(BlockTags.DIRT)){
+        if(level.getBlockState(pos.below()).getBlock()== RuBlocks.BRIMSPROUT_NYLIUM.get()||level.getBlockState(pos.below()).getBlock()== Blocks.SCULK||level.getBlockState(pos.below()).is(BlockTags.NYLIUM)||level.getBlockState(pos.below()).is(BlockTags.DIRT)){
         }
         else{
             return false;
         }
 
-        if (worldgenlevel.isEmptyBlock(pos)) {
+        if (level.isEmptyBlock(pos)) {
             BlockPos.MutableBlockPos placePos = pos.mutable();
 
             for(int i = 0; i<=height; i++){
                 if(i==1){
-                    placeRoots(worldgenlevel, placePos);
+                    placeRoots(level, placePos);
                 }
                 if(i==height-3){
-                    placeBranches(worldgenlevel, placePos);
+                    placeBranches(level, placePos);
                 }
                 if(i==height-5){
-                    placeSpine(worldgenlevel, placePos);
+                    placeSpine(level, placePos);
                 }
-                if(isReplaceable(worldgenlevel, placePos)){
+                if(isReplaceable(level, placePos)){
+                    if(level.isOutsideBuildHeight(placePos)){
+                        break;
+                    }
                     if(i==3){
-                        worldgenlevel.setBlock(placePos, RuBlocks.BRIMWOOD_LOG_MAGMA.get().defaultBlockState().setValue(MagmaLogBlock.TRANSITION_BLOCK, true), 2);
+                        level.setBlock(placePos, RuBlocks.BRIMWOOD_LOG_MAGMA.get().defaultBlockState().setValue(MagmaLogBlock.TRANSITION_BLOCK, true), 2);
                     }
                     else if(i<3){
-                        worldgenlevel.setBlock(placePos, RuBlocks.BRIMWOOD_LOG_MAGMA.get().defaultBlockState().setValue(MagmaLogBlock.TRANSITION_BLOCK, false), 2);
+                        level.setBlock(placePos, RuBlocks.BRIMWOOD_LOG_MAGMA.get().defaultBlockState().setValue(MagmaLogBlock.TRANSITION_BLOCK, false), 2);
                     }
                     else if(i>3){
-                        worldgenlevel.setBlock(placePos, RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y), 2);
+                        level.setBlock(placePos, RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y), 2);
                     }
                 }
                 if(i==height){
-                    placeLeavesUpsideDown(worldgenlevel, placePos);
+                    placeLeavesUpsideDown(level, placePos);
                 }
                 placePos.move(Direction.UP);
             }
@@ -97,68 +100,86 @@ public class TallBrimWillowFeature extends Feature<NoneFeatureConfiguration> {
         }
     }
 
+    private void placeBrimwoodLog(LevelAccessor level, BlockPos pos, Direction.Axis axis){
+        if(level.isOutsideBuildHeight(pos)){
+            return;
+        }
+        if (isReplaceable(level, pos)) {
+            level.setBlock(pos, RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, axis), 2);
+        }
+    }
+
+    private void placeBrimwoodLeaves(LevelAccessor level, BlockPos pos){
+        if(level.isOutsideBuildHeight(pos)){
+            return;
+        }
+        if (isReplaceable(level, pos)) {
+            level.setBlock(pos, RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+        }
+    }
+
     private void placeBranches(LevelAccessor level, BlockPos pos) {
         //NORTH
         if(isReplaceable(level, pos.north())){
             if(isReplaceable(level, pos.north())){
-                level.setBlock(pos.north(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                placeBrimwoodLog( level, pos.north(), Direction.Axis.Z);
             }
             if(isReplaceable(level, pos.north().above().north())){
-                level.setBlock(pos.north().above().north(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                placeBrimwoodLog( level, pos.north().above().north(), Direction.Axis.Z);
             }
             if(isReplaceable(level, pos.north().above().north().north())){
-                level.setBlock(pos.north().above().north().north(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                placeBrimwoodLog( level, pos.north().above().north().north(), Direction.Axis.Z);
             }
             if(isReplaceable(level, pos.north().above().north().north().north())){
-                level.setBlock(pos.north().above().north().north().north(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                placeBrimwoodLog( level, pos.north().above().north().north().north(), Direction.Axis.Z);
                 placeLeavesUpsideDown(level, pos.north().above().north().north().north());
             }
         }
         //SOUTH
         if(isReplaceable(level, pos.south())){
             if(isReplaceable(level, pos.south())){
-                level.setBlock(pos.south(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                placeBrimwoodLog( level, pos.south(), Direction.Axis.Z);
             }
             if(isReplaceable(level, pos.south().above().south())){
-                level.setBlock(pos.south().above().south(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                placeBrimwoodLog( level, pos.south().above().south(), Direction.Axis.Z);
             }
             if(isReplaceable(level, pos.south().above().south().south())){
-                level.setBlock(pos.south().above().south().south(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                placeBrimwoodLog( level, pos.south().above().south().south(), Direction.Axis.Z);
             }
             if(isReplaceable(level, pos.south().above().south().south().south())){
-                level.setBlock(pos.south().above().south().south().south(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                placeBrimwoodLog( level, pos.south().above().south().south().south(), Direction.Axis.Z);
                 placeLeavesUpsideDown(level, pos.south().above().south().south().south());
             }
         }
         //EAST
         if(isReplaceable(level, pos.east())){
             if(isReplaceable(level, pos.east())){
-                level.setBlock(pos.east(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.X), 2);
+                placeBrimwoodLog( level, pos.east(), Direction.Axis.X);
             }
             if(isReplaceable(level, pos.east().above().east())){
-                level.setBlock(pos.east().above().east(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.X), 2);
+                placeBrimwoodLog( level, pos.east().above().east(), Direction.Axis.X);
             }
             if(isReplaceable(level, pos.east().above().east().east())){
-                level.setBlock(pos.east().above().east().east(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.X), 2);
+                placeBrimwoodLog( level, pos.east().above().east().east(), Direction.Axis.X);
             }
             if(isReplaceable(level, pos.east().above().east().east().east())){
-                level.setBlock(pos.east().above().east().east().east(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.X), 2);
+                placeBrimwoodLog( level, pos.east().above().east().east().east(), Direction.Axis.X);
                 placeLeavesUpsideDown(level, pos.east().above().east().east().east());
             }
         }
         //WEST
         if(isReplaceable(level, pos.west())){
             if(isReplaceable(level, pos.west())){
-                level.setBlock(pos.west(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.X), 2);
+                placeBrimwoodLog( level, pos.west(), Direction.Axis.X);
             }
             if(isReplaceable(level, pos.west().above().west())){
-                level.setBlock(pos.west().above().west(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.X), 2);
+                placeBrimwoodLog( level, pos.west().above().west(), Direction.Axis.X);
             }
             if(isReplaceable(level, pos.west().above().west().west())){
-                level.setBlock(pos.west().above().west().west(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.X), 2);
+                placeBrimwoodLog( level, pos.west().above().west().west(), Direction.Axis.X);
             }
             if(isReplaceable(level, pos.west().above().west().west().west())){
-                level.setBlock(pos.west().above().west().west().west(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.X), 2);
+                placeBrimwoodLog( level, pos.west().above().west().west().west(), Direction.Axis.X);
                 placeLeavesUpsideDown(level, pos.west().above().west().west().west());
             }
         }
@@ -169,15 +190,15 @@ public class TallBrimWillowFeature extends Feature<NoneFeatureConfiguration> {
         //NORTH
         if(isReplaceable(level, pos.north())){
             if(isReplaceable(level, pos.north())){
-                level.setBlock(pos.north(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                placeBrimwoodLog( level, pos.north(), Direction.Axis.Z);
                 if(isReplaceable(level, pos.north().north())){
-                    level.setBlock(pos.north().north(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                    placeBrimwoodLog( level, pos.north().north(), Direction.Axis.Z);
                     if(isReplaceable(level, pos.north().north().north().above())){
-                        level.setBlock(pos.north().north().north().above(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                        placeBrimwoodLog( level, pos.north().north().north().above(), Direction.Axis.Z);
                         if(isReplaceable(level, pos.north().north().north().north().above())){
-                            level.setBlock(pos.north().north().north().north().above(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                            placeBrimwoodLog( level, pos.north().north().north().north().above(), Direction.Axis.Z);
                             if(isReplaceable(level, pos.north().north().north().north().above().north().above())){
-                                level.setBlock(pos.north().north().north().north().above().north().above(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                                placeBrimwoodLog( level, pos.north().north().north().north().above().north().above(), Direction.Axis.Z);
                                 placeLeavesUpsideDownGiant(level, pos.north().north().north().north().above().north().above());
                             }
                         }
@@ -188,15 +209,15 @@ public class TallBrimWillowFeature extends Feature<NoneFeatureConfiguration> {
         //SOUTH
         if(isReplaceable(level, pos.south())){
             if(isReplaceable(level, pos.south())){
-                level.setBlock(pos.south(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                placeBrimwoodLog( level, pos.south(), Direction.Axis.Z);
                 if(isReplaceable(level, pos.south().south())){
-                    level.setBlock(pos.south().south(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                    placeBrimwoodLog( level, pos.south().south(), Direction.Axis.Z);
                     if(isReplaceable(level, pos.south().south().south().above())){
-                        level.setBlock(pos.south().south().south().above(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                        placeBrimwoodLog( level, pos.south().south().south().above(), Direction.Axis.Z);
                         if(isReplaceable(level, pos.south().south().south().south().above())){
-                            level.setBlock(pos.south().south().south().south().above(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                            placeBrimwoodLog( level, pos.south().south().south().south().above(), Direction.Axis.Z);
                             if(isReplaceable(level, pos.south().south().south().south().above().south().above())){
-                                level.setBlock(pos.south().south().south().south().above().south().above(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                                placeBrimwoodLog( level, pos.south().south().south().south().above().south().above(), Direction.Axis.Z);
                                 placeLeavesUpsideDownGiant(level, pos.south().south().south().south().above().south().above());
                             }
                         }
@@ -207,15 +228,15 @@ public class TallBrimWillowFeature extends Feature<NoneFeatureConfiguration> {
         //EAST
         if(isReplaceable(level, pos.east())){
             if(isReplaceable(level, pos.east())){
-                level.setBlock(pos.east(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.X), 2);
+                placeBrimwoodLog( level, pos.east(), Direction.Axis.X);
                 if(isReplaceable(level, pos.east().east())){
-                    level.setBlock(pos.east().east(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.X), 2);
+                    placeBrimwoodLog( level, pos.east().east(), Direction.Axis.X);
                     if(isReplaceable(level, pos.east().east().east().above())){
-                        level.setBlock(pos.east().east().east().above(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.X), 2);
+                        placeBrimwoodLog( level, pos.east().east().east().above(), Direction.Axis.X);
                         if(isReplaceable(level, pos.east().east().east().east().above())){
-                            level.setBlock(pos.east().east().east().east().above(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.X), 2);
+                            placeBrimwoodLog( level, pos.east().east().east().east().above(), Direction.Axis.X);
                             if(isReplaceable(level, pos.east().east().east().east().above().east().above())){
-                                level.setBlock(pos.east().east().east().east().above().east().above(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.X), 2);
+                                placeBrimwoodLog( level, pos.east().east().east().east().above().east().above(), Direction.Axis.X);
                                 placeLeavesUpsideDownGiant(level, pos.east().east().east().east().above().east().above());
                             }
                         }
@@ -226,15 +247,15 @@ public class TallBrimWillowFeature extends Feature<NoneFeatureConfiguration> {
         //WEST
         if(isReplaceable(level, pos.west())){
             if(isReplaceable(level, pos.west())){
-                level.setBlock(pos.west(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.X), 2);
+                placeBrimwoodLog( level, pos.west(), Direction.Axis.X);
                 if(isReplaceable(level, pos.west().west())){
-                    level.setBlock(pos.west().west(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.X), 2);
+                    placeBrimwoodLog( level, pos.west().west(), Direction.Axis.X);
                     if(isReplaceable(level, pos.west().west().west().above())){
-                        level.setBlock(pos.west().west().west().above(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.X), 2);
+                        placeBrimwoodLog( level, pos.west().west().west().above(), Direction.Axis.X);
                         if(isReplaceable(level, pos.west().west().west().west().above())){
-                            level.setBlock(pos.west().west().west().west().above(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.X), 2);
+                            placeBrimwoodLog( level, pos.west().west().west().west().above(), Direction.Axis.X);
                             if(isReplaceable(level, pos.west().west().west().west().above().west().above())){
-                                level.setBlock(pos.west().west().west().west().above().west().above(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.X), 2);
+                                placeBrimwoodLog( level, pos.west().west().west().west().above().west().above(), Direction.Axis.X);
                                 placeLeavesUpsideDownGiant(level, pos.west().west().west().west().above().west().above());
                             }
                         }
@@ -244,17 +265,17 @@ public class TallBrimWillowFeature extends Feature<NoneFeatureConfiguration> {
         }
         //NORTH_WEST
         if(isReplaceable(level, pos.north().west())){
-            level.setBlock(pos.north().west(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+            placeBrimwoodLog( level, pos.north().west(), Direction.Axis.Z);
             if(isReplaceable(level, pos.north().west().north().west().above())){
-                level.setBlock(pos.north().west().north().west().above(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                placeBrimwoodLog( level, pos.north().west().north().west().above(), Direction.Axis.Z);
                 if(isReplaceable(level, pos.north().west().north().west().north().west().above())){
-                    level.setBlock(pos.north().west().north().west().north().west().above(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                    placeBrimwoodLog( level, pos.north().west().north().west().north().west().above(), Direction.Axis.Z);
                     if(isReplaceable(level, pos.north().west().north().west().north().west().above().north().west().above())){
-                        level.setBlock(pos.north().west().north().west().north().west().above().north().west().above(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                        placeBrimwoodLog( level, pos.north().west().north().west().north().west().above().north().west().above(), Direction.Axis.Z);
                         if(isReplaceable(level, pos.north().west().north().west().north().west().above().north().west().above().north().west())){
-                            level.setBlock(pos.north().west().north().west().north().west().above().north().west().above().north().west(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                            placeBrimwoodLog( level, pos.north().west().north().west().north().west().above().north().west().above().north().west(), Direction.Axis.Z);
                             if(isReplaceable(level, pos.north().west().north().west().north().west().above().north().west().above().north().west().above().north().west())){
-                                level.setBlock(pos.north().west().north().west().north().west().above().north().west().above().north().west().above().north().west(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                                placeBrimwoodLog( level, pos.north().west().north().west().north().west().above().north().west().above().north().west().above().north().west(), Direction.Axis.Z);
                                 placeLeavesUpsideDownGiant(level, pos.north().west().north().west().north().west().above().north().west().above().north().west().above().north().west());
                             }
                         }
@@ -264,17 +285,17 @@ public class TallBrimWillowFeature extends Feature<NoneFeatureConfiguration> {
         }
         //SOUTH_WEST
         if(isReplaceable(level, pos.south().west())){
-            level.setBlock(pos.south().west(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+            placeBrimwoodLog( level, pos.south().west(), Direction.Axis.Z);
             if(isReplaceable(level, pos.south().west().south().west().above())){
-                level.setBlock(pos.south().west().south().west().above(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                placeBrimwoodLog( level, pos.south().west().south().west().above(), Direction.Axis.Z);
                 if(isReplaceable(level, pos.south().west().south().west().south().west().above())){
-                    level.setBlock(pos.south().west().south().west().south().west().above(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                    placeBrimwoodLog( level, pos.south().west().south().west().south().west().above(), Direction.Axis.Z);
                     if(isReplaceable(level, pos.south().west().south().west().south().west().above().south().west().above())){
-                        level.setBlock(pos.south().west().south().west().south().west().above().south().west().above(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                        placeBrimwoodLog( level, pos.south().west().south().west().south().west().above().south().west().above(), Direction.Axis.Z);
                         if(isReplaceable(level, pos.south().west().south().west().south().west().above().south().west().above().south().west())){
-                            level.setBlock(pos.south().west().south().west().south().west().above().south().west().above().south().west(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                            placeBrimwoodLog( level, pos.south().west().south().west().south().west().above().south().west().above().south().west(), Direction.Axis.Z);
                             if(isReplaceable(level, pos.south().west().south().west().south().west().above().south().west().above().south().west().above().south().west())){
-                                level.setBlock(pos.south().west().south().west().south().west().above().south().west().above().south().west().above().south().west(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                                placeBrimwoodLog( level, pos.south().west().south().west().south().west().above().south().west().above().south().west().above().south().west(), Direction.Axis.Z);
                                 placeLeavesUpsideDownGiant(level, pos.south().west().south().west().south().west().above().south().west().above().south().west().above().south().west());
                             }
                         }
@@ -284,17 +305,17 @@ public class TallBrimWillowFeature extends Feature<NoneFeatureConfiguration> {
         }
         //NORTH_EAST
         if(isReplaceable(level, pos.north().east())){
-            level.setBlock(pos.north().east(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+            placeBrimwoodLog( level, pos.north().east(), Direction.Axis.Z);
             if(isReplaceable(level, pos.north().east().north().east().above())){
-                level.setBlock(pos.north().east().north().east().above(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                placeBrimwoodLog( level, pos.north().east().north().east().above(), Direction.Axis.Z);
                 if(isReplaceable(level, pos.north().east().north().east().north().east().above())){
-                    level.setBlock(pos.north().east().north().east().north().east().above(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                    placeBrimwoodLog( level, pos.north().east().north().east().north().east().above(), Direction.Axis.Z);
                     if(isReplaceable(level, pos.north().east().north().east().north().east().above().north().east().above())){
-                        level.setBlock(pos.north().east().north().east().north().east().above().north().east().above(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                        placeBrimwoodLog( level, pos.north().east().north().east().north().east().above().north().east().above(), Direction.Axis.Z);
                         if(isReplaceable(level, pos.north().east().north().east().north().east().above().north().east().above().north().east())){
-                            level.setBlock(pos.north().east().north().east().north().east().above().north().east().above().north().east(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                            placeBrimwoodLog( level, pos.north().east().north().east().north().east().above().north().east().above().north().east(), Direction.Axis.Z);
                             if(isReplaceable(level, pos.north().east().north().east().north().east().above().north().east().above().north().east().above().north().east())){
-                                level.setBlock(pos.north().east().north().east().north().east().above().north().east().above().north().east().above().north().east(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                                placeBrimwoodLog( level, pos.north().east().north().east().north().east().above().north().east().above().north().east().above().north().east(), Direction.Axis.Z);
                                 placeLeavesUpsideDownGiant(level, pos.north().east().north().east().north().east().above().north().east().above().north().east().above().north().east());
                             }
                         }
@@ -304,17 +325,17 @@ public class TallBrimWillowFeature extends Feature<NoneFeatureConfiguration> {
         }
         //SOUTH_EAST
         if(isReplaceable(level, pos.south().east())){
-            level.setBlock(pos.south().east(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+            placeBrimwoodLog( level, pos.south().east(), Direction.Axis.Z);
             if(isReplaceable(level, pos.south().east().south().east().above())){
-                level.setBlock(pos.south().east().south().east().above(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                placeBrimwoodLog( level, pos.south().east().south().east().above(), Direction.Axis.Z);
                 if(isReplaceable(level, pos.south().east().south().east().south().east().above())){
-                    level.setBlock(pos.south().east().south().east().south().east().above(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                    placeBrimwoodLog( level, pos.south().east().south().east().south().east().above(), Direction.Axis.Z);
                     if(isReplaceable(level, pos.south().east().south().east().south().east().above().south().east().above())){
-                        level.setBlock(pos.south().east().south().east().south().east().above().south().east().above(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                        placeBrimwoodLog( level, pos.south().east().south().east().south().east().above().south().east().above(), Direction.Axis.Z);
                         if(isReplaceable(level, pos.south().east().south().east().south().east().above().south().east().above().south().east())){
-                            level.setBlock(pos.south().east().south().east().south().east().above().south().east().above().south().east(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                            placeBrimwoodLog( level, pos.south().east().south().east().south().east().above().south().east().above().south().east(), Direction.Axis.Z);
                             if(isReplaceable(level, pos.south().east().south().east().south().east().above().south().east().above().south().east().above().south().east())){
-                                level.setBlock(pos.south().east().south().east().south().east().above().south().east().above().south().east().above().south().east(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                                placeBrimwoodLog( level, pos.south().east().south().east().south().east().above().south().east().above().south().east().above().south().east(), Direction.Axis.Z);
                                 placeLeavesUpsideDownGiant(level, pos.south().east().south().east().south().east().above().south().east().above().south().east().above().south().east());
                             }
                         }
@@ -327,19 +348,19 @@ public class TallBrimWillowFeature extends Feature<NoneFeatureConfiguration> {
     private void placeSpine(LevelAccessor level, BlockPos pos) {
         //NORTH
         if(isReplaceable(level, pos.north())){
-                level.setBlock(pos.north(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                placeBrimwoodLog( level, pos.north(), Direction.Axis.Z);
         }
         //SOUTH
         if(isReplaceable(level, pos.south())){
-                level.setBlock(pos.south(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                placeBrimwoodLog( level, pos.south(), Direction.Axis.Z);
         }
         //EAST
         if(isReplaceable(level, pos.east())){
-                level.setBlock(pos.east(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.X), 2);
+                placeBrimwoodLog( level, pos.east(), Direction.Axis.X);
         }
         //WEST
         if(isReplaceable(level, pos.west())){
-                level.setBlock(pos.west(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.X), 2);
+                placeBrimwoodLog( level, pos.west(), Direction.Axis.X);
         }
     }
 
@@ -349,18 +370,18 @@ public class TallBrimWillowFeature extends Feature<NoneFeatureConfiguration> {
         else{
             if(isReplaceable(level, pos.north())){
                 if(isReplaceable(level, pos.north().north().north())){
-                    level.setBlock(pos.north().north().north(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                    placeBrimwoodLog( level, pos.north().north().north(), Direction.Axis.Z);
                     if(isReplaceable(level, pos.north().north())){
                     }
                 }
                 if(isReplaceable(level, pos.north().below().north())){
-                    level.setBlock(pos.north().below().north(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y), 2);
+                    placeBrimwoodLog( level, pos.north().below().north(), Direction.Axis.Y);
                     if(isReplaceable(level, pos.north().below().north().below())){
-                        level.setBlock(pos.north().below().north().below(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y), 2);
+                        placeBrimwoodLog( level, pos.north().below().north().below(), Direction.Axis.Y);
                         if(isReplaceable(level, pos.north().below().north().below().below())){
-                            level.setBlock(pos.north().below().north().below().below(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y), 2);
+                            placeBrimwoodLog( level, pos.north().below().north().below().below(), Direction.Axis.Y);
                             if(isReplaceable(level, pos.north().below().north().below().below().below())){
-                                level.setBlock(pos.north().below().north().below().below().below(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y), 2);
+                                placeBrimwoodLog( level, pos.north().below().north().below().below().below(), Direction.Axis.Y);
                             }
                         }
                     }
@@ -372,18 +393,18 @@ public class TallBrimWillowFeature extends Feature<NoneFeatureConfiguration> {
         else{
             if(isReplaceable(level, pos.south())){
                 if(isReplaceable(level, pos.south().south().south())){
-                    level.setBlock(pos.south().south().south(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), 2);
+                    placeBrimwoodLog( level, pos.south().south().south(), Direction.Axis.Z);
                     if(isReplaceable(level, pos.south().south())){
                     }
                 }
                 if(isReplaceable(level, pos.south().below().south())){
-                    level.setBlock(pos.south().below().south(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y), 2);
+                    placeBrimwoodLog( level, pos.south().below().south(), Direction.Axis.Y);
                     if(isReplaceable(level, pos.south().below().south().below())){
-                        level.setBlock(pos.south().below().south().below(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y), 2);
+                        placeBrimwoodLog( level, pos.south().below().south().below(), Direction.Axis.Y);
                         if(isReplaceable(level, pos.south().below().south().below().below())){
-                            level.setBlock(pos.south().below().south().below().below(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y), 2);
+                            placeBrimwoodLog( level, pos.south().below().south().below().below(), Direction.Axis.Y);
                             if(isReplaceable(level, pos.south().below().south().below().below().below())){
-                                level.setBlock(pos.south().below().south().below().below().below(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y), 2);
+                                placeBrimwoodLog( level, pos.south().below().south().below().below().below(), Direction.Axis.Y);
                             }
                         }
                     }
@@ -395,18 +416,18 @@ public class TallBrimWillowFeature extends Feature<NoneFeatureConfiguration> {
         else{
             if(isReplaceable(level, pos.east())){
                 if(isReplaceable(level, pos.east().east().east())){
-                    level.setBlock(pos.east().east().east(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.X), 2);
+                    placeBrimwoodLog( level, pos.east().east().east(), Direction.Axis.X);
                     if(isReplaceable(level, pos.east().east())){
                     }
                 }
                 if(isReplaceable(level, pos.east().below().east())){
-                    level.setBlock(pos.east().below().east(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y), 2);
+                    placeBrimwoodLog( level, pos.east().below().east(), Direction.Axis.Y);
                     if(isReplaceable(level, pos.east().below().east().below())){
-                        level.setBlock(pos.east().below().east().below(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y), 2);
+                        placeBrimwoodLog( level, pos.east().below().east().below(), Direction.Axis.Y);
                         if(isReplaceable(level, pos.east().below().east().below().below())){
-                            level.setBlock(pos.east().below().east().below().below(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y), 2);
+                            placeBrimwoodLog( level, pos.east().below().east().below().below(), Direction.Axis.Y);
                             if(isReplaceable(level, pos.east().below().east().below().below().below())){
-                                level.setBlock(pos.east().below().east().below().below().below(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y), 2);
+                                placeBrimwoodLog( level, pos.east().below().east().below().below().below(), Direction.Axis.Y);
                             }
                         }
                     }
@@ -418,18 +439,18 @@ public class TallBrimWillowFeature extends Feature<NoneFeatureConfiguration> {
         else{
             if(isReplaceable(level, pos.west())){
                 if(isReplaceable(level, pos.west().west().west())){
-                    level.setBlock(pos.west().west().west(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.X), 2);
+                    placeBrimwoodLog( level, pos.west().west().west(), Direction.Axis.X);
                     if(isReplaceable(level, pos.west().west())){
                     }
                 }
                 if(isReplaceable(level, pos.west().below().west())){
-                    level.setBlock(pos.west().below().west(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y), 2);
+                    placeBrimwoodLog( level, pos.west().below().west(), Direction.Axis.Y);
                     if(isReplaceable(level, pos.west().below().west().below())){
-                        level.setBlock(pos.west().below().west().below(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y), 2);
+                        placeBrimwoodLog( level, pos.west().below().west().below(), Direction.Axis.Y);
                         if(isReplaceable(level, pos.west().below().west().below().below())){
-                            level.setBlock(pos.west().below().west().below().below(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y), 2);
+                            placeBrimwoodLog( level, pos.west().below().west().below().below(), Direction.Axis.Y);
                             if(isReplaceable(level, pos.west().below().west().below().below().below())){
-                                level.setBlock(pos.west().below().west().below().below().below(), RuBlocks.BRIMWOOD_LOG.get().defaultBlockState().setValue(RotatedPillarBlock.AXIS, Direction.Axis.Y), 2);
+                                placeBrimwoodLog( level, pos.west().below().west().below().below().below(), Direction.Axis.Y);
                             }
                         }
                     }
@@ -440,114 +461,114 @@ public class TallBrimWillowFeature extends Feature<NoneFeatureConfiguration> {
 
     private void placeLeavesUpsideDown(LevelAccessor level, BlockPos pos) {
         if (isReplaceable(level, pos)) {
-            level.setBlock(pos, RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+            placeBrimwoodLeaves(level, pos);
         }
         //TOP
         if (isReplaceable(level, pos.above())) {
-            level.setBlock(pos.above(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+            placeBrimwoodLeaves(level, pos.above());
         }
         if (isReplaceable(level, pos.above().north())) {
-            level.setBlock(pos.above().north(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+            placeBrimwoodLeaves(level, pos.above().north());
         }
         if (isReplaceable(level, pos.above().north().east())) {
-            level.setBlock(pos.above().north().east(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+            placeBrimwoodLeaves(level, pos.above().north().east());
         }
         if (isReplaceable(level, pos.above().north().west())) {
-            level.setBlock(pos.above().north().west(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+            placeBrimwoodLeaves(level, pos.above().north().west());
         }
         if (isReplaceable(level, pos.above().south())) {
-            level.setBlock(pos.above().south(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+            placeBrimwoodLeaves(level, pos.above().south());
         }
         if (isReplaceable(level, pos.above().south().east())) {
-            level.setBlock(pos.above().south().east(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+            placeBrimwoodLeaves(level, pos.above().south().east());
         }
         if (isReplaceable(level, pos.above().south().west())) {
-            level.setBlock(pos.above().south().west(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+            placeBrimwoodLeaves(level, pos.above().south().west());
         }
         if (isReplaceable(level, pos.above().east())) {
-            level.setBlock(pos.above().east(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+            placeBrimwoodLeaves(level, pos.above().east());
         }
         if (isReplaceable(level, pos.above().west())) {
-            level.setBlock(pos.above().west(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+            placeBrimwoodLeaves(level, pos.above().west());
         }
         //NORTH
         if (isReplaceable(level, pos.north())) {
-            level.setBlock(pos.north(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+            placeBrimwoodLeaves(level, pos.north());
         }
         if (isReplaceable(level, pos.north().north().above())) {
-            level.setBlock(pos.north().north().above(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+            placeBrimwoodLeaves(level, pos.north().north().above());
             addVine(level,pos.north().north().above());
         }
         //NORTH-WEST
         if (isReplaceable(level, pos.north().west())) {
-            level.setBlock(pos.north().west(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+            placeBrimwoodLeaves(level, pos.north().west());
         }
         if (isReplaceable(level, pos.north().north().west().above())) {
-            level.setBlock(pos.north().north().west().above(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+            placeBrimwoodLeaves(level, pos.north().north().west().above());
             addVine(level,pos.north().north().west().above());
         }
         if (isReplaceable(level, pos.north().west().west().above())) {
-            level.setBlock(pos.north().west().west().above(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+            placeBrimwoodLeaves(level, pos.north().west().west().above());
             addVine(level,pos.north().west().west().above());
         }
         //WEST
         if (isReplaceable(level, pos.west())) {
-            level.setBlock(pos.west(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+            placeBrimwoodLeaves(level, pos.west());
         }
         if (isReplaceable(level, pos.west().west().above())) {
-            level.setBlock(pos.west().west().above(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+            placeBrimwoodLeaves(level, pos.west().west().above());
             addVine(level,pos.west().west().above());
         }
         //SOUTH-WEST
         if (isReplaceable(level, pos.south().west())) {
-            level.setBlock(pos.south().west(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+            placeBrimwoodLeaves(level, pos.south().west());
         }
         if (isReplaceable(level, pos.south().south().west().above())) {
-            level.setBlock(pos.south().south().west().above(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+            placeBrimwoodLeaves(level, pos.south().south().west().above());
             addVine(level,pos.south().south().west().above());
         }
         if (isReplaceable(level, pos.south().west().west().above())) {
-            level.setBlock(pos.south().west().west().above(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+            placeBrimwoodLeaves(level, pos.south().west().west().above());
             addVine(level,pos.south().west().west().above());
         }
         //SOUTH
         if (isReplaceable(level, pos.south())) {
-            level.setBlock(pos.south(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+            placeBrimwoodLeaves(level, pos.south());
         }
         if (isReplaceable(level, pos.south().south().above())) {
-            level.setBlock(pos.south().south().above(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+            placeBrimwoodLeaves(level, pos.south().south().above());
             addVine(level,pos.south().south().above());
         }
         //SOUTH-EAST
         if (isReplaceable(level, pos.south().east())) {
-            level.setBlock(pos.south().east(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+            placeBrimwoodLeaves(level, pos.south().east());
         }
         if (isReplaceable(level, pos.south().south().east().above())) {
-            level.setBlock(pos.south().south().east().above(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+            placeBrimwoodLeaves(level, pos.south().south().east().above());
             addVine(level,pos.south().south().east().above());
         }
         if (isReplaceable(level, pos.south().east().east().above())) {
-            level.setBlock(pos.south().east().east().above(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+            placeBrimwoodLeaves(level, pos.south().east().east().above());
             addVine(level,pos.south().east().east().above());
         }
         //EAST
         if (isReplaceable(level, pos.east())) {
-            level.setBlock(pos.east(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+            placeBrimwoodLeaves(level, pos.east());
         }
         if (isReplaceable(level, pos.east().east().above())) {
-            level.setBlock(pos.east().east().above(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+            placeBrimwoodLeaves(level, pos.east().east().above());
             addVine(level,pos.east().east().above());
         }
         //NORTH-EAST
         if (isReplaceable(level, pos.north().east())) {
-            level.setBlock(pos.north().east(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+            placeBrimwoodLeaves(level, pos.north().east());
         }
         if (isReplaceable(level, pos.north().north().east().above())) {
-            level.setBlock(pos.north().north().east().above(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+            placeBrimwoodLeaves(level, pos.north().north().east().above());
             addVine(level,pos.north().north().east().above());
         }
         if (isReplaceable(level, pos.north().east().east().above())) {
-            level.setBlock(pos.north().east().east().above(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+            placeBrimwoodLeaves(level, pos.north().east().east().above());
             addVine(level,pos.north().east().east().above());
         }
     }
@@ -555,251 +576,251 @@ public class TallBrimWillowFeature extends Feature<NoneFeatureConfiguration> {
     private void placeLeavesUpsideDownGiant(LevelAccessor level, BlockPos pos) {
         BlockPos pos2 = pos.above();
         if (isReplaceable(level, pos)) {
-            level.setBlock(pos, RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+            placeBrimwoodLeaves(level, pos);
         }
 
         //NORTH
         if (!level.isOutsideBuildHeight(pos)) {
             if (isReplaceable(level, pos.north())) {
-                level.setBlock(pos.north(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos.north());
             }
             if (isReplaceable(level, pos.north().north())) {
-                level.setBlock(pos.north().north(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos.north().north());
             }
             //NORTH-WEST
             if (isReplaceable(level, pos.north().west())) {
-                level.setBlock(pos.north().west(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos.north().west());
             }
             if (isReplaceable(level, pos.north().north().west())) {
-                level.setBlock(pos.north().north().west(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos.north().north().west());
             }
             if (isReplaceable(level, pos.north().west().west())) {
-                level.setBlock(pos.north().west().west(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos.north().west().west());
             }
             //WEST
             if (isReplaceable(level, pos.west())) {
-                level.setBlock(pos.west(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos.west());
             }
             if (isReplaceable(level, pos.west().west())) {
-                level.setBlock(pos.west().west(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos.west().west());
             }
             //SOUTH-WEST
             if (isReplaceable(level, pos.south().west())) {
-                level.setBlock(pos.south().west(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos.south().west());
             }
             if (isReplaceable(level, pos.south().south().west())) {
-                level.setBlock(pos.south().south().west(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos.south().south().west());
             }
             if (isReplaceable(level, pos.south().west().west())) {
-                level.setBlock(pos.south().west().west(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos.south().west().west());
             }
             //SOUTH
             if (isReplaceable(level, pos.south())) {
-                level.setBlock(pos.south(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos.south());
             }
             if (isReplaceable(level, pos.south().south())) {
-                level.setBlock(pos.south().south(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos.south().south());
             }
             //SOUTH-EAST
             if (isReplaceable(level, pos.south().east())) {
-                level.setBlock(pos.south().east(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos.south().east());
             }
             if (isReplaceable(level, pos.south().south().east())) {
-                level.setBlock(pos.south().south().east(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos.south().south().east());
             }
             if (isReplaceable(level, pos.south().east().east())) {
-                level.setBlock(pos.south().east().east(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos.south().east().east());
             }
             //EAST
             if (isReplaceable(level, pos.east())) {
-                level.setBlock(pos.east(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos.east());
             }
             if (isReplaceable(level, pos.east().east())) {
-                level.setBlock(pos.east().east(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos.east().east());
             }
             //NORTH-EAST
             if (isReplaceable(level, pos.north().east())) {
-                level.setBlock(pos.north().east(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos.north().east());
             }
             if (isReplaceable(level, pos.north().north().east())) {
-                level.setBlock(pos.north().north().east(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos.north().north().east());
             }
             if (isReplaceable(level, pos.north().east().east())) {
-                level.setBlock(pos.north().east().east(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos.north().east().east());
             }
         }
 
 
         if (!level.isOutsideBuildHeight(pos2)) {
             if (isReplaceable(level, pos2.north())) {
-                level.setBlock(pos2.north(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.north());
             }
             if (isReplaceable(level, pos2.north().north())) {
-                level.setBlock(pos2.north().north(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.north().north());
             }
             if (isReplaceable(level, pos2.north().north().north())) {
-                level.setBlock(pos2.north().north().north(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.north().north().north());
                 addVineGiant(level, pos2.north().north().north());
             }
             if (isReplaceable(level, pos2.east().north().north().north())) {
-                level.setBlock(pos2.east().north().north().north(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.east().north().north().north());
                 addVineGiant(level, pos2.east().north().north().north());
             }
             if (isReplaceable(level, pos2.east().east().north().north().north())) {
-                level.setBlock(pos2.east().east().north().north().north(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.east().east().north().north().north());
                 addVineGiant(level, pos2.east().east().north().north().north());
             }
             if (isReplaceable(level, pos2.west().north().north().north())) {
-                level.setBlock(pos2.west().north().north().north(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.west().north().north().north());
                 addVineGiant(level, pos2.west().north().north().north());
             }
             if (isReplaceable(level, pos2.west().west().north().north().north())) {
-                level.setBlock(pos2.west().west().north().north().north(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.west().west().north().north().north());
                 addVineGiant(level, pos2.west().west().north().north().north());
             }
             //NORTH-WEST
             if (isReplaceable(level, pos2.north().west())) {
-                level.setBlock(pos2.north().west(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.north().west());
             }
             if (isReplaceable(level, pos2.north().north().west())) {
-                level.setBlock(pos2.north().north().west(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.north().north().west());
                 addVineGiant(level, pos2.north().north().west());
             }
             if (isReplaceable(level, pos2.north().west().west())) {
-                level.setBlock(pos2.north().west().west(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.north().west().west());
                 addVineGiant(level, pos2.north().west().west());
             }
             if (isReplaceable(level, pos2.north().north().west().west())) {
-                level.setBlock(pos2.north().north().west().west(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.north().north().west().west());
                 addVineGiant(level, pos2.north().north().west().west());
             }
             //WEST
             if (isReplaceable(level, pos2.west())) {
-                level.setBlock(pos2.west(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.west());
             }
             if (isReplaceable(level, pos2.west().west())) {
-                level.setBlock(pos2.west().west(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.west().west());
             }
             if (isReplaceable(level, pos2.west().west().west())) {
-                level.setBlock(pos2.west().west().west(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.west().west().west());
                 addVineGiant(level, pos2.west().west().west());
             }
             if (isReplaceable(level, pos2.south().west().west().west())) {
-                level.setBlock(pos2.south().west().west().west(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.south().west().west().west());
                 addVineGiant(level, pos2.south().west().west().west());
             }
             if (isReplaceable(level, pos2.south().south().west().west().west())) {
-                level.setBlock(pos2.south().south().west().west().west(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.south().south().west().west().west());
                 addVineGiant(level, pos2.south().south().west().west().west());
             }
             if (isReplaceable(level, pos2.north().west().west().west())) {
-                level.setBlock(pos2.north().west().west().west(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.north().west().west().west());
                 addVineGiant(level, pos2.north().west().west().west());
             }
             if (isReplaceable(level, pos2.north().north().west().west().west())) {
-                level.setBlock(pos2.north().north().west().west().west(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.north().north().west().west().west());
                 addVineGiant(level, pos2.north().north().west().west().west());
             }
             //SOUTH-WEST
             if (isReplaceable(level, pos2.south().west())) {
-                level.setBlock(pos2.south().west(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.south().west());
             }
             if (isReplaceable(level, pos2.south().south().west())) {
-                level.setBlock(pos2.south().south().west(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.south().south().west());
                 addVineGiant(level, pos2.south().south().west());
             }
             if (isReplaceable(level, pos2.south().west().west())) {
-                level.setBlock(pos2.south().west().west(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.south().west().west());
                 addVineGiant(level, pos2.south().west().west());
             }
             if (isReplaceable(level, pos2.south().south().west().west())) {
-                level.setBlock(pos2.south().south().west().west(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.south().south().west().west());
                 addVineGiant(level, pos2.south().south().west().west());
             }
             //SOUTH
             if (isReplaceable(level, pos2.south())) {
-                level.setBlock(pos2.south(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.south());
             }
             if (isReplaceable(level, pos2.south().south())) {
-                level.setBlock(pos2.south().south(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.south().south());
             }
             if (isReplaceable(level, pos2.south().south().south())) {
-                level.setBlock(pos2.south().south().south(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.south().south().south());
                 addVineGiant(level, pos2.south().south().south());
             }
             if (isReplaceable(level, pos2.east().south().south().south())) {
-                level.setBlock(pos2.east().south().south().south(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.east().south().south().south());
                 addVineGiant(level, pos2.east().south().south().south());
             }
             if (isReplaceable(level, pos2.east().east().south().south().south())) {
-                level.setBlock(pos2.east().east().south().south().south(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.east().east().south().south().south());
                 addVineGiant(level, pos2.east().east().south().south().south());
             }
             if (isReplaceable(level, pos2.west().south().south().south())) {
-                level.setBlock(pos2.west().south().south().south(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.west().south().south().south());
                 addVineGiant(level, pos2.west().south().south().south());
             }
             if (isReplaceable(level, pos2.west().west().south().south().south())) {
-                level.setBlock(pos2.west().west().south().south().south(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.west().west().south().south().south());
                 addVineGiant(level, pos2.west().west().south().south().south());
             }
             //SOUTH-EAST
             if (isReplaceable(level, pos2.south().east())) {
-                level.setBlock(pos2.south().east(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.south().east());
             }
             if (isReplaceable(level, pos2.south().south().east())) {
-                level.setBlock(pos2.south().south().east(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.south().south().east());
                 addVineGiant(level, pos2.south().south().east());
             }
             if (isReplaceable(level, pos2.south().east().east())) {
-                level.setBlock(pos2.south().east().east(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.south().east().east());
                 addVineGiant(level, pos2.south().east().east());
             }
             if (isReplaceable(level, pos2.south().south().east().east())) {
-                level.setBlock(pos2.south().south().east().east(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.south().south().east().east());
                 addVineGiant(level, pos2.south().south().east().east());
             }
             //EAST
             if (isReplaceable(level, pos2.east())) {
-                level.setBlock(pos2.east(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.east());
             }
             if (isReplaceable(level, pos2.east().east())) {
-                level.setBlock(pos2.east().east(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.east().east());
             }
             if (isReplaceable(level, pos2.east().east().east())) {
-                level.setBlock(pos2.east().east().east(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.east().east().east());
                 addVineGiant(level, pos2.east().east().east());
             }
             if (isReplaceable(level, pos2.south().east().east().east())) {
-                level.setBlock(pos2.south().east().east().east(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.south().east().east().east());
                 addVineGiant(level, pos2.south().east().east().east());
             }
             if (isReplaceable(level, pos2.south().south().east().east().east())) {
-                level.setBlock(pos2.south().south().east().east().east(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.south().south().east().east().east());
                 addVineGiant(level, pos2.south().south().east().east().east());
             }
             if (isReplaceable(level, pos2.north().east().east().east())) {
-                level.setBlock(pos2.north().east().east().east(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.north().east().east().east());
                 addVineGiant(level, pos2.north().east().east().east());
             }
             if (isReplaceable(level, pos2.north().north().east().east().east())) {
-                level.setBlock(pos2.north().north().east().east().east(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.north().north().east().east().east());
                 addVineGiant(level, pos2.north().north().east().east().east());
             }
             //NORTH-EAST
             if (isReplaceable(level, pos2.north().east())) {
-                level.setBlock(pos2.north().east(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.north().east());
             }
             if (isReplaceable(level, pos2.north().north().east())) {
-                level.setBlock(pos2.north().north().east(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.north().north().east());
                 addVineGiant(level, pos2.north().north().east());
             }
             if (isReplaceable(level, pos2.north().east().east())) {
-                level.setBlock(pos2.north().east().east(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.north().east().east());
                 addVineGiant(level, pos2.north().east().east());
             }
             if (isReplaceable(level, pos2.north().north().east().east())) {
-                level.setBlock(pos2.north().north().east().east(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                placeBrimwoodLeaves(level, pos2.north().north().east().east());
                 addVineGiant(level, pos2.north().north().east().east());
             }
         }
@@ -812,16 +833,16 @@ public class TallBrimWillowFeature extends Feature<NoneFeatureConfiguration> {
         for(int i = 0; i<=size; i++){
             if(isAir(level, place)){
                 if(i==size){
-                    level.setBlock(place, RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                    placeBrimwoodLeaves(level, place);
                 }
                 else {
-                    level.setBlock(place, RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                    placeBrimwoodLeaves(level, place);
                 }
                 place = place.above();
             }
             else{
                 if(i!=0){
-                    level.setBlock(place.below(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                    placeBrimwoodLeaves(level, place.below());
                 }
                 break;
             }
@@ -835,16 +856,16 @@ public class TallBrimWillowFeature extends Feature<NoneFeatureConfiguration> {
         for(int i = 0; i<=size; i++){
             if(isAir(level, place)){
                 if(i==size){
-                    level.setBlock(place, RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                    placeBrimwoodLeaves(level, place);
                 }
                 else {
-                    level.setBlock(place, RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                    placeBrimwoodLeaves(level, place);
                 }
                 place = place.above();
             }
             else{
                 if(i!=0){
-                    level.setBlock(place.below(), RuBlocks.BRIMWOOD_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true), 2);
+                    placeBrimwoodLeaves(level, place.below());
                 }
                 break;
             }
