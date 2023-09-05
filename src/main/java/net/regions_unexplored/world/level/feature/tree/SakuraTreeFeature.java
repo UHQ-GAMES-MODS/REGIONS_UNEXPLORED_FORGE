@@ -414,10 +414,9 @@ public class SakuraTreeFeature extends Feature<RuTreeConfiguration> {
     }
 
     public void placeRoot(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        Random random = new Random();
-        int rd = random.nextInt(2)+4;
+        int rd = 2;
         int i = 0;
-        BlockPos.MutableBlockPos placePos = pos.mutable();
+        BlockPos.MutableBlockPos placePos = pos.below().mutable();
         while(i<=rd){
             if(level.getBlockState(placePos).canBeReplaced()&&level.getBlockState(placePos.above()).is(BlockTags.DIRT)){
                 level.setBlock(placePos, Blocks.HANGING_ROOTS.defaultBlockState(), 2);
