@@ -64,7 +64,7 @@ public class RuNyliumBlock extends Block implements BonemealableBlock {
         }
 
         else if (blockState.is(RuBlocks.COBALT_NYLIUM.get())) {
-           this.place(registry, RuNetherFeatures.GLISTERING_NYLIUM_BONEMEAL, level, chunkgenerator, random, blockPos);
+           this.place(registry, RuNetherFeatures.COBALT_NYLIUM_BONEMEAL, level, chunkgenerator, random, blockPos);
         }
 
     }

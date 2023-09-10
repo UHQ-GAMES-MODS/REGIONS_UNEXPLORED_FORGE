@@ -3,11 +3,9 @@ package net.regions_unexplored.world.level.block.plant.dusktrap;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
@@ -15,11 +13,11 @@ import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraftforge.common.PlantType;
 import net.regions_unexplored.world.level.block.state.properties.RuBlockStateProperties;
 
-public class DuskTrapBlocks extends BaseDuskTrapBlock {
+public class DuskTrapBlock extends BaseDuskTrapBlock {
     public static final BooleanProperty POWERED = RuBlockStateProperties.CLOSED;
     private final Sensitivity sensitivity;
 
-    public DuskTrapBlocks(Sensitivity p_273523_, Properties p_273571_) {
+    public DuskTrapBlock(Sensitivity p_273523_, Properties p_273571_) {
         super(p_273571_);
         this.registerDefaultState(this.stateDefinition.any().setValue(POWERED, Boolean.valueOf(false)).setValue(HALF, DoubleBlockHalf.LOWER));
         this.sensitivity = p_273523_;
