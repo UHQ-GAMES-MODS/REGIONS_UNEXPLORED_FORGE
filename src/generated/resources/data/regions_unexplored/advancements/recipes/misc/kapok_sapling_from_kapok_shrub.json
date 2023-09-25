@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_kapok_shrub",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_kapok_shrub"
     ]
   ],
   "rewards": {

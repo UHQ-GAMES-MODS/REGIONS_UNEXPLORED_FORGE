@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_blackwood_shrub",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_blackwood_shrub"
     ]
   ],
   "rewards": {

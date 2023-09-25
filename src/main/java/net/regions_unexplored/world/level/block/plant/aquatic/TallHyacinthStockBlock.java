@@ -2,6 +2,7 @@ package net.regions_unexplored.world.level.block.plant.aquatic;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
@@ -21,6 +22,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.world.level.block.state.properties.RuBlockStateProperties;
 import net.regions_unexplored.world.level.block.state.properties.TallHyacinthStockShape;
+import org.jetbrains.annotations.Nullable;
 
 public class TallHyacinthStockBlock extends Block implements LiquidBlockContainer, net.minecraftforge.common.IForgeShearable {
     public static final EnumProperty<TallHyacinthStockShape> SHAPE = RuBlockStateProperties.TALL_HYACINTH_STOCK_SHAPE;
@@ -101,7 +103,8 @@ public class TallHyacinthStockBlock extends Block implements LiquidBlockContaine
         return Fluids.WATER.getSource(false);
     }
 
-    public boolean canPlaceLiquid(BlockGetter p_154505_, BlockPos p_154506_, BlockState p_154507_, Fluid p_154508_) {
+    @Override
+    public boolean canPlaceLiquid(@Nullable Player p_300220_, BlockGetter p_54766_, BlockPos p_54767_, BlockState p_54768_, Fluid p_54769_) {
         return false;
     }
 

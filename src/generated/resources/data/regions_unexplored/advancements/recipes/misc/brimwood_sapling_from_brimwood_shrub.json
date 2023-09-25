@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_brimwood_shrub",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_brimwood_shrub"
     ]
   ],
   "rewards": {

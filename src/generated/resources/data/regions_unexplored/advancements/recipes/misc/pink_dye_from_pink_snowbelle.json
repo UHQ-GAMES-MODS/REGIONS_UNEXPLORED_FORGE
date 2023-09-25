@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_pink_snowbelle",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_pink_snowbelle"
     ]
   ],
   "rewards": {

@@ -32,7 +32,7 @@ public class RuDoubleFlowerBlock extends DoublePlantBlock implements Bonemealabl
         }
     }
 
-    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, boolean b) {
+    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
         return true;
     }
 

@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_palm_planks",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_palm_planks"
     ]
   ],
   "rewards": {

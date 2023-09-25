@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_white_magnolia_flowers",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_white_magnolia_flowers"
     ]
   ],
   "rewards": {

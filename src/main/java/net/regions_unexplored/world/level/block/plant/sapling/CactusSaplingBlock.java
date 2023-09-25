@@ -47,7 +47,7 @@ public class CactusSaplingBlock extends SaplingBlock {
     }
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, boolean bool) {
+    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
         if(level.getBlockState(pos.below()).is(BlockTags.SAND)) {
             return true;
         }

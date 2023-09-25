@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_glistering_bloom",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_glistering_bloom"
     ]
   ],
   "rewards": {

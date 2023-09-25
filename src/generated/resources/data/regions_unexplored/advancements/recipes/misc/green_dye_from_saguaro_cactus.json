@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_saguaro_cactus",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_saguaro_cactus"
     ]
   ],
   "rewards": {

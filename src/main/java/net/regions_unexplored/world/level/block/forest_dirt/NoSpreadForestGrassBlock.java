@@ -31,7 +31,7 @@ public class NoSpreadForestGrassBlock extends SpreadingForestDirtBlock implement
       super(properties);
    }
 
-   public boolean isValidBonemealTarget(LevelReader levelReader, BlockPos pos, BlockState state, boolean bool) {
+   public boolean isValidBonemealTarget(LevelReader levelReader, BlockPos pos, BlockState state) {
       return levelReader.getBlockState(pos.above()).isAir();
    }
 

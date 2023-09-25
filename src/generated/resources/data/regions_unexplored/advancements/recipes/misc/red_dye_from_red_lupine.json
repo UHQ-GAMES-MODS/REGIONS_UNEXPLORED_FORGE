@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_red_lupine",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_red_lupine"
     ]
   ],
   "rewards": {

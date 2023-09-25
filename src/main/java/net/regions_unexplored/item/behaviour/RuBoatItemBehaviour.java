@@ -1,7 +1,7 @@
 package net.regions_unexplored.item.behaviour;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.BlockSource;
+import net.minecraft.core.dispenser.BlockSource;
 import net.minecraft.core.Direction;
 import net.minecraft.core.dispenser.DefaultDispenseItemBehavior;
 import net.minecraft.world.entity.vehicle.Boat;
@@ -28,13 +28,13 @@ public class RuBoatItemBehaviour extends DefaultDispenseItemBehavior {
 
     @Override
     public ItemStack execute(BlockSource blockSource, ItemStack itemStack) {
-        Direction direction = blockSource.getBlockState().getValue(DispenserBlock.FACING);
-        Level level = blockSource.getLevel();
+        Direction direction = blockSource.state().getValue(DispenserBlock.FACING);
+        Level level = blockSource.level();
 
         Vec3 pos = new Vec3(
-        blockSource.x() + (double) ((float) direction.getStepX() * 1.125F),
-        blockSource.y() + (double) ((float) direction.getStepY() * 1.125F),
-        blockSource.y() + (double) ((float) direction.getStepZ() * 1.125F));
+        blockSource.center().x + (double) ((float) direction.getStepX() * 1.125F),
+        blockSource.center().y + (double) ((float) direction.getStepY() * 1.125F),
+        blockSource.center().z + (double) ((float) direction.getStepZ() * 1.125F));
 
         Boat boat = (this.chest ? new RuChestBoat(level, pos.x, pos.y, pos.z) : new RuBoat(level, pos.x, pos.y, pos.z));
 
@@ -46,7 +46,7 @@ public class RuBoatItemBehaviour extends DefaultDispenseItemBehavior {
         }
 
         boat.setYRot(direction.toYRot());
-        BlockPos blockpos = blockSource.getPos().relative(direction);
+        BlockPos blockpos = blockSource.pos().relative(direction);
         double d3;
         if (boat.canBoatInFluid(level.getFluidState(blockpos))) {
             d3 = 1.0D;
@@ -67,6 +67,6 @@ public class RuBoatItemBehaviour extends DefaultDispenseItemBehavior {
     @Override
     protected void playSound(BlockSource p_123373_)
     {
-        p_123373_.getLevel().levelEvent(1000, p_123373_.getPos(), 0);
+        p_123373_.level().levelEvent(1000, p_123373_.pos(), 0);
     }
 }

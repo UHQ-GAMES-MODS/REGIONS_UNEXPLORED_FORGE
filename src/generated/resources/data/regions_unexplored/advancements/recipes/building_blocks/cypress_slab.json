@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_cypress_planks",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_cypress_planks"
     ]
   ],
   "rewards": {

@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_enchanted_birch_shrub",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_enchanted_birch_shrub"
     ]
   ],
   "rewards": {

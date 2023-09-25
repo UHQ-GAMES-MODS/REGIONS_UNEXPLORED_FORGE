@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_dead_steppe_shrub",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_dead_steppe_shrub"
     ]
   ],
   "rewards": {

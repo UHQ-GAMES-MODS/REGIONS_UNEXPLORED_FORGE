@@ -25,6 +25,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
     }
 
     @Override
+    @SuppressWarnings(value = "all")
     public void addTags(HolderLookup.Provider provider) {
         addForgeTags(provider);
         //main_tags
@@ -966,6 +967,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
         ;
     }
 
+    @SuppressWarnings(value = "all")
     public void addForgeTags(HolderLookup.Provider provider) {
         //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "barrels/wooden")));
         //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "chests/ender")));

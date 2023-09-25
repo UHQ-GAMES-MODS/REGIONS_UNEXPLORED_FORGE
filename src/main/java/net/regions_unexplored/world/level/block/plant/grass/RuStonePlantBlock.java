@@ -26,7 +26,7 @@ public class RuStonePlantBlock extends BushBlock implements BonemealableBlock, n
         return SHAPE;
     }
 
-    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, boolean b) {
+    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
         return false;
     }
 

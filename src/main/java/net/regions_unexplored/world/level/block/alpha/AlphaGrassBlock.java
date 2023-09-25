@@ -29,7 +29,7 @@ public class AlphaGrassBlock extends SpreadingAlphaDirtBlock implements Bonemeal
       super(p_53685_);
    }
 
-   public boolean isValidBonemealTarget(LevelReader p_256229_, BlockPos p_256432_, BlockState p_255677_, boolean p_256630_) {
+   public boolean isValidBonemealTarget(LevelReader p_256229_, BlockPos p_256432_, BlockState p_255677_) {
       return p_256229_.getBlockState(p_256432_.above()).isAir();
    }
 

@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_orange_maple_sapling",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_orange_maple_sapling"
     ]
   ],
   "rewards": {

@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_chalk_pillar",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chalk_pillar"
     ]
   ],
   "rewards": {

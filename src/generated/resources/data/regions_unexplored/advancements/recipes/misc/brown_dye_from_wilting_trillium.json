@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_wilting_trillium",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_wilting_trillium"
     ]
   ],
   "rewards": {

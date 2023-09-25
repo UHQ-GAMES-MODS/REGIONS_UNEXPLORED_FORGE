@@ -55,7 +55,7 @@ public class BioshroomBlock extends SaplingBlock {
     }
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, boolean bool) {
+    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
         if(level.getBlockState(pos.below()).is(RuTags.BIOSHROOM_GROW_BLOCK)) {
             return true;
         }

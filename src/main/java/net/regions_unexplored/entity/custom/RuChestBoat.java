@@ -31,42 +31,24 @@ public class RuChestBoat extends ChestBoat {
 
     @Override
     public @NotNull Item getDropItem() {
-        Item item;
-        switch (RuBoat.ModelType.byId(this.entityData.get(DATA_ID_TYPE))) {
-            case BLACKWOOD:
-                item = RuItems.BLACKWOOD_CHEST_BOAT.get();
-            case MAGNOLIA:
-                item = RuItems.MAGNOLIA_CHEST_BOAT.get();
-            case CYPRESS:
-                item = RuItems.CYPRESS_CHEST_BOAT.get();
-            case DEAD:
-                item = RuItems.DEAD_CHEST_BOAT.get();
-            case EUCALYPTUS:
-                item = RuItems.EUCALYPTUS_CHEST_BOAT.get();
-            case JOSHUA:
-                item = RuItems.JOSHUA_CHEST_BOAT.get();
-            case KAPOK:
-                item = RuItems.KAPOK_CHEST_BOAT.get();
-            case LARCH:
-                item = RuItems.LARCH_CHEST_BOAT.get();
-            case MAPLE:
-                item = RuItems.MAPLE_CHEST_BOAT.get();
-            case MAUVE:
-                item = RuItems.MAUVE_CHEST_BOAT.get();
-            case PALM:
-                item = RuItems.PALM_CHEST_BOAT.get();
-            case PINE:
-                item = RuItems.PINE_CHEST_BOAT.get();
-            case REDWOOD:
-                item = RuItems.REDWOOD_CHEST_BOAT.get();
-            case SOCOTRA:
-                item = RuItems.SOCOTRA_CHEST_BOAT.get();
-            case WILLOW:
-                item = RuItems.WILLOW_CHEST_BOAT.get();
-            default:
-                item = RuItems.BAOBAB_CHEST_BOAT.get();
+        return switch (RuBoat.ModelType.byId(this.entityData.get(DATA_ID_TYPE))) {
+            default -> RuItems.BAOBAB_CHEST_BOAT.get();
+            case BLACKWOOD -> RuItems.BLACKWOOD_CHEST_BOAT.get();
+            case CYPRESS -> RuItems.CYPRESS_CHEST_BOAT.get();
+            case DEAD -> RuItems.DEAD_CHEST_BOAT.get();
+            case EUCALYPTUS -> RuItems.EUCALYPTUS_CHEST_BOAT.get();
+            case JOSHUA -> RuItems.JOSHUA_CHEST_BOAT.get();
+            case KAPOK -> RuItems.KAPOK_CHEST_BOAT.get();
+            case LARCH -> RuItems.LARCH_CHEST_BOAT.get();
+            case MAGNOLIA -> RuItems.MAGNOLIA_CHEST_BOAT.get();
+            case MAPLE -> RuItems.MAPLE_CHEST_BOAT.get();
+            case MAUVE -> RuItems.MAUVE_CHEST_BOAT.get();
+            case PALM -> RuItems.PALM_CHEST_BOAT.get();
+            case PINE -> RuItems.PINE_CHEST_BOAT.get();
+            case REDWOOD -> RuItems.REDWOOD_CHEST_BOAT.get();
+            case SOCOTRA -> RuItems.SOCOTRA_CHEST_BOAT.get();
+            case WILLOW -> RuItems.WILLOW_CHEST_BOAT.get();
         };
-        return item;
     }
 
     @Override
@@ -87,7 +69,7 @@ public class RuChestBoat extends ChestBoat {
         if (!this.isPassenger()) {
             if (onLand) {
                 if (this.fallDistance > 3.0F) {
-                    if (this.status != Boat.Status.ON_LAND) {
+                    if (this.status != Status.ON_LAND) {
                         this.resetFallDistance();
                         return;
                     }

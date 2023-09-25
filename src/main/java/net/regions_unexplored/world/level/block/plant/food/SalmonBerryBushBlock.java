@@ -102,7 +102,7 @@ public class SalmonBerryBushBlock extends BushBlock implements BonemealableBlock
       p_57282_.add(AGE);
    }
 
-   public boolean isValidBonemealTarget(LevelReader p_256056_, BlockPos p_57261_, BlockState p_57262_, boolean p_57263_) {
+   public boolean isValidBonemealTarget(LevelReader p_256056_, BlockPos p_57261_, BlockState p_57262_) {
       return p_57262_.getValue(AGE) < 3;
    }
 

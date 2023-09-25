@@ -81,7 +81,7 @@ public class AppleLeavesBlock extends LeavesBlock implements BonemealableBlock{
         stateBuilder.add(DISTANCE, PERSISTENT, WATERLOGGED, AGE);
     }
 
-    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, boolean b) {
+    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
         return state.getValue(AGE) < 4;
     }
 

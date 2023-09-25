@@ -55,7 +55,7 @@ public class GroundCoverBlock extends BushBlock implements BonemealableBlock {
       p_272634_.add(FACING, AMOUNT);
    }
 
-   public boolean isValidBonemealTarget(LevelReader p_272968_, BlockPos p_273762_, BlockState p_273662_, boolean p_273778_) {
+   public boolean isValidBonemealTarget(LevelReader p_272968_, BlockPos p_273762_, BlockState p_273662_) {
       return true;
    }
 

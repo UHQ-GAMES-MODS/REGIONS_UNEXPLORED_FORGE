@@ -29,7 +29,7 @@ public class PeatGrassBlock extends SpreadingForestDirtBlock implements Bonemeal
       super(properties);
    }
 
-   public boolean isValidBonemealTarget(LevelReader levelReader, BlockPos pos, BlockState state, boolean bool) {
+   public boolean isValidBonemealTarget(LevelReader levelReader, BlockPos pos, BlockState state) {
       return levelReader.getBlockState(pos.above()).isAir();
    }
 

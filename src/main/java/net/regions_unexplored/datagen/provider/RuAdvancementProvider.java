@@ -1,13 +1,13 @@
 package net.regions_unexplored.datagen.provider;
 
 import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -29,8 +29,8 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
 
     private static class AdvancementBuilder implements ForgeAdvancementProvider.AdvancementGenerator {
         @Override
-        public void generate(HolderLookup.Provider registries, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
-            Advancement PARENT = Advancement.Builder.advancement()
+        public void generate(HolderLookup.Provider registries, Consumer<AdvancementHolder> saver, ExistingFileHelper existingFileHelper) {
+            AdvancementHolder PARENT = Advancement.Builder.advancement()
                     .display(
                             RuBlocks.EUCALYPTUS_SAPLING.get(),
                             Component.translatable("advancements.regions_unexplored.title"),
@@ -41,11 +41,11 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                             false,
                             false
                     )
-                    .addCriterion("load_in_world", PlayerTrigger.TriggerInstance.located(LocationPredicate.inDimension(Level.OVERWORLD)))
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "parent"), existingFileHelper);
+                    .addCriterion("load_in_world", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inDimension(Level.OVERWORLD)))
+                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "parent"));
 
             //SURFACE
-            Advancement PIONEER = Advancement.Builder.advancement()
+            AdvancementHolder PIONEER = Advancement.Builder.advancement()
                     .parent(PARENT)
                     .display(
                             RuBlocks.HIBISCUS.get(),
@@ -57,70 +57,70 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                             true,
                             false
                     )
-                    .addCriterion("alpha_grove", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.ALPHA_GROVE)))
-                    .addCriterion("arid_mountains", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.ARID_MOUNTAINS)))
-                    .addCriterion("ashen_woodland", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.ASHEN_WOODLAND)))
-                    .addCriterion("autumnal_maple_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.AUTUMNAL_MAPLE_FOREST)))
-                    .addCriterion("bayou", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.BAYOU)))
-                    .addCriterion("bamboo_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.BAMBOO_FOREST)))
-                    .addCriterion("baobab_savanna", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.BAOBAB_SAVANNA)))
-                    .addCriterion("barley_fields", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.BARLEY_FIELDS)))
-                    .addCriterion("blackwood_taiga", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.BLACKWOOD_TAIGA)))
-                    .addCriterion("boreal_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.BOREAL_TAIGA)))
-                    .addCriterion("chalk_cliffs", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.CHALK_CLIFFS)))
-                    .addCriterion("cold_boreal_taiga", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.COLD_BOREAL_TAIGA)))
-                    .addCriterion("cold_deciduous_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.COLD_DECIDUOUS_FOREST)))
-                    .addCriterion("cold_river", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.COLD_RIVER)))
-                    .addCriterion("deciduous_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.DECIDUOUS_FOREST)))
-                    .addCriterion("dry_bushland", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.DRY_BUSHLAND)))
-                    .addCriterion("eucalyptus_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.EUCALYPTUS_FOREST)))
-                    .addCriterion("fen", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.FEN)))
-                    .addCriterion("flower_fields", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.FLOWER_FIELDS)))
-                    .addCriterion("frozen_pine_taiga", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.FROZEN_PINE_TAIGA)))
-                    .addCriterion("frozen_tundra", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.FROZEN_TUNDRA)))
-                    .addCriterion("fungal_fen", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.FUNGAL_FEN)))
-                    .addCriterion("golden_boreal_taiga", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.GOLDEN_BOREAL_TAIGA)))
-                    .addCriterion("grassland", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.GRASSLAND)))
-                    .addCriterion("grassy_beach", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.GRASSY_BEACH)))
-                    .addCriterion("gravel_beach", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.GRAVEL_BEACH)))
-                    .addCriterion("highland_fields", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.HIGHLAND_FIELDS)))
-                    .addCriterion("hyacinth_deeps", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.HYACINTH_DEEPS)))
-                    .addCriterion("icy_heights", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.ICY_HEIGHTS)))
-                    .addCriterion("joshua_desert", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.JOSHUA_DESERT)))
-                    .addCriterion("lupine_plains", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.CLOVER_PLAINS)))
-                    .addCriterion("magnolia_highlands", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.MAGNOLIA_WOODLAND)))
-                    .addCriterion("maple_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.MAPLE_FOREST)))
-                    .addCriterion("marsh", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.MARSH)))
-                    .addCriterion("mauve_hills", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.MAUVE_HILLS)))
-                    .addCriterion("mountains", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.MOUNTAINS)))
-                    .addCriterion("muddy_river", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.MUDDY_RIVER)))
-                    .addCriterion("old_growth_bayou", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.OLD_GROWTH_BAYOU)))
-                    .addCriterion("ochard", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.ORCHARD)))
-                    .addCriterion("outback", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.OUTBACK)))
-                    .addCriterion("pine_slopes", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.PINE_SLOPES)))
-                    .addCriterion("pine_taiga", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.PINE_TAIGA)))
-                    .addCriterion("poppy_fields", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.POPPY_FIELDS)))
-                    .addCriterion("prairie", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.PRAIRIE)))
-                    .addCriterion("pumpkin_fields", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.PUMPKIN_FIELDS)))
-                    .addCriterion("rainforest", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.RAINFOREST)))
-                    .addCriterion("redwoods", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.REDWOODS)))
-                    .addCriterion("rocky_meadow", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.ROCKY_MEADOW)))
-                    .addCriterion("rocky_reef", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.ROCKY_REEF)))
-                    .addCriterion("saguaro_desert", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.SAGUARO_DESERT)))
-                    .addCriterion("shrubland", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.SHRUBLAND)))
-                    .addCriterion("silver_birch_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.SILVER_BIRCH_FOREST)))
-                    .addCriterion("sparse_rainforest", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.SPARSE_RAINFOREST)))
-                    .addCriterion("sparse_redwoods", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.SPARSE_REDWOODS)))
-                    .addCriterion("spires", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.SPIRES)))
-                    .addCriterion("steppe", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.STEPPE)))
-                    .addCriterion("temperate_grove", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.TEMPERATE_GROVE)))
-                    .addCriterion("towering_cliffs", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.TOWERING_CLIFFS)))
-                    .addCriterion("tropical_river", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.TROPICAL_RIVER)))
-                    .addCriterion("tropics", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.TROPICS)))
-                    .addCriterion("willow_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.WILLOW_FOREST)))
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "pioneer"), existingFileHelper);
+                    .addCriterion("alpha_grove", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.ALPHA_GROVE)))
+                    .addCriterion("arid_mountains", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.ARID_MOUNTAINS)))
+                    .addCriterion("ashen_woodland", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.ASHEN_WOODLAND)))
+                    .addCriterion("autumnal_maple_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.AUTUMNAL_MAPLE_FOREST)))
+                    .addCriterion("bayou", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.BAYOU)))
+                    .addCriterion("bamboo_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.BAMBOO_FOREST)))
+                    .addCriterion("baobab_savanna", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.BAOBAB_SAVANNA)))
+                    .addCriterion("barley_fields", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.BARLEY_FIELDS)))
+                    .addCriterion("blackwood_taiga", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.BLACKWOOD_TAIGA)))
+                    .addCriterion("boreal_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.BOREAL_TAIGA)))
+                    .addCriterion("chalk_cliffs", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.CHALK_CLIFFS)))
+                    .addCriterion("cold_boreal_taiga", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.COLD_BOREAL_TAIGA)))
+                    .addCriterion("cold_deciduous_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.COLD_DECIDUOUS_FOREST)))
+                    .addCriterion("cold_river", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.COLD_RIVER)))
+                    .addCriterion("deciduous_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.DECIDUOUS_FOREST)))
+                    .addCriterion("dry_bushland", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.DRY_BUSHLAND)))
+                    .addCriterion("eucalyptus_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.EUCALYPTUS_FOREST)))
+                    .addCriterion("fen", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.FEN)))
+                    .addCriterion("flower_fields", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.FLOWER_FIELDS)))
+                    .addCriterion("frozen_pine_taiga", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.FROZEN_PINE_TAIGA)))
+                    .addCriterion("frozen_tundra", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.FROZEN_TUNDRA)))
+                    .addCriterion("fungal_fen", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.FUNGAL_FEN)))
+                    .addCriterion("golden_boreal_taiga", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.GOLDEN_BOREAL_TAIGA)))
+                    .addCriterion("grassland", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.GRASSLAND)))
+                    .addCriterion("grassy_beach", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.GRASSY_BEACH)))
+                    .addCriterion("gravel_beach", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.GRAVEL_BEACH)))
+                    .addCriterion("highland_fields", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.HIGHLAND_FIELDS)))
+                    .addCriterion("hyacinth_deeps", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.HYACINTH_DEEPS)))
+                    .addCriterion("icy_heights", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.ICY_HEIGHTS)))
+                    .addCriterion("joshua_desert", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.JOSHUA_DESERT)))
+                    .addCriterion("lupine_plains", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.CLOVER_PLAINS)))
+                    .addCriterion("magnolia_highlands", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.MAGNOLIA_WOODLAND)))
+                    .addCriterion("maple_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.MAPLE_FOREST)))
+                    .addCriterion("marsh", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.MARSH)))
+                    .addCriterion("mauve_hills", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.MAUVE_HILLS)))
+                    .addCriterion("mountains", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.MOUNTAINS)))
+                    .addCriterion("muddy_river", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.MUDDY_RIVER)))
+                    .addCriterion("old_growth_bayou", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.OLD_GROWTH_BAYOU)))
+                    .addCriterion("ochard", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.ORCHARD)))
+                    .addCriterion("outback", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.OUTBACK)))
+                    .addCriterion("pine_slopes", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.PINE_SLOPES)))
+                    .addCriterion("pine_taiga", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.PINE_TAIGA)))
+                    .addCriterion("poppy_fields", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.POPPY_FIELDS)))
+                    .addCriterion("prairie", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.PRAIRIE)))
+                    .addCriterion("pumpkin_fields", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.PUMPKIN_FIELDS)))
+                    .addCriterion("rainforest", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.RAINFOREST)))
+                    .addCriterion("redwoods", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.REDWOODS)))
+                    .addCriterion("rocky_meadow", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.ROCKY_MEADOW)))
+                    .addCriterion("rocky_reef", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.ROCKY_REEF)))
+                    .addCriterion("saguaro_desert", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.SAGUARO_DESERT)))
+                    .addCriterion("shrubland", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.SHRUBLAND)))
+                    .addCriterion("silver_birch_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.SILVER_BIRCH_FOREST)))
+                    .addCriterion("sparse_rainforest", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.SPARSE_RAINFOREST)))
+                    .addCriterion("sparse_redwoods", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.SPARSE_REDWOODS)))
+                    .addCriterion("spires", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.SPIRES)))
+                    .addCriterion("steppe", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.STEPPE)))
+                    .addCriterion("temperate_grove", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.TEMPERATE_GROVE)))
+                    .addCriterion("towering_cliffs", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.TOWERING_CLIFFS)))
+                    .addCriterion("tropical_river", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.TROPICAL_RIVER)))
+                    .addCriterion("tropics", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.TROPICS)))
+                    .addCriterion("willow_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.WILLOW_FOREST)))
+                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "pioneer"));
 
-            Advancement REGIONS_EXPLORED = Advancement.Builder.advancement()
+            AdvancementHolder REGIONS_EXPLORED = Advancement.Builder.advancement()
                     .parent(PIONEER)
                     .display(
                             Items.LEATHER_BOOTS,
@@ -132,80 +132,80 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                             true,
                             true
                     )
-                    .addCriterion("alpha_grove", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.ALPHA_GROVE)))
-                    .addCriterion("ancient_delta", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.ANCIENT_DELTA)))
-                    .addCriterion("arid_mountains", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.ARID_MOUNTAINS)))
-                    .addCriterion("ashen_woodland", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.ASHEN_WOODLAND)))
-                    .addCriterion("autumnal_maple_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.AUTUMNAL_MAPLE_FOREST)))
-                    .addCriterion("bayou", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.BAYOU)))
-                    .addCriterion("bamboo_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.BAMBOO_FOREST)))
-                    .addCriterion("baobab_savanna", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.BAOBAB_SAVANNA)))
-                    .addCriterion("barley_fields", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.BARLEY_FIELDS)))
-                    .addCriterion("bioshroom_caves", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.BIOSHROOM_CAVES)))
-                    .addCriterion("blackstone_basin", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.BLACKSTONE_BASIN)))
-                    .addCriterion("blackwood_taiga", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.BLACKWOOD_TAIGA)))
-                    .addCriterion("boreal_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.BOREAL_TAIGA)))
-                    .addCriterion("chalk_cliffs", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.CHALK_CLIFFS)))
-                    .addCriterion("cold_boreal_taiga", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.COLD_BOREAL_TAIGA)))
-                    .addCriterion("cold_deciduous_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.COLD_DECIDUOUS_FOREST)))
-                    .addCriterion("cold_river", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.COLD_RIVER)))
-                    .addCriterion("deciduous_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.DECIDUOUS_FOREST)))
-                    .addCriterion("dry_bushland", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.DRY_BUSHLAND)))
-                    .addCriterion("eucalyptus_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.EUCALYPTUS_FOREST)))
-                    .addCriterion("fen", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.FEN)))
-                    .addCriterion("flower_fields", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.FLOWER_FIELDS)))
-                    .addCriterion("frozen_pine_taiga", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.FROZEN_PINE_TAIGA)))
-                    .addCriterion("frozen_tundra", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.FROZEN_TUNDRA)))
-                    .addCriterion("fungal_fen", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.FUNGAL_FEN)))
-                    .addCriterion("glistering_meadow", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.GLISTERING_MEADOW)))
-                    .addCriterion("golden_boreal_taiga", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.GOLDEN_BOREAL_TAIGA)))
-                    .addCriterion("grassland", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.GRASSLAND)))
-                    .addCriterion("grassy_beach", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.GRASSY_BEACH)))
-                    .addCriterion("gravel_beach", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.GRAVEL_BEACH)))
-                    .addCriterion("highland_fields", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.HIGHLAND_FIELDS)))
-                    .addCriterion("hyacinth_deeps", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.HYACINTH_DEEPS)))
-                    .addCriterion("icy_heights", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.ICY_HEIGHTS)))
-                    .addCriterion("infernal_holt", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.INFERNAL_HOLT)))
-                    .addCriterion("joshua_desert", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.JOSHUA_DESERT)))
-                    .addCriterion("lupine_plains", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.CLOVER_PLAINS)))
-                    .addCriterion("magnolia_highlands", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.MAGNOLIA_WOODLAND)))
-                    .addCriterion("maple_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.MAPLE_FOREST)))
-                    .addCriterion("marsh", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.MARSH)))
-                    .addCriterion("mauve_hills", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.MAUVE_HILLS)))
-                    .addCriterion("mountains", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.MOUNTAINS)))
-                    .addCriterion("muddy_river", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.MUDDY_RIVER)))
-                    .addCriterion("mycotoxic_undergrowth", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.MYCOTOXIC_UNDERGROWTH)))
-                    .addCriterion("old_growth_bayou", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.OLD_GROWTH_BAYOU)))
-                    .addCriterion("ochard", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.ORCHARD)))
-                    .addCriterion("outback", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.OUTBACK)))
-                    .addCriterion("pine_slopes", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.PINE_SLOPES)))
-                    .addCriterion("pine_taiga", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.PINE_TAIGA)))
-                    .addCriterion("poppy_fields", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.POPPY_FIELDS)))
-                    .addCriterion("prairie", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.PRAIRIE)))
-                    .addCriterion("prismachasm", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.PRISMACHASM)))
-                    .addCriterion("pumpkin_fields", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.PUMPKIN_FIELDS)))
-                    .addCriterion("rainforest", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.RAINFOREST)))
-                    .addCriterion("redstone_abyss", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.REDSTONE_ABYSS)))
-                    .addCriterion("redstone_caves", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.REDSTONE_CAVES)))
-                    .addCriterion("redwoods", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.REDWOODS)))
-                    .addCriterion("rocky_meadow", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.ROCKY_MEADOW)))
-                    .addCriterion("rocky_reef", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.ROCKY_REEF)))
-                    .addCriterion("saguaro_desert", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.SAGUARO_DESERT)))
-                    .addCriterion("scorching_caves", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.SCORCHING_CAVES)))
-                    .addCriterion("shrubland", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.SHRUBLAND)))
-                    .addCriterion("silver_birch_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.SILVER_BIRCH_FOREST)))
-                    .addCriterion("sparse_rainforest", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.SPARSE_RAINFOREST)))
-                    .addCriterion("sparse_redwoods", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.SPARSE_REDWOODS)))
-                    .addCriterion("spires", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.SPIRES)))
-                    .addCriterion("steppe", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.STEPPE)))
-                    .addCriterion("temperate_grove", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.TEMPERATE_GROVE)))
-                    .addCriterion("towering_cliffs", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.TOWERING_CLIFFS)))
-                    .addCriterion("tropical_river", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.TROPICAL_RIVER)))
-                    .addCriterion("tropics", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.TROPICS)))
-                    .addCriterion("willow_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.WILLOW_FOREST)))
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "regions_explored"), existingFileHelper);
+                    .addCriterion("alpha_grove", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.ALPHA_GROVE)))
+                    .addCriterion("ancient_delta", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.ANCIENT_DELTA)))
+                    .addCriterion("arid_mountains", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.ARID_MOUNTAINS)))
+                    .addCriterion("ashen_woodland", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.ASHEN_WOODLAND)))
+                    .addCriterion("autumnal_maple_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.AUTUMNAL_MAPLE_FOREST)))
+                    .addCriterion("bayou", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.BAYOU)))
+                    .addCriterion("bamboo_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.BAMBOO_FOREST)))
+                    .addCriterion("baobab_savanna", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.BAOBAB_SAVANNA)))
+                    .addCriterion("barley_fields", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.BARLEY_FIELDS)))
+                    .addCriterion("bioshroom_caves", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.BIOSHROOM_CAVES)))
+                    .addCriterion("blackstone_basin", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.BLACKSTONE_BASIN)))
+                    .addCriterion("blackwood_taiga", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.BLACKWOOD_TAIGA)))
+                    .addCriterion("boreal_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.BOREAL_TAIGA)))
+                    .addCriterion("chalk_cliffs", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.CHALK_CLIFFS)))
+                    .addCriterion("cold_boreal_taiga", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.COLD_BOREAL_TAIGA)))
+                    .addCriterion("cold_deciduous_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.COLD_DECIDUOUS_FOREST)))
+                    .addCriterion("cold_river", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.COLD_RIVER)))
+                    .addCriterion("deciduous_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.DECIDUOUS_FOREST)))
+                    .addCriterion("dry_bushland", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.DRY_BUSHLAND)))
+                    .addCriterion("eucalyptus_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.EUCALYPTUS_FOREST)))
+                    .addCriterion("fen", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.FEN)))
+                    .addCriterion("flower_fields", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.FLOWER_FIELDS)))
+                    .addCriterion("frozen_pine_taiga", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.FROZEN_PINE_TAIGA)))
+                    .addCriterion("frozen_tundra", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.FROZEN_TUNDRA)))
+                    .addCriterion("fungal_fen", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.FUNGAL_FEN)))
+                    .addCriterion("glistering_meadow", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.GLISTERING_MEADOW)))
+                    .addCriterion("golden_boreal_taiga", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.GOLDEN_BOREAL_TAIGA)))
+                    .addCriterion("grassland", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.GRASSLAND)))
+                    .addCriterion("grassy_beach", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.GRASSY_BEACH)))
+                    .addCriterion("gravel_beach", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.GRAVEL_BEACH)))
+                    .addCriterion("highland_fields", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.HIGHLAND_FIELDS)))
+                    .addCriterion("hyacinth_deeps", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.HYACINTH_DEEPS)))
+                    .addCriterion("icy_heights", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.ICY_HEIGHTS)))
+                    .addCriterion("infernal_holt", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.INFERNAL_HOLT)))
+                    .addCriterion("joshua_desert", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.JOSHUA_DESERT)))
+                    .addCriterion("lupine_plains", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.CLOVER_PLAINS)))
+                    .addCriterion("magnolia_highlands", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.MAGNOLIA_WOODLAND)))
+                    .addCriterion("maple_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.MAPLE_FOREST)))
+                    .addCriterion("marsh", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.MARSH)))
+                    .addCriterion("mauve_hills", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.MAUVE_HILLS)))
+                    .addCriterion("mountains", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.MOUNTAINS)))
+                    .addCriterion("muddy_river", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.MUDDY_RIVER)))
+                    .addCriterion("mycotoxic_undergrowth", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.MYCOTOXIC_UNDERGROWTH)))
+                    .addCriterion("old_growth_bayou", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.OLD_GROWTH_BAYOU)))
+                    .addCriterion("ochard", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.ORCHARD)))
+                    .addCriterion("outback", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.OUTBACK)))
+                    .addCriterion("pine_slopes", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.PINE_SLOPES)))
+                    .addCriterion("pine_taiga", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.PINE_TAIGA)))
+                    .addCriterion("poppy_fields", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.POPPY_FIELDS)))
+                    .addCriterion("prairie", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.PRAIRIE)))
+                    .addCriterion("prismachasm", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.PRISMACHASM)))
+                    .addCriterion("pumpkin_fields", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.PUMPKIN_FIELDS)))
+                    .addCriterion("rainforest", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.RAINFOREST)))
+                    .addCriterion("redstone_abyss", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.REDSTONE_ABYSS)))
+                    .addCriterion("redstone_caves", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.REDSTONE_CAVES)))
+                    .addCriterion("redwoods", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.REDWOODS)))
+                    .addCriterion("rocky_meadow", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.ROCKY_MEADOW)))
+                    .addCriterion("rocky_reef", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.ROCKY_REEF)))
+                    .addCriterion("saguaro_desert", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.SAGUARO_DESERT)))
+                    .addCriterion("scorching_caves", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.SCORCHING_CAVES)))
+                    .addCriterion("shrubland", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.SHRUBLAND)))
+                    .addCriterion("silver_birch_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.SILVER_BIRCH_FOREST)))
+                    .addCriterion("sparse_rainforest", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.SPARSE_RAINFOREST)))
+                    .addCriterion("sparse_redwoods", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.SPARSE_REDWOODS)))
+                    .addCriterion("spires", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.SPIRES)))
+                    .addCriterion("steppe", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.STEPPE)))
+                    .addCriterion("temperate_grove", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.TEMPERATE_GROVE)))
+                    .addCriterion("towering_cliffs", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.TOWERING_CLIFFS)))
+                    .addCriterion("tropical_river", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.TROPICAL_RIVER)))
+                    .addCriterion("tropics", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.TROPICS)))
+                    .addCriterion("willow_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.WILLOW_FOREST)))
+                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "regions_explored"));
 
-            Advancement EVERY_BIT_OF_THE_RAINBOW = Advancement.Builder.advancement()
+            AdvancementHolder EVERY_BIT_OF_THE_RAINBOW = Advancement.Builder.advancement()
                     .parent(PIONEER)
                     .display(
                             RuBlocks.WHITE_SNOWBELLE.get(),
@@ -233,10 +233,10 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                     .addCriterion("lime_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.LIME_SNOWBELLE.get().asItem()))
                     .addCriterion("light_gray_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.LIGHT_GRAY_SNOWBELLE.get().asItem()))
                     .addCriterion("light_blue_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.LIGHT_BLUE_SNOWBELLE.get().asItem()))
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "every_bit_of_the_rainbow"), existingFileHelper);
+                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "every_bit_of_the_rainbow"));
 
 
-            Advancement FROM_THE_TREE_TOPS = Advancement.Builder.advancement()
+            AdvancementHolder FROM_THE_TREE_TOPS = Advancement.Builder.advancement()
                     .parent(PIONEER)
                     .display(
                             RuBlocks.KAPOK_VINES.get(),
@@ -249,10 +249,10 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                             false
                     )
                     .addCriterion("kapok_vines", EnterBlockTrigger.TriggerInstance.entersBlock(RuBlocks.KAPOK_VINES_PLANT.get()))
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "from_the_tree_tops"), existingFileHelper);
+                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "from_the_tree_tops"));
 
 
-            Advancement LIGHT_AS_A_FROG = Advancement.Builder.advancement()
+            AdvancementHolder LIGHT_AS_A_FROG = Advancement.Builder.advancement()
                     .parent(PIONEER)
                     .display(
                             RuBlocks.FLOWERING_LILY_PAD.get(),
@@ -265,10 +265,10 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                             false
                     )
                     .addCriterion("lily_pad", EnterBlockTrigger.TriggerInstance.entersBlock(RuBlocks.GIANT_LILY_PAD.get()))
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "light_as_a_frog"), existingFileHelper);
+                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "light_as_a_frog"));
 
             //NETHER
-            Advancement ETERNAL_EXPEDITION = Advancement.Builder.advancement()
+            AdvancementHolder ETERNAL_EXPEDITION = Advancement.Builder.advancement()
                     .parent(PARENT)
                     .display(
                             RuBlocks.BRIMWOOD_SAPLING.get(),
@@ -280,14 +280,14 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                             true,
                             false
                     )
-                    .addCriterion("blackstone_basin", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.BLACKSTONE_BASIN)))
-                    .addCriterion("mycotoxic_undergrowth", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.MYCOTOXIC_UNDERGROWTH)))
-                    .addCriterion("glistering_meadow", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.GLISTERING_MEADOW)))
-                    .addCriterion("infernal_holt", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.INFERNAL_HOLT)))
-                    .addCriterion("redstone_abyss", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.REDSTONE_ABYSS)))
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "eternal_expedition"), existingFileHelper);
+                    .addCriterion("blackstone_basin", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.BLACKSTONE_BASIN)))
+                    .addCriterion("mycotoxic_undergrowth", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.MYCOTOXIC_UNDERGROWTH)))
+                    .addCriterion("glistering_meadow", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.GLISTERING_MEADOW)))
+                    .addCriterion("infernal_holt", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.INFERNAL_HOLT)))
+                    .addCriterion("redstone_abyss", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.REDSTONE_ABYSS)))
+                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "eternal_expedition"));
 
-            Advancement DOWNER = Advancement.Builder.advancement()
+            AdvancementHolder DOWNER = Advancement.Builder.advancement()
                     .parent(ETERNAL_EXPEDITION)
                     .display(
                             RuBlocks.DORCEL.get(),
@@ -300,9 +300,9 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                             false
                     )
                     .addCriterion("dorcel", EnterBlockTrigger.TriggerInstance.entersBlock(RuBlocks.DORCEL.get()))
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "downer"), existingFileHelper);
+                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "downer"));
 
-            Advancement LIGHT_SNACK = Advancement.Builder.advancement()
+            AdvancementHolder LIGHT_SNACK = Advancement.Builder.advancement()
                     .parent(ETERNAL_EXPEDITION)
                     .display(
                             RuBlocks.HANGING_EARLIGHT.get(),
@@ -315,10 +315,10 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                             false
                     )
                     .addCriterion("earlight", ConsumeItemTrigger.TriggerInstance.usedItem(RuItems.HANGING_EARLIGHT_FRUIT.get()))
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "light_snack"), existingFileHelper);
+                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "light_snack"));
 
             //CAVE
-            Advancement SPELUNKER = Advancement.Builder.advancement()
+            AdvancementHolder SPELUNKER = Advancement.Builder.advancement()
                     .parent(PARENT)
                     .display(
                             RuBlocks.DROPLEAF.get(),
@@ -330,14 +330,14 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                             true,
                             false
                     )
-                    .addCriterion("bioshroom_caves", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.BIOSHROOM_CAVES)))
-                    .addCriterion("ancient_delta", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.ANCIENT_DELTA)))
-                    .addCriterion("prismachasm", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.PRISMACHASM)))
-                    .addCriterion("redstone_caves", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.REDSTONE_CAVES)))
-                    .addCriterion("scorching_caves", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.SCORCHING_CAVES)))
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "spelunker"), existingFileHelper);
+                    .addCriterion("bioshroom_caves", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.BIOSHROOM_CAVES)))
+                    .addCriterion("ancient_delta", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.ANCIENT_DELTA)))
+                    .addCriterion("prismachasm", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.PRISMACHASM)))
+                    .addCriterion("redstone_caves", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.REDSTONE_CAVES)))
+                    .addCriterion("scorching_caves", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(RuBiomes.SCORCHING_CAVES)))
+                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "spelunker"));
 
-            Advancement BLIND_AS_A_BAT = Advancement.Builder.advancement()
+            AdvancementHolder BLIND_AS_A_BAT = Advancement.Builder.advancement()
                     .parent(SPELUNKER)
                     .display(
                             RuBlocks.DUSKMELON.get(),
@@ -350,9 +350,9 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                             false
                     )
                     .addCriterion("duskmelon", ConsumeItemTrigger.TriggerInstance.usedItem(RuItems.DUSKMELON_SLICE.get()))
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "blind_as_a_bat"), existingFileHelper);
+                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "blind_as_a_bat"));
 
-            Advancement THIS_TREE_BLEEDS_RED = Advancement.Builder.advancement()
+            AdvancementHolder THIS_TREE_BLEEDS_RED = Advancement.Builder.advancement()
                     .parent(PARENT)
                     .display(
                             RuBlocks.SOCOTRA_LOG.get(),
@@ -365,9 +365,9 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                             false
                     )
                     .addCriterion("socotra_log", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.SOCOTRA_LOG.get()))
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "this_tree_bleeds_red"), existingFileHelper);
+                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "this_tree_bleeds_red"));
 
-            Advancement GOT_WOOD = Advancement.Builder.advancement()
+            AdvancementHolder GOT_WOOD = Advancement.Builder.advancement()
                     .parent(THIS_TREE_BLEEDS_RED)
                     .display(
                             RuBlocks.REDWOOD_LOG.get(),
@@ -407,9 +407,9 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                     .addCriterion("pink_bioshroom_stem", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.PINK_BIOSHROOM_STEM.get().asItem()))
                     .addCriterion("yellow_bioshroom_stem", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.YELLOW_BIOSHROOM_STEM.get().asItem()))
 
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "got_wood"), existingFileHelper);
+                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "got_wood"));
 
-            Advancement MYCOLOGIST = Advancement.Builder.advancement()
+            AdvancementHolder MYCOLOGIST = Advancement.Builder.advancement()
                     .parent(PARENT)
                     .display(
                             RuBlocks.BLUE_BIOSHROOM.get(),
@@ -425,9 +425,9 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                     .addCriterion("pink_bioshroom", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.PINK_BIOSHROOM.get().asItem()))
                     .addCriterion("yellow_bioshroom", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.YELLOW_BIOSHROOM.get().asItem()))
                     .addCriterion("green_bioshroom", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.GREEN_BIOSHROOM.get().asItem()))
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "mycologist"), existingFileHelper);
+                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "mycologist"));
 
-            Advancement ANCIENT_SPECIMENS = Advancement.Builder.advancement()
+            AdvancementHolder ANCIENT_SPECIMENS = Advancement.Builder.advancement()
                     .parent(MYCOLOGIST)
                     .display(
                             RuBlocks.BLUE_BIOSHROOM_STEM.get(),
@@ -443,7 +443,7 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                     .addCriterion("pink_bioshroom_stem", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.PINK_BIOSHROOM_STEM.get().asItem()))
                     .addCriterion("yellow_bioshroom_stem", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.YELLOW_BIOSHROOM_STEM.get().asItem()))
                     .addCriterion("green_bioshroom_stem", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.GREEN_BIOSHROOM_STEM.get().asItem()))
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "ancient_specimens"), existingFileHelper);
+                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "ancient_specimens"));
         }
     }
 }

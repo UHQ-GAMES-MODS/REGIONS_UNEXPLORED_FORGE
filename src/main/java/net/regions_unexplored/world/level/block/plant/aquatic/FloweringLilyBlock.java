@@ -59,7 +59,7 @@ public class FloweringLilyBlock extends WaterlilyBlock implements BonemealableBl
     }
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, boolean p_50900_) {
+    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
         return true;
     }
 

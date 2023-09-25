@@ -32,9 +32,9 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_prismarine_slab",
-      "has_hyacinth",
-      "has_the_recipe"
+      "has_hyacinth"
     ]
   ],
   "rewards": {

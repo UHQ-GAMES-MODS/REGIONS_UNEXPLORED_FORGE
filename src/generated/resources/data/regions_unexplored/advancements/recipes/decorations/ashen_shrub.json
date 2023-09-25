@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_ashen_sapling",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_ashen_sapling"
     ]
   ],
   "rewards": {

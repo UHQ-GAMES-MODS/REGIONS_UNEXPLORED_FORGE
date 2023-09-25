@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_mangrove_shrub",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_mangrove_shrub"
     ]
   ],
   "rewards": {

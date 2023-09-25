@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_joshua_planks",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_joshua_planks"
     ]
   ],
   "rewards": {

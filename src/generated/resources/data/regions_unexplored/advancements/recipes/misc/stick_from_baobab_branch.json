@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_baobab_branch",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_baobab_branch"
     ]
   ],
   "rewards": {

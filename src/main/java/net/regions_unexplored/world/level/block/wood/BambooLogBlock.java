@@ -77,8 +77,8 @@ public class BambooLogBlock extends Block implements BonemealableBlock,SimpleWat
         return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
     }
 
-    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, boolean b) {
-        return state.getValue(LEAVES)==false;
+    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
+        return !state.getValue(LEAVES);
     }
 
     public boolean isBonemealSuccess(Level level, RandomSource random, BlockPos pos, BlockState state) {

@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_marrowstone",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_marrowstone"
     ]
   ],
   "rewards": {

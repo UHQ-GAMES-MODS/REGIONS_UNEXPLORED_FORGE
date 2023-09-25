@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_small_desert_shrub",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_small_desert_shrub"
     ]
   ],
   "rewards": {

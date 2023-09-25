@@ -23,7 +23,7 @@ public class ArgilliteGrassBlock extends ArgilliteDirtBlock implements Bonemeala
       super(properties);
    }
 
-   public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, boolean bool) {
+   public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
       return level.getBlockState(pos.above()).isAir();
    }
 

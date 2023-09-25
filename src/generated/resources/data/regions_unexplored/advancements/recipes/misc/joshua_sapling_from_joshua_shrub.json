@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_joshua_shrub",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_joshua_shrub"
     ]
   ],
   "rewards": {

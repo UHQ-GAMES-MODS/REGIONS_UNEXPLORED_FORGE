@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_barrel_cactus",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_barrel_cactus"
     ]
   ],
   "rewards": {

@@ -38,7 +38,7 @@ public class RuNyliumBlock extends Block implements BonemealableBlock {
 
     }
 
-    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, boolean bool) {
+    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
         return level.getBlockState(pos.above()).isAir();
     }
 

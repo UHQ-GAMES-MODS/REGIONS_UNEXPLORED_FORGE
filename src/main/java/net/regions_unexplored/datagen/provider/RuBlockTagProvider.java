@@ -22,6 +22,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
     }
 
     @Override
+    @SuppressWarnings(value = "all")
     public void addTags(HolderLookup.Provider provider) {
         addForgeTags(provider);
         //mineable_tags
@@ -1636,6 +1637,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
         ;
     }
 
+    @SuppressWarnings(value = "all")
     public void addForgeTags(HolderLookup.Provider provider) {
         //this.tag(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "barrels/wooden")));
         //this.tag(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "chests/ender")));

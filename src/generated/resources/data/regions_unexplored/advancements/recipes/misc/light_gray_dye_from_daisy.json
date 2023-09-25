@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_daisy",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_daisy"
     ]
   ],
   "rewards": {

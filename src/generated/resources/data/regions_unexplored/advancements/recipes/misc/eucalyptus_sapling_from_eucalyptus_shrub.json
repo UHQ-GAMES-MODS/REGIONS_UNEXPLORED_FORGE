@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_eucalyptus_shrub",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_eucalyptus_shrub"
     ]
   ],
   "rewards": {

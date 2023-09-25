@@ -34,7 +34,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
     }
 
     @Override
-    protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
+    protected void buildRecipes(RecipeOutput consumer) {
         /*-----------------CAVE_BLOCKS_DONE-----------------*/
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.PRISMOSS.get(), 1).define('#', Blocks.STONE).define('X', RuBlocks.PRISMOSS_SPROUT.get()).pattern("X").pattern("#").group("prismoss").unlockedBy("has_stone", has(Blocks.STONE)).save(consumer);
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.DEEPSLATE_PRISMOSS.get(), 1).define('#', Blocks.DEEPSLATE).define('X', RuBlocks.PRISMOSS_SPROUT.get()).pattern("X").pattern("#").group("prismoss").unlockedBy("has_deepslate", has(Blocks.DEEPSLATE)).save(consumer);
@@ -787,101 +787,101 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
 
 
     }
-    protected static void branchFromLog(Consumer<FinishedRecipe> consumer, ItemLike item, ItemLike item2) {
+    protected static void branchFromLog(RecipeOutput consumer, ItemLike item, ItemLike item2) {
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, item, 2).define('#', item2).define('X', Items.STICK).pattern("#X").group("branches").unlockedBy("has_log", has(item2)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getConversionRecipeName(item,item2)));
     }
 
-    protected static void woodFromOtherItem(Consumer<FinishedRecipe> consumer, ItemLike item, ItemLike item2) {
+    protected static void woodFromOtherItem(RecipeOutput consumer, ItemLike item, ItemLike item2) {
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, item, 3).define('#', item2).pattern("##").pattern("##").group("bark").unlockedBy("has_log", has(item2)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getConversionRecipeName(item,item2)));
     }
     
-    protected static void paintedSlab(Consumer<FinishedRecipe> consumer, ItemLike item, ItemLike item2) {
+    protected static void paintedSlab(RecipeOutput consumer, ItemLike item, ItemLike item2) {
         slabBuilder(RecipeCategory.BUILDING_BLOCKS, item, Ingredient.of(item2)).group("painted_slab").unlockedBy(getHasName(item2), has(item2)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getItemName(item)));
     }
 
-    protected static void paintedStairs(Consumer<FinishedRecipe> consumer, ItemLike item, ItemLike item2) {
+    protected static void paintedStairs(RecipeOutput consumer, ItemLike item, ItemLike item2) {
         stairBuilder(item, Ingredient.of(item2)).group("painted_stairs").unlockedBy(getHasName(item2), has(item2)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getItemName(item)));
     }
 
-    protected static void paintedPlanks(Consumer<FinishedRecipe> consumer, ItemLike result, TagKey<Item> dye) {
+    protected static void paintedPlanks(RecipeOutput consumer, ItemLike result, TagKey<Item> dye) {
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, result, 8).define('X', dye).define('#', ItemTags.PLANKS).pattern("###").pattern("#X#").pattern("###").group("painted_planks").unlockedBy("has_planks", has(ItemTags.PLANKS)).save(consumer);
     }
 
-    protected static void snowbelle(Consumer<FinishedRecipe> consumer, ItemLike result, TagKey<Item> dye) {
+    protected static void snowbelle(RecipeOutput consumer, ItemLike result, TagKey<Item> dye) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, result).requires(dye).requires(RuTags.SNOWBELLE_ITEM).group("snowbelle").unlockedBy("has_snowbelle", has(RuTags.SNOWBELLE_ITEM)).save(consumer);
     }
 
-    protected static void planksFromOneLog(Consumer<FinishedRecipe> p_259712_, ItemLike p_259052_, ItemLike p_259045_, int i) {
+    protected static void planksFromOneLog(RecipeOutput p_259712_, ItemLike p_259052_, ItemLike p_259045_, int i) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, p_259052_, i).requires(p_259045_).group("planks").unlockedBy("has_log", has(p_259045_)).save(p_259712_);
     }
-    protected static void woodenButton(Consumer<FinishedRecipe> consumer, ItemLike item, ItemLike item2) {
+    protected static void woodenButton(RecipeOutput consumer, ItemLike item, ItemLike item2) {
         buttonBuilder(item, Ingredient.of(item2)).group("wooden_button").unlockedBy(getHasName(item2), has(item2)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getItemName(item)));
     }
 
-    protected static void woodenSign(Consumer<FinishedRecipe> consumer, ItemLike item, ItemLike item2) {
+    protected static void woodenSign(RecipeOutput consumer, ItemLike item, ItemLike item2) {
         signBuilder(item, Ingredient.of(item2)).group("wooden_sign").unlockedBy(getHasName(item2), has(item2)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getItemName(item)));
     }
 
-    protected static void hangingSign(Consumer<FinishedRecipe> consumer, ItemLike item, ItemLike item2) {
+    protected static void hangingSign(RecipeOutput consumer, ItemLike item, ItemLike item2) {
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, item, 6).group("hanging_sign").define('#', item2).define('X', Items.CHAIN).pattern("X X").pattern("###").pattern("###").unlockedBy(getHasName(item2), has(item2)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getItemName(item)));
     }
 
-    protected static void woodenDoor(Consumer<FinishedRecipe> consumer, ItemLike item, ItemLike item2) {
+    protected static void woodenDoor(RecipeOutput consumer, ItemLike item, ItemLike item2) {
         doorBuilder(item, Ingredient.of(item2)).group("wooden_door").unlockedBy(getHasName(item2), has(item2)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getItemName(item)));
     }
 
-    protected static void woodenFenceGate(Consumer<FinishedRecipe> consumer, ItemLike item, ItemLike item2) {
+    protected static void woodenFenceGate(RecipeOutput consumer, ItemLike item, ItemLike item2) {
         fenceGateBuilder(item, Ingredient.of(item2)).group("wooden_fence_gate").unlockedBy(getHasName(item2), has(item2)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getItemName(item)));
     }
 
-    protected static void woodenFence(Consumer<FinishedRecipe> consumer, ItemLike item, ItemLike item2) {
+    protected static void woodenFence(RecipeOutput consumer, ItemLike item, ItemLike item2) {
         fenceBuilder(item, Ingredient.of(item2)).group("wooden_fence").unlockedBy(getHasName(item2), has(item2)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getItemName(item)));
     }
 
-    protected static void woodenSlab(Consumer<FinishedRecipe> consumer, ItemLike item, ItemLike item2) {
+    protected static void woodenSlab(RecipeOutput consumer, ItemLike item, ItemLike item2) {
         slabBuilder(RecipeCategory.BUILDING_BLOCKS, item, Ingredient.of(item2)).group("wooden_slab").unlockedBy(getHasName(item2), has(item2)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getItemName(item)));
     }
 
-    protected static void woodenStairs(Consumer<FinishedRecipe> consumer, ItemLike item, ItemLike item2) {
+    protected static void woodenStairs(RecipeOutput consumer, ItemLike item, ItemLike item2) {
         stairBuilder(item, Ingredient.of(item2)).group("wooden_stairs").unlockedBy(getHasName(item2), has(item2)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getItemName(item)));
     }
 
-    protected static void woodenTrapdoor(Consumer<FinishedRecipe> consumer, ItemLike item, ItemLike item2) {
+    protected static void woodenTrapdoor(RecipeOutput consumer, ItemLike item, ItemLike item2) {
         ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, item, 2).define('#', item2).pattern("###").pattern("###").group("wooden_trapdoor").unlockedBy(getHasName(item2), has(item2)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getItemName(item)));
     }
 
-    protected static void pressurePlate(Consumer<FinishedRecipe> consumer, ItemLike item, ItemLike item2) {
+    protected static void pressurePlate(RecipeOutput consumer, ItemLike item, ItemLike item2) {
         pressurePlateBuilder(RecipeCategory.REDSTONE, item, Ingredient.of(item2)).group("wooden_pressure_plate").unlockedBy(getHasName(item2), has(item2)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getItemName(item)));
     }
 
-    protected static void stonecutterResultFromBase(Consumer<FinishedRecipe> consumer, RecipeCategory category, ItemLike item, ItemLike item2) {
+    protected static void stonecutterResultFromBase(RecipeOutput consumer, RecipeCategory category, ItemLike item, ItemLike item2) {
         stonecutterResultFromBase(consumer, category, item, item2, 1);
     }
 
-    protected static void stonecutterResultFromBase(Consumer<FinishedRecipe> consumer, RecipeCategory category, ItemLike item, ItemLike item2, int i) {
+    protected static void stonecutterResultFromBase(RecipeOutput consumer, RecipeCategory category, ItemLike item, ItemLike item2, int i) {
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(item2), category, item, i).unlockedBy(getHasName(item2), has(item2)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getConversionRecipeName(item, item2) + "_stonecutting"));
     }
 
-    protected static void oreSmelting(Consumer<FinishedRecipe> consumer, List<ItemLike> itemList, RecipeCategory category, ItemLike item, float f, int i, String s) {
+    protected static void oreSmelting(RecipeOutput consumer, List<ItemLike> itemList, RecipeCategory category, ItemLike item, float f, int i, String s) {
         oreCooking(consumer, RecipeSerializer.SMELTING_RECIPE, itemList, category, item, f, i, s, "_from_smelting");
     }
 
-    protected static void oreBlasting(Consumer<FinishedRecipe> consumer, List<ItemLike> itemList, RecipeCategory category, ItemLike item, float f, int i, String s) {
+    protected static void oreBlasting(RecipeOutput consumer, List<ItemLike> itemList, RecipeCategory category, ItemLike item, float f, int i, String s) {
         oreCooking(consumer, RecipeSerializer.BLASTING_RECIPE, itemList, category, item, f, i, s, "_from_blasting");
     }
 
-    protected static void oreCooking(Consumer<FinishedRecipe> consumer, RecipeSerializer<? extends AbstractCookingRecipe> serializer, List<ItemLike> itemList, RecipeCategory category, ItemLike item, float f, int i, String s, String s2) {
+    protected static void oreCooking(RecipeOutput consumer, RecipeSerializer<? extends AbstractCookingRecipe> serializer, List<ItemLike> itemList, RecipeCategory category, ItemLike item, float f, int i, String s, String s2) {
         for(ItemLike itemlike : itemList) {
             SimpleCookingRecipeBuilder.generic(Ingredient.of(itemlike), category, item, f, i, serializer).group(s).unlockedBy(getHasName(itemlike), has(itemlike)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getItemName(item) + s2 + "_" + getItemName(itemlike)));
         }
 
     }
 
-    protected static void oneToOneConversionRecipe(Consumer<FinishedRecipe> consumer, ItemLike item, ItemLike item2, @Nullable String group) {
+    protected static void oneToOneConversionRecipe(RecipeOutput consumer, ItemLike item, ItemLike item2, @Nullable String group) {
         oneToOneConversionRecipe(consumer, item, item2, group, 1);
     }
 
-    protected static void oneToOneConversionRecipe(Consumer<FinishedRecipe> consumer, ItemLike item, ItemLike item2, @Nullable String group, int ammount) {
+    protected static void oneToOneConversionRecipe(RecipeOutput consumer, ItemLike item, ItemLike item2, @Nullable String group, int ammount) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, item, ammount).requires(item2).group(group).unlockedBy(getHasName(item2), has(item2)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getConversionRecipeName(item, item2)));
     }
 }

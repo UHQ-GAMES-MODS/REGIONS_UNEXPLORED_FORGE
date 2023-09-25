@@ -59,7 +59,7 @@ public class RuSandyPlantBlock extends BushBlock implements BonemealableBlock, n
         return (this.defaultBlockState().setValue(IS_RED, isRed));
     }
 
-    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, boolean b) {
+    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
         return true;
     }
 

@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_golden_larch_shrub",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_golden_larch_shrub"
     ]
   ],
   "rewards": {

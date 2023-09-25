@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_day_lily",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_day_lily"
     ]
   ],
   "rewards": {

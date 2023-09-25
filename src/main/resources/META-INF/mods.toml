@@ -4,7 +4,7 @@ license="All rights reserved"
 
 [[mods]]
 modId="regions_unexplored"
-version="0.5.2"
+version="0.5.3"
 displayName="Regions Unexplored"
 displayURL="https://discord.gg/Ss8UHPqHPj"
 logoFile="ruthumb.png"
@@ -24,13 +24,13 @@ side="BOTH"
 [[dependencies.regions_unexplored]]
 modId="minecraft"
 mandatory=true
-versionRange="[1.20.1,1.21)"
+versionRange="[1.20.2,1.21)"
 ordering="NONE"
 side="BOTH"
 
 [[dependencies.regions_unexplored]]
 modId="terrablender"
 mandatory=true
-versionRange="[3.0.0.163,)"
+versionRange="[3.0.0.170,)"
 ordering="NONE"
 side="BOTH"

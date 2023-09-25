@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_alpha_dandelion",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_alpha_dandelion"
     ]
   ],
   "rewards": {

@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_redwood_shrub",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_redwood_shrub"
     ]
   ],
   "rewards": {
