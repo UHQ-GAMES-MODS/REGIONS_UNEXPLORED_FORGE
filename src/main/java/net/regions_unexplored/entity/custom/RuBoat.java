@@ -34,42 +34,24 @@ public class RuBoat extends Boat {
 
     @Override
     public @NotNull Item getDropItem() {
-        Item item;
-        switch (ModelType.byId(this.entityData.get(DATA_ID_TYPE))) {
-            case BLACKWOOD:
-                item = RuItems.BLACKWOOD_BOAT.get();
-            case MAGNOLIA:
-                item = RuItems.MAGNOLIA_BOAT.get();
-            case CYPRESS:
-                item = RuItems.CYPRESS_BOAT.get();
-            case DEAD:
-                item = RuItems.DEAD_BOAT.get();
-            case EUCALYPTUS:
-                item = RuItems.EUCALYPTUS_BOAT.get();
-            case JOSHUA:
-                item = RuItems.JOSHUA_BOAT.get();
-            case KAPOK:
-                item = RuItems.KAPOK_BOAT.get();
-            case LARCH:
-                item = RuItems.LARCH_BOAT.get();
-            case MAPLE:
-                item = RuItems.MAPLE_BOAT.get();
-            case MAUVE:
-                item = RuItems.MAUVE_BOAT.get();
-            case PALM:
-                item = RuItems.PALM_BOAT.get();
-            case PINE:
-                item = RuItems.PINE_BOAT.get();
-            case REDWOOD:
-                item = RuItems.REDWOOD_BOAT.get();
-            case SOCOTRA:
-                item = RuItems.SOCOTRA_BOAT.get();
-            case WILLOW:
-                item = RuItems.WILLOW_BOAT.get();
-            default:
-                item = RuItems.BAOBAB_BOAT.get();
+        return switch (ModelType.byId(this.entityData.get(DATA_ID_TYPE))) {
+            case BLACKWOOD -> RuItems.BLACKWOOD_BOAT.get();
+            case CYPRESS -> RuItems.CYPRESS_BOAT.get();
+            case DEAD -> RuItems.DEAD_BOAT.get();
+            case EUCALYPTUS -> RuItems.EUCALYPTUS_BOAT.get();
+            case JOSHUA -> RuItems.JOSHUA_BOAT.get();
+            case KAPOK -> RuItems.KAPOK_BOAT.get();
+            case LARCH -> RuItems.LARCH_BOAT.get();
+            case MAGNOLIA -> RuItems.MAGNOLIA_BOAT.get();
+            case MAPLE -> RuItems.MAPLE_BOAT.get();
+            case MAUVE -> RuItems.MAUVE_BOAT.get();
+            case PALM -> RuItems.PALM_BOAT.get();
+            case PINE -> RuItems.PINE_BOAT.get();
+            case REDWOOD -> RuItems.REDWOOD_BOAT.get();
+            case SOCOTRA -> RuItems.SOCOTRA_BOAT.get();
+            case WILLOW -> RuItems.WILLOW_BOAT.get();
+            default -> RuItems.BAOBAB_BOAT.get();
         };
-        return item;
     }
 
     @Override
@@ -90,7 +72,7 @@ public class RuBoat extends Boat {
         if (!this.isPassenger()) {
             if (onLand) {
                 if (this.fallDistance > 3.0F) {
-                    if (this.status != Boat.Status.ON_LAND) {
+                    if (this.status != Status.ON_LAND) {
                         this.resetFallDistance();
                         return;
                     }
@@ -136,7 +118,7 @@ public class RuBoat extends Boat {
     @Deprecated
     @Override
     public Type getVariant() {
-        return Boat.Type.byId(this.entityData.get(DATA_ID_TYPE));
+        return Type.byId(this.entityData.get(DATA_ID_TYPE));
     }
 
     public enum ModelType {
