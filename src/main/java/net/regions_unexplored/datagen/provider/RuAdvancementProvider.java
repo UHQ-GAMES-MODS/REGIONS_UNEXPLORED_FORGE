@@ -431,8 +431,8 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                     .parent(MYCOLOGIST)
                     .display(
                             RuBlocks.BLUE_BIOSHROOM_STEM.get(),
-                            Component.literal("Ancient Specimens"),
-                            Component.literal("Collect every Bioshroom Stem type."),
+                            Component.translatable("advancements.regions_unexplored.ancient_specimens.title"),
+                            Component.translatable("advancements.regions_unexplored.ancient_specimens.description"),
                             new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
                             FrameType.CHALLENGE,
                             true,
