@@ -2,19 +2,14 @@ package net.regions_unexplored.datagen.provider;
 
 import com.google.common.collect.ImmutableList;
 import net.minecraft.core.Registry;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.AbstractCookingRecipe;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.Recipe;
-import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
@@ -39,21 +34,21 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
     @Override
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
         /*-----------------CAVE_BLOCKS_DONE-----------------*/
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.PRISMOSS.get(), 1).define('#', Blocks.STONE).define('X', RuBlocks.PRISMOSS_SPROUT.get()).pattern("X").pattern("#").group("prismoss").unlockedBy("has_stone", has(Blocks.STONE)).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.DEEPSLATE_PRISMOSS.get(), 1).define('#', Blocks.DEEPSLATE).define('X', RuBlocks.PRISMOSS_SPROUT.get()).pattern("X").pattern("#").group("prismoss").unlockedBy("has_deepslate", has(Blocks.DEEPSLATE)).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.HANGING_PRISMARITE.get(), 1).define('#', RuBlocks.PRISMARITE_CLUSTER.get()).pattern("#").pattern("#").pattern("#").group("prismarite").unlockedBy("has_prismarite", has(RuBlocks.PRISMARITE_CLUSTER.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.LARGE_PRISMARITE_CLUSTER.get(), 1).define('#', RuBlocks.PRISMARITE_CLUSTER.get()).pattern("#").pattern("#").group("prismarite").unlockedBy("has_prismarite", has(RuBlocks.PRISMARITE_CLUSTER.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.PRISMAGLASS.get(), 2).define('#', TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "glass"))).define('X', RuTags.PRISMARITE_CRYSTALS_ITEM).pattern(" X ").pattern("X#X").pattern(" X ").group("stained_glass").unlockedBy("has_glass", has(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "glass")))).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.PRISMOSS.get(), 1).define('#', Blocks.STONE).define('X', RuBlocks.PRISMOSS_SPROUT.get()).pattern("X").pattern("#").group("prismoss").unlockedBy("has_stone", has(Blocks.STONE)).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.DEEPSLATE_PRISMOSS.get(), 1).define('#', Blocks.DEEPSLATE).define('X', RuBlocks.PRISMOSS_SPROUT.get()).pattern("X").pattern("#").group("prismoss").unlockedBy("has_deepslate", has(Blocks.DEEPSLATE)).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.HANGING_PRISMARITE.get(), 1).define('#', RuBlocks.PRISMARITE_CLUSTER.get()).pattern("#").pattern("#").pattern("#").group("prismarite").unlockedBy("has_prismarite", has(RuBlocks.PRISMARITE_CLUSTER.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.LARGE_PRISMARITE_CLUSTER.get(), 1).define('#', RuBlocks.PRISMARITE_CLUSTER.get()).pattern("#").pattern("#").group("prismarite").unlockedBy("has_prismarite", has(RuBlocks.PRISMARITE_CLUSTER.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.PRISMAGLASS.get(), 2).define('#', TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "glass"))).define('X', RuTags.PRISMARITE_CRYSTALS_ITEM).pattern(" X ").pattern("X#X").pattern(" X ").group("stained_glass").unlockedBy("has_glass", has(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "glass")))).save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, RuBlocks.RAW_REDSTONE_BLOCK.get(), 1).define('#', Items.REDSTONE).pattern("##").pattern("##").group("redstone").unlockedBy("has_redstone", has(Items.REDSTONE)).save(consumer);
-        oreSmelting(consumer, REDSTONE_SMELTABLES, RecipeCategory.REDSTONE, Items.REDSTONE, 0.7F, 200, "redstone");
-        oreBlasting(consumer, REDSTONE_SMELTABLES, RecipeCategory.REDSTONE, Items.REDSTONE, 0.7F, 100, "redstone");
-        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, RuBlocks.REDSTONE_BUD.get(), 2).define('#', Items.REDSTONE).pattern("###").group("redstone").unlockedBy("has_redstone", has(Items.REDSTONE)).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.RAW_REDSTONE_BLOCK.get(), 1).define('#', Items.REDSTONE).pattern("##").pattern("##").group("redstone").unlockedBy("has_redstone", has(Items.REDSTONE)).save(consumer);
+        oreSmelting(consumer, REDSTONE_SMELTABLES, Items.REDSTONE, 0.7F, 200, "redstone");
+        oreBlasting(consumer, REDSTONE_SMELTABLES, Items.REDSTONE, 0.7F, 100, "redstone");
+        ShapedRecipeBuilder.shaped(RuBlocks.REDSTONE_BUD.get(), 2).define('#', Items.REDSTONE).pattern("###").group("redstone").unlockedBy("has_redstone", has(Items.REDSTONE)).save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.STONE_GRASS_BLOCK.get(), 1).define('#', Blocks.STONE).define('X', RuTags.GRASS_ITEM).pattern("X").pattern("#").group("stone_grass").unlockedBy("has_stone", has(Blocks.STONE)).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.DEEPSLATE_GRASS_BLOCK.get(), 1).define('#', Blocks.DEEPSLATE).define('X', RuTags.GRASS_ITEM).pattern("X").pattern("#").group("stone_grass").unlockedBy("has_deepslate", has(Blocks.DEEPSLATE)).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.VIRIDESCENT_NYLIUM.get(), 1).define('#', Blocks.STONE).define('X', TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "mushrooms"))).pattern("X").pattern("#").group("viridescent_nylium").unlockedBy("has_stone", has(Blocks.STONE)).unlockedBy("has_mushroom", has(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "mushrooms")))).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.DEEPSLATE_VIRIDESCENT_NYLIUM.get(), 1).define('#', Blocks.DEEPSLATE).define('X', TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "mushrooms"))).pattern("X").pattern("#").group("viridescent_nylium").unlockedBy("has_deepslate", has(Blocks.DEEPSLATE)).unlockedBy("has_mushroom", has(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "mushrooms")))).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.STONE_GRASS_BLOCK.get(), 1).define('#', Blocks.STONE).define('X', RuTags.GRASS_ITEM).pattern("X").pattern("#").group("stone_grass").unlockedBy("has_stone", has(Blocks.STONE)).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.DEEPSLATE_GRASS_BLOCK.get(), 1).define('#', Blocks.DEEPSLATE).define('X', RuTags.GRASS_ITEM).pattern("X").pattern("#").group("stone_grass").unlockedBy("has_deepslate", has(Blocks.DEEPSLATE)).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.VIRIDESCENT_NYLIUM.get(), 1).define('#', Blocks.STONE).define('X', TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "mushrooms"))).pattern("X").pattern("#").group("viridescent_nylium").unlockedBy("has_stone", has(Blocks.STONE)).unlockedBy("has_mushroom", has(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "mushrooms")))).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.DEEPSLATE_VIRIDESCENT_NYLIUM.get(), 1).define('#', Blocks.DEEPSLATE).define('X', TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "mushrooms"))).pattern("X").pattern("#").group("viridescent_nylium").unlockedBy("has_deepslate", has(Blocks.DEEPSLATE)).unlockedBy("has_mushroom", has(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "mushrooms")))).save(consumer);
 
         /*-----------------PLANTS-----------------*/
         oneToOneConversionRecipe(consumer, Items.BROWN_DYE, RuBlocks.DEAD_STEPPE_SHRUB.get(), "brown_dye");
@@ -122,15 +117,15 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         oneToOneConversionRecipe(consumer, Items.LIGHT_BLUE_DYE, RuBlocks.ASTER.get(), "light_blue_dye");
 
         oneToOneConversionRecipe(consumer, Items.LIGHT_BLUE_DYE, RuBlocks.BLUE_MAGNOLIA_FLOWERS.get(), "light_blue_dye");
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.BLUE_MAGNOLIA_FLOWERS.get(), 6).define('#', RuBlocks.BLUE_MAGNOLIA_LEAVES.get()).pattern("###").group("multiface_flowers").unlockedBy("has_blue_magnolia_leaves", has(RuBlocks.BLUE_MAGNOLIA_LEAVES.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.BLUE_MAGNOLIA_FLOWERS.get(), 6).define('#', RuBlocks.BLUE_MAGNOLIA_LEAVES.get()).pattern("###").group("multiface_flowers").unlockedBy("has_blue_magnolia_leaves", has(RuBlocks.BLUE_MAGNOLIA_LEAVES.get())).save(consumer);
         oneToOneConversionRecipe(consumer, Items.PINK_DYE, RuBlocks.PINK_MAGNOLIA_FLOWERS.get(), "pink_dye");
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.PINK_MAGNOLIA_FLOWERS.get(), 6).define('#', RuBlocks.PINK_MAGNOLIA_LEAVES.get()).pattern("###").group("multiface_flowers").unlockedBy("has_pink_magnolia_leaves", has(RuBlocks.PINK_MAGNOLIA_LEAVES.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.PINK_MAGNOLIA_FLOWERS.get(), 6).define('#', RuBlocks.PINK_MAGNOLIA_LEAVES.get()).pattern("###").group("multiface_flowers").unlockedBy("has_pink_magnolia_leaves", has(RuBlocks.PINK_MAGNOLIA_LEAVES.get())).save(consumer);
         oneToOneConversionRecipe(consumer, Items.WHITE_DYE, RuBlocks.WHITE_MAGNOLIA_FLOWERS.get(), "white_dye");
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.WHITE_MAGNOLIA_FLOWERS.get(), 6).define('#', RuBlocks.WHITE_MAGNOLIA_LEAVES.get()).pattern("###").group("multiface_flowers").unlockedBy("has_white_magnolia_leaves", has(RuBlocks.WHITE_MAGNOLIA_LEAVES.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.WHITE_MAGNOLIA_FLOWERS.get(), 6).define('#', RuBlocks.WHITE_MAGNOLIA_LEAVES.get()).pattern("###").group("multiface_flowers").unlockedBy("has_white_magnolia_leaves", has(RuBlocks.WHITE_MAGNOLIA_LEAVES.get())).save(consumer);
 
         oneToOneConversionRecipe(consumer, Items.BLUE_DYE, RuItems.MEADOW_SAGE.get(), "blue_dye");
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(RuBlocks.BARLEY.get()), RecipeCategory.FOOD, Items.BREAD, 0.35F, 200).unlockedBy("has_barley", has(RuBlocks.BARLEY.get())).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "barley_smelting"));
-        SimpleCookingRecipeBuilder.smoking(Ingredient.of(RuBlocks.BARLEY.get()), RecipeCategory.FOOD, Items.BREAD, 0.35F, 100).unlockedBy("has_barley", has(RuBlocks.BARLEY.get())).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "barley_smoking"));
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(RuBlocks.BARLEY.get()), Items.BREAD, 0.35F, 200).unlockedBy("has_barley", has(RuBlocks.BARLEY.get())).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "barley_smelting"));
+        SimpleCookingRecipeBuilder.smoking(Ingredient.of(RuBlocks.BARLEY.get()), Items.BREAD, 0.35F, 100).unlockedBy("has_barley", has(RuBlocks.BARLEY.get())).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "barley_smoking"));
         oneToOneConversionRecipe(consumer, Items.BROWN_DYE, RuBlocks.CATTAIL.get(), "brown_dye");
         oneToOneConversionRecipe(consumer, Items.LIGHT_GRAY_DYE, RuBlocks.TASSEL.get(), "light_gray_dye");
         oneToOneConversionRecipe(consumer, Items.ORANGE_DYE, RuBlocks.DAY_LILY.get(), "orange_dye");
@@ -141,7 +136,6 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         oneToOneConversionRecipe(consumer, RuBlocks.BAOBAB_SAPLING.get(), RuBlocks.BAOBAB_SHRUB.get(), "saplings", 2);
         oneToOneConversionRecipe(consumer, RuBlocks.BLACKWOOD_SAPLING.get(), RuBlocks.BLACKWOOD_SHRUB.get(), "saplings", 2);
         oneToOneConversionRecipe(consumer, RuBlocks.BRIMWOOD_SAPLING.get(), RuBlocks.BRIMWOOD_SHRUB.get(), "saplings", 2);
-        oneToOneConversionRecipe(consumer, Blocks.CHERRY_SAPLING, RuBlocks.CHERRY_SHRUB.get(), "saplings", 2);
         oneToOneConversionRecipe(consumer, Items.MAGENTA_DYE, RuBlocks.CACTUS_FLOWER.get(), "magenta_dye");
         oneToOneConversionRecipe(consumer, RuBlocks.MAGNOLIA_SAPLING.get(), RuBlocks.MAGNOLIA_SHRUB.get(), "saplings", 2);
         oneToOneConversionRecipe(consumer, RuBlocks.CYPRESS_SAPLING.get(), RuBlocks.CYPRESS_SHRUB.get(), "saplings", 2);
@@ -173,42 +167,41 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         oneToOneConversionRecipe(consumer, RuBlocks.WHITE_MAGNOLIA_SAPLING.get(), RuBlocks.WHITE_MAGNOLIA_SHRUB.get(), "saplings", 2);
         oneToOneConversionRecipe(consumer, RuBlocks.WILLOW_SAPLING.get(), RuBlocks.WILLOW_SHRUB.get(), "saplings", 2);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.ASHEN_SHRUB.get(), 1).define('#', RuBlocks.ASHEN_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_ashen_sapling", has(RuBlocks.ASHEN_SAPLING.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.ACACIA_SHRUB.get(), 1).define('#', Blocks.ACACIA_SAPLING).pattern("#").pattern("#").group("shrubs").unlockedBy("has_acacia_sapling", has(Blocks.ACACIA_SAPLING)).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.BAOBAB_SHRUB.get(), 1).define('#', RuBlocks.BAOBAB_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_baobab_sapling", has(RuBlocks.BAOBAB_SAPLING.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.BIRCH_SHRUB.get(), 1).define('#', Blocks.BIRCH_SAPLING).pattern("#").pattern("#").group("shrubs").unlockedBy("has_birch_sapling", has(Blocks.BIRCH_SAPLING)).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.BLACKWOOD_SHRUB.get(), 1).define('#', RuBlocks.BLACKWOOD_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_blackwood_sapling", has(RuBlocks.BLACKWOOD_SAPLING.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.BRIMWOOD_SHRUB.get(), 1).define('#', RuBlocks.BRIMWOOD_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_brimwood_sapling", has(RuBlocks.BRIMWOOD_SAPLING.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.CHERRY_SHRUB.get(), 1).define('#', Blocks.CHERRY_SAPLING).pattern("#").pattern("#").group("shrubs").unlockedBy("has_cherry_sapling", has(Blocks.CHERRY_SAPLING)).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.MAGNOLIA_SHRUB.get(), 1).define('#', RuBlocks.MAGNOLIA_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_magnolia_sapling", has(RuBlocks.MAGNOLIA_SAPLING.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.CYPRESS_SHRUB.get(), 1).define('#', RuBlocks.CYPRESS_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_cypress_sapling", has(RuBlocks.CYPRESS_SAPLING.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.DARK_OAK_SHRUB.get(), 1).define('#', Blocks.DARK_OAK_SAPLING).pattern("#").pattern("#").group("shrubs").unlockedBy("has_dark_oak_sapling", has(Blocks.DARK_OAK_SAPLING)).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.DEAD_PINE_SHRUB.get(), 1).define('#', RuBlocks.DEAD_PINE_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_dead_pine_sapling", has(RuBlocks.DEAD_PINE_SAPLING.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.DEAD_SHRUB.get(), 1).define('#', RuBlocks.DEAD_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_dead_sapling", has(RuBlocks.DEAD_SAPLING.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.EUCALYPTUS_SHRUB.get(), 1).define('#', RuBlocks.EUCALYPTUS_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_eucalyptus_sapling", has(RuBlocks.EUCALYPTUS_SAPLING.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.FLOWERING_SHRUB.get(), 1).define('#', RuBlocks.FLOWERING_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_flowering_sapling", has(RuBlocks.FLOWERING_SAPLING.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.GOLDEN_LARCH_SHRUB.get(), 1).define('#', RuBlocks.GOLDEN_LARCH_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_golden_larch_sapling", has(RuBlocks.GOLDEN_LARCH_SAPLING.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.JOSHUA_SHRUB.get(), 1).define('#', RuBlocks.JOSHUA_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_joshua_sapling", has(RuBlocks.JOSHUA_SAPLING.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.KAPOK_SHRUB.get(), 1).define('#', RuBlocks.KAPOK_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_kapok_sapling", has(RuBlocks.KAPOK_SAPLING.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.JUNGLE_SHRUB.get(), 1).define('#', Blocks.JUNGLE_SAPLING).pattern("#").pattern("#").group("shrubs").unlockedBy("has_jungle_sapling", has(Blocks.JUNGLE_SAPLING)).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.LARCH_SHRUB.get(), 1).define('#', RuBlocks.LARCH_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_larch_sapling", has(RuBlocks.LARCH_SAPLING.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.MANGROVE_SHRUB.get(), 1).define('#', Blocks.MANGROVE_PROPAGULE).pattern("#").pattern("#").group("shrubs").unlockedBy("has_mangrove_propagule", has(Blocks.MANGROVE_PROPAGULE)).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.MAPLE_SHRUB.get(), 1).define('#', RuBlocks.MAPLE_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_maple_sapling", has(RuBlocks.MAPLE_SAPLING.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.MAUVE_SHRUB.get(), 1).define('#', RuBlocks.MAUVE_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_mauve_sapling", has(RuBlocks.MAUVE_SAPLING.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.OAK_SHRUB.get(), 1).define('#', Blocks.OAK_SAPLING).pattern("#").pattern("#").group("shrubs").unlockedBy("has_oak_sapling", has(Blocks.OAK_SAPLING)).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.ORANGE_MAPLE_SHRUB.get(), 1).define('#', RuBlocks.ORANGE_MAPLE_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_orange_maple_sapling", has(RuBlocks.ORANGE_MAPLE_SAPLING.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.PALM_SHRUB.get(), 1).define('#', RuBlocks.PALM_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_palm_sapling", has(RuBlocks.PALM_SAPLING.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.PINE_SHRUB.get(), 1).define('#', RuBlocks.PINE_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_pine_sapling", has(RuBlocks.PINE_SAPLING.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.BLUE_MAGNOLIA_SHRUB.get(), 1).define('#', RuBlocks.BLUE_MAGNOLIA_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_blue_magnolia_sapling", has(RuBlocks.BLUE_MAGNOLIA_SAPLING.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.PINK_MAGNOLIA_SHRUB.get(), 1).define('#', RuBlocks.PINK_MAGNOLIA_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_pink_magnolia_sapling", has(RuBlocks.PINK_MAGNOLIA_SAPLING.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.REDWOOD_SHRUB.get(), 1).define('#', RuBlocks.REDWOOD_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_redwood_sapling", has(RuBlocks.REDWOOD_SAPLING.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.RED_MAPLE_SHRUB.get(), 1).define('#', RuBlocks.RED_MAPLE_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_red_maple_sapling", has(RuBlocks.RED_MAPLE_SAPLING.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.ENCHANTED_BIRCH_SHRUB.get(), 1).define('#', RuBlocks.ENCHANTED_BIRCH_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_enchanted_birch_sapling", has(RuBlocks.ENCHANTED_BIRCH_SAPLING.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.SILVER_BIRCH_SHRUB.get(), 1).define('#', RuBlocks.SILVER_BIRCH_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_silver_birch_sapling", has(RuBlocks.SILVER_BIRCH_SAPLING.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.SOCOTRA_SHRUB.get(), 1).define('#', RuBlocks.SOCOTRA_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_socotra_sapling", has(RuBlocks.SOCOTRA_SAPLING.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.SPRUCE_SHRUB.get(), 1).define('#', Blocks.SPRUCE_SAPLING).pattern("#").pattern("#").group("shrubs").unlockedBy("has_spruce_sapling", has(Blocks.SPRUCE_SAPLING)).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.WHITE_MAGNOLIA_SHRUB.get(), 1).define('#', RuBlocks.WHITE_MAGNOLIA_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_white_magnolia_sapling", has(RuBlocks.WHITE_MAGNOLIA_SAPLING.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.WILLOW_SHRUB.get(), 1).define('#', RuBlocks.WILLOW_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_willow_sapling", has(RuBlocks.WILLOW_SAPLING.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.ASHEN_SHRUB.get(), 1).define('#', RuBlocks.ASHEN_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_ashen_sapling", has(RuBlocks.ASHEN_SAPLING.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.ACACIA_SHRUB.get(), 1).define('#', Blocks.ACACIA_SAPLING).pattern("#").pattern("#").group("shrubs").unlockedBy("has_acacia_sapling", has(Blocks.ACACIA_SAPLING)).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.BAOBAB_SHRUB.get(), 1).define('#', RuBlocks.BAOBAB_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_baobab_sapling", has(RuBlocks.BAOBAB_SAPLING.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.BIRCH_SHRUB.get(), 1).define('#', Blocks.BIRCH_SAPLING).pattern("#").pattern("#").group("shrubs").unlockedBy("has_birch_sapling", has(Blocks.BIRCH_SAPLING)).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.BLACKWOOD_SHRUB.get(), 1).define('#', RuBlocks.BLACKWOOD_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_blackwood_sapling", has(RuBlocks.BLACKWOOD_SAPLING.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.BRIMWOOD_SHRUB.get(), 1).define('#', RuBlocks.BRIMWOOD_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_brimwood_sapling", has(RuBlocks.BRIMWOOD_SAPLING.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.MAGNOLIA_SHRUB.get(), 1).define('#', RuBlocks.MAGNOLIA_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_magnolia_sapling", has(RuBlocks.MAGNOLIA_SAPLING.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.CYPRESS_SHRUB.get(), 1).define('#', RuBlocks.CYPRESS_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_cypress_sapling", has(RuBlocks.CYPRESS_SAPLING.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.DARK_OAK_SHRUB.get(), 1).define('#', Blocks.DARK_OAK_SAPLING).pattern("#").pattern("#").group("shrubs").unlockedBy("has_dark_oak_sapling", has(Blocks.DARK_OAK_SAPLING)).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.DEAD_PINE_SHRUB.get(), 1).define('#', RuBlocks.DEAD_PINE_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_dead_pine_sapling", has(RuBlocks.DEAD_PINE_SAPLING.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.DEAD_SHRUB.get(), 1).define('#', RuBlocks.DEAD_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_dead_sapling", has(RuBlocks.DEAD_SAPLING.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.EUCALYPTUS_SHRUB.get(), 1).define('#', RuBlocks.EUCALYPTUS_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_eucalyptus_sapling", has(RuBlocks.EUCALYPTUS_SAPLING.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.FLOWERING_SHRUB.get(), 1).define('#', RuBlocks.FLOWERING_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_flowering_sapling", has(RuBlocks.FLOWERING_SAPLING.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.GOLDEN_LARCH_SHRUB.get(), 1).define('#', RuBlocks.GOLDEN_LARCH_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_golden_larch_sapling", has(RuBlocks.GOLDEN_LARCH_SAPLING.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.JOSHUA_SHRUB.get(), 1).define('#', RuBlocks.JOSHUA_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_joshua_sapling", has(RuBlocks.JOSHUA_SAPLING.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.KAPOK_SHRUB.get(), 1).define('#', RuBlocks.KAPOK_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_kapok_sapling", has(RuBlocks.KAPOK_SAPLING.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.JUNGLE_SHRUB.get(), 1).define('#', Blocks.JUNGLE_SAPLING).pattern("#").pattern("#").group("shrubs").unlockedBy("has_jungle_sapling", has(Blocks.JUNGLE_SAPLING)).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.LARCH_SHRUB.get(), 1).define('#', RuBlocks.LARCH_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_larch_sapling", has(RuBlocks.LARCH_SAPLING.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.MANGROVE_SHRUB.get(), 1).define('#', Blocks.MANGROVE_PROPAGULE).pattern("#").pattern("#").group("shrubs").unlockedBy("has_mangrove_propagule", has(Blocks.MANGROVE_PROPAGULE)).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.MAPLE_SHRUB.get(), 1).define('#', RuBlocks.MAPLE_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_maple_sapling", has(RuBlocks.MAPLE_SAPLING.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.MAUVE_SHRUB.get(), 1).define('#', RuBlocks.MAUVE_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_mauve_sapling", has(RuBlocks.MAUVE_SAPLING.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.OAK_SHRUB.get(), 1).define('#', Blocks.OAK_SAPLING).pattern("#").pattern("#").group("shrubs").unlockedBy("has_oak_sapling", has(Blocks.OAK_SAPLING)).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.ORANGE_MAPLE_SHRUB.get(), 1).define('#', RuBlocks.ORANGE_MAPLE_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_orange_maple_sapling", has(RuBlocks.ORANGE_MAPLE_SAPLING.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.PALM_SHRUB.get(), 1).define('#', RuBlocks.PALM_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_palm_sapling", has(RuBlocks.PALM_SAPLING.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.PINE_SHRUB.get(), 1).define('#', RuBlocks.PINE_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_pine_sapling", has(RuBlocks.PINE_SAPLING.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.BLUE_MAGNOLIA_SHRUB.get(), 1).define('#', RuBlocks.BLUE_MAGNOLIA_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_blue_magnolia_sapling", has(RuBlocks.BLUE_MAGNOLIA_SAPLING.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.PINK_MAGNOLIA_SHRUB.get(), 1).define('#', RuBlocks.PINK_MAGNOLIA_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_pink_magnolia_sapling", has(RuBlocks.PINK_MAGNOLIA_SAPLING.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.REDWOOD_SHRUB.get(), 1).define('#', RuBlocks.REDWOOD_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_redwood_sapling", has(RuBlocks.REDWOOD_SAPLING.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.RED_MAPLE_SHRUB.get(), 1).define('#', RuBlocks.RED_MAPLE_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_red_maple_sapling", has(RuBlocks.RED_MAPLE_SAPLING.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.ENCHANTED_BIRCH_SHRUB.get(), 1).define('#', RuBlocks.ENCHANTED_BIRCH_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_enchanted_birch_sapling", has(RuBlocks.ENCHANTED_BIRCH_SAPLING.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.SILVER_BIRCH_SHRUB.get(), 1).define('#', RuBlocks.SILVER_BIRCH_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_silver_birch_sapling", has(RuBlocks.SILVER_BIRCH_SAPLING.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.SOCOTRA_SHRUB.get(), 1).define('#', RuBlocks.SOCOTRA_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_socotra_sapling", has(RuBlocks.SOCOTRA_SAPLING.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.SPRUCE_SHRUB.get(), 1).define('#', Blocks.SPRUCE_SAPLING).pattern("#").pattern("#").group("shrubs").unlockedBy("has_spruce_sapling", has(Blocks.SPRUCE_SAPLING)).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.WHITE_MAGNOLIA_SHRUB.get(), 1).define('#', RuBlocks.WHITE_MAGNOLIA_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_white_magnolia_sapling", has(RuBlocks.WHITE_MAGNOLIA_SAPLING.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.WILLOW_SHRUB.get(), 1).define('#', RuBlocks.WILLOW_SAPLING.get()).pattern("#").pattern("#").group("shrubs").unlockedBy("has_willow_sapling", has(RuBlocks.WILLOW_SAPLING.get())).save(consumer);
 
         oneToOneConversionRecipe(consumer, RuBlocks.BLUE_BIOSHROOM.get(), RuBlocks.TALL_BLUE_BIOSHROOM.get(), "bioshrooms", 2);
         oneToOneConversionRecipe(consumer, Items.BLUE_DYE, RuBlocks.BLUE_BIOSHROOM.get(), "blue_dye");
@@ -218,28 +211,28 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         oneToOneConversionRecipe(consumer, Items.PINK_DYE, RuBlocks.PINK_BIOSHROOM.get(), "pink_dye");
         oneToOneConversionRecipe(consumer, RuBlocks.YELLOW_BIOSHROOM.get(), RuBlocks.TALL_YELLOW_BIOSHROOM.get(), "bioshrooms", 2);
         oneToOneConversionRecipe(consumer, Items.YELLOW_DYE, RuBlocks.TALL_YELLOW_BIOSHROOM.get(), "yellow_dye");
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.TALL_BLUE_BIOSHROOM.get(), 1).define('#', RuBlocks.BLUE_BIOSHROOM.get()).pattern("#").pattern("#").group("bioshrooms").unlockedBy("has_blue_bioshroom", has(RuBlocks.BLUE_BIOSHROOM.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.TALL_GREEN_BIOSHROOM.get(), 1).define('#', RuBlocks.GREEN_BIOSHROOM.get()).pattern("#").pattern("#").group("bioshrooms").unlockedBy("has_green_bioshroom", has(RuBlocks.GREEN_BIOSHROOM.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.TALL_PINK_BIOSHROOM.get(), 1).define('#', RuBlocks.PINK_BIOSHROOM.get()).pattern("#").pattern("#").group("bioshrooms").unlockedBy("has_pink_bioshroom", has(RuBlocks.PINK_BIOSHROOM.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, RuBlocks.TALL_YELLOW_BIOSHROOM.get(), 1).define('#', RuBlocks.YELLOW_BIOSHROOM.get()).pattern("#").pattern("#").group("bioshrooms").unlockedBy("has_yellow_bioshroom", has(RuBlocks.YELLOW_BIOSHROOM.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.TALL_BLUE_BIOSHROOM.get(), 1).define('#', RuBlocks.BLUE_BIOSHROOM.get()).pattern("#").pattern("#").group("bioshrooms").unlockedBy("has_blue_bioshroom", has(RuBlocks.BLUE_BIOSHROOM.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.TALL_GREEN_BIOSHROOM.get(), 1).define('#', RuBlocks.GREEN_BIOSHROOM.get()).pattern("#").pattern("#").group("bioshrooms").unlockedBy("has_green_bioshroom", has(RuBlocks.GREEN_BIOSHROOM.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.TALL_PINK_BIOSHROOM.get(), 1).define('#', RuBlocks.PINK_BIOSHROOM.get()).pattern("#").pattern("#").group("bioshrooms").unlockedBy("has_pink_bioshroom", has(RuBlocks.PINK_BIOSHROOM.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.TALL_YELLOW_BIOSHROOM.get(), 1).define('#', RuBlocks.YELLOW_BIOSHROOM.get()).pattern("#").pattern("#").group("bioshrooms").unlockedBy("has_yellow_bioshroom", has(RuBlocks.YELLOW_BIOSHROOM.get())).save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.ICE).define('#', RuBlocks.ICICLE.get()).pattern("##").pattern("##").group("ice").unlockedBy("has_icicle", has(RuBlocks.ICICLE.get())).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getConversionRecipeName(Blocks.ICE,RuBlocks.ICICLE.get())));
+        ShapedRecipeBuilder.shaped(Blocks.ICE).define('#', RuBlocks.ICICLE.get()).pattern("##").pattern("##").group("ice").unlockedBy("has_icicle", has(RuBlocks.ICICLE.get())).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getConversionRecipeName(Blocks.ICE,RuBlocks.ICICLE.get())));
 
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(RuBlocks.BARREL_CACTUS.get()), RecipeCategory.MISC, Items.GREEN_DYE, 1.0F, 200).group("cactus").unlockedBy("has_barrel_cactus", has(RuBlocks.BARREL_CACTUS.get())).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getConversionRecipeName(Items.GREEN_DYE, RuBlocks.BARREL_CACTUS.get())));
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(RuBlocks.BARREL_CACTUS.get()), Items.GREEN_DYE, 1.0F, 200).group("cactus").unlockedBy("has_barrel_cactus", has(RuBlocks.BARREL_CACTUS.get())).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getConversionRecipeName(Items.GREEN_DYE, RuBlocks.BARREL_CACTUS.get())));
         oneToOneConversionRecipe(consumer, Items.ORANGE_DYE, RuBlocks.CAVE_HYSSOP.get(), "orange_dye");
 
         /*-----------------PLANT_BLOCKS-----------------*/
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.BLUE_BIOSHROOM_BLOCK.get(), 1).define('#', RuBlocks.BLUE_BIOSHROOM.get()).pattern("##").pattern("##").group("bioshroom_blocks").unlockedBy("has_blue_bioshroom", has(RuBlocks.BLUE_BIOSHROOM.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.GLOWING_BLUE_BIOSHROOM_BLOCK.get(), 4).define('#', RuBlocks.BLUE_BIOSHROOM_BLOCK.get()).define('X', Blocks.GLOWSTONE).pattern(" # ").pattern("#X#").pattern(" # ").group("bioshroom_blocks").unlockedBy("has_blue_bioshroom_block", has(RuBlocks.BLUE_BIOSHROOM_BLOCK.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.BLUE_BIOSHROOM_BLOCK.get(), 1).define('#', RuBlocks.BLUE_BIOSHROOM.get()).pattern("##").pattern("##").group("bioshroom_blocks").unlockedBy("has_blue_bioshroom", has(RuBlocks.BLUE_BIOSHROOM.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.GLOWING_BLUE_BIOSHROOM_BLOCK.get(), 4).define('#', RuBlocks.BLUE_BIOSHROOM_BLOCK.get()).define('X', Blocks.GLOWSTONE).pattern(" # ").pattern("#X#").pattern(" # ").group("bioshroom_blocks").unlockedBy("has_blue_bioshroom_block", has(RuBlocks.BLUE_BIOSHROOM_BLOCK.get())).save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.GREEN_BIOSHROOM_BLOCK.get(), 1).define('#', RuBlocks.GREEN_BIOSHROOM.get()).pattern("##").pattern("##").group("bioshroom_blocks").unlockedBy("has_green_bioshroom", has(RuBlocks.GREEN_BIOSHROOM.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.GLOWING_GREEN_BIOSHROOM_BLOCK.get(), 4).define('#', RuBlocks.GREEN_BIOSHROOM_BLOCK.get()).define('X', Blocks.GLOWSTONE).pattern(" # ").pattern("#X#").pattern(" # ").group("bioshroom_blocks").unlockedBy("has_green_bioshroom_block", has(RuBlocks.GREEN_BIOSHROOM_BLOCK.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.GREEN_BIOSHROOM_BLOCK.get(), 1).define('#', RuBlocks.GREEN_BIOSHROOM.get()).pattern("##").pattern("##").group("bioshroom_blocks").unlockedBy("has_green_bioshroom", has(RuBlocks.GREEN_BIOSHROOM.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.GLOWING_GREEN_BIOSHROOM_BLOCK.get(), 4).define('#', RuBlocks.GREEN_BIOSHROOM_BLOCK.get()).define('X', Blocks.GLOWSTONE).pattern(" # ").pattern("#X#").pattern(" # ").group("bioshroom_blocks").unlockedBy("has_green_bioshroom_block", has(RuBlocks.GREEN_BIOSHROOM_BLOCK.get())).save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.PINK_BIOSHROOM_BLOCK.get(), 1).define('#', RuBlocks.PINK_BIOSHROOM.get()).pattern("##").pattern("##").group("bioshroom_blocks").unlockedBy("has_pink_bioshroom", has(RuBlocks.PINK_BIOSHROOM.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.GLOWING_PINK_BIOSHROOM_BLOCK.get(), 4).define('#', RuBlocks.PINK_BIOSHROOM_BLOCK.get()).define('X', Blocks.GLOWSTONE).pattern(" # ").pattern("#X#").pattern(" # ").group("bioshroom_blocks").unlockedBy("has_pink_bioshroom_block", has(RuBlocks.PINK_BIOSHROOM_BLOCK.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.PINK_BIOSHROOM_BLOCK.get(), 1).define('#', RuBlocks.PINK_BIOSHROOM.get()).pattern("##").pattern("##").group("bioshroom_blocks").unlockedBy("has_pink_bioshroom", has(RuBlocks.PINK_BIOSHROOM.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.GLOWING_PINK_BIOSHROOM_BLOCK.get(), 4).define('#', RuBlocks.PINK_BIOSHROOM_BLOCK.get()).define('X', Blocks.GLOWSTONE).pattern(" # ").pattern("#X#").pattern(" # ").group("bioshroom_blocks").unlockedBy("has_pink_bioshroom_block", has(RuBlocks.PINK_BIOSHROOM_BLOCK.get())).save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.YELLOW_BIOSHROOM_BLOCK.get(), 1).define('#', RuBlocks.YELLOW_BIOSHROOM.get()).pattern("##").pattern("##").group("bioshroom_blocks").unlockedBy("has_yellow_bioshroom", has(RuBlocks.YELLOW_BIOSHROOM.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.GLOWING_YELLOW_BIOSHROOM_BLOCK.get(), 4).define('#', RuBlocks.YELLOW_BIOSHROOM_BLOCK.get()).define('X', Blocks.GLOWSTONE).pattern(" # ").pattern("#X#").pattern(" # ").group("bioshroom_blocks").unlockedBy("has_yellow_bioshroom_block", has(RuBlocks.YELLOW_BIOSHROOM_BLOCK.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.YELLOW_BIOSHROOM_BLOCK.get(), 1).define('#', RuBlocks.YELLOW_BIOSHROOM.get()).pattern("##").pattern("##").group("bioshroom_blocks").unlockedBy("has_yellow_bioshroom", has(RuBlocks.YELLOW_BIOSHROOM.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.GLOWING_YELLOW_BIOSHROOM_BLOCK.get(), 4).define('#', RuBlocks.YELLOW_BIOSHROOM_BLOCK.get()).define('X', Blocks.GLOWSTONE).pattern(" # ").pattern("#X#").pattern(" # ").group("bioshroom_blocks").unlockedBy("has_yellow_bioshroom_block", has(RuBlocks.YELLOW_BIOSHROOM_BLOCK.get())).save(consumer);
 
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(RuBlocks.SAGUARO_CACTUS.get()), Items.GREEN_DYE, 1.0F, 200).group("cactus").unlockedBy("has_saguaro_cactus", has(RuBlocks.SAGUARO_CACTUS.get())).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getConversionRecipeName(Items.GREEN_DYE, RuBlocks.SAGUARO_CACTUS.get())));
 
@@ -317,51 +310,51 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         oneToOneConversionRecipe(consumer, Items.STICK, RuBlocks.WILLOW_BRANCH.get(), "stick", 4);
 
         /*-----------------DIRT_BLOCKS-----------------*/
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.PEAT_COARSE_DIRT.get(), 4).define('D', RuBlocks.PEAT_DIRT.get()).define('G', Blocks.GRAVEL).pattern("DG").pattern("GD").group("coarse_dirt").unlockedBy("has_gravel", has(Blocks.GRAVEL)).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.SILT_COARSE_DIRT.get(), 4).define('D', RuBlocks.SILT_DIRT.get()).define('G', Blocks.GRAVEL).pattern("DG").pattern("GD").group("coarse_dirt").unlockedBy("has_gravel", has(Blocks.GRAVEL)).save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.ASHEN_DIRT.get(), 4).define('D', Blocks.DIRT).define('G', RuTags.ASH_ITEM).pattern("DG").pattern("GD").group("coarse_dirt").unlockedBy("has_ash", has(RuTags.ASH_ITEM)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getConversionRecipeName(RuBlocks.ASHEN_DIRT.get(), Blocks.DIRT)));
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.ASHEN_DIRT.get(), 4).define('D', RuBlocks.PEAT_DIRT.get()).define('G', RuTags.ASH_ITEM).pattern("DG").pattern("GD").group("coarse_dirt").unlockedBy("has_ash", has(RuTags.ASH_ITEM)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getConversionRecipeName(RuBlocks.ASHEN_DIRT.get(), RuBlocks.PEAT_DIRT.get())));
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.ASHEN_DIRT.get(), 4).define('D', RuBlocks.SILT_DIRT.get()).define('G', RuTags.ASH_ITEM).pattern("DG").pattern("GD").group("coarse_dirt").unlockedBy("has_ash", has(RuTags.ASH_ITEM)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getConversionRecipeName(RuBlocks.ASHEN_DIRT.get(), RuBlocks.SILT_DIRT.get())));
+        ShapedRecipeBuilder.shaped(RuBlocks.PEAT_COARSE_DIRT.get(), 4).define('D', RuBlocks.PEAT_DIRT.get()).define('G', Blocks.GRAVEL).pattern("DG").pattern("GD").group("coarse_dirt").unlockedBy("has_gravel", has(Blocks.GRAVEL)).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.SILT_COARSE_DIRT.get(), 4).define('D', RuBlocks.SILT_DIRT.get()).define('G', Blocks.GRAVEL).pattern("DG").pattern("GD").group("coarse_dirt").unlockedBy("has_gravel", has(Blocks.GRAVEL)).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.ASHEN_DIRT.get(), 4).define('D', Blocks.DIRT).define('G', RuTags.ASH_ITEM).pattern("DG").pattern("GD").group("coarse_dirt").unlockedBy("has_ash", has(RuTags.ASH_ITEM)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getConversionRecipeName(RuBlocks.ASHEN_DIRT.get(), Blocks.DIRT)));
+        ShapedRecipeBuilder.shaped(RuBlocks.ASHEN_DIRT.get(), 4).define('D', RuBlocks.PEAT_DIRT.get()).define('G', RuTags.ASH_ITEM).pattern("DG").pattern("GD").group("coarse_dirt").unlockedBy("has_ash", has(RuTags.ASH_ITEM)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getConversionRecipeName(RuBlocks.ASHEN_DIRT.get(), RuBlocks.PEAT_DIRT.get())));
+        ShapedRecipeBuilder.shaped(RuBlocks.ASHEN_DIRT.get(), 4).define('D', RuBlocks.SILT_DIRT.get()).define('G', RuTags.ASH_ITEM).pattern("DG").pattern("GD").group("coarse_dirt").unlockedBy("has_ash", has(RuTags.ASH_ITEM)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getConversionRecipeName(RuBlocks.ASHEN_DIRT.get(), RuBlocks.SILT_DIRT.get())));
 
         /*-----------------STONE_BLOCKS-----------------*/
 
-        slabBuilder(RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_SLAB.get(), Ingredient.of(RuBlocks.CHALK.get())).group("chalk").unlockedBy("has_chalk", has(RuBlocks.CHALK.get())).save(consumer);
-        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_SLAB.get(), RuBlocks.CHALK.get(), 2);
+        slabBuilder(RuBlocks.CHALK_SLAB.get(), Ingredient.of(RuBlocks.CHALK.get())).group("chalk").unlockedBy("has_chalk", has(RuBlocks.CHALK.get())).save(consumer);
+        stonecutterResultFromBase(consumer, RuBlocks.CHALK_SLAB.get(), RuBlocks.CHALK.get(), 2);
 
         stairBuilder(RuBlocks.CHALK_STAIRS.get(), Ingredient.of(RuBlocks.CHALK.get())).group("chalk").unlockedBy("has_chalk", has(RuBlocks.CHALK.get())).save(consumer);
-        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_STAIRS.get(), RuBlocks.CHALK.get());
+        stonecutterResultFromBase(consumer, RuBlocks.CHALK_STAIRS.get(), RuBlocks.CHALK.get());
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_GRASS_BLOCK.get(), 1).define('#', RuBlocks.CHALK.get()).define('X', RuTags.GRASS_ITEM).pattern("X").pattern("#").group("stone_grass").unlockedBy("has_chalk", has(RuBlocks.CHALK.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(RuBlocks.CHALK_GRASS_BLOCK.get(), 1).define('#', RuBlocks.CHALK.get()).define('X', RuTags.GRASS_ITEM).pattern("X").pattern("#").group("stone_grass").unlockedBy("has_chalk", has(RuBlocks.CHALK.get())).save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_BRICKS.get(), 1).define('#', RuBlocks.POLISHED_CHALK.get()).pattern("##").pattern("##").group("chalk").unlockedBy("has_polished_chalk", has(RuBlocks.POLISHED_CHALK.get())).save(consumer);
-        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_BRICKS.get(), RuBlocks.CHALK.get());
-        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_BRICKS.get(), RuBlocks.CHALK_GRASS_BLOCK.get());
-        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_BRICKS.get(), RuBlocks.POLISHED_CHALK.get());
-        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_BRICKS.get(), RuBlocks.CHALK_PILLAR.get());
+        ShapedRecipeBuilder.shaped(RuBlocks.CHALK_BRICKS.get(), 1).define('#', RuBlocks.POLISHED_CHALK.get()).pattern("##").pattern("##").group("chalk").unlockedBy("has_polished_chalk", has(RuBlocks.POLISHED_CHALK.get())).save(consumer);
+        stonecutterResultFromBase(consumer, RuBlocks.CHALK_BRICKS.get(), RuBlocks.CHALK.get());
+        stonecutterResultFromBase(consumer, RuBlocks.CHALK_BRICKS.get(), RuBlocks.CHALK_GRASS_BLOCK.get());
+        stonecutterResultFromBase(consumer, RuBlocks.CHALK_BRICKS.get(), RuBlocks.POLISHED_CHALK.get());
+        stonecutterResultFromBase(consumer, RuBlocks.CHALK_BRICKS.get(), RuBlocks.CHALK_PILLAR.get());
 
-        slabBuilder(RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_BRICK_SLAB.get(), Ingredient.of(RuBlocks.CHALK_BRICKS.get())).group("chalk").unlockedBy("has_chalk_bricks", has(RuBlocks.CHALK_BRICKS.get())).save(consumer);
-        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_BRICK_SLAB.get(), RuBlocks.CHALK_BRICKS.get(), 2);
+        slabBuilder(RuBlocks.CHALK_BRICK_SLAB.get(), Ingredient.of(RuBlocks.CHALK_BRICKS.get())).group("chalk").unlockedBy("has_chalk_bricks", has(RuBlocks.CHALK_BRICKS.get())).save(consumer);
+        stonecutterResultFromBase(consumer, RuBlocks.CHALK_BRICK_SLAB.get(), RuBlocks.CHALK_BRICKS.get(), 2);
 
         stairBuilder(RuBlocks.CHALK_BRICK_STAIRS.get(), Ingredient.of(RuBlocks.CHALK_BRICKS.get())).group("chalk").unlockedBy("has_chalk_bricks", has(RuBlocks.CHALK_BRICKS.get())).save(consumer);
-        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_BRICK_STAIRS.get(), RuBlocks.CHALK_BRICKS.get());
+        stonecutterResultFromBase(consumer, RuBlocks.CHALK_BRICK_STAIRS.get(), RuBlocks.CHALK_BRICKS.get());
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_PILLAR.get(), 1).define('#', RuBlocks.CHALK.get()).pattern("#").pattern("#").group("chalk").unlockedBy("has_chalk", has(RuBlocks.CHALK.get())).save(consumer);
-        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_PILLAR.get(), RuBlocks.CHALK.get());
-        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_PILLAR.get(), RuBlocks.CHALK_GRASS_BLOCK.get());
-        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_PILLAR.get(), RuBlocks.POLISHED_CHALK.get());
-        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.CHALK_PILLAR.get(), RuBlocks.CHALK_BRICKS.get());
+        ShapedRecipeBuilder.shaped(RuBlocks.CHALK_PILLAR.get(), 1).define('#', RuBlocks.CHALK.get()).pattern("#").pattern("#").group("chalk").unlockedBy("has_chalk", has(RuBlocks.CHALK.get())).save(consumer);
+        stonecutterResultFromBase(consumer, RuBlocks.CHALK_PILLAR.get(), RuBlocks.CHALK.get());
+        stonecutterResultFromBase(consumer, RuBlocks.CHALK_PILLAR.get(), RuBlocks.CHALK_GRASS_BLOCK.get());
+        stonecutterResultFromBase(consumer, RuBlocks.CHALK_PILLAR.get(), RuBlocks.POLISHED_CHALK.get());
+        stonecutterResultFromBase(consumer, RuBlocks.CHALK_PILLAR.get(), RuBlocks.CHALK_BRICKS.get());
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RuBlocks.POLISHED_CHALK.get(), 1).define('#', RuBlocks.CHALK.get()).pattern("##").pattern("##").group("chalk").unlockedBy("has_chalk", has(RuBlocks.CHALK.get())).save(consumer);
-        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.POLISHED_CHALK.get(), RuBlocks.CHALK.get());
-        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.POLISHED_CHALK.get(), RuBlocks.CHALK_GRASS_BLOCK.get());
-        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.POLISHED_CHALK.get(), RuBlocks.CHALK_BRICKS.get());
-        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.POLISHED_CHALK.get(), RuBlocks.CHALK_PILLAR.get());
+        ShapedRecipeBuilder.shaped(RuBlocks.POLISHED_CHALK.get(), 1).define('#', RuBlocks.CHALK.get()).pattern("##").pattern("##").group("chalk").unlockedBy("has_chalk", has(RuBlocks.CHALK.get())).save(consumer);
+        stonecutterResultFromBase(consumer, RuBlocks.POLISHED_CHALK.get(), RuBlocks.CHALK.get());
+        stonecutterResultFromBase(consumer, RuBlocks.POLISHED_CHALK.get(), RuBlocks.CHALK_GRASS_BLOCK.get());
+        stonecutterResultFromBase(consumer, RuBlocks.POLISHED_CHALK.get(), RuBlocks.CHALK_BRICKS.get());
+        stonecutterResultFromBase(consumer, RuBlocks.POLISHED_CHALK.get(), RuBlocks.CHALK_PILLAR.get());
 
-        slabBuilder(RecipeCategory.BUILDING_BLOCKS, RuBlocks.POLISHED_CHALK_SLAB.get(), Ingredient.of(RuBlocks.POLISHED_CHALK.get())).group("chalk").unlockedBy("has_polished_chalk", has(RuBlocks.POLISHED_CHALK.get())).save(consumer);
-        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.POLISHED_CHALK_SLAB.get(), RuBlocks.POLISHED_CHALK.get(), 2);
+        slabBuilder(RuBlocks.POLISHED_CHALK_SLAB.get(), Ingredient.of(RuBlocks.POLISHED_CHALK.get())).group("chalk").unlockedBy("has_polished_chalk", has(RuBlocks.POLISHED_CHALK.get())).save(consumer);
+        stonecutterResultFromBase(consumer, RuBlocks.POLISHED_CHALK_SLAB.get(), RuBlocks.POLISHED_CHALK.get(), 2);
 
         stairBuilder(RuBlocks.POLISHED_CHALK_STAIRS.get(), Ingredient.of(RuBlocks.POLISHED_CHALK.get())).group("chalk").unlockedBy("has_polished_chalk", has(RuBlocks.POLISHED_CHALK.get())).save(consumer);
-        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, RuBlocks.POLISHED_CHALK_STAIRS.get(), RuBlocks.POLISHED_CHALK.get());
+        stonecutterResultFromBase(consumer, RuBlocks.POLISHED_CHALK_STAIRS.get(), RuBlocks.POLISHED_CHALK.get());
 
         ShapelessRecipeBuilder.shapeless(RuBlocks.MOSSY_STONE.get(), 1).requires(Blocks.STONE).requires(Blocks.VINE).group("mossy").unlockedBy("has_stone", has(Blocks.STONE)).unlockedBy("has_vine", has(Blocks.VINE)).save(consumer);
         oreSmelting(consumer, MOSSY_STONE_SMELTABLES, RuBlocks.MOSSY_STONE.get(), 0.1F, 200, "mossy");
@@ -374,8 +367,8 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         ShapedRecipeBuilder.shaped(RuBlocks.ASH.get(), 1).define('#', Items.GUNPOWDER).pattern("##").pattern("##").group("ash").unlockedBy("has_gunpowder", has(Items.GUNPOWDER)).save(consumer);
 
         /*-----------------WOOD_TYPES-----------------*/
-        //planksFromLogs(consumer, Blocks.BAMBOO_PLANKS, RuTags.BAMBOO_LOGS_ITEM, 4);
-        //ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.BAMBOO, 1).define('#', RuTags.BAMBOO_LOGS_ITEM).pattern("#").pattern("#").group("bamboo").unlockedBy("has_bamboo_log", has(RuTags.BAMBOO_LOGS_ITEM)).save(consumer);
+        //planksFromLogs(consumer, Blocks.BAMBOO_PLANKS, RuTags.BAMBOO_LOGS_ITEM);
+        //ShapedRecipeBuilder.shaped(Blocks.BAMBOO, 1).define('#', RuTags.BAMBOO_LOGS_ITEM).pattern("#").pattern("#").group("bamboo").unlockedBy("has_bamboo_log", has(RuTags.BAMBOO_LOGS_ITEM)).save(consumer);
         //ASHEN_BLOCKS
         woodFromLogs(consumer, RuBlocks.ASHEN_WOOD.get(), RuBlocks.ASHEN_LOG.get());
         //SILVER_BIRCH_BLOCKS
@@ -387,7 +380,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         //BAOBAB_BLOCKS
         woodFromLogs(consumer, RuBlocks.BAOBAB_WOOD.get(), RuBlocks.BAOBAB_LOG.get());
         woodFromLogs(consumer, RuBlocks.STRIPPED_BAOBAB_WOOD.get(), RuBlocks.STRIPPED_BAOBAB_LOG.get());
-        planksFromLogs(consumer, RuBlocks.BAOBAB_PLANKS.get(), RuTags.BAOBAB_LOGS_ITEM, 4);
+        planksFromLogs(consumer, RuBlocks.BAOBAB_PLANKS.get(), RuTags.BAOBAB_LOGS_ITEM);
         woodenStairs(consumer, RuBlocks.BAOBAB_STAIRS.get(), RuBlocks.BAOBAB_PLANKS.get());
         woodenSlab(consumer, RuBlocks.BAOBAB_SLAB.get(), RuBlocks.BAOBAB_PLANKS.get());
         woodenFence(consumer, RuBlocks.BAOBAB_FENCE.get(), RuBlocks.BAOBAB_PLANKS.get());
@@ -404,7 +397,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         woodFromLogs(consumer, RuBlocks.BRIMWOOD_WOOD.get(), RuBlocks.BRIMWOOD_LOG.get());
         woodFromOtherItem(consumer, RuBlocks.BRIMWOOD_WOOD.get(), RuBlocks.BRIMWOOD_LOG_MAGMA.get());
         woodFromLogs(consumer, RuBlocks.STRIPPED_BRIMWOOD_WOOD.get(), RuBlocks.STRIPPED_BRIMWOOD_LOG.get());
-        planksFromLogs(consumer, RuBlocks.BRIMWOOD_PLANKS.get(), RuTags.BRIMWOOD_LOGS_ITEM, 4);
+        planksFromLogs(consumer, RuBlocks.BRIMWOOD_PLANKS.get(), RuTags.BRIMWOOD_LOGS_ITEM);
         woodenStairs(consumer, RuBlocks.BRIMWOOD_STAIRS.get(), RuBlocks.BRIMWOOD_PLANKS.get());
         woodenSlab(consumer, RuBlocks.BRIMWOOD_SLAB.get(), RuBlocks.BRIMWOOD_PLANKS.get());
         woodenFence(consumer, RuBlocks.BRIMWOOD_FENCE.get(), RuBlocks.BRIMWOOD_PLANKS.get());
@@ -418,7 +411,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         //BLUE_BIOSHROOM_BLOCKS
         woodFromLogs(consumer, RuBlocks.BLUE_BIOSHROOM_HYPHAE.get(), RuBlocks.BLUE_BIOSHROOM_STEM.get());
         woodFromLogs(consumer, RuBlocks.STRIPPED_BLUE_BIOSHROOM_HYPHAE.get(), RuBlocks.STRIPPED_BLUE_BIOSHROOM_STEM.get());
-        planksFromLogs(consumer, RuBlocks.BLUE_BIOSHROOM_PLANKS.get(), RuTags.BLUE_BIOSHROOM_LOGS_ITEM, 4);
+        planksFromLogs(consumer, RuBlocks.BLUE_BIOSHROOM_PLANKS.get(), RuTags.BLUE_BIOSHROOM_LOGS_ITEM);
         woodenStairs(consumer, RuBlocks.BLUE_BIOSHROOM_STAIRS.get(), RuBlocks.BLUE_BIOSHROOM_PLANKS.get());
         woodenSlab(consumer, RuBlocks.BLUE_BIOSHROOM_SLAB.get(), RuBlocks.BLUE_BIOSHROOM_PLANKS.get());
         woodenFence(consumer, RuBlocks.BLUE_BIOSHROOM_FENCE.get(), RuBlocks.BLUE_BIOSHROOM_PLANKS.get());
@@ -432,7 +425,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         //BLACKWOOD_BLOCKS
         woodFromLogs(consumer, RuBlocks.BLACKWOOD_WOOD.get(), RuBlocks.BLACKWOOD_LOG.get());
         woodFromLogs(consumer, RuBlocks.STRIPPED_BLACKWOOD_WOOD.get(), RuBlocks.STRIPPED_BLACKWOOD_LOG.get());
-        planksFromLogs(consumer, RuBlocks.BLACKWOOD_PLANKS.get(), RuTags.BLACKWOOD_LOGS_ITEM, 4);
+        planksFromLogs(consumer, RuBlocks.BLACKWOOD_PLANKS.get(), RuTags.BLACKWOOD_LOGS_ITEM);
         woodenStairs(consumer, RuBlocks.BLACKWOOD_STAIRS.get(), RuBlocks.BLACKWOOD_PLANKS.get());
         woodenSlab(consumer, RuBlocks.BLACKWOOD_SLAB.get(), RuBlocks.BLACKWOOD_PLANKS.get());
         woodenFence(consumer, RuBlocks.BLACKWOOD_FENCE.get(), RuBlocks.BLACKWOOD_PLANKS.get());
@@ -448,7 +441,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         //COBALT_BLOCKS
         woodFromLogs(consumer, RuBlocks.COBALT_WOOD.get(), RuBlocks.COBALT_LOG.get());
         woodFromLogs(consumer, RuBlocks.STRIPPED_COBALT_WOOD.get(), RuBlocks.STRIPPED_COBALT_LOG.get());
-        planksFromLogs(consumer, RuBlocks.COBALT_PLANKS.get(), RuTags.COBALT_LOGS_ITEM, 4);
+        planksFromLogs(consumer, RuBlocks.COBALT_PLANKS.get(), RuTags.COBALT_LOGS_ITEM);
         woodenStairs(consumer, RuBlocks.COBALT_STAIRS.get(), RuBlocks.COBALT_PLANKS.get());
         woodenSlab(consumer, RuBlocks.COBALT_SLAB.get(), RuBlocks.COBALT_PLANKS.get());
         woodenFence(consumer, RuBlocks.COBALT_FENCE.get(), RuBlocks.COBALT_PLANKS.get());
@@ -462,7 +455,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         //CYPRESS_BLOCKS
         woodFromLogs(consumer, RuBlocks.CYPRESS_WOOD.get(), RuBlocks.CYPRESS_LOG.get());
         woodFromLogs(consumer, RuBlocks.STRIPPED_CYPRESS_WOOD.get(), RuBlocks.STRIPPED_CYPRESS_LOG.get());
-        planksFromLogs(consumer, RuBlocks.CYPRESS_PLANKS.get(), RuTags.CYPRESS_LOGS_ITEM, 4);
+        planksFromLogs(consumer, RuBlocks.CYPRESS_PLANKS.get(), RuTags.CYPRESS_LOGS_ITEM);
         woodenStairs(consumer, RuBlocks.CYPRESS_STAIRS.get(), RuBlocks.CYPRESS_PLANKS.get());
         woodenSlab(consumer, RuBlocks.CYPRESS_SLAB.get(), RuBlocks.CYPRESS_PLANKS.get());
         woodenFence(consumer, RuBlocks.CYPRESS_FENCE.get(), RuBlocks.CYPRESS_PLANKS.get());
@@ -478,7 +471,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         //DEAD_BLOCKS
         woodFromLogs(consumer, RuBlocks.DEAD_WOOD.get(), RuBlocks.DEAD_LOG.get());
         woodFromLogs(consumer, RuBlocks.STRIPPED_DEAD_WOOD.get(), RuBlocks.STRIPPED_DEAD_LOG.get());
-        planksFromLogs(consumer, RuBlocks.DEAD_PLANKS.get(), RuTags.DEAD_LOGS_ITEM, 4);
+        planksFromLogs(consumer, RuBlocks.DEAD_PLANKS.get(), RuTags.DEAD_LOGS_ITEM);
         woodenStairs(consumer, RuBlocks.DEAD_STAIRS.get(), RuBlocks.DEAD_PLANKS.get());
         woodenSlab(consumer, RuBlocks.DEAD_SLAB.get(), RuBlocks.DEAD_PLANKS.get());
         woodenFence(consumer, RuBlocks.DEAD_FENCE.get(), RuBlocks.DEAD_PLANKS.get());
@@ -494,7 +487,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         //EUCALYPTUS_BLOCKS
         woodFromLogs(consumer, RuBlocks.EUCALYPTUS_WOOD.get(), RuBlocks.EUCALYPTUS_LOG.get());
         woodFromLogs(consumer, RuBlocks.STRIPPED_EUCALYPTUS_WOOD.get(), RuBlocks.STRIPPED_EUCALYPTUS_LOG.get());
-        planksFromLogs(consumer, RuBlocks.EUCALYPTUS_PLANKS.get(), RuTags.EUCALYPTUS_LOGS_ITEM, 4);
+        planksFromLogs(consumer, RuBlocks.EUCALYPTUS_PLANKS.get(), RuTags.EUCALYPTUS_LOGS_ITEM);
         woodenStairs(consumer, RuBlocks.EUCALYPTUS_STAIRS.get(), RuBlocks.EUCALYPTUS_PLANKS.get());
         woodenSlab(consumer, RuBlocks.EUCALYPTUS_SLAB.get(), RuBlocks.EUCALYPTUS_PLANKS.get());
         woodenFence(consumer, RuBlocks.EUCALYPTUS_FENCE.get(), RuBlocks.EUCALYPTUS_PLANKS.get());
@@ -510,7 +503,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         //GREEN_BIOSHROOM_BLOCKS
         woodFromLogs(consumer, RuBlocks.GREEN_BIOSHROOM_HYPHAE.get(), RuBlocks.GREEN_BIOSHROOM_STEM.get());
         woodFromLogs(consumer, RuBlocks.STRIPPED_GREEN_BIOSHROOM_HYPHAE.get(), RuBlocks.STRIPPED_GREEN_BIOSHROOM_STEM.get());
-        planksFromLogs(consumer, RuBlocks.GREEN_BIOSHROOM_PLANKS.get(), RuTags.GREEN_BIOSHROOM_LOGS_ITEM, 4);
+        planksFromLogs(consumer, RuBlocks.GREEN_BIOSHROOM_PLANKS.get(), RuTags.GREEN_BIOSHROOM_LOGS_ITEM);
         woodenStairs(consumer, RuBlocks.GREEN_BIOSHROOM_STAIRS.get(), RuBlocks.GREEN_BIOSHROOM_PLANKS.get());
         woodenSlab(consumer, RuBlocks.GREEN_BIOSHROOM_SLAB.get(), RuBlocks.GREEN_BIOSHROOM_PLANKS.get());
         woodenFence(consumer, RuBlocks.GREEN_BIOSHROOM_FENCE.get(), RuBlocks.GREEN_BIOSHROOM_PLANKS.get());
@@ -524,7 +517,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         //JOSHUA_BLOCKS
         woodFromLogs(consumer, RuBlocks.JOSHUA_WOOD.get(), RuBlocks.JOSHUA_LOG.get());
         woodFromLogs(consumer, RuBlocks.STRIPPED_JOSHUA_WOOD.get(), RuBlocks.STRIPPED_JOSHUA_LOG.get());
-        planksFromLogs(consumer, RuBlocks.JOSHUA_PLANKS.get(), RuTags.JOSHUA_LOGS_ITEM, 4);
+        planksFromLogs(consumer, RuBlocks.JOSHUA_PLANKS.get(), RuTags.JOSHUA_LOGS_ITEM);
         woodenStairs(consumer, RuBlocks.JOSHUA_STAIRS.get(), RuBlocks.JOSHUA_PLANKS.get());
         woodenSlab(consumer, RuBlocks.JOSHUA_SLAB.get(), RuBlocks.JOSHUA_PLANKS.get());
         woodenFence(consumer, RuBlocks.JOSHUA_FENCE.get(), RuBlocks.JOSHUA_PLANKS.get());
@@ -540,7 +533,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         //KAPOK_BLOCKS
         woodFromLogs(consumer, RuBlocks.KAPOK_WOOD.get(), RuBlocks.KAPOK_LOG.get());
         woodFromLogs(consumer, RuBlocks.STRIPPED_KAPOK_WOOD.get(), RuBlocks.STRIPPED_KAPOK_LOG.get());
-        planksFromLogs(consumer, RuBlocks.KAPOK_PLANKS.get(), RuTags.KAPOK_LOGS_ITEM, 4);
+        planksFromLogs(consumer, RuBlocks.KAPOK_PLANKS.get(), RuTags.KAPOK_LOGS_ITEM);
         woodenStairs(consumer, RuBlocks.KAPOK_STAIRS.get(), RuBlocks.KAPOK_PLANKS.get());
         woodenSlab(consumer, RuBlocks.KAPOK_SLAB.get(), RuBlocks.KAPOK_PLANKS.get());
         woodenFence(consumer, RuBlocks.KAPOK_FENCE.get(), RuBlocks.KAPOK_PLANKS.get());
@@ -556,7 +549,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         //LARCH_BLOCKS
         woodFromLogs(consumer, RuBlocks.LARCH_WOOD.get(), RuBlocks.LARCH_LOG.get());
         woodFromLogs(consumer, RuBlocks.STRIPPED_LARCH_WOOD.get(), RuBlocks.STRIPPED_LARCH_LOG.get());
-        planksFromLogs(consumer, RuBlocks.LARCH_PLANKS.get(), RuTags.LARCH_LOGS_ITEM, 4);
+        planksFromLogs(consumer, RuBlocks.LARCH_PLANKS.get(), RuTags.LARCH_LOGS_ITEM);
         woodenStairs(consumer, RuBlocks.LARCH_STAIRS.get(), RuBlocks.LARCH_PLANKS.get());
         woodenSlab(consumer, RuBlocks.LARCH_SLAB.get(), RuBlocks.LARCH_PLANKS.get());
         woodenFence(consumer, RuBlocks.LARCH_FENCE.get(), RuBlocks.LARCH_PLANKS.get());
@@ -572,7 +565,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         //MAGNOLIA_BLOCKS
         woodFromLogs(consumer, RuBlocks.MAGNOLIA_WOOD.get(), RuBlocks.MAGNOLIA_LOG.get());
         woodFromLogs(consumer, RuBlocks.STRIPPED_MAGNOLIA_WOOD.get(), RuBlocks.STRIPPED_MAGNOLIA_LOG.get());
-        planksFromLogs(consumer, RuBlocks.MAGNOLIA_PLANKS.get(), RuTags.MAGNOLIA_LOGS_ITEM, 4);
+        planksFromLogs(consumer, RuBlocks.MAGNOLIA_PLANKS.get(), RuTags.MAGNOLIA_LOGS_ITEM);
         woodenStairs(consumer, RuBlocks.MAGNOLIA_STAIRS.get(), RuBlocks.MAGNOLIA_PLANKS.get());
         woodenSlab(consumer, RuBlocks.MAGNOLIA_SLAB.get(), RuBlocks.MAGNOLIA_PLANKS.get());
         woodenFence(consumer, RuBlocks.MAGNOLIA_FENCE.get(), RuBlocks.MAGNOLIA_PLANKS.get());
@@ -588,7 +581,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         //MAPLE_BLOCKS
         woodFromLogs(consumer, RuBlocks.MAPLE_WOOD.get(), RuBlocks.MAPLE_LOG.get());
         woodFromLogs(consumer, RuBlocks.STRIPPED_MAPLE_WOOD.get(), RuBlocks.STRIPPED_MAPLE_LOG.get());
-        planksFromLogs(consumer, RuBlocks.MAPLE_PLANKS.get(), RuTags.MAPLE_LOGS_ITEM, 4);
+        planksFromLogs(consumer, RuBlocks.MAPLE_PLANKS.get(), RuTags.MAPLE_LOGS_ITEM);
         woodenStairs(consumer, RuBlocks.MAPLE_STAIRS.get(), RuBlocks.MAPLE_PLANKS.get());
         woodenSlab(consumer, RuBlocks.MAPLE_SLAB.get(), RuBlocks.MAPLE_PLANKS.get());
         woodenFence(consumer, RuBlocks.MAPLE_FENCE.get(), RuBlocks.MAPLE_PLANKS.get());
@@ -604,7 +597,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         //MAUVE_BLOCKS
         woodFromLogs(consumer, RuBlocks.MAUVE_WOOD.get(), RuBlocks.MAUVE_LOG.get());
         woodFromLogs(consumer, RuBlocks.STRIPPED_MAUVE_WOOD.get(), RuBlocks.STRIPPED_MAUVE_LOG.get());
-        planksFromLogs(consumer, RuBlocks.MAUVE_PLANKS.get(), RuTags.MAUVE_LOGS_ITEM, 4);
+        planksFromLogs(consumer, RuBlocks.MAUVE_PLANKS.get(), RuTags.MAUVE_LOGS_ITEM);
         woodenStairs(consumer, RuBlocks.MAUVE_STAIRS.get(), RuBlocks.MAUVE_PLANKS.get());
         woodenSlab(consumer, RuBlocks.MAUVE_SLAB.get(), RuBlocks.MAUVE_PLANKS.get());
         woodenFence(consumer, RuBlocks.MAUVE_FENCE.get(), RuBlocks.MAUVE_PLANKS.get());
@@ -620,7 +613,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         //PALM_BLOCKS
         woodFromLogs(consumer, RuBlocks.PALM_WOOD.get(), RuBlocks.PALM_LOG.get());
         woodFromLogs(consumer, RuBlocks.STRIPPED_PALM_WOOD.get(), RuBlocks.STRIPPED_PALM_LOG.get());
-        planksFromLogs(consumer, RuBlocks.PALM_PLANKS.get(), RuTags.PALM_LOGS_ITEM, 4);
+        planksFromLogs(consumer, RuBlocks.PALM_PLANKS.get(), RuTags.PALM_LOGS_ITEM);
         woodenStairs(consumer, RuBlocks.PALM_STAIRS.get(), RuBlocks.PALM_PLANKS.get());
         woodenSlab(consumer, RuBlocks.PALM_SLAB.get(), RuBlocks.PALM_PLANKS.get());
         woodenFence(consumer, RuBlocks.PALM_FENCE.get(), RuBlocks.PALM_PLANKS.get());
@@ -636,7 +629,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         //PINE_BLOCKS
         woodFromLogs(consumer, RuBlocks.PINE_WOOD.get(), RuBlocks.PINE_LOG.get());
         woodFromLogs(consumer, RuBlocks.STRIPPED_PINE_WOOD.get(), RuBlocks.STRIPPED_PINE_LOG.get());
-        planksFromLogs(consumer, RuBlocks.PINE_PLANKS.get(), RuTags.PINE_LOGS_ITEM, 4);
+        planksFromLogs(consumer, RuBlocks.PINE_PLANKS.get(), RuTags.PINE_LOGS_ITEM);
         woodenStairs(consumer, RuBlocks.PINE_STAIRS.get(), RuBlocks.PINE_PLANKS.get());
         woodenSlab(consumer, RuBlocks.PINE_SLAB.get(), RuBlocks.PINE_PLANKS.get());
         woodenFence(consumer, RuBlocks.PINE_FENCE.get(), RuBlocks.PINE_PLANKS.get());
@@ -652,7 +645,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         //PINK_BIOSHROOM_BLOCKS
         woodFromLogs(consumer, RuBlocks.PINK_BIOSHROOM_HYPHAE.get(), RuBlocks.PINK_BIOSHROOM_STEM.get());
         woodFromLogs(consumer, RuBlocks.STRIPPED_PINK_BIOSHROOM_HYPHAE.get(), RuBlocks.STRIPPED_PINK_BIOSHROOM_STEM.get());
-        planksFromLogs(consumer, RuBlocks.PINK_BIOSHROOM_PLANKS.get(), RuTags.PINK_BIOSHROOM_LOGS_ITEM, 4);
+        planksFromLogs(consumer, RuBlocks.PINK_BIOSHROOM_PLANKS.get(), RuTags.PINK_BIOSHROOM_LOGS_ITEM);
         woodenStairs(consumer, RuBlocks.PINK_BIOSHROOM_STAIRS.get(), RuBlocks.PINK_BIOSHROOM_PLANKS.get());
         woodenSlab(consumer, RuBlocks.PINK_BIOSHROOM_SLAB.get(), RuBlocks.PINK_BIOSHROOM_PLANKS.get());
         woodenFence(consumer, RuBlocks.PINK_BIOSHROOM_FENCE.get(), RuBlocks.PINK_BIOSHROOM_PLANKS.get());
@@ -666,7 +659,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         //REDWOOD_BLOCKS
         woodFromLogs(consumer, RuBlocks.REDWOOD_WOOD.get(), RuBlocks.REDWOOD_LOG.get());
         woodFromLogs(consumer, RuBlocks.STRIPPED_REDWOOD_WOOD.get(), RuBlocks.STRIPPED_REDWOOD_LOG.get());
-        planksFromLogs(consumer, RuBlocks.REDWOOD_PLANKS.get(), RuTags.REDWOOD_LOGS_ITEM, 4);
+        planksFromLogs(consumer, RuBlocks.REDWOOD_PLANKS.get(), RuTags.REDWOOD_LOGS_ITEM);
         woodenStairs(consumer, RuBlocks.REDWOOD_STAIRS.get(), RuBlocks.REDWOOD_PLANKS.get());
         woodenSlab(consumer, RuBlocks.REDWOOD_SLAB.get(), RuBlocks.REDWOOD_PLANKS.get());
         woodenFence(consumer, RuBlocks.REDWOOD_FENCE.get(), RuBlocks.REDWOOD_PLANKS.get());
@@ -682,7 +675,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         //SOCOTRA_BLOCKS
         woodFromLogs(consumer, RuBlocks.SOCOTRA_WOOD.get(), RuBlocks.SOCOTRA_LOG.get());
         woodFromLogs(consumer, RuBlocks.STRIPPED_SOCOTRA_WOOD.get(), RuBlocks.STRIPPED_SOCOTRA_LOG.get());
-        planksFromLogs(consumer, RuBlocks.SOCOTRA_PLANKS.get(), RuTags.SOCOTRA_LOGS_ITEM, 4);
+        planksFromLogs(consumer, RuBlocks.SOCOTRA_PLANKS.get(), RuTags.SOCOTRA_LOGS_ITEM);
         woodenStairs(consumer, RuBlocks.SOCOTRA_STAIRS.get(), RuBlocks.SOCOTRA_PLANKS.get());
         woodenSlab(consumer, RuBlocks.SOCOTRA_SLAB.get(), RuBlocks.SOCOTRA_PLANKS.get());
         woodenFence(consumer, RuBlocks.SOCOTRA_FENCE.get(), RuBlocks.SOCOTRA_PLANKS.get());
@@ -698,7 +691,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         //WILLOW_BLOCKS
         woodFromLogs(consumer, RuBlocks.WILLOW_WOOD.get(), RuBlocks.WILLOW_LOG.get());
         woodFromLogs(consumer, RuBlocks.STRIPPED_WILLOW_WOOD.get(), RuBlocks.STRIPPED_WILLOW_LOG.get());
-        planksFromLogs(consumer, RuBlocks.WILLOW_PLANKS.get(), RuTags.WILLOW_LOGS_ITEM, 4);
+        planksFromLogs(consumer, RuBlocks.WILLOW_PLANKS.get(), RuTags.WILLOW_LOGS_ITEM);
         woodenStairs(consumer, RuBlocks.WILLOW_STAIRS.get(), RuBlocks.WILLOW_PLANKS.get());
         woodenSlab(consumer, RuBlocks.WILLOW_SLAB.get(), RuBlocks.WILLOW_PLANKS.get());
         woodenFence(consumer, RuBlocks.WILLOW_FENCE.get(), RuBlocks.WILLOW_PLANKS.get());
@@ -714,7 +707,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         //YELLOW_BIOSHROOM_BLOCKS
         woodFromLogs(consumer, RuBlocks.YELLOW_BIOSHROOM_HYPHAE.get(), RuBlocks.YELLOW_BIOSHROOM_STEM.get());
         woodFromLogs(consumer, RuBlocks.STRIPPED_YELLOW_BIOSHROOM_HYPHAE.get(), RuBlocks.STRIPPED_YELLOW_BIOSHROOM_STEM.get());
-        planksFromLogs(consumer, RuBlocks.YELLOW_BIOSHROOM_PLANKS.get(), RuTags.YELLOW_BIOSHROOM_LOGS_ITEM, 4);
+        planksFromLogs(consumer, RuBlocks.YELLOW_BIOSHROOM_PLANKS.get(), RuTags.YELLOW_BIOSHROOM_LOGS_ITEM);
         woodenStairs(consumer, RuBlocks.YELLOW_BIOSHROOM_STAIRS.get(), RuBlocks.YELLOW_BIOSHROOM_PLANKS.get());
         woodenSlab(consumer, RuBlocks.YELLOW_BIOSHROOM_SLAB.get(), RuBlocks.YELLOW_BIOSHROOM_PLANKS.get());
         woodenFence(consumer, RuBlocks.YELLOW_BIOSHROOM_FENCE.get(), RuBlocks.YELLOW_BIOSHROOM_PLANKS.get());
@@ -874,9 +867,9 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         oreCooking(consumer, RecipeSerializer.BLASTING_RECIPE, itemList, item, f, i, s, "_from_blasting");
     }
 
-    protected static void oreCooking(Consumer<FinishedRecipe> consumer, RecipeSerializer<? extends AbstractCookingRecipe> serializer, List<ItemLike> itemList, ItemLike item, float f, int i, String s, String s2) {
+    protected static void oreCooking(Consumer<FinishedRecipe> consumer, SimpleCookingSerializer<?> serializer, List<ItemLike> itemList, ItemLike item, float f, int i, String s, String s2) {
         for(ItemLike itemlike : itemList) {
-            SimpleCookingRecipeBuilder.generic(Ingredient.of(itemlike), item, f, i, serializer).group(s).unlockedBy(getHasName(itemlike), has(itemlike)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getItemName(item) + s2 + "_" + getItemName(itemlike)));
+            SimpleCookingRecipeBuilder.cooking(Ingredient.of(itemlike), item, f, i, serializer).group(s).unlockedBy(getHasName(itemlike), has(itemlike)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getItemName(item) + s2 + "_" + getItemName(itemlike)));
         }
 
     }

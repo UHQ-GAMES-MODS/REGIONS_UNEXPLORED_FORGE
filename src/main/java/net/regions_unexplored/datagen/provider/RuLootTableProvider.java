@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.Set;
 
 public class RuLootTableProvider {
-    public static LootTableProvider create(PackOutput output){
-        return new LootTableProvider(output, Set.of(),
-                List.of(new LootTableProvider.SubProviderEntry(RuBlockLootTables::new, LootContextParamSets.BLOCK)));
-    }
+    //public static LootTableProvider create(PackOutput output){
+    //    return new LootTableProvider(output, Set.of(),
+    //            List.of(new LootTableProvider.SubProviderEntry(RuBlockLootTables::new, LootContextParamSets.BLOCK)));
+    //}
 }
