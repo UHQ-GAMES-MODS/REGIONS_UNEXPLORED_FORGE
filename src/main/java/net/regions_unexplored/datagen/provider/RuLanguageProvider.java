@@ -1,6 +1,6 @@
 package net.regions_unexplored.datagen.provider;
 
-import net.minecraft.data.PackOutput;
+import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.biome.Biome;
@@ -13,8 +13,8 @@ import net.regions_unexplored.entity.RuEntities;
 import org.jetbrains.annotations.NotNull;
 
 public class RuLanguageProvider extends LanguageProvider {
-    public RuLanguageProvider(PackOutput output) {
-        super(output, RegionsUnexploredMod.MOD_ID, "en_us");
+    public RuLanguageProvider(DataGenerator gen) {
+        super(gen, RegionsUnexploredMod.MOD_ID, "en_us");
     }
 
     @Override

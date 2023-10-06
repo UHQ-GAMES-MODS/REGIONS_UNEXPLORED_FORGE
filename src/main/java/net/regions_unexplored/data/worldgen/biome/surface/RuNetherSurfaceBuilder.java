@@ -32,7 +32,7 @@ public class RuNetherSurfaceBuilder {
 
                         //GLISTERING_MEADOW
                         SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.GLISTERING_MEADOW),
-                                SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, false, 0, CaveSurface.FLOOR), SurfaceRules.sequence(SurfaceRules.ifTrue(shieldNoise(-1.0D), GLISTERING_NYLIUM), SurfaceRules.ifTrue(SurfaceRules.noiseCondition(RuNoises.WEIGHTED, RuleWeight.getPercent(50)), GLISTERING_NYLIUM)))),
+                                SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, false, 0, CaveSurface.FLOOR), SurfaceRules.sequence(SurfaceRules.ifTrue(shieldNoise(-1.0D), GLISTERING_NYLIUM), SurfaceRules.ifTrue(SurfaceRules.noiseCondition(RuNoises.WEIGHTED.getKey(), RuleWeight.getPercent(50)), GLISTERING_NYLIUM)))),
 
                         //BLACKSTONE_BASIN
                         SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.BLACKSTONE_BASIN),
@@ -53,6 +53,6 @@ public class RuNetherSurfaceBuilder {
     }
 
     private static SurfaceRules.ConditionSource shieldNoise(double noise) {
-        return SurfaceRules.noiseCondition(RuNoises.SHIELD, noise / 8.25D, Double.MAX_VALUE);
+        return SurfaceRules.noiseCondition(RuNoises.SHIELD.getKey(), noise / 8.25D, Double.MAX_VALUE);
     }
 }

@@ -1,6 +1,5 @@
 package net.regions_unexplored.data.worldgen.biome.builder;
 
-import net.minecraft.core.HolderGetter;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.sounds.Musics;
 import net.minecraft.sounds.SoundEvents;
@@ -9,8 +8,6 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
-import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.regions_unexplored.data.worldgen.RuBiomeDefaultFeatures;
 import net.regions_unexplored.data.worldgen.placement.RuTreePlacements;
 import net.regions_unexplored.data.worldgen.placement.RuVegetationPlacements;
@@ -36,8 +33,8 @@ public class CoastalBiomes {
         return spawnBuilder;
     }
 
-    private static BiomeGenerationSettings.Builder baseCoastGeneration(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
-        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(featureGetter, carverGetter);
+    private static BiomeGenerationSettings.Builder baseCoastGeneration() {
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
         RuBiomeDefaultFeatures.globalOverworldGeneration(biomeBuilder);
         RuBiomeDefaultFeatures.mediumGrass(biomeBuilder);
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
@@ -47,7 +44,7 @@ public class CoastalBiomes {
         return biomeBuilder;
     }
 
-    public static Biome chalkCliffs(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome chalkCliffs() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(0.8F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -56,10 +53,10 @@ public class CoastalBiomes {
                 .foliageColorOverride(-8414642)
                 .grassColorOverride(-6044317)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseCoastGeneration(featureGetter, carverGetter);
+        BiomeGenerationSettings.Builder biomeBuilder = baseCoastGeneration();
 
         //add RU features
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.OAK_BUSH_SPARSE);
@@ -76,7 +73,7 @@ public class CoastalBiomes {
         MobSpawnSettings.Builder spawnBuilder = baseCoastSpawning(false);
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(true)
+                .precipitation(Biome.Precipitation.RAIN)
                 .temperature(0.775f)
                 .downfall(0.7f)
                 .specialEffects(effectBuilder.build())
@@ -85,7 +82,7 @@ public class CoastalBiomes {
                 .build();
     }
 
-    public static Biome grassyBeach(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome grassyBeach() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(0.8F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -94,10 +91,10 @@ public class CoastalBiomes {
                 .foliageColorOverride(-8933043)
                 .grassColorOverride(-2697863)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseCoastGeneration(featureGetter, carverGetter);
+        BiomeGenerationSettings.Builder biomeBuilder = baseCoastGeneration();
 
         //add RU features
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.SANDY_GRASS_VEGETATION);
@@ -106,7 +103,7 @@ public class CoastalBiomes {
         MobSpawnSettings.Builder spawnBuilder = baseCoastSpawning(true);
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(true)
+                .precipitation(Biome.Precipitation.RAIN)
                 .temperature(0.85f)
                 .downfall(0.75f)
                 .specialEffects(effectBuilder.build())
@@ -115,7 +112,7 @@ public class CoastalBiomes {
                 .build();
     }
 
-    public static Biome gravelBeach(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome gravelBeach() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(0.8F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -124,10 +121,10 @@ public class CoastalBiomes {
                 .foliageColorOverride(-8673714)
                 .grassColorOverride(-7819420)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseCoastGeneration(featureGetter, carverGetter);
+        BiomeGenerationSettings.Builder biomeBuilder = baseCoastGeneration();
 
         //add RU features
 
@@ -135,7 +132,7 @@ public class CoastalBiomes {
         MobSpawnSettings.Builder spawnBuilder = baseCoastSpawning(false);
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(true)
+                .precipitation(Biome.Precipitation.RAIN)
                 .temperature(0.6f)
                 .downfall(0.6f)
                 .specialEffects(effectBuilder.build())

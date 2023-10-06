@@ -26,13 +26,6 @@ import java.util.Set;
 @Mod.EventBusSubscriber( modid = RegionsUnexploredMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DataGeneration {
 
-    private static final RegistrySetBuilder BOOTSTRAPS = new RegistrySetBuilder()
-            .add(Registries.BIOME, BiomeRegistry::bootstrap)
-            .add(Registries.DAMAGE_TYPE, RuDamageTypes::bootstrap)
-            .add(Registries.NOISE, RuNoises::bootstrap)
-            .add(Registries.CONFIGURED_FEATURE, ConfiguredFeatureRegistry::bootstrap)
-            .add(Registries.PLACED_FEATURE, PlacedFeatureRegistry::bootstrap)
-            ;
 
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event){

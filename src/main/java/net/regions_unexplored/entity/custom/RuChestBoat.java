@@ -3,6 +3,7 @@ package net.regions_unexplored.entity.custom;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.entity.vehicle.ChestBoat;
@@ -74,12 +75,12 @@ public class RuChestBoat extends ChestBoat {
                         return;
                     }
 
-                    this.causeFallDamage(this.fallDistance, 1.0F, this.damageSources().fall());
+                    this.causeFallDamage(this.fallDistance, 1.0F, DamageSource.FALL);
                     if (!this.level.isClientSide && !this.isRemoved()) {
                         this.kill();
                         if (this.level.getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS)) {
                             for(int i = 0; i < 3; ++i) {
-                                this.spawnAtLocation(this.getVariant().getPlanks());
+                                this.spawnAtLocation(this.getModel().getPlanks());
                             }
 
                             for(int j = 0; j < 2; ++j) {

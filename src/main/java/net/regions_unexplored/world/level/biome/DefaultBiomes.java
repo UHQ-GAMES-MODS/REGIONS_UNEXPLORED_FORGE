@@ -1,6 +1,6 @@
 package net.regions_unexplored.world.level.biome;
 
-import net.minecraft.core.registries.Registries;
+import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
@@ -1388,6 +1388,6 @@ public class DefaultBiomes {
     }
 
     public static ResourceKey<Biome> getBiome(String id){
-        return ResourceKey.create(Registries.BIOME, new ResourceLocation(id));
+        return ResourceKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(id));
     }
 }

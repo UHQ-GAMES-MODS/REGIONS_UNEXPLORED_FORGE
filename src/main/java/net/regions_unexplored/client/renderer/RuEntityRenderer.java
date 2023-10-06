@@ -1,7 +1,6 @@
 package net.regions_unexplored.client.renderer;
 
 import net.minecraft.client.model.BoatModel;
-import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.world.entity.EntityType;
 import net.minecraftforge.api.distmarker.Dist;
@@ -18,8 +17,8 @@ import net.regions_unexplored.entity.custom.RuChestBoat;
 public class RuEntityRenderer {
     @SubscribeEvent
     public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
-        LayerDefinition boatLayerDefinition = BoatModel.createBodyModel();
-        LayerDefinition chestBoatLayerDefinition = ChestBoatModel.createBodyModel();
+        LayerDefinition boatLayerDefinition = BoatModel.createBodyModel(false);
+        LayerDefinition chestBoatLayerDefinition = BoatModel.createBodyModel(true);
         for (RuBoat.ModelType type : RuBoat.ModelType.values()) {
             ForgeHooksClient.registerLayerDefinition(RuBoatRenderer.boatTextureLocation(type), () -> boatLayerDefinition);
             ForgeHooksClient.registerLayerDefinition(RuBoatRenderer.chestBoatTextureLocation(type), () -> chestBoatLayerDefinition);

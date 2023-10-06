@@ -3,7 +3,6 @@ package net.regions_unexplored.client.renderer;
 import com.google.common.collect.ImmutableMap;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.client.model.BoatModel;
-import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.model.ListModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
@@ -29,12 +28,12 @@ public class RuBoatRenderer extends BoatRenderer {
     }
 
     @Override
-    public @NotNull Pair<ResourceLocation, ListModel<Boat>> getModelWithLocation(Boat boat) {
+    public @NotNull Pair<ResourceLocation, BoatModel> getModelWithLocation(Boat boat) {
         if (boat instanceof RuChestBoat){
-            return this.boatResources.get(((RuChestBoat)boat).getModel());
+            return (Pair)this.boatResources.get(((RuChestBoat)boat).getModel());
         }
         else{
-            return this.boatResources.get(((RuBoat)boat).getModel());
+            return (Pair)this.boatResources.get(((RuBoat)boat).getModel());
         }
     }
 
@@ -45,7 +44,7 @@ public class RuBoatRenderer extends BoatRenderer {
     private BoatModel createBoatModel(EntityRendererProvider.Context context, RuBoat.ModelType type, boolean hasChest) {
         ModelLayerLocation modellayerlocation = hasChest ? chestBoatTextureLocation(type) : boatTextureLocation(type);
         ModelPart baked = context.bakeLayer(modellayerlocation);
-        return hasChest ? new ChestBoatModel(baked) : new BoatModel(baked);
+        return hasChest ? new BoatModel(baked, true) : new BoatModel(baked, false);
     }
 
     private static ModelLayerLocation getModel(String name, String model) {

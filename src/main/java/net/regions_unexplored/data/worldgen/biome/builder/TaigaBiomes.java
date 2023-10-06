@@ -1,6 +1,5 @@
 package net.regions_unexplored.data.worldgen.biome.builder;
 
-import net.minecraft.core.HolderGetter;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.sounds.Musics;
@@ -10,8 +9,6 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
-import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.regions_unexplored.data.worldgen.RuBiomeDefaultFeatures;
 import net.regions_unexplored.data.worldgen.placement.RuMiscOverworldPlacements;
 import net.regions_unexplored.data.worldgen.placement.RuTreePlacements;
@@ -36,8 +33,8 @@ public class TaigaBiomes {
         return spawnBuilder;
     }
 
-    private static BiomeGenerationSettings.Builder baseTaigaGeneration(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter, boolean hasSweetBerries) {
-        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(featureGetter, carverGetter);
+    private static BiomeGenerationSettings.Builder baseTaigaGeneration(boolean hasSweetBerries) {
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
         RuBiomeDefaultFeatures.globalOverworldGeneration(biomeBuilder);
         RuBiomeDefaultFeatures.mediumGrass(biomeBuilder);
         BiomeDefaultFeatures.addFerns(biomeBuilder);
@@ -50,7 +47,7 @@ public class TaigaBiomes {
         return biomeBuilder;
     }
 
-    public static Biome blackwoodTaiga(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome blackwoodTaiga() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(11454879)
                 .fogColor(11454879)
@@ -63,7 +60,7 @@ public class TaigaBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_OLD_GROWTH_TAIGA));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseTaigaGeneration(featureGetter, carverGetter, true);
+        BiomeGenerationSettings.Builder biomeBuilder = baseTaigaGeneration(true);
 
         //add RU features
         RuBiomeDefaultFeatures.blackwoodTrees(biomeBuilder);
@@ -76,7 +73,7 @@ public class TaigaBiomes {
         MobSpawnSettings.Builder spawnBuilder = baseTaigaSpawning();
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(true)
+                .precipitation(Biome.Precipitation.RAIN)
                 .temperature(0.825f)
                 .downfall(0.765f)
                 .specialEffects(effectBuilder.build())
@@ -85,7 +82,7 @@ public class TaigaBiomes {
                 .build();
     }
 
-    public static Biome borealTaiga(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome borealTaiga() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(0.55F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -97,7 +94,7 @@ public class TaigaBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_OLD_GROWTH_TAIGA));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseTaigaGeneration(featureGetter, carverGetter, true);
+        BiomeGenerationSettings.Builder biomeBuilder = baseTaigaGeneration(true);
 
         //add RU features
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.LARCH_TREE_DENSE);
@@ -115,7 +112,7 @@ public class TaigaBiomes {
         MobSpawnSettings.Builder spawnBuilder = baseTaigaSpawning();
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(true)
+                .precipitation(Biome.Precipitation.RAIN)
                 .temperature(0.5f)
                 .downfall(0.4f)
                 .specialEffects(effectBuilder.build())
@@ -124,7 +121,7 @@ public class TaigaBiomes {
                 .build();
     }
 
-    public static Biome goldenBorealTaiga(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome goldenBorealTaiga() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(0.65F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -136,7 +133,7 @@ public class TaigaBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_OLD_GROWTH_TAIGA));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseTaigaGeneration(featureGetter, carverGetter, true);
+        BiomeGenerationSettings.Builder biomeBuilder = baseTaigaGeneration(true);
 
         //add RU features
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.GOLDEN_LARCH_TREE_DENSE);
@@ -155,7 +152,7 @@ public class TaigaBiomes {
         MobSpawnSettings.Builder spawnBuilder = baseTaigaSpawning();
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(true)
+                .precipitation(Biome.Precipitation.RAIN)
                 .temperature(0.45f)
                 .downfall(0.3f)
                 .specialEffects(effectBuilder.build())
@@ -164,7 +161,7 @@ public class TaigaBiomes {
                 .build();
     }
 
-    public static Biome pineTaiga(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome pineTaiga() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(0.7F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -176,7 +173,7 @@ public class TaigaBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_OLD_GROWTH_TAIGA));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseTaigaGeneration(featureGetter, carverGetter, true);
+        BiomeGenerationSettings.Builder biomeBuilder = baseTaigaGeneration(true);
 
         //add RU features
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.PINE_TREE_ON_DIRT);
@@ -194,7 +191,7 @@ public class TaigaBiomes {
         MobSpawnSettings.Builder spawnBuilder = baseTaigaSpawning();
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(true)
+                .precipitation(Biome.Precipitation.RAIN)
                 .temperature(0.6f)
                 .downfall(0.4f)
                 .specialEffects(effectBuilder.build())
@@ -203,7 +200,7 @@ public class TaigaBiomes {
                 .build();
     }
 
-    public static Biome redwoods(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome redwoods() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(0.8F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -215,7 +212,7 @@ public class TaigaBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_OLD_GROWTH_TAIGA));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseTaigaGeneration(featureGetter, carverGetter, false);
+        BiomeGenerationSettings.Builder biomeBuilder = baseTaigaGeneration(false);
 
         //add RU features
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.ULTRA_REDWOOD_TREE);
@@ -231,7 +228,7 @@ public class TaigaBiomes {
         MobSpawnSettings.Builder spawnBuilder = baseTaigaSpawning();
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(true)
+                .precipitation(Biome.Precipitation.RAIN)
                 .temperature(1f)
                 .downfall(0.8f)
                 .specialEffects(effectBuilder.build())
@@ -240,7 +237,7 @@ public class TaigaBiomes {
                 .build();
     }
 
-    public static Biome sparseRedwoods(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome sparseRedwoods() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(0.8F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -252,7 +249,7 @@ public class TaigaBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_OLD_GROWTH_TAIGA));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseTaigaGeneration(featureGetter, carverGetter, false);
+        BiomeGenerationSettings.Builder biomeBuilder = baseTaigaGeneration(false);
 
         //add RU features
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.GIANT_REDWOOD_TREE_SPARSE);
@@ -267,7 +264,7 @@ public class TaigaBiomes {
         MobSpawnSettings.Builder spawnBuilder = baseTaigaSpawning();
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(true)
+                .precipitation(Biome.Precipitation.RAIN)
                 .temperature(0.95f)
                 .downfall(0.8f)
                 .specialEffects(effectBuilder.build())

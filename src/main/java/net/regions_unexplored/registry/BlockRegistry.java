@@ -7,17 +7,13 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BlockSetType;
-import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.properties.WoodType;
-import net.minecraft.world.level.material.MapColor;
-import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.registries.RegistryObject;
 import net.regions_unexplored.RegionsUnexploredMod;
 import net.regions_unexplored.world.level.block.leaves.*;
-import net.regions_unexplored.world.level.block.sign.RuCeilingHangingSignBlock;
 import net.regions_unexplored.world.level.block.sign.RuStandingSignBlock;
-import net.regions_unexplored.world.level.block.sign.RuWallHangingSignBlock;
 import net.regions_unexplored.world.level.block.sign.RuWallSignBlock;
 import net.regions_unexplored.world.level.block.wood.AspenLogBlock;
 import net.regions_unexplored.world.level.block.wood.MagmaLogBlock;
@@ -39,7 +35,7 @@ public class BlockRegistry {
         ItemRegistry.registerDuckweedItem(name, toReturn);
         return toReturn;
     }
-
+    
     //Register Lily block and item
     public static <T extends Block> RegistryObject<T> registerLilyBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = RegionsUnexploredMod.BLOCK_REGISTRY.register(name, block);
@@ -47,183 +43,167 @@ public class BlockRegistry {
         return toReturn;
     }
 
-    public static PineLogBlock pineLog(MapColor colour, MapColor colour2, SoundType sound) {
-        return new PineLogBlock(BlockBehaviour.Properties.of().mapColor((p_152624_) -> {
+    public static PineLogBlock pineLog(MaterialColor colour, MaterialColor colour2, SoundType sound) {
+        return new PineLogBlock(BlockBehaviour.Properties.of(Material.WOOD, (p_152624_) -> {
             return p_152624_.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? colour : colour2;
-        }).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(sound).ignitedByLava());
+        }).strength(2.0F).sound(sound));
     }
-    public static AspenLogBlock aspenLogBlock(MapColor colour, MapColor colour2, SoundType sound) {
-        return new AspenLogBlock(BlockBehaviour.Properties.of().mapColor((p_152624_) -> {
+    public static AspenLogBlock aspenLogBlock(MaterialColor colour, MaterialColor colour2, SoundType sound) {
+        return new AspenLogBlock(BlockBehaviour.Properties.of(Material.WOOD, (p_152624_) -> {
             return p_152624_.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? colour : colour2;
-        }).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(sound).ignitedByLava());
+        }).strength(2.0F).sound(sound));
     }
     //Configure log block
-    public static RotatedPillarBlock log(MapColor colour, MapColor colour2, SoundType sound) {
-        return new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor((p_152624_) -> {
+    public static RotatedPillarBlock log(MaterialColor colour, MaterialColor colour2, SoundType sound) {
+        return new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, (p_152624_) -> {
             return p_152624_.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? colour : colour2;
-        }).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(sound).ignitedByLava());
+        }).strength(2.0F).sound(sound));
     }
     //Configure wood block
-    public static RotatedPillarBlock woodBlock(MapColor colour, SoundType sound) {
-        return new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(sound).ignitedByLava());
+    public static RotatedPillarBlock woodBlock(MaterialColor colour, SoundType sound) {
+        return new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, colour).strength(2.0F, 3.0F).sound(sound));
     }
     //Configure wooden planks
-    public static Block woodPlanks(MapColor colour, SoundType sound) {
-        return new Block(BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(sound).ignitedByLava());
+    public static Block woodPlanks(MaterialColor colour, SoundType sound) {
+        return new Block(BlockBehaviour.Properties.of(Material.WOOD, colour).strength(2.0F, 3.0F).sound(sound));
     }
     //Configure wooden stairs
-    public static StairBlock woodStairs(MapColor colour, SoundType sound) {
-        return new StairBlock(Blocks.OAK_PLANKS.defaultBlockState(), BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(sound).ignitedByLava());
+    public static StairBlock woodStairs(MaterialColor colour, SoundType sound) {
+        return new StairBlock(Blocks.OAK_PLANKS.defaultBlockState(), BlockBehaviour.Properties.of(Material.WOOD, colour).strength(2.0F, 3.0F).sound(sound));
     }
     //Configure wooden slab
-    public static SlabBlock woodSlab(MapColor colour, SoundType sound) {
-        return new SlabBlock(BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(sound).ignitedByLava());
+    public static SlabBlock woodSlab(MaterialColor colour, SoundType sound) {
+        return new SlabBlock(BlockBehaviour.Properties.of(Material.WOOD, colour).strength(2.0F, 3.0F).sound(sound));
     }
     //Configure wooden door
-    public static DoorBlock woodDoor(MapColor colour, SoundType sound, BlockSetType blockSetType) {
-        return new DoorBlock(BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(3.0F).sound(sound).noOcclusion().ignitedByLava(), blockSetType);
+    public static DoorBlock woodDoor(MaterialColor colour, SoundType sound) {
+        return new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD, colour).strength(3.0F).sound(sound).noOcclusion());
     }
     //Configure wooden trap door
-    public static TrapDoorBlock woodTrapDoor(MapColor colour, SoundType sound, BlockSetType blockSetType) {
-        return new TrapDoorBlock(BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(3.0F).sound(sound).noOcclusion().ignitedByLava(), blockSetType);
+    public static TrapDoorBlock woodTrapDoor(MaterialColor colour, SoundType sound) {
+        return new TrapDoorBlock(BlockBehaviour.Properties.of(Material.WOOD, colour).strength(3.0F).sound(sound).noOcclusion());
     }
     //Configure wooden fence
-    public static FenceBlock woodFence(MapColor colour, SoundType sound) {
-        return new FenceBlock(BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(sound).ignitedByLava());
+    public static FenceBlock woodFence(MaterialColor colour, SoundType sound) {
+        return new FenceBlock(BlockBehaviour.Properties.of(Material.WOOD, colour).strength(2.0F, 3.0F).sound(sound));
     }
     //Configure wooden gate
-    public static FenceGateBlock woodFenceGate(MapColor colour, WoodType type, SoundType sound) {
-        return new FenceGateBlock(BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(sound).ignitedByLava(), type);
+    public static FenceGateBlock woodFenceGate(MaterialColor colour, SoundType sound) {
+        return new FenceGateBlock(BlockBehaviour.Properties.of(Material.WOOD, colour).strength(2.0F, 3.0F).sound(sound));
     }
     //Configure wooden pressure plate
-    public static PressurePlateBlock woodPressurePlate(MapColor colour, SoundType sound, BlockSetType blockSetType) {
-        return new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).noCollission().strength(0.5F).sound(sound).ignitedByLava(), blockSetType);
+    public static PressurePlateBlock woodPressurePlate(MaterialColor colour, SoundType sound) {
+        return new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of(Material.WOOD, colour).noCollission().strength(0.5F).sound(sound));
     }
     //Configure wooden button
-    public static ButtonBlock woodButton(SoundType sound, BlockSetType blockSetType) {
-        return new ButtonBlock(BlockBehaviour.Properties.of().noCollission().strength(0.5F).sound(sound), blockSetType, 30, true);
+    public static WoodButtonBlock woodButton(SoundType sound) {
+        return new WoodButtonBlock(BlockBehaviour.Properties.of(Material.WOOD).noCollission().strength(0.5F).sound(sound));
     }
     //Configure sign
     public static RuStandingSignBlock sign(SoundType sound, WoodType woodType) {
-        return new RuStandingSignBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).sound(sound).ignitedByLava(), woodType);
+        return new RuStandingSignBlock(BlockBehaviour.Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(sound), woodType);
     }
     //Configure wall sign
     public static RuWallSignBlock wallSign(SoundType sound, Block block, WoodType woodType) {
-        return new RuWallSignBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).sound(sound).ignitedByLava().dropsLike(block), woodType);
-    }
-    //Configure hanging sign
-    public static RuCeilingHangingSignBlock hangingSign(MapColor color, SoundType sound, WoodType woodType) {
-        return new RuCeilingHangingSignBlock(BlockBehaviour.Properties.of().mapColor(color).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava().sound(sound), woodType);
-    }
-    //Configure hanging wall sign
-    public static RuWallHangingSignBlock wallHangingSign(MapColor color, SoundType sound, Block block, WoodType woodType) {
-        return new RuWallHangingSignBlock(BlockBehaviour.Properties.of().mapColor(color).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava().sound(sound).dropsLike(block), woodType);
+        return new RuWallSignBlock(BlockBehaviour.Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(sound).dropsLike(block), woodType);
     }
     //Configure log block
-    public static RotatedPillarBlock fireproofLog(MapColor colour, MapColor colour2, SoundType sound) {
-        return new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor((p_152624_) -> {
+    public static RotatedPillarBlock fireproofLog(MaterialColor colour, MaterialColor colour2, SoundType sound) {
+        return new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, (p_152624_) -> {
             return p_152624_.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? colour : colour2;
-        }).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(sound));
+        }).strength(2.0F).sound(sound));
     }
     //Configure log block
-    public static MagmaLogBlock fireproofMagmaLog(MapColor colour, SoundType sound) {
-        return new MagmaLogBlock(BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(sound));
+    public static MagmaLogBlock fireproofMagmaLog(MaterialColor colour, SoundType sound) {
+        return new MagmaLogBlock(BlockBehaviour.Properties.of(Material.WOOD, colour).strength(2.0F).sound(sound));
     }
     //Configure wood block
-    public static RotatedPillarBlock fireproofWoodBlock(MapColor colour, SoundType sound) {
-        return new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(sound));
+    public static RotatedPillarBlock fireproofWoodBlock(MaterialColor colour, SoundType sound) {
+        return new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, colour).strength(2.0F, 3.0F).sound(sound));
     }
     //Configure wooden planks
-    public static Block fireproofWoodPlanks(MapColor colour, SoundType sound) {
-        return new Block(BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(sound));
+    public static Block fireproofWoodPlanks(MaterialColor colour, SoundType sound) {
+        return new Block(BlockBehaviour.Properties.of(Material.WOOD, colour).strength(2.0F, 3.0F).sound(sound));
     }
     //Configure wooden stairs
-    public static StairBlock fireproofWoodStairs(MapColor colour, SoundType sound) {
-        return new StairBlock(Blocks.OAK_PLANKS.defaultBlockState(), BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(sound));
+    public static StairBlock fireproofWoodStairs(MaterialColor colour, SoundType sound) {
+        return new StairBlock(Blocks.OAK_PLANKS.defaultBlockState(), BlockBehaviour.Properties.of(Material.WOOD, colour).strength(2.0F, 3.0F).sound(sound));
     }
     //Configure wooden slab
-    public static SlabBlock fireproofWoodSlab(MapColor colour, SoundType sound) {
-        return new SlabBlock(BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(sound));
+    public static SlabBlock fireproofWoodSlab(MaterialColor colour, SoundType sound) {
+        return new SlabBlock(BlockBehaviour.Properties.of(Material.WOOD, colour).strength(2.0F, 3.0F).sound(sound));
     }
     //Configure wooden door
-    public static DoorBlock fireproofWoodDoor(MapColor colour, SoundType sound, BlockSetType blockSetType) {
-        return new DoorBlock(BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(3.0F).sound(sound).noOcclusion(), blockSetType);
+    public static DoorBlock fireproofWoodDoor(MaterialColor colour, SoundType sound) {
+        return new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD, colour).strength(3.0F).sound(sound).noOcclusion());
     }
     //Configure wooden trap door
-    public static TrapDoorBlock fireproofWoodTrapDoor(MapColor colour, SoundType sound, BlockSetType blockSetType) {
-        return new TrapDoorBlock(BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(3.0F).sound(sound).noOcclusion(), blockSetType);
+    public static TrapDoorBlock fireproofWoodTrapDoor(MaterialColor colour, SoundType sound) {
+        return new TrapDoorBlock(BlockBehaviour.Properties.of(Material.WOOD, colour).strength(3.0F).sound(sound).noOcclusion());
     }
     //Configure wooden fence
-    public static FenceBlock fireproofWoodFence(MapColor colour, SoundType sound) {
-        return new FenceBlock(BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(sound).ignitedByLava());
+    public static FenceBlock fireproofWoodFence(MaterialColor colour, SoundType sound) {
+        return new FenceBlock(BlockBehaviour.Properties.of(Material.WOOD, colour).strength(2.0F, 3.0F).sound(sound));
     }
     //Configure wooden gate
-    public static FenceGateBlock fireproofWoodFenceGate(MapColor colour, WoodType type, SoundType sound) {
-        return new FenceGateBlock(BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(sound), type);
+    public static FenceGateBlock fireproofWoodFenceGate(MaterialColor colour, SoundType sound) {
+        return new FenceGateBlock(BlockBehaviour.Properties.of(Material.WOOD, colour).strength(2.0F, 3.0F).sound(sound));
     }
     //Configure wooden pressure plate
-    public static PressurePlateBlock fireproofWoodPressurePlate(MapColor colour, SoundType sound, BlockSetType blockSetType) {
-        return new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).noCollission().strength(0.5F).sound(sound), blockSetType);
+    public static PressurePlateBlock fireproofWoodPressurePlate(MaterialColor colour, SoundType sound) {
+        return new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of(Material.WOOD, colour).noCollission().strength(0.5F).sound(sound));
     }
     //Configure wooden button
-    public static ButtonBlock fireproofWoodButton(SoundType sound, BlockSetType blockSetType) {
-        return new ButtonBlock(BlockBehaviour.Properties.of().noCollission().strength(0.5F).sound(sound), blockSetType, 30, true);
+    public static WoodButtonBlock fireproofWoodButton(SoundType sound) {
+        return new WoodButtonBlock(BlockBehaviour.Properties.of(Material.WOOD).noCollission().strength(0.5F).sound(sound));
     }
     //Configure sign
     public static RuStandingSignBlock fireproofSign(SoundType sound, WoodType woodType) {
-        return new RuStandingSignBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).sound(sound), woodType);
+        return new RuStandingSignBlock(BlockBehaviour.Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(sound), woodType);
     }
     //Configure wall sign
     public static RuWallSignBlock fireproofWallSign(SoundType sound, Block block, WoodType woodType) {
-        return new RuWallSignBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).sound(sound).dropsLike(block), woodType);
-    }
-    //Configure hanging sign
-    public static RuCeilingHangingSignBlock fireproofHangingSign(MapColor color, SoundType sound, WoodType woodType) {
-        return new RuCeilingHangingSignBlock(BlockBehaviour.Properties.of().mapColor(color).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).sound(sound), woodType);
-    }
-    //Configure hanging wall sign
-    public static RuWallHangingSignBlock fireproofWallHangingSign(MapColor color, SoundType sound, Block block, WoodType woodType) {
-        return new RuWallHangingSignBlock(BlockBehaviour.Properties.of().mapColor(color).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).sound(sound).dropsLike(block), woodType);
+        return new RuWallSignBlock(BlockBehaviour.Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(sound).dropsLike(block), woodType);
     }
 
     //Configure leaves blocks
-    public static LeavesBlock leaves(MapColor colour) {
-        return new LeavesBlock(BlockBehaviour.Properties.of().mapColor(colour).ignitedByLava().strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(BlockRegistry::ocelotOrParrot).isSuffocating(BlockRegistry::never).isViewBlocking(BlockRegistry::never));
+    public static LeavesBlock leaves(MaterialColor colour) {
+        return new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES, colour).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(BlockRegistry::ocelotOrParrot).isSuffocating(BlockRegistry::never).isViewBlocking(BlockRegistry::never));
     }
-    public static LeavesBlock fireproofLeaves(MapColor colour) {
-        return new LeavesBlock(BlockBehaviour.Properties.of().mapColor(colour).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(BlockRegistry::ocelotOrParrot).isSuffocating(BlockRegistry::never).isViewBlocking(BlockRegistry::never));
+    public static LeavesBlock fireproofLeaves(MaterialColor colour) {
+        return new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES, colour).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(BlockRegistry::ocelotOrParrot).isSuffocating(BlockRegistry::never).isViewBlocking(BlockRegistry::never));
     }
-    public static MauveLeavesBlock mauveLeaves(MapColor colour) {
-        return new MauveLeavesBlock(BlockBehaviour.Properties.of().mapColor(colour).ignitedByLava().strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(BlockRegistry::ocelotOrParrot).isSuffocating(BlockRegistry::never).isViewBlocking(BlockRegistry::never));
+    public static MauveLeavesBlock mauveLeaves(MaterialColor colour) {
+        return new MauveLeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES, colour).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(BlockRegistry::ocelotOrParrot).isSuffocating(BlockRegistry::never).isViewBlocking(BlockRegistry::never));
     }
-    public static BlueMagnoliaLeavesBlock blueMagnoliaLeaves(MapColor colour) {
-        return new BlueMagnoliaLeavesBlock(BlockBehaviour.Properties.of().mapColor(colour).ignitedByLava().strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(BlockRegistry::ocelotOrParrot).isSuffocating(BlockRegistry::never).isViewBlocking(BlockRegistry::never));
+    public static BlueMagnoliaLeavesBlock blueMagnoliaLeaves(MaterialColor colour) {
+        return new BlueMagnoliaLeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES, colour).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(BlockRegistry::ocelotOrParrot).isSuffocating(BlockRegistry::never).isViewBlocking(BlockRegistry::never));
     }
-    public static PinkMagnoliaLeavesBlock pinkMagnoliaLeaves(MapColor colour) {
-        return new PinkMagnoliaLeavesBlock(BlockBehaviour.Properties.of().mapColor(colour).ignitedByLava().strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(BlockRegistry::ocelotOrParrot).isSuffocating(BlockRegistry::never).isViewBlocking(BlockRegistry::never));
+    public static PinkMagnoliaLeavesBlock pinkMagnoliaLeaves(MaterialColor colour) {
+        return new PinkMagnoliaLeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES, colour).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(BlockRegistry::ocelotOrParrot).isSuffocating(BlockRegistry::never).isViewBlocking(BlockRegistry::never));
     }
-    public static WhiteMagnoliaLeavesBlock whiteMagnoliaLeaves(MapColor colour) {
-        return new WhiteMagnoliaLeavesBlock(BlockBehaviour.Properties.of().mapColor(colour).ignitedByLava().strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(BlockRegistry::ocelotOrParrot).isSuffocating(BlockRegistry::never).isViewBlocking(BlockRegistry::never));
+    public static WhiteMagnoliaLeavesBlock whiteMagnoliaLeaves(MaterialColor colour) {
+        return new WhiteMagnoliaLeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES, colour).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(BlockRegistry::ocelotOrParrot).isSuffocating(BlockRegistry::never).isViewBlocking(BlockRegistry::never));
     }
-    public static SilverBirchLeavesBlock silverBirchLeaves(MapColor colour) {
-        return new SilverBirchLeavesBlock(BlockBehaviour.Properties.of().mapColor(colour).ignitedByLava().strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(BlockRegistry::ocelotOrParrot).isSuffocating(BlockRegistry::never).isViewBlocking(BlockRegistry::never));
+    public static SilverBirchLeavesBlock silverBirchLeaves(MaterialColor colour) {
+        return new SilverBirchLeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES, colour).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(BlockRegistry::ocelotOrParrot).isSuffocating(BlockRegistry::never).isViewBlocking(BlockRegistry::never));
     }
-    public static EnchantedBirchLeavesBlock enchantedBirchLeaves(MapColor colour) {
-        return new EnchantedBirchLeavesBlock(BlockBehaviour.Properties.of().mapColor(colour).ignitedByLava().strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(BlockRegistry::ocelotOrParrot).isSuffocating(BlockRegistry::never).isViewBlocking(BlockRegistry::never));
+    public static EnchantedBirchLeavesBlock enchantedBirchLeaves(MaterialColor colour) {
+        return new EnchantedBirchLeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES, colour).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(BlockRegistry::ocelotOrParrot).isSuffocating(BlockRegistry::never).isViewBlocking(BlockRegistry::never));
     }
-    public static RedMapleLeavesBlock redMapleLeaves(MapColor colour) {
-        return new RedMapleLeavesBlock(BlockBehaviour.Properties.of().mapColor(colour).ignitedByLava().strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(BlockRegistry::ocelotOrParrot).isSuffocating(BlockRegistry::never).isViewBlocking(BlockRegistry::never));
+    public static RedMapleLeavesBlock redMapleLeaves(MaterialColor colour) {
+        return new RedMapleLeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES, colour).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(BlockRegistry::ocelotOrParrot).isSuffocating(BlockRegistry::never).isViewBlocking(BlockRegistry::never));
     }
-    public static OrangeMapleLeavesBlock orangeMapleLeaves(MapColor colour) {
-        return new OrangeMapleLeavesBlock(BlockBehaviour.Properties.of().mapColor(colour).ignitedByLava().strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(BlockRegistry::ocelotOrParrot).isSuffocating(BlockRegistry::never).isViewBlocking(BlockRegistry::never));
+    public static OrangeMapleLeavesBlock orangeMapleLeaves(MaterialColor colour) {
+        return new OrangeMapleLeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES, colour).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(BlockRegistry::ocelotOrParrot).isSuffocating(BlockRegistry::never).isViewBlocking(BlockRegistry::never));
     }
-    public static JoshuaLeavesBlock joshuaLeaves(MapColor colour) {
-        return new JoshuaLeavesBlock(BlockBehaviour.Properties.of().pushReaction(PushReaction.BLOCK).mapColor(colour).ignitedByLava().strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().noCollission());
+    public static JoshuaLeavesBlock joshuaLeaves(MaterialColor colour) {
+        return new JoshuaLeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES, colour).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().noCollission());
     }
-    public static LeavesBlock appleLeaves(MapColor colour) {
-        return new AppleLeavesBlock(BlockBehaviour.Properties.of().mapColor(colour).ignitedByLava().strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(BlockRegistry::ocelotOrParrot).isSuffocating(BlockRegistry::never).isViewBlocking(BlockRegistry::never));
+    public static LeavesBlock appleLeaves(MaterialColor colour) {
+        return new AppleLeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES, colour).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(BlockRegistry::ocelotOrParrot).isSuffocating(BlockRegistry::never).isViewBlocking(BlockRegistry::never));
     }
-    public static BrimwoodLeavesBlock brimLeaves(MapColor colour) {
+    public static BrimwoodLeavesBlock brimLeaves(MaterialColor colour) {
         return new BrimwoodLeavesBlock(colour);
     }
 

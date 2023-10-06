@@ -1,13 +1,9 @@
 package net.regions_unexplored.registry;
 
-import net.minecraft.core.HolderGetter;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.npc.VillagerType;
 import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraftforge.registries.RegistryObject;
 import net.regions_unexplored.RegionsUnexploredMod;
 import net.regions_unexplored.config.RuCommonConfig;
 import net.regions_unexplored.data.worldgen.biome.RuBiomes;
@@ -19,6 +15,8 @@ import net.regions_unexplored.world.level.region.RuRegionPrimary;
 import net.regions_unexplored.world.level.region.RuRegionSecondary;
 import terrablender.api.Regions;
 import terrablender.api.SurfaceRuleManager;
+
+import java.util.function.Supplier;
 
 public class BiomeRegistry {
 
@@ -34,101 +32,93 @@ public class BiomeRegistry {
         SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, RegionsUnexploredMod.MOD_ID, RuOverworldSurfaceBuilders.makeRules());
     }
 
-    public static void bootstrap(BootstapContext<Biome> context) {
-        HolderGetter<ConfiguredWorldCarver<?>> carversGetter = context.lookup(Registries.CONFIGURED_CARVER);
-        HolderGetter<PlacedFeature> featuresGetter = context.lookup(Registries.PLACED_FEATURE);
+    public static void registerBiomes() {
 
         //FOREST
-        register(context, RuBiomes.AUTUMNAL_MAPLE_FOREST, ForestBiomes.autumnalMapleForest(featuresGetter, carversGetter));
-        register(context, RuBiomes.BAMBOO_FOREST, ForestBiomes.bambooForest(featuresGetter, carversGetter));
-        register(context, RuBiomes.MAGNOLIA_WOODLAND, ForestBiomes.magnoliaHighlands(featuresGetter, carversGetter));
-        register(context, RuBiomes.DECIDUOUS_FOREST, ForestBiomes.deciduousForest(featuresGetter, carversGetter));
-        register(context, RuBiomes.MAPLE_FOREST, ForestBiomes.mapleForest(featuresGetter, carversGetter));
-        register(context, RuBiomes.MAUVE_HILLS, ForestBiomes.mauveHills(featuresGetter, carversGetter));
-        register(context, RuBiomes.ORCHARD, ForestBiomes.orchard(featuresGetter, carversGetter));
-        register(context, RuBiomes.SILVER_BIRCH_FOREST, ForestBiomes.silverBirchForest(featuresGetter, carversGetter));
-        register(context, RuBiomes.TEMPERATE_GROVE, ForestBiomes.temperateGrove(featuresGetter, carversGetter));
-        register(context, RuBiomes.WILLOW_FOREST, ForestBiomes.willowForest(featuresGetter, carversGetter));
+        register(RuBiomes.AUTUMNAL_MAPLE_FOREST, ForestBiomes::autumnalMapleForest);
+        register(RuBiomes.BAMBOO_FOREST, ForestBiomes::bambooForest);
+        register(RuBiomes.MAGNOLIA_WOODLAND, ForestBiomes::magnoliaHighlands);
+        register(RuBiomes.DECIDUOUS_FOREST, ForestBiomes::deciduousForest);
+        register(RuBiomes.MAPLE_FOREST, ForestBiomes::mapleForest);
+        register(RuBiomes.MAUVE_HILLS, ForestBiomes::mauveHills);
+        register(RuBiomes.ORCHARD, ForestBiomes::orchard);
+        register(RuBiomes.SILVER_BIRCH_FOREST, ForestBiomes::silverBirchForest);
+        register(RuBiomes.TEMPERATE_GROVE, ForestBiomes::temperateGrove);
+        register(RuBiomes.WILLOW_FOREST, ForestBiomes::willowForest);
         //TAIGA
-        register(context, RuBiomes.BLACKWOOD_TAIGA, TaigaBiomes.blackwoodTaiga(featuresGetter, carversGetter));
-        register(context, RuBiomes.BOREAL_TAIGA, TaigaBiomes.borealTaiga(featuresGetter, carversGetter));
-        register(context, RuBiomes.GOLDEN_BOREAL_TAIGA, TaigaBiomes.goldenBorealTaiga(featuresGetter, carversGetter));
-        register(context, RuBiomes.PINE_TAIGA, TaigaBiomes.pineTaiga(featuresGetter, carversGetter));
-        register(context, RuBiomes.REDWOODS, TaigaBiomes.redwoods(featuresGetter, carversGetter));
-        register(context, RuBiomes.SPARSE_REDWOODS, TaigaBiomes.sparseRedwoods(featuresGetter, carversGetter));
+        register(RuBiomes.BLACKWOOD_TAIGA, TaigaBiomes::blackwoodTaiga);
+        register(RuBiomes.BOREAL_TAIGA, TaigaBiomes::borealTaiga);
+        register(RuBiomes.GOLDEN_BOREAL_TAIGA, TaigaBiomes::goldenBorealTaiga);
+        register(RuBiomes.PINE_TAIGA, TaigaBiomes::pineTaiga);
+        register(RuBiomes.REDWOODS, TaigaBiomes::redwoods);
+        register(RuBiomes.SPARSE_REDWOODS, TaigaBiomes::sparseRedwoods);
         //PLAINS
-        register(context, RuBiomes.BARLEY_FIELDS, PlainsBiomes.barleyFields(featuresGetter, carversGetter));
-        register(context, RuBiomes.FLOWER_FIELDS, PlainsBiomes.flowerFields(featuresGetter, carversGetter));
-        register(context, RuBiomes.GRASSLAND, PlainsBiomes.grassland(featuresGetter, carversGetter));
-        register(context, RuBiomes.CLOVER_PLAINS, PlainsBiomes.lupinePlains(featuresGetter, carversGetter));
-        register(context, RuBiomes.ROCKY_MEADOW, PlainsBiomes.rockyMeadow(featuresGetter, carversGetter));
-        register(context, RuBiomes.POPPY_FIELDS, PlainsBiomes.poppyFields(featuresGetter, carversGetter));
-        register(context, RuBiomes.PRAIRIE, PlainsBiomes.prairie(featuresGetter, carversGetter));
-        register(context, RuBiomes.PUMPKIN_FIELDS, PlainsBiomes.pumpkinFields(featuresGetter, carversGetter));
-        register(context, RuBiomes.SHRUBLAND, PlainsBiomes.shrubland(featuresGetter, carversGetter));
+        register(RuBiomes.BARLEY_FIELDS, PlainsBiomes::barleyFields);
+        register(RuBiomes.FLOWER_FIELDS, PlainsBiomes::flowerFields);
+        register(RuBiomes.GRASSLAND, PlainsBiomes::grassland);
+        register(RuBiomes.CLOVER_PLAINS, PlainsBiomes::lupinePlains);
+        register(RuBiomes.ROCKY_MEADOW, PlainsBiomes::rockyMeadow);
+        register(RuBiomes.POPPY_FIELDS, PlainsBiomes::poppyFields);
+        register(RuBiomes.PRAIRIE, PlainsBiomes::prairie);
+        register(RuBiomes.PUMPKIN_FIELDS, PlainsBiomes::pumpkinFields);
+        register(RuBiomes.SHRUBLAND, PlainsBiomes::shrubland);
         //WET
-        register(context, RuBiomes.BAYOU, WetBiomes.bayou(featuresGetter, carversGetter));
-        register(context, RuBiomes.EUCALYPTUS_FOREST, WetBiomes.eucalyptusForest(featuresGetter, carversGetter));
-        register(context, RuBiomes.FEN, WetBiomes.fen(featuresGetter, carversGetter));
-        register(context, RuBiomes.MARSH, WetBiomes.marsh(featuresGetter, carversGetter));
-        register(context, RuBiomes.FUNGAL_FEN, WetBiomes.fungalFen(featuresGetter, carversGetter));
-        register(context, RuBiomes.OLD_GROWTH_BAYOU, WetBiomes.oldGrowthBayou(featuresGetter, carversGetter));
-        register(context, RuBiomes.SPARSE_RAINFOREST, WetBiomes.rainforest(featuresGetter, carversGetter, false));
-        register(context, RuBiomes.RAINFOREST, WetBiomes.rainforest(featuresGetter, carversGetter, true));
+        register(RuBiomes.BAYOU, WetBiomes::bayou);
+        register(RuBiomes.EUCALYPTUS_FOREST, WetBiomes::eucalyptusForest);
+        register(RuBiomes.FEN, WetBiomes::fen);
+        register(RuBiomes.MARSH, WetBiomes::marsh);
+        register(RuBiomes.FUNGAL_FEN, WetBiomes::fungalFen);
+        register(RuBiomes.OLD_GROWTH_BAYOU, WetBiomes::oldGrowthBayou);
+        register(RuBiomes.SPARSE_RAINFOREST, WetBiomes::sparseRainforest);
+        register(RuBiomes.RAINFOREST, WetBiomes::rainforest);
         //ARID
-        register(context, RuBiomes.BAOBAB_SAVANNA, AridBiomes.baobabSavanna(featuresGetter, carversGetter));
-        register(context, RuBiomes.DRY_BUSHLAND, AridBiomes.dryBushland(featuresGetter, carversGetter));
-        register(context, RuBiomes.JOSHUA_DESERT, AridBiomes.joshuaDesert(featuresGetter, carversGetter));
-        register(context, RuBiomes.OUTBACK, AridBiomes.outback(featuresGetter, carversGetter));
-        register(context, RuBiomes.SAGUARO_DESERT, AridBiomes.saguaroDesert(featuresGetter, carversGetter));
-        register(context, RuBiomes.STEPPE, AridBiomes.steppe(featuresGetter, carversGetter));
+        register(RuBiomes.BAOBAB_SAVANNA, AridBiomes::baobabSavanna);
+        register(RuBiomes.DRY_BUSHLAND, AridBiomes::dryBushland);
+        register(RuBiomes.JOSHUA_DESERT, AridBiomes::joshuaDesert);
+        register(RuBiomes.OUTBACK, AridBiomes::outback);
+        register(RuBiomes.SAGUARO_DESERT, AridBiomes::saguaroDesert);
+        register(RuBiomes.STEPPE, AridBiomes::steppe);
         //MOUNTAIN
-        register(context, RuBiomes.ARID_MOUNTAINS, MountainBiomes.aridMountains(featuresGetter, carversGetter));
-        register(context, RuBiomes.HIGHLAND_FIELDS, MountainBiomes.highlandFields(featuresGetter, carversGetter));
-        register(context, RuBiomes.MOUNTAINS, MountainBiomes.mountainsAndSlopes(featuresGetter, carversGetter, false));
-        register(context, RuBiomes.PINE_SLOPES, MountainBiomes.mountainsAndSlopes(featuresGetter, carversGetter, true));
-        register(context, RuBiomes.TOWERING_CLIFFS, MountainBiomes.toweringCliffs(featuresGetter, carversGetter));
+        register(RuBiomes.ARID_MOUNTAINS, MountainBiomes::aridMountains);
+        register(RuBiomes.HIGHLAND_FIELDS, MountainBiomes::highlandFields);
+        register(RuBiomes.MOUNTAINS, MountainBiomes::mountains);
+        register(RuBiomes.PINE_SLOPES, MountainBiomes::slopes);
+        register(RuBiomes.TOWERING_CLIFFS, MountainBiomes::toweringCliffs);
         //COASTAL
-        register(context, RuBiomes.CHALK_CLIFFS, CoastalBiomes.chalkCliffs(featuresGetter, carversGetter));
-        register(context, RuBiomes.GRASSY_BEACH, CoastalBiomes.grassyBeach(featuresGetter, carversGetter));
-        register(context, RuBiomes.GRAVEL_BEACH, CoastalBiomes.gravelBeach(featuresGetter, carversGetter));
+        register(RuBiomes.CHALK_CLIFFS, CoastalBiomes::chalkCliffs);
+        register(RuBiomes.GRASSY_BEACH, CoastalBiomes::grassyBeach);
+        register(RuBiomes.GRAVEL_BEACH, CoastalBiomes::gravelBeach);
         //AQUATIC
-        register(context, RuBiomes.ALPHA_GROVE, AquaticBiomes.alphaGrove(featuresGetter, carversGetter));
-        register(context, RuBiomes.COLD_RIVER, AquaticBiomes.coldRiver(featuresGetter, carversGetter));
-        register(context, RuBiomes.HYACINTH_DEEPS, AquaticBiomes.hyacinthDeeps(featuresGetter, carversGetter));
-        register(context, RuBiomes.MUDDY_RIVER, AquaticBiomes.muddyRiver(featuresGetter, carversGetter));
-        register(context, RuBiomes.ROCKY_REEF, AquaticBiomes.rockyReef(featuresGetter, carversGetter));
-        register(context, RuBiomes.ASHEN_WOODLAND, AquaticBiomes.ashenWoodland(featuresGetter, carversGetter));
-        register(context, RuBiomes.TROPICAL_RIVER, AquaticBiomes.tropicalRiver(featuresGetter, carversGetter));
-        register(context, RuBiomes.TROPICS, AquaticBiomes.tropics(featuresGetter, carversGetter));
+        register(RuBiomes.ALPHA_GROVE, AquaticBiomes::alphaGrove);
+        register(RuBiomes.COLD_RIVER, AquaticBiomes::coldRiver);
+        register(RuBiomes.HYACINTH_DEEPS, AquaticBiomes::hyacinthDeeps);
+        register(RuBiomes.MUDDY_RIVER, AquaticBiomes::muddyRiver);
+        register(RuBiomes.ROCKY_REEF, AquaticBiomes::rockyReef);
+        register(RuBiomes.ASHEN_WOODLAND, AquaticBiomes::ashenWoodland);
+        register(RuBiomes.TROPICAL_RIVER, AquaticBiomes::tropicalRiver);
+        register(RuBiomes.TROPICS, AquaticBiomes::tropics);
         //FROZEN
-        register(context, RuBiomes.COLD_BOREAL_TAIGA, FrozenBiomes.coldBorealTaiga(featuresGetter, carversGetter));
-        register(context, RuBiomes.COLD_DECIDUOUS_FOREST, FrozenBiomes.coldDeciduousForest(featuresGetter, carversGetter));
-        register(context, RuBiomes.FROZEN_PINE_TAIGA, FrozenBiomes.frozenPineTaiga(featuresGetter, carversGetter));
-        register(context, RuBiomes.FROZEN_TUNDRA, FrozenBiomes.frozenTundra(featuresGetter, carversGetter));
-        register(context, RuBiomes.ICY_HEIGHTS, FrozenBiomes.icyHeights(featuresGetter, carversGetter));
-        register(context, RuBiomes.SPIRES, FrozenBiomes.spires(featuresGetter, carversGetter));
+        register(RuBiomes.COLD_BOREAL_TAIGA, FrozenBiomes::coldBorealTaiga);
+        register(RuBiomes.COLD_DECIDUOUS_FOREST, FrozenBiomes::coldDeciduousForest);
+        register(RuBiomes.FROZEN_PINE_TAIGA, FrozenBiomes::frozenPineTaiga);
+        register(RuBiomes.FROZEN_TUNDRA, FrozenBiomes::frozenTundra);
+        register(RuBiomes.ICY_HEIGHTS, FrozenBiomes::icyHeights);
+        register(RuBiomes.SPIRES, FrozenBiomes::spires);
         //CAVE
-        register(context, RuBiomes.ANCIENT_DELTA, CaveBiomes.ancientDelta(featuresGetter, carversGetter));
-        register(context, RuBiomes.BIOSHROOM_CAVES, CaveBiomes.bioshroomCaves(featuresGetter, carversGetter));
-        register(context, RuBiomes.PRISMACHASM, CaveBiomes.prismachasm(featuresGetter, carversGetter));
-        register(context, RuBiomes.REDSTONE_CAVES, CaveBiomes.redstoneCaves(featuresGetter, carversGetter));
-        register(context, RuBiomes.SCORCHING_CAVES, CaveBiomes.scorchingCaves(featuresGetter, carversGetter));
+        register(RuBiomes.ANCIENT_DELTA, CaveBiomes::ancientDelta);
+        register(RuBiomes.BIOSHROOM_CAVES, CaveBiomes::bioshroomCaves);
+        register(RuBiomes.PRISMACHASM, CaveBiomes::prismachasm);
+        register(RuBiomes.REDSTONE_CAVES, CaveBiomes::redstoneCaves);
+        register(RuBiomes.SCORCHING_CAVES, CaveBiomes::scorchingCaves);
         //NETHER
-        register(context, RuBiomes.BLACKSTONE_BASIN, NetherBiomes.blackstoneBasin(featuresGetter, carversGetter));
-        register(context, RuBiomes.INFERNAL_HOLT, NetherBiomes.infernalHolt(featuresGetter, carversGetter));
-        register(context, RuBiomes.GLISTERING_MEADOW, NetherBiomes.glisteringMeadow(featuresGetter, carversGetter));
-        register(context, RuBiomes.MYCOTOXIC_UNDERGROWTH, NetherBiomes.mycotoxicUndergrowth(featuresGetter, carversGetter));
-        register(context, RuBiomes.REDSTONE_ABYSS, NetherBiomes.redstoneAbyss(featuresGetter, carversGetter));
-
-
-
-
-
-
+        register(RuBiomes.BLACKSTONE_BASIN, NetherBiomes::blackstoneBasin);
+        register(RuBiomes.INFERNAL_HOLT, NetherBiomes::infernalHolt);
+        register(RuBiomes.GLISTERING_MEADOW, NetherBiomes::glisteringMeadow);
+        register(RuBiomes.MYCOTOXIC_UNDERGROWTH, NetherBiomes::mycotoxicUndergrowth);
+        register(RuBiomes.REDSTONE_ABYSS, NetherBiomes::redstoneAbyss);
     }
 
-    private static void registerVillagerTypes() {
+    private static void registerVillagerTypes(){
         //FOREST
         registerVillagers(RuBiomes.AUTUMNAL_MAPLE_FOREST, VillagerType.PLAINS);
         registerVillagers(RuBiomes.BAMBOO_FOREST, VillagerType.JUNGLE);
@@ -214,9 +204,8 @@ public class BiomeRegistry {
 
     }
 
-    private static void register(BootstapContext<Biome> context, ResourceKey<Biome> key, Biome biome) {
-        context.register(key, biome);
-
+    public static RegistryObject<Biome> register(ResourceKey<Biome> key, Supplier<Biome> biomeSupplier) {
+        return RegionsUnexploredMod.BIOME_REGISTRY.register(key.location().getPath(), biomeSupplier);
     }
 
     private static void registerVillagers(ResourceKey<Biome> key, VillagerType type) {

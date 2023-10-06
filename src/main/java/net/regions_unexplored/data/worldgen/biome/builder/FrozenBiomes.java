@@ -1,6 +1,5 @@
 package net.regions_unexplored.data.worldgen.biome.builder;
 
-import net.minecraft.core.HolderGetter;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.sounds.Musics;
 import net.minecraft.sounds.SoundEvents;
@@ -9,8 +8,6 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
-import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.regions_unexplored.data.worldgen.RuBiomeDefaultFeatures;
 import net.regions_unexplored.data.worldgen.placement.RuMiscOverworldPlacements;
 import net.regions_unexplored.data.worldgen.placement.RuTreePlacements;
@@ -39,8 +36,8 @@ public class FrozenBiomes {
         return spawnBuilder;
     }
 
-    private static BiomeGenerationSettings.Builder baseFrozenGeneration(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
-        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(featureGetter, carverGetter);
+    private static BiomeGenerationSettings.Builder baseFrozenGeneration() {
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
         RuBiomeDefaultFeatures.globalOverworldGeneration(biomeBuilder);
         RuBiomeDefaultFeatures.mediumGrass(biomeBuilder);
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
@@ -49,8 +46,8 @@ public class FrozenBiomes {
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
         return biomeBuilder;
     }
-    private static BiomeGenerationSettings.Builder baseFrozenTaigaGeneration(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
-        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(featureGetter, carverGetter);
+    private static BiomeGenerationSettings.Builder baseFrozenTaigaGeneration() {
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
         RuBiomeDefaultFeatures.globalOverworldGeneration(biomeBuilder);
         RuBiomeDefaultFeatures.mediumGrass(biomeBuilder);
         BiomeDefaultFeatures.addFerns(biomeBuilder);
@@ -61,7 +58,7 @@ public class FrozenBiomes {
         return biomeBuilder;
     }
 
-    public static Biome coldBorealTaiga(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome coldBorealTaiga() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(0.0F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -73,7 +70,7 @@ public class FrozenBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_GROVE));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseFrozenTaigaGeneration(featureGetter, carverGetter);
+        BiomeGenerationSettings.Builder biomeBuilder = baseFrozenTaigaGeneration();
 
         //add RU features
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.LARCH_TREE_DENSE);
@@ -91,7 +88,7 @@ public class FrozenBiomes {
         MobSpawnSettings.Builder spawnBuilder = baseFrozenSpawning(false);
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(true)
+                .precipitation(Biome.Precipitation.SNOW)
                 .temperature(0.0f)
                 .downfall(0.6f)
                 .specialEffects(effectBuilder.build())
@@ -100,7 +97,7 @@ public class FrozenBiomes {
                 .build();
     }
 
-    public static Biome coldDeciduousForest(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome coldDeciduousForest() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(0.0F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -112,7 +109,7 @@ public class FrozenBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_SNOWY_SLOPES));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseFrozenGeneration(featureGetter, carverGetter);
+        BiomeGenerationSettings.Builder biomeBuilder = baseFrozenGeneration();
 
         //add RU features
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.OAK_TREE_WITH_BRANCH);
@@ -133,7 +130,7 @@ public class FrozenBiomes {
         MobSpawnSettings.Builder spawnBuilder = baseFrozenSpawning(false);
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(true)
+                .precipitation(Biome.Precipitation.SNOW)
                 .temperature(-1.5f)
                 .downfall(0.8f)
                 .specialEffects(effectBuilder.build())
@@ -142,7 +139,7 @@ public class FrozenBiomes {
                 .build();
     }
 
-    public static Biome frozenPineTaiga(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome frozenPineTaiga() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(0.0F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -154,7 +151,7 @@ public class FrozenBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_GROVE));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseFrozenTaigaGeneration(featureGetter, carverGetter);
+        BiomeGenerationSettings.Builder biomeBuilder = baseFrozenTaigaGeneration();
 
         //add RU features
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.SCOTTS_PINE_TREE_ON_SNOW);
@@ -174,7 +171,7 @@ public class FrozenBiomes {
         MobSpawnSettings.Builder spawnBuilder = baseFrozenSpawning(false);
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(true)
+                .precipitation(Biome.Precipitation.SNOW)
                 .temperature(-0.5f)
                 .downfall(0.6f)
                 .specialEffects(effectBuilder.build())
@@ -183,7 +180,7 @@ public class FrozenBiomes {
                 .build();
     }
 
-    public static Biome frozenTundra(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome frozenTundra() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(0.0F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -195,7 +192,7 @@ public class FrozenBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_GROVE));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseFrozenGeneration(featureGetter, carverGetter);
+        BiomeGenerationSettings.Builder biomeBuilder = baseFrozenGeneration();
 
         //add RU features
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.SPRUCE_TREE_TALL_SPARSE);
@@ -215,7 +212,7 @@ public class FrozenBiomes {
         MobSpawnSettings.Builder spawnBuilder = baseFrozenSpawning(true);
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(true)
+                .precipitation(Biome.Precipitation.SNOW)
                 .temperature(-1f)
                 .downfall(0.0f)
                 .specialEffects(effectBuilder.build())
@@ -224,7 +221,7 @@ public class FrozenBiomes {
                 .build();
     }
 
-    public static Biome icyHeights(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome icyHeights() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(0.0F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -236,7 +233,7 @@ public class FrozenBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FROZEN_PEAKS));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseFrozenGeneration(featureGetter, carverGetter);
+        BiomeGenerationSettings.Builder biomeBuilder = baseFrozenGeneration();
 
         //add RU features
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.SCOTTS_PINE_TREE_MOUNTAIN_ON_SNOW);
@@ -254,7 +251,7 @@ public class FrozenBiomes {
         MobSpawnSettings.Builder spawnBuilder = baseFrozenSpawning(false);
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(true)
+                .precipitation(Biome.Precipitation.SNOW)
                 .temperature(-1f)
                 .downfall(0.7f)
                 .specialEffects(effectBuilder.build())
@@ -263,7 +260,7 @@ public class FrozenBiomes {
                 .build();
     }
 
-    public static Biome spires(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome spires() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(0.0F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -275,7 +272,7 @@ public class FrozenBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_SNOWY_SLOPES));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseFrozenGeneration(featureGetter, carverGetter);
+        BiomeGenerationSettings.Builder biomeBuilder = baseFrozenGeneration();
 
         //add RU features
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuMiscOverworldPlacements.ICICLE_UP);
@@ -290,7 +287,7 @@ public class FrozenBiomes {
         MobSpawnSettings.Builder spawnBuilder = baseFrozenSpawning(true);
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(true)
+                .precipitation(Biome.Precipitation.SNOW)
                 .temperature(-2f)
                 .downfall(0.95f)
                 .specialEffects(effectBuilder.build())

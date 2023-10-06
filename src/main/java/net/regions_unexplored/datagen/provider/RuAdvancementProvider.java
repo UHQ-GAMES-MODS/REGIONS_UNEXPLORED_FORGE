@@ -4,27 +4,25 @@ import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.data.PackOutput;
+import net.minecraft.data.DataGenerator;
+import net.minecraft.data.advancements.AdvancementProvider;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.common.data.ForgeAdvancementProvider;
 import net.regions_unexplored.RegionsUnexploredMod;
 import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.data.worldgen.biome.RuBiomes;
 import net.regions_unexplored.item.RuItems;
 
-import java.util.List;
-import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 
-public class RuAdvancementProvider extends ForgeAdvancementProvider {
+public class RuAdvancementProvider extends AdvancementProvider {
 
-    public RuAdvancementProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries, ExistingFileHelper existingFileHelper) {
-        super(output, registries, existingFileHelper, List.of(new AdvancementBuilder()));
+
+    public RuAdvancementProvider(DataGenerator p_123966_) {
+        super(p_123966_);
     }
 
     private static class AdvancementBuilder implements ForgeAdvancementProvider.AdvancementGenerator {

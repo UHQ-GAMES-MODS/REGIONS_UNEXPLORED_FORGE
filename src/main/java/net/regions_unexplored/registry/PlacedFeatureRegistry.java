@@ -1,28 +1,26 @@
 package net.regions_unexplored.registry;
 
 import net.minecraft.core.Direction;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.Holder;
+import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 import net.regions_unexplored.RegionsUnexploredMod;
 import net.regions_unexplored.block.RuBlocks;
-import net.regions_unexplored.data.worldgen.placement.*;
+
+import java.util.List;
 
 public class PlacedFeatureRegistry {
-    public static void bootstrap(BootstapContext<PlacedFeature> context) {
-        RuAquaticPlacements.bootstrap(context);
-        RuMiscOverworldPlacements.bootstrap(context);
-        RuNetherPlacements.bootstrap(context);
-        RuTreePlacements.bootstrap(context);
-        RuVegetationPlacements.bootstrap(context);
+
+    public static Holder<PlacedFeature> register(String key, Holder<? extends ConfiguredFeature<?, ?>> feature, PlacementModifier... placements) {
+        return register(key, feature, List.of(placements));
     }
 
-    public static ResourceKey<PlacedFeature> createKey(String name) {
-        return ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(RegionsUnexploredMod.MOD_ID, name));
+    public static Holder<PlacedFeature> register(String key, Holder<? extends ConfiguredFeature<?, ?>> feature, List<PlacementModifier> placements) {
+        return BuiltinRegistries.register(BuiltinRegistries.PLACED_FEATURE, RegionsUnexploredMod.MOD_ID+":"+key, new PlacedFeature(Holder.hackyErase(feature), List.copyOf(placements)));
     }
 
     public static BlockPredicate onDirtPredicate = BlockPredicate.matchesBlocks(Direction.DOWN.getNormal(), Blocks.PODZOL, Blocks.COARSE_DIRT, Blocks.DIRT, RuBlocks.PEAT_DIRT.get(), RuBlocks.SILT_DIRT.get(), RuBlocks.PEAT_COARSE_DIRT.get(), RuBlocks.SILT_COARSE_DIRT.get(), RuBlocks.PEAT_PODZOL.get(), RuBlocks.SILT_PODZOL.get());

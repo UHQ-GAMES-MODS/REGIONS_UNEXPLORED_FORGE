@@ -1,8 +1,9 @@
 package net.regions_unexplored.datagen.provider;
 
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.data.PackOutput;
+import net.minecraft.core.Registry;
+import net.minecraft.data.DataGenerator;
+import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -15,27 +16,22 @@ import net.regions_unexplored.data.tags.RuTags;
 import net.regions_unexplored.item.RuItems;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.concurrent.CompletableFuture;
-
 public class RuItemTagProvider extends ItemTagsProvider {
 
 
-    public RuItemTagProvider(PackOutput p_275343_, CompletableFuture<HolderLookup.Provider> p_275729_, CompletableFuture<TagLookup<Block>> p_275322_, String modId, @Nullable ExistingFileHelper existingFileHelper) {
-        super(p_275343_, p_275729_, p_275322_, modId, existingFileHelper);
+    public RuItemTagProvider(DataGenerator p_126530_, BlockTagsProvider p_126531_) {
+        super(p_126530_, p_126531_);
     }
 
     @Override
-    public void addTags(HolderLookup.Provider provider) {
-        addForgeTags(provider);
+    public void addTags() {
+        addForgeTags();
         //main_tags
         //this.tag(ItemTags.ACACIA_LOGS);
         //this.tag(ItemTags.ANVIL);
         //this.tag(ItemTags.ARROWS);
         //this.tag(ItemTags.AXES);
         //this.tag(ItemTags.AXOLOTL_TEMPT_ITEMS);
-        this.tag(ItemTags.BAMBOO_BLOCKS)
-                .addTags(RuTags.BAMBOO_LOGS_ITEM)
-        ;
         //this.tag(ItemTags.BANNERS);
         //this.tag(ItemTags.BEACON_PAYMENT_ITEMS);
         //this.tag(ItemTags.BEDS);
@@ -116,28 +112,6 @@ public class RuItemTagProvider extends ItemTagsProvider {
         ;
         //this.tag(ItemTags.DOORS);
         //this.tag(ItemTags.EMERALD_ORES);
-        this.tag(ItemTags.FENCE_GATES)
-                .add(RuBlocks.BAOBAB_FENCE_GATE.get().asItem())
-                .add(RuBlocks.BLACKWOOD_FENCE_GATE.get().asItem())
-                .add(RuBlocks.BLUE_BIOSHROOM_FENCE_GATE.get().asItem())
-                .add(RuBlocks.BRIMWOOD_FENCE_GATE.get().asItem())
-                .add(RuBlocks.COBALT_FENCE_GATE.get().asItem())
-                .add(RuBlocks.CYPRESS_FENCE_GATE.get().asItem())
-                .add(RuBlocks.EUCALYPTUS_FENCE_GATE.get().asItem())
-                .add(RuBlocks.GREEN_BIOSHROOM_FENCE_GATE.get().asItem())
-                .add(RuBlocks.JOSHUA_FENCE_GATE.get().asItem())
-                .add(RuBlocks.KAPOK_FENCE_GATE.get().asItem())
-                .add(RuBlocks.LARCH_FENCE_GATE.get().asItem())
-                .add(RuBlocks.MAGNOLIA_FENCE_GATE.get().asItem())
-                .add(RuBlocks.MAPLE_FENCE_GATE.get().asItem())
-                .add(RuBlocks.MAUVE_FENCE_GATE.get().asItem())
-                .add(RuBlocks.PALM_FENCE_GATE.get().asItem())
-                .add(RuBlocks.PINE_FENCE_GATE.get().asItem())
-                .add(RuBlocks.PINK_BIOSHROOM_FENCE_GATE.get().asItem())
-                .add(RuBlocks.REDWOOD_FENCE_GATE.get().asItem())
-                .add(RuBlocks.SOCOTRA_FENCE_GATE.get().asItem())
-                .add(RuBlocks.WILLOW_FENCE_GATE.get().asItem())
-        ;
         //this.tag(ItemTags.FENCES);
         //this.tag(ItemTags.FISHES);
         this.tag(ItemTags.FLOWERS)
@@ -237,7 +211,6 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.BRIMWOOD_STAIRS.get().asItem())
                 .add(RuBlocks.BRIMWOOD_TRAPDOOR.get().asItem())
                 .add(RuItems.BRIMWOOD_SIGN.get().asItem())
-                .add(RuItems.BRIMWOOD_HANGING_SIGN.get().asItem())
                 .addTags(RuTags.COBALT_LOGS_ITEM)
                 .add(RuBlocks.COBALT_BUTTON.get().asItem())
                 .add(RuBlocks.COBALT_DOOR.get().asItem())
@@ -249,7 +222,6 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.COBALT_STAIRS.get().asItem())
                 .add(RuBlocks.COBALT_TRAPDOOR.get().asItem())
                 .add(RuItems.COBALT_SIGN.get().asItem())
-                .add(RuItems.COBALT_HANGING_SIGN.get().asItem())
                 .addTags(RuTags.DEAD_LOGS_ITEM)
                 .add(RuBlocks.DEAD_BUTTON.get().asItem())
                 .add(RuBlocks.DEAD_DOOR.get().asItem())
@@ -261,7 +233,6 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.DEAD_STAIRS.get().asItem())
                 .add(RuBlocks.DEAD_TRAPDOOR.get().asItem())
                 .add(RuItems.DEAD_SIGN.get().asItem())
-                .add(RuItems.DEAD_HANGING_SIGN.get().asItem())
                 .addTags(RuTags.YELLOW_BIOSHROOM_LOGS_ITEM)
                 .add(RuBlocks.YELLOW_BIOSHROOM_BUTTON.get().asItem())
                 .add(RuBlocks.YELLOW_BIOSHROOM_DOOR.get().asItem())
@@ -273,7 +244,6 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.YELLOW_BIOSHROOM_STAIRS.get().asItem())
                 .add(RuBlocks.YELLOW_BIOSHROOM_TRAPDOOR.get().asItem())
                 .add(RuItems.YELLOW_BIOSHROOM_SIGN.get().asItem())
-                .add(RuItems.YELLOW_BIOSHROOM_HANGING_SIGN.get().asItem())
         ;
         this.tag(ItemTags.OAK_LOGS)
                 .add(RuBlocks.SMALL_OAK_LOG.get().asItem())
@@ -364,28 +334,6 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.WILLOW_SAPLING.get().asItem())
         ;
         //this.tag(ItemTags.SHOVELS);
-        this.tag(ItemTags.HANGING_SIGNS)
-                .add(RuBlocks.BAOBAB_HANGING_SIGN.get().asItem())
-                .add(RuBlocks.BLACKWOOD_HANGING_SIGN.get().asItem())
-                .add(RuBlocks.BLUE_BIOSHROOM_HANGING_SIGN.get().asItem())
-                .add(RuBlocks.BRIMWOOD_HANGING_SIGN.get().asItem())
-                .add(RuBlocks.COBALT_HANGING_SIGN.get().asItem())
-                .add(RuBlocks.CYPRESS_HANGING_SIGN.get().asItem())
-                .add(RuBlocks.EUCALYPTUS_HANGING_SIGN.get().asItem())
-                .add(RuBlocks.GREEN_BIOSHROOM_HANGING_SIGN.get().asItem())
-                .add(RuBlocks.JOSHUA_HANGING_SIGN.get().asItem())
-                .add(RuBlocks.KAPOK_HANGING_SIGN.get().asItem())
-                .add(RuBlocks.LARCH_HANGING_SIGN.get().asItem())
-                .add(RuBlocks.MAGNOLIA_HANGING_SIGN.get().asItem())
-                .add(RuBlocks.MAPLE_HANGING_SIGN.get().asItem())
-                .add(RuBlocks.MAUVE_HANGING_SIGN.get().asItem())
-                .add(RuBlocks.PALM_HANGING_SIGN.get().asItem())
-                .add(RuBlocks.PINE_HANGING_SIGN.get().asItem())
-                .add(RuBlocks.PINK_BIOSHROOM_HANGING_SIGN.get().asItem())
-                .add(RuBlocks.REDWOOD_HANGING_SIGN.get().asItem())
-                .add(RuBlocks.SOCOTRA_HANGING_SIGN.get().asItem())
-                .add(RuBlocks.WILLOW_HANGING_SIGN.get().asItem())
-        ;
         this.tag(ItemTags.SIGNS)
                 .add(RuBlocks.BAOBAB_SIGN.get().asItem())
                 .add(RuBlocks.BLACKWOOD_SIGN.get().asItem())
@@ -473,9 +421,6 @@ public class RuItemTagProvider extends ItemTagsProvider {
         //this.tag(ItemTags.TERRACOTTA);
         //this.tag(ItemTags.TOOLS);
         //this.tag(ItemTags.TRAPDOORS);
-        this.tag(ItemTags.TRIM_MATERIALS)
-                .add(RuBlocks.PRISMARITE_CLUSTER.get().asItem())
-        ;
         //this.tag(ItemTags.WALLS);
         //this.tag(ItemTags.WARPED_STEMS);
         this.tag(ItemTags.WART_BLOCKS)
@@ -697,8 +642,8 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.STEPPE_GRASS.get().asItem())
                 .add(RuBlocks.STEPPE_SHRUB.get().asItem())
                 .add(RuBlocks.STONE_BUD.get().asItem())
-                .add(ResourceKey.create(Registries.ITEM, new ResourceLocation("minecraft", "grass")))
-                .add(ResourceKey.create(Registries.ITEM, new ResourceLocation("minecraft", "fern")))
+                .add(ResourceKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("minecraft", "grass")))
+                .add(ResourceKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("minecraft", "fern")))
         ;
         this.tag(RuTags.ASH_ITEM)
                 .add(RuBlocks.ASH.get().asItem())
@@ -966,24 +911,24 @@ public class RuItemTagProvider extends ItemTagsProvider {
         ;
     }
 
-    public void addForgeTags(HolderLookup.Provider provider) {
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "barrels/wooden")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "chests/ender")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "chests/trapped")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "chests/wooden")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "cobblestone/deepslate")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "cobblestone/infested")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "cobblestone/mossy")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "cobblestone/normal")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "crops/beetroot")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "crops/carrot")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "crops/nether_wart")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "crops/potato")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "crops/wheat")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dusts/glowstone")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dusts/prismarine")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dusts/redstone")));
-        this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "fence_gates/wooden")))
+    public void addForgeTags() {
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "barrels/wooden")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "chests/ender")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "chests/trapped")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "chests/wooden")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "cobblestone/deepslate")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "cobblestone/infested")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "cobblestone/mossy")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "cobblestone/normal")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "crops/beetroot")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "crops/carrot")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "crops/nether_wart")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "crops/potato")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "crops/wheat")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "dusts/glowstone")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "dusts/prismarine")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "dusts/redstone")));
+        this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "fence_gates/wooden")))
                 .add(RuBlocks.BAOBAB_FENCE_GATE.get().asItem())
                 .add(RuBlocks.BLACKWOOD_FENCE_GATE.get().asItem())
                 .add(RuBlocks.BLUE_BIOSHROOM_FENCE_GATE.get().asItem())
@@ -1005,8 +950,8 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.SOCOTRA_FENCE_GATE.get().asItem())
                 .add(RuBlocks.WILLOW_FENCE_GATE.get().asItem())
         ;
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "fences/nether_brick")));
-        this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "fences/wooden")))
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "fences/nether_brick")));
+        this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "fences/wooden")))
                 .add(RuBlocks.BAOBAB_FENCE.get().asItem())
                 .add(RuBlocks.BLACKWOOD_FENCE.get().asItem())
                 .add(RuBlocks.BLUE_BIOSHROOM_FENCE.get().asItem())
@@ -1028,66 +973,66 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.SOCOTRA_FENCE.get().asItem())
                 .add(RuBlocks.WILLOW_FENCE.get().asItem())
         ;
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "glass/colorless")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "glass_panes/colorless")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "ore_bearing_ground/deepslate")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "ore_bearing_ground/nether")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "ore_bearing_ground/stone")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "ore_rates/dense")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "ore_rates/singular")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "ore_rates/sparse")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "ores/coal")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "ores/copper")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "ores/diamond")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "ores/emerald")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "ores/gold")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "ores/iron")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "ores/lapis")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "ores/quartz")));
-        this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "ores/redstone")))
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "glass/colorless")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "glass_panes/colorless")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "ore_bearing_ground/deepslate")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "ore_bearing_ground/nether")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "ore_bearing_ground/stone")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "ore_rates/dense")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "ore_rates/singular")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "ore_rates/sparse")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "ores/coal")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "ores/copper")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "ores/diamond")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "ores/emerald")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "ores/gold")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "ores/iron")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "ores/lapis")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "ores/quartz")));
+        this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "ores/redstone")))
                 .add(RuBlocks.RAW_REDSTONE_BLOCK.get().asItem())
         ;
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "ores_in_ground/deepslate")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "ores_in_ground/netherrack")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "ores_in_ground/stone")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "sand/colorless")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "sand/red")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "seeds/beetroot")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "seeds/melon")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "seeds/pumpkin")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "seeds/wheat")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "storage_blocks/redstone")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "tools/axes")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "tools/bows")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "tools/crossbows")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "tools/fishing_rods")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "tools/hoes")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "tools/pickaxes")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "tools/shields")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "tools/shovels")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "tools/swords")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "tools/tridents")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "barrels")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "bones")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "bookshelves")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "chests")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "cobblestone")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "crops")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dusts")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "dyes")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "end_stones")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "fence_gates")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "fences")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "gems")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "glass")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "glass_panes")));
-        this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "gravel")))
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "ores_in_ground/deepslate")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "ores_in_ground/netherrack")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "ores_in_ground/stone")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "sand/colorless")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "sand/red")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "seeds/beetroot")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "seeds/melon")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "seeds/pumpkin")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "seeds/wheat")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "storage_blocks/redstone")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "tools/axes")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "tools/bows")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "tools/crossbows")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "tools/fishing_rods")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "tools/hoes")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "tools/pickaxes")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "tools/shields")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "tools/shovels")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "tools/swords")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "tools/tridents")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "barrels")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "bones")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "bookshelves")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "chests")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "cobblestone")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "crops")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "dusts")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "dyes")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "end_stones")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "fence_gates")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "fences")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "gems")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "glass")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "glass_panes")));
+        this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "gravel")))
                 .add(RuBlocks.ASH.get().asItem())
                 .add(RuBlocks.VOLCANIC_ASH.get().asItem())
         ;
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "gunpowder")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "ingots")));
-        this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "mushrooms")))
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "gunpowder")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "ingots")));
+        this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "mushrooms")))
                 .add(RuBlocks.GREEN_BIOSHROOM.get().asItem())
                 .add(RuBlocks.BLUE_BIOSHROOM.get().asItem())
                 .add(RuBlocks.PINK_BIOSHROOM.get().asItem())
@@ -1097,27 +1042,27 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.TALL_PINK_BIOSHROOM.get().asItem())
                 .add(RuBlocks.TALL_YELLOW_BIOSHROOM.get().asItem())
         ;
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "netherrack")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "nuggets")));
-        this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "obsidian")))
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "netherrack")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "nuggets")));
+        this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "obsidian")))
                 .add(RuBlocks.COBALT_OBSIDIAN.get().asItem())
         ;
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "ores")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "raw_materials")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "sand")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "sandstone")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "seeds")));
-        this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "stained_glass")))
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "ores")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "raw_materials")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "sand")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "sandstone")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "seeds")));
+        this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "stained_glass")))
                 .add(RuBlocks.PRISMAGLASS.get().asItem())
         ;
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "stained_glass_panes")));
-        this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "stone")))
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "stained_glass_panes")));
+        this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "stone")))
                 .add(RuBlocks.MOSSY_STONE.get().asItem())
                 .add(RuBlocks.ARGILLITE.get().asItem())
                 .add(RuBlocks.CHALK.get().asItem())
                 .add(RuBlocks.POLISHED_CHALK.get().asItem())
         ;
-        this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "trapdoors/wooden")))
+        this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "trapdoors/wooden")))
                 .add(RuBlocks.BAOBAB_TRAPDOOR.get().asItem())
                 .add(RuBlocks.BLACKWOOD_TRAPDOOR.get().asItem())
                 .add(RuBlocks.BLUE_BIOSHROOM_TRAPDOOR.get().asItem())
@@ -1139,7 +1084,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.SOCOTRA_TRAPDOOR.get().asItem())
                 .add(RuBlocks.WILLOW_TRAPDOOR.get().asItem())
         ;
-        this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "doors/wooden")))
+        this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "doors/wooden")))
                 .add(RuBlocks.BAOBAB_DOOR.get().asItem())
                 .add(RuBlocks.BLACKWOOD_DOOR.get().asItem())
                 .add(RuBlocks.BLUE_BIOSHROOM_DOOR.get().asItem())
@@ -1161,7 +1106,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.SOCOTRA_DOOR.get().asItem())
                 .add(RuBlocks.WILLOW_DOOR.get().asItem())
         ;
-        this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "stairs/wooden")))
+        this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "stairs/wooden")))
                 .add(RuBlocks.ALPHA_STAIRS.get().asItem())
                 .add(RuBlocks.BAOBAB_STAIRS.get().asItem())
                 .add(RuBlocks.BLACKWOOD_STAIRS.get().asItem())
@@ -1200,12 +1145,12 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.PINK_PAINTED_STAIRS.get().asItem())
                 .add(RuBlocks.ORANGE_PAINTED_STAIRS.get().asItem())
         ;
-        this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "stairs/stone")))
+        this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "stairs/stone")))
                 .add(RuBlocks.CHALK_STAIRS.get().asItem())
                 .add(RuBlocks.CHALK_BRICK_STAIRS.get().asItem())
                 .add(RuBlocks.POLISHED_CHALK_STAIRS.get().asItem())
         ;
-        this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "slabs/wooden")))
+        this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "slabs/wooden")))
                 .add(RuBlocks.ALPHA_SLAB.get().asItem())
                 .add(RuBlocks.BAOBAB_SLAB.get().asItem())
                 .add(RuBlocks.BLACKWOOD_SLAB.get().asItem())
@@ -1244,12 +1189,12 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.PINK_PAINTED_SLAB.get().asItem())
                 .add(RuBlocks.ORANGE_PAINTED_SLAB.get().asItem())
         ;
-        this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "slabs/stone")))
+        this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "slabs/stone")))
                 .add(RuBlocks.CHALK_SLAB.get().asItem())
                 .add(RuBlocks.CHALK_BRICK_SLAB.get().asItem())
                 .add(RuBlocks.POLISHED_CHALK_SLAB.get().asItem())
         ;
-        this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "planks")))
+        this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "planks")))
                 .add(RuBlocks.ALPHA_PLANKS.get().asItem())
                 .add(RuBlocks.BAOBAB_PLANKS.get().asItem())
                 .add(RuBlocks.BLACKWOOD_PLANKS.get().asItem())
@@ -1288,7 +1233,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.PINK_PAINTED_PLANKS.get().asItem())
                 .add(RuBlocks.ORANGE_PAINTED_PLANKS.get().asItem())
         ;
-        this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "logs")))
+        this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "logs")))
                 .add(RuBlocks.ALPHA_LOG.get().asItem())
                 .add(RuBlocks.ASHEN_LOG.get().asItem())
                 .add(RuBlocks.BAOBAB_LOG.get().asItem())
@@ -1316,7 +1261,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.WILLOW_LOG.get().asItem())
                 .add(RuBlocks.YELLOW_BIOSHROOM_STEM.get().asItem())
         ;
-        this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "wood")))
+        this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "wood")))
                 .add(RuBlocks.ASHEN_WOOD.get().asItem())
                 .add(RuBlocks.BAOBAB_WOOD.get().asItem())
                 .add(RuBlocks.BLACKWOOD_WOOD.get().asItem())
@@ -1342,7 +1287,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.WILLOW_WOOD.get().asItem())
                 .add(RuBlocks.YELLOW_BIOSHROOM_HYPHAE.get().asItem())
         ;
-        this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "stripped_logs")))
+        this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "stripped_logs")))
                 .add(RuBlocks.STRIPPED_BAOBAB_LOG.get().asItem())
                 .add(RuBlocks.STRIPPED_BLACKWOOD_LOG.get().asItem())
                 .add(RuBlocks.STRIPPED_BLUE_BIOSHROOM_STEM.get().asItem())
@@ -1366,7 +1311,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.STRIPPED_WILLOW_LOG.get().asItem())
                 .add(RuBlocks.STRIPPED_YELLOW_BIOSHROOM_STEM.get().asItem())
         ;
-        this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "stripped_wood")))
+        this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "stripped_wood")))
                 .add(RuBlocks.STRIPPED_BAOBAB_WOOD.get().asItem())
                 .add(RuBlocks.STRIPPED_BLACKWOOD_WOOD.get().asItem())
                 .add(RuBlocks.STRIPPED_BLUE_BIOSHROOM_HYPHAE.get().asItem())
@@ -1390,7 +1335,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.STRIPPED_WILLOW_WOOD.get().asItem())
                 .add(RuBlocks.STRIPPED_YELLOW_BIOSHROOM_HYPHAE.get().asItem())
         ;
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "storage_blocks")));
-        //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "tools")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "storage_blocks")));
+        //this.tag(TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", "tools")));
     }
 }

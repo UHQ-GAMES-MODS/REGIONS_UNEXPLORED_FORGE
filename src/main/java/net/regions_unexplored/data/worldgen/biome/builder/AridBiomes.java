@@ -1,6 +1,5 @@
 package net.regions_unexplored.data.worldgen.biome.builder;
 
-import net.minecraft.core.HolderGetter;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.sounds.Musics;
@@ -10,8 +9,6 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
-import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.regions_unexplored.data.worldgen.RuBiomeDefaultFeatures;
 import net.regions_unexplored.data.worldgen.placement.RuTreePlacements;
 import net.regions_unexplored.data.worldgen.placement.RuVegetationPlacements;
@@ -41,8 +38,8 @@ public class AridBiomes {
         return spawnBuilder;
     }
 
-    private static BiomeGenerationSettings.Builder baseSavannaGeneration(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter, boolean addGrass) {
-        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(featureGetter, carverGetter);
+    private static BiomeGenerationSettings.Builder baseSavannaGeneration(boolean addGrass) {
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
         RuBiomeDefaultFeatures.globalOverworldGeneration(biomeBuilder);
         if (addGrass) {
             BiomeDefaultFeatures.addSavannaGrass(biomeBuilder);
@@ -54,8 +51,8 @@ public class AridBiomes {
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
         return biomeBuilder;
     }
-    private static BiomeGenerationSettings.Builder baseDesertGeneration(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter, boolean denseCactus) {
-        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(featureGetter, carverGetter);
+    private static BiomeGenerationSettings.Builder baseDesertGeneration(boolean denseCactus) {
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
         BiomeDefaultFeatures.addFossilDecoration(biomeBuilder);
         RuBiomeDefaultFeatures.globalOverworldGeneration(biomeBuilder);
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
@@ -74,7 +71,7 @@ public class AridBiomes {
         return biomeBuilder;
     }
 
-    public static Biome baobabSavanna(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome baobabSavanna() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(2F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -83,10 +80,10 @@ public class AridBiomes {
                 .foliageColorOverride(-6636971)
                 .grassColorOverride(-4670891)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_BADLANDS));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseSavannaGeneration(featureGetter, carverGetter, true);
+        BiomeGenerationSettings.Builder biomeBuilder = baseSavannaGeneration(true);
 
         //add RU features
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.MEGA_BAOBAB_TREE);
@@ -102,7 +99,7 @@ public class AridBiomes {
         MobSpawnSettings.Builder spawnBuilder = baseSavannaSpawning();
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(false)
+                .precipitation(Biome.Precipitation.NONE)
                 .temperature(2f)
                 .downfall(0.35f)
                 .specialEffects(effectBuilder.build())
@@ -111,7 +108,7 @@ public class AridBiomes {
                 .build();
     }
 
-    public static Biome dryBushland(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome dryBushland() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(2F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -120,10 +117,10 @@ public class AridBiomes {
                 .foliageColorOverride(-5060484)
                 .grassColorOverride(-3552115)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_BADLANDS));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseSavannaGeneration(featureGetter, carverGetter, false);
+        BiomeGenerationSettings.Builder biomeBuilder = baseSavannaGeneration(false);
 
         //add RU features
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.LARGE_SOCOTRA_TREE);
@@ -140,7 +137,7 @@ public class AridBiomes {
         MobSpawnSettings.Builder spawnBuilder = baseSavannaSpawning();
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(false)
+                .precipitation(Biome.Precipitation.NONE)
                 .temperature(1.5f)
                 .downfall(0.0f)
                 .specialEffects(effectBuilder.build())
@@ -149,7 +146,7 @@ public class AridBiomes {
                 .build();
     }
 
-    public static Biome joshuaDesert(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome joshuaDesert() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(2F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -158,10 +155,10 @@ public class AridBiomes {
                 .foliageColorOverride(-8409523)
                 .grassColorOverride(-5213)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_DESERT));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseDesertGeneration(featureGetter, carverGetter, false);
+        BiomeGenerationSettings.Builder biomeBuilder = baseDesertGeneration(false);
 
         //add RU features
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.LARGE_JOSHUA_TREE);
@@ -177,7 +174,7 @@ public class AridBiomes {
         MobSpawnSettings.Builder spawnBuilder = baseDesertSpawning();
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(false)
+                .precipitation(Biome.Precipitation.NONE)
                 .temperature(2f)
                 .downfall(0.0f)
                 .specialEffects(effectBuilder.build())
@@ -186,7 +183,7 @@ public class AridBiomes {
                 .build();
     }
 
-    public static Biome outback(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome outback() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(2F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -195,10 +192,10 @@ public class AridBiomes {
                 .foliageColorOverride(-8016810)
                 .grassColorOverride(-4670891)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_DESERT));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseDesertGeneration(featureGetter, carverGetter, true);
+        BiomeGenerationSettings.Builder biomeBuilder = baseDesertGeneration(true);
 
         //add RU features
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.ACACIA_TREE_SHRUB);
@@ -212,7 +209,7 @@ public class AridBiomes {
         MobSpawnSettings.Builder spawnBuilder = baseDesertSpawning();
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(false)
+                .precipitation(Biome.Precipitation.NONE)
                 .temperature(2f)
                 .downfall(0.0f)
                 .specialEffects(effectBuilder.build())
@@ -221,7 +218,7 @@ public class AridBiomes {
                 .build();
     }
 
-    public static Biome saguaroDesert(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome saguaroDesert() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(2F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -230,10 +227,10 @@ public class AridBiomes {
                 .foliageColorOverride(-6836695)
                 .grassColorOverride(-4212907)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_DESERT));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseDesertGeneration(featureGetter, carverGetter, true);
+        BiomeGenerationSettings.Builder biomeBuilder = baseDesertGeneration(true);
 
         //add RU features
 
@@ -247,7 +244,7 @@ public class AridBiomes {
         MobSpawnSettings.Builder spawnBuilder = baseDesertSpawning();
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(false)
+                .precipitation(Biome.Precipitation.NONE)
                 .temperature(2f)
                 .downfall(0f)
                 .specialEffects(effectBuilder.build())
@@ -256,7 +253,7 @@ public class AridBiomes {
                 .build();
     }
 
-    public static Biome steppe(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome steppe() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(2F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -268,7 +265,7 @@ public class AridBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_STONY_PEAKS));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseSavannaGeneration(featureGetter, carverGetter, false);
+        BiomeGenerationSettings.Builder biomeBuilder = baseSavannaGeneration(false);
 
         //add RU features
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.STEPPE_VEGETATION);
@@ -277,7 +274,7 @@ public class AridBiomes {
         MobSpawnSettings.Builder spawnBuilder = baseSavannaSpawning();
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(false)
+                .precipitation(Biome.Precipitation.NONE)
                 .temperature(1.5f)
                 .downfall(0.15f)
                 .specialEffects(effectBuilder.build())

@@ -8,7 +8,6 @@ import net.regions_unexplored.block.RuBlocks;
 public class RuBlockEntities {
     
     public static RegistryObject<BlockEntityType<RuSignBlockEntity>> SIGN_BLOCK_ENTITIES;
-    public static RegistryObject<BlockEntityType<RuHangingSignBlockEntity>> HANGING_SIGN_BLOCK_ENTITIES;
     
     public static void addBlockEntities() {
         SIGN_BLOCK_ENTITIES = RegionsUnexploredMod.BLOCK_ENTITY_REGISTRY.register("sign_block_entity", () ->
@@ -37,35 +36,6 @@ public class RuBlockEntities {
                         RuBlocks.SOCOTRA_WALL_SIGN.get(), RuBlocks.SOCOTRA_SIGN.get(),
                         RuBlocks.WILLOW_WALL_SIGN.get(), RuBlocks.WILLOW_SIGN.get(),
                         RuBlocks.YELLOW_BIOSHROOM_WALL_SIGN.get(), RuBlocks.YELLOW_BIOSHROOM_SIGN.get()
-
-                ).build(null));
-
-        HANGING_SIGN_BLOCK_ENTITIES = RegionsUnexploredMod.BLOCK_ENTITY_REGISTRY.register("hanging_sign_block_entity", () ->
-
-                BlockEntityType.Builder.of(RuHangingSignBlockEntity::new,
-
-                        RuBlocks.BAOBAB_WALL_HANGING_SIGN.get(), RuBlocks.BAOBAB_HANGING_SIGN.get(),
-                        RuBlocks.BLACKWOOD_WALL_HANGING_SIGN.get(), RuBlocks.BLACKWOOD_HANGING_SIGN.get(),
-                        RuBlocks.BLUE_BIOSHROOM_WALL_HANGING_SIGN.get(), RuBlocks.BLUE_BIOSHROOM_HANGING_SIGN.get(),
-                        RuBlocks.BRIMWOOD_WALL_HANGING_SIGN.get(), RuBlocks.BRIMWOOD_HANGING_SIGN.get(),
-                        RuBlocks.COBALT_WALL_HANGING_SIGN.get(), RuBlocks.COBALT_HANGING_SIGN.get(),
-                        RuBlocks.CYPRESS_WALL_HANGING_SIGN.get(), RuBlocks.CYPRESS_HANGING_SIGN.get(),
-                        RuBlocks.DEAD_WALL_HANGING_SIGN.get(), RuBlocks.DEAD_HANGING_SIGN.get(),
-                        RuBlocks.EUCALYPTUS_WALL_HANGING_SIGN.get(), RuBlocks.EUCALYPTUS_HANGING_SIGN.get(),
-                        RuBlocks.GREEN_BIOSHROOM_WALL_HANGING_SIGN.get(), RuBlocks.GREEN_BIOSHROOM_HANGING_SIGN.get(),
-                        RuBlocks.JOSHUA_WALL_HANGING_SIGN.get(), RuBlocks.JOSHUA_HANGING_SIGN.get(),
-                        RuBlocks.KAPOK_WALL_HANGING_SIGN.get(), RuBlocks.KAPOK_HANGING_SIGN.get(),
-                        RuBlocks.LARCH_WALL_HANGING_SIGN.get(), RuBlocks.LARCH_HANGING_SIGN.get(),
-                        RuBlocks.MAGNOLIA_WALL_HANGING_SIGN.get(), RuBlocks.MAGNOLIA_HANGING_SIGN.get(),
-                        RuBlocks.MAPLE_WALL_HANGING_SIGN.get(), RuBlocks.MAPLE_HANGING_SIGN.get(),
-                        RuBlocks.MAUVE_WALL_HANGING_SIGN.get(), RuBlocks.MAUVE_HANGING_SIGN.get(),
-                        RuBlocks.PALM_WALL_HANGING_SIGN.get(), RuBlocks.PALM_HANGING_SIGN.get(),
-                        RuBlocks.PINE_WALL_HANGING_SIGN.get(), RuBlocks.PINE_HANGING_SIGN.get(),
-                        RuBlocks.PINK_BIOSHROOM_WALL_HANGING_SIGN.get(), RuBlocks.PINK_BIOSHROOM_HANGING_SIGN.get(),
-                        RuBlocks.REDWOOD_WALL_HANGING_SIGN.get(), RuBlocks.REDWOOD_HANGING_SIGN.get(),
-                        RuBlocks.SOCOTRA_WALL_HANGING_SIGN.get(), RuBlocks.SOCOTRA_HANGING_SIGN.get(),
-                        RuBlocks.WILLOW_WALL_HANGING_SIGN.get(), RuBlocks.WILLOW_HANGING_SIGN.get(),
-                        RuBlocks.YELLOW_BIOSHROOM_WALL_HANGING_SIGN.get(), RuBlocks.YELLOW_BIOSHROOM_HANGING_SIGN.get()
 
                 ).build(null));
     }

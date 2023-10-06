@@ -1,6 +1,5 @@
 package net.regions_unexplored.data.worldgen.biome.builder;
 
-import net.minecraft.core.HolderGetter;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
@@ -14,8 +13,6 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
-import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.regions_unexplored.client.particle.RuParticleTypes;
 import net.regions_unexplored.data.worldgen.RuBiomeDefaultFeatures;
 import net.regions_unexplored.data.worldgen.placement.RuNetherPlacements;
@@ -23,7 +20,7 @@ import net.regions_unexplored.data.worldgen.placement.RuTreePlacements;
 
 public class NetherBiomes {
 
-    public static Biome blackstoneBasin(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome blackstoneBasin() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(395547)
                 .fogColor(395547)
@@ -38,7 +35,7 @@ public class NetherBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_CRIMSON_FOREST));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(featureGetter, carverGetter);
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
         biomeBuilder.addCarver(GenerationStep.Carving.AIR, Carvers.NETHER_CAVE);
         biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, NetherPlacements.SPRING_OPEN);
         biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, NetherPlacements.BLACKSTONE_BLOBS);
@@ -68,7 +65,7 @@ public class NetherBiomes {
                 .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.STRIDER, 60, 1, 2));
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(false)
+                .precipitation(Biome.Precipitation.NONE)
                 .temperature(2f)
                 .downfall(0f)
                 .specialEffects(effectBuilder.build())
@@ -77,7 +74,7 @@ public class NetherBiomes {
                 .build();
     }
 
-    public static Biome infernalHolt(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome infernalHolt() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(3479565)
                 .fogColor(3479565)
@@ -92,7 +89,7 @@ public class NetherBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_BASALT_DELTAS));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(featureGetter, carverGetter);
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
         biomeBuilder.addCarver(GenerationStep.Carving.AIR, Carvers.NETHER_CAVE);
         biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, NetherPlacements.SPRING_OPEN);
         biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, NetherPlacements.BLACKSTONE_BLOBS);
@@ -124,7 +121,7 @@ public class NetherBiomes {
                 .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.STRIDER, 60, 1, 2));
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(false)
+                .precipitation(Biome.Precipitation.NONE)
                 .temperature(2f)
                 .downfall(0f)
                 .specialEffects(effectBuilder.build())
@@ -133,7 +130,7 @@ public class NetherBiomes {
                 .build();
     }
 
-    public static Biome glisteringMeadow(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome glisteringMeadow() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(4328552)
                 .fogColor(4328552)
@@ -148,7 +145,7 @@ public class NetherBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_WARPED_FOREST));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(featureGetter, carverGetter);
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
         biomeBuilder.addCarver(GenerationStep.Carving.AIR, Carvers.NETHER_CAVE);
         biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, NetherPlacements.SPRING_OPEN);
         biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, NetherPlacements.PATCH_FIRE);
@@ -177,7 +174,7 @@ public class NetherBiomes {
                 .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.HOGLIN, 5, 1, 3));
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(false)
+                .precipitation(Biome.Precipitation.NONE)
                 .temperature(2f)
                 .downfall(0f)
                 .specialEffects(effectBuilder.build())
@@ -186,7 +183,7 @@ public class NetherBiomes {
                 .build();
     }
 
-    public static Biome mycotoxicUndergrowth(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome mycotoxicUndergrowth() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(10717988)
                 .fogColor(10717988)
@@ -201,7 +198,7 @@ public class NetherBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_WARPED_FOREST));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(featureGetter, carverGetter);
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
         biomeBuilder.addCarver(GenerationStep.Carving.AIR, Carvers.NETHER_CAVE);
         biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, NetherPlacements.SPRING_OPEN);
         biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, NetherPlacements.PATCH_FIRE);
@@ -228,7 +225,7 @@ public class NetherBiomes {
                 .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.STRIDER, 60, 1, 2));
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(false)
+                .precipitation(Biome.Precipitation.NONE)
                 .temperature(2f)
                 .downfall(0f)
                 .specialEffects(effectBuilder.build())
@@ -237,7 +234,7 @@ public class NetherBiomes {
                 .build();
     }
 
-    public static Biome redstoneAbyss(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome redstoneAbyss() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(5439488)
                 .fogColor(5439488)
@@ -252,7 +249,7 @@ public class NetherBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_NETHER_WASTES));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(featureGetter, carverGetter);
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
         biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, NetherPlacements.SPRING_OPEN);
         biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, NetherPlacements.PATCH_FIRE);
         biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, NetherPlacements.GLOWSTONE);
@@ -271,8 +268,8 @@ public class NetherBiomes {
                 .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.ZOMBIFIED_PIGLIN, 100, 4, 4))
                 .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.STRIDER, 60, 1, 2));
 
-        return (new Biome.BiomeBuilder())
-                .hasPrecipitation(false)
+        return new Biome.BiomeBuilder()
+                .precipitation(Biome.Precipitation.NONE)
                 .temperature(2f)
                 .downfall(0f)
                 .specialEffects(effectBuilder.build())

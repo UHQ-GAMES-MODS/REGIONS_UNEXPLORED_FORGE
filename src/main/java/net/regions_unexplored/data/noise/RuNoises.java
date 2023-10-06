@@ -1,20 +1,17 @@
 package net.regions_unexplored.data.noise;
 
-import net.minecraft.data.worldgen.BootstapContext;
-import net.minecraft.resources.ResourceKey;
+import net.minecraft.core.Registry;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
-import net.regions_unexplored.registry.NoiseRegistry;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.RegistryObject;
 
 public class RuNoises {
+    public static final DeferredRegister<NormalNoise.NoiseParameters> NOISE_PARAMETERS = DeferredRegister.create(Registry.NOISE_REGISTRY, "regions_unexplored");
+    public static final RegistryObject<NormalNoise.NoiseParameters> WEIGHTED = NOISE_PARAMETERS.register("weighted", () -> new NormalNoise.NoiseParameters(0, 1.0D));
+    public static final RegistryObject<NormalNoise.NoiseParameters> SHIELD = NOISE_PARAMETERS.register("shield", () -> new NormalNoise.NoiseParameters(-5, 1.0D, 1.0D, 1.0D));
 
-    public static final ResourceKey<NormalNoise.NoiseParameters> WEIGHTED = NoiseRegistry.createKey("weighted");
-    public static final ResourceKey<NormalNoise.NoiseParameters> SHIELD = NoiseRegistry.createKey("shield");
-
-    public static void bootstrap(BootstapContext<NormalNoise.NoiseParameters> context) {
-        register(context, WEIGHTED, 0, 1.0D);
-        register(context, SHIELD, -5, 1.0D, 1.0D, 1.0D);
-    }
-    private static void register(BootstapContext<NormalNoise.NoiseParameters> context, ResourceKey<NormalNoise.NoiseParameters> key, int i, double v, double... doubles) {
-        context.register(key, new NormalNoise.NoiseParameters(i, v, doubles));
+    public static void register(IEventBus bus) {
+        NOISE_PARAMETERS.register(bus);
     }
 }

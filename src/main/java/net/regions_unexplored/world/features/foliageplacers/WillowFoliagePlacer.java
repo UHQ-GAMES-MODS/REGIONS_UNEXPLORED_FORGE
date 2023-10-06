@@ -14,6 +14,8 @@ import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
 import net.minecraft.world.level.material.Fluids;
 
+import java.util.function.BiConsumer;
+
 public class WillowFoliagePlacer extends FoliagePlacer {
     public static final Codec<WillowFoliagePlacer> CODEC = RecordCodecBuilder.create((placer) -> {
         return foliagePlacerParts(placer).and(placer.group(IntProvider.codec(4, 16).fieldOf("height").forGetter((height) -> {
@@ -39,7 +41,7 @@ public class WillowFoliagePlacer extends FoliagePlacer {
         return fpt;
     }
 
-    protected void createFoliage(LevelSimulatedReader level, FoliageSetter setter, RandomSource random, TreeConfiguration treeConfig, int p_272975_, FoliageAttachment foliage, int j, int k, int height) {
+    protected void createFoliage(LevelSimulatedReader level, BiConsumer<BlockPos, BlockState> setter, RandomSource random, TreeConfiguration treeConfig, int p_272975_, FoliageAttachment foliage, int j, int k, int height) {
         boolean flag = foliage.doubleTrunk();
         BlockPos blockpos = foliage.pos().above(height);
         int i = k + foliage.radiusOffset() - 1;
@@ -126,21 +128,18 @@ public class WillowFoliagePlacer extends FoliagePlacer {
         return false;
     }
 
-    protected static boolean tryPlaceLeaf(LevelSimulatedReader level, FoliageSetter setter, RandomSource random, TreeConfiguration treeConfiguration, BlockPos pos) {
-        if (!TreeFeature.validTreePos(level, pos)) {
-            return false;
-        } else {
+    protected static void tryPlaceLeaf(LevelSimulatedReader level, BiConsumer<BlockPos, BlockState> setter, RandomSource random, TreeConfiguration treeConfiguration, BlockPos pos) {
+        if (TreeFeature.validTreePos(level, pos)){
             BlockState blockstate = treeConfiguration.foliageProvider.getState(random, pos);
             if (blockstate.hasProperty(BlockStateProperties.WATERLOGGED)) {
                 blockstate = blockstate.setValue(BlockStateProperties.WATERLOGGED, level.isFluidAtPosition(pos, (p_225638_) -> p_225638_.isSourceOfType(Fluids.WATER)));
             }
 
-            setter.set(pos, blockstate);
-            return true;
+            setter.accept(pos, blockstate);
         }
     }
 
-    protected static void placeHangingLeaves(LevelSimulatedReader level, FoliageSetter setter, RandomSource random, TreeConfiguration treeConfiguration, BlockPos pos) {
+    protected static void placeHangingLeaves(LevelSimulatedReader level, BiConsumer<BlockPos, BlockState> setter, RandomSource random, TreeConfiguration treeConfiguration, BlockPos pos) {
         int type = random.nextInt(3);
         if(type==0){
             tryPlaceLeaf(level,setter,random,treeConfiguration,pos);

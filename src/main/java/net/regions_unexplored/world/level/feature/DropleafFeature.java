@@ -24,7 +24,7 @@ public class DropleafFeature extends Feature<NoneFeatureConfiguration> {
         WorldGenLevel level = context.level();
 
 
-        if(level.getBlockState(pos.above()).isSolid()&&level.getBlockState(pos).isAir()){
+        if(level.getBlockState(pos.above()).isFaceSturdy(level, pos.above(), Direction.DOWN)&&level.getBlockState(pos).isAir()){
             placeBlob(level, pos);
             return true;
         }

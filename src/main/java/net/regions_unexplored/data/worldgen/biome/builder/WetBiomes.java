@@ -1,6 +1,5 @@
 package net.regions_unexplored.data.worldgen.biome.builder;
 
-import net.minecraft.core.HolderGetter;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.placement.AquaticPlacements;
@@ -12,8 +11,6 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
-import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.regions_unexplored.data.worldgen.RuBiomeDefaultFeatures;
 import net.regions_unexplored.data.worldgen.placement.RuAquaticPlacements;
 import net.regions_unexplored.data.worldgen.placement.RuMiscOverworldPlacements;
@@ -48,8 +45,8 @@ public class WetBiomes {
         BiomeDefaultFeatures.commonSpawns(spawnBuilder);
         return spawnBuilder;
     }
-    private static BiomeGenerationSettings.Builder baseSwampGeneration(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter, boolean hasLilyPads, boolean hasFlowers) {
-        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(featureGetter, carverGetter);
+    private static BiomeGenerationSettings.Builder baseSwampGeneration(boolean hasLilyPads, boolean hasFlowers) {
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
         BiomeDefaultFeatures.addFossilDecoration(biomeBuilder);
         RuBiomeDefaultFeatures.globalOverworldGeneration(biomeBuilder);
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
@@ -69,8 +66,8 @@ public class WetBiomes {
         return biomeBuilder;
     }
 
-    private static BiomeGenerationSettings.Builder baseJungleGeneration(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter, boolean sparseMelons) {
-        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(featureGetter, carverGetter);
+    private static BiomeGenerationSettings.Builder baseJungleGeneration(boolean sparseMelons) {
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
         RuBiomeDefaultFeatures.globalOverworldGeneration(biomeBuilder);
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
         RuBiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
@@ -87,7 +84,7 @@ public class WetBiomes {
         return biomeBuilder;
     }
 
-    public static Biome bayou(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome bayou() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(-6110795)
                 .fogColor(-5124939)
@@ -100,7 +97,7 @@ public class WetBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_SWAMP));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseSwampGeneration(featureGetter, carverGetter, false, true);
+        BiomeGenerationSettings.Builder biomeBuilder = baseSwampGeneration(false, true);
 
         //add RU features
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.CYPRESS_TREE);
@@ -114,7 +111,7 @@ public class WetBiomes {
         MobSpawnSettings.Builder spawnBuilder = baseSwampSpawning();
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(true)
+                .precipitation(Biome.Precipitation.RAIN)
                 .temperature(1f)
                 .downfall(1f)
                 .specialEffects(effectBuilder.build())
@@ -123,7 +120,7 @@ public class WetBiomes {
                 .build();
     }
 
-    public static Biome eucalyptusForest(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome eucalyptusForest() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(0.7F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -132,10 +129,10 @@ public class WetBiomes {
                 .foliageColorOverride(8828203)
                 .grassColorOverride(9680182)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseJungleGeneration(featureGetter, carverGetter, true);
+        BiomeGenerationSettings.Builder biomeBuilder = baseJungleGeneration(true);
 
         //add RU features
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.EUCALYPTUS_TREE);
@@ -151,7 +148,7 @@ public class WetBiomes {
         MobSpawnSettings.Builder spawnBuilder = baseJungleSpawning();
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(true)
+                .precipitation(Biome.Precipitation.RAIN)
                 .temperature(1.3F)
                 .downfall(0.85f)
                 .specialEffects(effectBuilder.build())
@@ -160,7 +157,7 @@ public class WetBiomes {
                 .build();
     }
 
-    public static Biome fen(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome fen() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(0.4F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -172,7 +169,7 @@ public class WetBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_SWAMP));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseSwampGeneration(featureGetter, carverGetter, false, true);
+        BiomeGenerationSettings.Builder biomeBuilder = baseSwampGeneration(false, true);
 
         //add RU features
         biomeBuilder.addFeature(GenerationStep.Decoration.RAW_GENERATION, RuMiscOverworldPlacements.WATER_EDGE);
@@ -193,7 +190,7 @@ public class WetBiomes {
         MobSpawnSettings.Builder spawnBuilder = baseSwampSpawning();
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(true)
+                .precipitation(Biome.Precipitation.RAIN)
                 .temperature(0.85f)
                 .downfall(0.7f)
                 .specialEffects(effectBuilder.build())
@@ -202,7 +199,7 @@ public class WetBiomes {
                 .build();
     }
 
-    public static Biome marsh(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome marsh() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(0.9F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -214,7 +211,7 @@ public class WetBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_SWAMP));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseSwampGeneration(featureGetter, carverGetter, true, true);
+        BiomeGenerationSettings.Builder biomeBuilder = baseSwampGeneration(true, true);
 
         //add RU features
         biomeBuilder.addFeature(GenerationStep.Decoration.RAW_GENERATION, RuMiscOverworldPlacements.MARSH);
@@ -233,7 +230,7 @@ public class WetBiomes {
         spawnBuilder.addSpawn(MobCategory.AXOLOTLS, new MobSpawnSettings.SpawnerData(EntityType.AXOLOTL, 5, 2, 6));
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(true)
+                .precipitation(Biome.Precipitation.RAIN)
                 .temperature(1f)
                 .downfall(1f)
                 .specialEffects(effectBuilder.build())
@@ -241,7 +238,7 @@ public class WetBiomes {
                 .generationSettings(biomeBuilder.build())
                 .build();
     }
-    public static Biome fungalFen(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome fungalFen() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(2.0F))
                 .fogColor(12640721)
@@ -254,7 +251,7 @@ public class WetBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_SWAMP));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseSwampGeneration(featureGetter, carverGetter, true, false);
+        BiomeGenerationSettings.Builder biomeBuilder = baseSwampGeneration(true, false);
 
         //add RU features
         biomeBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, RuMiscOverworldPlacements.WATER_EDGE);
@@ -276,7 +273,7 @@ public class WetBiomes {
         spawnBuilder.addSpawn(MobCategory.AXOLOTLS, new MobSpawnSettings.SpawnerData(EntityType.AXOLOTL, 4, 2, 4));
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(true)
+                .precipitation(Biome.Precipitation.RAIN)
                 .temperature(1.15f)
                 .downfall(1f)
                 .specialEffects(effectBuilder.build())
@@ -285,7 +282,7 @@ public class WetBiomes {
                 .build();
     }
 
-    public static Biome oldGrowthBayou(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome oldGrowthBayou() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(-1350062718)
                 .fogColor(-1350062718)
@@ -298,7 +295,7 @@ public class WetBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_SWAMP));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseSwampGeneration(featureGetter, carverGetter, false, true);
+        BiomeGenerationSettings.Builder biomeBuilder = baseSwampGeneration(false, true);
 
         //add RU features
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.GIANT_CYPRESS_TREE);
@@ -313,7 +310,7 @@ public class WetBiomes {
         MobSpawnSettings.Builder spawnBuilder = baseSwampSpawning();
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(true)
+                .precipitation(Biome.Precipitation.RAIN)
                 .temperature(1.2f)
                 .downfall(1f)
                 .specialEffects(effectBuilder.build())
@@ -322,7 +319,8 @@ public class WetBiomes {
                 .build();
     }
 
-    public static Biome rainforest(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter, boolean oldGrowth) {
+    public static Biome rainforest() {
+        boolean oldGrowth=true;
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(1F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -331,10 +329,10 @@ public class WetBiomes {
                 .foliageColorOverride(-11032271)
                 .grassColorOverride(-9718455)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseJungleGeneration(featureGetter, carverGetter, oldGrowth);
+        BiomeGenerationSettings.Builder biomeBuilder = baseJungleGeneration(oldGrowth);
 
         //add RU features
 
@@ -371,7 +369,66 @@ public class WetBiomes {
         MobSpawnSettings.Builder spawnBuilder = baseJungleSpawning();
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(true)
+                .precipitation(Biome.Precipitation.RAIN)
+                .temperature(0.95f)
+                .downfall(0.9f)
+                .specialEffects(effectBuilder.build())
+                .mobSpawnSettings(spawnBuilder.build())
+                .generationSettings(biomeBuilder.build())
+                .build();
+    }
+
+    public static Biome sparseRainforest() {
+        boolean oldGrowth=false;
+        BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
+                .skyColor(calculateSkyColor(1F))
+                .fogColor(OVERWORLD_FOG_COLOR)
+                .waterColor(2202835)
+                .waterFogColor(677798)
+                .foliageColorOverride(-11032271)
+                .grassColorOverride(-9718455)
+                .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
+
+        //add features
+        BiomeGenerationSettings.Builder biomeBuilder = baseJungleGeneration(oldGrowth);
+
+        //add RU features
+
+        if(oldGrowth){
+            biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.PALM_TREE_DENSE_TALL);
+            biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.KAPOK_TREE_DENSE);
+        }
+        else{
+            biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.PALM_TREE_DENSE);
+            biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.KAPOK_TREE_SPARSE);
+        }
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.BIG_JUNGLE_TREE_DENSE);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.PALM_TREE_SHRUB);
+        if(oldGrowth){
+            biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.OAK_BUSH_WITH_FLOWERS_DENSE);
+        }
+        else{
+            biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.OAK_BUSH_SPARSE);
+        }
+
+        RuBiomeDefaultFeatures.addHibiscus(biomeBuilder);
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.ELEPHANT_EAR_DENSE);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuVegetationPlacements.PALM_JUNGLE_SHRUB_MIX);
+
+        if(oldGrowth){
+            biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuMiscOverworldPlacements.MOSS_PATCH_WITH_WATER_UNCOMMON);
+        }
+        else{
+            biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuMiscOverworldPlacements.MOSS_PATCH_WITH_WATER_RARE);
+        }
+
+        //add mob spawns
+        MobSpawnSettings.Builder spawnBuilder = baseJungleSpawning();
+
+        return (new Biome.BiomeBuilder())
+                .precipitation(Biome.Precipitation.RAIN)
                 .temperature(0.95f)
                 .downfall(0.9f)
                 .specialEffects(effectBuilder.build())

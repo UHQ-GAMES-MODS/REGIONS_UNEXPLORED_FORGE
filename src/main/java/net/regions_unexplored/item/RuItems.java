@@ -1,7 +1,6 @@
 package net.regions_unexplored.item;
 
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.item.HangingSignItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SignItem;
 import net.minecraftforge.registries.RegistryObject;
@@ -13,28 +12,6 @@ import net.regions_unexplored.entity.custom.RuBoat;
 import net.regions_unexplored.item.items.RuBoatItem;
 
 public class RuItems {
-    public static RegistryObject<Item> BAOBAB_HANGING_SIGN;
-    public static RegistryObject<Item> BLACKWOOD_HANGING_SIGN;
-    public static RegistryObject<Item> BLUE_BIOSHROOM_HANGING_SIGN;
-    public static RegistryObject<Item> BRIMWOOD_HANGING_SIGN;
-    public static RegistryObject<Item> COBALT_HANGING_SIGN;
-    public static RegistryObject<Item> CYPRESS_HANGING_SIGN;
-    public static RegistryObject<Item> DEAD_HANGING_SIGN;
-    public static RegistryObject<Item> EUCALYPTUS_HANGING_SIGN;
-    public static RegistryObject<Item> GREEN_BIOSHROOM_HANGING_SIGN;
-    public static RegistryObject<Item> JOSHUA_HANGING_SIGN;
-    public static RegistryObject<Item> KAPOK_HANGING_SIGN;
-    public static RegistryObject<Item> LARCH_HANGING_SIGN;
-    public static RegistryObject<Item> MAGNOLIA_HANGING_SIGN;
-    public static RegistryObject<Item> MAPLE_HANGING_SIGN;
-    public static RegistryObject<Item> MAUVE_HANGING_SIGN;
-    public static RegistryObject<Item> PALM_HANGING_SIGN;
-    public static RegistryObject<Item> PINE_HANGING_SIGN;
-    public static RegistryObject<Item> PINK_BIOSHROOM_HANGING_SIGN;
-    public static RegistryObject<Item> REDWOOD_HANGING_SIGN;
-    public static RegistryObject<Item> SOCOTRA_HANGING_SIGN;
-    public static RegistryObject<Item> WILLOW_HANGING_SIGN;
-    public static RegistryObject<Item> YELLOW_BIOSHROOM_HANGING_SIGN;
 
     public static RegistryObject<Item> BAOBAB_SIGN;
     public static RegistryObject<Item> BLACKWOOD_SIGN;
@@ -98,29 +75,6 @@ public class RuItems {
     public static RegistryObject<Item> MEADOW_SAGE;
     
     public static void addItems(){
-        BAOBAB_HANGING_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("baobab_hanging_sign", () -> new HangingSignItem(RuBlocks.BAOBAB_HANGING_SIGN.get(), RuBlocks.BAOBAB_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
-        BLACKWOOD_HANGING_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("blackwood_hanging_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.BLACKWOOD_HANGING_SIGN.get(), RuBlocks.BLACKWOOD_WALL_HANGING_SIGN.get()));
-        BLUE_BIOSHROOM_HANGING_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("blue_bioshroom_hanging_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.BLUE_BIOSHROOM_HANGING_SIGN.get(), RuBlocks.BLUE_BIOSHROOM_WALL_HANGING_SIGN.get()));
-        BRIMWOOD_HANGING_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("brimwood_hanging_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.BRIMWOOD_HANGING_SIGN.get(), RuBlocks.BRIMWOOD_WALL_HANGING_SIGN.get()));
-        COBALT_HANGING_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("cobalt_hanging_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.COBALT_HANGING_SIGN.get(), RuBlocks.COBALT_WALL_HANGING_SIGN.get()));
-        CYPRESS_HANGING_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("cypress_hanging_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.CYPRESS_HANGING_SIGN.get(), RuBlocks.CYPRESS_WALL_HANGING_SIGN.get()));
-        DEAD_HANGING_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("dead_hanging_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.DEAD_HANGING_SIGN.get(), RuBlocks.DEAD_WALL_HANGING_SIGN.get()));
-        EUCALYPTUS_HANGING_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("eucalyptus_hanging_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.EUCALYPTUS_HANGING_SIGN.get(), RuBlocks.EUCALYPTUS_WALL_HANGING_SIGN.get()));
-        GREEN_BIOSHROOM_HANGING_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("green_bioshroom_hanging_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.GREEN_BIOSHROOM_HANGING_SIGN.get(), RuBlocks.GREEN_BIOSHROOM_WALL_HANGING_SIGN.get()));
-        JOSHUA_HANGING_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("joshua_hanging_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.JOSHUA_HANGING_SIGN.get(), RuBlocks.JOSHUA_WALL_HANGING_SIGN.get()));
-        KAPOK_HANGING_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("kapok_hanging_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.KAPOK_HANGING_SIGN.get(), RuBlocks.KAPOK_WALL_HANGING_SIGN.get()));
-        LARCH_HANGING_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("larch_hanging_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.LARCH_HANGING_SIGN.get(), RuBlocks.LARCH_WALL_HANGING_SIGN.get()));
-        MAGNOLIA_HANGING_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("magnolia_hanging_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.MAGNOLIA_HANGING_SIGN.get(), RuBlocks.MAGNOLIA_WALL_HANGING_SIGN.get()));
-        MAPLE_HANGING_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("maple_hanging_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.MAPLE_HANGING_SIGN.get(), RuBlocks.MAPLE_WALL_HANGING_SIGN.get()));
-        MAUVE_HANGING_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("mauve_hanging_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.MAUVE_HANGING_SIGN.get(), RuBlocks.MAUVE_WALL_HANGING_SIGN.get()));
-        PALM_HANGING_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("palm_hanging_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.PALM_HANGING_SIGN.get(), RuBlocks.PALM_WALL_HANGING_SIGN.get()));
-        PINE_HANGING_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("pine_hanging_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.PINE_HANGING_SIGN.get(), RuBlocks.PINE_WALL_HANGING_SIGN.get()));
-        PINK_BIOSHROOM_HANGING_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("pink_bioshroom_hanging_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.PINK_BIOSHROOM_HANGING_SIGN.get(), RuBlocks.PINK_BIOSHROOM_WALL_HANGING_SIGN.get()));
-        REDWOOD_HANGING_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("redwood_hanging_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.REDWOOD_HANGING_SIGN.get(), RuBlocks.REDWOOD_WALL_HANGING_SIGN.get()));
-        SOCOTRA_HANGING_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("socotra_hanging_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.SOCOTRA_HANGING_SIGN.get(), RuBlocks.SOCOTRA_WALL_HANGING_SIGN.get()));
-        WILLOW_HANGING_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("willow_hanging_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.WILLOW_HANGING_SIGN.get(), RuBlocks.WILLOW_WALL_HANGING_SIGN.get()));
-        YELLOW_BIOSHROOM_HANGING_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("yellow_bioshroom_hanging_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.YELLOW_BIOSHROOM_HANGING_SIGN.get(), RuBlocks.YELLOW_BIOSHROOM_WALL_HANGING_SIGN.get()));
-
         BAOBAB_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("baobab_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.BAOBAB_SIGN.get(), RuBlocks.BAOBAB_WALL_SIGN.get()));
         BLACKWOOD_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("blackwood_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.BLACKWOOD_SIGN.get(), RuBlocks.BLACKWOOD_WALL_SIGN.get()));
         BLUE_BIOSHROOM_SIGN = RegionsUnexploredMod.ITEM_REGISTRY.register("blue_bioshroom_sign", () -> new SignItem(new Item.Properties().stacksTo(16), RuBlocks.BLUE_BIOSHROOM_SIGN.get(), RuBlocks.BLUE_BIOSHROOM_WALL_SIGN.get()));

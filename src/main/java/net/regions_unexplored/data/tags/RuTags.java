@@ -1,6 +1,6 @@
 package net.regions_unexplored.data.tags;
 
-import net.minecraft.core.registries.Registries;
+import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
@@ -89,23 +89,23 @@ public class RuTags {
     }
 
     private static TagKey<Block> createBlock(String key) {
-        return TagKey.create(Registries.BLOCK, new ResourceLocation(RegionsUnexploredMod.MOD_ID, key));
+        return TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation(RegionsUnexploredMod.MOD_ID, key));
     }
     public static TagKey<Block> createBlock(ResourceLocation name) {
-        return TagKey.create(Registries.BLOCK, name);
+        return TagKey.create(Registry.BLOCK_REGISTRY, name);
     }
 
     private static TagKey<Item> createItem(String key) {
-        return TagKey.create(Registries.ITEM, new ResourceLocation(RegionsUnexploredMod.MOD_ID, key));
+        return TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(RegionsUnexploredMod.MOD_ID, key));
     }
     public static TagKey<Item> createItem(ResourceLocation name) {
-        return TagKey.create(Registries.ITEM, name);
+        return TagKey.create(Registry.ITEM_REGISTRY, name);
     }
 
     private static TagKey<Biome> createBiome(String key) {
-        return TagKey.create(Registries.BIOME, new ResourceLocation(RegionsUnexploredMod.MOD_ID, key));
+        return TagKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(RegionsUnexploredMod.MOD_ID, key));
     }
     public static TagKey<Biome> createBiome(ResourceLocation name) {
-        return TagKey.create(Registries.BIOME, name);
+        return TagKey.create(Registry.BIOME_REGISTRY, name);
     }
 }

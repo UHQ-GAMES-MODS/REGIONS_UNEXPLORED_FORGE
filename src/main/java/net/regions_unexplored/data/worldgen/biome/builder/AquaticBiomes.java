@@ -1,6 +1,5 @@
 package net.regions_unexplored.data.worldgen.biome.builder;
 
-import net.minecraft.core.HolderGetter;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.placement.AquaticPlacements;
@@ -11,8 +10,6 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
-import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.regions_unexplored.data.worldgen.RuBiomeDefaultFeatures;
 import net.regions_unexplored.data.worldgen.placement.RuAquaticPlacements;
 import net.regions_unexplored.data.worldgen.placement.RuMiscOverworldPlacements;
@@ -60,8 +57,8 @@ public class AquaticBiomes {
         return spawnBuilder;
     }
 
-    private static BiomeGenerationSettings.Builder baseOceanGeneration(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
-        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(featureGetter, carverGetter);
+    private static BiomeGenerationSettings.Builder baseOceanGeneration() {
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
         RuBiomeDefaultFeatures.globalOverworldGeneration(biomeBuilder);
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
         RuBiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
@@ -71,8 +68,8 @@ public class AquaticBiomes {
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
         return biomeBuilder;
     }
-    private static BiomeGenerationSettings.Builder baseRiverGeneration(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
-        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(featureGetter, carverGetter);
+    private static BiomeGenerationSettings.Builder baseRiverGeneration() {
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
         RuBiomeDefaultFeatures.globalOverworldGeneration(biomeBuilder);
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
         RuBiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
@@ -82,8 +79,8 @@ public class AquaticBiomes {
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_RIVER);
         return biomeBuilder;
     }
-    private static BiomeGenerationSettings.Builder baseIslandGeneration(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter, boolean isTropical) {
-        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(featureGetter, carverGetter);
+    private static BiomeGenerationSettings.Builder baseIslandGeneration(boolean isTropical) {
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
         RuBiomeDefaultFeatures.globalOverworldGeneration(biomeBuilder);
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
         RuBiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
@@ -97,7 +94,7 @@ public class AquaticBiomes {
         return biomeBuilder;
     }
 
-    public static Biome alphaGrove(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome alphaGrove() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(0.7F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -106,10 +103,10 @@ public class AquaticBiomes {
                 .foliageColorOverride(6028091)
                 .grassColorOverride(8901207)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(featureGetter, carverGetter);
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
         BiomeDefaultFeatures.addDefaultCarversAndLakes(biomeBuilder);
         BiomeDefaultFeatures.addDefaultCrystalFormations(biomeBuilder);
         BiomeDefaultFeatures.addDefaultMonsterRoom(biomeBuilder);
@@ -125,7 +122,7 @@ public class AquaticBiomes {
         MobSpawnSettings.Builder spawnBuilder = baseIslandSpawning(false);
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(true)
+                .precipitation(Biome.Precipitation.RAIN)
                 .temperature(0.6f)
                 .downfall(0.6f)
                 .specialEffects(effectBuilder.build())
@@ -134,7 +131,7 @@ public class AquaticBiomes {
                 .build();
     }
 
-    public static Biome coldRiver(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome coldRiver() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(0.7F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -143,10 +140,10 @@ public class AquaticBiomes {
                 .foliageColorOverride(-5718172)
                 .grassColorOverride(-4733087)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseRiverGeneration(featureGetter, carverGetter);
+        BiomeGenerationSettings.Builder biomeBuilder = baseRiverGeneration();
 
         //add RU features
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuMiscOverworldPlacements.ROCK_ON_GRAVEL);
@@ -155,7 +152,7 @@ public class AquaticBiomes {
         MobSpawnSettings.Builder spawnBuilder = baseRiverSpawning(false);
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(true)
+                .precipitation(Biome.Precipitation.RAIN)
                 .temperature(0.4F)
                 .downfall(0.7f)
                 .specialEffects(effectBuilder.build())
@@ -164,7 +161,7 @@ public class AquaticBiomes {
                 .build();
     }
 
-    public static Biome hyacinthDeeps(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome hyacinthDeeps() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(0.0F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -176,7 +173,7 @@ public class AquaticBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_GROVE));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseOceanGeneration(featureGetter, carverGetter);
+        BiomeGenerationSettings.Builder biomeBuilder = baseOceanGeneration();
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_NORMAL);
         BiomeDefaultFeatures.addLukeWarmKelp(biomeBuilder);
 
@@ -193,7 +190,7 @@ public class AquaticBiomes {
         spawnBuilder.addSpawn(MobCategory.WATER_AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.SALMON, 5, 1, 5));
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(true)
+                .precipitation(Biome.Precipitation.RAIN)
                 .temperature(0.5F)
                 .downfall(0.5f)
                 .specialEffects(effectBuilder.build())
@@ -202,7 +199,7 @@ public class AquaticBiomes {
                 .build();
     }
 
-    public static Biome muddyRiver(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome muddyRiver() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(0.7F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -211,10 +208,10 @@ public class AquaticBiomes {
                 .foliageColorOverride(-7159980)
                 .grassColorOverride(-6044317)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseRiverGeneration(featureGetter, carverGetter);
+        BiomeGenerationSettings.Builder biomeBuilder = baseRiverGeneration();
         BiomeDefaultFeatures.addLukeWarmKelp(biomeBuilder);
 
         //add RU features
@@ -227,7 +224,7 @@ public class AquaticBiomes {
         MobSpawnSettings.Builder spawnBuilder = baseRiverSpawning(true);
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(true)
+                .precipitation(Biome.Precipitation.RAIN)
                 .temperature(0.75F)
                 .downfall(0.7f)
                 .specialEffects(effectBuilder.build())
@@ -236,7 +233,7 @@ public class AquaticBiomes {
                 .build();
     }
 
-    public static Biome tropicalRiver(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome tropicalRiver() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor               (calculateSkyColor(1F))
                 .fogColor               (OVERWORLD_FOG_COLOR)
@@ -245,10 +242,10 @@ public class AquaticBiomes {
                 .foliageColorOverride   (4237620)
                 .grassColorOverride     (6798388)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseRiverGeneration(featureGetter, carverGetter);
+        BiomeGenerationSettings.Builder biomeBuilder = baseRiverGeneration();
         BiomeDefaultFeatures.addLukeWarmKelp(biomeBuilder);
 
         //add RU features
@@ -263,7 +260,7 @@ public class AquaticBiomes {
         spawnBuilder.addSpawn(MobCategory.WATER_AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.TROPICAL_FISH, 25, 8, 8));
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(true)
+                .precipitation(Biome.Precipitation.RAIN)
                 .temperature(0.75F)
                 .downfall(0.7f)
                 .specialEffects(effectBuilder.build())
@@ -272,7 +269,7 @@ public class AquaticBiomes {
                 .build();
     }
 
-    public static Biome rockyReef(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome rockyReef() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(1F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -284,7 +281,7 @@ public class AquaticBiomes {
                 .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_GROVE));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseOceanGeneration(featureGetter, carverGetter);
+        BiomeGenerationSettings.Builder biomeBuilder = baseOceanGeneration();
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_WARM);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEA_PICKLE);
         BiomeDefaultFeatures.addLukeWarmKelp(biomeBuilder);
@@ -310,7 +307,7 @@ public class AquaticBiomes {
         BiomeDefaultFeatures.commonSpawns(spawnBuilder);
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(true)
+                .precipitation(Biome.Precipitation.RAIN)
                 .temperature(0.8F)
                 .downfall(0.5f)
                 .specialEffects(effectBuilder.build())
@@ -319,7 +316,7 @@ public class AquaticBiomes {
                 .build();
     }
 
-    public static Biome ashenWoodland(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome ashenWoodland() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(11644572)
                 .fogColor(-6384241)
@@ -329,10 +326,10 @@ public class AquaticBiomes {
                 .grassColorOverride(12434605)
                 .ambientParticle(new AmbientParticleSettings(ParticleTypes.ASH, 0.05F))
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseIslandGeneration(featureGetter, carverGetter, false);
+        BiomeGenerationSettings.Builder biomeBuilder = baseIslandGeneration(false);
 
         //add RU features
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuMiscOverworldPlacements.SMOULDERING_DIRT);
@@ -350,7 +347,7 @@ public class AquaticBiomes {
         BiomeDefaultFeatures.caveSpawns(spawnBuilder);
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(false)
+                .precipitation(Biome.Precipitation.NONE)
                 .temperature(2F)
                 .downfall(0.0f)
                 .specialEffects(effectBuilder.build())
@@ -359,7 +356,7 @@ public class AquaticBiomes {
                 .build();
     }
 
-    public static Biome tropics(HolderGetter<PlacedFeature> featureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
+    public static Biome tropics() {
         BiomeSpecialEffects.Builder effectBuilder = (new BiomeSpecialEffects.Builder())
                 .skyColor(calculateSkyColor(2F))
                 .fogColor(OVERWORLD_FOG_COLOR)
@@ -368,10 +365,10 @@ public class AquaticBiomes {
                 .foliageColorOverride(-11617740)
                 .grassColorOverride(-11225797)
                 .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE));
+                .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE_AND_FOREST));
 
         //add features
-        BiomeGenerationSettings.Builder biomeBuilder = baseIslandGeneration(featureGetter, carverGetter, true);
+        BiomeGenerationSettings.Builder biomeBuilder = baseIslandGeneration(true);
 
         //add RU features
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, RuTreePlacements.PALM_TREE_SPARSE);
@@ -389,7 +386,7 @@ public class AquaticBiomes {
         MobSpawnSettings.Builder spawnBuilder = baseIslandSpawning(true);
 
         return (new Biome.BiomeBuilder())
-                .hasPrecipitation(true)
+                .precipitation(Biome.Precipitation.RAIN)
                 .temperature(1.05F)
                 .downfall(0.95f)
                 .specialEffects(effectBuilder.build())
