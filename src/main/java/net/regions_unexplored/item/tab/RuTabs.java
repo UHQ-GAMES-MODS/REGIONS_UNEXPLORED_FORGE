@@ -1,18 +1,13 @@
 package net.regions_unexplored.item.tab;
 
-import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.registries.RegistryObject;
-import net.regions_unexplored.RegionsUnexploredMod;
 import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.item.RuItems;
 
 public class RuTabs {
     public static RegistryObject<CreativeModeTab> REGIONS_UNEXPLORED_MAIN_TAB;
-
+    /*
     public static void addTabs() {
         REGIONS_UNEXPLORED_MAIN_TAB = RegionsUnexploredMod.CREATIVE_TAB_REGISTRY.register("ru_main", () ->
                 CreativeModeTab.builder().icon(() -> new ItemStack(RuBlocks.PRISMARITE_CLUSTER.get()))
@@ -45,7 +40,7 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.DEEPSLATE_GRASS_BLOCK.get()));
                             output.accept(new ItemStack(RuBlocks.VIRIDESCENT_NYLIUM.get()));
                             output.accept(new ItemStack(RuBlocks.DEEPSLATE_VIRIDESCENT_NYLIUM.get()));
-                            /*-----------------PLANTS-----------------*/
+                            ----------------PLANTS----------------
                             //GRASS_BLOCKS
                             output.accept(new ItemStack(RuBlocks.ASHEN_GRASS.get()));
                             output.accept(new ItemStack(RuBlocks.BLADED_GRASS.get()));
@@ -234,7 +229,7 @@ public class RuTabs {
                             //FOOD_PLANT_BLOCKS
                             output.accept(new ItemStack(RuItems.SALMONBERRY.get()));
                             output.accept(new ItemStack(RuBlocks.HANGING_EARLIGHT.get()));
-                            /*-----------------PLANT_BLOCKS-----------------*/
+                            ----------------PLANT_BLOCKS----------------
                             //MUSHROOMS
                             output.accept(new ItemStack(RuBlocks.BLUE_BIOSHROOM_BLOCK.get()));
                             output.accept(new ItemStack(RuBlocks.GLOWING_BLUE_BIOSHROOM_BLOCK.get()));
@@ -247,7 +242,7 @@ public class RuTabs {
                             //CACTUS
                             output.accept(new ItemStack(RuBlocks.SAGUARO_CACTUS.get()));
 
-                            /*-----------------LEAVES-----------------*/
+                            ----------------LEAVES----------------
                             output.accept(new ItemStack(RuBlocks.ALPHA_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.APPLE_OAK_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.ASHEN_LEAVES.get()));
@@ -282,7 +277,7 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.SOCOTRA_LEAVES.get()));
                             output.accept(new ItemStack(RuBlocks.WILLOW_LEAVES.get()));
 
-                            /*-----------------BRANCHES-----------------*/
+                            ----------------BRANCHES----------------
                             output.accept(new ItemStack(RuBlocks.ACACIA_BRANCH.get()));
                             output.accept(new ItemStack(RuBlocks.BAOBAB_BRANCH.get()));
                             output.accept(new ItemStack(RuBlocks.BIRCH_BRANCH.get()));
@@ -309,7 +304,7 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.SPRUCE_BRANCH.get()));
                             output.accept(new ItemStack(RuBlocks.WILLOW_BRANCH.get()));
 
-                            /*-----------------DIRT_BLOCKS-----------------*/
+                            ----------------DIRT_BLOCKS----------------
                             //OTHER_DIRT_BLOCKS
                             output.accept(new ItemStack(RuBlocks.ALPHA_GRASS_BLOCK.get()));
                             //ASHEN_BLOCKS
@@ -337,7 +332,7 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.GLISTERING_WART.get()));
                             output.accept(new ItemStack(RuBlocks.OVERGROWN_BONE_BLOCK.get()));
                             output.accept(new ItemStack(RuBlocks.MYCOTOXIC_NYLIUM.get()));
-                            /*-----------------STONE_BLOCKS-----------------*/
+                            ----------------STONE_BLOCKS----------------
                             //CHALKS
                             output.accept(new ItemStack(RuBlocks.CHALK_GRASS_BLOCK.get()));
                             output.accept(new ItemStack(RuBlocks.CHALK.get()));
@@ -360,13 +355,13 @@ public class RuTabs {
 
                             output.accept(new ItemStack(RuBlocks.MOSSY_STONE.get()));
 
-                            /*-----------------OTHER_BLOCKS-----------------*/
+                            ----------------OTHER_BLOCKS----------------
                             output.accept(new ItemStack(RuBlocks.ASH.get()));
                             output.accept(new ItemStack(RuBlocks.VOLCANIC_ASH.get()));
                             output.accept(new ItemStack(RuBlocks.ASH_VENT.get()));
                             output.accept(new ItemStack(RuBlocks.ICICLE.get()));
 
-                            /*-----------------WOOD_TYPES-----------------*/
+                            ----------------WOOD_TYPES----------------
                             //ALPHA_BLOCKS
                             output.accept(new ItemStack(RuBlocks.ALPHA_LOG.get()));
                             output.accept(new ItemStack(RuBlocks.ALPHA_PLANKS.get()));
@@ -770,7 +765,7 @@ public class RuTabs {
                             output.accept(new ItemStack(RuBlocks.YELLOW_BIOSHROOM_SIGN.get()));
                             output.accept(new ItemStack(RuBlocks.YELLOW_BIOSHROOM_HANGING_SIGN.get()));
 
-                            /*-----------------PAINTED PLANKS-----------------*/
+                            ----------------PAINTED PLANKS----------------
                             //PLANKS
                             output.accept(new ItemStack(RuBlocks.RED_PAINTED_PLANKS.get()));
                             output.accept(new ItemStack(RuBlocks.ORANGE_PAINTED_PLANKS.get()));
@@ -825,4 +820,5 @@ public class RuTabs {
 
                         }).build());
     }
+    */
 }

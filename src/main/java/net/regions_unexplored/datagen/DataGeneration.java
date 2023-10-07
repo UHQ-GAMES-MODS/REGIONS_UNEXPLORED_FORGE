@@ -1,47 +1,27 @@
 package net.regions_unexplored.datagen;
 
-import net.minecraft.core.RegistrySetBuilder;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.PackOutput;
-import net.minecraft.data.tags.TagsProvider;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.regions_unexplored.RegionsUnexploredMod;
-import net.regions_unexplored.data.noise.RuNoises;
-import net.regions_unexplored.datagen.provider.*;
-import net.regions_unexplored.entity.RuDamageTypes;
-import net.regions_unexplored.registry.BiomeRegistry;
-import net.regions_unexplored.registry.ConfiguredFeatureRegistry;
-import net.regions_unexplored.registry.PlacedFeatureRegistry;
-
-import java.util.Set;
+import net.regions_unexplored.datagen.provider.RuAdvancementProvider;
+import net.regions_unexplored.datagen.provider.RuBiomeTagProvider;
+import net.regions_unexplored.datagen.provider.RuBlockModelProvider;
+import net.regions_unexplored.datagen.provider.RuRecipeProvider;
 
 @Mod.EventBusSubscriber( modid = RegionsUnexploredMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DataGeneration {
-
-
     @SubscribeEvent
-    public static void gatherData(GatherDataEvent event){
+    public static void gatherData(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
-        PackOutput packOutput = generator.getPackOutput();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
-        generator.addProvider(event.includeServer(), new DatapackBuiltinEntriesProvider(packOutput, event.getLookupProvider(), BOOTSTRAPS, Set.of(RegionsUnexploredMod.MOD_ID)));
-        generator.addProvider(event.includeServer(), new RuBlockModelProvider(packOutput, RegionsUnexploredMod.MOD_ID, existingFileHelper));
-
-        TagsProvider<Block> blockTagsProvider = generator.addProvider(event.includeServer(), new RuBlockTagProvider(packOutput, event.getLookupProvider(), RegionsUnexploredMod.MOD_ID, existingFileHelper));
-        TagsProvider<Item> itemTagsProvider = generator.addProvider(event.includeServer(), new RuItemTagProvider(packOutput, event.getLookupProvider(), blockTagsProvider.contentsGetter(),  RegionsUnexploredMod.MOD_ID, existingFileHelper));
-        TagsProvider<Biome> biomeTagsProvider = generator.addProvider(event.includeServer(), new RuBiomeTagProvider(packOutput, event.getLookupProvider(), RegionsUnexploredMod.MOD_ID, existingFileHelper));
-        generator.addProvider(true, new RuAdvancementProvider(packOutput, event.getLookupProvider(), existingFileHelper));
-        generator.addProvider(true, RuLootTableProvider.create(packOutput));
-        generator.addProvider(true, new RuRecipeProvider(packOutput));
-        generator.addProvider(true, new RuLanguageProvider(packOutput));
+        generator.addProvider(true, new RuAdvancementProvider(generator));
+        generator.addProvider(true, new RuRecipeProvider(generator));
+        generator.addProvider(true, new RuLootTableProvider(generator));
+        generator.addProvider(true, new RuBlockModelProvider(generator, existingFileHelper));
+        generator.addProvider(true, new RuBiomeTagProvider(generator));
     }
 }

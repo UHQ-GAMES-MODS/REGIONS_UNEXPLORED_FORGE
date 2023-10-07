@@ -70,7 +70,6 @@ public class RegionsUnexploredMod {
 
         bus.addListener(this::clientSetup);
         bus.addListener(this::commonSetup);
-        RuTabs.addTabs();
 
         //add registries to IEventBus
         BIOME_REGISTRY.register(bus);

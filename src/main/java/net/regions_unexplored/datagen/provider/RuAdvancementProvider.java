@@ -25,9 +25,10 @@ public class RuAdvancementProvider extends AdvancementProvider {
         super(p_123966_);
     }
 
-    private static class AdvancementBuilder implements ForgeAdvancementProvider.AdvancementGenerator {
+    private static class AdvancementBuilder implements Consumer<Consumer<Advancement>> {
+
         @Override
-        public void generate(HolderLookup.Provider registries, Consumer<Advancement> saver, ExistingFileHelper existingFileHelper) {
+        public void accept(Consumer<Advancement> saver) {
             Advancement PARENT = Advancement.Builder.advancement()
                     .display(
                             RuBlocks.EUCALYPTUS_SAPLING.get(),
@@ -40,7 +41,7 @@ public class RuAdvancementProvider extends AdvancementProvider {
                             false
                     )
                     .addCriterion("load_in_world", PlayerTrigger.TriggerInstance.located(LocationPredicate.inDimension(Level.OVERWORLD)))
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "parent"), existingFileHelper);
+                    .save(saver, RegionsUnexploredMod.MOD_ID+":"+"parent");
 
             //SURFACE
             Advancement PIONEER = Advancement.Builder.advancement()
@@ -116,7 +117,7 @@ public class RuAdvancementProvider extends AdvancementProvider {
                     .addCriterion("tropical_river", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.TROPICAL_RIVER)))
                     .addCriterion("tropics", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.TROPICS)))
                     .addCriterion("willow_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.WILLOW_FOREST)))
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "pioneer"), existingFileHelper);
+                    .save(saver, RegionsUnexploredMod.MOD_ID+":"+"pioneer");
 
             Advancement REGIONS_EXPLORED = Advancement.Builder.advancement()
                     .parent(PIONEER)
@@ -201,7 +202,7 @@ public class RuAdvancementProvider extends AdvancementProvider {
                     .addCriterion("tropical_river", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.TROPICAL_RIVER)))
                     .addCriterion("tropics", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.TROPICS)))
                     .addCriterion("willow_forest", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.WILLOW_FOREST)))
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "regions_explored"), existingFileHelper);
+                    .save(saver, RegionsUnexploredMod.MOD_ID+":"+"regions_explored");
 
             Advancement EVERY_BIT_OF_THE_RAINBOW = Advancement.Builder.advancement()
                     .parent(PIONEER)
@@ -231,7 +232,7 @@ public class RuAdvancementProvider extends AdvancementProvider {
                     .addCriterion("lime_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.LIME_SNOWBELLE.get().asItem()))
                     .addCriterion("light_gray_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.LIGHT_GRAY_SNOWBELLE.get().asItem()))
                     .addCriterion("light_blue_snowbelle", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.LIGHT_BLUE_SNOWBELLE.get().asItem()))
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "every_bit_of_the_rainbow"), existingFileHelper);
+                    .save(saver, RegionsUnexploredMod.MOD_ID+":"+"every_bit_of_the_rainbow");
 
 
             Advancement FROM_THE_TREE_TOPS = Advancement.Builder.advancement()
@@ -247,7 +248,7 @@ public class RuAdvancementProvider extends AdvancementProvider {
                             false
                     )
                     .addCriterion("kapok_vines", EnterBlockTrigger.TriggerInstance.entersBlock(RuBlocks.KAPOK_VINES_PLANT.get()))
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "from_the_tree_tops"), existingFileHelper);
+                    .save(saver, RegionsUnexploredMod.MOD_ID+":"+"from_the_tree_tops");
 
 
             Advancement LIGHT_AS_A_FROG = Advancement.Builder.advancement()
@@ -263,7 +264,7 @@ public class RuAdvancementProvider extends AdvancementProvider {
                             false
                     )
                     .addCriterion("lily_pad", EnterBlockTrigger.TriggerInstance.entersBlock(RuBlocks.GIANT_LILY_PAD.get()))
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "light_as_a_frog"), existingFileHelper);
+                    .save(saver, RegionsUnexploredMod.MOD_ID+":"+"light_as_a_frog");
 
             //NETHER
             Advancement ETERNAL_EXPEDITION = Advancement.Builder.advancement()
@@ -283,7 +284,7 @@ public class RuAdvancementProvider extends AdvancementProvider {
                     .addCriterion("glistering_meadow", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.GLISTERING_MEADOW)))
                     .addCriterion("infernal_holt", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.INFERNAL_HOLT)))
                     .addCriterion("redstone_abyss", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.REDSTONE_ABYSS)))
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "eternal_expedition"), existingFileHelper);
+                    .save(saver, RegionsUnexploredMod.MOD_ID+":"+"eternal_expedition");
 
             Advancement DOWNER = Advancement.Builder.advancement()
                     .parent(ETERNAL_EXPEDITION)
@@ -298,7 +299,7 @@ public class RuAdvancementProvider extends AdvancementProvider {
                             false
                     )
                     .addCriterion("dorcel", EnterBlockTrigger.TriggerInstance.entersBlock(RuBlocks.DORCEL.get()))
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "downer"), existingFileHelper);
+                    .save(saver, RegionsUnexploredMod.MOD_ID+":"+"downer");
 
             Advancement LIGHT_SNACK = Advancement.Builder.advancement()
                     .parent(ETERNAL_EXPEDITION)
@@ -313,7 +314,7 @@ public class RuAdvancementProvider extends AdvancementProvider {
                             false
                     )
                     .addCriterion("earlight", ConsumeItemTrigger.TriggerInstance.usedItem(RuItems.HANGING_EARLIGHT_FRUIT.get()))
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "light_snack"), existingFileHelper);
+                    .save(saver, RegionsUnexploredMod.MOD_ID+":"+"light_snack");
 
             //CAVE
             Advancement SPELUNKER = Advancement.Builder.advancement()
@@ -333,7 +334,7 @@ public class RuAdvancementProvider extends AdvancementProvider {
                     .addCriterion("prismachasm", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.PRISMACHASM)))
                     .addCriterion("redstone_caves", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.REDSTONE_CAVES)))
                     .addCriterion("scorching_caves", PlayerTrigger.TriggerInstance.located(LocationPredicate.inBiome(RuBiomes.SCORCHING_CAVES)))
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "spelunker"), existingFileHelper);
+                    .save(saver, RegionsUnexploredMod.MOD_ID+":"+"spelunker");
 
             Advancement BLIND_AS_A_BAT = Advancement.Builder.advancement()
                     .parent(SPELUNKER)
@@ -348,7 +349,7 @@ public class RuAdvancementProvider extends AdvancementProvider {
                             false
                     )
                     .addCriterion("duskmelon", ConsumeItemTrigger.TriggerInstance.usedItem(RuItems.DUSKMELON_SLICE.get()))
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "blind_as_a_bat"), existingFileHelper);
+                    .save(saver, RegionsUnexploredMod.MOD_ID+":"+"blind_as_a_bat");
 
             Advancement THIS_TREE_BLEEDS_RED = Advancement.Builder.advancement()
                     .parent(PARENT)
@@ -363,7 +364,7 @@ public class RuAdvancementProvider extends AdvancementProvider {
                             false
                     )
                     .addCriterion("socotra_log", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.SOCOTRA_LOG.get()))
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "this_tree_bleeds_red"), existingFileHelper);
+                    .save(saver, RegionsUnexploredMod.MOD_ID+":"+"this_tree_bleeds_red");
 
             Advancement GOT_WOOD = Advancement.Builder.advancement()
                     .parent(THIS_TREE_BLEEDS_RED)
@@ -405,7 +406,7 @@ public class RuAdvancementProvider extends AdvancementProvider {
                     .addCriterion("pink_bioshroom_stem", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.PINK_BIOSHROOM_STEM.get().asItem()))
                     .addCriterion("yellow_bioshroom_stem", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.YELLOW_BIOSHROOM_STEM.get().asItem()))
 
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "got_wood"), existingFileHelper);
+                    .save(saver, RegionsUnexploredMod.MOD_ID+":"+"got_wood");
 
             Advancement MYCOLOGIST = Advancement.Builder.advancement()
                     .parent(PARENT)
@@ -423,7 +424,7 @@ public class RuAdvancementProvider extends AdvancementProvider {
                     .addCriterion("pink_bioshroom", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.PINK_BIOSHROOM.get().asItem()))
                     .addCriterion("yellow_bioshroom", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.YELLOW_BIOSHROOM.get().asItem()))
                     .addCriterion("green_bioshroom", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.GREEN_BIOSHROOM.get().asItem()))
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "mycologist"), existingFileHelper);
+                    .save(saver, RegionsUnexploredMod.MOD_ID+":"+"mycologist");
 
             Advancement ANCIENT_SPECIMENS = Advancement.Builder.advancement()
                     .parent(MYCOLOGIST)
@@ -441,7 +442,7 @@ public class RuAdvancementProvider extends AdvancementProvider {
                     .addCriterion("pink_bioshroom_stem", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.PINK_BIOSHROOM_STEM.get().asItem()))
                     .addCriterion("yellow_bioshroom_stem", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.YELLOW_BIOSHROOM_STEM.get().asItem()))
                     .addCriterion("green_bioshroom_stem", InventoryChangeTrigger.TriggerInstance.hasItems(RuBlocks.GREEN_BIOSHROOM_STEM.get().asItem()))
-                    .save(saver, new ResourceLocation(RegionsUnexploredMod.MOD_ID, "ancient_specimens"), existingFileHelper);
+                    .save(saver, RegionsUnexploredMod.MOD_ID+":"+"ancient_specimens");
         }
     }
 }

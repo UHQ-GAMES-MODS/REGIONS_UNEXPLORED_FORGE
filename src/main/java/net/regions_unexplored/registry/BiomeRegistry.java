@@ -21,6 +21,7 @@ import java.util.function.Supplier;
 public class BiomeRegistry {
 
     public static void addBiomes() {
+        registerBiomes();
         registerVillagerTypes();
     }
 
