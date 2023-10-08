@@ -3,10 +3,10 @@ package net.regions_unexplored.world.level.block.nether;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Registry;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
@@ -15,7 +15,7 @@ import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.lighting.LightEngine;
+import net.minecraft.world.level.lighting.LayerLightEngine;
 import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.data.worldgen.features.RuNetherFeatures;
 
@@ -27,7 +27,7 @@ public class RuNyliumBlock extends Block implements BonemealableBlock {
     private static boolean canBeNylium(BlockState state, LevelReader level, BlockPos pos) {
         BlockPos blockpos = pos.above();
         BlockState blockstate = level.getBlockState(blockpos);
-        int i = LightEngine.getLightBlockInto(level, state, pos, blockstate, blockpos, Direction.UP, blockstate.getLightBlock(level, blockpos));
+        int i = LayerLightEngine.getLightBlockInto(level, state, pos, blockstate, blockpos, Direction.UP, blockstate.getLightBlock(level, blockpos));
         return i < level.getMaxLightLevel();
     }
 
@@ -38,7 +38,7 @@ public class RuNyliumBlock extends Block implements BonemealableBlock {
 
     }
 
-    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, boolean bool) {
+    public boolean isValidBonemealTarget(BlockGetter level, BlockPos pos, BlockState state, boolean bool) {
         return level.getBlockState(pos.above()).isAir();
     }
 
@@ -50,21 +50,20 @@ public class RuNyliumBlock extends Block implements BonemealableBlock {
         BlockState blockState = level.getBlockState(pos);
         BlockPos blockPos = pos.above();
         ChunkGenerator chunkgenerator = level.getChunkSource().getGenerator();
-        Registry<ConfiguredFeature<?, ?>> registry = level.registryAccess().registryOrThrow(Registries.CONFIGURED_FEATURE);
         if (blockState.is(RuBlocks.MYCOTOXIC_NYLIUM.get())) {
-           this.place(registry, RuNetherFeatures.MYCOTOXIC_NYLIUM_BONEMEAL, level, chunkgenerator, random, blockPos);
+            RuNetherFeatures.MYCOTOXIC_NYLIUM_BONEMEAL.value().place(level, chunkgenerator, random, blockPos);
         }
 
         else if (blockState.is(RuBlocks.GLISTERING_NYLIUM.get())) {
-           this.place(registry, RuNetherFeatures.GLISTERING_NYLIUM_BONEMEAL, level, chunkgenerator, random, blockPos);
+           RuNetherFeatures.GLISTERING_NYLIUM_BONEMEAL.value().place(level, chunkgenerator, random, blockPos);
         }
 
         else if (blockState.is(RuBlocks.BRIMSPROUT_NYLIUM.get())) {
-            this.place(registry, RuNetherFeatures.BRIMSPROUT_NYLIUM_BONEMEAL, level, chunkgenerator, random, blockPos);
+            RuNetherFeatures.BRIMSPROUT_NYLIUM_BONEMEAL.value().place(level, chunkgenerator, random, blockPos);
         }
 
         else if (blockState.is(RuBlocks.COBALT_NYLIUM.get())) {
-           this.place(registry, RuNetherFeatures.COBALT_NYLIUM_BONEMEAL, level, chunkgenerator, random, blockPos);
+           RuNetherFeatures.COBALT_NYLIUM_BONEMEAL.value().place(level, chunkgenerator, random, blockPos);
         }
 
     }

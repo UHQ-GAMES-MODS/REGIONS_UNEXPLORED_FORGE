@@ -12,13 +12,13 @@ import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.MapColor;
-import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MaterialColor;
 import net.regions_unexplored.block.RuBlocks;
 
 public class CactusSaplingBlock extends SaplingBlock {
     public CactusSaplingBlock(AbstractTreeGrower tree) {
-        super(tree, Properties.of().mapColor(MapColor.COLOR_MAGENTA).replaceable().pushReaction(PushReaction.DESTROY).noCollission().instabreak().sound(SoundType.GRASS));
+        super(tree, Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_MAGENTA).noCollission().instabreak().sound(SoundType.GRASS));
     }
 
     @Override
@@ -47,7 +47,7 @@ public class CactusSaplingBlock extends SaplingBlock {
     }
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, boolean bool) {
+    public boolean isValidBonemealTarget(BlockGetter level, BlockPos pos, BlockState state, boolean bool) {
         if(level.getBlockState(pos.below()).is(BlockTags.SAND)) {
             return true;
         }

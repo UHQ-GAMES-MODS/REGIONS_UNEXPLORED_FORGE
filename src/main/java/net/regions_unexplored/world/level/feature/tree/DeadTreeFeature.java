@@ -167,22 +167,22 @@ public class DeadTreeFeature extends Feature<RuTreeConfiguration> {
     }
 
     public void placeNorthBranch(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        if(level.getBlockState(pos.north()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.north())){
+        if(level.getBlockState(pos.north()).getMaterial().isReplaceable()&&!level.isOutsideBuildHeight(pos.north())){
             level.setBlock(pos.north(), treeConfiguration.branchProvider.getState(randomSource, pos).setValue(BranchBlock.FACING, Direction.NORTH), 2);
         }
     }
     public void placeSouthBranch(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        if(level.getBlockState(pos.south()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.south())){
+        if(level.getBlockState(pos.south()).getMaterial().isReplaceable()&&!level.isOutsideBuildHeight(pos.south())){
             level.setBlock(pos.south(), treeConfiguration.branchProvider.getState(randomSource, pos).setValue(BranchBlock.FACING, Direction.SOUTH), 2);
         }
     }
     public void placeEastBranch(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        if(level.getBlockState(pos.east()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.east())){
+        if(level.getBlockState(pos.east()).getMaterial().isReplaceable()&&!level.isOutsideBuildHeight(pos.east())){
             level.setBlock(pos.east(), treeConfiguration.branchProvider.getState(randomSource, pos).setValue(BranchBlock.FACING, Direction.EAST), 2);
         }
     }
     public void placeWestBranch(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        if(level.getBlockState(pos.west()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.west())){
+        if(level.getBlockState(pos.west()).getMaterial().isReplaceable()&&!level.isOutsideBuildHeight(pos.west())){
             level.setBlock(pos.west(), treeConfiguration.branchProvider.getState(randomSource, pos).setValue(BranchBlock.FACING, Direction.WEST), 2);
         }
     }
@@ -193,11 +193,11 @@ public class DeadTreeFeature extends Feature<RuTreeConfiguration> {
         int i = 0;
         BlockPos.MutableBlockPos placePos = pos.mutable();
         while(i<=rd){
-            if(level.getBlockState(placePos).canBeReplaced()&&level.getBlockState(placePos.above()).is(BlockTags.DIRT)){
+            if(level.getBlockState(placePos).getMaterial().isReplaceable()&&level.getBlockState(placePos.above()).is(BlockTags.DIRT)){
                 level.setBlock(placePos, Blocks.HANGING_ROOTS.defaultBlockState(), 2);
                 break;
             }
-            else if(level.getBlockState(placePos).is(BlockTags.DIRT)||level.getBlockState(placePos).is(BlockTags.REPLACEABLE_BY_TREES)||level.isEmptyBlock(placePos)){
+            else if(level.getBlockState(placePos).is(BlockTags.DIRT)||level.getBlockState(placePos).is(RuTags.REPLACEABLE_BLOCKS)||level.isEmptyBlock(placePos)){
                 placeLog(level, placePos, randomSource, treeConfiguration, Direction.Axis.Y);
             }
             else{
@@ -213,7 +213,7 @@ public class DeadTreeFeature extends Feature<RuTreeConfiguration> {
         if(level.isOutsideBuildHeight(pos)){
             return true;
         }
-        if(level.getBlockState(pos).canBeReplaced()) {
+        if(level.getBlockState(pos).getMaterial().isReplaceable()) {
             level.setBlock(pos, treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
         return true;

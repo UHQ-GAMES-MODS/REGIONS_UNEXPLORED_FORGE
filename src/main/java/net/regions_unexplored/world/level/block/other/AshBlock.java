@@ -58,7 +58,7 @@ public class AshBlock extends Block implements Fallable {
     }
 
     public static boolean isFree(BlockState state) {
-        return state.isAir() || state.is(BlockTags.FIRE) || state.liquid() || state.canBeReplaced();
+        return state.isAir() || state.is(BlockTags.FIRE) || state.getMaterial().isLiquid() || state.getMaterial().isReplaceable();
     }
 
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {

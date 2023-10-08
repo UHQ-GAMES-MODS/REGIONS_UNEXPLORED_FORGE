@@ -32,7 +32,7 @@ public class GiantPinkBioshroomFeature extends Feature<GiantBioshroomConfigurati
         int limbDirection = context.random().nextInt(12);
         int height_main = context.random().nextInt(bioshroomConfiguration.sizeVariation) + bioshroomConfiguration.minimumSize;
 
-        if(!level.getBlockState(pos).canBeReplaced()){
+        if(!level.getBlockState(pos).getMaterial().isReplaceable()){
             return false;
         }
 
@@ -134,7 +134,7 @@ public class GiantPinkBioshroomFeature extends Feature<GiantBioshroomConfigurati
         BlockPos.MutableBlockPos placePos = pos.mutable();
         while(i<=rd){
             if(i>0){
-                if(!level.getBlockState(placePos.above()).is(bioshroomConfiguration.stemProvider.getState(randomSource, placePos.above()).getBlock())&&level.getBlockState(placePos).canBeReplaced()) {
+                if(!level.getBlockState(placePos.above()).is(bioshroomConfiguration.stemProvider.getState(randomSource, placePos.above()).getBlock())&&level.getBlockState(placePos).getMaterial().isReplaceable()) {
                     return;
                 }
             }

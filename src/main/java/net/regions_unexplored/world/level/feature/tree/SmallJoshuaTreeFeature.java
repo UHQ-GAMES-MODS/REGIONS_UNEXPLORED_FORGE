@@ -122,7 +122,7 @@ public class SmallJoshuaTreeFeature extends Feature<RuTreeConfiguration> {
         if(level.isOutsideBuildHeight(pos.above())){
             return true;
         }
-        if(level.getBlockState(pos).canBeReplaced()&&level.getBlockState(pos.above()).canBeReplaced()) {
+        if(level.getBlockState(pos).getMaterial().isReplaceable()&&level.getBlockState(pos.above()).getMaterial().isReplaceable()) {
             level.setBlock(pos, treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(JoshuaLeavesBlock.NATURAL, true).setValue(JoshuaLeavesBlock.HALF, DoubleBlockHalf.LOWER), 2);
             level.setBlock(pos.above(), treeConfiguration.foliageProvider.getState(randomSource, pos.above()).setValue(JoshuaLeavesBlock.NATURAL, true).setValue(JoshuaLeavesBlock.HALF, DoubleBlockHalf.UPPER), 2);
         }

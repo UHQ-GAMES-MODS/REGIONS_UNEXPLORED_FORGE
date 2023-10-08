@@ -33,7 +33,7 @@ public class RuPlantBlock extends BushBlock implements BonemealableBlock, net.mi
         }
     }
 
-    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, boolean b) {
+    public boolean isValidBonemealTarget(BlockGetter level, BlockPos pos, BlockState state, boolean b) {
         return true;
     }
 

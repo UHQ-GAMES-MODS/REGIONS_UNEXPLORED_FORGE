@@ -2,7 +2,7 @@ package net.regions_unexplored.world.level.block.plant.grass;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.registries.Registries;
+import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.TagKey;
@@ -41,7 +41,7 @@ public class RuSandyPlantBlock extends BushBlock implements BonemealableBlock, n
     }
 
     public BlockState updateShape(BlockState state, Direction direction, BlockState state1, LevelAccessor level, BlockPos pos, BlockPos pos2) {
-        if(level.getBlockState(pos.below()).is(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "sand/red")))){
+        if(level.getBlockState(pos.below()).is(TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation("forge", "sand/red")))){
             state.setValue(IS_RED, true);
         }
         else{
@@ -55,11 +55,11 @@ public class RuSandyPlantBlock extends BushBlock implements BonemealableBlock, n
     }
 
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        boolean isRed = context.getLevel().getBlockState(context.getClickedPos().below()).is(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "sand/red")));
+        boolean isRed = context.getLevel().getBlockState(context.getClickedPos().below()).is(TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation("forge", "sand/red")));
         return (this.defaultBlockState().setValue(IS_RED, isRed));
     }
 
-    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, boolean b) {
+    public boolean isValidBonemealTarget(BlockGetter level, BlockPos pos, BlockState state, boolean b) {
         return true;
     }
 

@@ -8,6 +8,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.ThrownTrident;
@@ -99,7 +100,7 @@ public class IcicleBlock extends Block implements SimpleWaterloggedBlock {
 
     public void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, float v) {
         if (state.getValue(TIP_DIRECTION) == Direction.UP && state.getValue(THICKNESS) == DripstoneThickness.TIP) {
-            entity.causeFallDamage(v + 2.0F, 2.0F,  level.damageSources().stalagmite());
+            entity.causeFallDamage(v + 2.0F, 2.0F,  DamageSource.STALAGMITE);
         } else {
             super.fallOn(level, state, pos, entity, v);
         }

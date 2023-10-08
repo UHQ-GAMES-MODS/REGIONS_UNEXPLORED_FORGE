@@ -2,8 +2,6 @@ package net.regions_unexplored.world.level.block.saplinggrowers;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockGetter;
@@ -28,21 +26,21 @@ public abstract class AbstractUltraFromSuperTreeGrower extends AbstractSuperTree
             return super.growTree(level, generator, pos, state, random);
         }
 
-        @Nullable
-        protected abstract ResourceKey<ConfiguredFeature<?, ?>> getConfiguredUltraFeature(RandomSource random);
+    @Nullable
+    protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredUltraFeature(ServerLevel level, ChunkGenerator chunkGenerator, BlockPos pos, BlockState state, RandomSource random) {
+        return getConfiguredUltraFeature(random);
+    }
 
-        public boolean placeUltra(ServerLevel level, ChunkGenerator generator, BlockPos pos, BlockState state, RandomSource random, int X, int Z) {
-            ResourceKey<ConfiguredFeature<?, ?>> resourcekey = this.getConfiguredUltraFeature(random);
-            if (resourcekey == null) {
-                return false;
-            } else {
-                Holder<ConfiguredFeature<?, ?>> holder = level.registryAccess().registryOrThrow(Registries.CONFIGURED_FEATURE).getHolder(resourcekey).orElse((Holder.Reference<ConfiguredFeature<?, ?>>)null);
-                var event = net.minecraftforge.event.ForgeEventFactory.blockGrowFeature(level, random, pos, holder);
-                holder = event.getFeature();
-                if (event.getResult() == net.minecraftforge.eventbus.api.Event.Result.DENY) return false;
-                if (holder == null) {
-                    return false;
-                } else {
+    @Nullable
+    protected abstract Holder<? extends ConfiguredFeature<?, ?>> getConfiguredUltraFeature(RandomSource random);
+
+    public boolean placeUltra(ServerLevel level, ChunkGenerator generator, BlockPos pos, BlockState state, RandomSource random, int X, int Z) {
+        Holder<? extends ConfiguredFeature<?, ?>> holder = this.getConfiguredUltraFeature(level, generator, pos, state, random);
+        net.minecraftforge.event.level.SaplingGrowTreeEvent event = net.minecraftforge.event.ForgeEventFactory.blockGrowFeature(level, random, pos, holder);
+        if (event.getResult().equals(net.minecraftforge.eventbus.api.Event.Result.DENY) || event.getFeature() == null) {
+            return false;
+        }
+        else {
                     ConfiguredFeature<?, ?> configuredfeature = event.getFeature().value();
                     BlockState setAir = Blocks.AIR.defaultBlockState();
                     level.setBlock(pos.offset(X, 0, Z), setAir, 4);
@@ -70,7 +68,6 @@ public abstract class AbstractUltraFromSuperTreeGrower extends AbstractSuperTree
                     }
                 }
             }
-        }
 
         public static boolean isThreeBlockSapling(BlockState state, BlockGetter getter, BlockPos pos, int X, int Z) {
             Block block = state.getBlock();

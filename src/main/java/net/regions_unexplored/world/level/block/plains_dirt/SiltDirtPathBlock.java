@@ -45,7 +45,7 @@ public class SiltDirtPathBlock extends Block {
 
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         BlockState blockstate = level.getBlockState(pos.above());
-        return !blockstate.isSolid() || blockstate.getBlock() instanceof FenceGateBlock;
+        return !blockstate.getMaterial().isSolid() || blockstate.getBlock() instanceof FenceGateBlock;
     }
 
     public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {

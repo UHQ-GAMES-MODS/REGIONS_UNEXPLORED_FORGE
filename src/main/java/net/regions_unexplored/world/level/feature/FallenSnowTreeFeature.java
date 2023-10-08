@@ -283,7 +283,7 @@ public class FallenSnowTreeFeature extends Feature<FallenTreeConfiguration> {
         if(level.isOutsideBuildHeight(pos)){
             return true;
         }
-        if(level.getBlockState(pos).canBeReplaced()&&randomSource.nextInt(5)==0){
+        if(level.getBlockState(pos).getMaterial().isReplaceable()&&randomSource.nextInt(5)==0){
             if(level.getBlockState(pos.below()).isFaceSturdy(level, pos.below(), Direction.UP)) {
                 if(level.getBlockState(pos).getBlock() instanceof DoublePlantBlock){
                     level.setBlock(pos.above(), Blocks.AIR.defaultBlockState(), 2);
@@ -297,7 +297,7 @@ public class FallenSnowTreeFeature extends Feature<FallenTreeConfiguration> {
         if(level.isOutsideBuildHeight(pos)){
             return true;
         }
-        if(level.getBlockState(pos).canBeReplaced()&&randomSource.nextInt(2)==0){
+        if(level.getBlockState(pos).getMaterial().isReplaceable()&&randomSource.nextInt(2)==0){
             if(level.getBlockState(pos.below()).isFaceSturdy(level, pos.below(), Direction.UP)) {
                 if(level.getBlockState(pos).getBlock() instanceof DoublePlantBlock){
                     level.setBlock(pos.above(), Blocks.AIR.defaultBlockState(), 2);
@@ -312,7 +312,7 @@ public class FallenSnowTreeFeature extends Feature<FallenTreeConfiguration> {
         if(level.isOutsideBuildHeight(pos)){
             return true;
         }
-        if(level.getBlockState(pos).canBeReplaced()||level.getBlockState(pos).is(Blocks.MOSS_CARPET)) {
+        if(level.getBlockState(pos).getMaterial().isReplaceable()||level.getBlockState(pos).is(Blocks.MOSS_CARPET)) {
             if(level.getBlockState(pos).getBlock() instanceof DoublePlantBlock){
                 level.setBlock(pos.above(), Blocks.AIR.defaultBlockState(), 2);
             }

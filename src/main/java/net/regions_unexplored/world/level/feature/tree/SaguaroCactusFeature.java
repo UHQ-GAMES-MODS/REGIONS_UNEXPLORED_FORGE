@@ -158,11 +158,11 @@ public class SaguaroCactusFeature extends Feature<RuTreeConfiguration> {
         int i = 0;
         BlockPos.MutableBlockPos placePos = pos.mutable();
         while(i<=rd){
-            if(level.getBlockState(placePos).canBeReplaced()&&level.getBlockState(placePos.above()).is(BlockTags.DIRT)){
+            if(level.getBlockState(placePos).getMaterial().isReplaceable()&&level.getBlockState(placePos.above()).is(BlockTags.DIRT)){
                 level.setBlock(placePos, Blocks.HANGING_ROOTS.defaultBlockState(), 2);
                 break;
             }
-            else if(level.getBlockState(placePos).is(BlockTags.DIRT)||level.getBlockState(placePos).is(BlockTags.REPLACEABLE_BY_TREES)||level.isEmptyBlock(placePos)){
+            else if(level.getBlockState(placePos).is(BlockTags.DIRT)||level.getBlockState(placePos).is(RuTags.REPLACEABLE_BLOCKS)||level.isEmptyBlock(placePos)){
                 placeCactusBlock(level, placePos, randomSource, treeConfiguration, SaguaroCactusShape.UP_DOWN);
             }
             else{
@@ -176,7 +176,7 @@ public class SaguaroCactusFeature extends Feature<RuTreeConfiguration> {
         if(level.isOutsideBuildHeight(pos)){
             return true;
         }
-        if(level.getBlockState(pos).canBeReplaced()&&randomSource.nextInt(4)==0) {
+        if(level.getBlockState(pos).getMaterial().isReplaceable()&&randomSource.nextInt(4)==0) {
             level.setBlock(pos, treeConfiguration.foliageProvider.getState(randomSource, pos), 2);
         }
         return true;

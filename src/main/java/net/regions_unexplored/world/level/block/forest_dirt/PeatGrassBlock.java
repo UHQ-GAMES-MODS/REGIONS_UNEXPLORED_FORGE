@@ -2,13 +2,12 @@ package net.regions_unexplored.world.level.block.forest_dirt;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BonemealableBlock;
@@ -29,7 +28,7 @@ public class PeatGrassBlock extends SpreadingForestDirtBlock implements Bonemeal
       super(properties);
    }
 
-   public boolean isValidBonemealTarget(LevelReader levelReader, BlockPos pos, BlockState state, boolean bool) {
+   public boolean isValidBonemealTarget(BlockGetter levelReader, BlockPos pos, BlockState state, boolean bool) {
       return levelReader.getBlockState(pos.above()).isAir();
    }
 
@@ -40,7 +39,6 @@ public class PeatGrassBlock extends SpreadingForestDirtBlock implements Bonemeal
    public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
       BlockPos blockPos = pos.above();
       BlockState blockState = Blocks.GRASS.defaultBlockState();
-      Optional<Holder.Reference<PlacedFeature>> optional = level.registryAccess().registryOrThrow(Registries.PLACED_FEATURE).getHolder(VegetationPlacements.GRASS_BONEMEAL);
 
       label46:
       for(int i = 0; i < 128; ++i) {
@@ -65,16 +63,10 @@ public class PeatGrassBlock extends SpreadingForestDirtBlock implements Bonemeal
                if (list.isEmpty()) {
                   continue;
                }
-
                holder = ((RandomPatchConfiguration)list.get(0).config()).feature();
             } else {
-               if (!optional.isPresent()) {
-                  continue;
-               }
-
-               holder = optional.get();
+               holder = VegetationPlacements.GRASS_BONEMEAL;
             }
-
             holder.value().place(level, level.getChunkSource().getGenerator(), random, blockPos1);
          }
       }

@@ -221,7 +221,7 @@ public class IceSpireFeature extends Feature<RuTreeConfiguration> {
         int i = 0;
         BlockPos.MutableBlockPos placePos = pos.mutable();
         while(i<=rd){
-            if(level.getBlockState(placePos).canBeReplaced()&&level.getBlockState(placePos.above()).is(BlockTags.DIRT)){
+            if(level.getBlockState(placePos).getMaterial().isReplaceable()&&level.getBlockState(placePos.above()).is(BlockTags.DIRT)){
                 break;
             }
             placeLog(level, placePos, randomSource, treeConfiguration);
@@ -247,7 +247,7 @@ public class IceSpireFeature extends Feature<RuTreeConfiguration> {
         if(level.isOutsideBuildHeight(pos)){
             return true;
         }
-        if(level.getBlockState(pos).canBeReplaced()) {
+        if(level.getBlockState(pos).getMaterial().isReplaceable()) {
             level.setBlock(pos, treeConfiguration.foliageProvider.getState(randomSource, pos), 2);
         }
         return true;

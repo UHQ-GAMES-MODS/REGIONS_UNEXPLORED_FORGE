@@ -105,7 +105,7 @@ public class PointedRedstoneBlock extends Block implements Fallable, SimpleWater
 
     public void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, float v) {
         if (state.getValue(TIP_DIRECTION) == Direction.UP && state.getValue(THICKNESS) == DripstoneThickness.TIP) {
-            entity.causeFallDamage(v + 2.0F, 2.0F,  level.damageSources().stalagmite());
+            entity.causeFallDamage(v + 2.0F, 2.0F,  DamageSource.STALAGMITE);
         } else {
             super.fallOn(level, state, pos, entity, v);
         }
@@ -203,8 +203,8 @@ public class PointedRedstoneBlock extends Block implements Fallable, SimpleWater
 
     }
 
-    public DamageSource getFallDamageSource(Entity entity) {
-        return entity.damageSources().fallingStalactite(entity);
+    public DamageSource getFallDamageSource() {
+        return DamageSource.FALLING_STALACTITE;
     }
 
     public Predicate<Entity> getHurtsEntitySelector() {

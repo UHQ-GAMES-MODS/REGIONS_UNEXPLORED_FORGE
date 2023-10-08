@@ -3,7 +3,7 @@ package net.regions_unexplored.world.level.feature.tree;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.Registry;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
@@ -125,11 +125,11 @@ public class MapleTreeFeature extends Feature<RuTreeConfiguration> {
         int i = 0;
         BlockPos.MutableBlockPos placePos = pos.mutable();
         while(i<=rd){
-            if(level.getBlockState(placePos).canBeReplaced()&&level.getBlockState(placePos.above()).is(BlockTags.DIRT)){
+            if(level.getBlockState(placePos).getMaterial().isReplaceable()&&level.getBlockState(placePos.above()).is(BlockTags.DIRT)){
                 level.setBlock(placePos, Blocks.HANGING_ROOTS.defaultBlockState(), 2);
                 break;
             }
-            else if(level.getBlockState(placePos).is(BlockTags.DIRT)||level.getBlockState(placePos).is(BlockTags.REPLACEABLE_BY_TREES)||level.isEmptyBlock(placePos)){
+            else if(level.getBlockState(placePos).is(BlockTags.DIRT)||level.getBlockState(placePos).is(RuTags.REPLACEABLE_BLOCKS)||level.isEmptyBlock(placePos)){
                 placeLog(level, placePos, randomSource, treeConfiguration);
             }
             else{
@@ -259,7 +259,7 @@ public class MapleTreeFeature extends Feature<RuTreeConfiguration> {
         if(level.isOutsideBuildHeight(pos)){
             return true;
         }
-        if(level.getBlockState(pos).canBeReplaced()) {
+        if(level.getBlockState(pos).getMaterial().isReplaceable()) {
             level.setBlock(pos, treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
         return true;
@@ -286,7 +286,7 @@ public class MapleTreeFeature extends Feature<RuTreeConfiguration> {
                 int j = 2 + random.nextInt(2);
                 for(int k = 0; k < j; ++k) {
                     CompoundTag compoundtag = new CompoundTag();
-                    compoundtag.putString("id", BuiltInRegistries.ENTITY_TYPE.getKey(EntityType.BEE).toString());
+                    compoundtag.putString("id", Registry.ENTITY_TYPE.getKey(EntityType.BEE).toString());
                     addBee.storeBee(compoundtag, random.nextInt(599), false);
                 }
             });
@@ -303,7 +303,7 @@ public class MapleTreeFeature extends Feature<RuTreeConfiguration> {
                     int j = 2 + random.nextInt(2);
                     for(int k = 0; k < j; ++k) {
                         CompoundTag compoundtag = new CompoundTag();
-                        compoundtag.putString("id", BuiltInRegistries.ENTITY_TYPE.getKey(EntityType.BEE).toString());
+                        compoundtag.putString("id", Registry.ENTITY_TYPE.getKey(EntityType.BEE).toString());
                         addBee.storeBee(compoundtag, random.nextInt(599), false);
                     }
                 });
@@ -320,7 +320,7 @@ public class MapleTreeFeature extends Feature<RuTreeConfiguration> {
                     int j = 2 + random.nextInt(2);
                     for(int k = 0; k < j; ++k) {
                         CompoundTag compoundtag = new CompoundTag();
-                        compoundtag.putString("id", BuiltInRegistries.ENTITY_TYPE.getKey(EntityType.BEE).toString());
+                        compoundtag.putString("id", Registry.ENTITY_TYPE.getKey(EntityType.BEE).toString());
                         addBee.storeBee(compoundtag, random.nextInt(599), false);
                     }
                 });
@@ -337,7 +337,7 @@ public class MapleTreeFeature extends Feature<RuTreeConfiguration> {
                     int j = 2 + random.nextInt(2);
                     for(int k = 0; k < j; ++k) {
                         CompoundTag compoundtag = new CompoundTag();
-                        compoundtag.putString("id", BuiltInRegistries.ENTITY_TYPE.getKey(EntityType.BEE).toString());
+                        compoundtag.putString("id", Registry.ENTITY_TYPE.getKey(EntityType.BEE).toString());
                         addBee.storeBee(compoundtag, random.nextInt(599), false);
                     }
                 });

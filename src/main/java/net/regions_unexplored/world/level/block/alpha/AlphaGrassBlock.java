@@ -2,12 +2,11 @@ package net.regions_unexplored.world.level.block.alpha;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BonemealableBlock;
@@ -29,7 +28,7 @@ public class AlphaGrassBlock extends SpreadingAlphaDirtBlock implements Bonemeal
       super(p_53685_);
    }
 
-   public boolean isValidBonemealTarget(LevelReader p_256229_, BlockPos p_256432_, BlockState p_255677_, boolean p_256630_) {
+   public boolean isValidBonemealTarget(BlockGetter p_256229_, BlockPos p_256432_, BlockState p_255677_, boolean p_256630_) {
       return p_256229_.getBlockState(p_256432_.above()).isAir();
    }
 
@@ -40,7 +39,6 @@ public class AlphaGrassBlock extends SpreadingAlphaDirtBlock implements Bonemeal
    public void performBonemeal(ServerLevel p_221270_, RandomSource p_221271_, BlockPos p_221272_, BlockState p_221273_) {
       BlockPos blockpos = p_221272_.above();
       BlockState blockstate = Blocks.GRASS.defaultBlockState();
-      Optional<Holder.Reference<PlacedFeature>> optional = p_221270_.registryAccess().registryOrThrow(Registries.PLACED_FEATURE).getHolder(RuVegetationPlacements.ALPHA_ROSE);
 
       label46:
       for(int i = 0; i < 16; ++i) {
@@ -65,16 +63,10 @@ public class AlphaGrassBlock extends SpreadingAlphaDirtBlock implements Bonemeal
                if (list.isEmpty()) {
                   continue;
                }
-
                holder = ((RandomPatchConfiguration)list.get(0).config()).feature();
             } else {
-               if (!optional.isPresent()) {
-                  continue;
-               }
-
-               holder = optional.get();
+               holder = RuVegetationPlacements.ALPHA_ROSE;
             }
-
             holder.value().place(p_221270_, p_221270_.getChunkSource().getGenerator(), p_221271_, blockpos1);
          }
       }

@@ -28,7 +28,7 @@ public class FloorIcicleFeature extends Feature<NoneFeatureConfiguration> {
 
 
         for(int i=0; i<size; i++){
-            if(!level.getBlockState(checkPos).canBeReplaced()){
+            if(!level.getBlockState(checkPos).getMaterial().isReplaceable()){
                 return false;
             }
         }

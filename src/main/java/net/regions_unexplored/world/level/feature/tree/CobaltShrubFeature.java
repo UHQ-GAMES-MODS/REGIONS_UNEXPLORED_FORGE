@@ -156,7 +156,7 @@ public class CobaltShrubFeature extends Feature<NoneFeatureConfiguration> {
         if(level.isOutsideBuildHeight(pos)){
             return;
         }
-        if(level.getBlockState(pos).canBeReplaced()) {
+        if(level.getBlockState(pos).getMaterial().isReplaceable()) {
             level.setBlock(pos, RuBlocks.COBALT_WEBBING.get().defaultBlockState().setValue(LeavesBlock.DISTANCE, 1), 2);
         }
     }

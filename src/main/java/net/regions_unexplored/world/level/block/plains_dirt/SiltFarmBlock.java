@@ -55,7 +55,7 @@ public class SiltFarmBlock extends Block {
 
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         BlockState blockstate = level.getBlockState(pos.above());
-        return !blockstate.isSolid() || blockstate.getBlock() instanceof FenceGateBlock || blockstate.getBlock() instanceof MovingPistonBlock;
+        return !blockstate.getMaterial().isSolid() || blockstate.getBlock() instanceof FenceGateBlock || blockstate.getBlock() instanceof MovingPistonBlock;
     }
 
     public BlockState getStateForPlacement(BlockPlaceContext context) {

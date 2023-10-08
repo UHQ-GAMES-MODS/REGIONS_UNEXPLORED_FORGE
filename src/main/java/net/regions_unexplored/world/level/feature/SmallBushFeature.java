@@ -28,7 +28,7 @@ public class SmallBushFeature extends Feature<SmallBushConfiguration> {
         RandomSource randomSource = context.random();
         WorldGenLevel level = context.level();
 
-        if(!level.getBlockState(pos).canBeReplaced()||level.getBlockState(pos).is(Blocks.WATER)){
+        if(!level.getBlockState(pos).getMaterial().isReplaceable()||level.getBlockState(pos).is(Blocks.WATER)){
             return false;
         }
         placeLeavesBlock(level,pos,randomSource,bushConfig);
@@ -43,7 +43,7 @@ public class SmallBushFeature extends Feature<SmallBushConfiguration> {
         if(level.isOutsideBuildHeight(pos)){
             return true;
         }
-        if(level.getBlockState(pos).canBeReplaced()) {
+        if(level.getBlockState(pos).getMaterial().isReplaceable()) {
             level.setBlock(pos, bushConfig.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
         return true;

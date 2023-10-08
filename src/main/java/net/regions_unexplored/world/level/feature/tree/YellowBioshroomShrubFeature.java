@@ -103,7 +103,7 @@ public class YellowBioshroomShrubFeature extends Feature<NoneFeatureConfiguratio
         if(level.isOutsideBuildHeight(pos)){
             return;
         }
-        if(level.getBlockState(pos).canBeReplaced()) {
+        if(level.getBlockState(pos).getMaterial().isReplaceable()) {
             level.setBlock(pos, RuBlocks.YELLOW_BIOSHROOM_BLOCK.get().defaultBlockState(), 2);
         }
     }

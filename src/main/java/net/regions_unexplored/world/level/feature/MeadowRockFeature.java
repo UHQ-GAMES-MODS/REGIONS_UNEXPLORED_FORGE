@@ -90,7 +90,7 @@ public class MeadowRockFeature extends Feature<NoneFeatureConfiguration> {
         int i = 0;
         BlockPos.MutableBlockPos placePos = pos.mutable();
         while(i<=rd){
-            if(level.getBlockState(placePos).canBeReplaced()&&level.getBlockState(placePos.above()).is(BlockTags.LOGS)){
+            if(level.getBlockState(placePos).getMaterial().isReplaceable()&&level.getBlockState(placePos.above()).is(BlockTags.LOGS)){
                 level.setBlock(placePos, Blocks.HANGING_ROOTS.defaultBlockState(), 2);
             }
             placeRandomBlock(level, placePos, randomSource);
@@ -153,7 +153,7 @@ public class MeadowRockFeature extends Feature<NoneFeatureConfiguration> {
         if(level.isOutsideBuildHeight(pos)){
             return true;
         }
-        if(level.getBlockState(pos).canBeReplaced()&&level.getBlockState(pos.below()).isFaceSturdy(level, pos.below(), Direction.UP)) {
+        if(level.getBlockState(pos).getMaterial().isReplaceable()&&level.getBlockState(pos.below()).isFaceSturdy(level, pos.below(), Direction.UP)) {
             if(randomSource.nextInt(4)==0){
                 level.setBlock(pos, Blocks.MOSS_CARPET.defaultBlockState(), 2);
             }

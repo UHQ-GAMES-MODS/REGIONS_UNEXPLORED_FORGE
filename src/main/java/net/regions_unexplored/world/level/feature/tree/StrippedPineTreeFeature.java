@@ -391,73 +391,73 @@ public class StrippedPineTreeFeature extends Feature<RuTreeConfiguration> {
         }
     }
     public void placeNorthBranch(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        if(level.getBlockState(pos.north()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.north())){
+        if(level.getBlockState(pos.north()).getMaterial().isReplaceable()&&!level.isOutsideBuildHeight(pos.north())){
             level.setBlock(pos.north(), treeConfiguration.branchProvider.getState(randomSource, pos).setValue(BranchBlock.FACING, Direction.NORTH), 2);
         }
-        if(level.getBlockState(pos.north().above()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.north().above())){
+        if(level.getBlockState(pos.north().above()).getMaterial().isReplaceable()&&!level.isOutsideBuildHeight(pos.north().above())){
             level.setBlock(pos.north().above(), treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
-        if(level.getBlockState(pos.north().north()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.north().north())){
+        if(level.getBlockState(pos.north().north()).getMaterial().isReplaceable()&&!level.isOutsideBuildHeight(pos.north().north())){
             level.setBlock(pos.north().north(), treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
-        if(level.getBlockState(pos.north().east()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.north().east())){
+        if(level.getBlockState(pos.north().east()).getMaterial().isReplaceable()&&!level.isOutsideBuildHeight(pos.north().east())){
             level.setBlock(pos.north().east(), treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
-        if(level.getBlockState(pos.north().west()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.north().west())){
+        if(level.getBlockState(pos.north().west()).getMaterial().isReplaceable()&&!level.isOutsideBuildHeight(pos.north().west())){
             level.setBlock(pos.north().west(), treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
 
     }
     public void placeSouthBranch(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        if(level.getBlockState(pos.south()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.south())){
+        if(level.getBlockState(pos.south()).getMaterial().isReplaceable()&&!level.isOutsideBuildHeight(pos.south())){
             level.setBlock(pos.south(), treeConfiguration.branchProvider.getState(randomSource, pos).setValue(BranchBlock.FACING, Direction.SOUTH), 2);
         }
-        if(level.getBlockState(pos.south().above()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.south().above())){
+        if(level.getBlockState(pos.south().above()).getMaterial().isReplaceable()&&!level.isOutsideBuildHeight(pos.south().above())){
             level.setBlock(pos.south().above(), treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
-        if(level.getBlockState(pos.south().south()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.south().south())){
+        if(level.getBlockState(pos.south().south()).getMaterial().isReplaceable()&&!level.isOutsideBuildHeight(pos.south().south())){
             level.setBlock(pos.south().south(), treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
-        if(level.getBlockState(pos.south().east()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.south().east())){
+        if(level.getBlockState(pos.south().east()).getMaterial().isReplaceable()&&!level.isOutsideBuildHeight(pos.south().east())){
             level.setBlock(pos.south().east(), treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
-        if(level.getBlockState(pos.south().west()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.south().west())){
+        if(level.getBlockState(pos.south().west()).getMaterial().isReplaceable()&&!level.isOutsideBuildHeight(pos.south().west())){
             level.setBlock(pos.south().west(), treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
 
     }
     public void placeEastBranch(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        if(level.getBlockState(pos.east()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.east())){
+        if(level.getBlockState(pos.east()).getMaterial().isReplaceable()&&!level.isOutsideBuildHeight(pos.east())){
             level.setBlock(pos.east(), treeConfiguration.branchProvider.getState(randomSource, pos).setValue(BranchBlock.FACING, Direction.EAST), 2);
         }
-        if(level.getBlockState(pos.east().above()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.east().above())){
+        if(level.getBlockState(pos.east().above()).getMaterial().isReplaceable()&&!level.isOutsideBuildHeight(pos.east().above())){
             level.setBlock(pos.east().above(), treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
-        if(level.getBlockState(pos.east().east()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.east().east())){
+        if(level.getBlockState(pos.east().east()).getMaterial().isReplaceable()&&!level.isOutsideBuildHeight(pos.east().east())){
             level.setBlock(pos.east().east(), treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
-        if(level.getBlockState(pos.east().south()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.east().south())){
+        if(level.getBlockState(pos.east().south()).getMaterial().isReplaceable()&&!level.isOutsideBuildHeight(pos.east().south())){
             level.setBlock(pos.east().south(), treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
-        if(level.getBlockState(pos.east().north()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.east().north())){
+        if(level.getBlockState(pos.east().north()).getMaterial().isReplaceable()&&!level.isOutsideBuildHeight(pos.east().north())){
             level.setBlock(pos.east().north(), treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
 
     }
     public void placeWestBranch(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        if(level.getBlockState(pos.west()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.west())){
+        if(level.getBlockState(pos.west()).getMaterial().isReplaceable()&&!level.isOutsideBuildHeight(pos.west())){
             level.setBlock(pos.west(), treeConfiguration.branchProvider.getState(randomSource, pos).setValue(BranchBlock.FACING, Direction.WEST), 2);
         }
-        if(level.getBlockState(pos.west().above()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.west().above())){
+        if(level.getBlockState(pos.west().above()).getMaterial().isReplaceable()&&!level.isOutsideBuildHeight(pos.west().above())){
             level.setBlock(pos.west().above(), treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
-        if(level.getBlockState(pos.west().west()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.west().west())){
+        if(level.getBlockState(pos.west().west()).getMaterial().isReplaceable()&&!level.isOutsideBuildHeight(pos.west().west())){
             level.setBlock(pos.west().west(), treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
-        if(level.getBlockState(pos.west().south()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.west().south())){
+        if(level.getBlockState(pos.west().south()).getMaterial().isReplaceable()&&!level.isOutsideBuildHeight(pos.west().south())){
             level.setBlock(pos.west().south(), treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
-        if(level.getBlockState(pos.west().north()).canBeReplaced()&&!level.isOutsideBuildHeight(pos.west().north())){
+        if(level.getBlockState(pos.west().north()).getMaterial().isReplaceable()&&!level.isOutsideBuildHeight(pos.west().north())){
             level.setBlock(pos.west().north(), treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
 
@@ -469,11 +469,11 @@ public class StrippedPineTreeFeature extends Feature<RuTreeConfiguration> {
         int i = 0;
         BlockPos.MutableBlockPos placePos = pos.mutable();
         while(i<=rd){
-            if(level.getBlockState(placePos).canBeReplaced()&&level.getBlockState(placePos.above()).is(BlockTags.DIRT)){
+            if(level.getBlockState(placePos).getMaterial().isReplaceable()&&level.getBlockState(placePos.above()).is(BlockTags.DIRT)){
                 level.setBlock(placePos, Blocks.HANGING_ROOTS.defaultBlockState(), 2);
                 break;
             }
-            else if(level.getBlockState(placePos).is(BlockTags.DIRT)||level.getBlockState(placePos).is(BlockTags.REPLACEABLE_BY_TREES)||level.isEmptyBlock(placePos)){
+            else if(level.getBlockState(placePos).is(BlockTags.DIRT)||level.getBlockState(placePos).is(RuTags.REPLACEABLE_BLOCKS)||level.isEmptyBlock(placePos)){
                 placeLog(level, placePos, randomSource, treeConfiguration, Direction.Axis.Y, true, false);
             }
             else{
@@ -489,7 +489,7 @@ public class StrippedPineTreeFeature extends Feature<RuTreeConfiguration> {
         if(level.isOutsideBuildHeight(pos)){
             return true;
         }
-        if(level.getBlockState(pos).canBeReplaced()) {
+        if(level.getBlockState(pos).getMaterial().isReplaceable()) {
             level.setBlock(pos, treeConfiguration.foliageProvider.getState(randomSource, pos).setValue(LeavesBlock.DISTANCE, 1), 2);
         }
         return true;

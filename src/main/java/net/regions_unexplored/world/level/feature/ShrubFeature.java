@@ -23,7 +23,7 @@ public class ShrubFeature extends Feature<ShrubConfiguration> {
         RandomSource randomSource = context.random();
         WorldGenLevel level = context.level();
 
-        if(!level.isOutsideBuildHeight(pos.above())&&level.getBlockState(pos).canBeReplaced()&&level.getBlockState(pos.above()).canBeReplaced()) {
+        if(!level.isOutsideBuildHeight(pos.above())&&level.getBlockState(pos).getMaterial().isReplaceable()&&level.getBlockState(pos.above()).getMaterial().isReplaceable()) {
             placeSapling(level, pos, shrubConfiguration.saplingProvider.getState(randomSource, pos));
             return true;
         }

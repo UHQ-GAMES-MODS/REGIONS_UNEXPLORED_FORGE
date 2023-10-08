@@ -7,10 +7,11 @@ import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LightBlock;
 import net.minecraft.world.level.block.SnowLayerBlock;
 import net.minecraft.world.level.block.SnowyDirtBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.lighting.LightEngine;
+import net.minecraft.world.level.lighting.LayerLightEngine;
 
 public abstract class SpreadingAlphaDirtBlock extends SnowyDirtBlock {
    protected SpreadingAlphaDirtBlock(Properties properties) {
@@ -25,7 +26,7 @@ public abstract class SpreadingAlphaDirtBlock extends SnowyDirtBlock {
       } else if (blockState.getFluidState().getAmount() == 8) {
          return false;
       } else {
-         int i = LightEngine.getLightBlockInto(level, state, pos, blockState, blockPos, Direction.UP, blockState.getLightBlock(level, blockPos));
+         int i = LayerLightEngine.getLightBlockInto(level, state, pos, blockState, blockPos, Direction.UP, blockState.getLightBlock(level, blockPos));
          return i < level.getMaxLightLevel();
       }
    }
