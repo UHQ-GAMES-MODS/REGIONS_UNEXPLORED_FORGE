@@ -12,12 +12,13 @@ import net.minecraft.world.level.block.WaterlilyBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.PushReaction;
 
 public class DuckweedBlock extends WaterlilyBlock {
 
     public DuckweedBlock() {
-        super(Properties.of().sound(SoundType.CORAL_BLOCK).instabreak().noCollission().noOcclusion().pushReaction(PushReaction.DESTROY).ignitedByLava()
+        super(Properties.of(Material.REPLACEABLE_PLANT).sound(SoundType.CORAL_BLOCK).instabreak().noCollission().noOcclusion()
                 .isRedstoneConductor((bs, br, bp) -> false));
         this.registerDefaultState(this.stateDefinition.any());
     }

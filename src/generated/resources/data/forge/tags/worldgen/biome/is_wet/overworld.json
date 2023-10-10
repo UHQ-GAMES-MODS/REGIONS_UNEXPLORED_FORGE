@@ -1,0 +1,28 @@
+{
+  "values": [
+    {
+      "id": "regions_unexplored:rainforest",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:sparse_rainforest",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:redwoods",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:sparse_redwoods",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:eucalyptus_forest",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:blackwood_taiga",
+      "required": false
+    }
+  ]
+}

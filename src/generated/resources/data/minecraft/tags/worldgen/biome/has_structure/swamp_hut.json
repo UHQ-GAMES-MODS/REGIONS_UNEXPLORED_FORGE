@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "regions_unexplored:bayou",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:fen",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:marsh",
+      "required": false
+    }
+  ]
+}

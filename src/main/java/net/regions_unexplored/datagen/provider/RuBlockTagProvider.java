@@ -7,14 +7,16 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
+import net.minecraftforge.common.data.ExistingFileHelper;
+import net.regions_unexplored.RegionsUnexploredMod;
 import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.data.tags.RuTags;
+import org.jetbrains.annotations.Nullable;
 
 public class RuBlockTagProvider extends BlockTagsProvider {
 
-
-    public RuBlockTagProvider(DataGenerator p_126511_) {
-        super(p_126511_);
+    public RuBlockTagProvider(DataGenerator p_126511_, @Nullable ExistingFileHelper existingFileHelper) {
+        super(p_126511_, RegionsUnexploredMod.MOD_ID, existingFileHelper);
     }
 
     @Override
@@ -1491,6 +1493,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.KAPOK_VINES.getKey())
                 .add(RuBlocks.KAPOK_VINES_PLANT.getKey())
                 .add(RuBlocks.STONE_BUD.getKey())
+                .add(RuBlocks.MEDIUM_GRASS.getKey())
                 .add(RuBlocks.TALL_BLUE_BIOSHROOM.getKey())
                 .add(RuBlocks.TALL_GREEN_BIOSHROOM.getKey())
                 .add(RuBlocks.TALL_PINK_BIOSHROOM.getKey())

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "red_dye",
+  "ingredients": [
+    {
+      "item": "regions_unexplored:poppy_bush"
+    }
+  ],
+  "result": {
+    "item": "minecraft:red_dye"
+  }
+}

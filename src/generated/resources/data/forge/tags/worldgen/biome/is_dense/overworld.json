@@ -1,0 +1,44 @@
+{
+  "values": [
+    {
+      "id": "regions_unexplored:blackwood_taiga",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:boreal_taiga",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:golden_boreal_taiga",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:redwoods",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:bamboo_forest",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:deciduous_forest",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:rainforest",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:sparse_rainforest",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:bayou",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:old_growth_bayou",
+      "required": false
+    }
+  ]
+}

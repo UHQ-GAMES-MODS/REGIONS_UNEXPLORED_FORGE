@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "orange_dye",
+  "ingredients": [
+    {
+      "item": "regions_unexplored:orange_coneflower"
+    }
+  ],
+  "result": {
+    "item": "minecraft:orange_dye"
+  }
+}

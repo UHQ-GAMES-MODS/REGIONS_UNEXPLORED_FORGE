@@ -2,6 +2,7 @@ package net.regions_unexplored.world.level.block.plant.other;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -40,6 +41,6 @@ public class BarrelCactusBlock extends BushBlock implements net.minecraftforge.c
 
     @Override
     public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
-        entity.hurt(level.damageSources().cactus(), 0.25F);
+        entity.hurt(DamageSource.CACTUS, 0.25F);
     }
 }

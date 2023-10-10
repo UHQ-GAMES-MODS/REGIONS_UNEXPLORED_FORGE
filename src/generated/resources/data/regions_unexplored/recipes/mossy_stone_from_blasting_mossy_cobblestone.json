@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 0.1,
+  "group": "mossy",
+  "ingredient": {
+    "item": "minecraft:mossy_cobblestone"
+  },
+  "result": "regions_unexplored:mossy_stone"
+}

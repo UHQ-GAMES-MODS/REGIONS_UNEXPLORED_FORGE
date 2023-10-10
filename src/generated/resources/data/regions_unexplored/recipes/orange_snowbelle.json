@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "snowbelle",
+  "ingredients": [
+    {
+      "tag": "forge:dyes/orange"
+    },
+    {
+      "tag": "regions_unexplored:snowbelle"
+    }
+  ],
+  "result": {
+    "item": "regions_unexplored:orange_snowbelle"
+  }
+}

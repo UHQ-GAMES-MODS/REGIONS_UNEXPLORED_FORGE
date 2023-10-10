@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "coarse_dirt",
+  "key": {
+    "D": {
+      "item": "regions_unexplored:peat_dirt"
+    },
+    "G": {
+      "item": "minecraft:gravel"
+    }
+  },
+  "pattern": [
+    "DG",
+    "GD"
+  ],
+  "result": {
+    "count": 4,
+    "item": "regions_unexplored:peat_coarse_dirt"
+  }
+}

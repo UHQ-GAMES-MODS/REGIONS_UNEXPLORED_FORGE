@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "shrubs",
+  "key": {
+    "#": {
+      "item": "regions_unexplored:golden_larch_sapling"
+    }
+  },
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "result": {
+    "item": "regions_unexplored:golden_larch_shrub"
+  }
+}

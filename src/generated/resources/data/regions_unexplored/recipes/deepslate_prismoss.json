@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "prismoss",
+  "key": {
+    "#": {
+      "item": "minecraft:deepslate"
+    },
+    "X": {
+      "item": "regions_unexplored:prismoss_sprout"
+    }
+  },
+  "pattern": [
+    "X",
+    "#"
+  ],
+  "result": {
+    "item": "regions_unexplored:deepslate_prismoss"
+  }
+}

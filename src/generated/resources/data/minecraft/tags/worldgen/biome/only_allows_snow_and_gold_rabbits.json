@@ -1,0 +1,40 @@
+{
+  "values": [
+    {
+      "id": "regions_unexplored:alpha_grove",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:cold_deciduous_forest",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:cold_boreal_taiga",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:icy_heights",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:frozen_pine_taiga",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:frozen_tundra",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:joshua_desert",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:saguaro_desert",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:outback",
+      "required": false
+    }
+  ]
+}

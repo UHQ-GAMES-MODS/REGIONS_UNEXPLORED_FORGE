@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.levelgen.synth.NormalNoise;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -32,6 +33,7 @@ import net.regions_unexplored.client.particle.RuParticleTypes;
 import net.regions_unexplored.config.RuCommonConfig;
 import net.regions_unexplored.config.RuPrimaryRegionConfig;
 import net.regions_unexplored.config.RuSecondaryRegionConfig;
+import net.regions_unexplored.data.noise.RuNoises;
 import net.regions_unexplored.entity.RuEntities;
 import net.regions_unexplored.item.RuItems;
 import net.regions_unexplored.item.tab.RuTabs;
@@ -55,6 +57,7 @@ public class RegionsUnexploredMod {
     public static final DeferredRegister<Feature<?>> FEATURE_REGISTRY = DeferredRegister.create(ForgeRegistries.FEATURES, MOD_ID);
     public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURE_REGISTRY = DeferredRegister.create(Registry.CONFIGURED_FEATURE_REGISTRY, MOD_ID);
     public static final DeferredRegister<PlacedFeature> PLACED_FEATURE_REGISTRY = DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, MOD_ID);
+    public static final DeferredRegister<NormalNoise.NoiseParameters> NOISE_REGISTRY = DeferredRegister.create(Registry.NOISE_REGISTRY, MOD_ID);
     //block registries
     public static final DeferredRegister<Block> BLOCK_REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, MOD_ID);
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, MOD_ID);
@@ -76,6 +79,7 @@ public class RegionsUnexploredMod {
         FEATURE_REGISTRY.register(bus);
         CONFIGURED_FEATURE_REGISTRY.register(bus);
         PLACED_FEATURE_REGISTRY.register(bus);
+        NOISE_REGISTRY.register(bus);
         BLOCK_REGISTRY.register(bus);
         BLOCK_ENTITY_REGISTRY.register(bus);
         ITEM_REGISTRY.register(bus);
@@ -86,8 +90,10 @@ public class RegionsUnexploredMod {
         registerTreeDecorators();
         registerFoliagePlacers();
 
+        RuTabs.load();
         BiomeRegistry.addBiomes();
         FeatureRegistry.addFeatures();
+        RuNoises.addNoises();
         RuBlocks.addBlocks();
         RuBlockEntities.addBlockEntities();
         RuItems.addItems();

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "green_dye",
+  "ingredients": [
+    {
+      "item": "regions_unexplored:green_snowbelle"
+    }
+  ],
+  "result": {
+    "item": "minecraft:green_dye"
+  }
+}

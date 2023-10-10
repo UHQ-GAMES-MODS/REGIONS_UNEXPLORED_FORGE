@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "bone_meal",
+  "ingredients": [
+    {
+      "item": "regions_unexplored:overgrown_bone_block"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "minecraft:bone_meal"
+  }
+}

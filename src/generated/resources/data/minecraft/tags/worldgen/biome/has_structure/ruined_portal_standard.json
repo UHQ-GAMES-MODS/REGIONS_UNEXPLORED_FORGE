@@ -1,0 +1,56 @@
+{
+  "values": [
+    {
+      "id": "regions_unexplored:poppy_fields",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:shrubland",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:grassland",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:steppe",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:prairie",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:barley_fields",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:flower_fields",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:rocky_meadow",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:redstone_caves",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:ancient_delta",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:prismachasm",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:scorching_caves",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:bioshroom_caves",
+      "required": false
+    }
+  ]
+}

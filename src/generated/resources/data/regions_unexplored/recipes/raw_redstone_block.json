@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "redstone",
+  "key": {
+    "#": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "result": {
+    "item": "regions_unexplored:raw_redstone_block"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "yellow_dye",
+  "ingredients": [
+    {
+      "item": "regions_unexplored:yellow_lupine"
+    }
+  ],
+  "result": {
+    "item": "minecraft:yellow_dye"
+  }
+}

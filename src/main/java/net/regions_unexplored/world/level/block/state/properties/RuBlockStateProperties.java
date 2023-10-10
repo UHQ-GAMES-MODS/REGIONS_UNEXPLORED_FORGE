@@ -2,6 +2,7 @@ package net.regions_unexplored.world.level.block.state.properties;
 
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
 
 public class RuBlockStateProperties {
     public static final BooleanProperty HAS_GRAVITY = BooleanProperty.create("has_gravity");
@@ -13,7 +14,7 @@ public class RuBlockStateProperties {
     public static final BooleanProperty CLOSED = BooleanProperty.create("closed");
     public static final BooleanProperty IS_BASE = BooleanProperty.create("is_base");
     public static final BooleanProperty IS_STRIPPED = BooleanProperty.create("is_stripped");
-    public static final BooleanProperty IS_STRIPPED = BooleanProperty.create("is_stripped");
+    public static final IntegerProperty FLOWER_AMOUNT = IntegerProperty.create("flower_amount", 1, 4);
     public static final EnumProperty<SaguaroCactusShape> CACTUS_SHAPE = EnumProperty.create("cactus_shape", SaguaroCactusShape.class);
     public static final EnumProperty<HangingPrismariteShape> HANGING_PRISMARITE_SHAPE = EnumProperty.create("hanging_prismarite_shape", HangingPrismariteShape.class);
     public static final EnumProperty<TallHyacinthStockShape> TALL_HYACINTH_STOCK_SHAPE = EnumProperty.create("tall_hyacinth_stock_shape", TallHyacinthStockShape.class);

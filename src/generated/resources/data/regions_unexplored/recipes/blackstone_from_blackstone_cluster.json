@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "blackstone",
+  "key": {
+    "#": {
+      "item": "regions_unexplored:blackstone_cluster"
+    }
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "item": "minecraft:blackstone"
+  }
+}

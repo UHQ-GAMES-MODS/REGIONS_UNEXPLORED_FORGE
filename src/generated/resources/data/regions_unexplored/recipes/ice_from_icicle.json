@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "ice",
+  "key": {
+    "#": {
+      "item": "regions_unexplored:icicle"
+    }
+  },
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "result": {
+    "item": "minecraft:ice"
+  }
+}

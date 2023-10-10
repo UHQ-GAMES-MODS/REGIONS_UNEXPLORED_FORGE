@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "shrubs",
+  "key": {
+    "#": {
+      "item": "minecraft:birch_sapling"
+    }
+  },
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "result": {
+    "item": "regions_unexplored:birch_shrub"
+  }
+}

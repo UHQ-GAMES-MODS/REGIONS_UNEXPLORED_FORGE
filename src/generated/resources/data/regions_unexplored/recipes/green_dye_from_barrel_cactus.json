@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "group": "cactus",
+  "ingredient": {
+    "item": "regions_unexplored:barrel_cactus"
+  },
+  "result": "minecraft:green_dye"
+}

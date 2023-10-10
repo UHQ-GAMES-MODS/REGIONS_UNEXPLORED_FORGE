@@ -1,11 +1,16 @@
 package net.regions_unexplored.datagen.provider;
 
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Sets;
+import com.mojang.logging.LogUtils;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.advancements.AdvancementProvider;
+import net.minecraft.data.DataProvider;
+import net.minecraft.data.advancements.*;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
@@ -15,14 +20,50 @@ import net.regions_unexplored.RegionsUnexploredMod;
 import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.data.worldgen.biome.RuBiomes;
 import net.regions_unexplored.item.RuItems;
+import org.slf4j.Logger;
 
+import java.io.IOException;
+import java.nio.file.Path;
+import java.util.List;
+import java.util.Set;
 import java.util.function.Consumer;
 
 public class RuAdvancementProvider extends AdvancementProvider {
+    private static final Logger LOGGER = LogUtils.getLogger();
+    private final DataGenerator.PathProvider pathProvider;
+    private final List<Consumer<Consumer<Advancement>>> tabs = ImmutableList.of(new AdvancementBuilder());
+
+    public RuAdvancementProvider(DataGenerator generatorIn, ExistingFileHelper fileHelperIn) {
+        super(generatorIn, fileHelperIn);
+        this.pathProvider = generatorIn.createPathProvider(DataGenerator.Target.DATA_PACK, "advancements");
+    }
 
 
-    public RuAdvancementProvider(DataGenerator p_123966_) {
-        super(p_123966_);
+    public void run(CachedOutput p_236158_) {
+        Set<ResourceLocation> set = Sets.newHashSet();
+        Consumer<Advancement> consumer = (p_236162_) -> {
+            if (!set.add(p_236162_.getId())) {
+                throw new IllegalStateException("Duplicate advancement " + p_236162_.getId());
+            } else {
+                Path path = this.pathProvider.json(p_236162_.getId());
+
+                try {
+                    DataProvider.saveStable(p_236158_, p_236162_.deconstruct().serializeToJson(), path);
+                } catch (IOException ioexception) {
+                    LOGGER.error("Couldn't save advancement {}", path, ioexception);
+                }
+
+            }
+        };
+
+        registerAdvancements(consumer, fileHelper);
+    }
+
+    protected void registerAdvancements(Consumer<Advancement> consumer, net.minecraftforge.common.data.ExistingFileHelper fileHelper) {
+        for(Consumer<Consumer<Advancement>> consumer1 : this.tabs) {
+            consumer1.accept(consumer);
+        }
+
     }
 
     private static class AdvancementBuilder implements Consumer<Consumer<Advancement>> {

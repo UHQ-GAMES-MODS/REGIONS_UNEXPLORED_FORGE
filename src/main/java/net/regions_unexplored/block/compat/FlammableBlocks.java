@@ -270,8 +270,6 @@ public class FlammableBlocks {
         registerFlammableBlock(RuBlocks.BAOBAB_PRESSURE_PLATE.get(), 5, 20);
         registerFlammableBlock(RuBlocks.BAOBAB_SIGN.get(), 5, 20);
         registerFlammableBlock(RuBlocks.BAOBAB_WALL_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.BAOBAB_HANGING_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.BAOBAB_WALL_HANGING_SIGN.get(), 5, 20);
         //BLACKWOOD_BLOCKS
         registerFlammableBlock(RuBlocks.BLACKWOOD_LOG.get(), 5, 5);
         registerFlammableBlock(RuBlocks.STRIPPED_BLACKWOOD_LOG.get(), 5, 5);
@@ -287,8 +285,6 @@ public class FlammableBlocks {
         registerFlammableBlock(RuBlocks.BLACKWOOD_PRESSURE_PLATE.get(), 5, 20);
         registerFlammableBlock(RuBlocks.BLACKWOOD_SIGN.get(), 5, 20);
         registerFlammableBlock(RuBlocks.BLACKWOOD_WALL_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.BLACKWOOD_HANGING_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.BLACKWOOD_WALL_HANGING_SIGN.get(), 5, 20);
         //BLUE_BIOSHROOM_BLOCKS
         registerFlammableBlock(RuBlocks.BLUE_BIOSHROOM_STEM.get(), 5, 5);
         registerFlammableBlock(RuBlocks.STRIPPED_BLUE_BIOSHROOM_STEM.get(), 5, 5);
@@ -304,8 +300,6 @@ public class FlammableBlocks {
         registerFlammableBlock(RuBlocks.BLUE_BIOSHROOM_PRESSURE_PLATE.get(), 5, 20);
         registerFlammableBlock(RuBlocks.BLUE_BIOSHROOM_SIGN.get(), 5, 20);
         registerFlammableBlock(RuBlocks.BLUE_BIOSHROOM_WALL_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.BLUE_BIOSHROOM_HANGING_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.BLUE_BIOSHROOM_WALL_HANGING_SIGN.get(), 5, 20);
         //CYPRESS_BLOCKS
         registerFlammableBlock(RuBlocks.CYPRESS_LOG.get(), 5, 5);
         registerFlammableBlock(RuBlocks.STRIPPED_CYPRESS_LOG.get(), 5, 5);
@@ -321,8 +315,6 @@ public class FlammableBlocks {
         registerFlammableBlock(RuBlocks.CYPRESS_PRESSURE_PLATE.get(), 5, 20);
         registerFlammableBlock(RuBlocks.CYPRESS_SIGN.get(), 5, 20);
         registerFlammableBlock(RuBlocks.CYPRESS_WALL_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.CYPRESS_HANGING_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.CYPRESS_WALL_HANGING_SIGN.get(), 5, 20);
         //EUCALYPTUS_BLOCKS
         registerFlammableBlock(RuBlocks.EUCALYPTUS_LOG.get(), 5, 5);
         registerFlammableBlock(RuBlocks.STRIPPED_EUCALYPTUS_LOG.get(), 5, 5);
@@ -338,8 +330,6 @@ public class FlammableBlocks {
         registerFlammableBlock(RuBlocks.EUCALYPTUS_PRESSURE_PLATE.get(), 5, 20);
         registerFlammableBlock(RuBlocks.EUCALYPTUS_SIGN.get(), 5, 20);
         registerFlammableBlock(RuBlocks.EUCALYPTUS_WALL_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.EUCALYPTUS_HANGING_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.EUCALYPTUS_WALL_HANGING_SIGN.get(), 5, 20);
         //GREEN_BIOSHROOM_BLOCKS
         registerFlammableBlock(RuBlocks.GREEN_BIOSHROOM_STEM.get(), 5, 5);
         registerFlammableBlock(RuBlocks.STRIPPED_GREEN_BIOSHROOM_STEM.get(), 5, 5);
@@ -355,8 +345,6 @@ public class FlammableBlocks {
         registerFlammableBlock(RuBlocks.GREEN_BIOSHROOM_PRESSURE_PLATE.get(), 5, 20);
         registerFlammableBlock(RuBlocks.GREEN_BIOSHROOM_SIGN.get(), 5, 20);
         registerFlammableBlock(RuBlocks.GREEN_BIOSHROOM_WALL_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.GREEN_BIOSHROOM_HANGING_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.GREEN_BIOSHROOM_WALL_HANGING_SIGN.get(), 5, 20);
         //JOSHUA_BLOCKS
         registerFlammableBlock(RuBlocks.JOSHUA_LOG.get(), 5, 5);
         registerFlammableBlock(RuBlocks.STRIPPED_JOSHUA_LOG.get(), 5, 5);
@@ -372,8 +360,6 @@ public class FlammableBlocks {
         registerFlammableBlock(RuBlocks.JOSHUA_PRESSURE_PLATE.get(), 5, 20);
         registerFlammableBlock(RuBlocks.JOSHUA_SIGN.get(), 5, 20);
         registerFlammableBlock(RuBlocks.JOSHUA_WALL_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.JOSHUA_HANGING_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.JOSHUA_WALL_HANGING_SIGN.get(), 5, 20);
         //KAPOK_BLOCKS
         registerFlammableBlock(RuBlocks.KAPOK_LOG.get(), 5, 5);
         registerFlammableBlock(RuBlocks.STRIPPED_KAPOK_LOG.get(), 5, 5);
@@ -389,8 +375,6 @@ public class FlammableBlocks {
         registerFlammableBlock(RuBlocks.KAPOK_PRESSURE_PLATE.get(), 5, 20);
         registerFlammableBlock(RuBlocks.KAPOK_SIGN.get(), 5, 20);
         registerFlammableBlock(RuBlocks.KAPOK_WALL_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.KAPOK_HANGING_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.KAPOK_WALL_HANGING_SIGN.get(), 5, 20);
         //LARCH_BLOCKS
         registerFlammableBlock(RuBlocks.LARCH_LOG.get(), 5, 5);
         registerFlammableBlock(RuBlocks.STRIPPED_LARCH_LOG.get(), 5, 5);
@@ -406,8 +390,6 @@ public class FlammableBlocks {
         registerFlammableBlock(RuBlocks.LARCH_PRESSURE_PLATE.get(), 5, 20);
         registerFlammableBlock(RuBlocks.LARCH_SIGN.get(), 5, 20);
         registerFlammableBlock(RuBlocks.LARCH_WALL_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.LARCH_HANGING_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.LARCH_WALL_HANGING_SIGN.get(), 5, 20);
         //MAGNOLIA_BLOCKS
         registerFlammableBlock(RuBlocks.MAGNOLIA_LOG.get(), 5, 5);
         registerFlammableBlock(RuBlocks.STRIPPED_MAGNOLIA_LOG.get(), 5, 5);
@@ -423,8 +405,6 @@ public class FlammableBlocks {
         registerFlammableBlock(RuBlocks.MAGNOLIA_PRESSURE_PLATE.get(), 5, 20);
         registerFlammableBlock(RuBlocks.MAGNOLIA_SIGN.get(), 5, 20);
         registerFlammableBlock(RuBlocks.MAGNOLIA_WALL_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.MAGNOLIA_HANGING_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.MAGNOLIA_WALL_HANGING_SIGN.get(), 5, 20);
         //MAPLE_BLOCKS
         registerFlammableBlock(RuBlocks.MAPLE_LOG.get(), 5, 5);
         registerFlammableBlock(RuBlocks.STRIPPED_MAPLE_LOG.get(), 5, 5);
@@ -440,8 +420,6 @@ public class FlammableBlocks {
         registerFlammableBlock(RuBlocks.MAPLE_PRESSURE_PLATE.get(), 5, 20);
         registerFlammableBlock(RuBlocks.MAPLE_SIGN.get(), 5, 20);
         registerFlammableBlock(RuBlocks.MAPLE_WALL_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.MAPLE_HANGING_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.MAPLE_WALL_HANGING_SIGN.get(), 5, 20);
         //MAUVE_BLOCKS
         registerFlammableBlock(RuBlocks.MAUVE_LOG.get(), 5, 5);
         registerFlammableBlock(RuBlocks.STRIPPED_MAUVE_LOG.get(), 5, 5);
@@ -457,8 +435,6 @@ public class FlammableBlocks {
         registerFlammableBlock(RuBlocks.MAUVE_PRESSURE_PLATE.get(), 5, 20);
         registerFlammableBlock(RuBlocks.MAUVE_SIGN.get(), 5, 20);
         registerFlammableBlock(RuBlocks.MAUVE_WALL_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.MAUVE_HANGING_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.MAUVE_WALL_HANGING_SIGN.get(), 5, 20);
         //PALM_BLOCKS
         registerFlammableBlock(RuBlocks.PALM_LOG.get(), 5, 5);
         registerFlammableBlock(RuBlocks.STRIPPED_PALM_LOG.get(), 5, 5);
@@ -474,8 +450,6 @@ public class FlammableBlocks {
         registerFlammableBlock(RuBlocks.PALM_PRESSURE_PLATE.get(), 5, 20);
         registerFlammableBlock(RuBlocks.PALM_SIGN.get(), 5, 20);
         registerFlammableBlock(RuBlocks.PALM_WALL_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.PALM_HANGING_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.PALM_WALL_HANGING_SIGN.get(), 5, 20);
         //PINE_BLOCKS
         registerFlammableBlock(RuBlocks.PINE_LOG.get(), 5, 5);
         registerFlammableBlock(RuBlocks.STRIPPED_PINE_LOG.get(), 5, 5);
@@ -491,8 +465,6 @@ public class FlammableBlocks {
         registerFlammableBlock(RuBlocks.PINE_PRESSURE_PLATE.get(), 5, 20);
         registerFlammableBlock(RuBlocks.PINE_SIGN.get(), 5, 20);
         registerFlammableBlock(RuBlocks.PINE_WALL_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.PINE_HANGING_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.PINE_WALL_HANGING_SIGN.get(), 5, 20);
         //PINK_BIOSHROOM_BLOCKS
         registerFlammableBlock(RuBlocks.PINK_BIOSHROOM_STEM.get(), 5, 5);
         registerFlammableBlock(RuBlocks.STRIPPED_PINK_BIOSHROOM_STEM.get(), 5, 5);
@@ -508,8 +480,6 @@ public class FlammableBlocks {
         registerFlammableBlock(RuBlocks.PINK_BIOSHROOM_PRESSURE_PLATE.get(), 5, 20);
         registerFlammableBlock(RuBlocks.PINK_BIOSHROOM_SIGN.get(), 5, 20);
         registerFlammableBlock(RuBlocks.PINK_BIOSHROOM_WALL_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.PINK_BIOSHROOM_HANGING_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.PINK_BIOSHROOM_WALL_HANGING_SIGN.get(), 5, 20);
         //REDWOOD_BLOCKS
         registerFlammableBlock(RuBlocks.REDWOOD_LOG.get(), 5, 5);
         registerFlammableBlock(RuBlocks.STRIPPED_REDWOOD_LOG.get(), 5, 5);
@@ -525,8 +495,6 @@ public class FlammableBlocks {
         registerFlammableBlock(RuBlocks.REDWOOD_PRESSURE_PLATE.get(), 5, 20);
         registerFlammableBlock(RuBlocks.REDWOOD_SIGN.get(), 5, 20);
         registerFlammableBlock(RuBlocks.REDWOOD_WALL_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.REDWOOD_HANGING_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.REDWOOD_WALL_HANGING_SIGN.get(), 5, 20);
         //SOCOTRA_BLOCKS
         registerFlammableBlock(RuBlocks.SOCOTRA_LOG.get(), 5, 5);
         registerFlammableBlock(RuBlocks.STRIPPED_SOCOTRA_LOG.get(), 5, 5);
@@ -542,8 +510,6 @@ public class FlammableBlocks {
         registerFlammableBlock(RuBlocks.SOCOTRA_PRESSURE_PLATE.get(), 5, 20);
         registerFlammableBlock(RuBlocks.SOCOTRA_SIGN.get(), 5, 20);
         registerFlammableBlock(RuBlocks.SOCOTRA_WALL_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.SOCOTRA_HANGING_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.SOCOTRA_WALL_HANGING_SIGN.get(), 5, 20);
         //WILLOW_BLOCKS
         registerFlammableBlock(RuBlocks.WILLOW_LOG.get(), 5, 5);
         registerFlammableBlock(RuBlocks.STRIPPED_WILLOW_LOG.get(), 5, 5);
@@ -559,8 +525,6 @@ public class FlammableBlocks {
         registerFlammableBlock(RuBlocks.WILLOW_PRESSURE_PLATE.get(), 5, 20);
         registerFlammableBlock(RuBlocks.WILLOW_SIGN.get(), 5, 20);
         registerFlammableBlock(RuBlocks.WILLOW_WALL_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.WILLOW_HANGING_SIGN.get(), 5, 20);
-        registerFlammableBlock(RuBlocks.WILLOW_WALL_HANGING_SIGN.get(), 5, 20);
 
         /*-----------------PAINTED PLANKS-----------------*/
         //PLANKS

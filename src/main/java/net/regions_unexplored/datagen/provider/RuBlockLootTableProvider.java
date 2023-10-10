@@ -490,8 +490,6 @@ public class RuBlockLootTableProvider extends BlockLoot {
         dropSelf(RuBlocks.BAOBAB_BUTTON.get());
         dropSelf(RuBlocks.BAOBAB_SIGN.get());
         add(RuBlocks.BAOBAB_WALL_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.BAOBAB_SIGN.get()));
-        dropSelf(RuBlocks.BAOBAB_HANGING_SIGN.get());
-        add(RuBlocks.BAOBAB_WALL_HANGING_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.BAOBAB_HANGING_SIGN.get()));
         //BLACKWOOD_BLOCKS
         dropSelf(RuBlocks.BLACKWOOD_LOG.get());
         dropSelf(RuBlocks.STRIPPED_BLACKWOOD_LOG.get());
@@ -508,8 +506,6 @@ public class RuBlockLootTableProvider extends BlockLoot {
         dropSelf(RuBlocks.BLACKWOOD_BUTTON.get());
         dropSelf(RuBlocks.BLACKWOOD_SIGN.get());
         add(RuBlocks.BLACKWOOD_WALL_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.BLACKWOOD_SIGN.get()));
-        dropSelf(RuBlocks.BLACKWOOD_HANGING_SIGN.get());
-        add(RuBlocks.BLACKWOOD_WALL_HANGING_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.BLACKWOOD_HANGING_SIGN.get()));
         //BLUE_BIOSHROOM_BLOCKS
         dropSelf(RuBlocks.BLUE_BIOSHROOM_STEM.get());
         dropSelf(RuBlocks.STRIPPED_BLUE_BIOSHROOM_STEM.get());
@@ -526,8 +522,6 @@ public class RuBlockLootTableProvider extends BlockLoot {
         dropSelf(RuBlocks.BLUE_BIOSHROOM_BUTTON.get());
         dropSelf(RuBlocks.BLUE_BIOSHROOM_SIGN.get());
         add(RuBlocks.BLUE_BIOSHROOM_WALL_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.BLUE_BIOSHROOM_SIGN.get()));
-        dropSelf(RuBlocks.BLUE_BIOSHROOM_HANGING_SIGN.get());
-        add(RuBlocks.BLUE_BIOSHROOM_WALL_HANGING_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.BLUE_BIOSHROOM_HANGING_SIGN.get()));
         //BRIMWOOD_BLOCKS
         dropSelf(RuBlocks.BRIMWOOD_LOG.get());
         add(RuBlocks.BRIMWOOD_LOG_MAGMA.get(), (block) -> createSingleItemTableWithSilkTouch(block, RuBlocks.BRIMWOOD_LOG.get()));
@@ -545,8 +539,6 @@ public class RuBlockLootTableProvider extends BlockLoot {
         dropSelf(RuBlocks.BRIMWOOD_BUTTON.get());
         dropSelf(RuBlocks.BRIMWOOD_SIGN.get());
         add(RuBlocks.BRIMWOOD_WALL_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.BRIMWOOD_SIGN.get()));
-        dropSelf(RuBlocks.BRIMWOOD_HANGING_SIGN.get());
-        add(RuBlocks.BRIMWOOD_WALL_HANGING_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.BRIMWOOD_HANGING_SIGN.get()));
         //COBALT_BLOCKS
         dropSelf(RuBlocks.COBALT_LOG.get());
         dropSelf(RuBlocks.STRIPPED_COBALT_LOG.get());
@@ -563,8 +555,6 @@ public class RuBlockLootTableProvider extends BlockLoot {
         dropSelf(RuBlocks.COBALT_BUTTON.get());
         dropSelf(RuBlocks.COBALT_SIGN.get());
         add(RuBlocks.COBALT_WALL_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.COBALT_SIGN.get()));
-        dropSelf(RuBlocks.COBALT_HANGING_SIGN.get());
-        add(RuBlocks.COBALT_WALL_HANGING_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.COBALT_HANGING_SIGN.get()));
         //CYPRESS_BLOCKS
         dropSelf(RuBlocks.CYPRESS_LOG.get());
         dropSelf(RuBlocks.STRIPPED_CYPRESS_LOG.get());
@@ -581,8 +571,6 @@ public class RuBlockLootTableProvider extends BlockLoot {
         dropSelf(RuBlocks.CYPRESS_BUTTON.get());
         dropSelf(RuBlocks.CYPRESS_SIGN.get());
         add(RuBlocks.CYPRESS_WALL_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.CYPRESS_SIGN.get()));
-        dropSelf(RuBlocks.CYPRESS_HANGING_SIGN.get());
-        add(RuBlocks.CYPRESS_WALL_HANGING_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.CYPRESS_HANGING_SIGN.get()));
         //DEAD_BLOCKS
         dropSelf(RuBlocks.DEAD_LOG.get());
         dropSelf(RuBlocks.STRIPPED_DEAD_LOG.get());
@@ -599,8 +587,6 @@ public class RuBlockLootTableProvider extends BlockLoot {
         dropSelf(RuBlocks.DEAD_BUTTON.get());
         dropSelf(RuBlocks.DEAD_SIGN.get());
         add(RuBlocks.DEAD_WALL_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.DEAD_SIGN.get()));
-        dropSelf(RuBlocks.DEAD_HANGING_SIGN.get());
-        add(RuBlocks.DEAD_WALL_HANGING_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.DEAD_HANGING_SIGN.get()));
         //EUCALYPTUS_BLOCKS
         dropSelf(RuBlocks.EUCALYPTUS_LOG.get());
         dropSelf(RuBlocks.STRIPPED_EUCALYPTUS_LOG.get());
@@ -617,8 +603,6 @@ public class RuBlockLootTableProvider extends BlockLoot {
         dropSelf(RuBlocks.EUCALYPTUS_BUTTON.get());
         dropSelf(RuBlocks.EUCALYPTUS_SIGN.get());
         add(RuBlocks.EUCALYPTUS_WALL_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.EUCALYPTUS_SIGN.get()));
-        dropSelf(RuBlocks.EUCALYPTUS_HANGING_SIGN.get());
-        add(RuBlocks.EUCALYPTUS_WALL_HANGING_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.EUCALYPTUS_HANGING_SIGN.get()));
         //GREEN_BIOSHROOM_BLOCKS
         dropSelf(RuBlocks.GREEN_BIOSHROOM_STEM.get());
         dropSelf(RuBlocks.STRIPPED_GREEN_BIOSHROOM_STEM.get());
@@ -635,8 +619,6 @@ public class RuBlockLootTableProvider extends BlockLoot {
         dropSelf(RuBlocks.GREEN_BIOSHROOM_BUTTON.get());
         dropSelf(RuBlocks.GREEN_BIOSHROOM_SIGN.get());
         add(RuBlocks.GREEN_BIOSHROOM_WALL_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.GREEN_BIOSHROOM_SIGN.get()));
-        dropSelf(RuBlocks.GREEN_BIOSHROOM_HANGING_SIGN.get());
-        add(RuBlocks.GREEN_BIOSHROOM_WALL_HANGING_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.GREEN_BIOSHROOM_HANGING_SIGN.get()));
         //JOSHUA_BLOCKS
         dropSelf(RuBlocks.JOSHUA_LOG.get());
         dropSelf(RuBlocks.STRIPPED_JOSHUA_LOG.get());
@@ -653,8 +635,6 @@ public class RuBlockLootTableProvider extends BlockLoot {
         dropSelf(RuBlocks.JOSHUA_BUTTON.get());
         dropSelf(RuBlocks.JOSHUA_SIGN.get());
         add(RuBlocks.JOSHUA_WALL_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.JOSHUA_SIGN.get()));
-        dropSelf(RuBlocks.JOSHUA_HANGING_SIGN.get());
-        add(RuBlocks.JOSHUA_WALL_HANGING_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.JOSHUA_HANGING_SIGN.get()));
         //KAPOK_BLOCKS
         dropSelf(RuBlocks.KAPOK_LOG.get());
         dropSelf(RuBlocks.STRIPPED_KAPOK_LOG.get());
@@ -671,8 +651,6 @@ public class RuBlockLootTableProvider extends BlockLoot {
         dropSelf(RuBlocks.KAPOK_BUTTON.get());
         dropSelf(RuBlocks.KAPOK_SIGN.get());
         add(RuBlocks.KAPOK_WALL_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.KAPOK_SIGN.get()));
-        dropSelf(RuBlocks.KAPOK_HANGING_SIGN.get());
-        add(RuBlocks.KAPOK_WALL_HANGING_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.KAPOK_HANGING_SIGN.get()));
         //LARCH_BLOCKS
         dropSelf(RuBlocks.LARCH_LOG.get());
         dropSelf(RuBlocks.STRIPPED_LARCH_LOG.get());
@@ -689,8 +667,6 @@ public class RuBlockLootTableProvider extends BlockLoot {
         dropSelf(RuBlocks.LARCH_BUTTON.get());
         dropSelf(RuBlocks.LARCH_SIGN.get());
         add(RuBlocks.LARCH_WALL_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.LARCH_SIGN.get()));
-        dropSelf(RuBlocks.LARCH_HANGING_SIGN.get());
-        add(RuBlocks.LARCH_WALL_HANGING_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.LARCH_HANGING_SIGN.get()));
         //MAGNOLIA_BLOCKS
         dropSelf(RuBlocks.MAGNOLIA_LOG.get());
         dropSelf(RuBlocks.STRIPPED_MAGNOLIA_LOG.get());
@@ -707,8 +683,6 @@ public class RuBlockLootTableProvider extends BlockLoot {
         dropSelf(RuBlocks.MAGNOLIA_BUTTON.get());
         dropSelf(RuBlocks.MAGNOLIA_SIGN.get());
         add(RuBlocks.MAGNOLIA_WALL_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.MAGNOLIA_SIGN.get()));
-        dropSelf(RuBlocks.MAGNOLIA_HANGING_SIGN.get());
-        add(RuBlocks.MAGNOLIA_WALL_HANGING_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.MAGNOLIA_HANGING_SIGN.get()));
         //MAPLE_BLOCKS
         dropSelf(RuBlocks.MAPLE_LOG.get());
         dropSelf(RuBlocks.STRIPPED_MAPLE_LOG.get());
@@ -725,8 +699,6 @@ public class RuBlockLootTableProvider extends BlockLoot {
         dropSelf(RuBlocks.MAPLE_BUTTON.get());
         dropSelf(RuBlocks.MAPLE_SIGN.get());
         add(RuBlocks.MAPLE_WALL_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.MAPLE_SIGN.get()));
-        dropSelf(RuBlocks.MAPLE_HANGING_SIGN.get());
-        add(RuBlocks.MAPLE_WALL_HANGING_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.MAPLE_HANGING_SIGN.get()));
         //MAUVE_BLOCKS
         dropSelf(RuBlocks.MAUVE_LOG.get());
         dropSelf(RuBlocks.STRIPPED_MAUVE_LOG.get());
@@ -743,8 +715,6 @@ public class RuBlockLootTableProvider extends BlockLoot {
         dropSelf(RuBlocks.MAUVE_BUTTON.get());
         dropSelf(RuBlocks.MAUVE_SIGN.get());
         add(RuBlocks.MAUVE_WALL_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.MAUVE_SIGN.get()));
-        dropSelf(RuBlocks.MAUVE_HANGING_SIGN.get());
-        add(RuBlocks.MAUVE_WALL_HANGING_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.MAUVE_HANGING_SIGN.get()));
         //PALM_BLOCKS
         dropSelf(RuBlocks.PALM_LOG.get());
         dropSelf(RuBlocks.STRIPPED_PALM_LOG.get());
@@ -761,8 +731,6 @@ public class RuBlockLootTableProvider extends BlockLoot {
         dropSelf(RuBlocks.PALM_BUTTON.get());
         dropSelf(RuBlocks.PALM_SIGN.get());
         add(RuBlocks.PALM_WALL_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.PALM_SIGN.get()));
-        dropSelf(RuBlocks.PALM_HANGING_SIGN.get());
-        add(RuBlocks.PALM_WALL_HANGING_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.PALM_HANGING_SIGN.get()));
         //PINE_BLOCKS
         dropSelf(RuBlocks.PINE_LOG.get());
         dropSelf(RuBlocks.STRIPPED_PINE_LOG.get());
@@ -779,8 +747,6 @@ public class RuBlockLootTableProvider extends BlockLoot {
         dropSelf(RuBlocks.PINE_BUTTON.get());
         dropSelf(RuBlocks.PINE_SIGN.get());
         add(RuBlocks.PINE_WALL_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.PINE_SIGN.get()));
-        dropSelf(RuBlocks.PINE_HANGING_SIGN.get());
-        add(RuBlocks.PINE_WALL_HANGING_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.PINE_HANGING_SIGN.get()));
         //PINK_BIOSHROOM_BLOCKS
         dropSelf(RuBlocks.PINK_BIOSHROOM_STEM.get());
         dropSelf(RuBlocks.STRIPPED_PINK_BIOSHROOM_STEM.get());
@@ -797,8 +763,6 @@ public class RuBlockLootTableProvider extends BlockLoot {
         dropSelf(RuBlocks.PINK_BIOSHROOM_BUTTON.get());
         dropSelf(RuBlocks.PINK_BIOSHROOM_SIGN.get());
         add(RuBlocks.PINK_BIOSHROOM_WALL_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.PINK_BIOSHROOM_SIGN.get()));
-        dropSelf(RuBlocks.PINK_BIOSHROOM_HANGING_SIGN.get());
-        add(RuBlocks.PINK_BIOSHROOM_WALL_HANGING_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.PINK_BIOSHROOM_HANGING_SIGN.get()));
         //REDWOOD_BLOCKS
         dropSelf(RuBlocks.REDWOOD_LOG.get());
         dropSelf(RuBlocks.STRIPPED_REDWOOD_LOG.get());
@@ -815,8 +779,6 @@ public class RuBlockLootTableProvider extends BlockLoot {
         dropSelf(RuBlocks.REDWOOD_BUTTON.get());
         dropSelf(RuBlocks.REDWOOD_SIGN.get());
         add(RuBlocks.REDWOOD_WALL_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.REDWOOD_SIGN.get()));
-        dropSelf(RuBlocks.REDWOOD_HANGING_SIGN.get());
-        add(RuBlocks.REDWOOD_WALL_HANGING_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.REDWOOD_HANGING_SIGN.get()));
         //SOCOTRA_BLOCKS
         dropSelf(RuBlocks.SOCOTRA_LOG.get());
         dropSelf(RuBlocks.STRIPPED_SOCOTRA_LOG.get());
@@ -833,8 +795,6 @@ public class RuBlockLootTableProvider extends BlockLoot {
         dropSelf(RuBlocks.SOCOTRA_BUTTON.get());
         dropSelf(RuBlocks.SOCOTRA_SIGN.get());
         add(RuBlocks.SOCOTRA_WALL_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.SOCOTRA_SIGN.get()));
-        dropSelf(RuBlocks.SOCOTRA_HANGING_SIGN.get());
-        add(RuBlocks.SOCOTRA_WALL_HANGING_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.SOCOTRA_HANGING_SIGN.get()));
         //WILLOW_BLOCKS
         dropSelf(RuBlocks.WILLOW_LOG.get());
         dropSelf(RuBlocks.STRIPPED_WILLOW_LOG.get());
@@ -851,8 +811,6 @@ public class RuBlockLootTableProvider extends BlockLoot {
         dropSelf(RuBlocks.WILLOW_BUTTON.get());
         dropSelf(RuBlocks.WILLOW_SIGN.get());
         add(RuBlocks.WILLOW_WALL_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.WILLOW_SIGN.get()));
-        dropSelf(RuBlocks.WILLOW_HANGING_SIGN.get());
-        add(RuBlocks.WILLOW_WALL_HANGING_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.WILLOW_HANGING_SIGN.get()));
         //YELLOW_BIOSHROOM_BLOCKS
         dropSelf(RuBlocks.YELLOW_BIOSHROOM_STEM.get());
         dropSelf(RuBlocks.STRIPPED_YELLOW_BIOSHROOM_STEM.get());
@@ -869,8 +827,6 @@ public class RuBlockLootTableProvider extends BlockLoot {
         dropSelf(RuBlocks.YELLOW_BIOSHROOM_BUTTON.get());
         dropSelf(RuBlocks.YELLOW_BIOSHROOM_SIGN.get());
         add(RuBlocks.YELLOW_BIOSHROOM_WALL_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.YELLOW_BIOSHROOM_SIGN.get()));
-        dropSelf(RuBlocks.YELLOW_BIOSHROOM_HANGING_SIGN.get());
-        add(RuBlocks.YELLOW_BIOSHROOM_WALL_HANGING_SIGN.get(), (block) -> createSingleItemTable(RuBlocks.YELLOW_BIOSHROOM_HANGING_SIGN.get()));
 
         /*-----------------PAINTED PLANKS-----------------*/
         //PLANKS

@@ -18,12 +18,13 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.regions_unexplored.world.level.block.state.properties.RuBlockStateProperties;
 
 public class GroundCoverBlock extends BushBlock implements BonemealableBlock {
    public static final int MIN_FLOWERS = 1;
    public static final int MAX_FLOWERS = 4;
    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
-   public static final IntegerProperty AMOUNT = BlockStateProperties.FLOWER_AMOUNT;
+   public static final IntegerProperty AMOUNT = RuBlockStateProperties.FLOWER_AMOUNT;
 
    public GroundCoverBlock(BlockBehaviour.Properties p_273335_) {
       super(p_273335_);

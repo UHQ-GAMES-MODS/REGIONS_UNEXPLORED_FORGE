@@ -9,11 +9,12 @@ import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.PushReaction;
 
 public class NetherSaplingBlock extends SaplingBlock {
     public NetherSaplingBlock(AbstractTreeGrower tree) {
-        super(tree, Properties.of().pushReaction(PushReaction.DESTROY).noCollission().instabreak().sound(SoundType.SCULK_VEIN).randomTicks().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true));
+        super(tree, Properties.of(Material.PLANT).noCollission().instabreak().sound(SoundType.SCULK_VEIN).randomTicks().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true));
     }
 
     @Override

@@ -2,6 +2,7 @@ package net.regions_unexplored.world.level.block.plant.aquatic;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -45,7 +46,7 @@ public class GiantLilyBlock extends HorizontalDirectionalBlock implements net.mi
             if (entity.isSuppressingBounce()) {
                 super.fallOn(level, state, pos, entity, f);
             } else {
-                entity.causeFallDamage(f, 0.0F, level.damageSources().fall());
+                entity.causeFallDamage(f, 0.0F, DamageSource.FALL);
             }
         }
     }

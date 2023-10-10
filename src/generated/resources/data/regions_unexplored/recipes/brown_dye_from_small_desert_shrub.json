@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "brown_dye",
+  "ingredients": [
+    {
+      "item": "regions_unexplored:small_desert_shrub"
+    }
+  ],
+  "result": {
+    "item": "minecraft:brown_dye"
+  }
+}

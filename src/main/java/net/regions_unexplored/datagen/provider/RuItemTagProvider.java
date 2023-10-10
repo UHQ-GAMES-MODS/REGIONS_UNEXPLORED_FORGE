@@ -8,19 +8,24 @@ import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagBuilder;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.regions_unexplored.RegionsUnexploredMod;
 import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.data.tags.RuTags;
 import net.regions_unexplored.item.RuItems;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.function.Function;
+
 public class RuItemTagProvider extends ItemTagsProvider {
 
 
-    public RuItemTagProvider(DataGenerator p_126530_, BlockTagsProvider p_126531_) {
-        super(p_126530_, p_126531_);
+    public RuItemTagProvider(DataGenerator p_126530_, BlockTagsProvider p_126531_, @Nullable ExistingFileHelper existingFileHelper) {
+        super(p_126530_, p_126531_, RegionsUnexploredMod.MOD_ID, existingFileHelper);
     }
 
     @Override

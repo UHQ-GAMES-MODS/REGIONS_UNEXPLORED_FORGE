@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "saplings",
+  "ingredients": [
+    {
+      "item": "regions_unexplored:dark_oak_shrub"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "minecraft:dark_oak_sapling"
+  }
+}

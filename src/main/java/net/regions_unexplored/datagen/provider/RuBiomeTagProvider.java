@@ -6,17 +6,19 @@ import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.TagKey;
+import net.minecraftforge.common.data.ExistingFileHelper;
+import net.regions_unexplored.RegionsUnexploredMod;
 import net.regions_unexplored.data.worldgen.biome.RuBiomes;
+import org.jetbrains.annotations.Nullable;
 
 public class RuBiomeTagProvider extends BiomeTagsProvider {
-    public RuBiomeTagProvider(DataGenerator p_211094_) {
-        super(p_211094_);
+
+    public RuBiomeTagProvider(DataGenerator p_211094_, @Nullable ExistingFileHelper existingFileHelper) {
+        super(p_211094_, RegionsUnexploredMod.MOD_ID, existingFileHelper);
     }
 
     public void addTags() {
-        addStructureTags();
-        addForgeTags();
-        this.tag(BiomeTags.ALLOWS_SURFACE_SLIME_SPAWNS)
+        tag(BiomeTags.ALLOWS_SURFACE_SLIME_SPAWNS)
                 .addOptional(RuBiomes.BAYOU.location())
                 .addOptional(RuBiomes.FEN.location())
                 .addOptional(RuBiomes.FUNGAL_FEN.location())
@@ -310,6 +312,8 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.ALPHA_GROVE.location())
                 .addOptional(RuBiomes.ASHEN_WOODLAND.location())
         ;
+        addStructureTags();
+        addForgeTags();
     }
 
     public void addStructureTags() {

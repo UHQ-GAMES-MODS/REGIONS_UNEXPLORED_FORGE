@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "bioshrooms",
+  "key": {
+    "#": {
+      "item": "regions_unexplored:yellow_bioshroom"
+    }
+  },
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "result": {
+    "item": "regions_unexplored:tall_yellow_bioshroom"
+  }
+}

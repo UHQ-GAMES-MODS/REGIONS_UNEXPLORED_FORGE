@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "chalk",
+  "key": {
+    "#": {
+      "item": "regions_unexplored:chalk"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "regions_unexplored:chalk_slab"
+  }
+}

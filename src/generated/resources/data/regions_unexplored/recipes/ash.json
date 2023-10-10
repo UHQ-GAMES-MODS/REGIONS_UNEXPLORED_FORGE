@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "ash",
+  "key": {
+    "#": {
+      "item": "minecraft:gunpowder"
+    }
+  },
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "result": {
+    "item": "regions_unexplored:ash"
+  }
+}

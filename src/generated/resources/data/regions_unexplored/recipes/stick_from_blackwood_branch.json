@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "stick",
+  "ingredients": [
+    {
+      "item": "regions_unexplored:blackwood_branch"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "minecraft:stick"
+  }
+}

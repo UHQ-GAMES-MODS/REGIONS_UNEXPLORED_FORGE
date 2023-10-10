@@ -1,0 +1,268 @@
+{
+  "values": [
+    {
+      "id": "regions_unexplored:autumnal_maple_forest",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:bamboo_forest",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:magnolia_woodland",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:deciduous_forest",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:maple_forest",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:mauve_hills",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:orchard",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:silver_birch_forest",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:temperate_grove",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:willow_forest",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:blackwood_taiga",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:boreal_taiga",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:golden_boreal_taiga",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:pine_taiga",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:redwoods",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:sparse_redwoods",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:barley_fields",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:flower_fields",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:grassland",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:clover_plains",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:rocky_meadow",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:poppy_fields",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:prairie",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:pumpkin_fields",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:shrubland",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:bayou",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:eucalyptus_forest",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:fen",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:marsh",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:fungal_fen",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:old_growth_bayou",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:sparse_rainforest",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:rainforest",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:baobab_savanna",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:dry_bushland",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:joshua_desert",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:outback",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:saguaro_desert",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:steppe",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:arid_mountains",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:highland_fields",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:mountains",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:pine_slopes",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:towering_cliffs",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:chalk_cliffs",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:grassy_beach",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:gravel_beach",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:alpha_grove",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:cold_river",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:hyacinth_deeps",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:muddy_river",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:tropical_river",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:rocky_reef",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:ashen_woodland",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:tropics",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:cold_boreal_taiga",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:cold_deciduous_forest",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:frozen_pine_taiga",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:frozen_tundra",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:icy_heights",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:spires",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:bioshroom_caves",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:ancient_delta",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:prismachasm",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:redstone_caves",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:scorching_caves",
+      "required": false
+    }
+  ]
+}

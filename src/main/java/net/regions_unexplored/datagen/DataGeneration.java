@@ -1,15 +1,13 @@
 package net.regions_unexplored.datagen;
 
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.regions_unexplored.RegionsUnexploredMod;
-import net.regions_unexplored.datagen.provider.RuAdvancementProvider;
-import net.regions_unexplored.datagen.provider.RuBiomeTagProvider;
-import net.regions_unexplored.datagen.provider.RuBlockModelProvider;
-import net.regions_unexplored.datagen.provider.RuRecipeProvider;
+import net.regions_unexplored.datagen.provider.*;
 
 @Mod.EventBusSubscriber( modid = RegionsUnexploredMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DataGeneration {
@@ -18,10 +16,14 @@ public class DataGeneration {
         DataGenerator generator = event.getGenerator();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
-        generator.addProvider(true, new RuAdvancementProvider(generator));
+        generator.addProvider(true, new RuAdvancementProvider(generator, existingFileHelper));
         generator.addProvider(true, new RuRecipeProvider(generator));
         generator.addProvider(true, new RuLootTableProvider(generator));
         generator.addProvider(true, new RuBlockModelProvider(generator, existingFileHelper));
-        generator.addProvider(true, new RuBiomeTagProvider(generator));
+        generator.addProvider(true, new RuBiomeTagProvider(generator, existingFileHelper));
+        BlockTagsProvider blockTagsProvider = new RuBlockTagProvider(generator, existingFileHelper);
+        generator.addProvider(true, blockTagsProvider);
+        generator.addProvider(true, new RuItemTagProvider(generator, blockTagsProvider, existingFileHelper));
+        generator.addProvider(true, new RuLanguageProvider(generator));
     }
 }

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "gray_dye",
+  "ingredients": [
+    {
+      "item": "regions_unexplored:gray_snowbelle"
+    }
+  ],
+  "result": {
+    "item": "minecraft:gray_dye"
+  }
+}

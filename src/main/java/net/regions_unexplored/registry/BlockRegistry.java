@@ -3,6 +3,7 @@ package net.regions_unexplored.registry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -23,23 +24,23 @@ import java.util.function.Supplier;
 
 public class BlockRegistry {
     //Register default blocks and items
-    public static <T extends Block> RegistryObject<T> registerDefaultBlock(String name, Supplier<T> block) {
+    public static <T extends Block> RegistryObject<T> registerDefaultBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = RegionsUnexploredMod.BLOCK_REGISTRY.register(name, block);
-        ItemRegistry.registerDefaultBlockItem(name, toReturn);
+        ItemRegistry.registerDefaultBlockItem(name, toReturn, tab);
         return toReturn;
     }
 
     //Register Duckweed block and item
-    public static <T extends Block> RegistryObject<T> registerDuckweedBlock(String name, Supplier<T> block) {
+    public static <T extends Block> RegistryObject<T> registerDuckweedBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = RegionsUnexploredMod.BLOCK_REGISTRY.register(name, block);
-        ItemRegistry.registerDuckweedItem(name, toReturn);
+        ItemRegistry.registerDuckweedItem(name, toReturn, tab);
         return toReturn;
     }
     
     //Register Lily block and item
-    public static <T extends Block> RegistryObject<T> registerLilyBlock(String name, Supplier<T> block) {
+    public static <T extends Block> RegistryObject<T> registerLilyBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = RegionsUnexploredMod.BLOCK_REGISTRY.register(name, block);
-        ItemRegistry.registerLilyItem(name, toReturn);
+        ItemRegistry.registerLilyItem(name, toReturn, tab);
         return toReturn;
     }
 

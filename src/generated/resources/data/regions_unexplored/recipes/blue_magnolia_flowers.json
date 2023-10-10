@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "multiface_flowers",
+  "key": {
+    "#": {
+      "item": "regions_unexplored:blue_magnolia_leaves"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "regions_unexplored:blue_magnolia_flowers"
+  }
+}

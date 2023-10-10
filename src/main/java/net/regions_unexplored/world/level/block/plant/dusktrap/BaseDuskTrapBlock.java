@@ -11,6 +11,7 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.BasePressurePlateBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DoublePlantBlock;
 import net.minecraft.world.level.block.SoundType;
@@ -66,7 +67,7 @@ public abstract class BaseDuskTrapBlock extends DoublePlantBlock {
       }
       if (!level.isClientSide) {
          if(entity.isAlive()){
-            if(isInside)entity.hurt(level.damageSources().source(RuDamageTypes.DUSK_TRAP), 3.0F);
+            if(isInside)entity.hurt(RuDamageTypes.DUSK_TRAP, 3.0F);
          }
          entity.makeStuckInBlock(state, new Vec3(0.4D, 0.1D, 0.4D));
          int i = this.getSignalForState(state);
@@ -98,10 +99,10 @@ public abstract class BaseDuskTrapBlock extends DoublePlantBlock {
       }
 
       if (!flag1 && flag) {
-         level.playSound((Player)null, pos, SoundType.TWISTING_VINES.getBreakSound(), SoundSource.BLOCKS);
+         level.playSound((Player)null, pos, SoundType.TWISTING_VINES.getBreakSound(), SoundSource.BLOCKS, 0.3F, 0.6F);
          level.gameEvent(entity, GameEvent.BLOCK_DEACTIVATE, pos);
       } else if (flag1 && !flag) {
-         level.playSound((Player)null, pos, SoundType.TWISTING_VINES.getPlaceSound(), SoundSource.BLOCKS);
+         level.playSound((Player)null, pos, SoundType.TWISTING_VINES.getPlaceSound(), SoundSource.BLOCKS, 0.3F, 0.6F);
          level.gameEvent(entity, GameEvent.BLOCK_ACTIVATE, pos);
       }
 

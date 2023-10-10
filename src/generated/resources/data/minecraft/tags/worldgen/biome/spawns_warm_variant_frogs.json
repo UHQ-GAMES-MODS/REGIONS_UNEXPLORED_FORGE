@@ -1,0 +1,36 @@
+{
+  "values": [
+    {
+      "id": "regions_unexplored:joshua_desert",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:saguaro_desert",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:outback",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:tropics",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:bamboo_forest",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:old_growth_bayou",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:marsh",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:fungal_fen",
+      "required": false
+    }
+  ]
+}

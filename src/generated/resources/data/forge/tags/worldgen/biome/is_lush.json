@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "regions_unexplored:ancient_delta",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:bioshroom_caves",
+      "required": false
+    }
+  ]
+}
