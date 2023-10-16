@@ -1,5 +1,6 @@
 package net.regions_unexplored.block;
 
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;

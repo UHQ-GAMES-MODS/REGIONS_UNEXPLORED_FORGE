@@ -5,8 +5,7 @@
   "minVersion": "0.8",
   "refmap": "ru.refmap.json",
   "mixins": [
-    "TrunkPlacerDirtMixin",
-    "EatBlockGoalMixin"
+    "TrunkPlacerDirtMixin"
   ],
   "client": [
   ],

@@ -1,6 +1,8 @@
 package net.regions_unexplored;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.core.Registry;
@@ -110,6 +112,31 @@ public class RegionsUnexploredMod {
 
     //set up client side features
     public void clientSetup(final FMLClientSetupEvent event) {
+        ItemBlockRenderTypes.setRenderLayer(RuBlocks.ACACIA_BRANCH.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(RuBlocks.BAOBAB_BRANCH.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(RuBlocks.BIRCH_BRANCH.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(RuBlocks.BLACKWOOD_BRANCH.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(RuBlocks.MAGNOLIA_BRANCH.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(RuBlocks.CYPRESS_BRANCH.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(RuBlocks.CHERRY_BRANCH.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(RuBlocks.DARK_OAK_BRANCH.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(RuBlocks.DEAD_BRANCH.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(RuBlocks.EUCALYPTUS_BRANCH.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(RuBlocks.JOSHUA_BEARD.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(RuBlocks.JUNGLE_BRANCH.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(RuBlocks.KAPOK_BRANCH.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(RuBlocks.LARCH_BRANCH.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(RuBlocks.MANGROVE_BRANCH.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(RuBlocks.MAPLE_BRANCH.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(RuBlocks.MAUVE_BRANCH.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(RuBlocks.OAK_BRANCH.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(RuBlocks.PALM_BEARD.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(RuBlocks.PINE_BRANCH.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(RuBlocks.REDWOOD_BRANCH.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(RuBlocks.SILVER_BIRCH_BRANCH.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(RuBlocks.SOCOTRA_BRANCH.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(RuBlocks.SPRUCE_BRANCH.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(RuBlocks.WILLOW_BRANCH.get(), RenderType.cutout());
         WoodTypeRegistry.addWoodTypes();
         WoodTypeRegistry.addSheets();
         BlockEntityRenderers.register(RuBlockEntities.SIGN_BLOCK_ENTITIES.get(), SignRenderer::new);

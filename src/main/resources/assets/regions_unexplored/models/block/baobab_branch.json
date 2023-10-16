@@ -4,6 +4,5 @@
     "log": "regions_unexplored:block/baobab_log",
     "branch": "regions_unexplored:block/baobab_branch",
     "particle": "regions_unexplored:block/baobab_log"
-  },
-  "render_type": "cutout"
+  }
 }
