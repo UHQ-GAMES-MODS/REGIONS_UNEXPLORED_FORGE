@@ -372,6 +372,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.REDWOOD_FENCE_GATE.getKey())
                 .add(RuBlocks.MAGNOLIA_FENCE_GATE.getKey())
                 .add(RuBlocks.WILLOW_FENCE_GATE.getKey())
+                .add(RuBlocks.YELLOW_BIOSHROOM_FENCE_GATE.getKey())
         ;
         //this.tag(BlockTags.FENCES);
         //this.tag(BlockTags.FIRE);
@@ -718,6 +719,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.REDWOOD_PLANKS.getKey())
                 .add(RuBlocks.SOCOTRA_PLANKS.getKey())
                 .add(RuBlocks.WILLOW_PLANKS.getKey())
+                .add(RuBlocks.YELLOW_BIOSHROOM_PLANKS.getKey())
                 .add(RuBlocks.LIGHT_GRAY_PAINTED_PLANKS.getKey())
                 .add(RuBlocks.BLACK_PAINTED_PLANKS.getKey())
                 .add(RuBlocks.LIGHT_BLUE_PAINTED_PLANKS.getKey())
@@ -950,6 +952,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.REDWOOD_HANGING_SIGN.getKey())
                 .add(RuBlocks.SOCOTRA_HANGING_SIGN.getKey())
                 .add(RuBlocks.WILLOW_HANGING_SIGN.getKey())
+                .add(RuBlocks.YELLOW_BIOSHROOM_HANGING_SIGN.getKey())
         ;
         this.tag(BlockTags.WALL_HANGING_SIGNS)
                 .add(RuBlocks.BAOBAB_WALL_HANGING_SIGN.getKey())
@@ -972,6 +975,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.REDWOOD_WALL_HANGING_SIGN.getKey())
                 .add(RuBlocks.SOCOTRA_WALL_HANGING_SIGN.getKey())
                 .add(RuBlocks.WILLOW_WALL_HANGING_SIGN.getKey())
+                .add(RuBlocks.YELLOW_BIOSHROOM_WALL_HANGING_SIGN.getKey())
         ;
         this.tag(BlockTags.STANDING_SIGNS)
                 .add(RuBlocks.BAOBAB_SIGN.getKey())
@@ -994,6 +998,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.REDWOOD_SIGN.getKey())
                 .add(RuBlocks.SOCOTRA_SIGN.getKey())
                 .add(RuBlocks.WILLOW_SIGN.getKey())
+                .add(RuBlocks.YELLOW_BIOSHROOM_SIGN.getKey())
         ;
         this.tag(BlockTags.WALL_SIGNS)
                 .add(RuBlocks.BAOBAB_WALL_SIGN.getKey())
@@ -1016,6 +1021,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.REDWOOD_WALL_SIGN.getKey())
                 .add(RuBlocks.SOCOTRA_WALL_SIGN.getKey())
                 .add(RuBlocks.WILLOW_WALL_SIGN.getKey())
+                .add(RuBlocks.YELLOW_BIOSHROOM_WALL_SIGN.getKey())
         ;
         //this.tag(BlockTags.STONE_BRICKS);
         //this.tag(BlockTags.STONE_ORE_REPLACEABLES);
@@ -1080,6 +1086,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.REDWOOD_BUTTON.getKey())
                 .add(RuBlocks.SOCOTRA_BUTTON.getKey())
                 .add(RuBlocks.WILLOW_BUTTON.getKey())
+                .add(RuBlocks.YELLOW_BIOSHROOM_BUTTON.getKey())
         ;
         this.tag(BlockTags.WOODEN_DOORS)
                 .add(RuBlocks.BAOBAB_DOOR.getKey())
@@ -1102,6 +1109,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.REDWOOD_DOOR.getKey())
                 .add(RuBlocks.SOCOTRA_DOOR.getKey())
                 .add(RuBlocks.WILLOW_DOOR.getKey())
+                .add(RuBlocks.YELLOW_BIOSHROOM_DOOR.getKey())
         ;
         this.tag(BlockTags.WOODEN_FENCES)
                 .add(RuBlocks.BAOBAB_FENCE.getKey())
@@ -1124,6 +1132,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.REDWOOD_FENCE.getKey())
                 .add(RuBlocks.SOCOTRA_FENCE.getKey())
                 .add(RuBlocks.WILLOW_FENCE.getKey())
+                .add(RuBlocks.YELLOW_BIOSHROOM_FENCE.getKey())
         ;
         this.tag(BlockTags.WOODEN_PRESSURE_PLATES)
                 .add(RuBlocks.BAOBAB_PRESSURE_PLATE.getKey())
@@ -1146,6 +1155,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.REDWOOD_PRESSURE_PLATE.getKey())
                 .add(RuBlocks.SOCOTRA_PRESSURE_PLATE.getKey())
                 .add(RuBlocks.WILLOW_PRESSURE_PLATE.getKey())
+                .add(RuBlocks.YELLOW_BIOSHROOM_PRESSURE_PLATE.getKey())
         ;
         this.tag(BlockTags.WOODEN_SLABS)
                 .add(RuBlocks.ALPHA_SLAB.getKey())
@@ -1169,6 +1179,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.REDWOOD_SLAB.getKey())
                 .add(RuBlocks.SOCOTRA_SLAB.getKey())
                 .add(RuBlocks.WILLOW_SLAB.getKey())
+                .add(RuBlocks.YELLOW_BIOSHROOM_SLAB.getKey())
                 .add(RuBlocks.LIGHT_GRAY_PAINTED_SLAB.getKey())
                 .add(RuBlocks.BLACK_PAINTED_SLAB.getKey())
                 .add(RuBlocks.LIGHT_BLUE_PAINTED_SLAB.getKey())
@@ -1208,6 +1219,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.REDWOOD_STAIRS.getKey())
                 .add(RuBlocks.SOCOTRA_STAIRS.getKey())
                 .add(RuBlocks.WILLOW_STAIRS.getKey())
+                .add(RuBlocks.YELLOW_BIOSHROOM_STAIRS.getKey())
                 .add(RuBlocks.LIGHT_GRAY_PAINTED_STAIRS.getKey())
                 .add(RuBlocks.BLACK_PAINTED_STAIRS.getKey())
                 .add(RuBlocks.LIGHT_BLUE_PAINTED_STAIRS.getKey())
@@ -1246,6 +1258,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.REDWOOD_TRAPDOOR.getKey())
                 .add(RuBlocks.SOCOTRA_TRAPDOOR.getKey())
                 .add(RuBlocks.WILLOW_TRAPDOOR.getKey())
+                .add(RuBlocks.YELLOW_BIOSHROOM_TRAPDOOR.getKey())
         ;
         //this.tag(BlockTags.WOOL);
         //this.tag(BlockTags.WOOL_CARPETS);
@@ -1668,6 +1681,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.REDWOOD_FENCE_GATE.getKey())
                 .add(RuBlocks.SOCOTRA_FENCE_GATE.getKey())
                 .add(RuBlocks.WILLOW_FENCE_GATE.getKey())
+                .add(RuBlocks.YELLOW_BIOSHROOM_FENCE_GATE.getKey())
         ;
         //this.tag(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "fences/nether_brick")));
         this.tag(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "fences/wooden")))
@@ -1691,6 +1705,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.REDWOOD_FENCE.getKey())
                 .add(RuBlocks.SOCOTRA_FENCE.getKey())
                 .add(RuBlocks.WILLOW_FENCE.getKey())
+                .add(RuBlocks.YELLOW_BIOSHROOM_FENCE.getKey())
         ;
         //this.tag(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "glass/colorless")));
         //this.tag(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "glass_panes/colorless")));
@@ -1769,6 +1784,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.REDWOOD_TRAPDOOR.getKey())
                 .add(RuBlocks.SOCOTRA_TRAPDOOR.getKey())
                 .add(RuBlocks.WILLOW_TRAPDOOR.getKey())
+                .add(RuBlocks.YELLOW_BIOSHROOM_TRAPDOOR.getKey())
         ;
         this.tag(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "doors/wooden")))
                 .add(RuBlocks.BAOBAB_DOOR.getKey())
@@ -1791,6 +1807,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.REDWOOD_DOOR.getKey())
                 .add(RuBlocks.SOCOTRA_DOOR.getKey())
                 .add(RuBlocks.WILLOW_DOOR.getKey())
+                .add(RuBlocks.YELLOW_BIOSHROOM_DOOR.getKey())
         ;
         this.tag(TagKey.create(Registries.BLOCK, new ResourceLocation("forge", "stairs/wooden")))
                 .add(RuBlocks.ALPHA_STAIRS.getKey())
@@ -1814,6 +1831,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.REDWOOD_STAIRS.getKey())
                 .add(RuBlocks.SOCOTRA_STAIRS.getKey())
                 .add(RuBlocks.WILLOW_STAIRS.getKey())
+                .add(RuBlocks.YELLOW_BIOSHROOM_STAIRS.getKey())
                 .add(RuBlocks.LIGHT_GRAY_PAINTED_STAIRS.getKey())
                 .add(RuBlocks.BLACK_PAINTED_STAIRS.getKey())
                 .add(RuBlocks.LIGHT_BLUE_PAINTED_STAIRS.getKey())
@@ -1858,6 +1876,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.REDWOOD_SLAB.getKey())
                 .add(RuBlocks.SOCOTRA_SLAB.getKey())
                 .add(RuBlocks.WILLOW_SLAB.getKey())
+                .add(RuBlocks.YELLOW_BIOSHROOM_SLAB.getKey())
                 .add(RuBlocks.LIGHT_GRAY_PAINTED_SLAB.getKey())
                 .add(RuBlocks.BLACK_PAINTED_SLAB.getKey())
                 .add(RuBlocks.LIGHT_BLUE_PAINTED_SLAB.getKey())
