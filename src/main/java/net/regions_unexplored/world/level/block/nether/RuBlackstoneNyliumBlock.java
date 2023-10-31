@@ -17,13 +17,30 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.lighting.LightEngine;
+import net.regions_unexplored.block.RuBlocks;
+import net.regions_unexplored.data.worldgen.features.RuNetherFeatures;
+import net.regions_unexplored.registry.ConfiguredFeatureRegistry;
 
-public class RuNyliumBlock extends NyliumBlock implements BonemealableBlock {
+public class RuBlackstoneNyliumBlock extends NyliumBlock implements BonemealableBlock {
     private final ResourceKey<ConfiguredFeature<?, ?>> bonemealfeature;
 
-    public RuNyliumBlock(Properties properties, ResourceKey<ConfiguredFeature<?, ?>> bonemeal) {
+    public RuBlackstoneNyliumBlock(Properties properties, ResourceKey<ConfiguredFeature<?, ?>> bonemeal) {
         super(properties);
         this.bonemealfeature = bonemeal;
+    }
+
+    private static boolean canBeNylium(BlockState state, LevelReader level, BlockPos pos) {
+        BlockPos blockpos = pos.above();
+        BlockState blockstate = level.getBlockState(blockpos);
+        int i = LightEngine.getLightBlockInto(level, state, pos, blockstate, blockpos, Direction.UP, blockstate.getLightBlock(level, blockpos));
+        return i < level.getMaxLightLevel();
+    }
+
+    public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        if (!canBeNylium(state, level, pos)) {
+            level.setBlockAndUpdate(pos, Blocks.BLACKSTONE.defaultBlockState());
+        }
+
     }
 
     public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
