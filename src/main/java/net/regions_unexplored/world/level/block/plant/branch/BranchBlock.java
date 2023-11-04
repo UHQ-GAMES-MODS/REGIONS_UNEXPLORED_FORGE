@@ -1,4 +1,4 @@
-package net.regions_unexplored.world.level.block.plant.other;
+package net.regions_unexplored.world.level.block.plant.branch;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -15,15 +15,21 @@ import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.data.tags.RuTags;
 
 public class BranchBlock extends BushBlock {
+    public static final String BRANCH = "branch";
+    public static final String BEARD = "beard";
+    private final String type;
+
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
-    public BranchBlock(Properties properties) {
+
+    public BranchBlock(Properties properties, String branchType) {
         super(properties);
+        this.type = branchType;
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
     }
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
-        if(state.is(RuBlocks.JOSHUA_BEARD.get())||state.is(RuBlocks.PALM_BEARD.get())){
+        if(type==BEARD){
             return switch (state.getValue(FACING)) {
                 default -> box(0, 0, 0, 16, 16, 3);
                 case NORTH -> box(0, 0, 13, 16, 16, 16);
@@ -49,68 +55,15 @@ public class BranchBlock extends BushBlock {
 
     @Override
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        Direction direction = state.getValue(FACING);
-        BlockPos blockposn = pos.north();
-        BlockPos blockposs = pos.south();
-        BlockPos blockpose = pos.east();
-        BlockPos blockposw = pos.west();
-        if (direction==Direction.SOUTH) {
+        Direction direction = state.getValue(FACING).getOpposite();
+        BlockPos.MutableBlockPos blockPos = pos.mutable().move(direction);
 
-            if(!state.is(RuBlocks.JOSHUA_BEARD.get())&&!state.is(RuBlocks.PALM_BEARD.get())){
-            if(!level.getBlockState(blockposn).isFaceSturdy(level, blockposn, Direction.SOUTH)){
-                //return false;
-            }
-            }
-            if(mayPlaceOn(level.getBlockState(blockposn), level, blockposn)){
-                return true;
-            }
-            else{
-                return false;
-            }
+        if(mayPlaceOn(level.getBlockState(blockPos), level, blockPos)&&level.getBlockState(blockPos).isFaceSturdy(level, blockPos, direction)){
+            return true;
         }
-
-        if (direction==Direction.NORTH) {
-            if(!state.is(RuBlocks.JOSHUA_BEARD.get())&&!state.is(RuBlocks.PALM_BEARD.get())){
-            if(!level.getBlockState(blockposs).isFaceSturdy(level, blockposs, Direction.NORTH)){
-                //return false;
-            }
-            }
-            if(mayPlaceOn(level.getBlockState(blockposs), level, blockposs)){
-                return true;
-            }
-            else{
+        else{
                 return false;
-            }
         }
-
-        if (direction==Direction.WEST) {
-            if(!state.is(RuBlocks.JOSHUA_BEARD.get())&&!state.is(RuBlocks.PALM_BEARD.get())){
-            if(!level.getBlockState(blockpose).isFaceSturdy(level, blockpose, Direction.WEST)){
-                //return false;
-            }
-            }
-            if(mayPlaceOn(level.getBlockState(blockpose), level, blockpose)){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }
-
-        if (direction==Direction.EAST) {
-            if(!state.is(RuBlocks.JOSHUA_BEARD.get())&&!state.is(RuBlocks.PALM_BEARD.get())){
-            if(!level.getBlockState(blockposw).isFaceSturdy(level, blockposw, Direction.EAST)){
-                //return false;
-            }
-            }
-            if(mayPlaceOn(level.getBlockState(blockposw), level, blockposw)){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }
-        return false;
     }
 
     @Override
