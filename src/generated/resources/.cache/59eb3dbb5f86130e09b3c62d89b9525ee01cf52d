@@ -1,4 +1,4 @@
-// 1.20.2	2023-09-25T00:29:22.7319369	Loot Tables
+// 1.20.2	2023-11-04T13:01:20.8003262	Loot Tables
 fb95ad5062001d6c0fb329989fda986801ec5444 data/regions_unexplored/loot_tables/blocks/acacia_branch.json
 9a9c5fbba217f07ec7cb6067e42dba80d311e355 data/regions_unexplored/loot_tables/blocks/acacia_shrub.json
 db69029ed53dd57ea783ac8375ab18767e9fa5a0 data/regions_unexplored/loot_tables/blocks/alpha_dandelion.json
@@ -278,8 +278,8 @@ dfd43b9084d9c0838d4b78d85cedcdf7ac311a0c data/regions_unexplored/loot_tables/blo
 d4fa6659705989a51bcd0556f8ed057e8a670ad4 data/regions_unexplored/loot_tables/blocks/green_painted_slab.json
 4f3576d50c7c74ef684b8b4aa1d2929593e43f03 data/regions_unexplored/loot_tables/blocks/green_painted_stairs.json
 722061663ab7d40149305ddd94acd8bf2e8af457 data/regions_unexplored/loot_tables/blocks/green_snowbelle.json
-cc2318192991f6e696ea15eedb842fdce8976a8b data/regions_unexplored/loot_tables/blocks/hanging_earlight.json
-375a63a980a957391e9a83014fffd7d0ae24c678 data/regions_unexplored/loot_tables/blocks/hanging_earlight_plant.json
+9b9215ee8d49a1b69dcb692b18682240c6e725a6 data/regions_unexplored/loot_tables/blocks/hanging_earlight.json
+1f52425c6d8270fc5f7cb799a5ff4ffc98c7ba19 data/regions_unexplored/loot_tables/blocks/hanging_earlight_plant.json
 eb6881f335068b1f5bcef01e22e87aa4f48d582e data/regions_unexplored/loot_tables/blocks/hanging_prismarite.json
 e9e0d136a88b59960f8a9e287d6b946153452942 data/regions_unexplored/loot_tables/blocks/hibiscus.json
 777cdc24c3dafd489d8b6ac74fb7464c292aa850 data/regions_unexplored/loot_tables/blocks/hyacinth_bloom.json
