@@ -1,4 +1,16 @@
 ------------------------------------------------------------------------------------------------------------------------
+-0.5.4
++CHANGES:
+    -Made modded Nyliums spreadable by bone mealing Netherrack
+    -Mycotoxic Moss Bonemeal now includes Yellow Bioshrooms instead of Mycotoxic Mushrooms
+    -Made Earlight Fruit drop slightly more frequently
+    -Fixed some Yellow Bioshroom blocks not breaking faster with Axes
+    -Fixed Chest Boat recipes
+------------------------------------------------------------------------------------------------------------------------
+-0.5.3
+    -Initial port from 1.20.1
+    -Added new clover texture
+------------------------------------------------------------------------------------------------------------------------
 -0.5.2
 +BLOCKS/ITEMS
     +BLOCK ADDITIONS:
