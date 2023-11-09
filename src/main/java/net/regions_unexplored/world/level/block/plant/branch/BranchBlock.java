@@ -58,7 +58,7 @@ public class BranchBlock extends BushBlock {
         Direction direction = state.getValue(FACING).getOpposite();
         BlockPos.MutableBlockPos blockPos = pos.mutable().move(direction);
 
-        if(mayPlaceOn(level.getBlockState(blockPos), level, blockPos)&&level.getBlockState(blockPos).isFaceSturdy(level, blockPos, direction)){
+        if(mayPlaceOn(level.getBlockState(blockPos), level, blockPos)){
             return true;
         }
         else{
