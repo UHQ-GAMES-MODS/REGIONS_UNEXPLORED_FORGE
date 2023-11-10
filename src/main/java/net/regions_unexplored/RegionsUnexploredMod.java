@@ -112,6 +112,8 @@ public class RegionsUnexploredMod {
 
     //set up client side features
     public void clientSetup(final FMLClientSetupEvent event) {
+
+        //Fix for branch transparency
         ItemBlockRenderTypes.setRenderLayer(RuBlocks.ACACIA_BRANCH.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(RuBlocks.BAOBAB_BRANCH.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(RuBlocks.BIRCH_BRANCH.get(), RenderType.cutout());
@@ -137,6 +139,7 @@ public class RegionsUnexploredMod {
         ItemBlockRenderTypes.setRenderLayer(RuBlocks.SOCOTRA_BRANCH.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(RuBlocks.SPRUCE_BRANCH.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(RuBlocks.WILLOW_BRANCH.get(), RenderType.cutout());
+
         WoodTypeRegistry.addWoodTypes();
         WoodTypeRegistry.addSheets();
         BlockEntityRenderers.register(RuBlockEntities.SIGN_BLOCK_ENTITIES.get(), SignRenderer::new);
