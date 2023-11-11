@@ -17,7 +17,7 @@ Regions Unexplored is a mod that aims to add new content to the overworld. Curre
 [[dependencies.regions_unexplored]]
 modId="forge"
 mandatory=true
-versionRange="[44,)"
+versionRange="[43,)"
 ordering="NONE"
 side="BOTH"
 

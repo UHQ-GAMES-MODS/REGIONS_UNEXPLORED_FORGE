@@ -14,13 +14,14 @@ import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.NetherForestVegetationConfig;
 import net.minecraft.world.level.lighting.LayerLightEngine;
+import net.regions_unexplored.block.RuBlocks;
+import net.regions_unexplored.data.worldgen.features.RuNetherFeatures;
 
 public class RuBlackstoneNyliumBlock extends NyliumBlock implements BonemealableBlock {
-    private final Holder<ConfiguredFeature<NetherForestVegetationConfig, ?>> bonemealfeature;
+    private static Holder<ConfiguredFeature<NetherForestVegetationConfig, ?>> bonemealfeature;
 
-    public RuBlackstoneNyliumBlock(Properties properties, Holder<ConfiguredFeature<NetherForestVegetationConfig, ?>> bonemeal) {
+    public RuBlackstoneNyliumBlock(Properties properties) {
         super(properties);
-        this.bonemealfeature = bonemeal;
     }
 
     private static boolean canBeNylium(BlockState p_55079_, LevelReader p_55080_, BlockPos p_55081_) {
@@ -41,7 +42,9 @@ public class RuBlackstoneNyliumBlock extends NyliumBlock implements Bonemealable
         BlockPos blockPos = pos.above();
         ChunkGenerator chunkgenerator = level.getChunkSource().getGenerator();
 
-        this.bonemealfeature.value().place(level, chunkgenerator, random, blockPos);
+        this.bonemealfeature = RuNetherFeatures.COBALT_NYLIUM_BONEMEAL;
+
+        this.bonemealfeature.value().place(level,chunkgenerator,random,blockPos);
 
     }
 }

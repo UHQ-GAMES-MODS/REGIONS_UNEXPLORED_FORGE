@@ -10,20 +10,30 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.NetherForestVegetationConfig;
+import net.regions_unexplored.block.RuBlocks;
+import net.regions_unexplored.data.worldgen.features.RuNetherFeatures;
 
 public class RuNyliumBlock extends NyliumBlock implements BonemealableBlock {
-    private final Holder<ConfiguredFeature<NetherForestVegetationConfig, ?>> bonemealfeature;
+    private static Holder<ConfiguredFeature<NetherForestVegetationConfig, ?>> bonemealfeature;
 
-    public RuNyliumBlock(Properties properties, Holder<ConfiguredFeature<NetherForestVegetationConfig, ?>> bonemeal) {
+    public RuNyliumBlock(Properties properties) {
         super(properties);
-        this.bonemealfeature = bonemeal;
     }
 
     public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
         BlockPos blockPos = pos.above();
         ChunkGenerator chunkgenerator = level.getChunkSource().getGenerator();
 
-        this.bonemealfeature.value().place(level, chunkgenerator, random, blockPos);
+        if (state == RuBlocks.GLISTERING_NYLIUM.get().defaultBlockState()) {
+            this.bonemealfeature = RuNetherFeatures.GLISTERING_NYLIUM_BONEMEAL;
+        } else if (state == RuBlocks.MYCOTOXIC_NYLIUM.get().defaultBlockState()) {
+            this.bonemealfeature = RuNetherFeatures.MYCOTOXIC_NYLIUM_BONEMEAL;
+        } else {
+            this.bonemealfeature = RuNetherFeatures.BRIMSPROUT_NYLIUM_BONEMEAL;
+        }
+
+        this.bonemealfeature.value().place(level,chunkgenerator,random,blockPos);
+
 
     }
 }

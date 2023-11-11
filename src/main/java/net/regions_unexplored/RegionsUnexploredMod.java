@@ -95,10 +95,10 @@ public class RegionsUnexploredMod {
         RuTabs.load();
         BiomeRegistry.addBiomes();
         FeatureRegistry.addFeatures();
-        RuNoises.addNoises();
         RuBlocks.addBlocks();
-        RuBlockEntities.addBlockEntities();
         RuItems.addItems();
+        RuBlockEntities.addBlockEntities();
+        RuNoises.addNoises();
         RuEntities.addEntities();
         RuParticleTypes.addParticles();
     }
