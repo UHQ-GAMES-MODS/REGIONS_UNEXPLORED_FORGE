@@ -1,6 +1,5 @@
 package net.regions_unexplored.block;
 
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -9,6 +8,7 @@ import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.registries.RegistryObject;
 import net.regions_unexplored.RegionsUnexploredMod;
 import net.regions_unexplored.data.block.RuWoodTypes;
+import net.regions_unexplored.data.worldgen.features.RuNetherFeatures;
 import net.regions_unexplored.item.tab.RuTabs;
 import net.regions_unexplored.registry.BlockRegistry;
 import net.regions_unexplored.world.level.block.alpha.AlphaGrassBlock;
@@ -16,6 +16,7 @@ import net.regions_unexplored.world.level.block.cave.*;
 import net.regions_unexplored.world.level.block.forest_dirt.PeatDirtPathBlock;
 import net.regions_unexplored.world.level.block.forest_dirt.PeatFarmBlock;
 import net.regions_unexplored.world.level.block.forest_dirt.PeatGrassBlock;
+import net.regions_unexplored.world.level.block.nether.RuBlackstoneNyliumBlock;
 import net.regions_unexplored.world.level.block.nether.RuNyliumBlock;
 import net.regions_unexplored.world.level.block.other.*;
 import net.regions_unexplored.world.level.block.other_dirt.*;
@@ -26,6 +27,7 @@ import net.regions_unexplored.world.level.block.plant.aquatic.DuckweedBlock;
 import net.regions_unexplored.world.level.block.plant.aquatic.FloweringLilyBlock;
 import net.regions_unexplored.world.level.block.plant.aquatic.GiantLilyBlock;
 import net.regions_unexplored.world.level.block.plant.aquatic.TallHyacinthStockBlock;
+import net.regions_unexplored.world.level.block.plant.branch.BranchBlock;
 import net.regions_unexplored.world.level.block.plant.dusktrap.DuskTrapBlock;
 import net.regions_unexplored.world.level.block.plant.flower.CaveFlowerBlock;
 import net.regions_unexplored.world.level.block.plant.flower.GroundCoverBlock;
@@ -1282,31 +1284,31 @@ public class RuBlocks {
         WILLOW_LEAVES = BlockRegistry.registerDefaultBlock("willow_leaves", () -> BlockRegistry.leaves(MaterialColor.PLANT), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
 
         /*-----------------BRANCHES-----------------*/
-        ACACIA_BRANCH = BlockRegistry.registerDefaultBlock("acacia_branch", () -> new BranchBlock(BlockBehaviour.Properties.of(Material.PLANT).noOcclusion().sound(SoundType.MANGROVE_ROOTS).strength(1.0F, 1.5F).dynamicShape()), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
-        BAOBAB_BRANCH = BlockRegistry.registerDefaultBlock("baobab_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
-        BIRCH_BRANCH = BlockRegistry.registerDefaultBlock("birch_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
-        BLACKWOOD_BRANCH = BlockRegistry.registerDefaultBlock("blackwood_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
-        MAGNOLIA_BRANCH = BlockRegistry.registerDefaultBlock("magnolia_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
-        CYPRESS_BRANCH = BlockRegistry.registerDefaultBlock("cypress_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
-        CHERRY_BRANCH = BlockRegistry.registerDefaultBlock("cherry_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
-        DARK_OAK_BRANCH = BlockRegistry.registerDefaultBlock("dark_oak_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
-        DEAD_BRANCH = BlockRegistry.registerDefaultBlock("dead_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
-        EUCALYPTUS_BRANCH = BlockRegistry.registerDefaultBlock("eucalyptus_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
-        JOSHUA_BEARD = BlockRegistry.registerDefaultBlock("joshua_beard", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
-        JUNGLE_BRANCH = BlockRegistry.registerDefaultBlock("jungle_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
-        KAPOK_BRANCH = BlockRegistry.registerDefaultBlock("kapok_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
-        LARCH_BRANCH = BlockRegistry.registerDefaultBlock("larch_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
-        MANGROVE_BRANCH = BlockRegistry.registerDefaultBlock("mangrove_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
-        MAPLE_BRANCH = BlockRegistry.registerDefaultBlock("maple_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
-        MAUVE_BRANCH = BlockRegistry.registerDefaultBlock("mauve_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
-        OAK_BRANCH = BlockRegistry.registerDefaultBlock("oak_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
-        PALM_BEARD = BlockRegistry.registerDefaultBlock("palm_beard", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
-        PINE_BRANCH = BlockRegistry.registerDefaultBlock("pine_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
-        REDWOOD_BRANCH = BlockRegistry.registerDefaultBlock("redwood_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
-        SILVER_BIRCH_BRANCH = BlockRegistry.registerDefaultBlock("silver_birch_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
-        SOCOTRA_BRANCH = BlockRegistry.registerDefaultBlock("socotra_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
-        SPRUCE_BRANCH = BlockRegistry.registerDefaultBlock("spruce_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
-        WILLOW_BRANCH = BlockRegistry.registerDefaultBlock("willow_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get())), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
+        ACACIA_BRANCH = BlockRegistry.registerDefaultBlock("acacia_branch", () -> new BranchBlock(BlockBehaviour.Properties.of(Material.PLANT).noOcclusion().sound(SoundType.MANGROVE_ROOTS).strength(1.0F, 1.5F).dynamicShape(), BranchBlock.BRANCH), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
+        BAOBAB_BRANCH = BlockRegistry.registerDefaultBlock("baobab_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get()), BranchBlock.BRANCH), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
+        BIRCH_BRANCH = BlockRegistry.registerDefaultBlock("birch_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get()), BranchBlock.BRANCH), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
+        BLACKWOOD_BRANCH = BlockRegistry.registerDefaultBlock("blackwood_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get()), BranchBlock.BRANCH), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
+        MAGNOLIA_BRANCH = BlockRegistry.registerDefaultBlock("magnolia_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get()), BranchBlock.BRANCH), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
+        CYPRESS_BRANCH = BlockRegistry.registerDefaultBlock("cypress_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get()), BranchBlock.BRANCH), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
+        CHERRY_BRANCH = BlockRegistry.registerDefaultBlock("cherry_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get()), BranchBlock.BRANCH), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
+        DARK_OAK_BRANCH = BlockRegistry.registerDefaultBlock("dark_oak_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get()), BranchBlock.BRANCH), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
+        DEAD_BRANCH = BlockRegistry.registerDefaultBlock("dead_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get()), BranchBlock.BRANCH), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
+        EUCALYPTUS_BRANCH = BlockRegistry.registerDefaultBlock("eucalyptus_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get()), BranchBlock.BRANCH), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
+        JOSHUA_BEARD = BlockRegistry.registerDefaultBlock("joshua_beard", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get()), BranchBlock.BEARD), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
+        JUNGLE_BRANCH = BlockRegistry.registerDefaultBlock("jungle_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get()), BranchBlock.BRANCH), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
+        KAPOK_BRANCH = BlockRegistry.registerDefaultBlock("kapok_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get()), BranchBlock.BRANCH), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
+        LARCH_BRANCH = BlockRegistry.registerDefaultBlock("larch_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get()), BranchBlock.BRANCH), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
+        MANGROVE_BRANCH = BlockRegistry.registerDefaultBlock("mangrove_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get()), BranchBlock.BRANCH), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
+        MAPLE_BRANCH = BlockRegistry.registerDefaultBlock("maple_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get()), BranchBlock.BRANCH), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
+        MAUVE_BRANCH = BlockRegistry.registerDefaultBlock("mauve_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get()), BranchBlock.BRANCH), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
+        OAK_BRANCH = BlockRegistry.registerDefaultBlock("oak_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get()), BranchBlock.BRANCH), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
+        PALM_BEARD = BlockRegistry.registerDefaultBlock("palm_beard", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get()), BranchBlock.BEARD), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
+        PINE_BRANCH = BlockRegistry.registerDefaultBlock("pine_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get()), BranchBlock.BRANCH), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
+        REDWOOD_BRANCH = BlockRegistry.registerDefaultBlock("redwood_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get()), BranchBlock.BRANCH), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
+        SILVER_BIRCH_BRANCH = BlockRegistry.registerDefaultBlock("silver_birch_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get()), BranchBlock.BRANCH), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
+        SOCOTRA_BRANCH = BlockRegistry.registerDefaultBlock("socotra_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get()), BranchBlock.BRANCH), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
+        SPRUCE_BRANCH = BlockRegistry.registerDefaultBlock("spruce_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get()), BranchBlock.BRANCH), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
+        WILLOW_BRANCH = BlockRegistry.registerDefaultBlock("willow_branch", () -> new BranchBlock(BlockBehaviour.Properties.copy(ACACIA_BRANCH.get()), BranchBlock.BRANCH), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
 
         /*-----------------DIRT_BLOCKS-----------------*/
         //FOREST_DIRT_BLOCKS
@@ -1786,12 +1788,12 @@ public class RuBlocks {
         BLACKSTONE_CLUSTER = BlockRegistry.registerDefaultBlock("blackstone_cluster", () -> new RockPileBlock(BlockBehaviour.Properties.of(Material.STONE).strength(0.6F).sound(SoundType.NETHERRACK)), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
         OVERGROWN_BONE_BLOCK = BlockRegistry.registerDefaultBlock("overgrown_bone_block", () ->  new Block(BlockBehaviour.Properties.copy(Blocks.BONE_BLOCK)), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
         //BRIMSPROUT_BLOCKS
-        BRIMSPROUT_NYLIUM = BlockRegistry.registerDefaultBlock("brimsprout_nylium", () -> new RuNyliumBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_RED).requiresCorrectToolForDrops().strength(0.4F).sound(SoundType.SCULK_SENSOR)), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
+        BRIMSPROUT_NYLIUM = BlockRegistry.registerDefaultBlock("brimsprout_nylium", () -> new RuNyliumBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_RED).requiresCorrectToolForDrops().strength(0.4F).sound(SoundType.SCULK_SENSOR), RuNetherFeatures.BRIMSPROUT_NYLIUM_BONEMEAL), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
         BRIMSPROUT = BlockRegistry.registerDefaultBlock("brimsprout", () -> new BrimPlantBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.SCULK).offsetType(BlockBehaviour.OffsetType.XYZ)), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
         //COBALT_BLOCKS
         COBALT_EARLIGHT = BlockRegistry.registerDefaultBlock("cobalt_earlight", () -> new RuNetherPlantBlock(BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(BlockBehaviour.OffsetType.XZ).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 9)), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
         TALL_COBALT_EARLIGHT = BlockRegistry.registerDefaultBlock("tall_cobalt_earlight", () -> new RuNetherDoublePlantBlock(BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 13)), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
-        COBALT_NYLIUM = BlockRegistry.registerDefaultBlock("cobalt_nylium", () -> new RuNyliumBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_BLUE).requiresCorrectToolForDrops().strength(0.4F).sound(SoundType.NYLIUM)), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
+        COBALT_NYLIUM = BlockRegistry.registerDefaultBlock("cobalt_nylium", () -> new RuBlackstoneNyliumBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_BLUE).requiresCorrectToolForDrops().strength(0.4F).sound(SoundType.NYLIUM), RuNetherFeatures.COBALT_NYLIUM_BONEMEAL), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
         COBALT_OBSIDIAN = BlockRegistry.registerDefaultBlock("cobalt_obsidian", () -> new CobaltObsidianBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_BLACK).requiresCorrectToolForDrops().strength(50.0F, 1200.0F)), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
         COBALT_ROOTS = BlockRegistry.registerDefaultBlock("cobalt_roots", () -> new RuCobaltPlantBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(BlockBehaviour.OffsetType.XYZ)), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
         HANGING_EARLIGHT = RegionsUnexploredMod.BLOCK_REGISTRY.register("hanging_earlight", () -> new HangingEarlightBlock(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.COLOR_BLUE).randomTicks().noCollission().instabreak().sound(SoundType.WEEPING_VINES).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 14)));
@@ -1799,7 +1801,7 @@ public class RuBlocks {
         //GLISTERING_BLOCKS
         GLISTERING_IVY = BlockRegistry.registerDefaultBlock("glistering_ivy", () -> new GlisteringIvyBlock(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.COLOR_LIGHT_BLUE).randomTicks().noCollission().instabreak().sound(SoundType.WEEPING_VINES).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 15)), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
         GLISTERING_IVY_PLANT = RegionsUnexploredMod.BLOCK_REGISTRY.register("glistering_ivy_plant", () -> new GlisteringIvyPlantBlock(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.COLOR_LIGHT_BLUE).noCollission().instabreak().sound(SoundType.WEEPING_VINES)));
-        GLISTERING_NYLIUM = BlockRegistry.registerDefaultBlock("glistering_nylium", () -> new RuNyliumBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_PINK).requiresCorrectToolForDrops().strength(0.4F).sound(SoundType.NYLIUM)), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
+        GLISTERING_NYLIUM = BlockRegistry.registerDefaultBlock("glistering_nylium", () -> new RuNyliumBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_PINK).requiresCorrectToolForDrops().strength(0.4F).sound(SoundType.NYLIUM), RuNetherFeatures.GLISTERING_NYLIUM_BONEMEAL), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
         GLISTERING_SPROUT = BlockRegistry.registerDefaultBlock("glistering_sprout", () -> new RuNetherPlantBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.TWISTING_VINES).offsetType(BlockBehaviour.OffsetType.XZ)), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
         GLISTERING_FERN = BlockRegistry.registerDefaultBlock("glistering_fern", () -> new RuNetherPlantBlock(BlockBehaviour.Properties.copy(GLISTERING_SPROUT.get())), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
         GLISTERING_BLOOM = BlockRegistry.registerDefaultBlock("glistering_bloom", () -> new RuNetherPlantBlock(BlockBehaviour.Properties.copy(GLISTERING_SPROUT.get())), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
@@ -1810,6 +1812,6 @@ public class RuBlocks {
         MYCOTOXIC_MUSHROOMS = BlockRegistry.registerDefaultBlock("mycotoxic_mushrooms", () -> new NetherGroundCoverBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().sound(SoundType.SHROOMLIGHT).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel((state) -> 3 + 3 * state.getValue(NetherGroundCoverBlock.AMOUNT))), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
         MYCOTOXIC_DAISY = BlockRegistry.registerDefaultBlock("mycotoxic_daisy", () -> new RuNetherDoublePlantBlock(BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(BlockBehaviour.OffsetType.XYZ).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 4)), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
         MYCOTOXIC_GRASS = BlockRegistry.registerDefaultBlock("mycotoxic_grass", () -> new RuNetherPlantBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(BlockBehaviour.OffsetType.XYZ)), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
-        MYCOTOXIC_NYLIUM = BlockRegistry.registerDefaultBlock("mycotoxic_moss", () -> new RuNyliumBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_YELLOW).requiresCorrectToolForDrops().strength(0.4F).sound(SoundType.NYLIUM)), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
+        MYCOTOXIC_NYLIUM = BlockRegistry.registerDefaultBlock("mycotoxic_moss", () -> new RuNyliumBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_YELLOW).requiresCorrectToolForDrops().strength(0.4F).sound(SoundType.NYLIUM), RuNetherFeatures.MYCOTOXIC_NYLIUM_BONEMEAL), RuTabs.REGIONS_UNEXPLORED_MAIN_TAB);
     }
 }

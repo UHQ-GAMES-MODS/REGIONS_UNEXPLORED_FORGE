@@ -177,7 +177,7 @@ public class RuLanguageProvider extends LanguageProvider {
         this.add(RuBiomes.WILLOW_FOREST, capitalizeString(filterBiomeLang(RuBiomes.WILLOW_FOREST)));
         this.add(RuBiomes.CLOVER_PLAINS, capitalizeString(filterBiomeLang(RuBiomes.CLOVER_PLAINS)));
 
-        this.add("itemGroup.regions_unexplored_main", "Regions Unexplored");
+        this.add("itemGroup.ru_main", "Regions Unexplored");
     }
 
     /**
