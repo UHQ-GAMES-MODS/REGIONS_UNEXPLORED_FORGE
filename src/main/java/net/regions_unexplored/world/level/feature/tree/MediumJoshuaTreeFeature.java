@@ -12,7 +12,7 @@ import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.world.level.block.leaves.JoshuaLeavesBlock;
-import net.regions_unexplored.world.level.block.plant.other.BranchBlock;
+import net.regions_unexplored.world.level.block.plant.branch.BranchBlock;
 
 import java.util.Random;
 
