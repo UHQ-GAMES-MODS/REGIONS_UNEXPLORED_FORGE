@@ -43,8 +43,8 @@ public class RuBlockLootTables extends BlockLootSubProvider {
     protected void generate() {
         /*-----------------CAVE_BLOCKS-----------------*/
         //PRISMA_BLOCKS
-        add(RuBlocks.PRISMOSS.get(), (block) -> createSingleItemTableWithSilkTouch(block, Blocks.STONE));
-        add(RuBlocks.DEEPSLATE_PRISMOSS.get(), (block) -> createSingleItemTableWithSilkTouch(block, Blocks.DEEPSLATE));
+        add(RuBlocks.PRISMOSS.get(), (block) -> createSingleItemTableWithSilkTouch(block, Blocks.COBBLESTONE));
+        add(RuBlocks.DEEPSLATE_PRISMOSS.get(), (block) -> createSingleItemTableWithSilkTouch(block, Blocks.COBBLED_DEEPSLATE));
         dropSelf(RuBlocks.HANGING_PRISMARITE.get());
         add(RuBlocks.LARGE_PRISMARITE_CLUSTER.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         add(RuBlocks.PRISMAGLASS.get(), (block) -> createSilkTouchOnlyTable(block));
@@ -57,10 +57,10 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         dropSelf(RuBlocks.REDSTONE_BULB.get());
         //OTHER_CAVE_BLOCKS
         add(RuBlocks.ARGILLITE_GRASS_BLOCK.get(), (block) -> createSingleItemTableWithSilkTouch(block, RuBlocks.ARGILLITE.get()));
-        add(RuBlocks.STONE_GRASS_BLOCK.get(), (block) -> createSingleItemTableWithSilkTouch(block, Blocks.STONE));
-        add(RuBlocks.DEEPSLATE_GRASS_BLOCK.get(), (block) -> createSingleItemTableWithSilkTouch(block, Blocks.DEEPSLATE));
-        add(RuBlocks.VIRIDESCENT_NYLIUM.get(), (block) -> createSingleItemTableWithSilkTouch(block, Blocks.STONE));
-        add(RuBlocks.DEEPSLATE_VIRIDESCENT_NYLIUM.get(), (block) -> createSingleItemTableWithSilkTouch(block, Blocks.DEEPSLATE));
+        add(RuBlocks.STONE_GRASS_BLOCK.get(), (block) -> createSingleItemTableWithSilkTouch(block, Blocks.COBBLESTONE));
+        add(RuBlocks.DEEPSLATE_GRASS_BLOCK.get(), (block) -> createSingleItemTableWithSilkTouch(block, Blocks.COBBLED_DEEPSLATE));
+        add(RuBlocks.VIRIDESCENT_NYLIUM.get(), (block) -> createSingleItemTableWithSilkTouch(block, Blocks.COBBLESTONE));
+        add(RuBlocks.DEEPSLATE_VIRIDESCENT_NYLIUM.get(), (block) -> createSingleItemTableWithSilkTouch(block, Blocks.COBBLED_DEEPSLATE));
 
         add(RuBlocks.CORPSE_FLOWER.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         add(RuBlocks.BLADED_GRASS.get(), (block) -> createGrassDrops(block));
