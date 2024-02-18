@@ -1,4 +1,4 @@
-// 1.20.2	2023-11-04T13:01:20.8088339	Registries
+// 1.20.2	2024-02-17T23:48:51.8690115	Registries
 7160b581d0e9c894f25f3d6f26a93cd78c42e0cd data/regions_unexplored/damage_type/dorcel.json
 d22fdc0aeef6a23fc29b12a9ebabe7e22aea59c4 data/regions_unexplored/damage_type/dusk_trap.json
 4c8b08e26e9184211fbccd69bfbfdd86c8975160 data/regions_unexplored/worldgen/biome/alpha_grove.json
@@ -35,7 +35,7 @@ ffc2ea73914b27fd7799cca895f5f5a7ca1a099d data/regions_unexplored/worldgen/biome/
 1511a02b58c106e6bf110dd907e28a00e5d5f2cb data/regions_unexplored/worldgen/biome/highland_fields.json
 1feb45ced53793a9fcf3a615e99e224f7df4d9c5 data/regions_unexplored/worldgen/biome/hyacinth_deeps.json
 ca7ec3da6702ea849cdfca89bf3dc8edd0da71ae data/regions_unexplored/worldgen/biome/icy_heights.json
-6a1d86511968948761aa93966fa6cc9f31f76a10 data/regions_unexplored/worldgen/biome/infernal_holt.json
+12d4a00aa37578a462a8e6f632cc1da9d5333b2b data/regions_unexplored/worldgen/biome/infernal_holt.json
 55d61c8a88975b09dcf5cc0644676c4ee52f5732 data/regions_unexplored/worldgen/biome/joshua_desert.json
 91d6310f05754257c95cb15877678a4fd3276818 data/regions_unexplored/worldgen/biome/magnolia_woodland.json
 88a4380b276f2f94619e042ff7e2693dd4388b9c data/regions_unexplored/worldgen/biome/maple_forest.json
