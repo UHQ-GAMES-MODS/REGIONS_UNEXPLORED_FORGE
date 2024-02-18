@@ -3,7 +3,10 @@ package net.regions_unexplored.entity.custom;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.entity.vehicle.ChestBoat;
 import net.minecraft.world.item.Item;
@@ -14,6 +17,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.regions_unexplored.entity.RuEntities;
 import net.regions_unexplored.item.RuItems;
 import org.jetbrains.annotations.NotNull;
+import org.joml.Vector3f;
 
 public class RuChestBoat extends ChestBoat {
     public RuChestBoat(EntityType<? extends RuChestBoat> type, Level level) {
@@ -27,6 +31,25 @@ public class RuChestBoat extends ChestBoat {
         this.xo = x;
         this.yo = y;
         this.zo = z;
+    }
+
+    @Override
+    protected Vector3f getPassengerAttachmentPoint(Entity entity, EntityDimensions entityDimensions, float isBamboo) {
+        float f = this.getSinglePassengerXOffset();
+        if (this.getPassengers().size() > 1) {
+            int i = this.getPassengers().indexOf(entity);
+            if (i == 0) {
+                f = 0.2F;
+            } else {
+                f = -0.6F;
+            }
+
+            if (entity instanceof Animal) {
+                f += 0.2F;
+            }
+        }
+
+        return new Vector3f(0.0F, entityDimensions.height / 3.0F, f);
     }
 
     @Override
