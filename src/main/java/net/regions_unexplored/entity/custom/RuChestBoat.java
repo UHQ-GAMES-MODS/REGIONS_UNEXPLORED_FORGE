@@ -77,6 +77,7 @@ public class RuChestBoat extends ChestBoat {
     @Override
     protected void addAdditionalSaveData(CompoundTag tag) {
         tag.putString("model", getModel().getName());
+        this.addChestVehicleSaveData(tag);
     }
 
     @Override
@@ -84,6 +85,7 @@ public class RuChestBoat extends ChestBoat {
         if (tag.contains("model", Tag.TAG_STRING)) {
             this.entityData.set(DATA_ID_TYPE, RuBoat.ModelType.byName(tag.getString("model")).ordinal());
         }
+        this.readChestVehicleSaveData(tag);
     }
 
     @Override
