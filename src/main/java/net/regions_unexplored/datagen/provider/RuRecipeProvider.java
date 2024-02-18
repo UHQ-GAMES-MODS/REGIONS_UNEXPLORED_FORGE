@@ -1,6 +1,9 @@
 package net.regions_unexplored.datagen.provider;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.advancements.Criterion;
+import net.minecraft.advancements.critereon.EnterBlockTrigger;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -13,6 +16,7 @@ import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.regions_unexplored.RegionsUnexploredMod;
@@ -22,6 +26,7 @@ import net.regions_unexplored.item.RuItems;
 
 import javax.annotation.Nullable;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Consumer;
 
 public class RuRecipeProvider extends RecipeProvider implements IConditionBuilder {
@@ -384,6 +389,15 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         planksFromOneLog(consumer, RuBlocks.ALPHA_PLANKS.get(), RuBlocks.ALPHA_LOG.get(), 4);
         woodenStairs(consumer, RuBlocks.ALPHA_STAIRS.get(), RuBlocks.ALPHA_PLANKS.get());
         woodenSlab(consumer, RuBlocks.ALPHA_SLAB.get(), RuBlocks.ALPHA_PLANKS.get());
+        woodenFence(consumer, Items.OAK_FENCE, RuBlocks.ALPHA_PLANKS.get());
+        woodenDoor(consumer, Items.OAK_DOOR, RuBlocks.ALPHA_PLANKS.get());
+        woodenFenceGate(consumer, Items.OAK_FENCE_GATE, RuBlocks.ALPHA_PLANKS.get());
+        woodenTrapdoor(consumer, Items.OAK_TRAPDOOR, RuBlocks.ALPHA_PLANKS.get());
+        pressurePlate(consumer, Items.OAK_PRESSURE_PLATE, RuBlocks.ALPHA_PLANKS.get());
+        woodenButton(consumer, Items.OAK_BUTTON, RuBlocks.ALPHA_PLANKS.get());
+        woodenSign(consumer, Items.OAK_SIGN, RuBlocks.ALPHA_PLANKS.get());
+        hangingSign(consumer, Items.OAK_HANGING_SIGN, RuBlocks.ALPHA_PLANKS.get());
+        woodenBoat(consumer, Items.OAK_BOAT, RuBlocks.ALPHA_PLANKS.get());
         //BAOBAB_BLOCKS
         woodFromLogs(consumer, RuBlocks.BAOBAB_WOOD.get(), RuBlocks.BAOBAB_LOG.get());
         woodFromLogs(consumer, RuBlocks.STRIPPED_BAOBAB_WOOD.get(), RuBlocks.STRIPPED_BAOBAB_LOG.get());
@@ -787,6 +801,11 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
 
 
     }
+
+    private static Criterion<EnterBlockTrigger.TriggerInstance> insideOf(Block p_125980_) {
+        return CriteriaTriggers.ENTER_BLOCK.createCriterion(new EnterBlockTrigger.TriggerInstance(Optional.empty(), p_125980_, Optional.empty()));
+    }
+
     protected static void branchFromLog(RecipeOutput consumer, ItemLike item, ItemLike item2) {
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, item, 2).define('#', item2).define('X', Items.STICK).pattern("#X").group("branches").unlockedBy("has_log", has(item2)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getConversionRecipeName(item,item2)));
     }
@@ -824,6 +843,10 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
 
     protected static void hangingSign(RecipeOutput consumer, ItemLike item, ItemLike item2) {
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, item, 6).group("hanging_sign").define('#', item2).define('X', Items.CHAIN).pattern("X X").pattern("###").pattern("###").unlockedBy(getHasName(item2), has(item2)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getItemName(item)));
+    }
+
+    protected static void woodenBoat(RecipeOutput consumer, ItemLike item, ItemLike item2) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.TRANSPORTATION, item).define('#', item2).pattern("# #").pattern("###").group("boat").unlockedBy("in_water", insideOf(Blocks.WATER)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getItemName(item)));
     }
 
     protected static void woodenDoor(RecipeOutput consumer, ItemLike item, ItemLike item2) {
