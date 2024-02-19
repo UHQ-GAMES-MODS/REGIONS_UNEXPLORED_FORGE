@@ -226,7 +226,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.DRY_BUSHLAND.location())
         ;
         this.tag(BiomeTags.SPAWNS_COLD_VARIANT_FROGS)
-                .addOptional(RuBiomes.ALPHA_GROVE.location())
+                .addOptional(RuBiomes.SPIRES.location())
                 .addOptional(RuBiomes.COLD_DECIDUOUS_FOREST.location())
                 .addOptional(RuBiomes.COLD_BOREAL_TAIGA.location())
                 .addOptional(RuBiomes.ICY_HEIGHTS.location())
@@ -239,7 +239,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.OUTBACK.location())
         ;
         this.tag(BiomeTags.SPAWNS_SNOW_FOXES)
-                .addOptional(RuBiomes.ALPHA_GROVE.location())
+                .addOptional(RuBiomes.SPIRES.location())
                 .addOptional(RuBiomes.COLD_DECIDUOUS_FOREST.location())
                 .addOptional(RuBiomes.COLD_BOREAL_TAIGA.location())
                 .addOptional(RuBiomes.ICY_HEIGHTS.location())
@@ -257,7 +257,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.FUNGAL_FEN.location())
         ;
         this.tag(BiomeTags.SPAWNS_WHITE_RABBITS)
-                .addOptional(RuBiomes.ALPHA_GROVE.location())
+                .addOptional(RuBiomes.SPIRES.location())
                 .addOptional(RuBiomes.COLD_DECIDUOUS_FOREST.location())
                 .addOptional(RuBiomes.COLD_BOREAL_TAIGA.location())
                 .addOptional(RuBiomes.ICY_HEIGHTS.location())
@@ -544,7 +544,6 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
         this.tag(TagKey.create(Registries.BIOME, new ResourceLocation("forge", "is_cold/nether")))
         ;
         this.tag(TagKey.create(Registries.BIOME, new ResourceLocation("forge", "is_cold/overworld")))
-                .addOptional(RuBiomes.ALPHA_GROVE.location())
                 .addOptional(RuBiomes.AUTUMNAL_MAPLE_FOREST.location())
                 .addOptional(RuBiomes.PUMPKIN_FIELDS.location())
                 .addOptional(RuBiomes.POPPY_FIELDS.location())
@@ -552,6 +551,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.SILVER_BIRCH_FOREST.location())
                 .addOptional(RuBiomes.BOREAL_TAIGA.location())
                 .addOptional(RuBiomes.GOLDEN_BOREAL_TAIGA.location())
+                .addOptional(RuBiomes.SPIRES.location())
                 .addOptional(RuBiomes.COLD_DECIDUOUS_FOREST.location())
                 .addOptional(RuBiomes.COLD_BOREAL_TAIGA.location())
                 .addOptional(RuBiomes.ICY_HEIGHTS.location())
@@ -719,7 +719,7 @@ public class RuBiomeTagProvider extends BiomeTagsProvider {
                 .addOptional(RuBiomes.PINE_SLOPES.location())
         ;
         this.tag(TagKey.create(Registries.BIOME, new ResourceLocation("forge", "is_snowy")))
-                .addOptional(RuBiomes.ALPHA_GROVE.location())
+                .addOptional(RuBiomes.SPIRES.location())
                 .addOptional(RuBiomes.COLD_DECIDUOUS_FOREST.location())
                 .addOptional(RuBiomes.COLD_BOREAL_TAIGA.location())
                 .addOptional(RuBiomes.ICY_HEIGHTS.location())
