@@ -12,7 +12,6 @@ import net.regions_unexplored.RegionsUnexploredMod;
 import net.regions_unexplored.config.RuCommonConfig;
 import net.regions_unexplored.data.worldgen.biome.RuBiomes;
 import net.regions_unexplored.data.worldgen.biome.builder.*;
-import net.regions_unexplored.data.worldgen.biome.surface.RuNetherSurfaceBuilder;
 import net.regions_unexplored.data.worldgen.biome.surface.RuOverworldSurfaceBuilders;
 import net.regions_unexplored.data.worldgen.biome.surface.RuSurfaceRuleData;
 import net.regions_unexplored.world.level.region.RuRegionNether;
