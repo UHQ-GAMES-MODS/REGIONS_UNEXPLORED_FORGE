@@ -3,6 +3,7 @@ package net.regions_unexplored.world.level.block.forest_dirt;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -11,6 +12,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.FarmBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.piston.MovingPistonBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -23,7 +25,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.IPlantable;
 import net.regions_unexplored.block.RuBlocks;
 
-public class PeatFarmBlock extends Block {
+public class PeatFarmBlock extends FarmBlock {
     public static final IntegerProperty MOISTURE = BlockStateProperties.MOISTURE;
     protected static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 15.0D, 16.0D);
     public static final int MAX_MOISTURE = 7;
@@ -35,7 +37,6 @@ public class PeatFarmBlock extends Block {
 
     @Override
     public boolean canSustainPlant(BlockState state, BlockGetter getter, BlockPos pos, Direction direction, IPlantable plantable) {
-        BlockState plant = plantable.getPlant(getter, pos.relative(direction));
         net.minecraftforge.common.PlantType type = plantable.getPlantType(getter, pos.relative(direction));
         if (net.minecraftforge.common.PlantType.CROP.equals(type)) {
             return true;

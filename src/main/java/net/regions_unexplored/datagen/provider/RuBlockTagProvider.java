@@ -1281,6 +1281,10 @@ public class RuBlockTagProvider extends BlockTagsProvider {
         //this.tag(BlockTags.WOOL);
         //this.tag(BlockTags.WOOL_CARPETS);
 
+        this.tag(RuTags.CROP_PLANTABLE_BLOCKS)
+                .add(RuBlocks.PEAT_FARMLAND.getKey())
+                .add(RuBlocks.SILT_FARMLAND.getKey())
+        ;
         this.tag(RuTags.HYACINTH_BLOOMS)
                 .add(RuBlocks.HYACINTH_BLOOM.getKey())
                 .add(RuBlocks.TALL_HYACINTH_STOCK.getKey())

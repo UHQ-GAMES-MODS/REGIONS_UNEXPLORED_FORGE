@@ -6,6 +6,7 @@
   "refmap": "ru.refmap.json",
   "mixins": [
     "TrunkPlacerDirtMixin",
+    "CropPlacerMixin",
     "EatBlockGoalMixin",
     "NetherrackBlockMixin"
   ],

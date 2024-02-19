@@ -1,4 +1,4 @@
-// 1.20.2	2024-02-18T19:49:58.7251503	Tags for minecraft:block mod id regions_unexplored
+// 1.20.2	2024-02-19T14:28:21.3264081	Tags for minecraft:block mod id regions_unexplored
 c68b911808b65d6d0bfdc3f30335a8603b276a7f data/forge/tags/blocks/doors/wooden.json
 42cbe3f376a6f8296386e47b2cc55792c9131c39 data/forge/tags/blocks/fences/wooden.json
 fa5edfcedc25e4053b7dd6e9679d69e0d74e295e data/forge/tags/blocks/fence_gates/wooden.json
@@ -103,6 +103,7 @@ fd1bddddb4832270f41b8cd2eded40abbef982d4 data/regions_unexplored/tags/blocks/blu
 6e1a8ea1d8a2c20b42102b1ce3fbc1b7e3858088 data/regions_unexplored/tags/blocks/brim_plant_can_survive_on.json
 adfa45d9d26dbf014552adba23eeede475f07fd0 data/regions_unexplored/tags/blocks/cattail_can_survive_on.json
 3ef13a80b10875c208d82232b0d103cb571c2354 data/regions_unexplored/tags/blocks/cobalt_logs.json
+290567e9f2cc2c3c765244cc99cb009af2d0fac5 data/regions_unexplored/tags/blocks/crop_plantable_blocks.json
 a80909545cb6695cf2660332dfda8d54445f8172 data/regions_unexplored/tags/blocks/cypress_logs.json
 f5252ff413c0acb9c0670b12e04c37e02f241c0b data/regions_unexplored/tags/blocks/dead_logs.json
 99c78e980701f3d7791da998970f8544c6dd5fa8 data/regions_unexplored/tags/blocks/eucalyptus_logs.json
