@@ -2,6 +2,7 @@
   "values": [
     "regions_unexplored:chalk_slab",
     "regions_unexplored:chalk_brick_slab",
-    "regions_unexplored:polished_chalk_slab"
+    "regions_unexplored:polished_chalk_slab",
+    "regions_unexplored:chalk_brick_slab"
   ]
 }
