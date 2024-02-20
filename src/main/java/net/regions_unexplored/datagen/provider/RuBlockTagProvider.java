@@ -872,7 +872,6 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.CHALK_SLAB.getKey())
                 .add(RuBlocks.CHALK_BRICK_SLAB.getKey())
                 .add(RuBlocks.POLISHED_CHALK_SLAB.getKey())
-                .add(RuBlocks.CHALK_BRICK_SLAB.getKey())
         ;
         this.tag(BlockTags.SMALL_DRIPLEAF_PLACEABLE)
                 .add(RuBlocks.ASH.getKey())
@@ -936,7 +935,6 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.CHALK_STAIRS.getKey())
                 .add(RuBlocks.CHALK_BRICK_STAIRS.getKey())
                 .add(RuBlocks.POLISHED_CHALK_STAIRS.getKey())
-                .add(RuBlocks.CHALK_BRICK_STAIRS.getKey())
         ;
         this.tag(BlockTags.CEILING_HANGING_SIGNS)
                 .add(RuBlocks.BAOBAB_HANGING_SIGN.getKey())
