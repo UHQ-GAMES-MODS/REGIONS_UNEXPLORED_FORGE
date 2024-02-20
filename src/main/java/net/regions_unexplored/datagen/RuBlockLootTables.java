@@ -35,6 +35,13 @@ public class RuBlockLootTables extends BlockLootSubProvider {
     private static final LootItemCondition.Builder HAS_SHEARS_OR_SILK_TOUCH = HAS_SHEARS.or(HAS_SILK_TOUCH);
     private static final LootItemCondition.Builder HAS_NO_SHEARS_OR_SILK_TOUCH = HAS_SHEARS_OR_SILK_TOUCH.invert();
 
+    protected static final float[] ASPEN_LEAVES_SAPLING_CHANCES = new float[]{0.0725F, 0.0785F, 0.0875F, 0.125F};
+    protected static final float[] COBALT_LEAVES_SAPLING_CHANCES = new float[]{0.083F, 0.095F, 0.105F, 0.13F};
+    protected static final float[] FLOWERING_OAK_LEAVES_SAPLING_CHANCES = new float[]{0.08F, 0.091F, 0.1F, 0.12F};
+    protected static final float[] JOSHUA_LEAVES_SAPLING_CHANCES = new float[]{0.13F, 0.15F, 0.17F, 0.185F};
+    protected static final float[] PALM_LEAVES_SAPLING_CHANCES = new float[]{0.1F, 0.125F, 0.14F, 0.155F};
+    protected static final float[] SMALL_OAK_LEAVES_SAPLING_CHANCES = new float[]{0.075F, 0.08F, 0.089F, 0.1275F};
+
     public RuBlockLootTables() {
         super(Set.of(), FeatureFlags.REGISTRY.allFlags());
     }
@@ -361,31 +368,31 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         add(RuBlocks.BAMBOO_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.BAMBOO_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.BAOBAB_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.BAOBAB_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.BLACKWOOD_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.BLACKWOOD_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
-        add(RuBlocks.COBALT_WEBBING.get(), (block) -> createLeavesDrops(block, RuBlocks.COBALT_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        add(RuBlocks.COBALT_WEBBING.get(), (block) -> createLeavesDrops(block, RuBlocks.COBALT_SAPLING.get(), COBALT_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.MAGNOLIA_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.MAGNOLIA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.CYPRESS_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.CYPRESS_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.DEAD_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.DEAD_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.DEAD_PINE_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.DEAD_PINE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.EUCALYPTUS_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.EUCALYPTUS_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
-        add(RuBlocks.FLOWERING_LEAVES.get(), (block) -> createOakLeavesDrops(block, RuBlocks.FLOWERING_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        add(RuBlocks.FLOWERING_LEAVES.get(), (block) -> createOakLeavesDrops(block, RuBlocks.FLOWERING_SAPLING.get(), FLOWERING_OAK_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.GOLDEN_LARCH_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.GOLDEN_LARCH_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
-        add(RuBlocks.JOSHUA_LEAVES.get(), (block) -> createDoublePlantWithSeedDropsNoGrass(block, RuBlocks.JOSHUA_LEAVES.get(), RuBlocks.JOSHUA_SAPLING.get()));
+        add(RuBlocks.JOSHUA_LEAVES.get(), (block) -> createDoublePlantWithSeedDropsNoGrass(block, RuBlocks.JOSHUA_LEAVES.get(), RuBlocks.JOSHUA_SAPLING.get(), JOSHUA_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.KAPOK_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.KAPOK_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.LARCH_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.LARCH_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.MAPLE_LEAVES.get(), (block) -> createOakLeavesDrops(block, RuBlocks.MAPLE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.MAUVE_LEAVES.get(), (block) -> createOakLeavesDrops(block, RuBlocks.MAUVE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.ORANGE_MAPLE_LEAVES.get(), (block) -> createOakLeavesDrops(block, RuBlocks.ORANGE_MAPLE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
-        add(RuBlocks.PALM_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.PALM_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        add(RuBlocks.PALM_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.PALM_SAPLING.get(), PALM_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.PINE_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.PINE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.BLUE_MAGNOLIA_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.BLUE_MAGNOLIA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.PINK_MAGNOLIA_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.PINK_MAGNOLIA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.REDWOOD_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.REDWOOD_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.RED_MAPLE_LEAVES.get(), (block) -> createOakLeavesDrops(block, RuBlocks.RED_MAPLE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.BRIMWOOD_LEAVES.get(), (block) -> createSilkTouchOrShearsDispatchTable(block, this.applyExplosionCondition(block, LootItem.lootTableItem(RuBlocks.BRIMWOOD_SAPLING.get())).when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, NORMAL_LEAVES_SAPLING_CHANCES))).withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).when(HAS_NO_SHEARS_OR_SILK_TOUCH)));
-        add(RuBlocks.SILVER_BIRCH_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.SILVER_BIRCH_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
-        add(RuBlocks.SMALL_OAK_LEAVES.get(), (block) -> createOakLeavesDrops(block, RuBlocks.SMALL_OAK_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        add(RuBlocks.SILVER_BIRCH_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.SILVER_BIRCH_SAPLING.get(), ASPEN_LEAVES_SAPLING_CHANCES));
+        add(RuBlocks.SMALL_OAK_LEAVES.get(), (block) -> createOakLeavesDrops(block, RuBlocks.SMALL_OAK_SAPLING.get(), SMALL_OAK_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.SOCOTRA_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.SOCOTRA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
-        add(RuBlocks.ENCHANTED_BIRCH_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.ENCHANTED_BIRCH_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        add(RuBlocks.ENCHANTED_BIRCH_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.ENCHANTED_BIRCH_SAPLING.get(), ASPEN_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.WHITE_MAGNOLIA_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.WHITE_MAGNOLIA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(RuBlocks.WILLOW_LEAVES.get(), (block) -> createLeavesDrops(block, RuBlocks.WILLOW_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
@@ -964,6 +971,11 @@ public class RuBlockLootTables extends BlockLootSubProvider {
     @Override
     protected Iterable<Block> getKnownBlocks() {
         return RegionsUnexploredMod.BLOCK_REGISTRY.getEntries().stream().map(RegistryObject::get)::iterator;
+    }
+
+    protected LootTable.Builder createDoublePlantWithSeedDropsNoGrass(Block p_248590_, Block p_248735_, ItemLike item,  float... chances) {
+        LootPoolEntryContainer.Builder<?> builder = LootItem.lootTableItem(p_248735_).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))).when(HAS_SHEARS).otherwise(this.applyExplosionCondition(p_248590_, LootItem.lootTableItem(item)).when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, chances)));
+        return LootTable.lootTable().withPool(LootPool.lootPool().add(builder).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(p_248590_).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER))).when(LocationCheck.checkLocation(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(p_248590_).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER))), new BlockPos(0, 1, 0)))).withPool(LootPool.lootPool().add(builder).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(p_248590_).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER))).when(LocationCheck.checkLocation(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(p_248590_).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER))), new BlockPos(0, -1, 0))));
     }
 
     protected LootTable.Builder createDoublePlantWithSeedDropsNoGrass(Block p_248590_, Block p_248735_, ItemLike item) {
