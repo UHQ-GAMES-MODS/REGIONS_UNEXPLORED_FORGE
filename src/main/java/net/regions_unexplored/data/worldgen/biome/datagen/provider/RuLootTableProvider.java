@@ -1,9 +1,9 @@
-package net.regions_unexplored.datagen.provider;
+package net.regions_unexplored.data.worldgen.biome.datagen.provider;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
-import net.regions_unexplored.datagen.RuBlockLootTables;
+import net.regions_unexplored.data.worldgen.biome.datagen.RuBlockLootTables;
 
 import java.util.List;
 import java.util.Set;

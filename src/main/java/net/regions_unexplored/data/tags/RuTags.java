@@ -25,6 +25,7 @@ public class RuTags {
     public static final TagKey<Block> TREE_GRASS_REPLACEABLES = createBlock("tree_grass_replaceables");
     public static final TagKey<Block> ASH = createBlock("ash");
     public static final TagKey<Block> BRANCHES = createBlock("branches");
+    public static final TagKey<Block> CROP_PLANTABLE_BLOCKS = createBlock("crop_plantable_blocks");
 
     public static final TagKey<Block> HYACINTH_BLOOMS = createBlock("hyacinth_blooms");
     public static final TagKey<Block> BAMBOO_LOGS = createBlock("bamboo_logs");

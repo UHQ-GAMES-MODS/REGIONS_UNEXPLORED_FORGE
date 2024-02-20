@@ -30,6 +30,11 @@ public class RuChestBoat extends ChestBoat {
     }
 
     @Override
+    public double getPassengersRidingOffset() {
+        return -0.1D;
+    }
+
+    @Override
     public @NotNull Item getDropItem() {
         return switch (RuBoat.ModelType.byId(this.entityData.get(DATA_ID_TYPE))) {
             default -> RuItems.BAOBAB_CHEST_BOAT.get();
@@ -54,6 +59,7 @@ public class RuChestBoat extends ChestBoat {
     @Override
     protected void addAdditionalSaveData(CompoundTag tag) {
         tag.putString("model", getModel().getName());
+        this.addChestVehicleSaveData(tag);
     }
 
     @Override
@@ -61,6 +67,7 @@ public class RuChestBoat extends ChestBoat {
         if (tag.contains("model", Tag.TAG_STRING)) {
             this.entityData.set(DATA_ID_TYPE, RuBoat.ModelType.byName(tag.getString("model")).ordinal());
         }
+        this.readChestVehicleSaveData(tag);
     }
 
     @Override

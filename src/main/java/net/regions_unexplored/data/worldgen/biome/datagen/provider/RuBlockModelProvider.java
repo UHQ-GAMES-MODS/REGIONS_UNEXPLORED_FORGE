@@ -1,4 +1,4 @@
-package net.regions_unexplored.datagen.provider;
+package net.regions_unexplored.data.worldgen.biome.datagen.provider;
 
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.client.model.generators.BlockStateProvider;

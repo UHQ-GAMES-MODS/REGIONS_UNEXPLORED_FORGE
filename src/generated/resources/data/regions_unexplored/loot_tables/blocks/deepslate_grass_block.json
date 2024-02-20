@@ -33,7 +33,7 @@
                   "condition": "minecraft:survives_explosion"
                 }
               ],
-              "name": "minecraft:deepslate"
+              "name": "minecraft:cobbled_deepslate"
             }
           ]
         }

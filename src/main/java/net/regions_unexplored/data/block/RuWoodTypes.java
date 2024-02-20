@@ -4,6 +4,7 @@ import net.minecraft.world.level.block.state.properties.WoodType;
 import net.regions_unexplored.RegionsUnexploredMod;
 
 public class RuWoodTypes {
+    public static WoodType ALPHA = WoodType.register(new WoodType(RegionsUnexploredMod.MOD_ID + ":alpha", RuBlockSetType.ALPHA));
     public static WoodType BAOBAB = WoodType.register(new WoodType(RegionsUnexploredMod.MOD_ID + ":baobab", RuBlockSetType.BAOBAB));
     public static WoodType BLACKWOOD = WoodType.register(new WoodType(RegionsUnexploredMod.MOD_ID + ":blackwood", RuBlockSetType.BLACKWOOD));
     public static WoodType BLUE_BIOSHROOM = WoodType.register(new WoodType(RegionsUnexploredMod.MOD_ID + ":blue_bioshroom", RuBlockSetType.BLUE_BIOSHROOM));

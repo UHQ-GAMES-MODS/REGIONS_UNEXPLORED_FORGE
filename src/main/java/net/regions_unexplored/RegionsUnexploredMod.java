@@ -109,7 +109,6 @@ public class RegionsUnexploredMod {
 
     //set up client side features
     public void clientSetup(final FMLClientSetupEvent event) {
-        WoodTypeRegistry.addWoodTypes();
         WoodTypeRegistry.addSheets();
         BlockEntityRenderers.register(RuBlockEntities.SIGN_BLOCK_ENTITIES.get(), SignRenderer::new);
         BlockEntityRenderers.register(RuBlockEntities.HANGING_SIGN_BLOCK_ENTITIES.get(), HangingSignRenderer::new);

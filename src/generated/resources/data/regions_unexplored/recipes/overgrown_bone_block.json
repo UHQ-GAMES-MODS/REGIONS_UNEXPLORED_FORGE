@@ -1,18 +1,16 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "group": "bone_meal",
-  "key": {
-    "#": {
-      "item": "minecraft:bone_meal"
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "overgrown_bone_block",
+  "ingredients": [
+    {
+      "item": "minecraft:bone_block"
+    },
+    {
+      "item": "regions_unexplored:glistering_nylium"
     }
-  },
-  "pattern": [
-    "##",
-    "##"
   ],
   "result": {
     "item": "regions_unexplored:overgrown_bone_block"
-  },
-  "show_notification": true
+  }
 }

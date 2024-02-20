@@ -41,22 +41,22 @@ public class AppleLeavesBlock extends LeavesBlock implements BonemealableBlock{
 
     @Override
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        if (this.decaying(state)) {
+        int i = state.getValue(AGE);
+        if(!this.decaying(state)) {
+            if (i < 4 && level.getRawBrightness(pos.above(), 0) >= 9 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(level, pos, state, random.nextInt(4) == 0)) {
+                BlockState blockstate = state.setValue(AGE, Integer.valueOf(i + 1));
+                level.setBlock(pos, blockstate, 2);
+                level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(blockstate));
+                net.minecraftforge.common.ForgeHooks.onCropsGrowPost(level, pos, state);
+            }
+        }
+        else {
             if(state.getValue(AGE)==4){
                 popResourceFromFace(level, pos, Direction.DOWN, new ItemStack(Items.APPLE, 1));
             }
             dropResources(state, level, pos);
             level.removeBlock(pos, false);
         }
-
-        int i = state.getValue(AGE);
-        if (i < 4 && level.getRawBrightness(pos.above(), 0) >= 9 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(level, pos, state, random.nextInt(4) == 0)) {
-            BlockState blockstate = state.setValue(AGE, Integer.valueOf(i + 1));
-            level.setBlock(pos, blockstate, 2);
-            level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(blockstate));
-            net.minecraftforge.common.ForgeHooks.onCropsGrowPost(level, pos, state);
-        }
-
     }
 
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
@@ -82,7 +82,7 @@ public class AppleLeavesBlock extends LeavesBlock implements BonemealableBlock{
     }
 
     public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, boolean b) {
-        return state.getValue(AGE) < 4;
+        return state.getValue(AGE) <= 4;
     }
 
     public boolean isBonemealSuccess(Level level, RandomSource random, BlockPos pos, BlockState state) {

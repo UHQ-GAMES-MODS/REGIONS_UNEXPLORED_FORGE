@@ -3,7 +3,10 @@ package net.regions_unexplored.entity.custom;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -15,6 +18,7 @@ import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.entity.RuEntities;
 import net.regions_unexplored.item.RuItems;
 import org.jetbrains.annotations.NotNull;
+import org.joml.Vector3f;
 
 import java.util.Arrays;
 
@@ -30,6 +34,11 @@ public class RuBoat extends Boat {
         this.xo = x;
         this.yo = y;
         this.zo = z;
+    }
+
+    @Override
+    public double getPassengersRidingOffset() {
+        return -0.1D;
     }
 
     @Override

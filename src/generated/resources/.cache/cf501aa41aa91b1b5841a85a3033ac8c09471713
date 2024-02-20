@@ -1,9 +1,9 @@
-// 1.20.1	2023-08-14T23:53:08.4791667	Tags for minecraft:worldgen/biome mod id regions_unexplored
+// 1.20.1	2024-02-19T20:20:41.748245	Tags for minecraft:worldgen/biome mod id regions_unexplored
 36649860d25a60634c9747c746e4a7f41282eab1 data/forge/tags/worldgen/biome/is_cave.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/worldgen/biome/is_cold.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/worldgen/biome/is_cold/end.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/worldgen/biome/is_cold/nether.json
-d457e1090826e0db4e3dfa3fd91625d46f3a7bcc data/forge/tags/worldgen/biome/is_cold/overworld.json
+f1f74871a2b32067d2513a77c8d1350bbee766be data/forge/tags/worldgen/biome/is_cold/overworld.json
 d05df651842961fbfde2ff84d9ad1b716c274eac data/forge/tags/worldgen/biome/is_coniferous.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/worldgen/biome/is_dense.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/worldgen/biome/is_dense/end.json
@@ -27,7 +27,7 @@ ce69f30229615cc67f5c85a6a5e09bfc4905062f data/forge/tags/worldgen/biome/is_plate
 2aff68e0974dd1d1345896166261819ca78b7d72 data/forge/tags/worldgen/biome/is_rare.json
 255b241c843fb0cf9a795460ccd4493a05ddd9e0 data/forge/tags/worldgen/biome/is_sandy.json
 307c1f83f1c84f67a8dd746c3ae2c02ff4bf6571 data/forge/tags/worldgen/biome/is_slope.json
-0831321464a6cce590aff724b4abd3c1145f14df data/forge/tags/worldgen/biome/is_snowy.json
+f64a3bef665292a3e2d2a7face22fbdf4bf9c18c data/forge/tags/worldgen/biome/is_snowy.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/worldgen/biome/is_sparse.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/worldgen/biome/is_sparse/end.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/worldgen/biome/is_sparse/nether.json
@@ -88,11 +88,11 @@ cfd2102a597ed9fe359ad34d0344e25d9d98d87a data/minecraft/tags/worldgen/biome/mine
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/worldgen/biome/reduce_water_ambient_spawns.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/worldgen/biome/required_ocean_monument_surrounding.json
 e3602de74065b1087709645b552536298e936ef2 data/minecraft/tags/worldgen/biome/snow_golem_melts.json
-0831321464a6cce590aff724b4abd3c1145f14df data/minecraft/tags/worldgen/biome/spawns_cold_variant_frogs.json
+f64a3bef665292a3e2d2a7face22fbdf4bf9c18c data/minecraft/tags/worldgen/biome/spawns_cold_variant_frogs.json
 b776a40e464619060050d54e9a97f0c56763d712 data/minecraft/tags/worldgen/biome/spawns_gold_rabbits.json
-0831321464a6cce590aff724b4abd3c1145f14df data/minecraft/tags/worldgen/biome/spawns_snow_foxes.json
+f64a3bef665292a3e2d2a7face22fbdf4bf9c18c data/minecraft/tags/worldgen/biome/spawns_snow_foxes.json
 b9623a63e23431fd25b7d20d11884ba7453d87dc data/minecraft/tags/worldgen/biome/spawns_warm_variant_frogs.json
-0831321464a6cce590aff724b4abd3c1145f14df data/minecraft/tags/worldgen/biome/spawns_white_rabbits.json
+f64a3bef665292a3e2d2a7face22fbdf4bf9c18c data/minecraft/tags/worldgen/biome/spawns_white_rabbits.json
 0787eb8c89494db79d94bab3613efe4ff71968c6 data/minecraft/tags/worldgen/biome/stronghold_biased_to.json
 13bda1b4bd23aad88838e757b3f65b60f30b82b7 data/minecraft/tags/worldgen/biome/water_on_map_outlines.json
 440485c95ff0181b95d2cd45a7d8d7cb1b2b6b65 data/minecraft/tags/worldgen/biome/without_patrol_spawns.json

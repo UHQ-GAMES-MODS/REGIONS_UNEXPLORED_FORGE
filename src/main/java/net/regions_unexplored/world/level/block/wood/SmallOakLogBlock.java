@@ -97,7 +97,7 @@ public class SmallOakLogBlock extends Block implements SimpleWaterloggedBlock{
         Direction.Axis axis = state.getValue(AXIS);
         boolean water = state.getValue(WATERLOGGED);
 
-        if (ToolActions.AXE_STRIP == action && context.getItemInHand().canPerformAction(ToolActions.AXE_STRIP)) {
+        if (ToolActions.AXE_STRIP == action && context.getItemInHand().canPerformAction(ToolActions.AXE_STRIP) && state.getBlock()!=RuBlocks.STRIPPED_SMALL_OAK_LOG.get()) {
             return RuBlocks.STRIPPED_SMALL_OAK_LOG.get().defaultBlockState().setValue(AXIS, axis).setValue(WATERLOGGED, water);
         }
         return null;
