@@ -39,7 +39,7 @@ public class AlphaGrassBlock extends SpreadingAlphaDirtBlock implements Bonemeal
 
    public void performBonemeal(ServerLevel p_221270_, RandomSource p_221271_, BlockPos p_221272_, BlockState p_221273_) {
       BlockPos blockpos = p_221272_.above();
-      BlockState blockstate = Blocks.GRASS.defaultBlockState();
+      BlockState blockstate = Blocks.SHORT_GRASS.defaultBlockState();
       Optional<Holder.Reference<PlacedFeature>> optional = p_221270_.registryAccess().registryOrThrow(Registries.PLACED_FEATURE).getHolder(RuVegetationPlacements.ALPHA_ROSE);
 
       label46:

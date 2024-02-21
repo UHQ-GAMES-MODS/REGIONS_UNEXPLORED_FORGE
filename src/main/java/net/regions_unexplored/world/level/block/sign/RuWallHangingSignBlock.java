@@ -9,7 +9,7 @@ import net.regions_unexplored.block.entity.RuHangingSignBlockEntity;
 
 public class RuWallHangingSignBlock extends WallHangingSignBlock {
     public RuWallHangingSignBlock(Properties properties, WoodType type) {
-        super(properties, type);
+        super(type, properties);
     }
 
     @Override

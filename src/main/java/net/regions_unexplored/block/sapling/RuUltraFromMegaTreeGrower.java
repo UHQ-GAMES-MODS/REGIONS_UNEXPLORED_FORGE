@@ -17,14 +17,16 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraftforge.event.ForgeEventFactory;
+import net.minecraftforge.eventbus.api.Event;
 
 import javax.annotation.Nullable;
 import java.util.Map;
 import java.util.Optional;
 
-public final class RuUltraFromSuperTreeGrower {
-    private static final Map<String, RuUltraFromSuperTreeGrower> GROWERS = new Object2ObjectArrayMap<>();
-    public static final Codec<RuUltraFromSuperTreeGrower> CODEC = ExtraCodecs.stringResolverCodec((grower) -> {
+public final class RuUltraFromMegaTreeGrower {
+    private static final Map<String, RuUltraFromMegaTreeGrower> GROWERS = new Object2ObjectArrayMap<>();
+    public static final Codec<RuUltraFromMegaTreeGrower> CODEC = ExtraCodecs.stringResolverCodec((grower) -> {
         return grower.name;
     }, GROWERS::get);
 
@@ -32,28 +34,28 @@ public final class RuUltraFromSuperTreeGrower {
     private final float secondaryChance;
     private final Optional<ResourceKey<ConfiguredFeature<?, ?>>> ultraTree;
     private final Optional<ResourceKey<ConfiguredFeature<?, ?>>> secondaryUltraTree;
-    private final Optional<ResourceKey<ConfiguredFeature<?, ?>>> superTree;
-    private final Optional<ResourceKey<ConfiguredFeature<?, ?>>> secondarySuperTree;
+    private final Optional<ResourceKey<ConfiguredFeature<?, ?>>> megaTree;
+    private final Optional<ResourceKey<ConfiguredFeature<?, ?>>> secondaryMegaTree;
     private final Optional<ResourceKey<ConfiguredFeature<?, ?>>> tree;
     private final Optional<ResourceKey<ConfiguredFeature<?, ?>>> secondaryTree;
     private final Optional<ResourceKey<ConfiguredFeature<?, ?>>> flowers;
     private final Optional<ResourceKey<ConfiguredFeature<?, ?>>> secondaryFlowers;
 
-    public RuUltraFromSuperTreeGrower(String key, Optional<ResourceKey<ConfiguredFeature<?, ?>>> superTree, Optional<ResourceKey<ConfiguredFeature<?, ?>>> tree, Optional<ResourceKey<ConfiguredFeature<?, ?>>> flowers) {
-        this(key, 0.0F, Optional.empty(), Optional.empty(), superTree, Optional.empty(), tree, Optional.empty(), flowers, Optional.empty());
+    public RuUltraFromMegaTreeGrower(String key, Optional<ResourceKey<ConfiguredFeature<?, ?>>> megaTree, Optional<ResourceKey<ConfiguredFeature<?, ?>>> tree, Optional<ResourceKey<ConfiguredFeature<?, ?>>> flowers) {
+        this(key, 0.0F, Optional.empty(), Optional.empty(), megaTree, Optional.empty(), tree, Optional.empty(), flowers, Optional.empty());
     }
 
-    public RuUltraFromSuperTreeGrower(String key, Optional<ResourceKey<ConfiguredFeature<?, ?>>> ultraTree, Optional<ResourceKey<ConfiguredFeature<?, ?>>> superTree, Optional<ResourceKey<ConfiguredFeature<?, ?>>> tree, Optional<ResourceKey<ConfiguredFeature<?, ?>>> flowers) {
-        this(key, 0.0F, ultraTree, Optional.empty(), superTree, Optional.empty(), tree, Optional.empty(), flowers, Optional.empty());
+    public RuUltraFromMegaTreeGrower(String key, Optional<ResourceKey<ConfiguredFeature<?, ?>>> ultraTree, Optional<ResourceKey<ConfiguredFeature<?, ?>>> megaTree, Optional<ResourceKey<ConfiguredFeature<?, ?>>> tree, Optional<ResourceKey<ConfiguredFeature<?, ?>>> flowers) {
+        this(key, 0.0F, ultraTree, Optional.empty(), megaTree, Optional.empty(), tree, Optional.empty(), flowers, Optional.empty());
     }
 
-    public RuUltraFromSuperTreeGrower(String key, float secondaryChance, Optional<ResourceKey<ConfiguredFeature<?, ?>>> ultraTree, Optional<ResourceKey<ConfiguredFeature<?, ?>>> secondaryUltraTree, Optional<ResourceKey<ConfiguredFeature<?, ?>>> superTree, Optional<ResourceKey<ConfiguredFeature<?, ?>>> secondarySuperTree, Optional<ResourceKey<ConfiguredFeature<?, ?>>> tree, Optional<ResourceKey<ConfiguredFeature<?, ?>>> secondaryTree, Optional<ResourceKey<ConfiguredFeature<?, ?>>> flowers, Optional<ResourceKey<ConfiguredFeature<?, ?>>> secondaryFlowers) {
+    public RuUltraFromMegaTreeGrower(String key, float secondaryChance, Optional<ResourceKey<ConfiguredFeature<?, ?>>> ultraTree, Optional<ResourceKey<ConfiguredFeature<?, ?>>> secondaryUltraTree, Optional<ResourceKey<ConfiguredFeature<?, ?>>> megaTree, Optional<ResourceKey<ConfiguredFeature<?, ?>>> secondaryMegaTree, Optional<ResourceKey<ConfiguredFeature<?, ?>>> tree, Optional<ResourceKey<ConfiguredFeature<?, ?>>> secondaryTree, Optional<ResourceKey<ConfiguredFeature<?, ?>>> flowers, Optional<ResourceKey<ConfiguredFeature<?, ?>>> secondaryFlowers) {
         this.name = key;
         this.secondaryChance = secondaryChance;
         this.ultraTree = ultraTree;
         this.secondaryUltraTree = secondaryUltraTree;
-        this.superTree = superTree;
-        this.secondarySuperTree = secondarySuperTree;
+        this.megaTree = megaTree;
+        this.secondaryMegaTree = secondaryMegaTree;
         this.tree = tree;
         this.secondaryTree = secondaryTree;
         this.flowers = flowers;
@@ -67,8 +69,8 @@ public final class RuUltraFromSuperTreeGrower {
     }
 
     @Nullable
-    private ResourceKey<ConfiguredFeature<?, ?>> getConfiguredSuperFeature(RandomSource random) {
-        return this.secondarySuperTree.isPresent() && random.nextFloat() < this.secondaryChance ? this.secondarySuperTree.get() : this.superTree.orElse((ResourceKey<ConfiguredFeature<?, ?>>)null);
+    private ResourceKey<ConfiguredFeature<?, ?>> getConfiguredMegaFeature(RandomSource random) {
+        return this.secondaryMegaTree.isPresent() && random.nextFloat() < this.secondaryChance ? this.secondaryMegaTree.get() : this.megaTree.orElse((ResourceKey<ConfiguredFeature<?, ?>>)null);
     }
 
     @Nullable
@@ -91,9 +93,9 @@ public final class RuUltraFromSuperTreeGrower {
         ResourceKey<ConfiguredFeature<?, ?>> resourcekey = this.getConfiguredUltraFeature(random);
         if (resourcekey != null) {
             Holder<ConfiguredFeature<?, ?>> holder = level.registryAccess().registryOrThrow(Registries.CONFIGURED_FEATURE).getHolder(resourcekey).orElse((Holder.Reference<ConfiguredFeature<?, ?>>)null);
-            var event = net.minecraftforge.event.ForgeEventFactory.blockGrowFeature(level, random, pos, holder);
+            var event = ForgeEventFactory.blockGrowFeature(level, random, pos, holder);
             holder = event.getFeature();
-            if (event.getResult() == net.minecraftforge.eventbus.api.Event.Result.DENY) return false;
+            if (event.getResult() == Event.Result.DENY) return false;
             if (holder != null) {
                 for(int i = 0; i >= -1; --i) {
                     for(int j = 0; j >= -1; --j) {
@@ -131,32 +133,30 @@ public final class RuUltraFromSuperTreeGrower {
 
 
 
-        ResourceKey<ConfiguredFeature<?, ?>> resourcekey1 = this.getConfiguredSuperFeature(random);
+        ResourceKey<ConfiguredFeature<?, ?>> resourcekey1 = this.getConfiguredMegaFeature(random);
         if (resourcekey1 != null) {
             Holder<ConfiguredFeature<?, ?>> holder = level.registryAccess().registryOrThrow(Registries.CONFIGURED_FEATURE).getHolder(resourcekey1).orElse((Holder.Reference<ConfiguredFeature<?, ?>>)null);
-            var event = net.minecraftforge.event.ForgeEventFactory.blockGrowFeature(level, random, pos, holder);
+            var event = ForgeEventFactory.blockGrowFeature(level, random, pos, holder);
             holder = event.getFeature();
-            if (event.getResult() == net.minecraftforge.eventbus.api.Event.Result.DENY) return false;
+            if (event.getResult() == Event.Result.DENY) return false;
             if (holder != null) {
                 for(int i = 0; i >= -1; --i) {
                     for(int j = 0; j >= -1; --j) {
-                        if (isStarBlockSapling(state, level, pos, i, j)) {
+                        if (isTwoBlockSapling(state, level, pos, i, j)) {
                             ConfiguredFeature<?, ?> configuredfeature = holder.value();
                             BlockState blockstate = Blocks.AIR.defaultBlockState();
                             level.setBlock(pos.offset(i, 0, j), blockstate, 4);
-                            level.setBlock(pos.offset(i, 0, j+1), blockstate, 4);
-                            level.setBlock(pos.offset(i, 0, j-1), blockstate, 4);
-                            level.setBlock(pos.offset(i+1, 0, j), blockstate, 4);
-                            level.setBlock(pos.offset(i-1, 0, j), blockstate, 4);
+                            level.setBlock(pos.offset(i + 1, 0, j), blockstate, 4);
+                            level.setBlock(pos.offset(i, 0, j + 1), blockstate, 4);
+                            level.setBlock(pos.offset(i + 1, 0, j + 1), blockstate, 4);
                             if (configuredfeature.place(level, generator, random, pos.offset(i, 0, j))) {
                                 return true;
                             }
 
                             level.setBlock(pos.offset(i, 0, j), state, 4);
-                            level.setBlock(pos.offset(i, 0, j+1), state, 4);
-                            level.setBlock(pos.offset(i, 0, j-1), state, 4);
-                            level.setBlock(pos.offset(i+1, 0, j), state, 4);
-                            level.setBlock(pos.offset(i-1, 0, j), state, 4);
+                            level.setBlock(pos.offset(i + 1, 0, j), state, 4);
+                            level.setBlock(pos.offset(i, 0, j + 1), state, 4);
+                            level.setBlock(pos.offset(i + 1, 0, j + 1), state, 4);
                             return false;
                         }
                     }
@@ -202,13 +202,12 @@ public final class RuUltraFromSuperTreeGrower {
                 getter.getBlockState(pos.offset(X-1, 0, Z-1)).is(block);
     }
 
-    public static boolean isStarBlockSapling(BlockState state, BlockGetter getter, BlockPos pos, int X, int Z) {
+    private static boolean isTwoBlockSapling(BlockState state, BlockGetter getter, BlockPos pos, int X, int Z) {
         Block block = state.getBlock();
-        return  getter.getBlockState(pos.offset(X, 0, Z)).is(block) &&
-                getter.getBlockState(pos.offset(X, 0, Z+1)).is(block) &&
-                getter.getBlockState(pos.offset(X, 0, Z-1)).is(block) &&
-                getter.getBlockState(pos.offset(X+1, 0, Z)).is(block) &&
-                getter.getBlockState(pos.offset(X-1, 0, Z)).is(block);
+        return getter.getBlockState(pos.offset(X, 0, Z)).is(block)
+                && getter.getBlockState(pos.offset(X + 1, 0, Z)).is(block)
+                && getter.getBlockState(pos.offset(X, 0, Z + 1)).is(block)
+                && getter.getBlockState(pos.offset(X + 1, 0, Z + 1)).is(block);
     }
 
     private boolean hasFlowers(LevelAccessor level, BlockPos pos) {

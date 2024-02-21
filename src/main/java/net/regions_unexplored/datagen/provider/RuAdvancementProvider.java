@@ -2,7 +2,7 @@ package net.regions_unexplored.datagen.provider;
 
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementHolder;
-import net.minecraft.advancements.FrameType;
+import net.minecraft.advancements.AdvancementType;
 import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -36,7 +36,7 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                             Component.translatable("advancements.regions_unexplored.title"),
                             Component.translatable("advancements.regions_unexplored.description"),
                             new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
-                            FrameType.TASK,
+                            AdvancementType.TASK,
                             true,
                             false,
                             false
@@ -52,7 +52,7 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                             Component.translatable("advancements.regions_unexplored.pioneer.title"),
                             Component.translatable("advancements.regions_unexplored.pioneer.description"),
                             new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
-                            FrameType.TASK,
+                            AdvancementType.TASK,
                             true,
                             true,
                             false
@@ -127,7 +127,7 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                             Component.translatable("advancements.regions_unexplored.regions_explored.title"),
                             Component.translatable("advancements.regions_unexplored.regions_explored.description"),
                             new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
-                            FrameType.CHALLENGE,
+                            AdvancementType.CHALLENGE,
                             true,
                             true,
                             true
@@ -212,7 +212,7 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                             Component.translatable("advancements.regions_unexplored.every_bit_of_the_rainbow.title"),
                             Component.translatable("advancements.regions_unexplored.every_bit_of_the_rainbow.description"),
                             new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
-                            FrameType.TASK,
+                            AdvancementType.TASK,
                             true,
                             true,
                             false
@@ -243,7 +243,7 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                             Component.translatable("advancements.regions_unexplored.from_the_tree_tops.title"),
                             Component.translatable("advancements.regions_unexplored.from_the_tree_tops.description"),
                             new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
-                            FrameType.TASK,
+                            AdvancementType.TASK,
                             true,
                             true,
                             false
@@ -259,7 +259,7 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                             Component.translatable("advancements.regions_unexplored.light_as_a_frog.title"),
                             Component.translatable("advancements.regions_unexplored.light_as_a_frog.description"),
                             new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
-                            FrameType.TASK,
+                            AdvancementType.TASK,
                             true,
                             true,
                             false
@@ -275,7 +275,7 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                             Component.translatable("advancements.regions_unexplored.eternal_expedition.title"),
                             Component.translatable("advancements.regions_unexplored.eternal_expedition.description"),
                             new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
-                            FrameType.TASK,
+                            AdvancementType.TASK,
                             true,
                             true,
                             false
@@ -294,7 +294,7 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                             Component.translatable("advancements.regions_unexplored.downer.title"),
                             Component.translatable("advancements.regions_unexplored.downer.description"),
                             new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
-                            FrameType.TASK,
+                            AdvancementType.TASK,
                             true,
                             true,
                             false
@@ -309,7 +309,7 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                             Component.translatable("advancements.regions_unexplored.light_snack.title"),
                             Component.translatable("advancements.regions_unexplored.light_snack.description"),
                             new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
-                            FrameType.TASK,
+                            AdvancementType.TASK,
                             true,
                             true,
                             false
@@ -325,7 +325,7 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                             Component.translatable("advancements.regions_unexplored.spelunker.title"),
                             Component.translatable("advancements.regions_unexplored.spelunker.description"),
                             new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
-                            FrameType.TASK,
+                            AdvancementType.TASK,
                             true,
                             true,
                             false
@@ -344,7 +344,7 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                             Component.translatable("advancements.regions_unexplored.blind_as_a_bat.title"),
                             Component.translatable("advancements.regions_unexplored.blind_as_a_bat.description"),
                             new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
-                            FrameType.TASK,
+                            AdvancementType.TASK,
                             true,
                             true,
                             false
@@ -359,7 +359,7 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                             Component.translatable("advancements.regions_unexplored.this_tree_bleeds_red.title"),
                             Component.translatable("advancements.regions_unexplored.this_tree_bleeds_red.description"),
                             new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
-                            FrameType.TASK,
+                            AdvancementType.TASK,
                             true,
                             true,
                             false
@@ -374,7 +374,7 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                             Component.translatable("advancements.regions_unexplored.got_wood.title"),
                             Component.translatable("advancements.regions_unexplored.got_wood.description"),
                             new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
-                            FrameType.CHALLENGE,
+                            AdvancementType.CHALLENGE,
                             true,
                             true,
                             false
@@ -416,7 +416,7 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                             Component.translatable("advancements.regions_unexplored.mycologist.title"),
                             Component.translatable("advancements.regions_unexplored.mycologist.description"),
                             new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
-                            FrameType.TASK,
+                            AdvancementType.TASK,
                             true,
                             true,
                             false
@@ -434,7 +434,7 @@ public class RuAdvancementProvider extends ForgeAdvancementProvider {
                             Component.translatable("advancements.regions_unexplored.ancient_specimens.title"),
                             Component.translatable("advancements.regions_unexplored.ancient_specimens.description"),
                             new ResourceLocation("regions_unexplored:textures/gui/advancements/backgrounds/argillite.png"),
-                            FrameType.CHALLENGE,
+                            AdvancementType.CHALLENGE,
                             true,
                             true,
                             false

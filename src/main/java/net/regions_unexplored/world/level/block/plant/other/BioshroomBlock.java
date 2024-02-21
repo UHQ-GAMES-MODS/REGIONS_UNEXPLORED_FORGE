@@ -7,7 +7,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SaplingBlock;
-import net.minecraft.world.level.block.grower.AbstractTreeGrower;
+import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -18,11 +18,13 @@ import net.regions_unexplored.data.tags.RuTags;
 public class BioshroomBlock extends SaplingBlock {
     protected static final float AABB_OFFSET = 3.0F;
     protected static final VoxelShape SHAPE = Block.box(3.0D, 0.0D, 3.0D, 13.0D, 13.0D, 13.0D);
+    protected final TreeGrower treeGrower;
     private final MobEffect suspiciousStewEffect;
     private final int effectDuration;
 
-    public BioshroomBlock(AbstractTreeGrower tree, MobEffect mobEffect, int duration, Properties properties) {
+    public BioshroomBlock(TreeGrower tree, MobEffect mobEffect, int duration, Properties properties) {
         super(tree, properties);
+        this.treeGrower = tree;
         this.suspiciousStewEffect = mobEffect;
         if (mobEffect.isInstantenous()) {
             this.effectDuration = duration;

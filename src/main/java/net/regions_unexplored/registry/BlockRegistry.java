@@ -81,11 +81,11 @@ public class BlockRegistry {
     }
     //Configure wooden door
     public static DoorBlock woodDoor(MapColor colour, SoundType sound, BlockSetType blockSetType) {
-        return new DoorBlock(BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(3.0F).sound(sound).noOcclusion().ignitedByLava(), blockSetType);
+        return new DoorBlock(blockSetType, BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(3.0F).sound(sound).noOcclusion().ignitedByLava());
     }
     //Configure wooden trap door
     public static TrapDoorBlock woodTrapDoor(MapColor colour, SoundType sound, BlockSetType blockSetType) {
-        return new TrapDoorBlock(BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(3.0F).sound(sound).noOcclusion().ignitedByLava(), blockSetType);
+        return new TrapDoorBlock(blockSetType, BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(3.0F).sound(sound).noOcclusion().ignitedByLava());
     }
     //Configure wooden fence
     public static FenceBlock woodFence(MapColor colour, SoundType sound) {
@@ -93,15 +93,15 @@ public class BlockRegistry {
     }
     //Configure wooden gate
     public static FenceGateBlock woodFenceGate(MapColor colour, WoodType type, SoundType sound) {
-        return new FenceGateBlock(BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(sound).ignitedByLava(), type);
+        return new FenceGateBlock(type, BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(sound).ignitedByLava());
     }
     //Configure wooden pressure plate
     public static PressurePlateBlock woodPressurePlate(MapColor colour, SoundType sound, BlockSetType blockSetType) {
-        return new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).noCollission().strength(0.5F).sound(sound).ignitedByLava(), blockSetType);
+        return new PressurePlateBlock(blockSetType, BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).noCollission().strength(0.5F).sound(sound).ignitedByLava());
     }
     //Configure wooden button
     public static ButtonBlock woodButton(SoundType sound, BlockSetType blockSetType) {
-        return new ButtonBlock(BlockBehaviour.Properties.of().noCollission().strength(0.5F).sound(sound), blockSetType, 30, true);
+        return new ButtonBlock(blockSetType, 30, BlockBehaviour.Properties.of().noCollission().strength(0.5F).sound(sound));
     }
     //Configure sign
     public static RuStandingSignBlock sign(SoundType sound, WoodType woodType) {
@@ -147,11 +147,11 @@ public class BlockRegistry {
     }
     //Configure wooden door
     public static DoorBlock fireproofWoodDoor(MapColor colour, SoundType sound, BlockSetType blockSetType) {
-        return new DoorBlock(BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(3.0F).sound(sound).noOcclusion(), blockSetType);
+        return new DoorBlock(blockSetType, BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(3.0F).sound(sound).noOcclusion());
     }
     //Configure wooden trap door
     public static TrapDoorBlock fireproofWoodTrapDoor(MapColor colour, SoundType sound, BlockSetType blockSetType) {
-        return new TrapDoorBlock(BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(3.0F).sound(sound).noOcclusion(), blockSetType);
+        return new TrapDoorBlock(blockSetType, BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(3.0F).sound(sound).noOcclusion());
     }
     //Configure wooden fence
     public static FenceBlock fireproofWoodFence(MapColor colour, SoundType sound) {
@@ -159,15 +159,15 @@ public class BlockRegistry {
     }
     //Configure wooden gate
     public static FenceGateBlock fireproofWoodFenceGate(MapColor colour, WoodType type, SoundType sound) {
-        return new FenceGateBlock(BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(sound), type);
+        return new FenceGateBlock(type, BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(sound));
     }
     //Configure wooden pressure plate
     public static PressurePlateBlock fireproofWoodPressurePlate(MapColor colour, SoundType sound, BlockSetType blockSetType) {
-        return new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).noCollission().strength(0.5F).sound(sound), blockSetType);
+        return new PressurePlateBlock(blockSetType, BlockBehaviour.Properties.of().mapColor(colour).instrument(NoteBlockInstrument.BASS).noCollission().strength(0.5F).sound(sound));
     }
     //Configure wooden button
     public static ButtonBlock fireproofWoodButton(SoundType sound, BlockSetType blockSetType) {
-        return new ButtonBlock(BlockBehaviour.Properties.of().noCollission().strength(0.5F).sound(sound), blockSetType, 30, true);
+        return new ButtonBlock(blockSetType, 30, BlockBehaviour.Properties.of().noCollission().strength(0.5F).sound(sound));
     }
     //Configure sign
     public static RuStandingSignBlock fireproofSign(SoundType sound, WoodType woodType) {

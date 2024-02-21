@@ -10,13 +10,12 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.grower.AbstractTreeGrower;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.regions_unexplored.block.RuBlocks;
 
-public class CactusSaplingBlock extends SaplingBlock {
+/*public class CactusSaplingBlock extends SaplingBlock {
     public CactusSaplingBlock(AbstractTreeGrower tree) {
         super(tree, Properties.of().mapColor(MapColor.COLOR_MAGENTA).replaceable().pushReaction(PushReaction.DESTROY).noCollission().instabreak().sound(SoundType.GRASS));
     }
@@ -55,4 +54,4 @@ public class CactusSaplingBlock extends SaplingBlock {
             return false;
         }
     }
-}
+}*/

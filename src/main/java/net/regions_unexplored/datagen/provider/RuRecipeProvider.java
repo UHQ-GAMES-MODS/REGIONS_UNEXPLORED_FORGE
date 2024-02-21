@@ -12,9 +12,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.AbstractCookingRecipe;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -801,7 +799,7 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
     }
 
     private static Criterion<EnterBlockTrigger.TriggerInstance> insideOf(Block p_125980_) {
-        return CriteriaTriggers.ENTER_BLOCK.createCriterion(new EnterBlockTrigger.TriggerInstance(Optional.empty(), p_125980_, Optional.empty()));
+        return CriteriaTriggers.ENTER_BLOCK.createCriterion(new EnterBlockTrigger.TriggerInstance(Optional.empty(), Optional.of(p_125980_.builtInRegistryHolder()), Optional.empty()));
     }
 
     protected static void branchFromLog(RecipeOutput consumer, ItemLike item, ItemLike item2) {
@@ -883,17 +881,17 @@ public class RuRecipeProvider extends RecipeProvider implements IConditionBuilde
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(item2), category, item, i).unlockedBy(getHasName(item2), has(item2)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getConversionRecipeName(item, item2) + "_stonecutting"));
     }
 
-    protected static void oreSmelting(RecipeOutput consumer, List<ItemLike> itemList, RecipeCategory category, ItemLike item, float f, int i, String s) {
-        oreCooking(consumer, RecipeSerializer.SMELTING_RECIPE, itemList, category, item, f, i, s, "_from_smelting");
+    protected static void oreSmelting(RecipeOutput consumer, List<ItemLike> itemLikes, RecipeCategory category, ItemLike item, float f, int i, String s) {
+        oreCooking(consumer, RecipeSerializer.SMELTING_RECIPE, SmeltingRecipe::new, itemLikes, category, item, f, i, s, "_from_smelting");
     }
 
-    protected static void oreBlasting(RecipeOutput consumer, List<ItemLike> itemList, RecipeCategory category, ItemLike item, float f, int i, String s) {
-        oreCooking(consumer, RecipeSerializer.BLASTING_RECIPE, itemList, category, item, f, i, s, "_from_blasting");
+    protected static void oreBlasting(RecipeOutput consumer, List<ItemLike> itemLikes, RecipeCategory category, ItemLike item, float f, int i, String s) {
+        oreCooking(consumer, RecipeSerializer.BLASTING_RECIPE, BlastingRecipe::new, itemLikes, category, item, f, i, s, "_from_blasting");
     }
 
-    protected static void oreCooking(RecipeOutput consumer, RecipeSerializer<? extends AbstractCookingRecipe> serializer, List<ItemLike> itemList, RecipeCategory category, ItemLike item, float f, int i, String s, String s2) {
-        for(ItemLike itemlike : itemList) {
-            SimpleCookingRecipeBuilder.generic(Ingredient.of(itemlike), category, item, f, i, serializer).group(s).unlockedBy(getHasName(itemlike), has(itemlike)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getItemName(item) + s2 + "_" + getItemName(itemlike)));
+    private static <T extends AbstractCookingRecipe> void oreCooking(RecipeOutput consumer, RecipeSerializer<T> serializer, AbstractCookingRecipe.Factory<T> factory, List<ItemLike> itemLikes, RecipeCategory category, ItemLike item, float f, int i, String s, String t) {
+        for(ItemLike itemlike : itemLikes) {
+            SimpleCookingRecipeBuilder.generic(Ingredient.of(itemlike), category, item, f, i, serializer, factory).group(s).unlockedBy(getHasName(itemlike), has(itemlike)).save(consumer, new ResourceLocation(RegionsUnexploredMod.MOD_ID, getItemName(item) + t + "_" + getItemName(itemlike)));
         }
 
     }
