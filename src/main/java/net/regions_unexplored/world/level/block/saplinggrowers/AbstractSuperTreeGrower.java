@@ -33,11 +33,11 @@ public abstract class AbstractSuperTreeGrower extends AbstractTreeGrower {
         protected abstract ResourceKey<ConfiguredFeature<?, ?>> getConfiguredSuperFeature(RandomSource random);
 
         public boolean placeSuper(ServerLevel level, ChunkGenerator generator, BlockPos pos, BlockState state, RandomSource random, int X, int Z) {
-            ResourceKey<ConfiguredFeature<?, ?>> resourcekey = this.getConfiguredSuperFeature(random);
-            if (resourcekey == null) {
+            ResourceKey<ConfiguredFeature<?, ?>> resourcekey1 = this.getConfiguredSuperFeature(random);
+            if (resourcekey1 == null) {
                 return false;
             } else {
-                Holder<ConfiguredFeature<?, ?>> holder = level.registryAccess().registryOrThrow(Registries.CONFIGURED_FEATURE).getHolder(resourcekey).orElse((Holder.Reference<ConfiguredFeature<?, ?>>)null);
+                Holder<ConfiguredFeature<?, ?>> holder = level.registryAccess().registryOrThrow(Registries.CONFIGURED_FEATURE).getHolder(resourcekey1).orElse((Holder.Reference<ConfiguredFeature<?, ?>>)null);
                 var event = net.minecraftforge.event.ForgeEventFactory.blockGrowFeature(level, random, pos, holder);
                 holder = event.getFeature();
                 if (event.getResult() == net.minecraftforge.eventbus.api.Event.Result.DENY) return false;
