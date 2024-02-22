@@ -97,8 +97,8 @@ public final class RuUltraFromMegaTreeGrower {
             holder = event.getFeature();
             if (event.getResult() == Event.Result.DENY) return false;
             if (holder != null) {
-                for(int i = 0; i >= -1; --i) {
-                    for(int j = 0; j >= -1; --j) {
+                for(int i = 1; i >= -1; --i) {
+                    for(int j = 1; j >= -1; --j) {
                         if (isThreeBlockSapling(state, level, pos, i, j)) {
                             ConfiguredFeature<?, ?> configuredfeature = holder.value();
                             BlockState blockstate = Blocks.AIR.defaultBlockState();
@@ -131,10 +131,10 @@ public final class RuUltraFromMegaTreeGrower {
             }
         }
 
-
-
         ResourceKey<ConfiguredFeature<?, ?>> resourcekey1 = this.getConfiguredMegaFeature(random);
-        if (resourcekey1 != null) {
+        if (resourcekey1 == null) {
+            return false;
+        } else {
             Holder<ConfiguredFeature<?, ?>> holder = level.registryAccess().registryOrThrow(Registries.CONFIGURED_FEATURE).getHolder(resourcekey1).orElse((Holder.Reference<ConfiguredFeature<?, ?>>)null);
             var event = ForgeEventFactory.blockGrowFeature(level, random, pos, holder);
             holder = event.getFeature();

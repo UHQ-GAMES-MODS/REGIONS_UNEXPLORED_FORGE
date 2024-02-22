@@ -95,8 +95,8 @@ public final class RuUltraFromSuperTreeGrower {
             holder = event.getFeature();
             if (event.getResult() == net.minecraftforge.eventbus.api.Event.Result.DENY) return false;
             if (holder != null) {
-                for(int i = 0; i >= -1; --i) {
-                    for(int j = 0; j >= -1; --j) {
+                for(int i = 1; i >= -1; --i) {
+                    for(int j = 1; j >= -1; --j) {
                         if (isThreeBlockSapling(state, level, pos, i, j)) {
                             ConfiguredFeature<?, ?> configuredfeature = holder.value();
                             BlockState blockstate = Blocks.AIR.defaultBlockState();
@@ -138,8 +138,8 @@ public final class RuUltraFromSuperTreeGrower {
             holder = event.getFeature();
             if (event.getResult() == net.minecraftforge.eventbus.api.Event.Result.DENY) return false;
             if (holder != null) {
-                for(int i = 0; i >= -1; --i) {
-                    for(int j = 0; j >= -1; --j) {
+                for(int i = 1; i >= -1; --i) {
+                    for(int j = 1; j >= -1; --j) {
                         if (isStarBlockSapling(state, level, pos, i, j)) {
                             ConfiguredFeature<?, ?> configuredfeature = holder.value();
                             BlockState blockstate = Blocks.AIR.defaultBlockState();
