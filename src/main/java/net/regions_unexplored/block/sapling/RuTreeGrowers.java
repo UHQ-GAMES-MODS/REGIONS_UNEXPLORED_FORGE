@@ -1,6 +1,5 @@
 package net.regions_unexplored.block.sapling;
 
-import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.world.level.block.grower.TreeGrower;
 import net.regions_unexplored.data.worldgen.features.RuTreeFeatures;
 

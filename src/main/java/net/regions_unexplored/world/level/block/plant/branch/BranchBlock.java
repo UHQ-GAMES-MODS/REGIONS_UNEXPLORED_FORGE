@@ -1,11 +1,15 @@
 package net.regions_unexplored.world.level.block.plant.branch;
 
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
@@ -14,14 +18,25 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.regions_unexplored.block.RuBlocks;
 import net.regions_unexplored.data.tags.RuTags;
 
+import java.util.Objects;
+
 public class BranchBlock extends BushBlock {
-    public static final String BRANCH = "branch";
-    public static final String BEARD = "beard";
-    private final String type;
+
+    private static MapCodec<? extends BranchBlock> createCodec() {
+        return RecordCodecBuilder.mapCodec(instance ->
+                instance.group(
+                        BlockBehaviour.Properties.CODEC.fieldOf("properties").forGetter(BranchBlock::properties),
+                        Codec.STRING.xmap(BranchBlock.BranchType::byName, BranchBlock.BranchType::getBranchType).fieldOf("type").forGetter(BranchBlock::getBranchType)
+                ).apply(instance, BranchBlock::new)
+        );
+    }
+
+    public static final MapCodec<? extends BranchBlock> CODEC = createCodec();
 
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+    private final BranchType type;
 
-    public BranchBlock(Properties properties, String branchType) {
+    public BranchBlock(Properties properties, BranchType branchType) {
         super(properties);
         this.type = branchType;
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
@@ -29,7 +44,7 @@ public class BranchBlock extends BushBlock {
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
-        if(type==BEARD){
+        if (Objects.equals(type, BranchType.BEARD)) {
             return switch (state.getValue(FACING)) {
                 default -> box(0, 0, 0, 16, 16, 3);
                 case NORTH -> box(0, 0, 13, 16, 16, 16);
@@ -47,6 +62,11 @@ public class BranchBlock extends BushBlock {
         }
     }
 
+
+    @Override
+    protected MapCodec<? extends BushBlock> codec() {
+        return CODEC;
+    }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
@@ -84,5 +104,33 @@ public class BranchBlock extends BushBlock {
 
     public BlockState mirror(BlockState state, Mirror mirrorIn) {
         return state.rotate(mirrorIn.getRotation(state.getValue(FACING)));
+    }
+
+    public BranchType getBranchType() {
+        return this.type;
+    }
+
+    public enum BranchType {
+        BRANCH("branch"),
+        BEARD("beard"),
+        ;
+        private final String branchType;
+
+        BranchType(String type) {
+            this.branchType = type;
+        }
+
+        public String getBranchType() {
+            return branchType;
+        }
+
+        public static BranchType byName(String name) {
+            for (BranchType value : values()) {
+                if (value.branchType.equals(name)) {
+                    return value;
+                }
+            }
+            throw new IllegalArgumentException("Unknown BranchType: " + name);
+        }
     }
 }

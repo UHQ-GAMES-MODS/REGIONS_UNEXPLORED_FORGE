@@ -1,5 +1,6 @@
 package net.regions_unexplored.world.level.block.plant.nether;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -21,6 +22,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class NetherGroundCoverBlock extends BushBlock {
+   public static final MapCodec<?extends NetherGroundCoverBlock> CODEC = simpleCodec(NetherGroundCoverBlock::new);
    public static final int MIN_FLOWERS = 1;
    public static final int MAX_FLOWERS = 4;
    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
@@ -29,6 +31,11 @@ public class NetherGroundCoverBlock extends BushBlock {
    public NetherGroundCoverBlock(Properties p_273335_) {
       super(p_273335_);
       this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(AMOUNT, Integer.valueOf(1)));
+   }
+
+   @Override
+   protected MapCodec<? extends BushBlock> codec() {
+      return CODEC;
    }
 
    public BlockState rotate(BlockState p_273485_, Rotation p_273021_) {

@@ -13,6 +13,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.PlantType;
 
 public class PrismariteBlock extends BushBlock {
+    public static final MapCodec<? extends PrismariteBlock> CODEC = simpleCodec(PrismariteBlock::new);
     protected static final float AABB_OFFSET = 3.0F;
     protected static final VoxelShape SHAPE = Block.box(3.0D, 0.0D, 3.0D, 13.0D, 10.0D, 13.0D);
 
@@ -23,6 +24,11 @@ public class PrismariteBlock extends BushBlock {
     public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
         Vec3 vec3 = state.getOffset(getter, pos);
         return SHAPE.move(vec3.x, vec3.y, vec3.z);
+    }
+
+    @Override
+    protected MapCodec<? extends BushBlock> codec() {
+        return CODEC;
     }
 
     @Override

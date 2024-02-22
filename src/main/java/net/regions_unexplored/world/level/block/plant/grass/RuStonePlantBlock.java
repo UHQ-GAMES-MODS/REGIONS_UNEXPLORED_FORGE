@@ -1,5 +1,6 @@
 package net.regions_unexplored.world.level.block.plant.grass;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
@@ -15,11 +16,17 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.regions_unexplored.data.tags.RuTags;
 
 public class RuStonePlantBlock extends BushBlock implements BonemealableBlock, net.minecraftforge.common.IForgeShearable {
+    public static final MapCodec<? extends RuStonePlantBlock> CODEC = simpleCodec(RuStonePlantBlock::new);
     protected static final float AABB_OFFSET = 6.0F;
     protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 5.0D, 14.0D);
 
     public RuStonePlantBlock(Properties properties) {
         super(properties);
+    }
+
+    @Override
+    protected MapCodec<? extends BushBlock> codec() {
+        return CODEC;
     }
 
     public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {

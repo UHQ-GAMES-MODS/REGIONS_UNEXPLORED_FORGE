@@ -428,11 +428,11 @@ public class RockPillarFeature extends Feature<NoneFeatureConfiguration> {
 
                 for(BlockPos pos1 : BlockPos.betweenClosed(pos.offset(-i, -j, -k), pos.offset(i, j, k))) {
                     if (pos1.distSqr(pos) <= (double)(f * f)) {
-                        if(level.isEmptyBlock(pos1.above())||level.getBlockState(pos1.above()).is(Blocks.GRASS)) {
+                        if(level.isEmptyBlock(pos1.above())||level.getBlockState(pos1.above()).is(Blocks.SHORT_GRASS)) {
                             if(level.getBlockState(pos1.below()).is(Blocks.STONE)){
                                 level.setBlock(pos1, RuBlocks.STONE_GRASS_BLOCK.get().defaultBlockState(), 4);
                                 if(random.nextInt(4)==0) {
-                                    level.setBlock(pos1.above(), Blocks.GRASS.defaultBlockState(), 4);
+                                    level.setBlock(pos1.above(), Blocks.SHORT_GRASS.defaultBlockState(), 4);
                                 }
                             }
                         }

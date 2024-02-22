@@ -66,7 +66,7 @@ public class MarshFeature extends Feature<NoneFeatureConfiguration> {
                 }
                 if(level.getBlockState(pos.above()).isAir()&&level.getBlockState(pos.above(2)).isAir()){
                     if(chance_grass==0||chance_grass==1){
-                        level.setBlock(pos.above(), Blocks.GRASS.defaultBlockState(), 2);
+                        level.setBlock(pos.above(), Blocks.SHORT_GRASS.defaultBlockState(), 2);
                     }
                     if(chance_grass==2){
                         level.setBlock(pos.above(), Blocks.TALL_GRASS.defaultBlockState().setValue(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER), 2);

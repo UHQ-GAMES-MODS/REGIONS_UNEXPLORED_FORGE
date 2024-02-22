@@ -1,5 +1,6 @@
 package net.regions_unexplored.world.level.block.plant.food;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -28,6 +29,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.regions_unexplored.item.RuItems;
 
 public class DuskmelonBlock extends BushBlock implements BonemealableBlock {
+   public static final MapCodec<? extends DuskmelonBlock> CODEC = simpleCodec(DuskmelonBlock::new);
    private static final float HURT_SPEED_THRESHOLD = 0.003F;
    public static final int MAX_AGE = 2;
    public static final IntegerProperty AGE = BlockStateProperties.AGE_2;
@@ -39,7 +41,13 @@ public class DuskmelonBlock extends BushBlock implements BonemealableBlock {
       this.registerDefaultState(this.stateDefinition.any().setValue(AGE, Integer.valueOf(0)));
    }
 
-   public ItemStack getCloneItemStack(BlockGetter p_57256_, BlockPos p_57257_, BlockState p_57258_) {
+   @Override
+   protected MapCodec<? extends BushBlock> codec() {
+      return CODEC;
+   }
+
+   @Override
+   public ItemStack getCloneItemStack(LevelReader levelReader, BlockPos blockPos, BlockState blockState) {
       return new ItemStack(RuItems.DUSKMELON_SLICE.get());
    }
 

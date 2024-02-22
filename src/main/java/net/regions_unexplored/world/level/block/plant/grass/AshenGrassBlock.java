@@ -1,5 +1,6 @@
 package net.regions_unexplored.world.level.block.plant.grass;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.RandomSource;
@@ -22,6 +23,7 @@ import net.regions_unexplored.world.level.block.state.properties.RuBlockStatePro
 import javax.annotation.Nullable;
 
 public class AshenGrassBlock extends BushBlock implements net.minecraftforge.common.IForgeShearable {
+    public static final MapCodec<? extends AshenGrassBlock> CODEC = simpleCodec(AshenGrassBlock::new);
     public static final BooleanProperty SMOULDERING = RuBlockStateProperties.SMOULDERING;
     protected static final float AABB_OFFSET = 6.0F;
     protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 10.0D, 14.0D);
@@ -29,6 +31,11 @@ public class AshenGrassBlock extends BushBlock implements net.minecraftforge.com
     public AshenGrassBlock(Properties properties) {
         super(properties);
         this.registerDefaultState(this.defaultBlockState().setValue(SMOULDERING, false));
+    }
+
+    @Override
+    protected MapCodec<? extends BushBlock> codec() {
+        return CODEC;
     }
 
     public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {

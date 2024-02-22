@@ -47,7 +47,7 @@ import net.regions_unexplored.world.features.treedecorators.ChanceWillowTrunkDec
 import net.regions_unexplored.world.features.treedecorators.WillowTrunkDecorator;
 import org.slf4j.Logger;
 
-@Mod(RegionsUnexploredMod.MOD_ID)
+@Mod(value = "regions_unexplored")
 public class RegionsUnexploredMod {
     public static final String MOD_ID = "regions_unexplored";
 

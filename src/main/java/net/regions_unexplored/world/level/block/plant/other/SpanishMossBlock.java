@@ -1,5 +1,6 @@
 package net.regions_unexplored.world.level.block.plant.other;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
@@ -13,10 +14,16 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.regions_unexplored.block.RuBlocks;
 
 public class SpanishMossBlock extends GrowingPlantHeadBlock {
+    public static final MapCodec<? extends SpanishMossBlock> CODEC = simpleCodec(SpanishMossBlock::new);
     protected static final VoxelShape SHAPE = Block.box(3.0D, 3.0D, 3.0D, 13.0D, 16.0D, 13.0D);
 
     public SpanishMossBlock(Properties properties) {
         super(properties, Direction.DOWN, SHAPE, false, 0.1D);
+    }
+
+    @Override
+    protected MapCodec<? extends GrowingPlantHeadBlock> codec() {
+        return CODEC;
     }
 
     protected int getBlocksToGrowWhenBonemealed(RandomSource random) {

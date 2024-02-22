@@ -1,5 +1,6 @@
 package net.regions_unexplored.world.level.block.plant.aquatic;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.entity.Entity;
@@ -24,6 +25,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.regions_unexplored.block.RuBlocks;
 public class GiantLilyBlock extends HorizontalDirectionalBlock implements net.minecraftforge.common.IPlantable {
+    public static final MapCodec<? extends GiantLilyBlock> CODEC = simpleCodec(GiantLilyBlock::new);
     protected static final VoxelShape NORTH = Block.box(0.0D, 0.0D, 2.0D, 14.0D, 4D, 16.0D);
     protected static final VoxelShape EAST = Block.box(0.0D, 0.0D, 0.0D, 14.0D, 4D, 14.0D);
     protected static final VoxelShape SOUTH = Block.box(2.0D, 0.0D, 0.0D, 16.0D, 4D, 14.0D);
@@ -34,7 +36,12 @@ public class GiantLilyBlock extends HorizontalDirectionalBlock implements net.mi
     }
 
     @Override
-    public ItemStack getCloneItemStack(BlockState state, HitResult target, BlockGetter world, BlockPos pos, Player player) {
+    protected MapCodec<? extends HorizontalDirectionalBlock> codec() {
+        return CODEC;
+    }
+
+    @Override
+    public ItemStack getCloneItemStack(LevelReader levelReader, BlockPos blockPos, BlockState blockState) {
         return new ItemStack(RuBlocks.FLOWERING_LILY_PAD.get());
     }
 

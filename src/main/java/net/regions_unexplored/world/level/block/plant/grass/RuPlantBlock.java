@@ -1,5 +1,6 @@
 package net.regions_unexplored.world.level.block.plant.grass;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
@@ -16,12 +17,18 @@ import net.regions_unexplored.block.RuBlocks;
 import static net.minecraft.world.level.block.DoublePlantBlock.copyWaterloggedFrom;
 
 public class RuPlantBlock extends BushBlock implements BonemealableBlock, net.minecraftforge.common.IForgeShearable {
+    public static final MapCodec<? extends RuPlantBlock> CODEC = simpleCodec(RuPlantBlock::new);
     protected static final float AABB_OFFSET = 6.0F;
     protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 13.0D, 14.0D);
     protected static final VoxelShape SHAPE_MEDIUM_GRASS = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 9.0D, 14.0D);
 
     public RuPlantBlock(Properties properties) {
         super(properties);
+    }
+
+    @Override
+    protected MapCodec<? extends BushBlock> codec() {
+        return CODEC;
     }
 
     public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
@@ -47,7 +54,7 @@ public class RuPlantBlock extends BushBlock implements BonemealableBlock, net.mi
 
     public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
         if(state.is(RuBlocks.MEDIUM_GRASS.get())){
-            TallGrassBlock grass = (TallGrassBlock) Blocks.GRASS;
+            TallGrassBlock grass = (TallGrassBlock) Blocks.SHORT_GRASS;
             if (grass.defaultBlockState().canSurvive(level, pos)) {
                 placeAt(level, grass.defaultBlockState(), pos, 2);
             }

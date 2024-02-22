@@ -41,7 +41,7 @@ public class NoSpreadForestGrassBlock extends SpreadingForestDirtBlock implement
 
    public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
       BlockPos blockPos = pos.above();
-      BlockState blockState = Blocks.GRASS.defaultBlockState();
+      BlockState blockState = Blocks.SHORT_GRASS.defaultBlockState();
       Optional<Holder.Reference<PlacedFeature>> optional = level.registryAccess().registryOrThrow(Registries.PLACED_FEATURE).getHolder(VegetationPlacements.GRASS_BONEMEAL);
 
       label46:

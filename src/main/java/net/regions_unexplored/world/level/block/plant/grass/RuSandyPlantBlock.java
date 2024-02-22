@@ -1,5 +1,6 @@
 package net.regions_unexplored.world.level.block.plant.grass;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
@@ -27,6 +28,7 @@ import net.regions_unexplored.world.level.block.state.properties.RuBlockStatePro
 import static net.minecraft.world.level.block.DoublePlantBlock.copyWaterloggedFrom;
 
 public class RuSandyPlantBlock extends BushBlock implements BonemealableBlock, net.minecraftforge.common.IForgeShearable {
+    public static final MapCodec<? extends RuPlantBlock> CODEC = simpleCodec(RuPlantBlock::new);
     public static final BooleanProperty IS_RED = RuBlockStateProperties.IS_RED;
     protected static final float AABB_OFFSET = 6.0F;
     protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 13.0D, 14.0D);
@@ -34,6 +36,11 @@ public class RuSandyPlantBlock extends BushBlock implements BonemealableBlock, n
     public RuSandyPlantBlock(Properties properties) {
         super(properties);
         this.registerDefaultState(this.defaultBlockState().setValue(IS_RED, false));
+    }
+
+    @Override
+    protected MapCodec<? extends BushBlock> codec() {
+        return CODEC;
     }
 
     public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {

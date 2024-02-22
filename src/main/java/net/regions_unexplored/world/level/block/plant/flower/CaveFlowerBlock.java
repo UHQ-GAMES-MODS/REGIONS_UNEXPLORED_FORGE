@@ -1,5 +1,6 @@
 package net.regions_unexplored.world.level.block.plant.flower;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.level.BlockGetter;
@@ -44,5 +45,10 @@ public class CaveFlowerBlock extends BushBlock {
 
     public int getEffectDuration() {
         return this.effectDuration;
+    }
+
+    @Override
+    protected MapCodec<? extends BushBlock> codec() {
+        return null;
     }
 }
