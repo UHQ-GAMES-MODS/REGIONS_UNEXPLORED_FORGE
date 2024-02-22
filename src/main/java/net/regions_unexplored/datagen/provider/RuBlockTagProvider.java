@@ -1578,7 +1578,7 @@ public class RuBlockTagProvider extends BlockTagsProvider {
                 .add(RuBlocks.STEPPE_GRASS.getKey())
                 .add(RuBlocks.STEPPE_SHRUB.getKey())
                 .add(RuBlocks.STONE_BUD.getKey())
-                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "grass")))
+                .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "short_grass")))
                 .add(ResourceKey.create(Registries.BLOCK, new ResourceLocation("minecraft", "fern")))
         ;
         this.tag(RuTags.REPLACEABLE_BLOCKS)

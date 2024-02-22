@@ -1,9 +1,6 @@
 {
   "pack": {
-    "description": {
-      "text": "regions unexplored resources"
-    },
-    "forge:server_data_pack_format": 12,
-    "pack_format": 14
+    "description": "${mod_id} resources",
+    "pack_format": 22
   }
 }
