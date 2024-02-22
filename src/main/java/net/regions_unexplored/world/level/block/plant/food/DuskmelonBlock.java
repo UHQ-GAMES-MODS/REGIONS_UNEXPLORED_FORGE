@@ -92,7 +92,7 @@ public class DuskmelonBlock extends BushBlock implements BonemealableBlock {
    }
 
    public boolean isValidBonemealTarget(LevelReader p_256056_, BlockPos p_57261_, BlockState p_57262_) {
-      return p_57262_.getValue(AGE) < 3;
+      return p_57262_.getValue(AGE) < 2;
    }
 
    public boolean isBonemealSuccess(Level p_222558_, RandomSource p_222559_, BlockPos p_222560_, BlockState p_222561_) {

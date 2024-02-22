@@ -13,7 +13,7 @@ buildscript {
 plugins {
     id 'eclipse'
     id 'maven-publish'
-    id 'net.minecraftforge.gradle' version '5.1.+'
+    id 'net.minecraftforge.gradle' version '[6.0.16,6.2)'
 }
 
 apply plugin: 'net.minecraftforge.gradle'
@@ -112,13 +112,10 @@ repositories {
 
 dependencies {
     minecraft "net.minecraftforge:forge:${project.minecraft_version}-${project.loader_version}"
-    //implementation fg.deobf("com.github.glitchfiend:TerraBlender-forge:${project.minecraft_version}-${project.terrablender_version}")
-    implementation fg.deobf("curse.maven:terrablender-563928:4764561")
 
-   // implementation fg.deobf("curse.maven:oculus-581495:4578741")
-   // implementation fg.deobf("curse.maven:rubidium-574856:4573226")
-   // implementation fg.deobf("curse.maven:creativecore-257814:4690991")
-   // implementation fg.deobf("curse.maven:cmdcam-251244:4577587")
+    implementation fg.deobf("curse.maven:terrablender-563928:4764561")
+    implementation fg.deobf("curse.maven:croptopia-415438:5003008")
+    implementation fg.deobf("curse.maven:epherolib-885449:4947580")
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
     testAnnotationProcessor 'org.spongepowered:mixin:0.8.5:processor'

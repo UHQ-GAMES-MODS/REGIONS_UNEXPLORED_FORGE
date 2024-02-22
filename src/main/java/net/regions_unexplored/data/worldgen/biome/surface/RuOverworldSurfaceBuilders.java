@@ -76,6 +76,10 @@ public class RuOverworldSurfaceBuilders {
         SurfaceRules.ConditionSource y62 = SurfaceRules.yBlockCheck(VerticalAnchor.absolute(62), 0);
         SurfaceRules.ConditionSource y63 = SurfaceRules.yBlockCheck(VerticalAnchor.absolute(63), 0);
             return SurfaceRules.sequence(
+
+                    //BEDROCK
+                    SurfaceRules.ifTrue(SurfaceRules.verticalGradient("bedrock_floor", VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(5)), BEDROCK),
+
                     SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(),SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, false, 0, CaveSurface.FLOOR),SurfaceRules.sequence(
                             SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.HYACINTH_DEEPS),
                                     SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, RuleWeight.getPercent(30)), MOSSY_STONE), GRAVEL)),
@@ -257,10 +261,7 @@ public class RuOverworldSurfaceBuilders {
 
                     //PRISMACHASM
                     SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.PRISMACHASM),
-                            SurfaceRules.ifTrue(SurfaceRules.waterBlockCheck(-1, 0),SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, false, 0, CaveSurface.FLOOR), SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.verticalGradient("prismachasm_prismoss", VerticalAnchor.absolute(0), VerticalAnchor.absolute(5)), SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(0.5D), DEEPSLATE_PRISMOSS), SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, RuleWeight.getPercent(30)), DEEPSLATE_PRISMOSS))), SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(0.5D), PRISMOSS), SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, RuleWeight.getPercent(30)), PRISMOSS)))))),
-
-                    //BEDROCK
-                    SurfaceRules.ifTrue(SurfaceRules.verticalGradient("bedrock_floor", VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(5)), BEDROCK)
+                            SurfaceRules.ifTrue(SurfaceRules.waterBlockCheck(-1, 0),SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, false, 0, CaveSurface.FLOOR), SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.verticalGradient("prismachasm_prismoss", VerticalAnchor.absolute(0), VerticalAnchor.absolute(5)), SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(0.5D), DEEPSLATE_PRISMOSS), SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, RuleWeight.getPercent(30)), DEEPSLATE_PRISMOSS))), SurfaceRules.sequence(SurfaceRules.ifTrue(surfaceNoiseAbove(0.5D), PRISMOSS), SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, RuleWeight.getPercent(30)), PRISMOSS))))))
             );
     }
 

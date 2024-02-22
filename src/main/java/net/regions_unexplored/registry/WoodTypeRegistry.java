@@ -6,6 +6,7 @@ import net.regions_unexplored.data.block.RuWoodTypes;
 
 public class WoodTypeRegistry {
     public static void addSheets(){
+        Sheets.addWoodType(RuWoodTypes.ALPHA);
         Sheets.addWoodType(RuWoodTypes.BAOBAB);
         Sheets.addWoodType(RuWoodTypes.BLACKWOOD);
         Sheets.addWoodType(RuWoodTypes.BLUE_BIOSHROOM);
@@ -28,29 +29,5 @@ public class WoodTypeRegistry {
         Sheets.addWoodType(RuWoodTypes.SOCOTRA);
         Sheets.addWoodType(RuWoodTypes.WILLOW);
         Sheets.addWoodType(RuWoodTypes.YELLOW_BIOSHROOM);
-    }
-    public static void addWoodTypes(){
-        WoodType.register(RuWoodTypes.BAOBAB);
-        WoodType.register(RuWoodTypes.BLACKWOOD);
-        WoodType.register(RuWoodTypes.BLUE_BIOSHROOM);
-        WoodType.register(RuWoodTypes.BRIMWOOD);
-        WoodType.register(RuWoodTypes.COBALT);
-        WoodType.register(RuWoodTypes.CYPRESS);
-        WoodType.register(RuWoodTypes.DEAD);
-        WoodType.register(RuWoodTypes.EUCALYPTUS);
-        WoodType.register(RuWoodTypes.GREEN_BIOSHROOM);
-        WoodType.register(RuWoodTypes.JOSHUA);
-        WoodType.register(RuWoodTypes.KAPOK);
-        WoodType.register(RuWoodTypes.LARCH);
-        WoodType.register(RuWoodTypes.MAGNOLIA);
-        WoodType.register(RuWoodTypes.MAPLE);
-        WoodType.register(RuWoodTypes.MAUVE);
-        WoodType.register(RuWoodTypes.PALM);
-        WoodType.register(RuWoodTypes.PINE);
-        WoodType.register(RuWoodTypes.PINK_BIOSHROOM);
-        WoodType.register(RuWoodTypes.REDWOOD);
-        WoodType.register(RuWoodTypes.SOCOTRA);
-        WoodType.register(RuWoodTypes.WILLOW);
-        WoodType.register(RuWoodTypes.YELLOW_BIOSHROOM);
     }
 }

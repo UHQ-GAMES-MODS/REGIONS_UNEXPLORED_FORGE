@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_bone_meal": {
+    "has_alpha_planks": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:bone_meal"
+              "regions_unexplored:alpha_planks"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "regions_unexplored:overgrown_bone_block"
+        "recipe": "regions_unexplored:oak_button"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -23,12 +23,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_bone_meal"
+      "has_alpha_planks"
     ]
   ],
   "rewards": {
     "recipes": [
-      "regions_unexplored:overgrown_bone_block"
+      "regions_unexplored:oak_button"
     ]
   },
   "sends_telemetry_event": false

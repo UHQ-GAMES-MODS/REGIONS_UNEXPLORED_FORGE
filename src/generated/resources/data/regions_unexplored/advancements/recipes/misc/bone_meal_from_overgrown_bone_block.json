@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_marrowstone": {
+    "has_overgrown_bone_block": {
       "conditions": {
         "items": [
           {
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_marrowstone"
+      "has_overgrown_bone_block"
     ]
   ],
   "rewards": {
