@@ -1085,7 +1085,7 @@ public class RuBlocks {
         BAMBOO_SAPLING = BlockRegistry.registerDefaultBlock("bamboo_sapling", () -> new SaplingBlock(RuTreeGrowers.BAMBOO, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
         BAOBAB_SAPLING = BlockRegistry.registerDefaultBlock("baobab_sapling", () -> new RuUltraFromMegaSaplingBlock(RuTreeGrowers.BAOBAB, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
         BLACKWOOD_SAPLING = BlockRegistry.registerDefaultBlock("blackwood_sapling", () -> new SaplingBlock(RuTreeGrowers.BLACKWOOD, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
-        CACTUS_FLOWER = BlockRegistry.registerDefaultBlock("cactus_flower", () -> new SaplingBlock(RuTreeGrowers.SAGUARO_CACTUS, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+        CACTUS_FLOWER = BlockRegistry.registerDefaultBlock("cactus_flower", () -> new RuCactusSaplingBlock(RuTreeGrowers.SAGUARO_CACTUS, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
         CYPRESS_SAPLING = BlockRegistry.registerDefaultBlock("cypress_sapling", () -> new SaplingBlock(RuTreeGrowers.CYPRESS, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
         DEAD_PINE_SAPLING = BlockRegistry.registerDefaultBlock("dead_pine_sapling", () -> new SaplingBlock(RuTreeGrowers.DEAD_PINE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
         DEAD_SAPLING = BlockRegistry.registerDefaultBlock("dead_sapling", () -> new SaplingBlock(RuTreeGrowers.DEAD, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
@@ -1106,8 +1106,8 @@ public class RuBlocks {
         BLUE_MAGNOLIA_SAPLING = BlockRegistry.registerDefaultBlock("blue_magnolia_sapling", () -> new SaplingBlock(RuTreeGrowers.BLUE_MAGNOLIA, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
         REDWOOD_SAPLING = BlockRegistry.registerDefaultBlock("redwood_sapling", () -> new RuUltraFromSuperSaplingBlock(RuTreeGrowers.REDWOOD, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
         RED_MAPLE_SAPLING = BlockRegistry.registerDefaultBlock("red_maple_sapling", () -> new SaplingBlock(RuTreeGrowers.RED_MAPLE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
-        BRIMWOOD_SAPLING = BlockRegistry.registerDefaultBlock("brimwood_sapling", () -> new SaplingBlock(RuTreeGrowers.BRIMWOOD, BlockBehaviour.Properties.of().pushReaction(PushReaction.DESTROY).noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).randomTicks()));
-        COBALT_SAPLING = BlockRegistry.registerDefaultBlock("cobalt_sapling", () -> new SaplingBlock(RuTreeGrowers.COBALT, BlockBehaviour.Properties.of().pushReaction(PushReaction.DESTROY).noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).randomTicks()));
+        BRIMWOOD_SAPLING = BlockRegistry.registerDefaultBlock("brimwood_sapling", () -> new RuBrimSaplingBlock(RuTreeGrowers.BRIMWOOD, BlockBehaviour.Properties.of().pushReaction(PushReaction.DESTROY).noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).randomTicks()));
+        COBALT_SAPLING = BlockRegistry.registerDefaultBlock("cobalt_sapling", () -> new RuNetherSaplingBlock(RuTreeGrowers.COBALT, BlockBehaviour.Properties.of().pushReaction(PushReaction.DESTROY).noCollission().instabreak().sound(SoundType.NETHER_SPROUTS).randomTicks()));
         ENCHANTED_BIRCH_SAPLING = BlockRegistry.registerDefaultBlock("enchanted_birch_sapling", () -> new SaplingBlock(RuTreeGrowers.ENCHANTED_BIRCH, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
         SMALL_OAK_SAPLING = BlockRegistry.registerDefaultBlock("small_oak_sapling", () -> new SaplingBlock(RuTreeGrowers.SMALL_OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
         SILVER_BIRCH_SAPLING = BlockRegistry.registerDefaultBlock("silver_birch_sapling", () -> new SaplingBlock(RuTreeGrowers.SILVER_BIRCH, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
