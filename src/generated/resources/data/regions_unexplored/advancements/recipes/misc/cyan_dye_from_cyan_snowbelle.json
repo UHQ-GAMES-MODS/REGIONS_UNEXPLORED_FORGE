@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:cyan_dye_from_cyan_snowbelle"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

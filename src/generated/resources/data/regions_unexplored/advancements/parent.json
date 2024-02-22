@@ -23,12 +23,9 @@
     "description": {
       "translate": "advancements.regions_unexplored.description"
     },
-    "frame": "task",
-    "hidden": false,
     "icon": {
       "item": "regions_unexplored:eucalyptus_sapling"
     },
-    "show_toast": true,
     "title": {
       "translate": "advancements.regions_unexplored.title"
     }

@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:prismoss"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

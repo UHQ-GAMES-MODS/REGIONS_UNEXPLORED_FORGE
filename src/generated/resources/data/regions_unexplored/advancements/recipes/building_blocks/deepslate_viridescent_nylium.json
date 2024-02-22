@@ -41,6 +41,5 @@
     "recipes": [
       "regions_unexplored:deepslate_viridescent_nylium"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

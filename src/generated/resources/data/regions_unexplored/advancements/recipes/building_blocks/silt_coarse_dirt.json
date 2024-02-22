@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:silt_coarse_dirt"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

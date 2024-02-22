@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:brimwood_stairs"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

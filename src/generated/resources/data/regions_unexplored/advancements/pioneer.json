@@ -979,17 +979,13 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
     "description": {
       "translate": "advancements.regions_unexplored.pioneer.description"
     },
-    "frame": "task",
-    "hidden": false,
     "icon": {
       "item": "regions_unexplored:hibiscus"
     },
-    "show_toast": true,
     "title": {
       "translate": "advancements.regions_unexplored.pioneer.title"
     }

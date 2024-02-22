@@ -51,17 +51,14 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
     "description": {
       "translate": "advancements.regions_unexplored.ancient_specimens.description"
     },
     "frame": "challenge",
-    "hidden": false,
     "icon": {
       "item": "regions_unexplored:blue_bioshroom_stem"
     },
-    "show_toast": true,
     "title": {
       "translate": "advancements.regions_unexplored.ancient_specimens.title"
     }

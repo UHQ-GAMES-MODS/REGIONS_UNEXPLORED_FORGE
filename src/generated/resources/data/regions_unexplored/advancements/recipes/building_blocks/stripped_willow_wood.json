@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:stripped_willow_wood"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

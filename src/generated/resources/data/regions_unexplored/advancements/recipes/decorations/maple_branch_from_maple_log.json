@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:maple_branch_from_maple_log"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

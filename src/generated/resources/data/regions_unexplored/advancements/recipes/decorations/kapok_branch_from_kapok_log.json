@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:kapok_branch_from_kapok_log"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

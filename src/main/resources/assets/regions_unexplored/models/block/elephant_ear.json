@@ -5,7 +5,7 @@
     "particle": "regions_unexplored:block/elephant_ear_leaf",
     "0": "regions_unexplored:block/elephant_ear_leaf",
     "1": "regions_unexplored:block/elephant_ear_plant",
-    "2": "block/grass"
+    "2": "block/short_grass"
   },
   "render_type": "cutout"
 }

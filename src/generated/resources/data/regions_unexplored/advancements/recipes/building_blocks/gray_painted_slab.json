@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:gray_painted_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

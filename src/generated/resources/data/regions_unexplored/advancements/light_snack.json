@@ -13,17 +13,13 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
     "description": {
       "translate": "advancements.regions_unexplored.light_snack.description"
     },
-    "frame": "task",
-    "hidden": false,
     "icon": {
       "item": "regions_unexplored:hanging_earlight_fruit"
     },
-    "show_toast": true,
     "title": {
       "translate": "advancements.regions_unexplored.light_snack.title"
     }

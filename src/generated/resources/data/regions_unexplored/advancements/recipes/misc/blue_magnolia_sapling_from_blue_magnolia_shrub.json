@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:blue_magnolia_sapling_from_blue_magnolia_shrub"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

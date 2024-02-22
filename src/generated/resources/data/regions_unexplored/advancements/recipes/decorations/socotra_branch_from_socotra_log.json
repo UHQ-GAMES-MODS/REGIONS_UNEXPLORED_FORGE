@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:socotra_branch_from_socotra_log"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:pink_painted_stairs"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:orange_dye_from_cave_hyssop"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

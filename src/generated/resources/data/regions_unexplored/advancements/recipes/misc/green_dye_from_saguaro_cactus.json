@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:green_dye_from_saguaro_cactus"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

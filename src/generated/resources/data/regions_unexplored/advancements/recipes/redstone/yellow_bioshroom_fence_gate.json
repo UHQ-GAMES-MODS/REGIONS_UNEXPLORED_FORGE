@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:yellow_bioshroom_fence_gate"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

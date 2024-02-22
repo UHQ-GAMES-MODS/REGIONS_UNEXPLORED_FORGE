@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:eucalyptus_branch_from_eucalyptus_log"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

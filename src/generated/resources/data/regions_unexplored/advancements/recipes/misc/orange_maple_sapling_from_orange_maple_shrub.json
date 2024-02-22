@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:orange_maple_sapling_from_orange_maple_shrub"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

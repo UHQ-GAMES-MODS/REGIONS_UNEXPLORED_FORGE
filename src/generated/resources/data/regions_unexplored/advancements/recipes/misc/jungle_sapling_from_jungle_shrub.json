@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:jungle_sapling_from_jungle_shrub"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

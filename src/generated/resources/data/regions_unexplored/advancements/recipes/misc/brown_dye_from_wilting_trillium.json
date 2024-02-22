@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:brown_dye_from_wilting_trillium"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

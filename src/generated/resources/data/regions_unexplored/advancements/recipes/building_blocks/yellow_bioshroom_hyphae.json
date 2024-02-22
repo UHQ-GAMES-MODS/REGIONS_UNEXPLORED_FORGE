@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:yellow_bioshroom_hyphae"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

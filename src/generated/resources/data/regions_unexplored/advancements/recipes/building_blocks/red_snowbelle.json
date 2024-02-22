@@ -28,6 +28,5 @@
     "recipes": [
       "regions_unexplored:red_snowbelle"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

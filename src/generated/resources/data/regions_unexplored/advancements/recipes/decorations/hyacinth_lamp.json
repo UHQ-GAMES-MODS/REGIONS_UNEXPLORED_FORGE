@@ -41,6 +41,5 @@
     "recipes": [
       "regions_unexplored:hyacinth_lamp"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

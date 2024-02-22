@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:pine_fence"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

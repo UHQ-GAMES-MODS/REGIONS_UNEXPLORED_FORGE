@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:joshua_sapling_from_joshua_shrub"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

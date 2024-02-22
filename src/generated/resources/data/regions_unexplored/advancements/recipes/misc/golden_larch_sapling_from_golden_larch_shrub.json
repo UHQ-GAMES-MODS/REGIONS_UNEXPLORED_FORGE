@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:golden_larch_sapling_from_golden_larch_shrub"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

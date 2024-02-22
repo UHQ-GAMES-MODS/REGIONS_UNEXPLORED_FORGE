@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:brimwood_hanging_sign"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

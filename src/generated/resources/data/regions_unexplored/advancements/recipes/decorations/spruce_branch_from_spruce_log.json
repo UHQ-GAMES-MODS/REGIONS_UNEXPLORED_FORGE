@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:spruce_branch_from_spruce_log"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

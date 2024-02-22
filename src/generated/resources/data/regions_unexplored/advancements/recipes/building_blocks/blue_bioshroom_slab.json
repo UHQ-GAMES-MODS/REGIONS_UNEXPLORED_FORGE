@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:blue_bioshroom_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -24,6 +24,5 @@
     "recipes": [
       "regions_unexplored:dead_boat"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

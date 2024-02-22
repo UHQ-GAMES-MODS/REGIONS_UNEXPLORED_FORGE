@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:magenta_dye_from_cactus_flower"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

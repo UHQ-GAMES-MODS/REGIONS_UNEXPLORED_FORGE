@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:redstone_from_blasting_redstone_bulb"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

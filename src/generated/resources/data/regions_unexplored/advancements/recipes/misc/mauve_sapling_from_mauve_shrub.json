@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:mauve_sapling_from_mauve_shrub"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

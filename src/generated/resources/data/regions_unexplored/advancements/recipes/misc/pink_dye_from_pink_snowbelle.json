@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:pink_dye_from_pink_snowbelle"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

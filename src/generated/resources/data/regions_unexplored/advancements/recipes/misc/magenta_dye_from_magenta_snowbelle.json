@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:magenta_dye_from_magenta_snowbelle"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

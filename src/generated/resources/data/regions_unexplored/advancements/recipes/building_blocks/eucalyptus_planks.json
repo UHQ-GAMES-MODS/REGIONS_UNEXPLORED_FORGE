@@ -28,6 +28,5 @@
     "recipes": [
       "regions_unexplored:eucalyptus_planks"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

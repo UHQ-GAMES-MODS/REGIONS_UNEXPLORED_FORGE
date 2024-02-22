@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:larch_pressure_plate"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

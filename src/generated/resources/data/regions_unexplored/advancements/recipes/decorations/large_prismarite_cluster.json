@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:large_prismarite_cluster"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

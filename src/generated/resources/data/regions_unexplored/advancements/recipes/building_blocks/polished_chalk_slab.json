@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:polished_chalk_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

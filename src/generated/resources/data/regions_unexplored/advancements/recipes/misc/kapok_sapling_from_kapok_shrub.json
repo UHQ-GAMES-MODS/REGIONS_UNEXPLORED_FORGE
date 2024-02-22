@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:kapok_sapling_from_kapok_shrub"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:maple_sapling_from_maple_shrub"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

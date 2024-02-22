@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:tall_yellow_bioshroom"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

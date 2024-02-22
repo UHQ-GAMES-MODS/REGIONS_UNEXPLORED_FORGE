@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:eucalyptus_door"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:hanging_prismarite"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

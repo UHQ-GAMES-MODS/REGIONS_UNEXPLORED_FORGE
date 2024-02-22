@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:joshua_beard_from_joshua_log"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

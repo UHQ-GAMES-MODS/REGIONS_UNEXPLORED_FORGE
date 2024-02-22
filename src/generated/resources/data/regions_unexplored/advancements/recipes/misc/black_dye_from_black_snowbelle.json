@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:black_dye_from_black_snowbelle"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -28,6 +28,5 @@
     "recipes": [
       "regions_unexplored:larch_planks"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

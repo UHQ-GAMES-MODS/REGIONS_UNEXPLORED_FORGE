@@ -9,17 +9,13 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
     "description": {
       "translate": "advancements.regions_unexplored.light_as_a_frog.description"
     },
-    "frame": "task",
-    "hidden": false,
     "icon": {
       "item": "regions_unexplored:flowering_lily_pad"
     },
-    "show_toast": true,
     "title": {
       "translate": "advancements.regions_unexplored.light_as_a_frog.title"
     }

@@ -28,6 +28,5 @@
     "recipes": [
       "regions_unexplored:gray_snowbelle"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

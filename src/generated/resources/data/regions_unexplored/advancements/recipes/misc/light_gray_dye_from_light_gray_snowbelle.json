@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:light_gray_dye_from_light_gray_snowbelle"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:yellow_dye_from_yellow_snowbelle"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

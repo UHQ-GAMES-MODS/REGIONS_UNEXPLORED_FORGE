@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:lime_dye_from_lime_snowbelle"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

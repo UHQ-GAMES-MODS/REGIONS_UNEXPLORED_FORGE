@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:glowing_green_bioshroom_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

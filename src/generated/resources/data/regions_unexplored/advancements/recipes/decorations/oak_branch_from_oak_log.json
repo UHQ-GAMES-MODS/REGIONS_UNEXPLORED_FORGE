@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:oak_branch_from_oak_log"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

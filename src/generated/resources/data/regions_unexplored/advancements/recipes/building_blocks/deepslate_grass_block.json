@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:deepslate_grass_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

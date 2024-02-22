@@ -28,6 +28,5 @@
     "recipes": [
       "regions_unexplored:socotra_planks"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

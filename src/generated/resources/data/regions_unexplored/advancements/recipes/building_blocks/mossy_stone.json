@@ -43,6 +43,5 @@
     "recipes": [
       "regions_unexplored:mossy_stone"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

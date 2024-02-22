@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:lime_dye_from_green_bioshroom"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

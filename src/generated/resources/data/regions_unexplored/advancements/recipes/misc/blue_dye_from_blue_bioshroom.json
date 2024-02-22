@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:blue_dye_from_blue_bioshroom"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -327,17 +327,14 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
     "description": {
       "translate": "advancements.regions_unexplored.got_wood.description"
     },
     "frame": "challenge",
-    "hidden": false,
     "icon": {
       "item": "regions_unexplored:redwood_log"
     },
-    "show_toast": true,
     "title": {
       "translate": "advancements.regions_unexplored.got_wood.title"
     }

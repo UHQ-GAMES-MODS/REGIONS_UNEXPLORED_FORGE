@@ -195,17 +195,13 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
     "description": {
       "translate": "advancements.regions_unexplored.every_bit_of_the_rainbow.description"
     },
-    "frame": "task",
-    "hidden": false,
     "icon": {
       "item": "regions_unexplored:white_snowbelle"
     },
-    "show_toast": true,
     "title": {
       "translate": "advancements.regions_unexplored.every_bit_of_the_rainbow.title"
     }

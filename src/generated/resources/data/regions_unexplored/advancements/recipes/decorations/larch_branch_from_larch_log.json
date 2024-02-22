@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:larch_branch_from_larch_log"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

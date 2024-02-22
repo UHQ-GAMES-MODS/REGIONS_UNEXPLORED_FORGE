@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:spruce_sapling_from_spruce_shrub"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

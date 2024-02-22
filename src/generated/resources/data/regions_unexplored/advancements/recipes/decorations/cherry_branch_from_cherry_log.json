@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:cherry_branch_from_cherry_log"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:dead_branch_from_dead_log"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

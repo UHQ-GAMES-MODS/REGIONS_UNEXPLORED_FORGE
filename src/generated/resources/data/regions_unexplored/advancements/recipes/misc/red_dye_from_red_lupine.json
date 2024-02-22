@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:red_dye_from_red_lupine"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

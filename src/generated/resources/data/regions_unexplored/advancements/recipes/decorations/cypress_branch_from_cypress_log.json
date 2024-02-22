@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:cypress_branch_from_cypress_log"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -28,6 +28,5 @@
     "recipes": [
       "regions_unexplored:pink_bioshroom_planks"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

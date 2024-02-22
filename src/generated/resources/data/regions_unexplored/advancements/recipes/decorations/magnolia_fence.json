@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:magnolia_fence"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

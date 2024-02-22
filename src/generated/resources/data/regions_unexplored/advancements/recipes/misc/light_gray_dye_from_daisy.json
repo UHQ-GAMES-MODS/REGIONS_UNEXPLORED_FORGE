@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:light_gray_dye_from_daisy"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -15,17 +15,13 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "background": "regions_unexplored:textures/gui/advancements/backgrounds/argillite.png",
     "description": {
       "translate": "advancements.regions_unexplored.this_tree_bleeds_red.description"
     },
-    "frame": "task",
-    "hidden": false,
     "icon": {
       "item": "regions_unexplored:socotra_log"
     },
-    "show_toast": true,
     "title": {
       "translate": "advancements.regions_unexplored.this_tree_bleeds_red.title"
     }

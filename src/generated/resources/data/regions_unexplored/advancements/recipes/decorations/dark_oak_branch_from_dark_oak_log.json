@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:dark_oak_branch_from_dark_oak_log"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

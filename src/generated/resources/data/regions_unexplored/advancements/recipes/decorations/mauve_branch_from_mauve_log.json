@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:mauve_branch_from_mauve_log"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

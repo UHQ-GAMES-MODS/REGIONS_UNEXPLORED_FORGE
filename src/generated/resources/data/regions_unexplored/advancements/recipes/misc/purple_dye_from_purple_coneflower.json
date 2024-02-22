@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:purple_dye_from_purple_coneflower"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

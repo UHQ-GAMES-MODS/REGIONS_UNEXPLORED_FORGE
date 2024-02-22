@@ -28,6 +28,5 @@
     "recipes": [
       "regions_unexplored:ashen_dirt_from_silt_dirt"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

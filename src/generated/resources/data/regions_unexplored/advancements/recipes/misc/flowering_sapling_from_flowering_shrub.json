@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:flowering_sapling_from_flowering_shrub"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

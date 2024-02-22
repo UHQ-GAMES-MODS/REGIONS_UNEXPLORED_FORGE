@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:yellow_dye_from_yellow_lupine"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

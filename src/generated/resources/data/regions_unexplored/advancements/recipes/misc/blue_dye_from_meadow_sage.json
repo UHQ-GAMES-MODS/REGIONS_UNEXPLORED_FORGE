@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:blue_dye_from_meadow_sage"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:polished_chalk_slab_from_polished_chalk_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:redwood_wood"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

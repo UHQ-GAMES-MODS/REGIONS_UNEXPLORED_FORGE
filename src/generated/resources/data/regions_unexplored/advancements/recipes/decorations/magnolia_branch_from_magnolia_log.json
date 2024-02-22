@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:magnolia_branch_from_magnolia_log"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

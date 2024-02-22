@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:mossy_stone_from_blasting_mossy_cobblestone"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

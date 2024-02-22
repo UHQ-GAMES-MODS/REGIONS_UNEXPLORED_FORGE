@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:pine_branch_from_pine_log"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -43,6 +43,5 @@
     "recipes": [
       "regions_unexplored:overgrown_bone_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

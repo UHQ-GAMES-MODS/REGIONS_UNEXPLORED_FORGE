@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:stick_from_palm_beard"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

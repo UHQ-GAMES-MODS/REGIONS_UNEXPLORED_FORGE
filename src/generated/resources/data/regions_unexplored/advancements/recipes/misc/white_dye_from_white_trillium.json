@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:white_dye_from_white_trillium"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:bone_meal_from_overgrown_bone_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

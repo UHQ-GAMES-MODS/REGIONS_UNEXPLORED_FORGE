@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:black_dye_from_dorcel"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

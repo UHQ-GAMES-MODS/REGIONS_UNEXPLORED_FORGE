@@ -30,6 +30,5 @@
     "recipes": [
       "regions_unexplored:mangrove_branch_from_mangrove_log"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

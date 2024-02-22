@@ -7,7 +7,7 @@
     "regions_unexplored:steppe_grass",
     "regions_unexplored:steppe_shrub",
     "regions_unexplored:stone_bud",
-    "minecraft:grass",
+    "minecraft:short_grass",
     "minecraft:fern"
   ]
 }
