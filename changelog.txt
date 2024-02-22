@@ -1,11 +1,29 @@
 ------------------------------------------------------------------------------------------------------------------------
 -0.5.4
 +CHANGES:
+    -(1.20.4 ONLY) ported to 1.20.4
+    -Added missing Alpha wood recipes
+    -Added more tags for Spires biome
+    -Fixed Chalk Brick block tags
+    -Fixed Chalk block recipes
+    -Fixed Apple Leaves no properly decaying
+    -Fixed Argillite overwriting Bedrock floor
+    -Fixed Chest Boat inventory disappearing
+    -Fixed Chest Boat recipes
+    -Fixed Dead woodset tags
+    -Fixed Small Oak Log stripping indefinitely
+    -Fixed Stone/Deepslate blocks not dropping Cobblestone/Cobbled Deepslate
+    -Fixed crash when bone-mealing Duskmelon with Dispensers
+    -Fixed players floating above larch boats
+    -Fixed some Yellow Bioshroom blocks not breaking faster with Axes
+    -Fixed/added modded Crop Compatibility
+    -Made Earlight Fruit drop slightly more frequently
     -Made modded Nyliums spreadable by bone mealing Netherrack
     -Mycotoxic Moss Bonemeal now includes Yellow Bioshrooms instead of Mycotoxic Mushrooms
-    -Made Earlight Fruit drop slightly more frequently
-    -Fixed some Yellow Bioshroom blocks not breaking faster with Axes
-    -Fixed Chest Boat recipes
+    -Remake Overgrown Bone Block recipes to fix Bone Meal duplication
+    -Reworked Nether Surface Rules
+    -Remove Alpha Grove from snowy/frozen biome tags
+
 ------------------------------------------------------------------------------------------------------------------------
 -0.5.3
     -Initial port from 1.20.1

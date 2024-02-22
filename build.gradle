@@ -6,11 +6,11 @@ plugins {
     id 'org.spongepowered.mixin' version '0.7.+'
 }
 
-version = mod_version
+version = "${mod_version}+${minecraft_version}"
 group = mod_group_id
 
 base {
-    archivesName = mod_id
+    archivesName = archivesbasename
 }
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
@@ -86,6 +86,7 @@ tasks.named('processResources', ProcessResources).configure {
             forge_version_range: forge_version_range,
             terrablender_version_range: terrablender_version_range,
             loader_version_range: loader_version_range,
+            archivesbasename: archivesbasename,
             mod_id: mod_id,
             mod_name: mod_name,
             mod_license: mod_license,
