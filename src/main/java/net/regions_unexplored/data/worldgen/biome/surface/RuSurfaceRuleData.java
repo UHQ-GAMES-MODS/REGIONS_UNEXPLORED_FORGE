@@ -227,7 +227,7 @@ public class RuSurfaceRuleData {
 
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.TOWERING_CLIFFS), SurfaceRules.ifTrue(surfaceNoiseAbove(1.75D), STONE)),
 
-                SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.MAPLE_FOREST), SurfaceRules.ifTrue(surfaceNoiseAbove(1.65D), STONE)),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.MAPLE_FOREST), SurfaceRules.ifTrue(shieldNoise(1.65D), STONE)),
 
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(RuBiomes.HYACINTH_DEEPS), STONE),
 
