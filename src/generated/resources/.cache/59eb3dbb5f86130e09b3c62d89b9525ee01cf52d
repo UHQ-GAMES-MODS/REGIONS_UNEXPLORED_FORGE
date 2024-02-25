@@ -1,4 +1,4 @@
-// 1.20.2	2024-02-19T19:17:23.947597	Loot Tables
+// 1.20.2	2024-02-25T17:49:00.1346247	Loot Tables
 fb95ad5062001d6c0fb329989fda986801ec5444 data/regions_unexplored/loot_tables/blocks/acacia_branch.json
 9a9c5fbba217f07ec7cb6067e42dba80d311e355 data/regions_unexplored/loot_tables/blocks/acacia_shrub.json
 db69029ed53dd57ea783ac8375ab18767e9fa5a0 data/regions_unexplored/loot_tables/blocks/alpha_dandelion.json
@@ -141,7 +141,7 @@ f6847c8ee314c3d06a49930def294f616cbbc518 data/regions_unexplored/loot_tables/blo
 ea8ffdcda2ca88f4462517f3dd86237e69370857 data/regions_unexplored/loot_tables/blocks/cobalt_fence_gate.json
 38fd34002c7787ec2d470a57c84e6391a8c9a0e8 data/regions_unexplored/loot_tables/blocks/cobalt_hanging_sign.json
 58a76de4d639b5d1ed5107ebde6eafc191ef48e5 data/regions_unexplored/loot_tables/blocks/cobalt_log.json
-7224c407d716e9cf754a90a6a4985d27a46a6286 data/regions_unexplored/loot_tables/blocks/cobalt_nylium.json
+773a615ce8c89842c534e023f99aed9d3ce77611 data/regions_unexplored/loot_tables/blocks/cobalt_nylium.json
 c4f4510fa2c852c3ab08f6c72d084f5655d49a38 data/regions_unexplored/loot_tables/blocks/cobalt_obsidian.json
 43b39c5f99c81d570ca73d6669dd8c2007c34d31 data/regions_unexplored/loot_tables/blocks/cobalt_planks.json
 7be082dcbc05b5906ba744809753568d768b71c6 data/regions_unexplored/loot_tables/blocks/cobalt_pressure_plate.json
