@@ -3,7 +3,8 @@
 +CHANGES:
     -Rewrote overworld Surface Rules for further optimization
     -Made Alpha Grove biome more common
-    -fixed Cobalt nylium dropping Netherrack instead of Blackstone
+    -Fixed Cobalt nylium dropping Netherrack instead of Blackstone
+    -Made Cobalt Webbing stay blue in any biome
 ------------------------------------------------------------------------------------------------------------------------
 -0.5.4
 +CHANGES:

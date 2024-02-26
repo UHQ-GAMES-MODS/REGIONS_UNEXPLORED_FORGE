@@ -1,4 +1,4 @@
-// 1.20.2	2024-02-25T17:49:00.1346247	Loot Tables
+// 1.20.2	2024-02-25T20:08:13.700558	Loot Tables
 fb95ad5062001d6c0fb329989fda986801ec5444 data/regions_unexplored/loot_tables/blocks/acacia_branch.json
 9a9c5fbba217f07ec7cb6067e42dba80d311e355 data/regions_unexplored/loot_tables/blocks/acacia_shrub.json
 db69029ed53dd57ea783ac8375ab18767e9fa5a0 data/regions_unexplored/loot_tables/blocks/alpha_dandelion.json
@@ -768,7 +768,7 @@ fc1c17e39487a0fdefc664d279913fe9ba71cc66 data/regions_unexplored/loot_tables/blo
 cc9a1c4bc1dc70deb3510493ae5771b850190f8e data/regions_unexplored/loot_tables/blocks/willow_trapdoor.json
 235ceb40b25b428121fdc99e90f524531869d6a6 data/regions_unexplored/loot_tables/blocks/willow_wood.json
 09d94713e5f33fb70e58a4e89d4e7613a66f2a68 data/regions_unexplored/loot_tables/blocks/wilting_trillium.json
-3d76c8772d8273817f7cf7b1c748d641b56de2ed data/regions_unexplored/loot_tables/blocks/windswept_grass.json
+8d713f5ed7724b8908fc33067e83edbe4a700eec data/regions_unexplored/loot_tables/blocks/windswept_grass.json
 386586bf4370ffb190e3b8b58119ac9e147f16b3 data/regions_unexplored/loot_tables/blocks/yellow_bioshroom.json
 d982ecfb3ee614f508ca179c1b94216c34576707 data/regions_unexplored/loot_tables/blocks/yellow_bioshroom_block.json
 f24ce3b004c7d222a9560c658a2bc1357cb59072 data/regions_unexplored/loot_tables/blocks/yellow_bioshroom_button.json
