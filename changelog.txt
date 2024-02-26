@@ -1,12 +1,13 @@
 ------------------------------------------------------------------------------------------------------------------------
 -0.5.5
 +CHANGES:
-    -Rewrote overworld Surface Rules for further optimization
-    -Made Alpha Grove biome more common
     -Fixed Cobalt nylium dropping Netherrack instead of Blackstone
-    -Made Cobalt Webbing stay blue in any biome
     -Fixed overlooked Dead and Yellow Bioshroom item tags
+    -Made Alpha Grove biome more common
+    -Made Bioshroom blocks drop Bioshrooms unless silk touched, making them more renewable
+    -Made Cobalt Webbing stay blue in any biome
     -Made cave biomes much rarer
+    -Rewrote overworld Surface Rules for further optimization
 ------------------------------------------------------------------------------------------------------------------------
 -0.5.4
 +CHANGES:
