@@ -1,4 +1,10 @@
 ------------------------------------------------------------------------------------------------------------------------
+-0.5.5
++CHANGES:
+    -Rewrote overworld Surface Rules for further optimization
+    -Made Alpha Grove biome more common
+    -fixed Cobalt nylium dropping Netherrack instead of Blackstone
+------------------------------------------------------------------------------------------------------------------------
 -0.5.4
 +CHANGES:
     -(1.20.4 ONLY) ported to 1.20.4
