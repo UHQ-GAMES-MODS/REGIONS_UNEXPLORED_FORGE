@@ -14,11 +14,13 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DoublePlantBlock;
 import net.minecraft.world.level.block.SweetBerryBushBlock;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraft.world.level.storage.loot.IntRange;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.functions.LimitCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.*;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
@@ -344,14 +346,14 @@ public class RuBlockLootTables extends BlockLootSubProvider {
 
         /*-----------------PLANT_BLOCKS-----------------*/
         //MUSHROOMS
-        dropSelf(RuBlocks.BLUE_BIOSHROOM_BLOCK.get());
-        add(RuBlocks.GLOWING_BLUE_BIOSHROOM_BLOCK.get(), (block) -> createSingleItemTableWithSilkTouch(block, RuBlocks.BLUE_BIOSHROOM_BLOCK.get()));
-        dropSelf(RuBlocks.GREEN_BIOSHROOM_BLOCK.get());
-        add(RuBlocks.GLOWING_GREEN_BIOSHROOM_BLOCK.get(), (block) -> createSingleItemTableWithSilkTouch(block, RuBlocks.GREEN_BIOSHROOM_BLOCK.get()));
-        dropSelf(RuBlocks.PINK_BIOSHROOM_BLOCK.get());
-        add(RuBlocks.GLOWING_PINK_BIOSHROOM_BLOCK.get(), (block) -> createSingleItemTableWithSilkTouch(block, RuBlocks.PINK_BIOSHROOM_BLOCK.get()));
-        dropSelf(RuBlocks.YELLOW_BIOSHROOM_BLOCK.get());
-        add(RuBlocks.GLOWING_YELLOW_BIOSHROOM_BLOCK.get(), (block) -> createSingleItemTableWithSilkTouch(block, RuBlocks.YELLOW_BIOSHROOM_BLOCK.get()));
+        add(RuBlocks.BLUE_BIOSHROOM_BLOCK.get(), (block) -> createMushroomBlockDrop(block, RuBlocks.BLUE_BIOSHROOM.get()));
+        add(RuBlocks.GLOWING_BLUE_BIOSHROOM_BLOCK.get(), (block) -> createMushroomBlockDrop(block, RuBlocks.BLUE_BIOSHROOM.get()));
+        add(RuBlocks.GREEN_BIOSHROOM_BLOCK.get(), (block) -> createMushroomBlockDrop(block, RuBlocks.GREEN_BIOSHROOM.get()));
+        add(RuBlocks.GLOWING_GREEN_BIOSHROOM_BLOCK.get(), (block) -> createMushroomBlockDrop(block, RuBlocks.GREEN_BIOSHROOM.get()));
+        add(RuBlocks.PINK_BIOSHROOM_BLOCK.get(), (block) -> createMushroomBlockDrop(block, RuBlocks.PINK_BIOSHROOM.get()));
+        add(RuBlocks.GLOWING_PINK_BIOSHROOM_BLOCK.get(), (block) -> createMushroomBlockDrop(block, RuBlocks.PINK_BIOSHROOM.get()));
+        add(RuBlocks.YELLOW_BIOSHROOM_BLOCK.get(), (block) -> createMushroomBlockDrop(block, RuBlocks.YELLOW_BIOSHROOM.get()));
+        add(RuBlocks.GLOWING_YELLOW_BIOSHROOM_BLOCK.get(), (block) -> createMushroomBlockDrop(block, RuBlocks.YELLOW_BIOSHROOM.get()));
         //BAMBOO
         dropSelf(RuBlocks.BAMBOO_LOG.get());
         dropSelf(RuBlocks.STRIPPED_BAMBOO_LOG.get());
@@ -973,9 +975,13 @@ public class RuBlockLootTables extends BlockLootSubProvider {
         return RegionsUnexploredMod.BLOCK_REGISTRY.getEntries().stream().map(RegistryObject::get)::iterator;
     }
 
-    protected LootTable.Builder createDoublePlantWithSeedDropsNoGrass(Block p_248590_, Block p_248735_, ItemLike item,  float... chances) {
-        LootPoolEntryContainer.Builder<?> builder = LootItem.lootTableItem(p_248735_).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))).when(HAS_SHEARS).otherwise(this.applyExplosionCondition(p_248590_, LootItem.lootTableItem(item)).when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, chances)));
-        return LootTable.lootTable().withPool(LootPool.lootPool().add(builder).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(p_248590_).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER))).when(LocationCheck.checkLocation(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(p_248590_).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER))), new BlockPos(0, 1, 0)))).withPool(LootPool.lootPool().add(builder).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(p_248590_).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER))).when(LocationCheck.checkLocation(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(p_248590_).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER))), new BlockPos(0, -1, 0))));
+    protected LootTable.Builder createMushroomBlockDrop(Block block, ItemLike item) {
+        return createSilkTouchDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F))).apply(LimitCount.limitCount(IntRange.lowerBound(0)))));
+    }
+
+    protected LootTable.Builder createDoublePlantWithSeedDropsNoGrass(Block block, Block block1, ItemLike item,  float... chances) {
+        LootPoolEntryContainer.Builder<?> builder = LootItem.lootTableItem(block1).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))).when(HAS_SHEARS).otherwise(this.applyExplosionCondition(block, LootItem.lootTableItem(item)).when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, chances)));
+        return LootTable.lootTable().withPool(LootPool.lootPool().add(builder).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER))).when(LocationCheck.checkLocation(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(block).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER))), new BlockPos(0, 1, 0)))).withPool(LootPool.lootPool().add(builder).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER))).when(LocationCheck.checkLocation(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(block).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER))), new BlockPos(0, -1, 0))));
     }
 
     protected LootTable.Builder createDoublePlantWithSeedDropsNoGrass(Block block) {
