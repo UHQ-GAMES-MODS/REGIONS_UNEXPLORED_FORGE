@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[47,)"
+loaderVersion="[48,)"
 license="All rights reserved"
 
 [[mods]]
@@ -17,7 +17,7 @@ Regions Unexplored is a mod that aims to add new content to the overworld. Curre
 [[dependencies.regions_unexplored]]
 modId="forge"
 mandatory=true
-versionRange="[47,)"
+versionRange="[48,)"
 ordering="NONE"
 side="BOTH"
 
