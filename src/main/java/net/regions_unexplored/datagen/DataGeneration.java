@@ -1,4 +1,4 @@
-package net.regions_unexplored.data.worldgen.biome.datagen;
+package net.regions_unexplored.datagen;
 
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
@@ -15,7 +15,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.regions_unexplored.RegionsUnexploredMod;
 import net.regions_unexplored.data.noise.RuNoises;
-import net.regions_unexplored.data.worldgen.biome.datagen.provider.*;
+import net.regions_unexplored.datagen.provider.*;
 import net.regions_unexplored.entity.RuDamageTypes;
 import net.regions_unexplored.registry.BiomeRegistry;
 import net.regions_unexplored.registry.ConfiguredFeatureRegistry;

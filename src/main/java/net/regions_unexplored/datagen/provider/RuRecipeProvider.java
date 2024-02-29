@@ -1,4 +1,4 @@
-package net.regions_unexplored.data.worldgen.biome.datagen.provider;
+package net.regions_unexplored.datagen.provider;
 
 import com.google.common.collect.ImmutableList;
 import net.minecraft.advancements.CriteriaTriggers;

@@ -1,4 +1,4 @@
-package net.regions_unexplored.data.worldgen.biome.datagen.provider;
+package net.regions_unexplored.datagen.provider;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -46,6 +46,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuItems.BAOBAB_BOAT.get().asItem())
                 .add(RuItems.BLACKWOOD_BOAT.get().asItem())
                 .add(RuItems.CYPRESS_BOAT.get().asItem())
+                .add(RuItems.DEAD_BOAT.get().asItem())
                 .add(RuItems.EUCALYPTUS_BOAT.get().asItem())
                 .add(RuItems.JOSHUA_BOAT.get().asItem())
                 .add(RuItems.KAPOK_BOAT.get().asItem())
@@ -64,6 +65,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuItems.BAOBAB_CHEST_BOAT.get().asItem())
                 .add(RuItems.BLACKWOOD_CHEST_BOAT.get().asItem())
                 .add(RuItems.CYPRESS_CHEST_BOAT.get().asItem())
+                .add(RuItems.DEAD_CHEST_BOAT.get().asItem())
                 .add(RuItems.EUCALYPTUS_CHEST_BOAT.get().asItem())
                 .add(RuItems.JOSHUA_CHEST_BOAT.get().asItem())
                 .add(RuItems.KAPOK_CHEST_BOAT.get().asItem())
@@ -123,6 +125,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.BRIMWOOD_FENCE_GATE.get().asItem())
                 .add(RuBlocks.COBALT_FENCE_GATE.get().asItem())
                 .add(RuBlocks.CYPRESS_FENCE_GATE.get().asItem())
+                .add(RuBlocks.DEAD_FENCE_GATE.get().asItem())
                 .add(RuBlocks.EUCALYPTUS_FENCE_GATE.get().asItem())
                 .add(RuBlocks.GREEN_BIOSHROOM_FENCE_GATE.get().asItem())
                 .add(RuBlocks.JOSHUA_FENCE_GATE.get().asItem())
@@ -137,6 +140,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.REDWOOD_FENCE_GATE.get().asItem())
                 .add(RuBlocks.SOCOTRA_FENCE_GATE.get().asItem())
                 .add(RuBlocks.WILLOW_FENCE_GATE.get().asItem())
+                .add(RuBlocks.YELLOW_BIOSHROOM_FENCE_GATE.get().asItem())
         ;
         //this.tag(ItemTags.FENCES);
         //this.tag(ItemTags.FISHES);
@@ -291,6 +295,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.BRIMWOOD_PLANKS.get().asItem())
                 .add(RuBlocks.COBALT_PLANKS.get().asItem())
                 .add(RuBlocks.CYPRESS_PLANKS.get().asItem())
+                .add(RuBlocks.DEAD_PLANKS.get().asItem())
                 .add(RuBlocks.EUCALYPTUS_PLANKS.get().asItem())
                 .add(RuBlocks.GREEN_BIOSHROOM_PLANKS.get().asItem())
                 .add(RuBlocks.JOSHUA_PLANKS.get().asItem())
@@ -305,6 +310,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.REDWOOD_PLANKS.get().asItem())
                 .add(RuBlocks.SOCOTRA_PLANKS.get().asItem())
                 .add(RuBlocks.WILLOW_PLANKS.get().asItem())
+                .add(RuBlocks.YELLOW_BIOSHROOM_PLANKS.get().asItem())
                 .add(RuBlocks.LIGHT_GRAY_PAINTED_PLANKS.get().asItem())
                 .add(RuBlocks.BLACK_PAINTED_PLANKS.get().asItem())
                 .add(RuBlocks.LIGHT_BLUE_PAINTED_PLANKS.get().asItem())
@@ -371,6 +377,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.BRIMWOOD_HANGING_SIGN.get().asItem())
                 .add(RuBlocks.COBALT_HANGING_SIGN.get().asItem())
                 .add(RuBlocks.CYPRESS_HANGING_SIGN.get().asItem())
+                .add(RuBlocks.DEAD_HANGING_SIGN.get().asItem())
                 .add(RuBlocks.EUCALYPTUS_HANGING_SIGN.get().asItem())
                 .add(RuBlocks.GREEN_BIOSHROOM_HANGING_SIGN.get().asItem())
                 .add(RuBlocks.JOSHUA_HANGING_SIGN.get().asItem())
@@ -385,6 +392,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.REDWOOD_HANGING_SIGN.get().asItem())
                 .add(RuBlocks.SOCOTRA_HANGING_SIGN.get().asItem())
                 .add(RuBlocks.WILLOW_HANGING_SIGN.get().asItem())
+                .add(RuBlocks.YELLOW_BIOSHROOM_HANGING_SIGN.get().asItem())
         ;
         this.tag(ItemTags.SIGNS)
                 .add(RuBlocks.BAOBAB_SIGN.get().asItem())
@@ -393,6 +401,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.BRIMWOOD_SIGN.get().asItem())
                 .add(RuBlocks.COBALT_SIGN.get().asItem())
                 .add(RuBlocks.CYPRESS_SIGN.get().asItem())
+                .add(RuBlocks.DEAD_SIGN.get().asItem())
                 .add(RuBlocks.EUCALYPTUS_SIGN.get().asItem())
                 .add(RuBlocks.GREEN_BIOSHROOM_SIGN.get().asItem())
                 .add(RuBlocks.JOSHUA_SIGN.get().asItem())
@@ -407,6 +416,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.REDWOOD_SIGN.get().asItem())
                 .add(RuBlocks.SOCOTRA_SIGN.get().asItem())
                 .add(RuBlocks.WILLOW_SIGN.get().asItem())
+                .add(RuBlocks.YELLOW_BIOSHROOM_SIGN.get().asItem())
         ;
         this.tag(ItemTags.SLABS)
                 .add(RuBlocks.CHALK_SLAB.get().asItem())
@@ -495,6 +505,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.BRIMWOOD_BUTTON.get().asItem())
                 .add(RuBlocks.COBALT_BUTTON.get().asItem())
                 .add(RuBlocks.CYPRESS_BUTTON.get().asItem())
+                .add(RuBlocks.DEAD_BUTTON.get().asItem())
                 .add(RuBlocks.EUCALYPTUS_BUTTON.get().asItem())
                 .add(RuBlocks.GREEN_BIOSHROOM_BUTTON.get().asItem())
                 .add(RuBlocks.JOSHUA_BUTTON.get().asItem())
@@ -509,6 +520,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.REDWOOD_BUTTON.get().asItem())
                 .add(RuBlocks.SOCOTRA_BUTTON.get().asItem())
                 .add(RuBlocks.WILLOW_BUTTON.get().asItem())
+                .add(RuBlocks.YELLOW_BIOSHROOM_BUTTON.get().asItem())
         ;
         this.tag(ItemTags.WOODEN_DOORS)
                 .add(RuBlocks.BAOBAB_DOOR.get().asItem())
@@ -517,6 +529,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.BRIMWOOD_DOOR.get().asItem())
                 .add(RuBlocks.COBALT_DOOR.get().asItem())
                 .add(RuBlocks.CYPRESS_DOOR.get().asItem())
+                .add(RuBlocks.DEAD_DOOR.get().asItem())
                 .add(RuBlocks.EUCALYPTUS_DOOR.get().asItem())
                 .add(RuBlocks.GREEN_BIOSHROOM_DOOR.get().asItem())
                 .add(RuBlocks.JOSHUA_DOOR.get().asItem())
@@ -531,6 +544,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.REDWOOD_DOOR.get().asItem())
                 .add(RuBlocks.SOCOTRA_DOOR.get().asItem())
                 .add(RuBlocks.WILLOW_DOOR.get().asItem())
+                .add(RuBlocks.YELLOW_BIOSHROOM_DOOR.get().asItem())
         ;
         this.tag(ItemTags.WOODEN_FENCES)
                 .add(RuBlocks.BAOBAB_FENCE.get().asItem())
@@ -539,6 +553,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.BRIMWOOD_FENCE.get().asItem())
                 .add(RuBlocks.COBALT_FENCE.get().asItem())
                 .add(RuBlocks.CYPRESS_FENCE.get().asItem())
+                .add(RuBlocks.DEAD_FENCE.get().asItem())
                 .add(RuBlocks.EUCALYPTUS_FENCE.get().asItem())
                 .add(RuBlocks.GREEN_BIOSHROOM_FENCE.get().asItem())
                 .add(RuBlocks.JOSHUA_FENCE.get().asItem())
@@ -553,6 +568,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.REDWOOD_FENCE.get().asItem())
                 .add(RuBlocks.SOCOTRA_FENCE.get().asItem())
                 .add(RuBlocks.WILLOW_FENCE.get().asItem())
+                .add(RuBlocks.YELLOW_BIOSHROOM_FENCE.get().asItem())
         ;
         this.tag(ItemTags.WOODEN_PRESSURE_PLATES)
                 .add(RuBlocks.BAOBAB_PRESSURE_PLATE.get().asItem())
@@ -561,6 +577,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.BRIMWOOD_PRESSURE_PLATE.get().asItem())
                 .add(RuBlocks.COBALT_PRESSURE_PLATE.get().asItem())
                 .add(RuBlocks.CYPRESS_PRESSURE_PLATE.get().asItem())
+                .add(RuBlocks.DEAD_PRESSURE_PLATE.get().asItem())
                 .add(RuBlocks.EUCALYPTUS_PRESSURE_PLATE.get().asItem())
                 .add(RuBlocks.GREEN_BIOSHROOM_PRESSURE_PLATE.get().asItem())
                 .add(RuBlocks.JOSHUA_PRESSURE_PLATE.get().asItem())
@@ -575,6 +592,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.REDWOOD_PRESSURE_PLATE.get().asItem())
                 .add(RuBlocks.SOCOTRA_PRESSURE_PLATE.get().asItem())
                 .add(RuBlocks.WILLOW_PRESSURE_PLATE.get().asItem())
+                .add(RuBlocks.YELLOW_BIOSHROOM_PRESSURE_PLATE.get().asItem())
         ;
         this.tag(ItemTags.WOODEN_SLABS)
                 .add(RuBlocks.ALPHA_SLAB.get().asItem())
@@ -584,6 +602,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.BRIMWOOD_SLAB.get().asItem())
                 .add(RuBlocks.COBALT_SLAB.get().asItem())
                 .add(RuBlocks.CYPRESS_SLAB.get().asItem())
+                .add(RuBlocks.DEAD_SLAB.get().asItem())
                 .add(RuBlocks.EUCALYPTUS_SLAB.get().asItem())
                 .add(RuBlocks.GREEN_BIOSHROOM_SLAB.get().asItem())
                 .add(RuBlocks.JOSHUA_SLAB.get().asItem())
@@ -598,6 +617,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.REDWOOD_SLAB.get().asItem())
                 .add(RuBlocks.SOCOTRA_SLAB.get().asItem())
                 .add(RuBlocks.WILLOW_SLAB.get().asItem())
+                .add(RuBlocks.YELLOW_BIOSHROOM_SLAB.get().asItem())
                 .add(RuBlocks.LIGHT_GRAY_PAINTED_SLAB.get().asItem())
                 .add(RuBlocks.BLACK_PAINTED_SLAB.get().asItem())
                 .add(RuBlocks.LIGHT_BLUE_PAINTED_SLAB.get().asItem())
@@ -623,6 +643,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.BRIMWOOD_STAIRS.get().asItem())
                 .add(RuBlocks.COBALT_STAIRS.get().asItem())
                 .add(RuBlocks.CYPRESS_STAIRS.get().asItem())
+                .add(RuBlocks.DEAD_STAIRS.get().asItem())
                 .add(RuBlocks.EUCALYPTUS_STAIRS.get().asItem())
                 .add(RuBlocks.GREEN_BIOSHROOM_STAIRS.get().asItem())
                 .add(RuBlocks.JOSHUA_STAIRS.get().asItem())
@@ -637,6 +658,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.REDWOOD_STAIRS.get().asItem())
                 .add(RuBlocks.SOCOTRA_STAIRS.get().asItem())
                 .add(RuBlocks.WILLOW_STAIRS.get().asItem())
+                .add(RuBlocks.YELLOW_BIOSHROOM_STAIRS.get().asItem())
                 .add(RuBlocks.LIGHT_GRAY_PAINTED_STAIRS.get().asItem())
                 .add(RuBlocks.BLACK_PAINTED_STAIRS.get().asItem())
                 .add(RuBlocks.LIGHT_BLUE_PAINTED_STAIRS.get().asItem())
@@ -661,6 +683,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.BRIMWOOD_TRAPDOOR.get().asItem())
                 .add(RuBlocks.COBALT_TRAPDOOR.get().asItem())
                 .add(RuBlocks.CYPRESS_TRAPDOOR.get().asItem())
+                .add(RuBlocks.DEAD_TRAPDOOR.get().asItem())
                 .add(RuBlocks.EUCALYPTUS_TRAPDOOR.get().asItem())
                 .add(RuBlocks.GREEN_BIOSHROOM_TRAPDOOR.get().asItem())
                 .add(RuBlocks.JOSHUA_TRAPDOOR.get().asItem())
@@ -675,6 +698,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.REDWOOD_TRAPDOOR.get().asItem())
                 .add(RuBlocks.SOCOTRA_TRAPDOOR.get().asItem())
                 .add(RuBlocks.WILLOW_TRAPDOOR.get().asItem())
+                .add(RuBlocks.YELLOW_BIOSHROOM_TRAPDOOR.get().asItem())
         ;
         //this.tag(ItemTags.WOOL);
         //this.tag(ItemTags.WOOL_CARPETS);
@@ -990,6 +1014,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.BRIMWOOD_FENCE_GATE.get().asItem())
                 .add(RuBlocks.COBALT_FENCE_GATE.get().asItem())
                 .add(RuBlocks.CYPRESS_FENCE_GATE.get().asItem())
+                .add(RuBlocks.DEAD_FENCE_GATE.get().asItem())
                 .add(RuBlocks.EUCALYPTUS_FENCE_GATE.get().asItem())
                 .add(RuBlocks.GREEN_BIOSHROOM_FENCE_GATE.get().asItem())
                 .add(RuBlocks.JOSHUA_FENCE_GATE.get().asItem())
@@ -1004,6 +1029,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.REDWOOD_FENCE_GATE.get().asItem())
                 .add(RuBlocks.SOCOTRA_FENCE_GATE.get().asItem())
                 .add(RuBlocks.WILLOW_FENCE_GATE.get().asItem())
+                .add(RuBlocks.YELLOW_BIOSHROOM_FENCE_GATE.get().asItem())
         ;
         //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "fences/nether_brick")));
         this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "fences/wooden")))
@@ -1013,6 +1039,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.BRIMWOOD_FENCE.get().asItem())
                 .add(RuBlocks.COBALT_FENCE.get().asItem())
                 .add(RuBlocks.CYPRESS_FENCE.get().asItem())
+                .add(RuBlocks.DEAD_FENCE.get().asItem())
                 .add(RuBlocks.EUCALYPTUS_FENCE.get().asItem())
                 .add(RuBlocks.GREEN_BIOSHROOM_FENCE.get().asItem())
                 .add(RuBlocks.JOSHUA_FENCE.get().asItem())
@@ -1027,6 +1054,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.REDWOOD_FENCE.get().asItem())
                 .add(RuBlocks.SOCOTRA_FENCE.get().asItem())
                 .add(RuBlocks.WILLOW_FENCE.get().asItem())
+                .add(RuBlocks.YELLOW_BIOSHROOM_FENCE.get().asItem())
         ;
         //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "glass/colorless")));
         //this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "glass_panes/colorless")));
@@ -1124,6 +1152,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.BRIMWOOD_TRAPDOOR.get().asItem())
                 .add(RuBlocks.COBALT_TRAPDOOR.get().asItem())
                 .add(RuBlocks.CYPRESS_TRAPDOOR.get().asItem())
+                .add(RuBlocks.DEAD_TRAPDOOR.get().asItem())
                 .add(RuBlocks.EUCALYPTUS_TRAPDOOR.get().asItem())
                 .add(RuBlocks.GREEN_BIOSHROOM_TRAPDOOR.get().asItem())
                 .add(RuBlocks.JOSHUA_TRAPDOOR.get().asItem())
@@ -1138,6 +1167,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.REDWOOD_TRAPDOOR.get().asItem())
                 .add(RuBlocks.SOCOTRA_TRAPDOOR.get().asItem())
                 .add(RuBlocks.WILLOW_TRAPDOOR.get().asItem())
+                .add(RuBlocks.YELLOW_BIOSHROOM_TRAPDOOR.get().asItem())
         ;
         this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "doors/wooden")))
                 .add(RuBlocks.BAOBAB_DOOR.get().asItem())
@@ -1146,6 +1176,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.BRIMWOOD_DOOR.get().asItem())
                 .add(RuBlocks.COBALT_DOOR.get().asItem())
                 .add(RuBlocks.CYPRESS_DOOR.get().asItem())
+                .add(RuBlocks.DEAD_DOOR.get().asItem())
                 .add(RuBlocks.EUCALYPTUS_DOOR.get().asItem())
                 .add(RuBlocks.GREEN_BIOSHROOM_DOOR.get().asItem())
                 .add(RuBlocks.JOSHUA_DOOR.get().asItem())
@@ -1160,6 +1191,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.REDWOOD_DOOR.get().asItem())
                 .add(RuBlocks.SOCOTRA_DOOR.get().asItem())
                 .add(RuBlocks.WILLOW_DOOR.get().asItem())
+                .add(RuBlocks.YELLOW_BIOSHROOM_DOOR.get().asItem())
         ;
         this.tag(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "stairs/wooden")))
                 .add(RuBlocks.ALPHA_STAIRS.get().asItem())
@@ -1169,6 +1201,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.BRIMWOOD_STAIRS.get().asItem())
                 .add(RuBlocks.COBALT_STAIRS.get().asItem())
                 .add(RuBlocks.CYPRESS_STAIRS.get().asItem())
+                .add(RuBlocks.DEAD_STAIRS.get().asItem())
                 .add(RuBlocks.EUCALYPTUS_STAIRS.get().asItem())
                 .add(RuBlocks.GREEN_BIOSHROOM_STAIRS.get().asItem())
                 .add(RuBlocks.JOSHUA_STAIRS.get().asItem())
@@ -1183,6 +1216,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.REDWOOD_STAIRS.get().asItem())
                 .add(RuBlocks.SOCOTRA_STAIRS.get().asItem())
                 .add(RuBlocks.WILLOW_STAIRS.get().asItem())
+                .add(RuBlocks.YELLOW_BIOSHROOM_STAIRS.get().asItem())
                 .add(RuBlocks.LIGHT_GRAY_PAINTED_STAIRS.get().asItem())
                 .add(RuBlocks.BLACK_PAINTED_STAIRS.get().asItem())
                 .add(RuBlocks.LIGHT_BLUE_PAINTED_STAIRS.get().asItem())
@@ -1213,6 +1247,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.BRIMWOOD_SLAB.get().asItem())
                 .add(RuBlocks.COBALT_SLAB.get().asItem())
                 .add(RuBlocks.CYPRESS_SLAB.get().asItem())
+                .add(RuBlocks.DEAD_SLAB.get().asItem())
                 .add(RuBlocks.EUCALYPTUS_SLAB.get().asItem())
                 .add(RuBlocks.GREEN_BIOSHROOM_SLAB.get().asItem())
                 .add(RuBlocks.JOSHUA_SLAB.get().asItem())
@@ -1227,6 +1262,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.REDWOOD_SLAB.get().asItem())
                 .add(RuBlocks.SOCOTRA_SLAB.get().asItem())
                 .add(RuBlocks.WILLOW_SLAB.get().asItem())
+                .add(RuBlocks.YELLOW_BIOSHROOM_SLAB.get().asItem())
                 .add(RuBlocks.LIGHT_GRAY_PAINTED_SLAB.get().asItem())
                 .add(RuBlocks.BLACK_PAINTED_SLAB.get().asItem())
                 .add(RuBlocks.LIGHT_BLUE_PAINTED_SLAB.get().asItem())
@@ -1257,6 +1293,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.BRIMWOOD_PLANKS.get().asItem())
                 .add(RuBlocks.COBALT_PLANKS.get().asItem())
                 .add(RuBlocks.CYPRESS_PLANKS.get().asItem())
+                .add(RuBlocks.DEAD_PLANKS.get().asItem())
                 .add(RuBlocks.EUCALYPTUS_PLANKS.get().asItem())
                 .add(RuBlocks.GREEN_BIOSHROOM_PLANKS.get().asItem())
                 .add(RuBlocks.JOSHUA_PLANKS.get().asItem())
@@ -1271,6 +1308,7 @@ public class RuItemTagProvider extends ItemTagsProvider {
                 .add(RuBlocks.REDWOOD_PLANKS.get().asItem())
                 .add(RuBlocks.SOCOTRA_PLANKS.get().asItem())
                 .add(RuBlocks.WILLOW_PLANKS.get().asItem())
+                .add(RuBlocks.YELLOW_BIOSHROOM_PLANKS.get().asItem())
                 .add(RuBlocks.LIGHT_GRAY_PAINTED_PLANKS.get().asItem())
                 .add(RuBlocks.BLACK_PAINTED_PLANKS.get().asItem())
                 .add(RuBlocks.LIGHT_BLUE_PAINTED_PLANKS.get().asItem())

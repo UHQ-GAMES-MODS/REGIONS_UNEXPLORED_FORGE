@@ -1,4 +1,4 @@
-package net.regions_unexplored.data.worldgen.biome.datagen.provider;
+package net.regions_unexplored.datagen.provider;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
