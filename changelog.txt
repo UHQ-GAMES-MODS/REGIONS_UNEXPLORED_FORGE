@@ -3,6 +3,7 @@
 +CHANGES:
     -Fixed Cobalt nylium dropping Netherrack instead of Blackstone
     -Fixed overlooked Dead and Yellow Bioshroom item tags
+    -Fixed Windswept Grass loot table crashing chunk generation
     -Made Alpha Grove biome more common
     -Made Bioshroom blocks drop Bioshrooms unless silk touched, making them more renewable
     -Made Cobalt Webbing stay blue in any biome
