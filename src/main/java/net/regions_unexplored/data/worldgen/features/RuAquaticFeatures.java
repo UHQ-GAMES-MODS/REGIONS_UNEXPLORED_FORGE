@@ -25,6 +25,8 @@ public class RuAquaticFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> FEN_CATTAIL = ConfiguredFeatureRegistry.createKey("fen_cattail");
     public static final ResourceKey<ConfiguredFeature<?, ?>> WATER_CATTAIL = ConfiguredFeatureRegistry.createKey("water_cattail");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> FLOURAMINE = ConfiguredFeatureRegistry.createKey("flouramine");
+
     public static final ResourceKey<ConfiguredFeature<?, ?>> TALL_HYACINTH_STOCK = ConfiguredFeatureRegistry.createKey("tall_hyacinth_stock");
     public static final ResourceKey<ConfiguredFeature<?, ?>> HYACINTH_PLANTS = ConfiguredFeatureRegistry.createKey("hyacinth_plants");
     public static final ResourceKey<ConfiguredFeature<?, ?>> HYACINTH_FLOWERS = ConfiguredFeatureRegistry.createKey("hyacinth_flowers");
@@ -42,7 +44,9 @@ public class RuAquaticFeatures {
         HolderGetter<ConfiguredFeature<?, ?>> holderGetter = context.lookup(Registries.CONFIGURED_FEATURE);
         register(context, FEN_CATTAIL, FeatureRegistry.FEN_CATTAIL.get(), FeatureConfiguration.NONE);
         register(context, WATER_CATTAIL, FeatureRegistry.WATER_CATTAIL.get(), FeatureConfiguration.NONE);
-        
+
+        register(context, FLOURAMINE, FeatureRegistry.FLOURAMINE.get(), FeatureConfiguration.NONE);
+
         register(context, TALL_HYACINTH_STOCK, FeatureRegistry.TALL_HYACINTH_STOCK.get(), new HyacinthStockConfiguration(BlockStateProvider.simple(RuBlocks.TALL_HYACINTH_STOCK.get()), 1, 14));
         register(context, HYACINTH_PLANTS, FeatureRegistry.HYACINTH_PLANTS.get(), new ProbabilityFeatureConfiguration(0.1F));
         register(context, HYACINTH_FLOWERS, Feature.MULTIFACE_GROWTH, new MultifaceGrowthConfiguration((MultifaceBlock)RuBlocks.HYACINTH_FLOWERS.get(), 20, true, true, true, 1.0F, HolderSet.direct(Block::builtInRegistryHolder, Blocks.STONE, Blocks.PRISMARINE, Blocks.PRISMARINE_BRICKS)));

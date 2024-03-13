@@ -1,0 +1,12 @@
+{
+  "parent": "regions_unexplored:block/flouramine_head_base",
+  "textures": {
+    "0": "regions_unexplored:block/flouramine_1",
+    "1": "regions_unexplored:block/flouramine_top_1",
+    "2": "regions_unexplored:block/flouramine_bottom_1",
+    "3": "regions_unexplored:block/flouramine_spikes",
+    "4": "regions_unexplored:block/flouramine_leaf_1",
+    "particle": "regions_unexplored:block/flouramine_1"
+  },
+  "render_type": "cutout"
+}

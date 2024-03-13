@@ -1,0 +1,18 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "regions_unexplored:block/flouramine_0"
+      },
+      {
+        "model": "regions_unexplored:block/flouramine_1"
+      },
+      {
+        "model": "regions_unexplored:block/flouramine_2"
+      },
+      {
+        "model": "regions_unexplored:block/flouramine_3"
+      }
+    ]
+  }
+}

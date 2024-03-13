@@ -5,6 +5,7 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 
 public class RuBlockStateProperties {
     public static final BooleanProperty HAS_GRAVITY = BooleanProperty.create("has_gravity");
+    public static final BooleanProperty ACTIVE = BooleanProperty.create("active");
     public static final BooleanProperty TRANSITION_BLOCK = BooleanProperty.create("transition_block");
     public static final BooleanProperty SMOULDERING = BooleanProperty.create("smouldering");
     public static final BooleanProperty LEAVES = BooleanProperty.create("leaves");

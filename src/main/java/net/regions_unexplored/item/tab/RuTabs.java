@@ -22,6 +22,7 @@ public class RuTabs {
                         .withSearchBar(58)
                         .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
                         .displayItems((featureFlags, output) -> {
+                            output.accept(new ItemStack(RuBlocks.FLOURAMINE.get()));
 
                             output.accept(new ItemStack(RuBlocks.PRISMOSS.get()));
                             output.accept(new ItemStack(RuBlocks.DEEPSLATE_PRISMOSS.get()));

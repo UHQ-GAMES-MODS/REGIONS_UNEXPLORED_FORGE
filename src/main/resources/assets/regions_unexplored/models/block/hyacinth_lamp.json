@@ -4,7 +4,7 @@
 	"render_type": "cutout",
 	"textures": {
 		"0": "regions_unexplored:block/hyacinth_lamp_base",
-		"1": "regions_unexplored:block/hyacinth_stock",
+		"1": "regions_unexplored:block/hyacinth_lamp",
 		"particle": "regions_unexplored:block/hyacinth_lamp_base"
 	},
 	"elements": [

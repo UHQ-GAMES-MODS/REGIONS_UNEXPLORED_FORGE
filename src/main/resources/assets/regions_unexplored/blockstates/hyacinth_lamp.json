@@ -1,6 +1,9 @@
 {
   "variants": {
-    "": {
+    "waterlogged=true": {
+      "model": "regions_unexplored:block/hyacinth_lamp_waterlogged"
+    },
+    "waterlogged=false": {
       "model": "regions_unexplored:block/hyacinth_lamp"
     }
   }

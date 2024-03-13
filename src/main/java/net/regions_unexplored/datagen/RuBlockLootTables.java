@@ -50,6 +50,9 @@ public class RuBlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
+        add(RuBlocks.FLOURAMINE.get(), (block) -> createSilkTouchOnlyTable(block));
+        add(RuBlocks.FLOURAMINE_PLANT.get(), (block) -> createSilkTouchOnlyTable(RuBlocks.FLOURAMINE.get()));
+        dropSelf(RuBlocks.TALL_FLOURAGRASS.get());
         /*-----------------CAVE_BLOCKS-----------------*/
         //PRISMA_BLOCKS
         add(RuBlocks.PRISMOSS.get(), (block) -> createSingleItemTableWithSilkTouch(block, Blocks.COBBLESTONE));

@@ -85,6 +85,7 @@ public class FeatureRegistry {
     public static RegistryObject<Feature> WATER_CATTAIL;
     public static RegistryObject<Feature> ROCK_PILLAR;
     public static RegistryObject<Feature> TALL_HYACINTH_STOCK;
+    public static RegistryObject<Feature> FLOURAMINE;
     public static RegistryObject<Feature> HYACINTH_PLANTS;
     public static RegistryObject<Feature> OCEAN_ROCK;
     //NETHER
@@ -164,6 +165,7 @@ public class FeatureRegistry {
         WATER_CATTAIL = RegionsUnexploredMod.FEATURE_REGISTRY.register("water_cattail", () -> new WaterCattailFeature(NoneFeatureConfiguration.CODEC));
         ROCK_PILLAR = RegionsUnexploredMod.FEATURE_REGISTRY.register("rock_pillar", () -> new RockPillarFeature(NoneFeatureConfiguration.CODEC));
         TALL_HYACINTH_STOCK = RegionsUnexploredMod.FEATURE_REGISTRY.register("tall_hyacinth_stock", () -> new HyacinthStockFeature(HyacinthStockConfiguration.CODEC));
+        FLOURAMINE = RegionsUnexploredMod.FEATURE_REGISTRY.register("flouramine", () -> new FlouramineFeature(NoneFeatureConfiguration.CODEC));
         HYACINTH_PLANTS = RegionsUnexploredMod.FEATURE_REGISTRY.register("hyacinth_plants", () -> new HyacinthPlantsFeature(ProbabilityFeatureConfiguration.CODEC));
         OCEAN_ROCK = RegionsUnexploredMod.FEATURE_REGISTRY.register("ocean_rock", () -> new SeaRockFeature(SeaRockConfiguration.CODEC));
         //NETHER
