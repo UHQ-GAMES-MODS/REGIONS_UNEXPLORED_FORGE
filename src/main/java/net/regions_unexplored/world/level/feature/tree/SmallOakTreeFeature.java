@@ -72,7 +72,6 @@ public class SmallOakTreeFeature extends Feature<RuTreeConfiguration> {
 
     public void placeLeavesBlob(LevelAccessor level, BlockPos pos1, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
         BlockPos.MutableBlockPos pos = pos1.mutable();
-        Random random = new Random();
 
         placeLeavesBlock(level, pos.above(3), randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.above(2), randomSource, treeConfiguration);
@@ -101,7 +100,6 @@ public class SmallOakTreeFeature extends Feature<RuTreeConfiguration> {
     }
 
     public void placeLog(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration, Direction.Axis axis) {
-        Random random = new Random();
         if(level.isOutsideBuildHeight(pos)){
             return;
         }
@@ -111,9 +109,8 @@ public class SmallOakTreeFeature extends Feature<RuTreeConfiguration> {
     }
 
     public void placeBranchDecorator(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        Random random = new Random();
         if(randomSource.nextInt(10)==0){
-            int rd = random.nextInt(4);
+            int rd = randomSource.nextInt(4);
             if(rd==0){
                 placeNorthBranch(level, pos, randomSource, treeConfiguration);
             }
@@ -214,7 +211,6 @@ public class SmallOakTreeFeature extends Feature<RuTreeConfiguration> {
     }
 
     public boolean placeLeavesBlock(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        Random random = new Random();
         if(level.isOutsideBuildHeight(pos)){
             return true;
         }
@@ -233,7 +229,7 @@ public class SmallOakTreeFeature extends Feature<RuTreeConfiguration> {
         }
         return true;
     }
-    
+
     public static boolean isReplaceableDirtBlock(BlockState state) {
         return state.is(RuTags.TREE_GRASS_REPLACEABLES);
     }

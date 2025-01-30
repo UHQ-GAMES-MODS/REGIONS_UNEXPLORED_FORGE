@@ -85,7 +85,7 @@ public class SakuraTreeFeature extends Feature<RuTreeConfiguration> {
             placeLogZ(level, pos.above().south(), randomSource, treeConfiguration);
             placeLogZ(level, pos.above().south().south(), randomSource, treeConfiguration);
             placeLogZ(level, pos.above().south().south().above().south(), randomSource, treeConfiguration);
-            placeBeehive(level, pos.above().south().south().south(), Direction.SOUTH);
+            placeBeehive(level, pos.above().south().south().south(), Direction.SOUTH, randomSource);
             placeLeavesBlobRight(level, pos.above().south().south().above().south(), randomSource, treeConfiguration);
         }
         if(limbDirection==1){
@@ -99,7 +99,7 @@ public class SakuraTreeFeature extends Feature<RuTreeConfiguration> {
             placeLogZ(level, pos.above().north(), randomSource, treeConfiguration);
             placeLogZ(level, pos.above().north().north(), randomSource, treeConfiguration);
             placeLogZ(level, pos.above().north().north().above().north(), randomSource, treeConfiguration);
-            placeBeehive(level, pos.above().north().north().north(), Direction.NORTH);
+            placeBeehive(level, pos.above().north().north().north(), Direction.NORTH, randomSource);
             placeLeavesBlobRight(level, pos.above().north().north().above().north(), randomSource, treeConfiguration);
         }
         if(limbDirection==2){
@@ -113,7 +113,7 @@ public class SakuraTreeFeature extends Feature<RuTreeConfiguration> {
             placeLogX(level, pos.above().west(), randomSource, treeConfiguration);
             placeLogX(level, pos.above().west().west(), randomSource, treeConfiguration);
             placeLogX(level, pos.above().west().west().above().west(), randomSource, treeConfiguration);
-            placeBeehive(level, pos.above().west().west().west(), Direction.WEST);
+            placeBeehive(level, pos.above().west().west().west(), Direction.WEST, randomSource);
             placeLeavesBlobRight(level, pos.above().west().west().above().west(), randomSource, treeConfiguration);
         }
         if(limbDirection==3){
@@ -127,7 +127,7 @@ public class SakuraTreeFeature extends Feature<RuTreeConfiguration> {
             placeLogX(level, pos.above().east(), randomSource, treeConfiguration);
             placeLogX(level, pos.above().east().east(), randomSource, treeConfiguration);
             placeLogX(level, pos.above().east().east().above().east(), randomSource, treeConfiguration);
-            placeBeehive(level, pos.above().east().east().east(), Direction.EAST);
+            placeBeehive(level, pos.above().east().east().east(), Direction.EAST, randomSource);
             placeLeavesBlobRight(level, pos.above().east().east().above().east(), randomSource, treeConfiguration);
         }
         if(limbDirection==4){
@@ -141,7 +141,7 @@ public class SakuraTreeFeature extends Feature<RuTreeConfiguration> {
             placeLogZ(level, pos.west().above().south(), randomSource, treeConfiguration);
             placeLogZ(level, pos.west().above().south().south(), randomSource, treeConfiguration);
             placeLogZ(level, pos.west().west().above().south().south().above().south(), randomSource, treeConfiguration);
-            placeBeehive(level, pos.west().west().above().south().south().south(), Direction.SOUTH);
+            placeBeehive(level, pos.west().west().above().south().south().south(), Direction.SOUTH, randomSource);
             placeLeavesBlobRight(level, pos.west().west().above().south().south().above().south(), randomSource, treeConfiguration);
         }
         if(limbDirection==5){
@@ -155,7 +155,7 @@ public class SakuraTreeFeature extends Feature<RuTreeConfiguration> {
             placeLogZ(level, pos.east().above().south(), randomSource, treeConfiguration);
             placeLogZ(level, pos.east().above().south().south(), randomSource, treeConfiguration);
             placeLogZ(level, pos.east().east().above().south().south().above().south(), randomSource, treeConfiguration);
-            placeBeehive(level, pos.east().east().above().south().south().south(), Direction.SOUTH);
+            placeBeehive(level, pos.east().east().above().south().south().south(), Direction.SOUTH, randomSource);
             placeLeavesBlobRight(level, pos.east().east().above().south().south().above().south(), randomSource, treeConfiguration);
         }
         if(limbDirection==6){
@@ -169,7 +169,7 @@ public class SakuraTreeFeature extends Feature<RuTreeConfiguration> {
             placeLogZ(level, pos.west().above().north(), randomSource, treeConfiguration);
             placeLogZ(level, pos.west().above().north().north(), randomSource, treeConfiguration);
             placeLogZ(level, pos.west().west().above().north().north().above().north(), randomSource, treeConfiguration);
-            placeBeehive(level, pos.west().west().above().north().north().north(), Direction.NORTH);
+            placeBeehive(level, pos.west().west().above().north().north().north(), Direction.NORTH, randomSource);
             placeLeavesBlobRight(level, pos.west().west().above().north().north().above().north(), randomSource, treeConfiguration);
         }
         if(limbDirection==7){
@@ -183,7 +183,7 @@ public class SakuraTreeFeature extends Feature<RuTreeConfiguration> {
             placeLogZ(level, pos.east().above().north(), randomSource, treeConfiguration);
             placeLogZ(level, pos.east().above().north().north(), randomSource, treeConfiguration);
             placeLogZ(level, pos.east().east().above().north().north().above().north(), randomSource, treeConfiguration);
-            placeBeehive(level, pos.east().east().above().north().north().north(), Direction.NORTH);
+            placeBeehive(level, pos.east().east().above().north().north().north(), Direction.NORTH, randomSource);
             placeLeavesBlobRight(level, pos.east().east().above().north().north().above().north(), randomSource, treeConfiguration);
         }
         if(limbDirection==8){
@@ -197,7 +197,7 @@ public class SakuraTreeFeature extends Feature<RuTreeConfiguration> {
             placeLogX(level, pos.south().above().west(), randomSource, treeConfiguration);
             placeLogX(level, pos.south().above().west().west(), randomSource, treeConfiguration);
             placeLogX(level, pos.south().south().above().west().west().above().west(), randomSource, treeConfiguration);
-            placeBeehive(level, pos.south().south().above().west().west().west(), Direction.WEST);
+            placeBeehive(level, pos.south().south().above().west().west().west(), Direction.WEST, randomSource);
             placeLeavesBlobRight(level, pos.south().south().above().west().west().above().west(), randomSource, treeConfiguration);
         }
         if(limbDirection==9){
@@ -211,7 +211,7 @@ public class SakuraTreeFeature extends Feature<RuTreeConfiguration> {
             placeLogX(level, pos.south().above().east(), randomSource, treeConfiguration);
             placeLogX(level, pos.south().above().east().east(), randomSource, treeConfiguration);
             placeLogX(level, pos.south().south().above().east().east().above().east(), randomSource, treeConfiguration);
-            placeBeehive(level, pos.south().south().above().east().east().east(), Direction.EAST);
+            placeBeehive(level, pos.south().south().above().east().east().east(), Direction.EAST, randomSource);
             placeLeavesBlobRight(level, pos.south().south().above().east().east().above().east(), randomSource, treeConfiguration);
         }
         if(limbDirection==10){
@@ -225,7 +225,7 @@ public class SakuraTreeFeature extends Feature<RuTreeConfiguration> {
             placeLogX(level, pos.north().above().west(), randomSource, treeConfiguration);
             placeLogX(level, pos.north().above().west().west(), randomSource, treeConfiguration);
             placeLogX(level, pos.north().north().above().west().west().above().west(), randomSource, treeConfiguration);
-            placeBeehive(level, pos.north().north().above().west().west().west(), Direction.WEST);
+            placeBeehive(level, pos.north().north().above().west().west().west(), Direction.WEST, randomSource);
             placeLeavesBlobRight(level, pos.north().north().above().west().west().above().west(), randomSource, treeConfiguration);
         }
         if(limbDirection==11){
@@ -239,15 +239,14 @@ public class SakuraTreeFeature extends Feature<RuTreeConfiguration> {
             placeLogX(level, pos.north().above().east(), randomSource, treeConfiguration);
             placeLogX(level, pos.north().above().east().east(), randomSource, treeConfiguration);
             placeLogX(level, pos.north().north().above().east().east().above().east(), randomSource, treeConfiguration);
-            placeBeehive(level, pos.north().north().above().east().east().east(), Direction.EAST);
+            placeBeehive(level, pos.north().north().above().east().east().east(), Direction.EAST, randomSource);
             placeLeavesBlobRight(level, pos.north().north().above().east().east().above().east(), randomSource, treeConfiguration);
         }
         return true;
     }
 
     public boolean placeBase(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        Random random = new Random();
-        int rot = random.nextInt(8);
+        int rot = randomSource.nextInt(8);
         if(rot==0){
             placeLog(level, pos.north().east(), randomSource, treeConfiguration);
             placeRoot(level, pos.north().east(), randomSource, treeConfiguration);
@@ -300,7 +299,6 @@ public class SakuraTreeFeature extends Feature<RuTreeConfiguration> {
     }
 
     public boolean placeLog(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        Random random = new Random();
         if(level.isOutsideBuildHeight(pos)){
             return true;
         }
@@ -338,7 +336,6 @@ public class SakuraTreeFeature extends Feature<RuTreeConfiguration> {
         return true;
     }
     public boolean placeLogX(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        Random random = new Random();
         if(level.isOutsideBuildHeight(pos)){
             return true;
         }
@@ -376,7 +373,6 @@ public class SakuraTreeFeature extends Feature<RuTreeConfiguration> {
         return true;
     }
     public boolean placeLogZ(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        Random random = new Random();
         if(level.isOutsideBuildHeight(pos)){
             return true;
         }
@@ -435,14 +431,12 @@ public class SakuraTreeFeature extends Feature<RuTreeConfiguration> {
     }
 
     public boolean placeLeavesBlobLeft(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        Random random = new Random();
         placeLeavesTopLeft(level, pos, randomSource, treeConfiguration);
         placeLeavesMiddle(level, pos.above(), randomSource, treeConfiguration);
         placeLeavesTopLeft(level, pos.above().above(), randomSource, treeConfiguration);
         return true;
     }
     public boolean placeLeavesBlobRight(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        Random random = new Random();
         placeLeavesTopRight(level, pos, randomSource, treeConfiguration);
         placeLeavesMiddle(level, pos.above(), randomSource, treeConfiguration);
         placeLeavesTopRight(level, pos.above().above(), randomSource, treeConfiguration);
@@ -450,7 +444,6 @@ public class SakuraTreeFeature extends Feature<RuTreeConfiguration> {
     }
 
     public boolean placeLeavesMiddle(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        Random random = new Random();
         placeLeavesBlock(level,pos, randomSource, treeConfiguration);
 
         placeLeavesBlock(level,pos.north(), randomSource, treeConfiguration);
@@ -506,7 +499,6 @@ public class SakuraTreeFeature extends Feature<RuTreeConfiguration> {
         return true;
     }
     public boolean placeLeavesTopLeft(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        Random random = new Random();
         placeLeavesBlock(level,pos, randomSource, treeConfiguration);
         placeLeavesBlock(level,pos.north(), randomSource, treeConfiguration);
         placeLeavesBlock(level,pos.north().north(), randomSource, treeConfiguration);
@@ -701,13 +693,12 @@ public class SakuraTreeFeature extends Feature<RuTreeConfiguration> {
         return true;
     }
 
-    public boolean placeBeehive(LevelAccessor level, BlockPos pos, Direction direction){
-        Random random = new Random();
-        int chance = random.nextInt(20);
+    public boolean placeBeehive(LevelAccessor level, BlockPos pos, Direction direction, RandomSource randomSource){
+        int chance = randomSource.nextInt(20);
         if(level.getBlockState(pos).isAir()&&chance==0){
             level.setBlock(pos, Blocks.BEE_NEST.defaultBlockState().setValue(BeehiveBlock.FACING, direction), 2);
             level.getBlockEntity(pos, BlockEntityType.BEEHIVE).ifPresent((addBee) -> {
-                int j = 2 + random.nextInt(2);
+                int j = 2 + randomSource.nextInt(2);
                 for(int k = 0; k < j; ++k) {
                     addBee.storeBee(BeehiveBlockEntity.Occupant.create(k));
                 }
@@ -715,7 +706,7 @@ public class SakuraTreeFeature extends Feature<RuTreeConfiguration> {
         }
         return true;
     }
-    
+
     public static boolean isReplaceableDirtBlock(BlockState state) {
         return state.is(RuTags.TREE_GRASS_REPLACEABLES);
     }

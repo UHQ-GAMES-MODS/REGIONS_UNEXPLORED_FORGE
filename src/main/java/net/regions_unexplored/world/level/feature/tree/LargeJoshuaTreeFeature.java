@@ -3,6 +3,7 @@ package net.regions_unexplored.world.level.feature.tree;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.RotatedPillarBlock;
@@ -50,8 +51,8 @@ public class LargeJoshuaTreeFeature extends Feature<NoneFeatureConfiguration> {
                 level.setBlock(placePos, RuBlocks.JOSHUA_LOG.get().defaultBlockState(), 2);
                 if (checkHeight==height){
                     placeLeaves(level, placePos);
-                    placeBranch(level, placePos.below().below().below().below().below());
-                    placeBranch2(level, placePos.below().below().below().below().below().below());
+                    placeBranch(level, placePos.below().below().below().below().below(), context.random());
+                    placeBranch2(level, placePos.below().below().below().below().below().below(), context.random());
                 }
                 placePos.move(Direction.UP);
                 checkHeight = checkHeight + 1;
@@ -85,15 +86,14 @@ public class LargeJoshuaTreeFeature extends Feature<NoneFeatureConfiguration> {
         return true;
     }
 
-    public boolean placeBranch(LevelAccessor level, BlockPos pos) {
-        Random random = new Random();
-        int n = random.nextInt(2);
+    public boolean placeBranch(LevelAccessor level, BlockPos pos, RandomSource randomSource) {
+        int n = randomSource.nextInt(2);
         BlockPos north = new BlockPos(pos.getX(), pos.getY()+n, pos.getZ());
-        int s = random.nextInt(2);
+        int s = randomSource.nextInt(2);
         BlockPos south = new BlockPos(pos.getX(), pos.getY()+s, pos.getZ());
-        int e = random.nextInt(2);
+        int e = randomSource.nextInt(2);
         BlockPos east = new BlockPos(pos.getX(), pos.getY()+e, pos.getZ());
-        int w = random.nextInt(2);
+        int w = randomSource.nextInt(2);
         BlockPos west = new BlockPos(pos.getX(), pos.getY()+w, pos.getZ());
 
         if(level.getBlockState(north.north()).canBeReplaced()&&!level.isOutsideBuildHeight(north.north())){
@@ -155,15 +155,14 @@ public class LargeJoshuaTreeFeature extends Feature<NoneFeatureConfiguration> {
         return true;
     }
 
-    public boolean placeBranch2(LevelAccessor level, BlockPos pos) {
-        Random random = new Random();
-        int n = random.nextInt(3);
+    public boolean placeBranch2(LevelAccessor level, BlockPos pos, RandomSource randomSource) {
+        int n = randomSource.nextInt(3);
         BlockPos north = new BlockPos(pos.getX(), pos.getY()+n, pos.getZ());
-        int s = random.nextInt(3);
+        int s = randomSource.nextInt(3);
         BlockPos south = new BlockPos(pos.getX(), pos.getY()+s, pos.getZ());
-        int e = random.nextInt(3);
+        int e = randomSource.nextInt(3);
         BlockPos east = new BlockPos(pos.getX(), pos.getY()+e, pos.getZ());
-        int w = random.nextInt(3);
+        int w = randomSource.nextInt(3);
         BlockPos west = new BlockPos(pos.getX(), pos.getY()+w, pos.getZ());
 
         if(level.getBlockState(north.north().west()).canBeReplaced()&&!level.isOutsideBuildHeight(north.north().west())){

@@ -152,9 +152,8 @@ public class LushPineTreeFeature extends Feature<RuTreeConfiguration> {
     }
 
     public boolean placeLeavesBlobTop(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        Random random = new Random();
         BlockPos pos2 = pos.below(3);
-        int top = random.nextInt(2);
+        int top = randomSource.nextInt(2);
 
 
         if(top==0){
@@ -217,8 +216,7 @@ public class LushPineTreeFeature extends Feature<RuTreeConfiguration> {
     }
 
     public boolean placeLeavesBlobNorth(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        Random random = new Random();
-        int n = random.nextInt(3);
+        int n = randomSource.nextInt(3);
 
         placeLeavesBlock(level, pos.south(), randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.south().east(), randomSource, treeConfiguration);
@@ -253,8 +251,8 @@ public class LushPineTreeFeature extends Feature<RuTreeConfiguration> {
         return true;
     }
     public boolean placeLeavesBlobSouth(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        Random random = new Random();
-        int n = random.nextInt(3);
+
+        int n = randomSource.nextInt(3);
 
         placeLeavesBlock(level, pos.north(), randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.north().east(), randomSource, treeConfiguration);
@@ -287,8 +285,8 @@ public class LushPineTreeFeature extends Feature<RuTreeConfiguration> {
         return true;
     }
     public boolean placeLeavesBlobEast(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        Random random = new Random();
-        int n = random.nextInt(3);
+
+        int n = randomSource.nextInt(3);
 
         placeLeavesBlock(level, pos.west(), randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.west().north(), randomSource, treeConfiguration);
@@ -321,8 +319,8 @@ public class LushPineTreeFeature extends Feature<RuTreeConfiguration> {
         return true;
     }
     public boolean placeLeavesBlobWest(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        Random random = new Random();
-        int n = random.nextInt(3);
+
+        int n = randomSource.nextInt(3);
 
         placeLeavesBlock(level, pos.east(), randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.east().north(), randomSource, treeConfiguration);
@@ -396,7 +394,7 @@ public class LushPineTreeFeature extends Feature<RuTreeConfiguration> {
     }
 
     public boolean placeLog(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration, Direction.Axis axis) {
-        Random random = new Random();
+
         if(level.isOutsideBuildHeight(pos)){
             return true;
         }
@@ -435,9 +433,9 @@ public class LushPineTreeFeature extends Feature<RuTreeConfiguration> {
     }
 
     public void placeBranchDecorator(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        Random random = new Random();
+
         if(randomSource.nextInt(10)==0){
-            int rd = random.nextInt(4);
+            int rd = randomSource.nextInt(4);
             if(rd==0){
                 placeNorthBranch(level, pos, randomSource, treeConfiguration);
             }
@@ -526,8 +524,8 @@ public class LushPineTreeFeature extends Feature<RuTreeConfiguration> {
     }
 
     public void placeRoot(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        Random random = new Random();
-        int rd = random.nextInt(2)+4;
+
+        int rd = randomSource.nextInt(2)+4;
         int i = 0;
         BlockPos.MutableBlockPos placePos = pos.mutable();
         while(i<=rd){
@@ -547,7 +545,7 @@ public class LushPineTreeFeature extends Feature<RuTreeConfiguration> {
     }
 
     public boolean placeLeavesBlock(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        Random random = new Random();
+
         if(level.isOutsideBuildHeight(pos)){
             return true;
         }
@@ -572,7 +570,7 @@ public class LushPineTreeFeature extends Feature<RuTreeConfiguration> {
         }
         return true;
     }
-    
+
     public static boolean isReplaceableDirtBlock(BlockState state) {
         return state.is(RuTags.TREE_GRASS_REPLACEABLES);
     }

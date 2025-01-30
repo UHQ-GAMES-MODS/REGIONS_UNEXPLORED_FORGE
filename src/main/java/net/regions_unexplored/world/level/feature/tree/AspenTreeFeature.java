@@ -189,8 +189,7 @@ public class AspenTreeFeature extends Feature<RuTreeConfiguration> {
     }
 
     public void placeRoot(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        Random random = new Random();
-        int rd = random.nextInt(2)+2;
+        int rd = randomSource.nextInt(2)+2;
         int i = 0;
         BlockPos.MutableBlockPos placePos = pos.mutable();
         while(i<=rd){
@@ -210,7 +209,6 @@ public class AspenTreeFeature extends Feature<RuTreeConfiguration> {
     }
 
     public boolean placeLeavesBlob(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        Random random = new Random();
         placeLeavesBlock(level, pos, randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.north(), randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.north().north(), randomSource, treeConfiguration);
@@ -242,16 +240,16 @@ public class AspenTreeFeature extends Feature<RuTreeConfiguration> {
         placeLeavesBlock(level, pos.above().above().west(), randomSource, treeConfiguration);
 
         placeLeavesBlock(level, pos.above().above().above(), randomSource, treeConfiguration);
-        if(random.nextInt(2)==0) {
+        if(randomSource.nextInt(2)==0) {
             placeLeavesBlock(level, pos.above().above().above().north(), randomSource, treeConfiguration);
         }
-        if(random.nextInt(2)==0) {
+        if(randomSource.nextInt(2)==0) {
             placeLeavesBlock(level, pos.above().above().above().south(), randomSource, treeConfiguration);
         }
-        if(random.nextInt(2)==0) {
+        if(randomSource.nextInt(2)==0) {
             placeLeavesBlock(level, pos.above().above().above().east(), randomSource, treeConfiguration);
         }
-        if(random.nextInt(2)==0) {
+        if(randomSource.nextInt(2)==0) {
             placeLeavesBlock(level, pos.above().above().above().west(), randomSource, treeConfiguration);
         }
         return true;
@@ -262,7 +260,6 @@ public class AspenTreeFeature extends Feature<RuTreeConfiguration> {
         if(level.getBlockState(pos.below()).is(BlockTags.DIRT)){
             isBase = true;
         }
-        Random random = new Random();
         if(level.isOutsideBuildHeight(pos)){
             return true;
         }
@@ -305,7 +302,6 @@ public class AspenTreeFeature extends Feature<RuTreeConfiguration> {
         return true;
     }
     public boolean placeLeavesBlock(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        Random random = new Random();
         if(level.isOutsideBuildHeight(pos)){
             return true;
         }
@@ -324,7 +320,7 @@ public class AspenTreeFeature extends Feature<RuTreeConfiguration> {
         }
         return true;
     }
-    
+
     public static boolean isReplaceableDirtBlock(BlockState state) {
         return state.is(RuTags.TREE_GRASS_REPLACEABLES);
     }

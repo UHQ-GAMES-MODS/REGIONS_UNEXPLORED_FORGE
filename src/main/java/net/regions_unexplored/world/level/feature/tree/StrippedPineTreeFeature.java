@@ -329,7 +329,6 @@ public class StrippedPineTreeFeature extends Feature<RuTreeConfiguration> {
     }
 
     public boolean placeLog(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration, Direction.Axis axis, boolean isStripped, boolean isTransition) {
-        Random random = new Random();
         if(level.isOutsideBuildHeight(pos)){
             return true;
         }
@@ -373,9 +372,8 @@ public class StrippedPineTreeFeature extends Feature<RuTreeConfiguration> {
     }
 
     public void placeBranchDecorator(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        Random random = new Random();
         if(randomSource.nextInt(10)==0){
-            int rd = random.nextInt(4);
+            int rd = randomSource.nextInt(4);
             if(rd==0){
                 placeNorthBranch(level, pos, randomSource, treeConfiguration);
             }
@@ -464,8 +462,7 @@ public class StrippedPineTreeFeature extends Feature<RuTreeConfiguration> {
     }
 
     public void placeRoot(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        Random random = new Random();
-        int rd = random.nextInt(2)+4;
+        int rd = randomSource.nextInt(2)+4;
         int i = 0;
         BlockPos.MutableBlockPos placePos = pos.mutable();
         while(i<=rd){
@@ -485,7 +482,6 @@ public class StrippedPineTreeFeature extends Feature<RuTreeConfiguration> {
     }
 
     public boolean placeLeavesBlock(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        Random random = new Random();
         if(level.isOutsideBuildHeight(pos)){
             return true;
         }
@@ -572,7 +568,7 @@ public class StrippedPineTreeFeature extends Feature<RuTreeConfiguration> {
         }
         return true;
     }
-    
+
     public static boolean isReplaceableDirtBlock(BlockState state) {
         return state.is(RuTags.TREE_GRASS_REPLACEABLES);
     }

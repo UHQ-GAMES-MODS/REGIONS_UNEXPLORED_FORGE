@@ -3,6 +3,7 @@ package net.regions_unexplored.world.level.feature.tree;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.RotatedPillarBlock;
@@ -85,7 +86,6 @@ public class MediumJoshuaTreeFeature extends Feature<NoneFeatureConfiguration> {
     }
 
     public boolean placeBranch(LevelAccessor level, BlockPos pos) {
-        Random random = new Random();
         BlockPos north = new BlockPos(pos.getX(), pos.getY(), pos.getZ());
         BlockPos south = new BlockPos(pos.getX(), pos.getY(), pos.getZ());
         BlockPos east = new BlockPos(pos.getX(), pos.getY(), pos.getZ());
@@ -138,15 +138,14 @@ public class MediumJoshuaTreeFeature extends Feature<NoneFeatureConfiguration> {
         return true;
     }
 
-    public boolean placeBranch2(LevelAccessor level, BlockPos pos) {
-        Random random = new Random();
-        int n = random.nextInt(3);
+    public boolean placeBranch2(LevelAccessor level, BlockPos pos, RandomSource randomSource) {
+        int n = randomSource.nextInt(3);
         BlockPos north = new BlockPos(pos.getX(), pos.getY()+n, pos.getZ());
-        int s = random.nextInt(3);
+        int s = randomSource.nextInt(3);
         BlockPos south = new BlockPos(pos.getX(), pos.getY()+s, pos.getZ());
-        int e = random.nextInt(3);
+        int e = randomSource.nextInt(3);
         BlockPos east = new BlockPos(pos.getX(), pos.getY()+e, pos.getZ());
-        int w = random.nextInt(3);
+        int w = randomSource.nextInt(3);
         BlockPos west = new BlockPos(pos.getX(), pos.getY()+w, pos.getZ());
 
         if(level.getBlockState(north.north().west()).canBeReplaced()&&!level.isOutsideBuildHeight(north.north().west())){

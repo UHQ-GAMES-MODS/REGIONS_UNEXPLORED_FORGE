@@ -122,7 +122,7 @@ public class CobaltShrubFeature extends Feature<NoneFeatureConfiguration> {
         if(level.getBlockState(pos.below()).is(BlockTags.DIRT)){
             isBase = true;
         }
-        Random random = new Random();
+
         if(level.isOutsideBuildHeight(pos)){
             return;
         }
@@ -152,7 +152,6 @@ public class CobaltShrubFeature extends Feature<NoneFeatureConfiguration> {
     }
 
     public void placeLeavesBlock(LevelAccessor level, BlockPos pos, RandomSource randomSource) {
-        Random random = new Random();
         if(level.isOutsideBuildHeight(pos)){
             return;
         }
@@ -170,7 +169,7 @@ public class CobaltShrubFeature extends Feature<NoneFeatureConfiguration> {
         }
         return true;
     }
-    
+
     public static boolean isReplaceableDirtBlock(BlockState state) {
         return state.is(RuTags.TREE_GRASS_REPLACEABLES);
     }
