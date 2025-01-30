@@ -95,7 +95,6 @@ public class SmallSocotraTreeFeature extends Feature<NoneFeatureConfiguration> {
     }
 
     public void placeLogBlock(LevelAccessor level, BlockPos pos, RandomSource randomSource, Direction.Axis axis) {
-        Random random = new Random();
         if(level.isOutsideBuildHeight(pos)){
             return;
         }
@@ -133,7 +132,6 @@ public class SmallSocotraTreeFeature extends Feature<NoneFeatureConfiguration> {
     }
 
     public void placeLeavesBlock(LevelAccessor level, BlockPos pos, RandomSource randomSource) {
-        Random random = new Random();
         if(level.isOutsideBuildHeight(pos)){
             return;
         }
@@ -151,7 +149,7 @@ public class SmallSocotraTreeFeature extends Feature<NoneFeatureConfiguration> {
         }
         return true;
     }
-    
+
     public static boolean isReplaceableDirtBlock(BlockState state) {
         return state.is(RuTags.TREE_GRASS_REPLACEABLES);
     }

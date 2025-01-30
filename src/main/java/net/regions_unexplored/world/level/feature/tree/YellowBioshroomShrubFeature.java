@@ -69,7 +69,7 @@ public class YellowBioshroomShrubFeature extends Feature<NoneFeatureConfiguratio
         if(level.getBlockState(pos.below()).is(BlockTags.DIRT)){
             isBase = true;
         }
-        Random random = new Random();
+
         if(level.isOutsideBuildHeight(pos)){
             return;
         }
@@ -99,7 +99,6 @@ public class YellowBioshroomShrubFeature extends Feature<NoneFeatureConfiguratio
     }
 
     public void placeLeavesBlock(LevelAccessor level, BlockPos pos, RandomSource randomSource) {
-        Random random = new Random();
         if(level.isOutsideBuildHeight(pos)){
             return;
         }
@@ -117,7 +116,7 @@ public class YellowBioshroomShrubFeature extends Feature<NoneFeatureConfiguratio
         }
         return true;
     }
-    
+
     public static boolean isReplaceableDirtBlock(BlockState state) {
         return state.is(RuTags.TREE_GRASS_REPLACEABLES);
     }

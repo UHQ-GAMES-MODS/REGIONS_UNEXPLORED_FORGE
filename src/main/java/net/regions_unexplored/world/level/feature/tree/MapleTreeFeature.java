@@ -67,7 +67,6 @@ public class MapleTreeFeature extends Feature<RuTreeConfiguration> {
     }
 
     public boolean placeLog(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        Random random = new Random();
         if(level.isOutsideBuildHeight(pos)){
             return true;
         }
@@ -121,8 +120,7 @@ public class MapleTreeFeature extends Feature<RuTreeConfiguration> {
     }
 
     public void placeRoot(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        Random random = new Random();
-        int rd = random.nextInt(2)+4;
+        int rd = randomSource.nextInt(2)+4;
         int i = 0;
         BlockPos.MutableBlockPos placePos = pos.mutable();
         while(i<=rd){
@@ -142,11 +140,10 @@ public class MapleTreeFeature extends Feature<RuTreeConfiguration> {
     }
 
     public boolean placeLeavesBlobLayer(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        Random random = new Random();
-        int i = random.nextInt(3);
-        int j = random.nextInt(3);
-        int k = random.nextInt(3);
-        int l = random.nextInt(3);
+        int i = randomSource.nextInt(3);
+        int j = randomSource.nextInt(3);
+        int k = randomSource.nextInt(3);
+        int l = randomSource.nextInt(3);
         placeLeavesBlock(level, pos, randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.north(), randomSource, treeConfiguration);
         placeLeavesBlock(level, pos.north().north(), randomSource, treeConfiguration);
@@ -183,8 +180,7 @@ public class MapleTreeFeature extends Feature<RuTreeConfiguration> {
         return true;
     }
     public boolean placeLeavesBlob(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        Random random = new Random();
-        int n = random.nextInt(3);
+        int n = randomSource.nextInt(3);
         if(n==0){
             placeLeavesBlock(level, pos.north().east(), randomSource, treeConfiguration);
         }
@@ -194,7 +190,7 @@ public class MapleTreeFeature extends Feature<RuTreeConfiguration> {
         else{
             placeLeavesBlock(level, pos.below().north().north(), randomSource, treeConfiguration);
         }
-        int s = random.nextInt(3);
+        int s = randomSource.nextInt(3);
         if(s==0){
             placeLeavesBlock(level, pos.north().west(), randomSource, treeConfiguration);
         }
@@ -204,7 +200,7 @@ public class MapleTreeFeature extends Feature<RuTreeConfiguration> {
         else{
             placeLeavesBlock(level, pos.below().south().south(), randomSource, treeConfiguration);
         }
-        int e = random.nextInt(3);
+        int e = randomSource.nextInt(3);
         if(e==0){
             placeLeavesBlock(level, pos.south().east(), randomSource, treeConfiguration);
         }
@@ -214,7 +210,7 @@ public class MapleTreeFeature extends Feature<RuTreeConfiguration> {
         else{
             placeLeavesBlock(level, pos.below().east().east(), randomSource, treeConfiguration);
         }
-        int w = random.nextInt(3);
+        int w = randomSource.nextInt(3);
         if(w==0){
             placeLeavesBlock(level, pos.south().west(), randomSource, treeConfiguration);
         }
@@ -256,7 +252,6 @@ public class MapleTreeFeature extends Feature<RuTreeConfiguration> {
     }
 
     public boolean placeLeavesBlock(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        Random random = new Random();
         if(level.isOutsideBuildHeight(pos)){
             return true;
         }
@@ -277,14 +272,13 @@ public class MapleTreeFeature extends Feature<RuTreeConfiguration> {
     }
 
     public boolean placeBeehiveOrLeaves(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration){
-        Random random = new Random();
-        int chance = random.nextInt(500);
+        int chance = randomSource.nextInt(500);
         if (level.getBlockState(pos.north()).isAir()) {
             if(chance==0){
             placeLeavesBlock(level,pos.north().above(), randomSource, treeConfiguration);
             level.setBlock(pos.north(), Blocks.BEE_NEST.defaultBlockState().setValue(BeehiveBlock.FACING, Direction.NORTH), 2);
             level.getBlockEntity(pos.north(), BlockEntityType.BEEHIVE).ifPresent((addBee) -> {
-                int j = 2 + random.nextInt(2);
+                int j = 2 + randomSource.nextInt(2);
                 for(int k = 0; k < j; ++k) {
                     addBee.storeBee(BeehiveBlockEntity.Occupant.create(k));
                 }
@@ -299,7 +293,7 @@ public class MapleTreeFeature extends Feature<RuTreeConfiguration> {
                 placeLeavesBlock(level,pos.south().above(), randomSource, treeConfiguration);
                 level.setBlock(pos.south(), Blocks.BEE_NEST.defaultBlockState().setValue(BeehiveBlock.FACING, Direction.SOUTH), 2);
                 level.getBlockEntity(pos.south(), BlockEntityType.BEEHIVE).ifPresent((addBee) -> {
-                    int j = 2 + random.nextInt(2);
+                    int j = 2 + randomSource.nextInt(2);
                     for(int k = 0; k < j; ++k) {
                         addBee.storeBee(BeehiveBlockEntity.Occupant.create(k));
                     }
@@ -314,7 +308,7 @@ public class MapleTreeFeature extends Feature<RuTreeConfiguration> {
                 placeLeavesBlock(level,pos.east().above(), randomSource, treeConfiguration);
                 level.setBlock(pos.east(), Blocks.BEE_NEST.defaultBlockState().setValue(BeehiveBlock.FACING, Direction.EAST), 2);
                 level.getBlockEntity(pos.east(), BlockEntityType.BEEHIVE).ifPresent((addBee) -> {
-                    int j = 2 + random.nextInt(2);
+                    int j = 2 + randomSource.nextInt(2);
                     for(int k = 0; k < j; ++k) {
                         addBee.storeBee(BeehiveBlockEntity.Occupant.create(k));
                     }
@@ -329,7 +323,7 @@ public class MapleTreeFeature extends Feature<RuTreeConfiguration> {
                 placeLeavesBlock(level,pos.west().above(), randomSource, treeConfiguration);
                 level.setBlock(pos.west(), Blocks.BEE_NEST.defaultBlockState().setValue(BeehiveBlock.FACING, Direction.WEST), 2);
                 level.getBlockEntity(pos.west(), BlockEntityType.BEEHIVE).ifPresent((addBee) -> {
-                    int j = 2 + random.nextInt(2);
+                    int j = 2 + randomSource.nextInt(2);
                     for(int k = 0; k < j; ++k) {
                         addBee.storeBee(BeehiveBlockEntity.Occupant.create(k));
                     }
@@ -341,7 +335,7 @@ public class MapleTreeFeature extends Feature<RuTreeConfiguration> {
         }
         return true;
     }
-    
+
     public static boolean isReplaceableDirtBlock(BlockState state) {
         return state.is(RuTags.TREE_GRASS_REPLACEABLES);
     }

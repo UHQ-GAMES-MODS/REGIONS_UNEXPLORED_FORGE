@@ -79,7 +79,7 @@ public class GiantCypressTreeFeature extends Feature<RuTreeConfiguration> {
                             placeRoot(level, placePos.below().north(), randomSource, treeConfiguration);
                         }
                         if(placeCheck==height_1n){
-                            placeMoss(level, placePos.north());
+                            placeMoss(level, placePos.north(), randomSource);
                         }
                 }
                 if (placeCheck <= height_1s) {
@@ -88,7 +88,7 @@ public class GiantCypressTreeFeature extends Feature<RuTreeConfiguration> {
                             placeRoot(level, placePos.below().south(), randomSource, treeConfiguration);
                         }
                         if(placeCheck==height_1s){
-                            placeMoss(level, placePos.south());
+                            placeMoss(level, placePos.south(), randomSource);
                         }
                 }
                 if (placeCheck <= height_1e) {
@@ -97,7 +97,7 @@ public class GiantCypressTreeFeature extends Feature<RuTreeConfiguration> {
                             placeRoot(level, placePos.below().east(), randomSource, treeConfiguration);
                         }
                         if(placeCheck==height_1e){
-                            placeMoss(level, placePos.east());
+                            placeMoss(level, placePos.east(), randomSource);
                         }
                 }
                 if (placeCheck <= height_1w) {
@@ -106,7 +106,7 @@ public class GiantCypressTreeFeature extends Feature<RuTreeConfiguration> {
                             placeRoot(level, placePos.below().west(), randomSource, treeConfiguration);
                         }
                         if(placeCheck==height_1w){
-                            placeMoss(level, placePos.west());
+                            placeMoss(level, placePos.west(), randomSource);
                         }
                 }
                 if (placeCheck <= height_2n) {
@@ -115,7 +115,7 @@ public class GiantCypressTreeFeature extends Feature<RuTreeConfiguration> {
                             placeRoot(level, placePos.below().north().west(), randomSource, treeConfiguration);
                         }
                         if(placeCheck==height_2n){
-                            placeMoss(level, placePos.north().west());
+                            placeMoss(level, placePos.north().west(), randomSource);
                         }
                 }
                 if (placeCheck <= height_2s) {
@@ -124,7 +124,7 @@ public class GiantCypressTreeFeature extends Feature<RuTreeConfiguration> {
                             placeRoot(level, placePos.below().north().east(), randomSource, treeConfiguration);
                         }
                         if(placeCheck==height_2s){
-                            placeMoss(level, placePos.north().east());
+                            placeMoss(level, placePos.north().east(), randomSource);
                         }
                 }
                 if (placeCheck <= height_2e) {
@@ -133,7 +133,7 @@ public class GiantCypressTreeFeature extends Feature<RuTreeConfiguration> {
                             placeRoot(level, placePos.below().south().west(), randomSource, treeConfiguration);
                         }
                         if(placeCheck==height_2e){
-                            placeMoss(level, placePos.south().west());
+                            placeMoss(level, placePos.south().west(), randomSource);
                         }
                 }
                 if (placeCheck <= height_2w) {
@@ -142,7 +142,7 @@ public class GiantCypressTreeFeature extends Feature<RuTreeConfiguration> {
                             placeRoot(level, placePos.below().south().east(), randomSource, treeConfiguration);
                         }
                         if(placeCheck==height_2w){
-                            placeMoss(level, placePos.south().east());
+                            placeMoss(level, placePos.south().east(), randomSource);
                         }
                 }
                 if (placeCheck <= height_3n) {
@@ -151,7 +151,7 @@ public class GiantCypressTreeFeature extends Feature<RuTreeConfiguration> {
                             placeRoot(level, placePos.below().north().north(), randomSource, treeConfiguration);
                         }
                         if(placeCheck==height_3n){
-                            placeMoss(level, placePos.north().north());
+                            placeMoss(level, placePos.north().north(), randomSource);
                         }
                 }
                 if (placeCheck <= height_3s) {
@@ -160,7 +160,7 @@ public class GiantCypressTreeFeature extends Feature<RuTreeConfiguration> {
                             placeRoot(level, placePos.below().south().south(), randomSource, treeConfiguration);
                         }
                         if(placeCheck==height_3s){
-                            placeMoss(level, placePos.south().south());
+                            placeMoss(level, placePos.south().south(), randomSource);
                         }
                 }
                 if (placeCheck <= height_3e) {
@@ -169,7 +169,7 @@ public class GiantCypressTreeFeature extends Feature<RuTreeConfiguration> {
                             placeRoot(level, placePos.below().east().east(), randomSource, treeConfiguration);
                         }
                         if(placeCheck==height_3e){
-                            placeMoss(level, placePos.east().east());
+                            placeMoss(level, placePos.east().east(), randomSource);
                         }
                 }
                 if (placeCheck <= height_3w) {
@@ -178,7 +178,7 @@ public class GiantCypressTreeFeature extends Feature<RuTreeConfiguration> {
                             placeRoot(level, placePos.below().west().west(), randomSource, treeConfiguration);
                         }
                         if(placeCheck==height_3w){
-                            placeMoss(level, placePos.west().west());
+                            placeMoss(level, placePos.west().west(), randomSource);
                         }
                 }
                 placePos.move(Direction.UP);
@@ -200,15 +200,14 @@ public class GiantCypressTreeFeature extends Feature<RuTreeConfiguration> {
     }
 
     public boolean placeLimbsUpper(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration, boolean hasVines) {
-        Random random = new Random();
-        int dir = random.nextInt(2);
-        int rN = random.nextInt(6);
+        int dir = randomSource.nextInt(2);
+        int rN = randomSource.nextInt(6);
         BlockPos posN = new BlockPos(pos.getX(), pos.getY()+rN, pos.getZ());
-        int rS = random.nextInt(6);
+        int rS = randomSource.nextInt(6);
         BlockPos posS = new BlockPos(pos.getX(), pos.getY()+rS, pos.getZ());
-        int rE = random.nextInt(6);
+        int rE = randomSource.nextInt(6);
         BlockPos posE = new BlockPos(pos.getX(), pos.getY()+rE, pos.getZ());
-        int rW = random.nextInt(6);
+        int rW = randomSource.nextInt(6);
         BlockPos posW = new BlockPos(pos.getX(), pos.getY()+rW, pos.getZ());
         if(dir==0){
             placeLog(level, posN.north(), randomSource, treeConfiguration, Direction.Axis.Z);
@@ -241,14 +240,13 @@ public class GiantCypressTreeFeature extends Feature<RuTreeConfiguration> {
     }
 
     public void placeLimbs(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration, boolean hasVines) {
-        Random random = new Random();
-        int rN = random.nextInt(8);
+        int rN = randomSource.nextInt(8);
         BlockPos posN = new BlockPos(pos.getX(), pos.getY()+rN, pos.getZ());
-        int rS = random.nextInt(8);
+        int rS = randomSource.nextInt(8);
         BlockPos posS = new BlockPos(pos.getX(), pos.getY()+rS, pos.getZ());
-        int rE = random.nextInt(8);
+        int rE = randomSource.nextInt(8);
         BlockPos posE = new BlockPos(pos.getX(), pos.getY()+rE, pos.getZ());
-        int rW = random.nextInt(8);
+        int rW = randomSource.nextInt(8);
         BlockPos posW = new BlockPos(pos.getX(), pos.getY()+rW, pos.getZ());
 
         placeLog(level, posN.north(), randomSource, treeConfiguration, Direction.Axis.Z);
@@ -278,7 +276,6 @@ public class GiantCypressTreeFeature extends Feature<RuTreeConfiguration> {
     }
 
     public boolean placeLog(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration, Direction.Axis axis) {
-        Random random = new Random();
         if(level.isOutsideBuildHeight(pos)){
             return true;
         }
@@ -317,9 +314,8 @@ public class GiantCypressTreeFeature extends Feature<RuTreeConfiguration> {
     }
 
     public void placeBranchDecorator(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        Random random = new Random();
         if(randomSource.nextInt(10)==0){
-            int rd = random.nextInt(4);
+            int rd = randomSource.nextInt(4);
             if(rd==0){
                 placeNorthBranch(level, pos, randomSource, treeConfiguration);
             }
@@ -408,8 +404,7 @@ public class GiantCypressTreeFeature extends Feature<RuTreeConfiguration> {
     }
 
     public void placeRoot(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        Random random = new Random();
-        int rd = random.nextInt(2)+4;
+        int rd = randomSource.nextInt(2)+4;
         int i = 0;
         BlockPos.MutableBlockPos placePos = pos.mutable();
         while(i<=rd){
@@ -428,14 +423,13 @@ public class GiantCypressTreeFeature extends Feature<RuTreeConfiguration> {
         }
     }
 
-    public boolean placeMoss(LevelAccessor level, BlockPos pos) {
-        Random random = new Random();
+    public boolean placeMoss(LevelAccessor level, BlockPos pos, RandomSource randomSource) {
         if(level.getBlockState(pos.above()).isAir()){
-            if(random.nextInt(2)==0){
+            if(randomSource.nextInt(2)==0){
                 level.setBlock(pos.above(), Blocks.MOSS_CARPET.defaultBlockState(), 2);
             }
-            if(random.nextInt(7)==0){
-                if(random.nextInt(2)==0){
+            if(randomSource.nextInt(7)==0){
+                if(randomSource.nextInt(2)==0){
                     level.setBlock(pos.above(), RuBlocks.GREEN_BIOSHROOM.get().defaultBlockState(), 2);
                 }
                 level.setBlock(pos, Blocks.MOSS_BLOCK.defaultBlockState(), 2);
@@ -445,9 +439,8 @@ public class GiantCypressTreeFeature extends Feature<RuTreeConfiguration> {
         return true;
     }
 
-    private static void placeVine(LevelAccessor level, BlockPos pos) {
-        Random random = new Random();
-        int size = random.nextInt(6);
+    private static void placeVine(LevelAccessor level, BlockPos pos, RandomSource randomSource) {
+        int size = randomSource.nextInt(6);
         BlockPos place = pos.below();
         for(int i = 0; i<=size; i++){
             if(level.getBlockState(place).isAir()){
@@ -486,13 +479,13 @@ public class GiantCypressTreeFeature extends Feature<RuTreeConfiguration> {
 
         if(hasVines){
             if(randomSource.nextInt(2)==0) {
-                placeVine(level, pos.north(3));
+                placeVine(level, pos.north(3), randomSource);
             }
             if(randomSource.nextInt(2)==0) {
-                placeVine(level, pos.north(3).east());
+                placeVine(level, pos.north(3).east(), randomSource);
             }
             if(randomSource.nextInt(2)==0) {
-                placeVine(level, pos.north(3).west());
+                placeVine(level, pos.north(3).west(), randomSource);
             }
         }
 
@@ -512,13 +505,13 @@ public class GiantCypressTreeFeature extends Feature<RuTreeConfiguration> {
 
         if(hasVines){
             if(randomSource.nextInt(2)==0) {
-                placeVine(level, pos.south(3));
+                placeVine(level, pos.south(3), randomSource);
             }
             if(randomSource.nextInt(2)==0) {
-                placeVine(level, pos.south(3).east());
+                placeVine(level, pos.south(3).east(), randomSource);
             }
             if(randomSource.nextInt(2)==0) {
-                placeVine(level, pos.south(3).west());
+                placeVine(level, pos.south(3).west(), randomSource);
             }
         }
 
@@ -534,13 +527,13 @@ public class GiantCypressTreeFeature extends Feature<RuTreeConfiguration> {
 
         if(hasVines){
             if(randomSource.nextInt(2)==0) {
-                placeVine(level, pos.east(3));
+                placeVine(level, pos.east(3), randomSource);
             }
             if(randomSource.nextInt(2)==0) {
-                placeVine(level, pos.east(3).north());
+                placeVine(level, pos.east(3).north(), randomSource);
             }
             if(randomSource.nextInt(2)==0) {
-                placeVine(level, pos.east(3).south());
+                placeVine(level, pos.east(3).south(), randomSource);
             }
         }
 
@@ -556,13 +549,13 @@ public class GiantCypressTreeFeature extends Feature<RuTreeConfiguration> {
 
         if(hasVines){
             if(randomSource.nextInt(2)==0) {
-                placeVine(level, pos.west(3));
+                placeVine(level, pos.west(3), randomSource);
             }
             if(randomSource.nextInt(2)==0) {
-                placeVine(level, pos.west(3).north());
+                placeVine(level, pos.west(3).north(), randomSource);
             }
             if(randomSource.nextInt(2)==0) {
-                placeVine(level, pos.west(3).south());
+                placeVine(level, pos.west(3).south(), randomSource);
             }
         }
 
@@ -588,7 +581,6 @@ public class GiantCypressTreeFeature extends Feature<RuTreeConfiguration> {
     }
 
     public boolean placeLeavesBlock(LevelAccessor level, BlockPos pos, RandomSource randomSource, RuTreeConfiguration treeConfiguration) {
-        Random random = new Random();
         if(level.isOutsideBuildHeight(pos)){
             return true;
         }
@@ -607,7 +599,7 @@ public class GiantCypressTreeFeature extends Feature<RuTreeConfiguration> {
         }
         return true;
     }
-    
+
     public static boolean isReplaceableDirtBlock(BlockState state) {
         return state.is(RuTags.TREE_GRASS_REPLACEABLES);
     }

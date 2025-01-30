@@ -4,6 +4,7 @@ import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelSimulatedReader;
 import net.minecraft.world.level.WorldGenLevel;
@@ -79,7 +80,7 @@ public class BrimWillowFeature extends Feature<NoneFeatureConfiguration> {
 
             for(int i = 0; i<=height; i++){
                 if(i==height-3){
-                    placeBranches(level, placePos);
+                    placeBranches(level, placePos, context.random());
                 }
                 if(i==height-5){
                     placeSpine(level, placePos);
@@ -99,7 +100,7 @@ public class BrimWillowFeature extends Feature<NoneFeatureConfiguration> {
                     }
                 }
                 if(i==height){
-                    placeLeavesUpsideDown(level, placePos);
+                    placeLeavesUpsideDown(level, placePos, context.random());
                 }
                 placePos.move(Direction.UP);
             }
@@ -110,7 +111,7 @@ public class BrimWillowFeature extends Feature<NoneFeatureConfiguration> {
         }
     }
 
-    private void placeBranches(LevelAccessor level, BlockPos pos) {
+    private void placeBranches(LevelAccessor level, BlockPos pos, RandomSource randomSource) {
         //NORTH
         if(isReplaceable(level, pos.north())){
             if(isReplaceable(level, pos.north())){
@@ -124,7 +125,7 @@ public class BrimWillowFeature extends Feature<NoneFeatureConfiguration> {
             }
             if(isReplaceable(level, pos.north().above().north().north().north())){
                 placeBrimwoodLog(level, pos.north().above().north().north().north(), Direction.Axis.Z);
-                placeLeavesUpsideDown(level, pos.north().above().north().north().north());
+                placeLeavesUpsideDown(level, pos.north().above().north().north().north(), randomSource);
             }
         }
         //SOUTH
@@ -140,7 +141,7 @@ public class BrimWillowFeature extends Feature<NoneFeatureConfiguration> {
             }
             if(isReplaceable(level, pos.south().above().south().south().south())){
                 placeBrimwoodLog(level, pos.south().above().south().south().south(), Direction.Axis.Z);
-                placeLeavesUpsideDown(level, pos.south().above().south().south().south());
+                placeLeavesUpsideDown(level, pos.south().above().south().south().south(), randomSource);
             }
         }
         //EAST
@@ -156,7 +157,7 @@ public class BrimWillowFeature extends Feature<NoneFeatureConfiguration> {
             }
             if(isReplaceable(level, pos.east().above().east().east().east())){
                 placeBrimwoodLog(level, pos.east().above().east().east().east(), Direction.Axis.X);
-                placeLeavesUpsideDown(level, pos.east().above().east().east().east());
+                placeLeavesUpsideDown(level, pos.east().above().east().east().east(), randomSource);
             }
         }
         //WEST
@@ -172,7 +173,7 @@ public class BrimWillowFeature extends Feature<NoneFeatureConfiguration> {
             }
             if(isReplaceable(level, pos.west().above().west().west().west())){
                 placeBrimwoodLog(level, pos.west().above().west().west().west(), Direction.Axis.X);
-                placeLeavesUpsideDown(level, pos.west().above().west().west().west());
+                placeLeavesUpsideDown(level, pos.west().above().west().west().west(), randomSource);
             }
         }
     }
@@ -214,7 +215,7 @@ public class BrimWillowFeature extends Feature<NoneFeatureConfiguration> {
         }
     }
 
-    private void placeLeavesUpsideDown(LevelAccessor level, BlockPos pos) {
+    private void placeLeavesUpsideDown(LevelAccessor level, BlockPos pos, RandomSource randomSource) {
         if (isReplaceable(level, pos)) {
             placeBrimwoodLeaves(level, pos);
         }
@@ -252,7 +253,7 @@ public class BrimWillowFeature extends Feature<NoneFeatureConfiguration> {
         }
         if (isReplaceable(level, pos.north().north().above())) {
             placeBrimwoodLeaves(level, pos.north().north().above());
-            addVine(level,pos.north().north().above());
+            addVine(level,pos.north().north().above(), randomSource);
         }
         //NORTH-WEST
         if (isReplaceable(level, pos.north().west())) {
@@ -260,11 +261,11 @@ public class BrimWillowFeature extends Feature<NoneFeatureConfiguration> {
         }
         if (isReplaceable(level, pos.north().north().west().above())) {
             placeBrimwoodLeaves(level, pos.north().north().west().above());
-            addVine(level,pos.north().north().west().above());
+            addVine(level,pos.north().north().west().above(), randomSource);
         }
         if (isReplaceable(level, pos.north().west().west().above())) {
             placeBrimwoodLeaves(level, pos.north().west().west().above());
-            addVine(level,pos.north().west().west().above());
+            addVine(level,pos.north().west().west().above(), randomSource);
         }
         //WEST
         if (isReplaceable(level, pos.west())) {
@@ -272,7 +273,7 @@ public class BrimWillowFeature extends Feature<NoneFeatureConfiguration> {
         }
         if (isReplaceable(level, pos.west().west().above())) {
             placeBrimwoodLeaves(level, pos.west().west().above());
-            addVine(level,pos.west().west().above());
+            addVine(level,pos.west().west().above(), randomSource);
         }
         //SOUTH-WEST
         if (isReplaceable(level, pos.south().west())) {
@@ -280,11 +281,11 @@ public class BrimWillowFeature extends Feature<NoneFeatureConfiguration> {
         }
         if (isReplaceable(level, pos.south().south().west().above())) {
             placeBrimwoodLeaves(level, pos.south().south().west().above());
-            addVine(level,pos.south().south().west().above());
+            addVine(level,pos.south().south().west().above(), randomSource);
         }
         if (isReplaceable(level, pos.south().west().west().above())) {
             placeBrimwoodLeaves(level, pos.south().west().west().above());
-            addVine(level,pos.south().west().west().above());
+            addVine(level,pos.south().west().west().above(), randomSource);
         }
         //SOUTH
         if (isReplaceable(level, pos.south())) {
@@ -292,7 +293,7 @@ public class BrimWillowFeature extends Feature<NoneFeatureConfiguration> {
         }
         if (isReplaceable(level, pos.south().south().above())) {
             placeBrimwoodLeaves(level, pos.south().south().above());
-            addVine(level,pos.south().south().above());
+            addVine(level,pos.south().south().above(), randomSource);
         }
         //SOUTH-EAST
         if (isReplaceable(level, pos.south().east())) {
@@ -300,11 +301,11 @@ public class BrimWillowFeature extends Feature<NoneFeatureConfiguration> {
         }
         if (isReplaceable(level, pos.south().south().east().above())) {
             placeBrimwoodLeaves(level, pos.south().south().east().above());
-            addVine(level,pos.south().south().east().above());
+            addVine(level,pos.south().south().east().above(), randomSource);
         }
         if (isReplaceable(level, pos.south().east().east().above())) {
             placeBrimwoodLeaves(level, pos.south().east().east().above());
-            addVine(level,pos.south().east().east().above());
+            addVine(level,pos.south().east().east().above(), randomSource);
         }
         //EAST
         if (isReplaceable(level, pos.east())) {
@@ -312,7 +313,7 @@ public class BrimWillowFeature extends Feature<NoneFeatureConfiguration> {
         }
         if (isReplaceable(level, pos.east().east().above())) {
             placeBrimwoodLeaves(level, pos.east().east().above());
-            addVine(level,pos.east().east().above());
+            addVine(level,pos.east().east().above(), randomSource);
         }
         //NORTH-EAST
         if (isReplaceable(level, pos.north().east())) {
@@ -320,17 +321,16 @@ public class BrimWillowFeature extends Feature<NoneFeatureConfiguration> {
         }
         if (isReplaceable(level, pos.north().north().east().above())) {
             placeBrimwoodLeaves(level, pos.north().north().east().above());
-            addVine(level,pos.north().north().east().above());
+            addVine(level,pos.north().north().east().above(), randomSource);
         }
         if (isReplaceable(level, pos.north().east().east().above())) {
             placeBrimwoodLeaves(level, pos.north().east().east().above());
-            addVine(level,pos.north().east().east().above());
+            addVine(level,pos.north().east().east().above(), randomSource);
         }
     }
 
-    private void addVine(LevelAccessor level, BlockPos pos) {
-        Random random = new Random();
-        int size = random.nextInt(3);
+    private void addVine(LevelAccessor level, BlockPos pos, RandomSource randomSource) {
+        int size = randomSource.nextInt(3);
         BlockPos place = pos.above();
         for(int i = 0; i<=size; i++){
             if(isAir(level, place)){
