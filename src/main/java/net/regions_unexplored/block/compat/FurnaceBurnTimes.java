@@ -1,7 +1,11 @@
 package net.regions_unexplored.block.compat;
 
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Block;
+
+import java.util.Arrays;
+import java.util.IdentityHashMap;
+import java.util.Map;
 import net.minecraftforge.event.furnace.FurnaceFuelBurnTimeEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -12,478 +16,461 @@ import net.regions_unexplored.block.RuBlocks;
 public class FurnaceBurnTimes {
     @SubscribeEvent
     public static void burnTime(FurnaceFuelBurnTimeEvent event) {
-        ItemStack stack = event.getItemStack();
-        Item item = stack.getItem();
-        if (
-        item == RuBlocks.SILVER_BIRCH_LOG.get().asItem()||
-        item == RuBlocks.SILVER_BIRCH_WOOD.get().asItem()||
+        int[] times = FuelTimes.VALUES.get(event.getItemStack().getItem());
+        if (times != null) {
+            for (int time : times) {
+                event.setBurnTime(time);
+            }
+        }
+    }
 
-        item == RuBlocks.ALPHA_LOG.get().asItem()||
-        item == RuBlocks.ALPHA_PLANKS.get().asItem()||
-        item == RuBlocks.ALPHA_STAIRS.get().asItem()||
+    // Delay resolving registry objects until the first fuel query, after registration.
+    private static class FuelTimes {
+        private static final Map<Item, int[]> VALUES = create();
 
-        item == RuBlocks.BAOBAB_LOG.get().asItem()||
-        item == RuBlocks.STRIPPED_BAOBAB_LOG.get().asItem()||
-        item == RuBlocks.BAOBAB_WOOD.get().asItem()||
-        item == RuBlocks.STRIPPED_BAOBAB_WOOD.get().asItem()||
-        item == RuBlocks.BAOBAB_PLANKS.get().asItem()||
-        item == RuBlocks.BAOBAB_STAIRS.get().asItem()||
-        item == RuBlocks.BAOBAB_FENCE.get().asItem()||
-        item == RuBlocks.BAOBAB_FENCE_GATE.get().asItem()||
-        item == RuBlocks.BAOBAB_TRAPDOOR.get().asItem()||
-        item == RuBlocks.BAOBAB_PRESSURE_PLATE.get().asItem()||
-
-        item == RuBlocks.BLACKWOOD_LOG.get().asItem()||
-        item == RuBlocks.STRIPPED_BLACKWOOD_LOG.get().asItem()||
-        item == RuBlocks.BLACKWOOD_WOOD.get().asItem()||
-        item == RuBlocks.STRIPPED_BLACKWOOD_WOOD.get().asItem()||
-        item == RuBlocks.BLACKWOOD_PLANKS.get().asItem()||
-        item == RuBlocks.BLACKWOOD_STAIRS.get().asItem()||
-        item == RuBlocks.BLACKWOOD_FENCE.get().asItem()||
-        item == RuBlocks.BLACKWOOD_FENCE_GATE.get().asItem()||
-        item == RuBlocks.BLACKWOOD_TRAPDOOR.get().asItem()||
-        item == RuBlocks.BLACKWOOD_PRESSURE_PLATE.get().asItem()||
-
-        item == RuBlocks.BLUE_BIOSHROOM_STEM.get().asItem()||
-        item == RuBlocks.STRIPPED_BLUE_BIOSHROOM_STEM.get().asItem()||
-        item == RuBlocks.BLUE_BIOSHROOM_HYPHAE.get().asItem()||
-        item == RuBlocks.STRIPPED_BLUE_BIOSHROOM_HYPHAE.get().asItem()||
-        item == RuBlocks.BLUE_BIOSHROOM_PLANKS.get().asItem()||
-        item == RuBlocks.BLUE_BIOSHROOM_STAIRS.get().asItem()||
-        item == RuBlocks.BLUE_BIOSHROOM_FENCE.get().asItem()||
-        item == RuBlocks.BLUE_BIOSHROOM_FENCE_GATE.get().asItem()||
-        item == RuBlocks.BLUE_BIOSHROOM_TRAPDOOR.get().asItem()||
-        item == RuBlocks.BLUE_BIOSHROOM_PRESSURE_PLATE.get().asItem()||
-
-        item == RuBlocks.BRIMWOOD_LOG.get().asItem()||
-        item == RuBlocks.BRIMWOOD_LOG_MAGMA.get().asItem()||
-        item == RuBlocks.STRIPPED_BRIMWOOD_LOG.get().asItem()||
-        item == RuBlocks.BRIMWOOD_WOOD.get().asItem()||
-        item == RuBlocks.STRIPPED_BRIMWOOD_WOOD.get().asItem()||
-        item == RuBlocks.BRIMWOOD_PLANKS.get().asItem()||
-        item == RuBlocks.BRIMWOOD_STAIRS.get().asItem()||
-        item == RuBlocks.BRIMWOOD_FENCE.get().asItem()||
-        item == RuBlocks.BRIMWOOD_FENCE_GATE.get().asItem()||
-        item == RuBlocks.BRIMWOOD_TRAPDOOR.get().asItem()||
-        item == RuBlocks.BRIMWOOD_PRESSURE_PLATE.get().asItem()||
-
-        item == RuBlocks.COBALT_LOG.get().asItem()||
-        item == RuBlocks.STRIPPED_COBALT_LOG.get().asItem()||
-        item == RuBlocks.COBALT_WOOD.get().asItem()||
-        item == RuBlocks.STRIPPED_COBALT_WOOD.get().asItem()||
-        item == RuBlocks.COBALT_PLANKS.get().asItem()||
-        item == RuBlocks.COBALT_STAIRS.get().asItem()||
-        item == RuBlocks.COBALT_FENCE.get().asItem()||
-        item == RuBlocks.COBALT_FENCE_GATE.get().asItem()||
-        item == RuBlocks.COBALT_TRAPDOOR.get().asItem()||
-        item == RuBlocks.COBALT_PRESSURE_PLATE.get().asItem()||
-
-        item == RuBlocks.CYPRESS_LOG.get().asItem()||
-        item == RuBlocks.STRIPPED_CYPRESS_LOG.get().asItem()||
-        item == RuBlocks.CYPRESS_WOOD.get().asItem()||
-        item == RuBlocks.STRIPPED_CYPRESS_WOOD.get().asItem()||
-        item == RuBlocks.CYPRESS_PLANKS.get().asItem()||
-        item == RuBlocks.CYPRESS_STAIRS.get().asItem()||
-        item == RuBlocks.CYPRESS_FENCE.get().asItem()||
-        item == RuBlocks.CYPRESS_FENCE_GATE.get().asItem()||
-        item == RuBlocks.CYPRESS_TRAPDOOR.get().asItem()||
-        item == RuBlocks.CYPRESS_PRESSURE_PLATE.get().asItem()||
-
-        item == RuBlocks.DEAD_LOG.get().asItem()||
-        item == RuBlocks.STRIPPED_DEAD_LOG.get().asItem()||
-        item == RuBlocks.DEAD_WOOD.get().asItem()||
-        item == RuBlocks.STRIPPED_DEAD_WOOD.get().asItem()||
-        item == RuBlocks.DEAD_PLANKS.get().asItem()||
-        item == RuBlocks.DEAD_STAIRS.get().asItem()||
-        item == RuBlocks.DEAD_FENCE.get().asItem()||
-        item == RuBlocks.DEAD_FENCE_GATE.get().asItem()||
-        item == RuBlocks.DEAD_TRAPDOOR.get().asItem()||
-        item == RuBlocks.DEAD_PRESSURE_PLATE.get().asItem()||
-
-        item == RuBlocks.EUCALYPTUS_LOG.get().asItem()||
-        item == RuBlocks.STRIPPED_EUCALYPTUS_LOG.get().asItem()||
-        item == RuBlocks.EUCALYPTUS_WOOD.get().asItem()||
-        item == RuBlocks.STRIPPED_EUCALYPTUS_WOOD.get().asItem()||
-        item == RuBlocks.EUCALYPTUS_PLANKS.get().asItem()||
-        item == RuBlocks.EUCALYPTUS_STAIRS.get().asItem()||
-        item == RuBlocks.EUCALYPTUS_FENCE.get().asItem()||
-        item == RuBlocks.EUCALYPTUS_FENCE_GATE.get().asItem()||
-        item == RuBlocks.EUCALYPTUS_TRAPDOOR.get().asItem()||
-        item == RuBlocks.EUCALYPTUS_PRESSURE_PLATE.get().asItem()||
-
-        item == RuBlocks.GREEN_BIOSHROOM_STEM.get().asItem()||
-        item == RuBlocks.STRIPPED_GREEN_BIOSHROOM_STEM.get().asItem()||
-        item == RuBlocks.GREEN_BIOSHROOM_HYPHAE.get().asItem()||
-        item == RuBlocks.STRIPPED_GREEN_BIOSHROOM_HYPHAE.get().asItem()||
-        item == RuBlocks.GREEN_BIOSHROOM_PLANKS.get().asItem()||
-        item == RuBlocks.GREEN_BIOSHROOM_STAIRS.get().asItem()||
-        item == RuBlocks.GREEN_BIOSHROOM_FENCE.get().asItem()||
-        item == RuBlocks.GREEN_BIOSHROOM_FENCE_GATE.get().asItem()||
-        item == RuBlocks.GREEN_BIOSHROOM_TRAPDOOR.get().asItem()||
-        item == RuBlocks.GREEN_BIOSHROOM_PRESSURE_PLATE.get().asItem()||
-
-        item == RuBlocks.JOSHUA_LOG.get().asItem()||
-        item == RuBlocks.STRIPPED_JOSHUA_LOG.get().asItem()||
-        item == RuBlocks.JOSHUA_WOOD.get().asItem()||
-        item == RuBlocks.STRIPPED_JOSHUA_WOOD.get().asItem()||
-        item == RuBlocks.JOSHUA_PLANKS.get().asItem()||
-        item == RuBlocks.JOSHUA_STAIRS.get().asItem()||
-        item == RuBlocks.JOSHUA_FENCE.get().asItem()||
-        item == RuBlocks.JOSHUA_FENCE_GATE.get().asItem()||
-        item == RuBlocks.JOSHUA_TRAPDOOR.get().asItem()||
-        item == RuBlocks.JOSHUA_PRESSURE_PLATE.get().asItem()||
-
-        item == RuBlocks.KAPOK_LOG.get().asItem()||
-        item == RuBlocks.STRIPPED_KAPOK_LOG.get().asItem()||
-        item == RuBlocks.KAPOK_WOOD.get().asItem()||
-        item == RuBlocks.STRIPPED_KAPOK_WOOD.get().asItem()||
-        item == RuBlocks.KAPOK_PLANKS.get().asItem()||
-        item == RuBlocks.KAPOK_STAIRS.get().asItem()||
-        item == RuBlocks.KAPOK_FENCE.get().asItem()||
-        item == RuBlocks.KAPOK_FENCE_GATE.get().asItem()||
-        item == RuBlocks.KAPOK_TRAPDOOR.get().asItem()||
-        item == RuBlocks.KAPOK_PRESSURE_PLATE.get().asItem()||
-
-        item == RuBlocks.LARCH_LOG.get().asItem()||
-        item == RuBlocks.STRIPPED_LARCH_LOG.get().asItem()||
-        item == RuBlocks.LARCH_WOOD.get().asItem()||
-        item == RuBlocks.STRIPPED_LARCH_WOOD.get().asItem()||
-        item == RuBlocks.LARCH_PLANKS.get().asItem()||
-        item == RuBlocks.LARCH_STAIRS.get().asItem()||
-        item == RuBlocks.LARCH_FENCE.get().asItem()||
-        item == RuBlocks.LARCH_FENCE_GATE.get().asItem()||
-        item == RuBlocks.LARCH_TRAPDOOR.get().asItem()||
-        item == RuBlocks.LARCH_PRESSURE_PLATE.get().asItem()||
-
-        item == RuBlocks.MAGNOLIA_LOG.get().asItem()||
-        item == RuBlocks.STRIPPED_MAGNOLIA_LOG.get().asItem()||
-        item == RuBlocks.MAGNOLIA_WOOD.get().asItem()||
-        item == RuBlocks.STRIPPED_MAGNOLIA_WOOD.get().asItem()||
-        item == RuBlocks.MAGNOLIA_PLANKS.get().asItem()||
-        item == RuBlocks.MAGNOLIA_STAIRS.get().asItem()||
-        item == RuBlocks.MAGNOLIA_FENCE.get().asItem()||
-        item == RuBlocks.MAGNOLIA_FENCE_GATE.get().asItem()||
-        item == RuBlocks.MAGNOLIA_TRAPDOOR.get().asItem()||
-        item == RuBlocks.MAGNOLIA_PRESSURE_PLATE.get().asItem()||
-
-        item == RuBlocks.MAPLE_LOG.get().asItem()||
-        item == RuBlocks.STRIPPED_MAPLE_LOG.get().asItem()||
-        item == RuBlocks.MAPLE_WOOD.get().asItem()||
-        item == RuBlocks.STRIPPED_MAPLE_WOOD.get().asItem()||
-        item == RuBlocks.MAPLE_PLANKS.get().asItem()||
-        item == RuBlocks.MAPLE_STAIRS.get().asItem()||
-        item == RuBlocks.MAPLE_FENCE.get().asItem()||
-        item == RuBlocks.MAPLE_FENCE_GATE.get().asItem()||
-        item == RuBlocks.MAPLE_TRAPDOOR.get().asItem()||
-        item == RuBlocks.MAPLE_PRESSURE_PLATE.get().asItem()||
-
-        item == RuBlocks.MAUVE_LOG.get().asItem()||
-        item == RuBlocks.STRIPPED_MAUVE_LOG.get().asItem()||
-        item == RuBlocks.MAUVE_WOOD.get().asItem()||
-        item == RuBlocks.STRIPPED_MAUVE_WOOD.get().asItem()||
-        item == RuBlocks.MAUVE_PLANKS.get().asItem()||
-        item == RuBlocks.MAUVE_STAIRS.get().asItem()||
-        item == RuBlocks.MAUVE_FENCE.get().asItem()||
-        item == RuBlocks.MAUVE_FENCE_GATE.get().asItem()||
-        item == RuBlocks.MAUVE_TRAPDOOR.get().asItem()||
-        item == RuBlocks.MAUVE_PRESSURE_PLATE.get().asItem()||
-
-        item == RuBlocks.PALM_LOG.get().asItem()||
-        item == RuBlocks.STRIPPED_PALM_LOG.get().asItem()||
-        item == RuBlocks.PALM_WOOD.get().asItem()||
-        item == RuBlocks.STRIPPED_PALM_WOOD.get().asItem()||
-        item == RuBlocks.PALM_PLANKS.get().asItem()||
-        item == RuBlocks.PALM_STAIRS.get().asItem()||
-        item == RuBlocks.PALM_FENCE.get().asItem()||
-        item == RuBlocks.PALM_FENCE_GATE.get().asItem()||
-        item == RuBlocks.PALM_TRAPDOOR.get().asItem()||
-        item == RuBlocks.PALM_PRESSURE_PLATE.get().asItem()||
-
-        item == RuBlocks.PINE_LOG.get().asItem()||
-        item == RuBlocks.STRIPPED_PINE_LOG.get().asItem()||
-        item == RuBlocks.PINE_WOOD.get().asItem()||
-        item == RuBlocks.STRIPPED_PINE_WOOD.get().asItem()||
-        item == RuBlocks.PINE_PLANKS.get().asItem()||
-        item == RuBlocks.PINE_STAIRS.get().asItem()||
-        item == RuBlocks.PINE_FENCE.get().asItem()||
-        item == RuBlocks.PINE_FENCE_GATE.get().asItem()||
-        item == RuBlocks.PINE_TRAPDOOR.get().asItem()||
-        item == RuBlocks.PINE_PRESSURE_PLATE.get().asItem()||
-
-        item == RuBlocks.PINK_BIOSHROOM_STEM.get().asItem()||
-        item == RuBlocks.STRIPPED_PINK_BIOSHROOM_STEM.get().asItem()||
-        item == RuBlocks.PINK_BIOSHROOM_HYPHAE.get().asItem()||
-        item == RuBlocks.STRIPPED_PINK_BIOSHROOM_HYPHAE.get().asItem()||
-        item == RuBlocks.PINK_BIOSHROOM_PLANKS.get().asItem()||
-        item == RuBlocks.PINK_BIOSHROOM_STAIRS.get().asItem()||
-        item == RuBlocks.PINK_BIOSHROOM_FENCE.get().asItem()||
-        item == RuBlocks.PINK_BIOSHROOM_FENCE_GATE.get().asItem()||
-        item == RuBlocks.PINK_BIOSHROOM_TRAPDOOR.get().asItem()||
-        item == RuBlocks.PINK_BIOSHROOM_PRESSURE_PLATE.get().asItem()||
-
-        item == RuBlocks.REDWOOD_LOG.get().asItem()||
-        item == RuBlocks.STRIPPED_REDWOOD_LOG.get().asItem()||
-        item == RuBlocks.REDWOOD_WOOD.get().asItem()||
-        item == RuBlocks.STRIPPED_REDWOOD_WOOD.get().asItem()||
-        item == RuBlocks.REDWOOD_PLANKS.get().asItem()||
-        item == RuBlocks.REDWOOD_STAIRS.get().asItem()||
-        item == RuBlocks.REDWOOD_FENCE.get().asItem()||
-        item == RuBlocks.REDWOOD_FENCE_GATE.get().asItem()||
-        item == RuBlocks.REDWOOD_TRAPDOOR.get().asItem()||
-        item == RuBlocks.REDWOOD_PRESSURE_PLATE.get().asItem()||
-
-        item == RuBlocks.SOCOTRA_LOG.get().asItem()||
-        item == RuBlocks.STRIPPED_SOCOTRA_LOG.get().asItem()||
-        item == RuBlocks.SOCOTRA_WOOD.get().asItem()||
-        item == RuBlocks.STRIPPED_SOCOTRA_WOOD.get().asItem()||
-        item == RuBlocks.SOCOTRA_PLANKS.get().asItem()||
-        item == RuBlocks.SOCOTRA_STAIRS.get().asItem()||
-        item == RuBlocks.SOCOTRA_FENCE.get().asItem()||
-        item == RuBlocks.SOCOTRA_FENCE_GATE.get().asItem()||
-        item == RuBlocks.SOCOTRA_TRAPDOOR.get().asItem()||
-        item == RuBlocks.SOCOTRA_PRESSURE_PLATE.get().asItem()||
-
-        item == RuBlocks.WILLOW_LOG.get().asItem()||
-        item == RuBlocks.STRIPPED_WILLOW_LOG.get().asItem()||
-        item == RuBlocks.WILLOW_WOOD.get().asItem()||
-        item == RuBlocks.STRIPPED_WILLOW_WOOD.get().asItem()||
-        item == RuBlocks.WILLOW_PLANKS.get().asItem()||
-        item == RuBlocks.WILLOW_STAIRS.get().asItem()||
-        item == RuBlocks.WILLOW_FENCE.get().asItem()||
-        item == RuBlocks.WILLOW_FENCE_GATE.get().asItem()||
-        item == RuBlocks.WILLOW_TRAPDOOR.get().asItem()||
-        item == RuBlocks.WILLOW_PRESSURE_PLATE.get().asItem()||
-
-        item == RuBlocks.YELLOW_BIOSHROOM_STEM.get().asItem()||
-        item == RuBlocks.STRIPPED_YELLOW_BIOSHROOM_STEM.get().asItem()||
-        item == RuBlocks.YELLOW_BIOSHROOM_HYPHAE.get().asItem()||
-        item == RuBlocks.STRIPPED_YELLOW_BIOSHROOM_HYPHAE.get().asItem()||
-        item == RuBlocks.YELLOW_BIOSHROOM_PLANKS.get().asItem()||
-        item == RuBlocks.YELLOW_BIOSHROOM_STAIRS.get().asItem()||
-        item == RuBlocks.YELLOW_BIOSHROOM_FENCE.get().asItem()||
-        item == RuBlocks.YELLOW_BIOSHROOM_FENCE_GATE.get().asItem()||
-        item == RuBlocks.YELLOW_BIOSHROOM_TRAPDOOR.get().asItem()||
-        item == RuBlocks.YELLOW_BIOSHROOM_PRESSURE_PLATE.get().asItem()||
-
-        /*-----------------PAINTED PLANKS-----------------*/
-        //PLANKS
-        item == RuBlocks.RED_PAINTED_PLANKS.get().asItem()||
-        item == RuBlocks.ORANGE_PAINTED_PLANKS.get().asItem()||
-        item == RuBlocks.YELLOW_PAINTED_PLANKS.get().asItem()||
-        item == RuBlocks.LIME_PAINTED_PLANKS.get().asItem()||
-        item == RuBlocks.GREEN_PAINTED_PLANKS.get().asItem()||
-        item == RuBlocks.CYAN_PAINTED_PLANKS.get().asItem()||
-        item == RuBlocks.LIGHT_BLUE_PAINTED_PLANKS.get().asItem()||
-        item == RuBlocks.BLUE_PAINTED_PLANKS.get().asItem()||
-        item == RuBlocks.PURPLE_PAINTED_PLANKS.get().asItem()||
-        item == RuBlocks.MAGENTA_PAINTED_PLANKS.get().asItem()||
-        item == RuBlocks.PINK_PAINTED_PLANKS.get().asItem()||
-        item == RuBlocks.BROWN_PAINTED_PLANKS.get().asItem()||
-        item == RuBlocks.WHITE_PAINTED_PLANKS.get().asItem()||
-        item == RuBlocks.LIGHT_GRAY_PAINTED_PLANKS.get().asItem()||
-        item == RuBlocks.GRAY_PAINTED_PLANKS.get().asItem()||
-        item == RuBlocks.BLACK_PAINTED_PLANKS.get().asItem()||
-        //STAIRS
-        item == RuBlocks.RED_PAINTED_STAIRS.get().asItem()||
-        item == RuBlocks.ORANGE_PAINTED_STAIRS.get().asItem()||
-        item == RuBlocks.YELLOW_PAINTED_STAIRS.get().asItem()||
-        item == RuBlocks.LIME_PAINTED_STAIRS.get().asItem()||
-        item == RuBlocks.GREEN_PAINTED_STAIRS.get().asItem()||
-        item == RuBlocks.CYAN_PAINTED_STAIRS.get().asItem()||
-        item == RuBlocks.LIGHT_BLUE_PAINTED_STAIRS.get().asItem()||
-        item == RuBlocks.BLUE_PAINTED_STAIRS.get().asItem()||
-        item == RuBlocks.PURPLE_PAINTED_STAIRS.get().asItem()||
-        item == RuBlocks.MAGENTA_PAINTED_STAIRS.get().asItem()||
-        item == RuBlocks.PINK_PAINTED_STAIRS.get().asItem()||
-        item == RuBlocks.BROWN_PAINTED_STAIRS.get().asItem()||
-        item == RuBlocks.WHITE_PAINTED_STAIRS.get().asItem()||
-        item == RuBlocks.LIGHT_GRAY_PAINTED_STAIRS.get().asItem()||
-        item == RuBlocks.GRAY_PAINTED_STAIRS.get().asItem()||
-        item == RuBlocks.BLACK_PAINTED_STAIRS.get().asItem()||
-        //SLABS
-        item == RuBlocks.RED_PAINTED_SLAB.get().asItem()||
-        item == RuBlocks.ORANGE_PAINTED_SLAB.get().asItem()||
-        item == RuBlocks.YELLOW_PAINTED_SLAB.get().asItem()||
-        item == RuBlocks.LIME_PAINTED_SLAB.get().asItem()||
-        item == RuBlocks.GREEN_PAINTED_SLAB.get().asItem()||
-        item == RuBlocks.CYAN_PAINTED_SLAB.get().asItem()||
-        item == RuBlocks.LIGHT_BLUE_PAINTED_SLAB.get().asItem()||
-        item == RuBlocks.BLUE_PAINTED_SLAB.get().asItem()||
-        item == RuBlocks.PURPLE_PAINTED_SLAB.get().asItem()||
-        item == RuBlocks.MAGENTA_PAINTED_SLAB.get().asItem()||
-        item == RuBlocks.PINK_PAINTED_SLAB.get().asItem()||
-        item == RuBlocks.BROWN_PAINTED_SLAB.get().asItem()||
-        item == RuBlocks.WHITE_PAINTED_SLAB.get().asItem()||
-        item == RuBlocks.LIGHT_GRAY_PAINTED_SLAB.get().asItem()||
-        item == RuBlocks.GRAY_PAINTED_SLAB.get().asItem()||
-        item == RuBlocks.BLACK_PAINTED_SLAB.get().asItem()
-        ) {
-            event.setBurnTime(300);
+        private static Map<Item, int[]> create() {
+            Map<Item, int[]> result = new IdentityHashMap<>();
+            add(result, 300,
+                    RuBlocks.SILVER_BIRCH_LOG.get(),
+                    RuBlocks.SILVER_BIRCH_WOOD.get(),
+                    RuBlocks.ALPHA_LOG.get(),
+                    RuBlocks.ALPHA_PLANKS.get(),
+                    RuBlocks.ALPHA_STAIRS.get(),
+                    RuBlocks.BAOBAB_LOG.get(),
+                    RuBlocks.STRIPPED_BAOBAB_LOG.get(),
+                    RuBlocks.BAOBAB_WOOD.get(),
+                    RuBlocks.STRIPPED_BAOBAB_WOOD.get(),
+                    RuBlocks.BAOBAB_PLANKS.get(),
+                    RuBlocks.BAOBAB_STAIRS.get(),
+                    RuBlocks.BAOBAB_FENCE.get(),
+                    RuBlocks.BAOBAB_FENCE_GATE.get(),
+                    RuBlocks.BAOBAB_TRAPDOOR.get(),
+                    RuBlocks.BAOBAB_PRESSURE_PLATE.get(),
+                    RuBlocks.BLACKWOOD_LOG.get(),
+                    RuBlocks.STRIPPED_BLACKWOOD_LOG.get(),
+                    RuBlocks.BLACKWOOD_WOOD.get(),
+                    RuBlocks.STRIPPED_BLACKWOOD_WOOD.get(),
+                    RuBlocks.BLACKWOOD_PLANKS.get(),
+                    RuBlocks.BLACKWOOD_STAIRS.get(),
+                    RuBlocks.BLACKWOOD_FENCE.get(),
+                    RuBlocks.BLACKWOOD_FENCE_GATE.get(),
+                    RuBlocks.BLACKWOOD_TRAPDOOR.get(),
+                    RuBlocks.BLACKWOOD_PRESSURE_PLATE.get(),
+                    RuBlocks.BLUE_BIOSHROOM_STEM.get(),
+                    RuBlocks.STRIPPED_BLUE_BIOSHROOM_STEM.get(),
+                    RuBlocks.BLUE_BIOSHROOM_HYPHAE.get(),
+                    RuBlocks.STRIPPED_BLUE_BIOSHROOM_HYPHAE.get(),
+                    RuBlocks.BLUE_BIOSHROOM_PLANKS.get(),
+                    RuBlocks.BLUE_BIOSHROOM_STAIRS.get(),
+                    RuBlocks.BLUE_BIOSHROOM_FENCE.get(),
+                    RuBlocks.BLUE_BIOSHROOM_FENCE_GATE.get(),
+                    RuBlocks.BLUE_BIOSHROOM_TRAPDOOR.get(),
+                    RuBlocks.BLUE_BIOSHROOM_PRESSURE_PLATE.get(),
+                    RuBlocks.BRIMWOOD_LOG.get(),
+                    RuBlocks.BRIMWOOD_LOG_MAGMA.get(),
+                    RuBlocks.STRIPPED_BRIMWOOD_LOG.get(),
+                    RuBlocks.BRIMWOOD_WOOD.get(),
+                    RuBlocks.STRIPPED_BRIMWOOD_WOOD.get(),
+                    RuBlocks.BRIMWOOD_PLANKS.get(),
+                    RuBlocks.BRIMWOOD_STAIRS.get(),
+                    RuBlocks.BRIMWOOD_FENCE.get(),
+                    RuBlocks.BRIMWOOD_FENCE_GATE.get(),
+                    RuBlocks.BRIMWOOD_TRAPDOOR.get(),
+                    RuBlocks.BRIMWOOD_PRESSURE_PLATE.get(),
+                    RuBlocks.COBALT_LOG.get(),
+                    RuBlocks.STRIPPED_COBALT_LOG.get(),
+                    RuBlocks.COBALT_WOOD.get(),
+                    RuBlocks.STRIPPED_COBALT_WOOD.get(),
+                    RuBlocks.COBALT_PLANKS.get(),
+                    RuBlocks.COBALT_STAIRS.get(),
+                    RuBlocks.COBALT_FENCE.get(),
+                    RuBlocks.COBALT_FENCE_GATE.get(),
+                    RuBlocks.COBALT_TRAPDOOR.get(),
+                    RuBlocks.COBALT_PRESSURE_PLATE.get(),
+                    RuBlocks.CYPRESS_LOG.get(),
+                    RuBlocks.STRIPPED_CYPRESS_LOG.get(),
+                    RuBlocks.CYPRESS_WOOD.get(),
+                    RuBlocks.STRIPPED_CYPRESS_WOOD.get(),
+                    RuBlocks.CYPRESS_PLANKS.get(),
+                    RuBlocks.CYPRESS_STAIRS.get(),
+                    RuBlocks.CYPRESS_FENCE.get(),
+                    RuBlocks.CYPRESS_FENCE_GATE.get(),
+                    RuBlocks.CYPRESS_TRAPDOOR.get(),
+                    RuBlocks.CYPRESS_PRESSURE_PLATE.get(),
+                    RuBlocks.DEAD_LOG.get(),
+                    RuBlocks.STRIPPED_DEAD_LOG.get(),
+                    RuBlocks.DEAD_WOOD.get(),
+                    RuBlocks.STRIPPED_DEAD_WOOD.get(),
+                    RuBlocks.DEAD_PLANKS.get(),
+                    RuBlocks.DEAD_STAIRS.get(),
+                    RuBlocks.DEAD_FENCE.get(),
+                    RuBlocks.DEAD_FENCE_GATE.get(),
+                    RuBlocks.DEAD_TRAPDOOR.get(),
+                    RuBlocks.DEAD_PRESSURE_PLATE.get(),
+                    RuBlocks.EUCALYPTUS_LOG.get(),
+                    RuBlocks.STRIPPED_EUCALYPTUS_LOG.get(),
+                    RuBlocks.EUCALYPTUS_WOOD.get(),
+                    RuBlocks.STRIPPED_EUCALYPTUS_WOOD.get(),
+                    RuBlocks.EUCALYPTUS_PLANKS.get(),
+                    RuBlocks.EUCALYPTUS_STAIRS.get(),
+                    RuBlocks.EUCALYPTUS_FENCE.get(),
+                    RuBlocks.EUCALYPTUS_FENCE_GATE.get(),
+                    RuBlocks.EUCALYPTUS_TRAPDOOR.get(),
+                    RuBlocks.EUCALYPTUS_PRESSURE_PLATE.get(),
+                    RuBlocks.GREEN_BIOSHROOM_STEM.get(),
+                    RuBlocks.STRIPPED_GREEN_BIOSHROOM_STEM.get(),
+                    RuBlocks.GREEN_BIOSHROOM_HYPHAE.get(),
+                    RuBlocks.STRIPPED_GREEN_BIOSHROOM_HYPHAE.get(),
+                    RuBlocks.GREEN_BIOSHROOM_PLANKS.get(),
+                    RuBlocks.GREEN_BIOSHROOM_STAIRS.get(),
+                    RuBlocks.GREEN_BIOSHROOM_FENCE.get(),
+                    RuBlocks.GREEN_BIOSHROOM_FENCE_GATE.get(),
+                    RuBlocks.GREEN_BIOSHROOM_TRAPDOOR.get(),
+                    RuBlocks.GREEN_BIOSHROOM_PRESSURE_PLATE.get(),
+                    RuBlocks.JOSHUA_LOG.get(),
+                    RuBlocks.STRIPPED_JOSHUA_LOG.get(),
+                    RuBlocks.JOSHUA_WOOD.get(),
+                    RuBlocks.STRIPPED_JOSHUA_WOOD.get(),
+                    RuBlocks.JOSHUA_PLANKS.get(),
+                    RuBlocks.JOSHUA_STAIRS.get(),
+                    RuBlocks.JOSHUA_FENCE.get(),
+                    RuBlocks.JOSHUA_FENCE_GATE.get(),
+                    RuBlocks.JOSHUA_TRAPDOOR.get(),
+                    RuBlocks.JOSHUA_PRESSURE_PLATE.get(),
+                    RuBlocks.KAPOK_LOG.get(),
+                    RuBlocks.STRIPPED_KAPOK_LOG.get(),
+                    RuBlocks.KAPOK_WOOD.get(),
+                    RuBlocks.STRIPPED_KAPOK_WOOD.get(),
+                    RuBlocks.KAPOK_PLANKS.get(),
+                    RuBlocks.KAPOK_STAIRS.get(),
+                    RuBlocks.KAPOK_FENCE.get(),
+                    RuBlocks.KAPOK_FENCE_GATE.get(),
+                    RuBlocks.KAPOK_TRAPDOOR.get(),
+                    RuBlocks.KAPOK_PRESSURE_PLATE.get(),
+                    RuBlocks.LARCH_LOG.get(),
+                    RuBlocks.STRIPPED_LARCH_LOG.get(),
+                    RuBlocks.LARCH_WOOD.get(),
+                    RuBlocks.STRIPPED_LARCH_WOOD.get(),
+                    RuBlocks.LARCH_PLANKS.get(),
+                    RuBlocks.LARCH_STAIRS.get(),
+                    RuBlocks.LARCH_FENCE.get(),
+                    RuBlocks.LARCH_FENCE_GATE.get(),
+                    RuBlocks.LARCH_TRAPDOOR.get(),
+                    RuBlocks.LARCH_PRESSURE_PLATE.get(),
+                    RuBlocks.MAGNOLIA_LOG.get(),
+                    RuBlocks.STRIPPED_MAGNOLIA_LOG.get(),
+                    RuBlocks.MAGNOLIA_WOOD.get(),
+                    RuBlocks.STRIPPED_MAGNOLIA_WOOD.get(),
+                    RuBlocks.MAGNOLIA_PLANKS.get(),
+                    RuBlocks.MAGNOLIA_STAIRS.get(),
+                    RuBlocks.MAGNOLIA_FENCE.get(),
+                    RuBlocks.MAGNOLIA_FENCE_GATE.get(),
+                    RuBlocks.MAGNOLIA_TRAPDOOR.get(),
+                    RuBlocks.MAGNOLIA_PRESSURE_PLATE.get(),
+                    RuBlocks.MAPLE_LOG.get(),
+                    RuBlocks.STRIPPED_MAPLE_LOG.get(),
+                    RuBlocks.MAPLE_WOOD.get(),
+                    RuBlocks.STRIPPED_MAPLE_WOOD.get(),
+                    RuBlocks.MAPLE_PLANKS.get(),
+                    RuBlocks.MAPLE_STAIRS.get(),
+                    RuBlocks.MAPLE_FENCE.get(),
+                    RuBlocks.MAPLE_FENCE_GATE.get(),
+                    RuBlocks.MAPLE_TRAPDOOR.get(),
+                    RuBlocks.MAPLE_PRESSURE_PLATE.get(),
+                    RuBlocks.MAUVE_LOG.get(),
+                    RuBlocks.STRIPPED_MAUVE_LOG.get(),
+                    RuBlocks.MAUVE_WOOD.get(),
+                    RuBlocks.STRIPPED_MAUVE_WOOD.get(),
+                    RuBlocks.MAUVE_PLANKS.get(),
+                    RuBlocks.MAUVE_STAIRS.get(),
+                    RuBlocks.MAUVE_FENCE.get(),
+                    RuBlocks.MAUVE_FENCE_GATE.get(),
+                    RuBlocks.MAUVE_TRAPDOOR.get(),
+                    RuBlocks.MAUVE_PRESSURE_PLATE.get(),
+                    RuBlocks.PALM_LOG.get(),
+                    RuBlocks.STRIPPED_PALM_LOG.get(),
+                    RuBlocks.PALM_WOOD.get(),
+                    RuBlocks.STRIPPED_PALM_WOOD.get(),
+                    RuBlocks.PALM_PLANKS.get(),
+                    RuBlocks.PALM_STAIRS.get(),
+                    RuBlocks.PALM_FENCE.get(),
+                    RuBlocks.PALM_FENCE_GATE.get(),
+                    RuBlocks.PALM_TRAPDOOR.get(),
+                    RuBlocks.PALM_PRESSURE_PLATE.get(),
+                    RuBlocks.PINE_LOG.get(),
+                    RuBlocks.STRIPPED_PINE_LOG.get(),
+                    RuBlocks.PINE_WOOD.get(),
+                    RuBlocks.STRIPPED_PINE_WOOD.get(),
+                    RuBlocks.PINE_PLANKS.get(),
+                    RuBlocks.PINE_STAIRS.get(),
+                    RuBlocks.PINE_FENCE.get(),
+                    RuBlocks.PINE_FENCE_GATE.get(),
+                    RuBlocks.PINE_TRAPDOOR.get(),
+                    RuBlocks.PINE_PRESSURE_PLATE.get(),
+                    RuBlocks.PINK_BIOSHROOM_STEM.get(),
+                    RuBlocks.STRIPPED_PINK_BIOSHROOM_STEM.get(),
+                    RuBlocks.PINK_BIOSHROOM_HYPHAE.get(),
+                    RuBlocks.STRIPPED_PINK_BIOSHROOM_HYPHAE.get(),
+                    RuBlocks.PINK_BIOSHROOM_PLANKS.get(),
+                    RuBlocks.PINK_BIOSHROOM_STAIRS.get(),
+                    RuBlocks.PINK_BIOSHROOM_FENCE.get(),
+                    RuBlocks.PINK_BIOSHROOM_FENCE_GATE.get(),
+                    RuBlocks.PINK_BIOSHROOM_TRAPDOOR.get(),
+                    RuBlocks.PINK_BIOSHROOM_PRESSURE_PLATE.get(),
+                    RuBlocks.REDWOOD_LOG.get(),
+                    RuBlocks.STRIPPED_REDWOOD_LOG.get(),
+                    RuBlocks.REDWOOD_WOOD.get(),
+                    RuBlocks.STRIPPED_REDWOOD_WOOD.get(),
+                    RuBlocks.REDWOOD_PLANKS.get(),
+                    RuBlocks.REDWOOD_STAIRS.get(),
+                    RuBlocks.REDWOOD_FENCE.get(),
+                    RuBlocks.REDWOOD_FENCE_GATE.get(),
+                    RuBlocks.REDWOOD_TRAPDOOR.get(),
+                    RuBlocks.REDWOOD_PRESSURE_PLATE.get(),
+                    RuBlocks.SOCOTRA_LOG.get(),
+                    RuBlocks.STRIPPED_SOCOTRA_LOG.get(),
+                    RuBlocks.SOCOTRA_WOOD.get(),
+                    RuBlocks.STRIPPED_SOCOTRA_WOOD.get(),
+                    RuBlocks.SOCOTRA_PLANKS.get(),
+                    RuBlocks.SOCOTRA_STAIRS.get(),
+                    RuBlocks.SOCOTRA_FENCE.get(),
+                    RuBlocks.SOCOTRA_FENCE_GATE.get(),
+                    RuBlocks.SOCOTRA_TRAPDOOR.get(),
+                    RuBlocks.SOCOTRA_PRESSURE_PLATE.get(),
+                    RuBlocks.WILLOW_LOG.get(),
+                    RuBlocks.STRIPPED_WILLOW_LOG.get(),
+                    RuBlocks.WILLOW_WOOD.get(),
+                    RuBlocks.STRIPPED_WILLOW_WOOD.get(),
+                    RuBlocks.WILLOW_PLANKS.get(),
+                    RuBlocks.WILLOW_STAIRS.get(),
+                    RuBlocks.WILLOW_FENCE.get(),
+                    RuBlocks.WILLOW_FENCE_GATE.get(),
+                    RuBlocks.WILLOW_TRAPDOOR.get(),
+                    RuBlocks.WILLOW_PRESSURE_PLATE.get(),
+                    RuBlocks.YELLOW_BIOSHROOM_STEM.get(),
+                    RuBlocks.STRIPPED_YELLOW_BIOSHROOM_STEM.get(),
+                    RuBlocks.YELLOW_BIOSHROOM_HYPHAE.get(),
+                    RuBlocks.STRIPPED_YELLOW_BIOSHROOM_HYPHAE.get(),
+                    RuBlocks.YELLOW_BIOSHROOM_PLANKS.get(),
+                    RuBlocks.YELLOW_BIOSHROOM_STAIRS.get(),
+                    RuBlocks.YELLOW_BIOSHROOM_FENCE.get(),
+                    RuBlocks.YELLOW_BIOSHROOM_FENCE_GATE.get(),
+                    RuBlocks.YELLOW_BIOSHROOM_TRAPDOOR.get(),
+                    RuBlocks.YELLOW_BIOSHROOM_PRESSURE_PLATE.get(),
+                    RuBlocks.RED_PAINTED_PLANKS.get(),
+                    RuBlocks.ORANGE_PAINTED_PLANKS.get(),
+                    RuBlocks.YELLOW_PAINTED_PLANKS.get(),
+                    RuBlocks.LIME_PAINTED_PLANKS.get(),
+                    RuBlocks.GREEN_PAINTED_PLANKS.get(),
+                    RuBlocks.CYAN_PAINTED_PLANKS.get(),
+                    RuBlocks.LIGHT_BLUE_PAINTED_PLANKS.get(),
+                    RuBlocks.BLUE_PAINTED_PLANKS.get(),
+                    RuBlocks.PURPLE_PAINTED_PLANKS.get(),
+                    RuBlocks.MAGENTA_PAINTED_PLANKS.get(),
+                    RuBlocks.PINK_PAINTED_PLANKS.get(),
+                    RuBlocks.BROWN_PAINTED_PLANKS.get(),
+                    RuBlocks.WHITE_PAINTED_PLANKS.get(),
+                    RuBlocks.LIGHT_GRAY_PAINTED_PLANKS.get(),
+                    RuBlocks.GRAY_PAINTED_PLANKS.get(),
+                    RuBlocks.BLACK_PAINTED_PLANKS.get(),
+                    RuBlocks.RED_PAINTED_STAIRS.get(),
+                    RuBlocks.ORANGE_PAINTED_STAIRS.get(),
+                    RuBlocks.YELLOW_PAINTED_STAIRS.get(),
+                    RuBlocks.LIME_PAINTED_STAIRS.get(),
+                    RuBlocks.GREEN_PAINTED_STAIRS.get(),
+                    RuBlocks.CYAN_PAINTED_STAIRS.get(),
+                    RuBlocks.LIGHT_BLUE_PAINTED_STAIRS.get(),
+                    RuBlocks.BLUE_PAINTED_STAIRS.get(),
+                    RuBlocks.PURPLE_PAINTED_STAIRS.get(),
+                    RuBlocks.MAGENTA_PAINTED_STAIRS.get(),
+                    RuBlocks.PINK_PAINTED_STAIRS.get(),
+                    RuBlocks.BROWN_PAINTED_STAIRS.get(),
+                    RuBlocks.WHITE_PAINTED_STAIRS.get(),
+                    RuBlocks.LIGHT_GRAY_PAINTED_STAIRS.get(),
+                    RuBlocks.GRAY_PAINTED_STAIRS.get(),
+                    RuBlocks.BLACK_PAINTED_STAIRS.get(),
+                    RuBlocks.RED_PAINTED_SLAB.get(),
+                    RuBlocks.ORANGE_PAINTED_SLAB.get(),
+                    RuBlocks.YELLOW_PAINTED_SLAB.get(),
+                    RuBlocks.LIME_PAINTED_SLAB.get(),
+                    RuBlocks.GREEN_PAINTED_SLAB.get(),
+                    RuBlocks.CYAN_PAINTED_SLAB.get(),
+                    RuBlocks.LIGHT_BLUE_PAINTED_SLAB.get(),
+                    RuBlocks.BLUE_PAINTED_SLAB.get(),
+                    RuBlocks.PURPLE_PAINTED_SLAB.get(),
+                    RuBlocks.MAGENTA_PAINTED_SLAB.get(),
+                    RuBlocks.PINK_PAINTED_SLAB.get(),
+                    RuBlocks.BROWN_PAINTED_SLAB.get(),
+                    RuBlocks.WHITE_PAINTED_SLAB.get(),
+                    RuBlocks.LIGHT_GRAY_PAINTED_SLAB.get(),
+                    RuBlocks.GRAY_PAINTED_SLAB.get(),
+                    RuBlocks.BLACK_PAINTED_SLAB.get());
+            add(result, 200,
+                    RuBlocks.BAOBAB_DOOR.get(),
+                    RuBlocks.BLACKWOOD_DOOR.get(),
+                    RuBlocks.BLUE_BIOSHROOM_DOOR.get(),
+                    RuBlocks.BRIMWOOD_DOOR.get(),
+                    RuBlocks.COBALT_DOOR.get(),
+                    RuBlocks.CYPRESS_DOOR.get(),
+                    RuBlocks.DEAD_DOOR.get(),
+                    RuBlocks.EUCALYPTUS_DOOR.get(),
+                    RuBlocks.GREEN_BIOSHROOM_DOOR.get(),
+                    RuBlocks.JOSHUA_DOOR.get(),
+                    RuBlocks.KAPOK_DOOR.get(),
+                    RuBlocks.LARCH_DOOR.get(),
+                    RuBlocks.MAGNOLIA_DOOR.get(),
+                    RuBlocks.MAPLE_DOOR.get(),
+                    RuBlocks.MAUVE_DOOR.get(),
+                    RuBlocks.PALM_DOOR.get(),
+                    RuBlocks.PINE_DOOR.get(),
+                    RuBlocks.PINK_BIOSHROOM_DOOR.get(),
+                    RuBlocks.REDWOOD_DOOR.get(),
+                    RuBlocks.SOCOTRA_DOOR.get(),
+                    RuBlocks.WILLOW_DOOR.get(),
+                    RuBlocks.YELLOW_BIOSHROOM_DOOR.get());
+            add(result, 150,
+                    RuBlocks.BAOBAB_SLAB.get(),
+                    RuBlocks.BLACKWOOD_SLAB.get(),
+                    RuBlocks.BLUE_BIOSHROOM_SLAB.get(),
+                    RuBlocks.BRIMWOOD_SLAB.get(),
+                    RuBlocks.COBALT_SLAB.get(),
+                    RuBlocks.CYPRESS_SLAB.get(),
+                    RuBlocks.DEAD_SLAB.get(),
+                    RuBlocks.EUCALYPTUS_SLAB.get(),
+                    RuBlocks.GREEN_BIOSHROOM_SLAB.get(),
+                    RuBlocks.JOSHUA_SLAB.get(),
+                    RuBlocks.KAPOK_SLAB.get(),
+                    RuBlocks.LARCH_SLAB.get(),
+                    RuBlocks.MAGNOLIA_SLAB.get(),
+                    RuBlocks.MAPLE_SLAB.get(),
+                    RuBlocks.MAUVE_SLAB.get(),
+                    RuBlocks.PALM_SLAB.get(),
+                    RuBlocks.PINE_SLAB.get(),
+                    RuBlocks.PINK_BIOSHROOM_SLAB.get(),
+                    RuBlocks.REDWOOD_SLAB.get(),
+                    RuBlocks.SOCOTRA_SLAB.get(),
+                    RuBlocks.WILLOW_SLAB.get(),
+                    RuBlocks.YELLOW_BIOSHROOM_SLAB.get(),
+                    RuBlocks.RED_PAINTED_SLAB.get(),
+                    RuBlocks.ORANGE_PAINTED_SLAB.get(),
+                    RuBlocks.YELLOW_PAINTED_SLAB.get(),
+                    RuBlocks.LIME_PAINTED_SLAB.get(),
+                    RuBlocks.GREEN_PAINTED_SLAB.get(),
+                    RuBlocks.CYAN_PAINTED_SLAB.get(),
+                    RuBlocks.LIGHT_BLUE_PAINTED_SLAB.get(),
+                    RuBlocks.BLUE_PAINTED_SLAB.get(),
+                    RuBlocks.PURPLE_PAINTED_SLAB.get(),
+                    RuBlocks.MAGENTA_PAINTED_SLAB.get(),
+                    RuBlocks.PINK_PAINTED_SLAB.get(),
+                    RuBlocks.BROWN_PAINTED_SLAB.get(),
+                    RuBlocks.WHITE_PAINTED_SLAB.get(),
+                    RuBlocks.LIGHT_GRAY_PAINTED_SLAB.get(),
+                    RuBlocks.GRAY_PAINTED_SLAB.get(),
+                    RuBlocks.BLACK_PAINTED_SLAB.get());
+            add(result, 100,
+                    RuBlocks.ALPHA_SAPLING.get(),
+                    RuBlocks.APPLE_OAK_SAPLING.get(),
+                    RuBlocks.BAMBOO_SAPLING.get(),
+                    RuBlocks.BAOBAB_SAPLING.get(),
+                    RuBlocks.BLACKWOOD_SAPLING.get(),
+                    RuBlocks.CACTUS_FLOWER.get(),
+                    RuBlocks.CYPRESS_SAPLING.get(),
+                    RuBlocks.DEAD_PINE_SAPLING.get(),
+                    RuBlocks.DEAD_SAPLING.get(),
+                    RuBlocks.EUCALYPTUS_SAPLING.get(),
+                    RuBlocks.FLOWERING_SAPLING.get(),
+                    RuBlocks.GOLDEN_LARCH_SAPLING.get(),
+                    RuBlocks.JOSHUA_SAPLING.get(),
+                    RuBlocks.KAPOK_SAPLING.get(),
+                    RuBlocks.LARCH_SAPLING.get(),
+                    RuBlocks.MAGNOLIA_SAPLING.get(),
+                    RuBlocks.MAPLE_SAPLING.get(),
+                    RuBlocks.MAUVE_SAPLING.get(),
+                    RuBlocks.ORANGE_MAPLE_SAPLING.get(),
+                    RuBlocks.PALM_SAPLING.get(),
+                    RuBlocks.PINE_SAPLING.get(),
+                    RuBlocks.BLUE_MAGNOLIA_SAPLING.get(),
+                    RuBlocks.PINK_MAGNOLIA_SAPLING.get(),
+                    RuBlocks.REDWOOD_SAPLING.get(),
+                    RuBlocks.RED_MAPLE_SAPLING.get(),
+                    RuBlocks.ENCHANTED_BIRCH_SAPLING.get(),
+                    RuBlocks.SILVER_BIRCH_SAPLING.get(),
+                    RuBlocks.SMALL_OAK_SAPLING.get(),
+                    RuBlocks.SOCOTRA_SAPLING.get(),
+                    RuBlocks.WHITE_MAGNOLIA_SAPLING.get(),
+                    RuBlocks.WILLOW_SAPLING.get(),
+                    RuBlocks.ACACIA_SHRUB.get(),
+                    RuBlocks.BAOBAB_SHRUB.get(),
+                    RuBlocks.BIRCH_SHRUB.get(),
+                    RuBlocks.BLACKWOOD_SHRUB.get(),
+                    RuBlocks.BRIMWOOD_SHRUB.get(),
+                    RuBlocks.CHERRY_SHRUB.get(),
+                    RuBlocks.CYPRESS_SHRUB.get(),
+                    RuBlocks.DARK_OAK_SHRUB.get(),
+                    RuBlocks.DEAD_PINE_SHRUB.get(),
+                    RuBlocks.DEAD_SHRUB.get(),
+                    RuBlocks.EUCALYPTUS_SHRUB.get(),
+                    RuBlocks.FLOWERING_SHRUB.get(),
+                    RuBlocks.GOLDEN_LARCH_SHRUB.get(),
+                    RuBlocks.JOSHUA_SHRUB.get(),
+                    RuBlocks.JUNGLE_SHRUB.get(),
+                    RuBlocks.KAPOK_SHRUB.get(),
+                    RuBlocks.LARCH_SHRUB.get(),
+                    RuBlocks.MAGNOLIA_SHRUB.get(),
+                    RuBlocks.MANGROVE_SHRUB.get(),
+                    RuBlocks.MAPLE_SHRUB.get(),
+                    RuBlocks.MAUVE_SHRUB.get(),
+                    RuBlocks.OAK_SHRUB.get(),
+                    RuBlocks.ORANGE_MAPLE_SHRUB.get(),
+                    RuBlocks.PALM_SHRUB.get(),
+                    RuBlocks.PINE_SHRUB.get(),
+                    RuBlocks.BLUE_MAGNOLIA_SHRUB.get(),
+                    RuBlocks.PINK_MAGNOLIA_SHRUB.get(),
+                    RuBlocks.REDWOOD_SHRUB.get(),
+                    RuBlocks.RED_MAPLE_SHRUB.get(),
+                    RuBlocks.ENCHANTED_BIRCH_SHRUB.get(),
+                    RuBlocks.SILVER_BIRCH_SHRUB.get(),
+                    RuBlocks.SOCOTRA_SHRUB.get(),
+                    RuBlocks.SPRUCE_SHRUB.get(),
+                    RuBlocks.WHITE_MAGNOLIA_SHRUB.get(),
+                    RuBlocks.WILLOW_SHRUB.get(),
+                    RuBlocks.BAOBAB_BUTTON.get(),
+                    RuBlocks.BLACKWOOD_BUTTON.get(),
+                    RuBlocks.BLUE_BIOSHROOM_BUTTON.get(),
+                    RuBlocks.BRIMWOOD_BUTTON.get(),
+                    RuBlocks.COBALT_BUTTON.get(),
+                    RuBlocks.CYPRESS_BUTTON.get(),
+                    RuBlocks.DEAD_BUTTON.get(),
+                    RuBlocks.EUCALYPTUS_BUTTON.get(),
+                    RuBlocks.GREEN_BIOSHROOM_BUTTON.get(),
+                    RuBlocks.JOSHUA_BUTTON.get(),
+                    RuBlocks.KAPOK_BUTTON.get(),
+                    RuBlocks.LARCH_BUTTON.get(),
+                    RuBlocks.MAGNOLIA_BUTTON.get(),
+                    RuBlocks.MAPLE_BUTTON.get(),
+                    RuBlocks.MAUVE_BUTTON.get(),
+                    RuBlocks.PALM_BUTTON.get(),
+                    RuBlocks.PINE_BUTTON.get(),
+                    RuBlocks.PINK_BIOSHROOM_BUTTON.get(),
+                    RuBlocks.REDWOOD_BUTTON.get(),
+                    RuBlocks.SOCOTRA_BUTTON.get(),
+                    RuBlocks.WILLOW_BUTTON.get(),
+                    RuBlocks.YELLOW_BIOSHROOM_BUTTON.get());
+            return result;
         }
 
-        if (
-        item == RuBlocks.BAOBAB_DOOR.get().asItem()||
-        item == RuBlocks.BLACKWOOD_DOOR.get().asItem()||
-        item == RuBlocks.BLUE_BIOSHROOM_DOOR.get().asItem()||
-        item == RuBlocks.BRIMWOOD_DOOR.get().asItem()||
-        item == RuBlocks.COBALT_DOOR.get().asItem()||
-        item == RuBlocks.CYPRESS_DOOR.get().asItem()||
-        item == RuBlocks.DEAD_DOOR.get().asItem()||
-        item == RuBlocks.EUCALYPTUS_DOOR.get().asItem()||
-        item == RuBlocks.GREEN_BIOSHROOM_DOOR.get().asItem()||
-        item == RuBlocks.JOSHUA_DOOR.get().asItem()||
-        item == RuBlocks.KAPOK_DOOR.get().asItem()||
-        item == RuBlocks.LARCH_DOOR.get().asItem()||
-        item == RuBlocks.MAGNOLIA_DOOR.get().asItem()||
-        item == RuBlocks.MAPLE_DOOR.get().asItem()||
-        item == RuBlocks.MAUVE_DOOR.get().asItem()||
-        item == RuBlocks.PALM_DOOR.get().asItem()||
-        item == RuBlocks.PINE_DOOR.get().asItem()||
-        item == RuBlocks.PINK_BIOSHROOM_DOOR.get().asItem()||
-        item == RuBlocks.REDWOOD_DOOR.get().asItem()||
-        item == RuBlocks.SOCOTRA_DOOR.get().asItem()||
-        item == RuBlocks.WILLOW_DOOR.get().asItem()||
-        item == RuBlocks.YELLOW_BIOSHROOM_DOOR.get().asItem()
-        ) {
-            event.setBurnTime(200);
-        }
-
-        if (
-        item == RuBlocks.BAOBAB_SLAB.get().asItem()||
-        item == RuBlocks.BLACKWOOD_SLAB.get().asItem()||
-        item == RuBlocks.BLUE_BIOSHROOM_SLAB.get().asItem()||
-        item == RuBlocks.BRIMWOOD_SLAB.get().asItem()||
-        item == RuBlocks.COBALT_SLAB.get().asItem()||
-        item == RuBlocks.CYPRESS_SLAB.get().asItem()||
-        item == RuBlocks.DEAD_SLAB.get().asItem()||
-        item == RuBlocks.EUCALYPTUS_SLAB.get().asItem()||
-        item == RuBlocks.GREEN_BIOSHROOM_SLAB.get().asItem()||
-        item == RuBlocks.JOSHUA_SLAB.get().asItem()||
-        item == RuBlocks.KAPOK_SLAB.get().asItem()||
-        item == RuBlocks.LARCH_SLAB.get().asItem()||
-        item == RuBlocks.MAGNOLIA_SLAB.get().asItem()||
-        item == RuBlocks.MAPLE_SLAB.get().asItem()||
-        item == RuBlocks.MAUVE_SLAB.get().asItem()||
-        item == RuBlocks.PALM_SLAB.get().asItem()||
-        item == RuBlocks.PINE_SLAB.get().asItem()||
-        item == RuBlocks.PINK_BIOSHROOM_SLAB.get().asItem()||
-        item == RuBlocks.REDWOOD_SLAB.get().asItem()||
-        item == RuBlocks.SOCOTRA_SLAB.get().asItem()||
-        item == RuBlocks.WILLOW_SLAB.get().asItem()||
-        item == RuBlocks.YELLOW_BIOSHROOM_SLAB.get().asItem()||
-        item == RuBlocks.RED_PAINTED_SLAB.get().asItem()||
-        item == RuBlocks.ORANGE_PAINTED_SLAB.get().asItem()||
-        item == RuBlocks.YELLOW_PAINTED_SLAB.get().asItem()||
-        item == RuBlocks.LIME_PAINTED_SLAB.get().asItem()||
-        item == RuBlocks.GREEN_PAINTED_SLAB.get().asItem()||
-        item == RuBlocks.CYAN_PAINTED_SLAB.get().asItem()||
-        item == RuBlocks.LIGHT_BLUE_PAINTED_SLAB.get().asItem()||
-        item == RuBlocks.BLUE_PAINTED_SLAB.get().asItem()||
-        item == RuBlocks.PURPLE_PAINTED_SLAB.get().asItem()||
-        item == RuBlocks.MAGENTA_PAINTED_SLAB.get().asItem()||
-        item == RuBlocks.PINK_PAINTED_SLAB.get().asItem()||
-        item == RuBlocks.BROWN_PAINTED_SLAB.get().asItem()||
-        item == RuBlocks.WHITE_PAINTED_SLAB.get().asItem()||
-        item == RuBlocks.LIGHT_GRAY_PAINTED_SLAB.get().asItem()||
-        item == RuBlocks.GRAY_PAINTED_SLAB.get().asItem()||
-        item == RuBlocks.BLACK_PAINTED_SLAB.get().asItem()
-        ) {
-            event.setBurnTime(150);
-        }
-
-        if (
-        item == RuBlocks.ALPHA_SAPLING.get().asItem()||
-        item == RuBlocks.APPLE_OAK_SAPLING.get().asItem()||
-        item == RuBlocks.BAMBOO_SAPLING.get().asItem()||
-        item == RuBlocks.BAOBAB_SAPLING.get().asItem()||
-        item == RuBlocks.BLACKWOOD_SAPLING.get().asItem()||
-        item == RuBlocks.CACTUS_FLOWER.get().asItem()||
-        item == RuBlocks.CYPRESS_SAPLING.get().asItem()||
-        item == RuBlocks.DEAD_PINE_SAPLING.get().asItem()||
-        item == RuBlocks.DEAD_SAPLING.get().asItem()||
-        item == RuBlocks.EUCALYPTUS_SAPLING.get().asItem()||
-        item == RuBlocks.FLOWERING_SAPLING.get().asItem()||
-        item == RuBlocks.GOLDEN_LARCH_SAPLING.get().asItem()||
-        item == RuBlocks.JOSHUA_SAPLING.get().asItem()||
-        item == RuBlocks.KAPOK_SAPLING.get().asItem()||
-        item == RuBlocks.LARCH_SAPLING.get().asItem()||
-        item == RuBlocks.MAGNOLIA_SAPLING.get().asItem()||
-        item == RuBlocks.MAPLE_SAPLING.get().asItem()||
-        item == RuBlocks.MAUVE_SAPLING.get().asItem()||
-        item == RuBlocks.ORANGE_MAPLE_SAPLING.get().asItem()||
-        item == RuBlocks.PALM_SAPLING.get().asItem()||
-        item == RuBlocks.PINE_SAPLING.get().asItem()||
-        item == RuBlocks.BLUE_MAGNOLIA_SAPLING.get().asItem()||
-        item == RuBlocks.PINK_MAGNOLIA_SAPLING.get().asItem()||
-        item == RuBlocks.REDWOOD_SAPLING.get().asItem()||
-        item == RuBlocks.RED_MAPLE_SAPLING.get().asItem()||
-        item == RuBlocks.ENCHANTED_BIRCH_SAPLING.get().asItem()||
-        item == RuBlocks.SILVER_BIRCH_SAPLING.get().asItem()||
-        item == RuBlocks.SMALL_OAK_SAPLING.get().asItem()||
-        item == RuBlocks.SOCOTRA_SAPLING.get().asItem()||
-        item == RuBlocks.WHITE_MAGNOLIA_SAPLING.get().asItem()||
-        item == RuBlocks.WILLOW_SAPLING.get().asItem()||
-
-        item == RuBlocks.ACACIA_SHRUB.get().asItem()||
-        item == RuBlocks.BAOBAB_SHRUB.get().asItem()||
-        item == RuBlocks.BIRCH_SHRUB.get().asItem()||
-        item == RuBlocks.BLACKWOOD_SHRUB.get().asItem()||
-        item == RuBlocks.BRIMWOOD_SHRUB.get().asItem()||
-        item == RuBlocks.CHERRY_SHRUB.get().asItem()||
-        item == RuBlocks.CYPRESS_SHRUB.get().asItem()||
-        item == RuBlocks.DARK_OAK_SHRUB.get().asItem()||
-        item == RuBlocks.DEAD_PINE_SHRUB.get().asItem()||
-        item == RuBlocks.DEAD_SHRUB.get().asItem()||
-        item == RuBlocks.EUCALYPTUS_SHRUB.get().asItem()||
-        item == RuBlocks.FLOWERING_SHRUB.get().asItem()||
-        item == RuBlocks.GOLDEN_LARCH_SHRUB.get().asItem()||
-        item == RuBlocks.JOSHUA_SHRUB.get().asItem()||
-        item == RuBlocks.JUNGLE_SHRUB.get().asItem()||
-        item == RuBlocks.KAPOK_SHRUB.get().asItem()||
-        item == RuBlocks.LARCH_SHRUB.get().asItem()||
-        item == RuBlocks.MAGNOLIA_SHRUB.get().asItem()||
-        item == RuBlocks.MANGROVE_SHRUB.get().asItem()||
-        item == RuBlocks.MAPLE_SHRUB.get().asItem()||
-        item == RuBlocks.MAUVE_SHRUB.get().asItem()||
-        item == RuBlocks.OAK_SHRUB.get().asItem()||
-        item == RuBlocks.ORANGE_MAPLE_SHRUB.get().asItem()||
-        item == RuBlocks.PALM_SHRUB.get().asItem()||
-        item == RuBlocks.PINE_SHRUB.get().asItem()||
-        item == RuBlocks.BLUE_MAGNOLIA_SHRUB.get().asItem()||
-        item == RuBlocks.PINK_MAGNOLIA_SHRUB.get().asItem()||
-        item == RuBlocks.REDWOOD_SHRUB.get().asItem()||
-        item == RuBlocks.RED_MAPLE_SHRUB.get().asItem()||
-        item == RuBlocks.ENCHANTED_BIRCH_SHRUB.get().asItem()||
-        item == RuBlocks.SILVER_BIRCH_SHRUB.get().asItem()||
-        item == RuBlocks.SOCOTRA_SHRUB.get().asItem()||
-        item == RuBlocks.SPRUCE_SHRUB.get().asItem()||
-        item == RuBlocks.WHITE_MAGNOLIA_SHRUB.get().asItem()||
-        item == RuBlocks.WILLOW_SHRUB.get().asItem()||
-
-        item == RuBlocks.BAOBAB_BUTTON.get().asItem()||
-        item == RuBlocks.BLACKWOOD_BUTTON.get().asItem()||
-        item == RuBlocks.BLUE_BIOSHROOM_BUTTON.get().asItem()||
-        item == RuBlocks.BRIMWOOD_BUTTON.get().asItem()||
-        item == RuBlocks.COBALT_BUTTON.get().asItem()||
-        item == RuBlocks.CYPRESS_BUTTON.get().asItem()||
-        item == RuBlocks.DEAD_BUTTON.get().asItem()||
-        item == RuBlocks.EUCALYPTUS_BUTTON.get().asItem()||
-        item == RuBlocks.GREEN_BIOSHROOM_BUTTON.get().asItem()||
-        item == RuBlocks.JOSHUA_BUTTON.get().asItem()||
-        item == RuBlocks.KAPOK_BUTTON.get().asItem()||
-        item == RuBlocks.LARCH_BUTTON.get().asItem()||
-        item == RuBlocks.MAGNOLIA_BUTTON.get().asItem()||
-        item == RuBlocks.MAPLE_BUTTON.get().asItem()||
-        item == RuBlocks.MAUVE_BUTTON.get().asItem()||
-        item == RuBlocks.PALM_BUTTON.get().asItem()||
-        item == RuBlocks.PINE_BUTTON.get().asItem()||
-        item == RuBlocks.PINK_BIOSHROOM_BUTTON.get().asItem()||
-        item == RuBlocks.REDWOOD_BUTTON.get().asItem()||
-        item == RuBlocks.SOCOTRA_BUTTON.get().asItem()||
-        item == RuBlocks.WILLOW_BUTTON.get().asItem()||
-        item == RuBlocks.YELLOW_BIOSHROOM_BUTTON.get().asItem()
-        ) {
-            event.setBurnTime(100);
+        private static void add(Map<Item, int[]> result, int time, Block... blocks) {
+            for (Block block : blocks) {
+                Item item = block.asItem();
+                int[] previous = result.get(item);
+                if (previous == null) {
+                    result.put(item, new int[]{time});
+                } else if (previous[previous.length - 1] != time) {
+                    int[] times = Arrays.copyOf(previous, previous.length + 1);
+                    times[previous.length] = time;
+                    result.put(item, times);
+                }
+            }
         }
     }
 }
